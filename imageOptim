@@ -1,0 +1,192 @@
+#!/bin/bash
+
+bin="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/lib"
+scope=$1
+
+function echo_fail {
+  printf "\e[31m✘ ${1}"
+  echo "\033[0m"
+}
+
+function echo_pass {
+  printf "\e[32m✔ ${1}"
+  echo "\033[0m"
+}
+
+function echo_item {
+  printf "\e[36m• ${1}"
+  echo "\033[0m"
+}
+
+function echo_size {
+  echo_item "$(du -hs $1 | cut -f1) $2"
+}
+
+function echo_if {
+  if [ $1 == 1 ]; then
+    echo_pass $2
+  else
+    echo_fail $2
+  fi
+}
+
+function echo_file {
+  echo "Optimising $1"
+}
+
+if [ -d $scope ]; then
+  echo_pass "Found ${scope}"
+else
+  echo_fail "Could not find directory"
+  exit 1
+fi
+
+# ==========================================================================
+
+# optipng (bmp, gif, png, pnm, tiff)
+function use_optipng {
+  cp $1 $1.optipng
+  ${bin}/optipng -quiet -o7 $1.optipng
+  echo_size $1.optipng "optipng"
+}
+
+# pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
+function use_pngout {
+  ${bin}/pngout -q -y $1 $1.pngout
+  mv $1.pngout.png $1.pngout
+  echo_size $1.pngout "pngout"
+}
+
+# advpng (png)
+function use_advpng {
+  cp $1 $1.advpng
+  ${bin}/advpng --quiet --recompress --shrink-insane $1.advpng
+  echo_size $1.advpng "advpng"
+}
+
+# pngcrush (png)
+function use_pngcrush {
+  ${bin}/pngcrush -q -rem allb -brute -force -q $1 $1.pngcrush
+  echo_size $1.pngcrush "pngcrush"
+}
+
+# gifsicle (gif)
+function use_gifsicle {
+  ${bin}/gifsicle -O3 $1 -o $1.gifsicle
+  echo_size $1.gifsicle "gifsicle"
+}
+
+# jpegoptim (jpg, jpeg)
+function use_jpegoptim {
+  cp $1 $1.jpegoptim
+  ${bin}/jpegoptim -q --strip-all -t -o $1.jpegoptim
+  echo_size $1.jpegoptim "jpegoptim"
+}
+
+# jpegrescan (jpg, jpeg)
+function use_jpegrescan {
+  ${bin}/jpegrescan $1 $1.jpegrescan
+  echo_size $1.jpegrescan "jpegrescan"
+}
+
+# jpegtran (jpg, jpeg)
+function use_jpegtran {
+  ${bin}/jpegtran -copy none -optimize -verbose -outfile $1.jpegtran $1
+  echo_size $1.jpegtran "jpegtran"
+}
+
+# ==========================================================================
+
+function optimise_bmp {
+  use_optipng $1 "bmp"
+  use_pngout $1 "bmp"
+}
+
+function optimise_gif {
+  use_optipng $1 "gif"
+  use_pngout $1 "gif"
+}
+
+function optimise_png {
+  use_advpng $1 "png"
+  use_pngcrush $1 "png"
+  use_optipng $1 "png"
+  use_pngout $1 "png"
+}
+
+function optimise_jpg {
+  use_pngout $1 "jpg"
+  # use_jpegoptim $1 "jpg"
+  # use_jpegrescan $1 "jpg"
+  # use_jpegtran $1 "jpg"
+}
+
+function optimise_jpeg {
+  use_pngout $1 "jpeg"
+  # use_jpegoptim $1 "jpeg"
+  # use_jpegrescan $1 "jpeg"
+  # use_jpegtran $1 "jpeg"
+}
+
+function optimise_pnm {
+  use_optipng $1 "pnm"
+}
+
+function optimise_tiff {
+  use_optipng $1 "tiff"
+}
+
+function optimise_pcx {
+  use_pngout $1 "pcx"
+}
+
+function optimise_tga {
+  use_pngout $1 "tga"
+}
+
+# ==========================================================================
+
+for file in `find $scope -name "*.bmp"`; do
+  echo_file $file
+  optimise_bmp $file
+done
+
+for file in `find $scope -name "*.gif"`; do
+  echo_file $file
+  optimise_gif $file
+done
+
+for file in `find $scope -name "*.png"`; do
+  echo_file $file
+  optimise_png $file
+done
+
+for file in `find $scope -name "*.jpg"`; do
+  echo_file $file
+  optimise_jpg $file
+done
+
+for file in `find $scope -name "*.jpeg"`; do
+  echo_file $file
+  optimise_jpeg $file
+done
+
+for file in `find $scope -name "*.pnm"`; do
+  echo_file $file
+  optimise_pnm $file
+done
+
+for file in `find $scope -name "*.tiff"`; do
+  echo_file $file
+  optimise_tiff $file
+done
+
+for file in `find $scope -name "*.pcx"`; do
+  echo_file $file
+  optimise_pcx $file
+done
+
+for file in `find $scope -name "*.tga"`; do
+  echo_file $file
+  optimise_tga $file
+done
