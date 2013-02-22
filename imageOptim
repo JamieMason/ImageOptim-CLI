@@ -121,6 +121,30 @@ function echo_file {
 
 # ==========================================================================
 
+# sum_original=0
+# sum_advpng=0
+# sum_gifsicle=0
+# sum_jpegoptim=0
+# sum_jpegtran=0
+# sum_optipng=0
+# sum_pngcrush=0
+# sum_pngout=0
+
+# ($1:memo, $2:original_file, $3:optimised_file)
+# function increment_optimised_total {
+#   echo $(bc <<< "scale=3; ($1+$(difference $1 $2))")
+# }
+
+# function total_savings {
+#   echo $(bc <<< "scale=3; ($total-$total_optimised)")
+# }
+
+# function echo_total {
+#   echo "Total: $(format_number $(to_kb $(total_savings))) KB ($(percent $total $total_optimised)%%)"
+# }
+
+# ==========================================================================
+
 # optipng (bmp, gif, png, pnm, tiff)
 function use_optipng {
   local renamed=$(add_sub_extension "$1" $2 "optipng")
