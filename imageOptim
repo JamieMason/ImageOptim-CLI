@@ -70,53 +70,68 @@ init
 
 # ($1:portion, $2:whole) -> percent
 function percent {
-  echo $(bc <<< "scale=2; (($1/$2)*100)")
+  local portion=$1
+  local whole=$2
+  echo $(bc <<< "scale=2; (($portion/$whole)*100)")
 }
 
 # ($1:bytes) -> kilobytes
 # (1500) -> 1.500
 function toKb {
-  echo $(bc <<< "scale=3; $1/1000")
+  local bytes=$1
+  echo $(bc <<< "scale=3; $bytes/1000")
 }
 
 # ($1:larger, $2:smaller) -> difference
 function difference {
-  echo $(bc <<< "scale=3; $1-$2")
+  local larger=$1
+  local smaller=$2
+  echo $(bc <<< "scale=3; $larger-$smaller")
 }
 
 # ($1:number) -> formatted
 # (10000) -> 10,000
 function formatNumber {
-  printf "%'.3f\n" $1
+  local number=$1
+  printf "%'.3f\n" $number
 }
 
 # ($1:path) -> bytes
 # (/path/to/some_file.txt) -> 11496328
 function sizeInBytes {
-  stat -f %z "$1"
+  local path=$1
+  stat -f %z "$path"
 }
 
 # ($1:path) -> formatted
 # (/path/to/some_file.txt) -> 11,496.328 KB
 function echoSize {
-  echo $(formatNumber $(toKb $(sizeInBytes "$1")))" KB"
+  local path=$1
+  echo $(formatNumber $(toKb $(sizeInBytes "$path")))" KB"
 }
 
 # ($1:original, $2:optimised, $3:optimiserName) -> result
 # (/path/to/some.jpg, /path/to/some.jpegoptim.jpg, "jpegoptim") -> "jpegoptim: 1.730 KB (84.00%)"
 function echoResult {
-  echoItem "• $3: $(echoSize $2) ($(percent $(difference $(sizeInBytes "$1") $(sizeInBytes "$2")) $(sizeInBytes "$1"))%%)"
+  local original=$1
+  local optimised=$2
+  local optimiserName=$3
+  echoItem "• $optimiserName: $(echoSize $optimised) ($(percent $(difference $(sizeInBytes "$original") $(sizeInBytes "$optimised")) $(sizeInBytes "$original"))%%)"
 }
 
 # ($1:original, $2:extension, $3:subExtension) -> newFilename
 # (/path/to/some_file.txt, "txt", "ext") -> "some_file.ext.txt"
-function addSubExtension {
-  echo "$1" | sed -e "s/\.$2/.$3.$2/g"
+function assignNameToCopy {
+  local original=$1
+  local extension=$2
+  local subExtension=$3
+  echo "$1" | sed -e "s/\.$extension/.$subExtension.$extension/g"
 }
 
 # ($1:file) -> formatted
 function echoFile {
-  echo "$1 ($(echoSize $1))"
+  local file=$1
+  echo "$file ($(echoSize $file))"
 }
 
 # ==========================================================================
@@ -146,55 +161,83 @@ function echoFile {
 # ==========================================================================
 
 # optipng (bmp, gif, png, pnm, tiff)
+# ($1:file, $2:extension)
 function useOptipng {
-  local renamed=$(addSubExtension "$1" $2 "optipng")
-  cp "$1" "$renamed"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "optipng")
+
+  cp "$file" "$renamed"
   ${bin}/optipng -quiet -o7 "$renamed" > /dev/null 2>&1
-  echoResult "$1" $renamed "optipng"
+  echoResult "$file" $renamed "optipng"
 }
 
 # pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
+# ($1:file, $2:extension)
 function usePngout {
-  local renamed=$(addSubExtension "$1" $2 "pngout")
-  ${bin}/pngout -q -y "$1" "$renamed" > /dev/null 2>&1
-  echoResult "$1" $renamed "pngout"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "pngout")
+
+  ${bin}/pngout -q -y "$file" "$renamed" > /dev/null 2>&1
+  echoResult "$file" $renamed "pngout"
 }
 
 # advpng (png)
+# ($1:file, $2:extension)
 function useAdvpng {
-  local renamed=$(addSubExtension "$1" $2 "advpng")
-  cp "$1" "$renamed"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "advpng")
+
+  cp "$file" "$renamed"
   ${bin}/advpng --quiet --recompress --shrink-insane "$renamed" > /dev/null 2>&1
-  echoResult "$1" $renamed "advpng"
+  echoResult "$file" $renamed "advpng"
 }
 
 # pngcrush (png)
+# ($1:file, $2:extension)
 function usePngcrush {
-  local renamed=$(addSubExtension "$1" $2 "pngcrush")
-  ${bin}/pngcrush -q -rem allb -brute -force -q "$1" "$renamed" > /dev/null 2>&1
-  echoResult "$1" $renamed "pngcrush"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "pngcrush")
+
+  ${bin}/pngcrush -q -rem allb -brute -force -q "$file" "$renamed" > /dev/null 2>&1
+  echoResult "$file" $renamed "pngcrush"
 }
 
 # gifsicle (gif)
+# ($1:file, $2:extension)
 function useGifsicle {
-  local renamed=$(addSubExtension "$1" $2 "gifsicle")
-  ${bin}/gifsicle -O3 "$1" -o "$renamed" > /dev/null 2>&1
-  echoResult "$1" $renamed "gifsicle"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "gifsicle")
+
+  ${bin}/gifsicle -O3 "$file" -o "$renamed" > /dev/null 2>&1
+  echoResult "$file" $renamed "gifsicle"
 }
 
 # jpegoptim (jpg, jpeg)
+# ($1:file, $2:extension)
 function useJpegoptim {
-  local renamed=$(addSubExtension "$1" $2 "jpegoptim")
-  cp "$1" "$renamed"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "jpegoptim")
+
+  cp "$file" "$renamed"
   ${bin}/jpegoptim -q --strip-all -t -o "$renamed" > /dev/null 2>&1
-  echoResult "$1" $renamed "jpegoptim"
+  echoResult "$file" $renamed "jpegoptim"
 }
 
 # jpegtran (jpg, jpeg)
+# ($1:file, $2:extension)
 function useJpegtran {
-  local renamed=$(addSubExtension "$1" $2 "jpegtran")
-  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$renamed" "$1" > /dev/null 2>&1
-  echoResult "$1" $renamed "jpegtran"
+  local file=$1
+  local extension=$2
+  local renamed=$(assignNameToCopy "$file" $extension "jpegtran")
+
+  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$renamed" "$file" > /dev/null 2>&1
+  echoResult "$file" $renamed "jpegtran"
 }
 
 # ==========================================================================
