@@ -102,7 +102,7 @@ function echoResult {
   local optimisedSize=$(sizeInBytes $optimised)
   local byteReduction=$(difference $originalSize $optimisedSize)
   local percentageReduction=$(percent $byteReduction $originalSize)
-  echoItem "• $optimiserName: $(echoSize $optimised) ($percentageReduction%%)"
+  echo "$optimiserName: $(echoSize $optimised) ($percentageReduction%%)"
 }
 
 # ($1:original, $2:extension, $3:subExtension) -> newFilename
@@ -155,7 +155,7 @@ function applyOptimisation {
   local copyName=$(assignNameToCopy $fileName $extension $optimiserName)
 
   $optimiser $fileName $copyName > /dev/null 2>&1
-  echoResult $fileName $copyName $optimiserName
+  # echoResult $fileName $copyName $optimiserName
 }
 
 # ($1:extension, $2..*:optimiserBridge)
@@ -163,10 +163,26 @@ function optimiseFilesByType {
   local args=("$@")
   local extension=$1
   local len=${#args[@]}
+  local firstFile=0
+
+  # optimise each file seperately
   for fileName in `find $scope -name "*.$extension"`; do
+    # display the name and size of the original file
     echoFile $fileName
+    # apply each optimiser seperately
     for (( i=1 ; i<len; i++ )); do
-      echo $(${args[$i]} $fileName $extension)
+      $(${args[$i]} $fileName $extension)
+    done
+    # find optimised output files, sorted by size, smallest first
+    for copyName in `find -E $scope -regex '.*(advpng|gifsicle|jpegoptim|jpegtran|optipng|pngcrush|pngout).*' | sort -rn`; do
+      # if smallest file
+      if [ $firstFile == 0 ]; then
+        echoItem "$(echoResult $fileName $copyName)"
+        mv $copyName $fileName
+        firstFile=1
+      else
+        rm $copyName
+      fi
     done
   done
 }
