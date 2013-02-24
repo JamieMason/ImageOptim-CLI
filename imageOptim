@@ -114,10 +114,10 @@ function assignNameToCopy {
   echo $1 | sed -e "s/\.$extension/.$subExtension.$extension/g"
 }
 
-# ($1:file) -> formatted
+# ($1:fileName) -> formatted
 function echoFile {
-  local file=$1
-  echo "$file ($(echoSize $file))"
+  local fileName=$1
+  echo "$fileName ($(echoSize $fileName))"
 }
 
 # ======================================================================
@@ -146,16 +146,16 @@ function echoFile {
 
 # ======================================================================
 
-# ($1:file, $2:extension, $3:optimiser, $4:optimiserName)
+# ($1:fileName, $2:extension, $3:optimiser, $4:optimiserName)
 function applyOptimisation {
-  local file=$1
+  local fileName=$1
   local extension=$2
   local optimiser=$3
   local optimiserName=$4
-  local fileCopy=$(assignNameToCopy $file $extension $optimiserName)
+  local copyName=$(assignNameToCopy $fileName $extension $optimiserName)
 
-  $optimiser $file $fileCopy > /dev/null 2>&1
-  echoResult $file $fileCopy $optimiserName
+  $optimiser $fileName $copyName > /dev/null 2>&1
+  echoResult $fileName $copyName $optimiserName
 }
 
 # ($1:extension, $2..*:optimiserBridge)
@@ -163,10 +163,10 @@ function optimiseFilesByType {
   local args=("$@")
   local extension=$1
   local len=${#args[@]}
-  for file in `find $scope -name "*.$extension"`; do
-    echoFile $file
+  for fileName in `find $scope -name "*.$extension"`; do
+    echoFile $fileName
     for (( i=1 ; i<len; i++ )); do
-      echo $(${args[$i]} $file $extension)
+      echo $(${args[$i]} $fileName $extension)
     done
   done
 }
@@ -187,13 +187,13 @@ function optimiseFiles {
 # optipng (bmp, gif, png, pnm, tiff)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function optipngCommand {
   cp $1 $2
   ${bin}/optipng -quiet -o7 $2
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function optipngBridge {
   applyOptimisation $1 $2 optipngCommand "optipng"
 }
@@ -202,13 +202,13 @@ function optipngBridge {
 # advpng (png)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function advpngCommand {
   cp $1 $2
   ${bin}/advpng --quiet --recompress --shrink-insane $2
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function advpngBridge {
   applyOptimisation $1 $2 advpngCommand "advpng"
 }
@@ -217,13 +217,13 @@ function advpngBridge {
 # jpegoptim (jpg, jpeg)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function jpegoptimCommand {
   cp $1 $2
   ${bin}/jpegoptim -q --strip-all -t -o $2
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function jpegoptimBridge {
   applyOptimisation $1 $2 jpegoptimCommand "jpegoptim"
 }
@@ -232,12 +232,12 @@ function jpegoptimBridge {
 # pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function pngoutCommand {
   ${bin}/pngout -q -y $1 $2
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function pngoutBridge {
   applyOptimisation $1 $2 pngoutCommand "pngout"
 }
@@ -246,12 +246,12 @@ function pngoutBridge {
 # pngcrush (png)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function pngcrushCommand {
   ${bin}/pngcrush -q -rem allb -brute -force -q $1 $2
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function pngcrushBridge {
   applyOptimisation $1 $2 pngcrushCommand "pngcrush"
 }
@@ -260,12 +260,12 @@ function pngcrushBridge {
 # gifsicle (gif)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function gifsicleCommand {
   ${bin}/gifsicle -O3 $1 -o $2
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function gifsicleBridge {
   applyOptimisation $1 $2 gifsicleCommand "gifsicle"
 }
@@ -274,12 +274,12 @@ function gifsicleBridge {
 # jpegtran (jpg, jpeg)
 # ======================================================================
 
-# ($1:file, $2:fileCopy)
+# ($1:fileName, $2:copyName)
 function jpegtranCommand {
   ${bin}/jpegtran -copy none -optimize -verbose -outfile $2 $1
 }
 
-# ($1:file, $2:extension)
+# ($1:fileName, $2:extension)
 function jpegtranBridge {
   applyOptimisation $1 $2 jpegtranCommand "jpegtran"
 }
