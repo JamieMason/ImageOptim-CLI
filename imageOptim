@@ -33,35 +33,35 @@ function init {
   if [ -d $scope ]; then
     echo ""
   else
-    echo_fail "Could not find $scope"
+    echoFail "Could not find $scope"
     exit 1
   fi
 }
 
 # ($1:message) -> message
-function echo_fail {
+function echoFail {
   printf "\e[31m✘ $1"
   echo "\033[0m"
 }
 
 # ($1:message) -> message
-function echo_pass {
+function echoPass {
   printf "\e[32m✔ $1"
   echo "\033[0m"
 }
 
 # ($1:message) -> message
-function echo_item {
+function echoItem {
   printf "\e[36m$1"
   echo "\033[0m"
 }
 
 # ($1:binary, $2:message) -> formatted
-function echo_if {
+function echoIf {
   if [ $1 == 1 ]; then
-    echo_pass $2
+    echoPass $2
   else
-    echo_fail $2
+    echoFail $2
   fi
 }
 
@@ -75,7 +75,7 @@ function percent {
 
 # ($1:bytes) -> kilobytes
 # (1500) -> 1.500
-function to_kb {
+function toKb {
   echo $(bc <<< "scale=3; $1/1000")
 }
 
@@ -86,166 +86,166 @@ function difference {
 
 # ($1:number) -> formatted
 # (10000) -> 10,000
-function format_number {
+function formatNumber {
   printf "%'.3f\n" $1
 }
 
 # ($1:path) -> bytes
 # (/path/to/some_file.txt) -> 11496328
-function size_in_bytes {
+function sizeInBytes {
   stat -f %z "$1"
 }
 
 # ($1:path) -> formatted
 # (/path/to/some_file.txt) -> 11,496.328 KB
-function echo_size {
-  echo $(format_number $(to_kb $(size_in_bytes "$1")))" KB"
+function echoSize {
+  echo $(formatNumber $(toKb $(sizeInBytes "$1")))" KB"
 }
 
-# ($1:original, $2:optimised, $3:optimiser_name) -> result
+# ($1:original, $2:optimised, $3:optimiserName) -> result
 # (/path/to/some.jpg, /path/to/some.jpegoptim.jpg, "jpegoptim") -> "jpegoptim: 1.730 KB (84.00%)"
-function echo_result {
-  echo_item "• $3: $(echo_size $2) ($(percent $(difference $(size_in_bytes "$1") $(size_in_bytes "$2")) $(size_in_bytes "$1"))%%)"
+function echoResult {
+  echoItem "• $3: $(echoSize $2) ($(percent $(difference $(sizeInBytes "$1") $(sizeInBytes "$2")) $(sizeInBytes "$1"))%%)"
 }
 
-# ($1:original, $2:extension, $3:sub_extension) -> new_filename
+# ($1:original, $2:extension, $3:subExtension) -> newFilename
 # (/path/to/some_file.txt, "txt", "ext") -> "some_file.ext.txt"
-function add_sub_extension {
+function addSubExtension {
   echo "$1" | sed -e "s/\.$2/.$3.$2/g"
 }
 
 # ($1:file) -> formatted
-function echo_file {
-  echo "$1 ($(echo_size $1))"
+function echoFile {
+  echo "$1 ($(echoSize $1))"
 }
 
 # ==========================================================================
 
-# sum_original=0
-# sum_advpng=0
-# sum_gifsicle=0
-# sum_jpegoptim=0
-# sum_jpegtran=0
-# sum_optipng=0
-# sum_pngcrush=0
-# sum_pngout=0
+# sumOriginal=0
+# sumAdvpng=0
+# sumGifsicle=0
+# sumJpegoptim=0
+# sumJpegtran=0
+# sumOptipng=0
+# sumPngcrush=0
+# sumPngout=0
 
-# ($1:memo, $2:original_file, $3:optimised_file)
-# function increment_optimised_total {
+# ($1:memo, $2:originalFile, $3:optimisedFile)
+# function incrementOptimisedTotal {
 #   echo $(bc <<< "scale=3; ($1+$(difference $1 $2))")
 # }
 
-# function total_savings {
-#   echo $(bc <<< "scale=3; ($total-$total_optimised)")
+# function totalSavings {
+#   echo $(bc <<< "scale=3; ($total-$totalOptimised)")
 # }
 
-# function echo_total {
-#   echo "Total: $(format_number $(to_kb $(total_savings))) KB ($(percent $total $total_optimised)%%)"
+# function echoTotal {
+#   echo "Total: $(formatNumber $(toKb $(totalSavings))) KB ($(percent $total $totalOptimised)%%)"
 # }
 
 # ==========================================================================
 
 # optipng (bmp, gif, png, pnm, tiff)
-function use_optipng {
-  local renamed=$(add_sub_extension "$1" $2 "optipng")
+function useOptipng {
+  local renamed=$(addSubExtension "$1" $2 "optipng")
   cp "$1" "$renamed"
   ${bin}/optipng -quiet -o7 "$renamed" > /dev/null 2>&1
-  echo_result "$1" $renamed "optipng"
+  echoResult "$1" $renamed "optipng"
 }
 
 # pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
-function use_pngout {
-  local renamed=$(add_sub_extension "$1" $2 "pngout")
+function usePngout {
+  local renamed=$(addSubExtension "$1" $2 "pngout")
   ${bin}/pngout -q -y "$1" "$renamed" > /dev/null 2>&1
-  echo_result "$1" $renamed "pngout"
+  echoResult "$1" $renamed "pngout"
 }
 
 # advpng (png)
-function use_advpng {
-  local renamed=$(add_sub_extension "$1" $2 "advpng")
+function useAdvpng {
+  local renamed=$(addSubExtension "$1" $2 "advpng")
   cp "$1" "$renamed"
   ${bin}/advpng --quiet --recompress --shrink-insane "$renamed" > /dev/null 2>&1
-  echo_result "$1" $renamed "advpng"
+  echoResult "$1" $renamed "advpng"
 }
 
 # pngcrush (png)
-function use_pngcrush {
-  local renamed=$(add_sub_extension "$1" $2 "pngcrush")
+function usePngcrush {
+  local renamed=$(addSubExtension "$1" $2 "pngcrush")
   ${bin}/pngcrush -q -rem allb -brute -force -q "$1" "$renamed" > /dev/null 2>&1
-  echo_result "$1" $renamed "pngcrush"
+  echoResult "$1" $renamed "pngcrush"
 }
 
 # gifsicle (gif)
-function use_gifsicle {
-  local renamed=$(add_sub_extension "$1" $2 "gifsicle")
+function useGifsicle {
+  local renamed=$(addSubExtension "$1" $2 "gifsicle")
   ${bin}/gifsicle -O3 "$1" -o "$renamed" > /dev/null 2>&1
-  echo_result "$1" $renamed "gifsicle"
+  echoResult "$1" $renamed "gifsicle"
 }
 
 # jpegoptim (jpg, jpeg)
-function use_jpegoptim {
-  local renamed=$(add_sub_extension "$1" $2 "jpegoptim")
+function useJpegoptim {
+  local renamed=$(addSubExtension "$1" $2 "jpegoptim")
   cp "$1" "$renamed"
   ${bin}/jpegoptim -q --strip-all -t -o "$renamed" > /dev/null 2>&1
-  echo_result "$1" $renamed "jpegoptim"
+  echoResult "$1" $renamed "jpegoptim"
 }
 
 # jpegtran (jpg, jpeg)
-function use_jpegtran {
-  local renamed=$(add_sub_extension "$1" $2 "jpegtran")
+function useJpegtran {
+  local renamed=$(addSubExtension "$1" $2 "jpegtran")
   ${bin}/jpegtran -copy none -optimize -verbose -outfile "$renamed" "$1" > /dev/null 2>&1
-  echo_result "$1" $renamed "jpegtran"
+  echoResult "$1" $renamed "jpegtran"
 }
 
 # ==========================================================================
 
 for file in `find $scope -name "*.bmp"`; do
-  echo_file "$file"
-  use_optipng "$file" "bmp"
-  use_pngout "$file" "bmp"
+  echoFile "$file"
+  useOptipng "$file" "bmp"
+  usePngout "$file" "bmp"
 done
 
 for file in `find $scope -name "*.gif"`; do
-  echo_file "$file"
-  use_gifsicle "$file" "gif"
+  echoFile "$file"
+  useGifsicle "$file" "gif"
 done
 
 for file in `find $scope -name "*.png"`; do
-  echo_file "$file"
-  use_advpng "$file" "png"
-  use_pngcrush "$file" "png"
-  use_optipng "$file" "png"
-  use_pngout "$file" "png"
+  echoFile "$file"
+  useAdvpng "$file" "png"
+  usePngcrush "$file" "png"
+  useOptipng "$file" "png"
+  usePngout "$file" "png"
 done
 
 for file in `find $scope -name "*.jpg"`; do
-  echo_file "$file"
-  use_jpegoptim "$file" "jpg"
-  use_jpegtran "$file" "jpg"
+  echoFile "$file"
+  useJpegoptim "$file" "jpg"
+  useJpegtran "$file" "jpg"
 done
 
 for file in `find $scope -name "*.jpeg"`; do
-  echo_file "$file"
-  use_jpegoptim "$file" "jpeg"
-  use_jpegtran "$file" "jpeg"
+  echoFile "$file"
+  useJpegoptim "$file" "jpeg"
+  useJpegtran "$file" "jpeg"
 done
 
 for file in `find $scope -name "*.pnm"`; do
-  echo_file "$file"
-  use_optipng "$file" "pnm"
+  echoFile "$file"
+  useOptipng "$file" "pnm"
 done
 
 for file in `find $scope -name "*.tiff"`; do
-  echo_file "$file"
-  use_optipng "$file" "tiff"
+  echoFile "$file"
+  useOptipng "$file" "tiff"
 done
 
 for file in `find $scope -name "*.pcx"`; do
-  echo_file "$file"
-  use_pngout "$file" "pcx"
+  echoFile "$file"
+  usePngout "$file" "pcx"
 done
 
 for file in `find $scope -name "*.tga"`; do
-  echo_file "$file"
-  use_pngout "$file" "tga"
+  echoFile "$file"
+  usePngout "$file" "tga"
 done
