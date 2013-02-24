@@ -100,14 +100,14 @@ function formatNumber {
 # (/path/to/some_file.txt) -> 11496328
 function sizeInBytes {
   local path=$1
-  stat -f %z "$path"
+  stat -f %z $path
 }
 
 # ($1:path) -> formatted
 # (/path/to/some_file.txt) -> 11,496.328 KB
 function echoSize {
   local path=$1
-  echo $(formatNumber $(toKb $(sizeInBytes "$path")))" KB"
+  echo $(formatNumber $(toKb $(sizeInBytes $path)))" KB"
 }
 
 # ($1:original, $2:optimised, $3:optimiserName) -> result
@@ -116,8 +116,8 @@ function echoResult {
   local original=$1
   local optimised=$2
   local optimiserName=$3
-  local originalSize=$(sizeInBytes "$original")
-  local optimisedSize=$(sizeInBytes "$optimised")
+  local originalSize=$(sizeInBytes $original)
+  local optimisedSize=$(sizeInBytes $optimised)
   local byteReduction=$(difference $originalSize $optimisedSize)
   local percentageReduction=$(percent $byteReduction $originalSize)
   echoItem "• $optimiserName: $(echoSize $optimised) ($percentageReduction%%)"
@@ -129,7 +129,7 @@ function assignNameToCopy {
   local original=$1
   local extension=$2
   local subExtension=$3
-  echo "$1" | sed -e "s/\.$extension/.$subExtension.$extension/g"
+  echo $1 | sed -e "s/\.$extension/.$subExtension.$extension/g"
 }
 
 # ($1:file) -> formatted
@@ -170,10 +170,10 @@ function applyOptimisation {
   local extension=$2
   local optimiser=$3
   local optimiserName=$4
-  local fileCopy=$(assignNameToCopy "$file" $extension $optimiserName)
+  local fileCopy=$(assignNameToCopy $file $extension $optimiserName)
 
-  $optimiser "$file" "$fileCopy" > /dev/null 2>&1
-  echoResult "$file" $fileCopy $optimiserName
+  $optimiser $file $fileCopy > /dev/null 2>&1
+  echoResult $file $fileCopy $optimiserName
 }
 
 # ======================================================================
@@ -182,8 +182,8 @@ function applyOptimisation {
 
 # ($1:file, $2:fileCopy)
 function optipngCommand {
-  cp "$1" "$2"
-  ${bin}/optipng -quiet -o7 "$2"
+  cp $1 $2
+  ${bin}/optipng -quiet -o7 $2
 }
 
 # ($1:file, $2:extension)
@@ -197,8 +197,8 @@ function optipngBridge {
 
 # ($1:file, $2:fileCopy)
 function advpngCommand {
-  cp "$1" "$2"
-  ${bin}/advpng --quiet --recompress --shrink-insane "$2"
+  cp $1 $2
+  ${bin}/advpng --quiet --recompress --shrink-insane $2
 }
 
 # ($1:file, $2:extension)
@@ -212,8 +212,8 @@ function advpngBridge {
 
 # ($1:file, $2:fileCopy)
 function jpegoptimCommand {
-  cp "$1" "$2"
-  ${bin}/jpegoptim -q --strip-all -t -o "$2"
+  cp $1 $2
+  ${bin}/jpegoptim -q --strip-all -t -o $2
 }
 
 # ($1:file, $2:extension)
@@ -227,7 +227,7 @@ function jpegoptimBridge {
 
 # ($1:file, $2:fileCopy)
 function pngoutCommand {
-  ${bin}/pngout -q -y "$1" "$2"
+  ${bin}/pngout -q -y $1 $2
 }
 
 # ($1:file, $2:extension)
@@ -241,7 +241,7 @@ function pngoutBridge {
 
 # ($1:file, $2:fileCopy)
 function pngcrushCommand {
-  ${bin}/pngcrush -q -rem allb -brute -force -q "$1" "$2"
+  ${bin}/pngcrush -q -rem allb -brute -force -q $1 $2
 }
 
 # ($1:file, $2:extension)
@@ -255,7 +255,7 @@ function pngcrushBridge {
 
 # ($1:file, $2:fileCopy)
 function gifsicleCommand {
-  ${bin}/gifsicle -O3 "$1" -o "$2"
+  ${bin}/gifsicle -O3 $1 -o $2
 }
 
 # ($1:file, $2:extension)
@@ -269,7 +269,7 @@ function gifsicleBridge {
 
 # ($1:file, $2:fileCopy)
 function jpegtranCommand {
-  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$2" "$1"
+  ${bin}/jpegtran -copy none -optimize -verbose -outfile $2 $1
 }
 
 # ($1:file, $2:extension)
@@ -280,52 +280,52 @@ function jpegtranBridge {
 # ==========================================================================
 
 for file in `find $scope -name "*.bmp"`; do
-  echoFile "$file"
-  optipngBridge "$file" "bmp"
-  pngoutBridge "$file" "bmp"
+  echoFile $file
+  optipngBridge $file "bmp"
+  pngoutBridge $file "bmp"
 done
 
 for file in `find $scope -name "*.gif"`; do
-  echoFile "$file"
-  gifsicleBridge "$file" "gif"
+  echoFile $file
+  gifsicleBridge $file "gif"
 done
 
 for file in `find $scope -name "*.png"`; do
-  echoFile "$file"
-  advpngBridge "$file" "png"
-  pngcrushBridge "$file" "png"
-  optipngBridge "$file" "png"
-  pngoutBridge "$file" "png"
+  echoFile $file
+  advpngBridge $file "png"
+  pngcrushBridge $file "png"
+  optipngBridge $file "png"
+  pngoutBridge $file "png"
 done
 
 for file in `find $scope -name "*.jpg"`; do
-  echoFile "$file"
-  jpegoptimBridge "$file" "jpg"
-  jpegtranBridge "$file" "jpg"
+  echoFile $file
+  jpegoptimBridge $file "jpg"
+  jpegtranBridge $file "jpg"
 done
 
 for file in `find $scope -name "*.jpeg"`; do
-  echoFile "$file"
-  jpegoptimBridge "$file" "jpeg"
-  jpegtranBridge "$file" "jpeg"
+  echoFile $file
+  jpegoptimBridge $file "jpeg"
+  jpegtranBridge $file "jpeg"
 done
 
 for file in `find $scope -name "*.pnm"`; do
-  echoFile "$file"
-  optipngBridge "$file" "pnm"
+  echoFile $file
+  optipngBridge $file "pnm"
 done
 
 for file in `find $scope -name "*.tiff"`; do
-  echoFile "$file"
-  optipngBridge "$file" "tiff"
+  echoFile $file
+  optipngBridge $file "tiff"
 done
 
 for file in `find $scope -name "*.pcx"`; do
-  echoFile "$file"
-  pngoutBridge "$file" "pcx"
+  echoFile $file
+  pngoutBridge $file "pcx"
 done
 
 for file in `find $scope -name "*.tga"`; do
-  echoFile "$file"
-  pngoutBridge "$file" "tga"
+  echoFile $file
+  pngoutBridge $file "tga"
 done
