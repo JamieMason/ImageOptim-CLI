@@ -116,7 +116,11 @@ function echoResult {
   local original=$1
   local optimised=$2
   local optimiserName=$3
-  echoItem "• $optimiserName: $(echoSize $optimised) ($(percent $(difference $(sizeInBytes "$original") $(sizeInBytes "$optimised")) $(sizeInBytes "$original"))%%)"
+  local originalSize=$(sizeInBytes "$original")
+  local optimisedSize=$(sizeInBytes "$optimised")
+  local byteReduction=$(difference $originalSize $optimisedSize)
+  local percentageReduction=$(percent $byteReduction $originalSize)
+  echoItem "• $optimiserName: $(echoSize $optimised) ($percentageReduction%%)"
 }
 
 # ($1:original, $2:extension, $3:subExtension) -> newFilename
