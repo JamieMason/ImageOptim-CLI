@@ -164,84 +164,92 @@ function echoFile {
 
 # ==========================================================================
 
-# optipng (bmp, gif, png, pnm, tiff)
-# ($1:file, $2:extension)
-function useOptipng {
+# ($1:file, $2:extension, $3:optimiser, $4:optimiserName)
+function applyOptimisation {
   local file=$1
   local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "optipng")
+  local optimiser=$3
+  local optimiserName=$4
+  local fileCopy=$(assignNameToCopy "$file" $extension $optimiserName)
 
-  cp "$file" "$renamed"
-  ${bin}/optipng -quiet -o7 "$renamed" > /dev/null 2>&1
-  echoResult "$file" $renamed "optipng"
+  $optimiser "$file" "$fileCopy"
+  echoResult "$file" $fileCopy $optimiserName
+}
+
+# ($1:file, $2:fileCopy)
+function fn_optipng {
+  cp "$1" "$2"
+  ${bin}/optipng -quiet -o7 "$2" > /dev/null 2>&1
+}
+
+# ($1:file, $2:fileCopy)
+function fn_advpng {
+  cp "$1" "$2"
+  ${bin}/advpng --quiet --recompress --shrink-insane "$2" > /dev/null 2>&1
+}
+
+# ($1:file, $2:fileCopy)
+function fn_jpegoptim {
+  cp "$1" "$2"
+  ${bin}/jpegoptim -q --strip-all -t -o "$2" > /dev/null 2>&1
 }
 
 # pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
-# ($1:file, $2:extension)
-function usePngout {
-  local file=$1
-  local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "pngout")
+# ($1:file, $2:fileCopy)
+function fn_pngout {
+  ${bin}/pngout -q -y "$1" "$2" > /dev/null 2>&1
+}
+# pngcrush (png)
+# ($1:file, $2:fileCopy)
+function fn_pngcrush {
+  ${bin}/pngcrush -q -rem allb -brute -force -q "$1" "$2" > /dev/null 2>&1
+}
+# gifsicle (gif)
+function fn_gifsicle {
+  ${bin}/gifsicle -O3 "$1" -o "$2" > /dev/null 2>&1
+}
 
-  ${bin}/pngout -q -y "$file" "$renamed" > /dev/null 2>&1
-  echoResult "$file" $renamed "pngout"
+# jpegtran (jpg, jpeg)
+function fn_jpegtran {
+  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$2" "$1" > /dev/null 2>&1
+}
+
+# optipng (bmp, gif, png, pnm, tiff)
+# ($1:file, $2:extension)
+function useOptipng {
+  applyOptimisation $1 $2 fn_optipng "optipng"
 }
 
 # advpng (png)
 # ($1:file, $2:extension)
 function useAdvpng {
-  local file=$1
-  local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "advpng")
-
-  cp "$file" "$renamed"
-  ${bin}/advpng --quiet --recompress --shrink-insane "$renamed" > /dev/null 2>&1
-  echoResult "$file" $renamed "advpng"
-}
-
-# pngcrush (png)
-# ($1:file, $2:extension)
-function usePngcrush {
-  local file=$1
-  local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "pngcrush")
-
-  ${bin}/pngcrush -q -rem allb -brute -force -q "$file" "$renamed" > /dev/null 2>&1
-  echoResult "$file" $renamed "pngcrush"
-}
-
-# gifsicle (gif)
-# ($1:file, $2:extension)
-function useGifsicle {
-  local file=$1
-  local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "gifsicle")
-
-  ${bin}/gifsicle -O3 "$file" -o "$renamed" > /dev/null 2>&1
-  echoResult "$file" $renamed "gifsicle"
+  applyOptimisation $1 $2 fn_advpng "advpng"
 }
 
 # jpegoptim (jpg, jpeg)
 # ($1:file, $2:extension)
 function useJpegoptim {
-  local file=$1
-  local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "jpegoptim")
-
-  cp "$file" "$renamed"
-  ${bin}/jpegoptim -q --strip-all -t -o "$renamed" > /dev/null 2>&1
-  echoResult "$file" $renamed "jpegoptim"
+  applyOptimisation $1 $2 fn_jpegoptim "jpegoptim"
 }
 
-# jpegtran (jpg, jpeg)
+# ($1:file, $2:extension)
+function usePngout {
+  applyOptimisation $1 $2 fn_pngout "pngout"
+}
+
+# ($1:file, $2:extension)
+function usePngcrush {
+  applyOptimisation $1 $2 fn_pngcrush "pngcrush"
+}
+
+# ($1:file, $2:extension)
+function useGifsicle {
+  applyOptimisation $1 $2 fn_gifsicle "gifsicle"
+}
+
 # ($1:file, $2:extension)
 function useJpegtran {
-  local file=$1
-  local extension=$2
-  local renamed=$(assignNameToCopy "$file" $extension "jpegtran")
-
-  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$renamed" "$file" > /dev/null 2>&1
-  echoResult "$file" $renamed "jpegtran"
+  applyOptimisation $1 $2 fn_jpegtran "jpegtran"
 }
 
 # ==========================================================================
