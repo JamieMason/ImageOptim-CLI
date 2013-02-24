@@ -172,135 +172,160 @@ function applyOptimisation {
   local optimiserName=$4
   local fileCopy=$(assignNameToCopy "$file" $extension $optimiserName)
 
-  $optimiser "$file" "$fileCopy"
+  $optimiser "$file" "$fileCopy" > /dev/null 2>&1
   echoResult "$file" $fileCopy $optimiserName
 }
 
-# ($1:file, $2:fileCopy)
-function fn_optipng {
-  cp "$1" "$2"
-  ${bin}/optipng -quiet -o7 "$2" > /dev/null 2>&1
-}
-
-# ($1:file, $2:fileCopy)
-function fn_advpng {
-  cp "$1" "$2"
-  ${bin}/advpng --quiet --recompress --shrink-insane "$2" > /dev/null 2>&1
-}
-
-# ($1:file, $2:fileCopy)
-function fn_jpegoptim {
-  cp "$1" "$2"
-  ${bin}/jpegoptim -q --strip-all -t -o "$2" > /dev/null 2>&1
-}
-
-# pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
-# ($1:file, $2:fileCopy)
-function fn_pngout {
-  ${bin}/pngout -q -y "$1" "$2" > /dev/null 2>&1
-}
-# pngcrush (png)
-# ($1:file, $2:fileCopy)
-function fn_pngcrush {
-  ${bin}/pngcrush -q -rem allb -brute -force -q "$1" "$2" > /dev/null 2>&1
-}
-# gifsicle (gif)
-function fn_gifsicle {
-  ${bin}/gifsicle -O3 "$1" -o "$2" > /dev/null 2>&1
-}
-
-# jpegtran (jpg, jpeg)
-function fn_jpegtran {
-  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$2" "$1" > /dev/null 2>&1
-}
-
+# ======================================================================
 # optipng (bmp, gif, png, pnm, tiff)
-# ($1:file, $2:extension)
-function useOptipng {
-  applyOptimisation $1 $2 fn_optipng "optipng"
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function optipngCommand {
+  cp "$1" "$2"
+  ${bin}/optipng -quiet -o7 "$2"
 }
 
+# ($1:file, $2:extension)
+function optipngBridge {
+  applyOptimisation $1 $2 optipngCommand "optipng"
+}
+
+# ======================================================================
 # advpng (png)
-# ($1:file, $2:extension)
-function useAdvpng {
-  applyOptimisation $1 $2 fn_advpng "advpng"
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function advpngCommand {
+  cp "$1" "$2"
+  ${bin}/advpng --quiet --recompress --shrink-insane "$2"
 }
 
+# ($1:file, $2:extension)
+function advpngBridge {
+  applyOptimisation $1 $2 advpngCommand "advpng"
+}
+
+# ======================================================================
 # jpegoptim (jpg, jpeg)
-# ($1:file, $2:extension)
-function useJpegoptim {
-  applyOptimisation $1 $2 fn_jpegoptim "jpegoptim"
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function jpegoptimCommand {
+  cp "$1" "$2"
+  ${bin}/jpegoptim -q --strip-all -t -o "$2"
 }
 
 # ($1:file, $2:extension)
-function usePngout {
-  applyOptimisation $1 $2 fn_pngout "pngout"
+function jpegoptimBridge {
+  applyOptimisation $1 $2 jpegoptimCommand "jpegoptim"
+}
+
+# ======================================================================
+# pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function pngoutCommand {
+  ${bin}/pngout -q -y "$1" "$2"
 }
 
 # ($1:file, $2:extension)
-function usePngcrush {
-  applyOptimisation $1 $2 fn_pngcrush "pngcrush"
+function pngoutBridge {
+  applyOptimisation $1 $2 pngoutCommand "pngout"
+}
+
+# ======================================================================
+# pngcrush (png)
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function pngcrushCommand {
+  ${bin}/pngcrush -q -rem allb -brute -force -q "$1" "$2"
 }
 
 # ($1:file, $2:extension)
-function useGifsicle {
-  applyOptimisation $1 $2 fn_gifsicle "gifsicle"
+function pngcrushBridge {
+  applyOptimisation $1 $2 pngcrushCommand "pngcrush"
+}
+
+# ======================================================================
+# gifsicle (gif)
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function gifsicleCommand {
+  ${bin}/gifsicle -O3 "$1" -o "$2"
 }
 
 # ($1:file, $2:extension)
-function useJpegtran {
-  applyOptimisation $1 $2 fn_jpegtran "jpegtran"
+function gifsicleBridge {
+  applyOptimisation $1 $2 gifsicleCommand "gifsicle"
+}
+
+# ======================================================================
+# jpegtran (jpg, jpeg)
+# ======================================================================
+
+# ($1:file, $2:fileCopy)
+function jpegtranCommand {
+  ${bin}/jpegtran -copy none -optimize -verbose -outfile "$2" "$1"
+}
+
+# ($1:file, $2:extension)
+function jpegtranBridge {
+  applyOptimisation $1 $2 jpegtranCommand "jpegtran"
 }
 
 # ==========================================================================
 
 for file in `find $scope -name "*.bmp"`; do
   echoFile "$file"
-  useOptipng "$file" "bmp"
-  usePngout "$file" "bmp"
+  optipngBridge "$file" "bmp"
+  pngoutBridge "$file" "bmp"
 done
 
 for file in `find $scope -name "*.gif"`; do
   echoFile "$file"
-  useGifsicle "$file" "gif"
+  gifsicleBridge "$file" "gif"
 done
 
 for file in `find $scope -name "*.png"`; do
   echoFile "$file"
-  useAdvpng "$file" "png"
-  usePngcrush "$file" "png"
-  useOptipng "$file" "png"
-  usePngout "$file" "png"
+  advpngBridge "$file" "png"
+  pngcrushBridge "$file" "png"
+  optipngBridge "$file" "png"
+  pngoutBridge "$file" "png"
 done
 
 for file in `find $scope -name "*.jpg"`; do
   echoFile "$file"
-  useJpegoptim "$file" "jpg"
-  useJpegtran "$file" "jpg"
+  jpegoptimBridge "$file" "jpg"
+  jpegtranBridge "$file" "jpg"
 done
 
 for file in `find $scope -name "*.jpeg"`; do
   echoFile "$file"
-  useJpegoptim "$file" "jpeg"
-  useJpegtran "$file" "jpeg"
+  jpegoptimBridge "$file" "jpeg"
+  jpegtranBridge "$file" "jpeg"
 done
 
 for file in `find $scope -name "*.pnm"`; do
   echoFile "$file"
-  useOptipng "$file" "pnm"
+  optipngBridge "$file" "pnm"
 done
 
 for file in `find $scope -name "*.tiff"`; do
   echoFile "$file"
-  useOptipng "$file" "tiff"
+  optipngBridge "$file" "tiff"
 done
 
 for file in `find $scope -name "*.pcx"`; do
   echoFile "$file"
-  usePngout "$file" "pcx"
+  pngoutBridge "$file" "pcx"
 done
 
 for file in `find $scope -name "*.tga"`; do
   echoFile "$file"
-  usePngout "$file" "tga"
+  pngoutBridge "$file" "tga"
 done
