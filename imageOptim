@@ -23,21 +23,6 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# get library of optimisers relative to this file
-bin="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/lib"
-
-# the path we should optimise
-scope=$1
-
-function init {
-  if [ -d $scope ]; then
-    echo ""
-  else
-    echoFail "Could not find $scope"
-    exit 1
-  fi
-}
-
 # ($1:message) -> message
 function echoFail {
   printf "\e[31m✘ $1"
@@ -64,9 +49,6 @@ function echoIf {
     echoFail $2
   fi
 }
-
-# exit if dir to process is missing
-init
 
 # ($1:portion, $2:whole) -> percent
 function percent {
@@ -138,7 +120,7 @@ function echoFile {
   echo "$file ($(echoSize $file))"
 }
 
-# ==========================================================================
+# ======================================================================
 
 # sumOriginal=0
 # sumAdvpng=0
@@ -162,7 +144,7 @@ function echoFile {
 #   echo "Total: $(formatNumber $(toKb $(totalSavings))) KB ($(percent $total $totalOptimised)%%)"
 # }
 
-# ==========================================================================
+# ======================================================================
 
 # ($1:file, $2:extension, $3:optimiser, $4:optimiserName)
 function applyOptimisation {
@@ -174,6 +156,31 @@ function applyOptimisation {
 
   $optimiser $file $fileCopy > /dev/null 2>&1
   echoResult $file $fileCopy $optimiserName
+}
+
+# ($1:extension, $2..*:optimiserBridge)
+function optimiseFilesByType {
+  local args=("$@")
+  local extension=$1
+  local len=${#args[@]}
+  for file in `find $scope -name "*.$extension"`; do
+    echoFile $file
+    for (( i=1 ; i<len; i++ )); do
+      echo $(${args[$i]} $file $extension)
+    done
+  done
+}
+
+function optimiseFiles {
+  optimiseFilesByType "bmp" optipngBridge pngoutBridge
+  optimiseFilesByType "gif" gifsicleBridge
+  optimiseFilesByType "jpeg" jpegoptimBridge jpegtranBridge
+  optimiseFilesByType "jpg" jpegoptimBridge jpegtranBridge
+  optimiseFilesByType "pcx" pngoutBridge
+  optimiseFilesByType "png" advpngBridge pngcrushBridge optipngBridge pngoutBridge
+  optimiseFilesByType "pnm" optipngBridge
+  optimiseFilesByType "tga" pngoutBridge
+  optimiseFilesByType "tiff" optipngBridge
 }
 
 # ======================================================================
@@ -277,55 +284,20 @@ function jpegtranBridge {
   applyOptimisation $1 $2 jpegtranCommand "jpegtran"
 }
 
-# ==========================================================================
+# ======================================================================
+# Initialise
+# ======================================================================
 
-for file in `find $scope -name "*.bmp"`; do
-  echoFile $file
-  optipngBridge $file "bmp"
-  pngoutBridge $file "bmp"
-done
+# path to optimiser library
+bin="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/lib"
 
-for file in `find $scope -name "*.gif"`; do
-  echoFile $file
-  gifsicleBridge $file "gif"
-done
+# path to image directory we should optimise
+scope=$1
 
-for file in `find $scope -name "*.png"`; do
-  echoFile $file
-  advpngBridge $file "png"
-  pngcrushBridge $file "png"
-  optipngBridge $file "png"
-  pngoutBridge $file "png"
-done
-
-for file in `find $scope -name "*.jpg"`; do
-  echoFile $file
-  jpegoptimBridge $file "jpg"
-  jpegtranBridge $file "jpg"
-done
-
-for file in `find $scope -name "*.jpeg"`; do
-  echoFile $file
-  jpegoptimBridge $file "jpeg"
-  jpegtranBridge $file "jpeg"
-done
-
-for file in `find $scope -name "*.pnm"`; do
-  echoFile $file
-  optipngBridge $file "pnm"
-done
-
-for file in `find $scope -name "*.tiff"`; do
-  echoFile $file
-  optipngBridge $file "tiff"
-done
-
-for file in `find $scope -name "*.pcx"`; do
-  echoFile $file
-  pngoutBridge $file "pcx"
-done
-
-for file in `find $scope -name "*.tga"`; do
-  echoFile $file
-  pngoutBridge $file "tga"
-done
+# if it's a valid directory
+if [ -d $scope ]; then
+  optimiseFiles
+else
+  echoFail "Could not find $scope"
+  exit 1
+fi
