@@ -122,30 +122,6 @@ function echoFile {
 
 # ======================================================================
 
-# sumOriginal=0
-# sumAdvpng=0
-# sumGifsicle=0
-# sumJpegoptim=0
-# sumJpegtran=0
-# sumOptipng=0
-# sumPngcrush=0
-# sumPngout=0
-
-# ($1:memo, $2:originalFile, $3:optimisedFile)
-# function incrementOptimisedTotal {
-#   echo $(bc <<< "scale=3; ($1+$(difference $1 $2))")
-# }
-
-# function totalSavings {
-#   echo $(bc <<< "scale=3; ($total-$totalOptimised)")
-# }
-
-# function echoTotal {
-#   echo "Total: $(formatNumber $(toKb $(totalSavings))) KB ($(percent $total $totalOptimised)%%)"
-# }
-
-# ======================================================================
-
 # ($1:fileName, $2:extension, $3:optimiser, $4:optimiserName)
 function applyOptimisation {
   local fileName=$1
@@ -155,7 +131,6 @@ function applyOptimisation {
   local copyName=$(assignNameToCopy $fileName $extension $optimiserName)
 
   $optimiser $fileName $copyName > /dev/null 2>&1
-  # echoResult $fileName $copyName $optimiserName
 }
 
 # ($1:extension, $2..*:optimiserBridge)
