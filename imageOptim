@@ -23,45 +23,39 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# ======================================================================
+# LOG
+# ======================================================================
+
 # ($1:message) -> message
-function echoFail {
+function outputError {
   printf "\e[31m✘ $1"
   echo "\033[0m"
 }
 
-# ($1:message) -> message
-function echoPass {
-  printf "\e[32m✔ $1"
-  echo "\033[0m"
+function outputTableHeader {
+  local hr="----------"
+  local hr=$hr$hr$hr$hr$hr$hr$hr$hr
+  local width=73
+  local header="\n %-40s %20s %10s\n"
+  printf "$header" "FILE" "KB REMOVED" "% REMOVED"
+  printf "%$width.${width}s\n" "$hr"
 }
 
-# ($1:message) -> message
-function echoItem {
-  printf "\e[36m• $1"
-  echo "\033[0m"
+function outputTableRow {
+  local format=" %-40s %20s %10s\n"
+  printf "$format" $1 "$(formatNumber $2) KB" "$3%"
 }
 
-# ($1:binary, $2:message) -> formatted
-function echoIf {
-  if [ $1 == 1 ]; then
-    echoPass $2
-  else
-    echoFail $2
-  fi
-}
+# ======================================================================
+# CALCULATE
+# ======================================================================
 
 # ($1:portion, $2:whole) -> percent
 function percent {
   local portion=$1
   local whole=$2
   echo $(bc <<< "scale=2; (($portion/$whole)*100)")
-}
-
-# ($1:bytes) -> kilobytes
-# (1500) -> 1.500
-function toKb {
-  local bytes=$1
-  echo $(bc <<< "scale=3; $bytes/1000")
 }
 
 # ($1:larger, $2:smaller) -> difference
@@ -71,13 +65,6 @@ function difference {
   echo $(bc <<< "scale=3; $larger-$smaller")
 }
 
-# ($1:number) -> formatted
-# (10000) -> 10,000
-function formatNumber {
-  local number=$1
-  printf "%'.3f\n" $number
-}
-
 # ($1:path) -> bytes
 # (/path/to/some_file.txt) -> 11496328
 function sizeInBytes {
@@ -85,30 +72,28 @@ function sizeInBytes {
   stat -f %z $path
 }
 
-function echoBytes {
-  local size=$1
-  echo $(formatNumber $(toKb $size))" KB"
+# ======================================================================
+# CONVERT
+# ======================================================================
+
+# ($1:bytes) -> kilobytes
+# (1500) -> 1.500
+function toKb {
+  local bytes=$1
+  echo $(bc <<< "scale=3; $bytes/1000")
 }
 
-# ($1:path) -> formatted
-# (/path/to/some_file.txt) -> 11,496.328 KB
-function echoSize {
-  local path=$1
-  echo $(echoBytes $(sizeInBytes $path))
+# ======================================================================
+# FORMAT
+# ======================================================================
+
+# ($1:number) -> formatted
+# (10000) -> 10,000
+function formatNumber {
+  local number=$1
+  printf "%'.3f\n" $number
 }
 
-# ($1:original, $2:optimised, $3:optimiserName) -> result
-# (/path/to/some.jpg, /path/to/some.jpegoptim.jpg, "jpegoptim") -> "jpegoptim: 1.730 KB (84.00%)"
-function echoResult {
-  local original=$1
-  local optimised=$2
-  local optimiserName=$3
-  local originalSize=$(sizeInBytes $original)
-  local optimisedSize=$(sizeInBytes $optimised)
-  local byteReduction=$(difference $originalSize $optimisedSize)
-  local percentageReduction=$(percent $byteReduction $originalSize)
-  echo "$optimiserName: $(echoSize $optimised) ($percentageReduction%%)"
-}
 
 # ($1:original, $2:extension, $3:subExtension) -> newFilename
 # (/path/to/some_file.txt, "txt", "ext") -> "some_file.ext.txt"
@@ -117,12 +102,6 @@ function assignNameToCopy {
   local extension=$2
   local subExtension=$3
   echo $1 | sed -e "s/\.$extension/.$subExtension.$extension/g"
-}
-
-# ($1:fileName) -> formatted
-function echoFile {
-  local fileName=$1
-  echo "$fileName ($(echoSize $fileName))"
 }
 
 # ======================================================================
@@ -181,7 +160,7 @@ function optimiseFilesByType {
     local bytesRemoved=$(difference $sizeBefore $sizeAfter)
     local kilobytesRemoved=$(toKb $bytesRemoved)
     local percentRemoved=$(percent $bytesRemoved $sizeBefore)
-    echo "Removed ${kilobytesRemoved} KB (${percentRemoved}%) from ${fileName}"
+    outputTableRow $fileName $kilobytesRemoved $percentRemoved
   done
 }
 
@@ -200,8 +179,8 @@ function optimiseFiles {
   local totalKilobytesRemoved=$(toKb $totalBytesRemoved)
   local totalPercentRemoved=$(percent $totalBytesRemoved $totalSizeBefore)
 
-  echo "---------------------------------------------------"
-  echo "Removed ${totalKilobytesRemoved} KB (${totalPercentRemoved}%) from ${scope}"
+  echo "-------------------------------------------------------------------------"
+  outputTableRow "TOTAL" $totalKilobytesRemoved $totalPercentRemoved
 }
 
 # ======================================================================
@@ -334,8 +313,9 @@ totalSizeAfter=0
 
 # if it's a valid directory
 if [ -d $scope ]; then
+  outputTableHeader
   optimiseFiles
 else
-  echoFail "Could not find $scope"
+  outputError "Could not find $scope"
   exit 1
 fi
