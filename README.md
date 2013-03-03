@@ -21,7 +21,7 @@ ImageOptim-CLI is a Shell Script which controls the same underlying executables 
 
 ## Similar Projects
 
-Similar projects exist such as **[toy/image\_optim](https://github.com/toy/image_optim)** so check those out as well. The main difference between these projects are that image_optim has you install each of the optimisation tools yourself but ImageOptim-CLI provides them.
+Similar projects exist such as **[toy/image\_optim](https://github.com/toy/image_optim)** so check those out as well. The main difference between these projects are that image_optim has you install each of the optimisation tools yourself but ImageOptim-CLI provides them, image_optim also depends on you having Ruby installed.
 
 Another web optimisation tool is **[JamieMason/Unreadable](https://github.com/JamieMason/Unreadable)**, a CSS-aware HTML minifier and optimizer for the command line.
 
