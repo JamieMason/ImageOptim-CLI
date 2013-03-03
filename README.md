@@ -11,11 +11,13 @@ ImageOptim-CLI is a Shell Script which controls the same underlying executables 
 
 ## Output
 
-    Removed 3689.165 KB (75.00%) from images/animated.gif
-    Removed 2.149 KB (1.00%) from images/faustino-asprilla.jpg
-    Removed 2.892 KB (6.00%) from images/tux.png
-    ---------------------------------------------------
-    Removed 3694.206 KB (73.00%) from images
+     FILE                                               KB REMOVED  % REMOVED
+    -------------------------------------------------------------------------
+     test/animated.gif                                3,689.165 KB     75.00%
+     test/faustino-asprilla.jpg                           2.149 KB      1.00%
+     test/tux.png                                         2.892 KB      6.00%
+    -------------------------------------------------------------------------
+     TOTAL                                            3,694.206 KB     73.00%
 
 ## Similar Projects
 
