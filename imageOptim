@@ -37,7 +37,7 @@ function echoPass {
 
 # ($1:message) -> message
 function echoItem {
-  printf "\e[36m$1"
+  printf "\e[36m• $1"
   echo "\033[0m"
 }
 
@@ -85,11 +85,16 @@ function sizeInBytes {
   stat -f %z $path
 }
 
+function echoBytes {
+  local size=$1
+  echo $(formatNumber $(toKb $size))" KB"
+}
+
 # ($1:path) -> formatted
 # (/path/to/some_file.txt) -> 11,496.328 KB
 function echoSize {
   local path=$1
-  echo $(formatNumber $(toKb $(sizeInBytes $path)))" KB"
+  echo $(echoBytes $(sizeInBytes $path))
 }
 
 # ($1:original, $2:optimised, $3:optimiserName) -> result
@@ -133,45 +138,70 @@ function applyOptimisation {
   $optimiser $fileName $copyName > /dev/null 2>&1
 }
 
-# ($1:extension, $2..*:optimiserBridge)
-function optimiseFilesByType {
-  local args=("$@")
-  local extension=$1
-  local len=${#args[@]}
+# ($1:fileName, $2:optimiserName)
+function handleOutput {
+  local fileName=$1
   local firstFile=0
+  for copyName in `find -E $scope -regex '.*(advpng|gifsicle|jpegoptim|jpegtran|optipng|pngcrush|pngout).*' | sort -rn`; do
+    # if smallest file
+    if [ $firstFile == 0 ]; then
+      # increment totals
+      totalSizeBefore=$(bc <<< "scale=0; $totalSizeBefore+$(sizeInBytes $fileName)")
+      totalSizeAfter=$(bc <<< "scale=0; $totalSizeAfter+$(sizeInBytes $copyName)")
+      mv $copyName $fileName
+      firstFile=1
+    else
+      rm $copyName
+    fi
+  done
+}
 
-  # optimise each file seperately
+function optimiseFile {
+  local fileName=$1
+  local extension=$2
+  declare -a optimiserNames=("${!3}")
+
+  for (( i=0 ; i<${#optimiserNames[@]}; i++ )); do
+    local optimiserName="${optimiserNames[$i]}"
+    eval local optimiser="${optimiserName}Bridge"
+    $optimiser $fileName $extension
+  done
+
+  handleOutput $fileName $optimiserName
+}
+
+function optimiseFilesByType {
+  local extension=$1
+  declare -a optimiserNames=("${!2}")
+
   for fileName in `find $scope -name "*.$extension"`; do
-    # display the name and size of the original file
-    echoFile $fileName
-    # apply each optimiser seperately
-    for (( i=1 ; i<len; i++ )); do
-      $(${args[$i]} $fileName $extension)
-    done
-    # find optimised output files, sorted by size, smallest first
-    for copyName in `find -E $scope -regex '.*(advpng|gifsicle|jpegoptim|jpegtran|optipng|pngcrush|pngout).*' | sort -rn`; do
-      # if smallest file
-      if [ $firstFile == 0 ]; then
-        echoItem "$(echoResult $fileName $copyName)"
-        mv $copyName $fileName
-        firstFile=1
-      else
-        rm $copyName
-      fi
-    done
+    local sizeBefore=$(sizeInBytes $fileName)
+    optimiseFile $fileName $extension optimiserNames[@]
+    local sizeAfter=$(sizeInBytes $fileName)
+    local bytesRemoved=$(difference $sizeBefore $sizeAfter)
+    local kilobytesRemoved=$(toKb $bytesRemoved)
+    local percentRemoved=$(percent $bytesRemoved $sizeBefore)
+    echo "Removed ${kilobytesRemoved} KB (${percentRemoved}%) from ${fileName}"
   done
 }
 
 function optimiseFiles {
-  optimiseFilesByType "bmp" optipngBridge pngoutBridge
-  optimiseFilesByType "gif" gifsicleBridge
-  optimiseFilesByType "jpeg" jpegoptimBridge jpegtranBridge
-  optimiseFilesByType "jpg" jpegoptimBridge jpegtranBridge
-  optimiseFilesByType "pcx" pngoutBridge
-  optimiseFilesByType "png" advpngBridge pngcrushBridge optipngBridge pngoutBridge
-  optimiseFilesByType "pnm" optipngBridge
-  optimiseFilesByType "tga" pngoutBridge
-  optimiseFilesByType "tiff" optipngBridge
+  optimiseFilesByType "bmp" bmpOptimisers[@]
+  optimiseFilesByType "gif" gifOptimisers[@]
+  optimiseFilesByType "jpeg" jpegOptimisers[@]
+  optimiseFilesByType "jpg" jpgOptimisers[@]
+  optimiseFilesByType "pcx" pcxOptimisers[@]
+  optimiseFilesByType "png" pngOptimisers[@]
+  optimiseFilesByType "pnm" pnmOptimisers[@]
+  optimiseFilesByType "tga" tgaOptimisers[@]
+  optimiseFilesByType "tiff" tiffOptimisers[@]
+
+  local totalBytesRemoved=$(difference $totalSizeBefore $totalSizeAfter)
+  local totalKilobytesRemoved=$(toKb $totalBytesRemoved)
+  local totalPercentRemoved=$(percent $totalBytesRemoved $totalSizeBefore)
+
+  echo "---------------------------------------------------"
+  echo "Removed ${totalKilobytesRemoved} KB (${totalPercentRemoved}%) from ${scope}"
 }
 
 # ======================================================================
@@ -284,6 +314,23 @@ bin="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/lib"
 
 # path to image directory we should optimise
 scope=$1
+
+#
+bmpOptimisers=(optipng pngout)
+gifOptimisers=(gifsicle)
+jpegOptimisers=(jpegoptim jpegtran)
+jpgOptimisers=(jpegoptim jpegtran)
+pcxOptimisers=(pngout)
+pngOptimisers=(advpng optipng pngcrush pngout)
+pnmOptimisers=(optipng)
+tgaOptimisers=(pngout)
+tiffOptimisers=(optipng)
+
+# size of files before optimisation
+totalSizeBefore=0
+
+# size of files after optimisation
+totalSizeAfter=0
 
 # if it's a valid directory
 if [ -d $scope ]; then
