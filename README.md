@@ -29,11 +29,11 @@ The main differences in ImageOptim-CLI are;
 1. it does not depend on Ruby, it's just Shell.
 1. it is new, and is still not yet stable.
 
-Another web optimisation tool is **[JamieMason/Unreadable](https://github.com/JamieMason/Unreadable)**, a CSS-aware HTML minifier and optimizer for the command line.
+Another web optimisation tool is **[JamieMason/Unreadable](https://github.com/JamieMason/Unreadable)**, an intelligent, CSS-aware HTML minifier and optimizer for the command line.
 
 ## Please Contribute
 
-I'm also a JavaScript Developer who is _fairly_ new to Shell, [forks & contributions](https://github.com/JamieMason/ImageOptim-CLI/pull/new/master) are welcomed.
+I'm a JavaScript Developer who is _fairly_ new to Shell, [forks & contributions](https://github.com/JamieMason/ImageOptim-CLI/pull/new/master) are welcomed.
 
 ## Known Issues
 
