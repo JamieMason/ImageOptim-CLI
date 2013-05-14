@@ -23,329 +23,46 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# ====================================================================
-# LOG
-# ====================================================================
-
 # ($1:message) -> stdout
 # Output a message in red with a cross icon by it
-function outputError {
+function errorLog {
   printf "\e[31m✘ $1"
   echo "\033[0m"
 }
 
-# () -> stdout
-# Output column headers ahead of each row of files to be optimised
-function outputTableHeader {
-  printf "\n$tableColumnFormat" "FILE" "KB REMOVED" "% REMOVED"
-  printf "%$tableWidth.${tableWidth}s\n" "$tableBorder"
-}
+# Check if ImageOptim is installed
+APPLESCRIPT=`cat <<EOF
+try
+  tell application "Finder"
+    return name of application file id "net.pornel.ImageOptim"
+  end tell
+on error err_msg number err_num
+  return null
+end try
+EOF`
 
-# ($1:fileName, $2:kilobytesRemoved , $3:percentRemoved) -> stdout
-# Output the file name, bytes and percentage bytes removed from a file
-function outputTableRow {
-  printf "$tableColumnFormat" $1 "$(formatNumber $2) KB" "$3%"
-}
-
-# ====================================================================
-# CALCULATE
-# ====================================================================
-
-# ($1:portion, $2:whole) -> percent
-# Work out what percentage of a whole a smaller amount is
-function percent {
-  echo $(bc <<< "scale=2; (($1/$2)*100)")
-}
-
-# ($1:larger, $2:smaller) -> difference
-# Work out by how many bytes a value is smaller than another
-function difference {
-  echo $(bc <<< "scale=3; $1-$2")
-}
-
-# ($1:path) -> bytes
-# Query the file size in bytes of a file
-# EXAMPLE: (/path/to/some_file.txt) -> 11496328
-function sizeInBytes {
-  stat -f %z $1
-}
-
-# ====================================================================
-# CONVERT
-# ====================================================================
-
-# ($1:bytes) -> kilobytes
-# Convert a value in bytes to kilobytes to 3 decimal places, so 1b is
-# 0.001kb
-# EXAMPLE: (1500) -> 1.500
-function toKb {
-  echo $(bc <<< "scale=3; $1/1000")
-}
-
-# ====================================================================
-# FORMAT
-# ====================================================================
-
-# ($1:number) -> formatted
-# Take a number and return a more readable formatted string
-# EXAMPLE: (10000) -> 10,000
-function formatNumber {
-  printf "%'.3f\n" $1
-}
-
-
-# ($1:original, $2:extension, $3:subExtension) -> newFilename
-# Determine a name for a copy of a file to be optimised in place of
-# the original
-# EXAMPLE: (file.jpg, "jpg", "jpegtran") -> "file.jpegtran.jpg"
-function assignNameToCopy {
-  echo $1 | sed -e "s/\.$2/.$3.$2/g"
-}
-
-# ====================================================================
-
-# ($1:fileName, $2:extension, $3:optimiser, $4:optimiserName)
-# Take a file and run a particular optimisation program against it
-function applyOptimisation {
-  $3 $1 $(assignNameToCopy $1 $2 $4) > /dev/null 2>&1
-}
-
-# ($1:fileName)
-# Add the size of an unoptimised file to our running total for
-# all unoptimised files
-function incrementOriginalTotal {
-  originalTotal=$(bc <<< "scale=0; $originalTotal+$(sizeInBytes $1)")
-}
-
-# ($1:fileName)
-# Add the size of an optimised file to our running total for all
-# optimised files
-function incrementOptimisedTotal {
-  optimisedTotal=$(bc <<< "scale=0; $optimisedTotal+$(sizeInBytes $1)")
-}
-
-# ($1:fileName, $2:optimiserName)
-# After each optimiser has been run against copies of a file, keep the
-# smallest file and delete the others
-function selectBestOptimisation {
-  local isSmallestFile=1
-  # Find all files with the name of an optimiser as part of their file
-  # name. These were created when we ran each optimiser in turn.
-  # Sort the results of this search by file size in bytes, in
-  # ascending order
-  for copyName in `find -E $scope -regex '.*(advpng|gifsicle|jpegoptim|jpegtran|optipng|pngcrush|pngout).*' | sort -rn`; do
-    # keep the first (smallest) file
-    if [ $isSmallestFile == 1 ]; then
-      # record it's size before...
-      incrementOriginalTotal $1
-      # ...and after we optimised it
-      incrementOptimisedTotal $copyName
-      # replace the original with the optimised version
-      mv $copyName $1
-      # update our flag
-      isSmallestFile=0
-    else
-      # delete any other less successful optimisation attempts
-      rm $copyName
-    fi
-  done
-}
-
-# ($1:fileName, $2:extension, $3:optimisers)
-# Apply each optimiser available for a type of image, seperately
-# against their own copies of the original file. Then compare the
-# relative successes of each optimiser and choose the one achieving
-# the biggest reduction in file size.
-function optimiseFile {
-  # optimisers is an Array
-  declare -a optimisers=("${!3}")
-  # apply each optimiser to the file
-  for (( i=0 ; i<${#optimisers[@]}; i++ )); do
-    # take the original name of the optimiser from the Array
-    local optimiser="${optimisers[$i]}"
-    # use that to create the name of our bridge function
-    eval local optimiserBridge="${optimiser}Bridge"
-    # optimise the file using this optimiser
-    $optimiserBridge $1 $2
-  done
-  # assess the output of each optimiser
-  selectBestOptimisation $1 $optimiser
-}
-
-# ($1:extension, $2:optimisers)
-function optimiseFilesByType {
-  # optimisers is an Array
-  declare -a optimisers=("${!2}")
-  # optimise each file and output statistics
-  for fileName in `find $scope -name "*.$1"`; do
-    local sizeBefore=$(sizeInBytes $fileName)
-    optimiseFile $fileName $1 optimisers[@]
-    local sizeAfter=$(sizeInBytes $fileName)
-    local bytesRemoved=$(difference $sizeBefore $sizeAfter)
-    outputTableRow $fileName $(toKb $bytesRemoved) $(percent $bytesRemoved $sizeBefore)
-  done
-}
-
-# () -> stdout
-function optimiseFiles {
-  # optimise all file types covered by our optimisers
-  optimiseFilesByType "bmp" bmpOptimisers[@]
-  optimiseFilesByType "gif" gifOptimisers[@]
-  optimiseFilesByType "jpeg" jpegOptimisers[@]
-  optimiseFilesByType "jpg" jpgOptimisers[@]
-  optimiseFilesByType "pcx" pcxOptimisers[@]
-  optimiseFilesByType "png" pngOptimisers[@]
-  optimiseFilesByType "pnm" pnmOptimisers[@]
-  optimiseFilesByType "tga" tgaOptimisers[@]
-  optimiseFilesByType "tiff" tiffOptimisers[@]
-
-  local totalBytesRemoved=$(difference $originalTotal $optimisedTotal)
-  echo $tableBorder
-  outputTableRow "TOTAL" $(toKb $totalBytesRemoved) $(percent $totalBytesRemoved $originalTotal)
-}
-
-# ====================================================================
-# optipng (bmp, gif, png, pnm, tiff)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function optipngCommand {
-  cp $1 $2
-  ${bin}/optipng -quiet -o7 $2
-}
-
-# ($1:fileName, $2:extension)
-function optipngBridge {
-  applyOptimisation $1 $2 optipngCommand "optipng"
-}
-
-# ====================================================================
-# advpng (png)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function advpngCommand {
-  cp $1 $2
-  ${bin}/advpng --quiet --recompress --shrink-insane $2
-}
-
-# ($1:fileName, $2:extension)
-function advpngBridge {
-  applyOptimisation $1 $2 advpngCommand "advpng"
-}
-
-# ====================================================================
-# jpegoptim (jpg, jpeg)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function jpegoptimCommand {
-  cp $1 $2
-  ${bin}/jpegoptim -q --strip-all -t -o $2
-}
-
-# ($1:fileName, $2:extension)
-function jpegoptimBridge {
-  applyOptimisation $1 $2 jpegoptimCommand "jpegoptim"
-}
-
-# ====================================================================
-# pngout (bmp, gif, jpg, jpeg, pcx, png, tga)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function pngoutCommand {
-  ${bin}/pngout -q -y $1 $2
-}
-
-# ($1:fileName, $2:extension)
-function pngoutBridge {
-  applyOptimisation $1 $2 pngoutCommand "pngout"
-}
-
-# ====================================================================
-# pngcrush (png)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function pngcrushCommand {
-  ${bin}/pngcrush -q -rem allb -brute -force -q $1 $2
-}
-
-# ($1:fileName, $2:extension)
-function pngcrushBridge {
-  applyOptimisation $1 $2 pngcrushCommand "pngcrush"
-}
-
-# ====================================================================
-# gifsicle (gif)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function gifsicleCommand {
-  ${bin}/gifsicle -O3 $1 -o $2
-}
-
-# ($1:fileName, $2:extension)
-function gifsicleBridge {
-  applyOptimisation $1 $2 gifsicleCommand "gifsicle"
-}
-
-# ====================================================================
-# jpegtran (jpg, jpeg)
-# ====================================================================
-
-# ($1:fileName, $2:copyName)
-function jpegtranCommand {
-  ${bin}/jpegtran -copy none -optimize -verbose -outfile $2 $1
-}
-
-# ($1:fileName, $2:extension)
-function jpegtranBridge {
-  applyOptimisation $1 $2 jpegtranCommand "jpegtran"
-}
-
-# ====================================================================
-# Initialise
-# ====================================================================
-
-# path to optimiser library
-bin="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/lib"
+if [ null == `osascript -e "$APPLESCRIPT"` ]; then
+  errorLog "ImageOptim is not installed (http://imageoptim.com)"
+  exit 1
+fi
 
 # path to image directory we should optimise
-scope=$1
+imgPath=$1
 
-# width of results output table
-tableWidth=73
+# if path is not set
+if [ -z "$imgPath" ]; then
+  errorLog "usage:\n  imageOptim ./path/to/directory"
+  exit 1
+fi
 
-# dividing line between head and foot of table
-tableBorder="-------------------------------------------------------------------------"
-
-# width and alignment of table columns
-tableColumnFormat=" %-40s %20s %10s\n"
-
-# define which optimisers can be run on each kind of file
-bmpOptimisers=(optipng pngout)
-gifOptimisers=(gifsicle)
-jpegOptimisers=(jpegoptim jpegtran)
-jpgOptimisers=(jpegoptim jpegtran)
-pcxOptimisers=(pngout)
-pngOptimisers=(advpng optipng pngcrush pngout)
-pnmOptimisers=(optipng)
-tgaOptimisers=(pngout)
-tiffOptimisers=(optipng)
-
-# size of files before optimisation
-originalTotal=0
-
-# size of files after optimisation
-optimisedTotal=0
-
-# if it's a valid directory
-if [ -d $scope ]; then
-  outputTableHeader
-  optimiseFiles
+# if that path resolves correctly to a directory
+if [ -d $imgPath ]; then
+  # find all images within it
+  for imgName in `find -E $imgPath -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`; do
+    # and pass them to the app
+    open -a ImageOptim.app $imgName
+  done
 else
-  outputError "Could not find $scope"
+  errorLog "Could not find $imgPath"
   exit 1
 fi
