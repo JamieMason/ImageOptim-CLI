@@ -1,0 +1,32 @@
+{
+  "name": "ImageOptim-CLI",
+  "author": "Jamie Mason @GotNoSugarBaby",
+  "description": "A Command Line version of ImageOptim for the Mac.",
+  "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
+  "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
+  "main": "./imageOptim",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
+  },
+  "bin": {
+    "imageOptim": "./imageOptim"
+  },
+  "keywords": [
+    "advpng",
+    "build",
+    "compress",
+    "compression",
+    "gifsicle",
+    "ImageOptim",
+    "images",
+    "jpegoptim",
+    "jpegtran",
+    "optimization",
+    "optimize",
+    "optipng",
+    "pngcrush",
+    "pngout"
+  ]
+}
