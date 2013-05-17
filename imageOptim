@@ -30,6 +30,22 @@ function errorLog {
   echo "\033[0m"
 }
 
+function psg2 ()
+{
+    # don't grep -i. Script is imageOptim, app is ImageOptim
+    printf $(ps -aef | grep  "[${1:0:1}]${1:1}" | wc -l)
+}
+
+function waiting ()
+{
+  # wait a couple of seconds for the processes to kick off
+  sleep 2
+
+  while [[ "$(psg2 "ImageOptim")" > "1" ]]; do
+    sleep 1
+  done
+}
+
 # Check if ImageOptim is installed
 APPLESCRIPT=`cat <<EOF
 try
@@ -47,7 +63,7 @@ if [ null == `osascript -e "$APPLESCRIPT"` ]; then
 fi
 
 # path to image directory we should optimise
-imgPath=$1
+imgPath="$1"
 
 # if path is not set
 if [ -z "$imgPath" ]; then
@@ -56,12 +72,28 @@ if [ -z "$imgPath" ]; then
 fi
 
 # if that path resolves correctly to a directory
-if [ -d $imgPath ]; then
+if [ -d "$imgPath" ]; then
   # find all images within it
-  for imgName in `find -E $imgPath -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`; do
-    # and pass them to the app
-    open -a ImageOptim.app $imgName
-  done
+
+  # get number of files
+  fileCount=$(find -E "$imgPath" -iregex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' | wc -l)
+
+  # use iregex for case-insensitive
+  # print null terminated path, pass to xargs in null terminating mode, then pass to ImageOptim.app
+  # could use the -W flag to the open cmd, meaning the script will wait until the user closes the
+  # ImageOptim window, but it doesn't auto close after completing, so ... up to you
+  $(find -E "$imgPath" -iregex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' -print0 | xargs -0 open -a ImageOptim.app)
+
+  # a wait loop so we can get the time taken
+  startTime=$(date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s")
+  $(waiting)
+  endTime=$(date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s")
+
+  # get time diff minus the extra second we slept in waiting()
+  let diff=endTime-startTime-1
+
+  echo "Optimised $fileCount image(s) in $diff seconds" | xargs
+
 else
   errorLog "Could not find $imgPath"
   exit 1
