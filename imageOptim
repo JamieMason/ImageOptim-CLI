@@ -56,11 +56,11 @@ if [ -z "$imgPath" ]; then
 fi
 
 # if that path resolves correctly to a directory
-if [ -d $imgPath ]; then
+if [ -d "$imgPath" ]; then
   # find all images within it
-  for imgName in `find -E $imgPath -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`; do
+  for imgName in "$(find -E "$imgPath" -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)')"; do
     # and pass them to the app
-    open -a ImageOptim.app $imgName
+    open -a ImageOptim.app "$imgName"
   done
 else
   errorLog "Could not find $imgPath"
