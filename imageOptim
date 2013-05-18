@@ -23,42 +23,32 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# ($1:message) -> stdout
-# Output a message in red with a cross icon by it
-function errorLog {
-  printf "\e[31m✘ $1"
-  echo "\033[0m"
-}
-
-# Check if ImageOptim is installed
-APPLESCRIPT=`cat <<EOF
-try
-  tell application "Finder"
-    return name of application file id "net.pornel.ImageOptim"
-  end tell
-on error err_msg number err_num
-  return null
-end try
-EOF`
-
-if [ null == `osascript -e "$APPLESCRIPT"` ]; then
-  errorLog "ImageOptim is not installed (http://imageoptim.com)"
-  exit 1
-fi
-
 # path to image directory we should optimise
 imgPath=$1
 
+# path to this script
+cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# ($1:message): Display a red error message and quit
+function error {
+  printf "\e[31m✘ $1"
+  echo "\033[0m"
+  exit 1
+}
+
+# Check if ImageOptim is installed
+if [ "ImageOptim.app" != `osascript "$cliPath/isImageOptimInstalled.applescript"` ]; then
+  error "ImageOptim is not installed (http://imageoptim.com)"
+fi
+
 # if path is not set
 if [ -z "$imgPath" ]; then
-  errorLog "usage:\n  imageOptim ./path/to/directory"
-  exit 1
+  error "usage:\n  imageOptim ./path/to/directory"
 fi
 
 # if path is not a directory
 if [ ! -d $imgPath ]; then
-  errorLog "Could not find $imgPath"
-  exit 1
+  error "Could not find $imgPath"
 fi
 
 # find all images
