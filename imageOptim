@@ -47,12 +47,11 @@ if [ -z "$imgPath" ]; then
 fi
 
 # quit if imgPath is not a directory
-if [ ! -d $imgPath ]; then
+if [ ! -d "$imgPath" ]; then
   error "Could not find $imgPath"
 fi
 
-# find all images inside imgPath
-for imgName in `find -E $imgPath -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`; do
-  # pass each image to the app
-  open -a ImageOptim.app $imgName
+# find all images inside imgPath, handling whitespace
+find -E "$imgPath" -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' -print0 | while IFS= read -r -d $'\0' img; do
+  open -a ImageOptim.app "$img"
 done
