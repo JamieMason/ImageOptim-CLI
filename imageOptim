@@ -36,22 +36,22 @@ function error {
   exit 1
 }
 
-# Check if ImageOptim is installed
+# quit if ImageOptim is not installed
 if [ "ImageOptim.app" != `osascript "$cliPath/isImageOptimInstalled.applescript"` ]; then
   error "ImageOptim is not installed (http://imageoptim.com)"
 fi
 
-# if path is not set
+# quit if imgPath is not set
 if [ -z "$imgPath" ]; then
   error "usage:\n  imageOptim ./path/to/directory"
 fi
 
-# if path is not a directory
+# quit if imgPath is not a directory
 if [ ! -d $imgPath ]; then
   error "Could not find $imgPath"
 fi
 
-# find all images
+# find all images inside imgPath
 for imgName in `find -E $imgPath -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`; do
   # pass each image to the app
   open -a ImageOptim.app $imgName
