@@ -32,6 +32,9 @@ cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # how long we will wait before checking again if ImageOptim.app is busy
 isBusyIntervalLength=1
 
+# image types supported by ImageOptim.app
+fileTypes='.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'
+
 # ($1:message): Display a red error message and quit
 function error {
   printf "\e[31m✘ $1"
@@ -73,12 +76,12 @@ function getTimeSpent {
 
 # (): How many images are in the directory we're about to process?
 function getImgCount {
-  echo $(find -E "$imgPath" -iregex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' | wc -l)
+  echo $(find -E "$imgPath" -iregex $fileTypes | wc -l)
 }
 
 # (): Send all images to ImageOptim.app for processing
 function queueImgs {
-  find -E "$imgPath" -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' -print0 | while IFS= read -r -d $'\0' img; do
+  find -E "$imgPath" -regex $fileTypes -print0 | while IFS= read -r -d $'\0' img; do
     open -a ImageOptim.app "$img"
   done
 }
