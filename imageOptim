@@ -87,7 +87,7 @@ function queueImgs {
 }
 
 # quit if ImageOptim is not installed
-if [ "ImageOptim.app" != `osascript "$cliPath/isImageOptimInstalled.applescript"` ]; then
+if [ "ImageOptim.app" != `osascript "$cliPath/isImageOptimInstalled"` ]; then
   error "ImageOptim is not installed (http://imageoptim.com)"
 fi
 

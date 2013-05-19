@@ -5,13 +5,14 @@
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "main": "./imageOptim",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
   },
   "bin": {
-    "imageOptim": "./imageOptim"
+    "imageOptim": "./imageOptim",
+    "isImageOptimInstalled": "./isImageOptimInstalled"
   },
   "keywords": [
     "advpng",
