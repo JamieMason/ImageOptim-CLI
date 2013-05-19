@@ -29,11 +29,58 @@ imgPath=$1
 # path to this script
 cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# how long we will wait before checking again if ImageOptim.app is busy
+isBusyIntervalLength=1
+
 # ($1:message): Display a red error message and quit
 function error {
   printf "\e[31m✘ $1"
   echo "\033[0m"
   exit 1
+}
+
+# ($1:message): Display a message in green with a tick by it
+function success {
+  printf "\e[32m✔ ${1}"
+  echo "\033[0m"
+}
+
+# (): Get a timestamp for the current time
+function now {
+  echo $(date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s")
+}
+
+# ($1:appName): Get the number of processes in use by an Application
+function countProcesses {
+  printf $(ps -aef | grep  "[${1:0:1}]${1:1}" | wc -l)
+}
+
+# (): Sleep until ImageOptim.app is done optimising images
+function waitForImageOptim {
+  # wait for ImageOptim to spawn a few processes
+  sleep 2
+  # wait until those processes have completed
+  while [[ "$(countProcesses "ImageOptim")" > "1" ]]; do
+    sleep $isBusyIntervalLength
+  done
+}
+
+# (): How long did ImageOptim.app take to process the images?
+function getTimeSpent {
+  let timeSpent=endTime-startTime-$isBusyIntervalLength
+  echo $timeSpent
+}
+
+# (): How many images are in the directory we're about to process?
+function getImgCount {
+  echo $(find -E "$imgPath" -iregex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' | wc -l)
+}
+
+# (): Send all images to ImageOptim.app for processing
+function queueImgs {
+  find -E "$imgPath" -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' -print0 | while IFS= read -r -d $'\0' img; do
+    open -a ImageOptim.app "$img"
+  done
 }
 
 # quit if ImageOptim is not installed
@@ -51,7 +98,9 @@ if [ ! -d "$imgPath" ]; then
   error "Could not find $imgPath"
 fi
 
-# find all images inside imgPath, handling whitespace
-find -E "$imgPath" -regex '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)' -print0 | while IFS= read -r -d $'\0' img; do
-  open -a ImageOptim.app "$img"
-done
+# begin
+startTime=$(now)
+$(queueImgs)
+$(waitForImageOptim)
+endTime=$(now)
+success "Optimised $(getImgCount) images in $(getTimeSpent) seconds" | xargs
