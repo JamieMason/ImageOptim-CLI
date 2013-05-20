@@ -1,15 +1,20 @@
-ImageOptim-CLI
-==============
+# ImageOptim-CLI
 
-**A Command Line launcher for [ImageOptim](http://imageoptim.com/) for the Mac.**
+ImageOptim-CLI controls [ImageOptim](http://imageoptim.com) from the command line, to allow lossless optimisation of images to become part of your automated build process.
 
-ImageOptim-CLI is a Shell Script which controls ImageOptim.app from the command line.
+## Installation
+
+    $ sudo npm install -g imageoptim-cli
 
 ## Usage
 
     $ imageOptim /path/to/images
 
-ImageOptim.app will be launched and begin optimising all images in that directory.
+ImageOptim-CLI launches ImageOptim and waits while it optimises all images in that directory.
+
+## Grunt plugin
+
+**[JamieMason/grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim)** is the [Grunt](http://gruntjs.com) plugin for imageoptim-cli.
 
 ## Similar Projects
 
