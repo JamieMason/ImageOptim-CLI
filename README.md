@@ -1,16 +1,14 @@
 # ImageOptim-CLI
 
-ImageOptim-CLI controls [ImageOptim](http://imageoptim.com) from the command line, to allow lossless optimisation of images to become part of your automated build process.
-
-## Installation
-
-    $ sudo npm install -g imageoptim-cli
-
-## Usage
+Controls [ImageOptim](http://imageoptim.com) from the command line to make lossless optimisation of images part of your automated build process.
 
     $ imageOptim /path/to/images
 
 ImageOptim-CLI launches ImageOptim and waits while it optimises all images in that directory.
+
+## Installation
+
+    $ sudo npm install -g imageoptim-cli
 
 ## Grunt plugin
 
