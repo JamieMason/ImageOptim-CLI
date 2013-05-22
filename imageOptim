@@ -50,7 +50,7 @@ function success {
 
 # (): Get a timestamp for the current time
 function now {
-  echo $(date -j -f "%a %b %d %T %Z %Y" "`date`" "+%s")
+  date +"%s"
 }
 
 # ($1:appName): Get the number of processes in use by an Application
