@@ -5,14 +5,15 @@
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "main": "./imageOptim",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
   },
   "bin": {
     "imageOptim": "./imageOptim",
-    "isImageOptimInstalled": "./isImageOptimInstalled"
+    "isImageOptimInstalled": "./isImageOptimInstalled",
+    "isImageAlphaInstalled": "./isImageAlphaInstalled"
   },
   "keywords": [
     "advpng",
@@ -21,6 +22,7 @@
     "compression",
     "gifsicle",
     "ImageOptim",
+    "ImageAlpha",
     "images",
     "jpegoptim",
     "jpegtran",
