@@ -177,6 +177,8 @@ fi
 # begin
 startTime=$(now)
 
+echo "Processing $(getImgCount) images..."
+
 if [ "true" == $runImageAlpha ]; then
   $(populateImageAlphaQueue)
   $(waitForImageAlpha)
@@ -191,4 +193,4 @@ if [ "true" == $quitOnComplete ]; then
   osascript -e 'tell application "ImageOptim" to quit'
 fi
 
-success "Optimised $(getImgCount) images in $(getTimeSpent) seconds" | xargs
+success "Finished in $(getTimeSpent) seconds" | xargs
