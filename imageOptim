@@ -73,6 +73,16 @@ function waitForImageOptim {
   done
 }
 
+# (): Sleep until ImageAlpha.app is done optimising images
+function waitForImageAlpha {
+  # wait for ImageAlpha to spawn a few processes
+  sleep 2
+  # wait until those processes have completed
+  while [[ "$(countProcesses "ImageAlpha")" > "1" ]]; do
+    sleep $isBusyIntervalLength
+  done
+}
+
 # (): How long did ImageOptim.app take to process the images?
 function getTimeSpent {
   let timeSpent=endTime-startTime-$isBusyIntervalLength
@@ -85,9 +95,16 @@ function getImgCount {
 }
 
 # (): Send all images to ImageOptim.app for processing
-function queueImgs {
+function populateImageOptimQueue {
   find -E "$imgPath" -regex $fileTypes -print0 | while IFS= read -r -d $'\0' img; do
     open -g -a ImageOptim.app "$img"
+  done
+}
+
+# (): Send all images to ImageOptim.app for processing
+function populateImageAlphaQueue {
+  find -E "$imgPath" -regex $imageAlphaFileTypes -print0 | while IFS= read -r -d $'\0' img; do
+    open -g -a ImageAlpha.app "$img"
   done
 }
 
@@ -148,12 +165,15 @@ if [ "true" == $runImageAlpha ]; then
   if [ "ImageAlpha.app" != `osascript "$cliPath/isImageAlphaInstalled"` ]; then
     error "ImageAlpha.app is not installed (http://pngmini.com)"
   fi
-  # @TODO: run ImageAlpha.app
 fi
 
 # begin
 startTime=$(now)
-$(queueImgs)
+if [ "true" == $runImageAlpha ]; then
+  $(populateImageAlphaQueue)
+  $(waitForImageAlpha)
+fi
+$(populateImageOptimQueue)
 $(waitForImageOptim)
 endTime=$(now)
 success "Optimised $(getImgCount) images in $(getTimeSpent) seconds" | xargs
