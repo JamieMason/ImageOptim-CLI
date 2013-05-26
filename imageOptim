@@ -23,17 +23,22 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# path to image directory we should optimise
-imgPath=$1
+# (): Display version number
+function version {
+  echo "1.2.0"
+}
 
-# path to this script
-cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# how long we will wait before checking again if ImageOptim.app is busy
-isBusyIntervalLength=1
-
-# image types supported by ImageOptim.app
-fileTypes='.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'
+# (): Display usage information
+function usage {
+  echo "Usage: imageOptim [options]"
+  echo ""
+  echo "Options:"
+  echo ""
+  echo "  -d, --directory     directory of images to process"
+  echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
+  echo "  -h, --help          output usage information"
+  echo "  -v, --version       output the version number"
+}
 
 # ($1:message): Display a red error message and quit
 function error {
@@ -86,19 +91,64 @@ function queueImgs {
   done
 }
 
-# quit if ImageOptim is not installed
-if [ "ImageOptim.app" != `osascript "$cliPath/isImageOptimInstalled"` ]; then
-  error "ImageOptim is not installed (http://imageoptim.com)"
-fi
+# path to image directory we should optimise
+imgPath=0
 
-# quit if imgPath is not set
-if [ -z "$imgPath" ]; then
-  error "usage:\n  imageOptim ./path/to/directory"
-fi
+# whether to run ImageAlpha.app before running ImageOptim.app
+runImageAlpha="false"
+
+# path to this script
+cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# how long we will wait before checking again if ImageOptim.app is busy
+isBusyIntervalLength=1
+
+# image types supported by ImageOptim.app
+fileTypes='.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'
+
+# image types supported by ImageAlpha.app
+imageAlphaFileTypes='.*(png)'
+
+# Handle Inputs
+while [ "$1" != "" ]; do
+  case $1 in
+    -d | --directory )
+      shift;
+      imgPath=$1
+      ;;
+    -a | --image-alpha )
+      runImageAlpha="true"
+      ;;
+    -h | --help )
+      usage;
+      exit 0
+      ;;
+    -v | --version )
+      version;
+      exit 0
+      ;;
+    * )
+    usage
+    exit 1
+  esac
+  shift
+done
 
 # quit if imgPath is not a directory
 if [ ! -d "$imgPath" ]; then
-  error "Could not find $imgPath"
+  error "Could not find directory $imgPath"
+fi
+
+# quit if ImageOptim is not installed
+if [ "ImageOptim.app" != `osascript "$cliPath/isImageOptimInstalled"` ]; then
+  error "ImageOptim.app is not installed (http://imageoptim.com)"
+fi
+
+if [ "true" == $runImageAlpha ]; then
+  if [ "ImageAlpha.app" != `osascript "$cliPath/isImageAlphaInstalled"` ]; then
+    error "ImageAlpha.app is not installed (http://pngmini.com)"
+  fi
+  # @TODO: run ImageAlpha.app
 fi
 
 # begin
