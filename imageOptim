@@ -25,7 +25,7 @@
 
 # (): Display version number
 function version {
-  echo "1.2.0"
+  echo "1.3.0"
 }
 
 # (): Display usage information
@@ -36,6 +36,7 @@ function usage {
   echo ""
   echo "  -d, --directory     directory of images to process"
   echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
+  echo "  -q, --quit          quit ImageOptim.app when complete"
   echo "  -h, --help          output usage information"
   echo "  -v, --version       output the version number"
 }
@@ -114,6 +115,9 @@ imgPath=0
 # whether to run ImageAlpha.app before running ImageOptim.app
 runImageAlpha="false"
 
+# whether to quit ImageOptim.app after processing images
+quitOnComplete="false"
+
 # path to this script
 cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -135,6 +139,9 @@ while [ "$1" != "" ]; do
       ;;
     -a | --image-alpha )
       runImageAlpha="true"
+      ;;
+    -q | --quit )
+      quitOnComplete="true"
       ;;
     -h | --help )
       usage;
@@ -169,12 +176,19 @@ fi
 
 # begin
 startTime=$(now)
+
 if [ "true" == $runImageAlpha ]; then
   $(populateImageAlphaQueue)
   $(waitForImageAlpha)
   osascript -e 'tell application "ImageAlpha" to quit'
 fi
+
 $(populateImageOptimQueue)
 $(waitForImageOptim)
 endTime=$(now)
+
+if [ "true" == $quitOnComplete ]; then
+  osascript -e 'tell application "ImageOptim" to quit'
+fi
+
 success "Optimised $(getImgCount) images in $(getTimeSpent) seconds" | xargs
