@@ -172,6 +172,7 @@ startTime=$(now)
 if [ "true" == $runImageAlpha ]; then
   $(populateImageAlphaQueue)
   $(waitForImageAlpha)
+  osascript -e 'tell application "ImageAlpha" to quit'
 fi
 $(populateImageOptimQueue)
 $(waitForImageOptim)
