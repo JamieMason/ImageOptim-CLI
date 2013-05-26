@@ -1,18 +1,27 @@
 # ImageOptim-CLI
 
-Controls [ImageOptim](http://imageoptim.com) from the command line to make lossless optimisation of images part of your automated build process.
+Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com) to make lossless optimisation of images part of your automated build process.
 
-## Usage
+## Example
 
-    $ imageOptim /path/to/images
-
-ImageOptim-CLI launches ImageOptim and waits while all images have been processed.
-
-    √ Optimised 44 images in 38 seconds
+    $ imageOptim --directory /path/to/images
+	Processing 23 images...
+	✔ Finished in 212 seconds
 
 ## Installation
 
     $ sudo npm install -g imageoptim-cli
+    
+## Usage
+
+	Usage: imageOptim [options]
+	
+	Options:
+	
+	  -d, --directory     directory of images to process
+	  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
+	  -h, --help          output usage information
+	  -v, --version       output the version number
 
 ## Grunt Plugin
 
