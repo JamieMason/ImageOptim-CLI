@@ -65,22 +65,12 @@ function countProcesses {
   printf $(ps -aef | grep  "[${1:0:1}]${1:1}" | wc -l)
 }
 
-# (): Sleep until ImageOptim.app is done optimising images
-function waitForImageOptim {
-  # wait for ImageOptim to spawn a few processes
+# ($1:appName): Sleep until app is done optimising images
+function waitFor {
+  # wait for App to spawn a few processes
   sleep 2
   # wait until those processes have completed
-  while [[ "$(countProcesses "ImageOptim")" > "1" ]]; do
-    sleep $isBusyIntervalLength
-  done
-}
-
-# (): Sleep until ImageAlpha.app is done optimising images
-function waitForImageAlpha {
-  # wait for ImageAlpha to spawn a few processes
-  sleep 2
-  # wait until those processes have completed
-  while [[ "$(countProcesses "ImageAlpha")" > "1" ]]; do
+  while [[ "$(countProcesses "$1")" > "1" ]]; do
     sleep $isBusyIntervalLength
   done
 }
@@ -198,12 +188,13 @@ echo "Processing $(getImgCount) images..."
 
 if [ "true" == $runImageAlpha ]; then
   $(populateImageAlphaQueue)
-  $(waitForImageAlpha)
+  $(waitFor "ImageAlpha")
   osascript -e 'tell application "ImageAlpha" to quit'
 fi
 
 $(populateImageOptimQueue)
-$(waitForImageOptim)
+$(waitFor "ImageOptim")
+
 endTime=$(now)
 
 if [ "true" == $quitOnComplete ]; then
