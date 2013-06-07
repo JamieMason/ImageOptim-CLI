@@ -36,6 +36,7 @@ function usage {
   echo ""
   echo "  -d, --directory     directory of images to process"
   echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
+  echo "  -j, --jpeg-mini     process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
   echo "  -q, --quit          quit ImageOptim.app when complete"
   echo "  -h, --help          output usage information"
   echo "  -v, --version       output the version number"
@@ -115,6 +116,9 @@ imgPath=0
 # whether to run ImageAlpha.app before running ImageOptim.app
 runImageAlpha="false"
 
+# whether to run JPEGmini.app
+runJPEGmini="false"
+
 # whether to quit ImageOptim.app after processing images
 quitOnComplete="false"
 
@@ -139,6 +143,9 @@ while [ "$1" != "" ]; do
       ;;
     -a | --image-alpha )
       runImageAlpha="true"
+      ;;
+    -j | --jpeg-mini )
+      runJPEGmini="true"
       ;;
     -q | --quit )
       quitOnComplete="true"
@@ -171,6 +178,12 @@ fi
 if [ "true" == $runImageAlpha ]; then
   if [ "ImageAlpha.app" != `osascript "$cliPath/isImageAlphaInstalled"` ]; then
     error "ImageAlpha.app is not installed (http://pngmini.com)"
+  fi
+fi
+
+if [ "true" == $runJPEGmini ]; then
+  if [ "JPEGmini.app" != `osascript "$cliPath/isJPEGminiInstalled"` ]; then
+    error "JPEGmini.app is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
   fi
 fi
 
