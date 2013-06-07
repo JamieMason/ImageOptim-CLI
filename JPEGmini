@@ -27,7 +27,7 @@ on optimise_directory(dirPath)
     end tell
     tell application "System Events"
       tell process "JPEGmini"
-        click menu item "Open…"  of menu 1 of menu bar item "File"  of menu bar 1
+        click menu item "Open…" of menu 1 of menu bar item "File" of menu bar 1
         keystroke "g" using {command down, shift down}
         keystroke dirPath
         keystroke return
@@ -42,6 +42,21 @@ on optimise_directory(dirPath)
   end try
 end optimise_directory
 
+on waitForApp()
+  tell application "System Events"
+    repeat
+      set PID to unix id of process "JPEGmini"
+      set getCpuPercent to "ps aux | grep " & PID & " | grep -v grep | awk '{print $3}'"
+      set cpuPercent to (do shell script getCpuPercent) as number
+      log cpuPercent as string
+      if (cpuPercent) < 1 then
+        exit repeat
+      end if
+      delay 2
+    end repeat
+  end tell
+end waitForApp
+
 on run argv
   set command to item 1 of argv
   if command is "check" then
@@ -51,5 +66,6 @@ on run argv
   else if command is "run" then
     set dirPath to item 2 of argv
     optimise_directory(dirPath)
+    waitForApp()
   end if
 end run
