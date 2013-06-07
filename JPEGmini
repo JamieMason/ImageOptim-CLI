@@ -1,0 +1,57 @@
+#!/bin/osascript
+
+on guiScriptIsEnabled()
+  tell application "System Events"
+    set isEnabled to UI elements enabled
+  end tell
+  return isEnabled
+end guiScriptIsEnabled
+
+on promptToEnableGuiScript()
+  tell application "System Preferences"
+    activate
+    set current pane to pane id "com.apple.preference.universalaccess"
+    set message to ""
+    set message to message & "To automate JPEGmini we need to enable GUI Scripting" & return
+    set message to message & return
+    set message to message & "    • Check \"Enable access for assistive devices\"" & return
+    set message to message & "    • Run ImageOptim-CLI again" & return
+    set padding to "                                    "
+    set buttonLabel to "." & padding & "Continue" & padding & "."
+    display dialog message with title "ImageOptim-CLI" with icon 1 buttons {buttonLabel} default button 1
+  end tell
+end promptToEnableGuiScript
+
+on optimise_directory(dirPath)
+  try
+    tell application "JPEGmini"
+      activate
+      delay 2
+      activate
+    end tell
+    tell application "System Events"
+      tell process "JPEGmini"
+        click menu item "Open…"  of menu 1 of menu bar item "File"  of menu bar 1
+        keystroke "g" using {command down, shift down}
+        keystroke dirPath
+        keystroke return
+        delay 1
+        click button "Open" of sheet 1 of window "JPEGmini"
+      end tell
+    end tell
+    return true
+    on error error_message
+      return false
+  end try
+end optimise_directory
+
+on run argv
+  set dirPath to item 1 of argv
+  if guiScriptIsEnabled() then
+    optimise_directory(dirPath)
+    return 1
+  else
+    promptToEnableGuiScript()
+    return 0
+  end if
+end run
