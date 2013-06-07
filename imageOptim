@@ -195,6 +195,10 @@ fi
 $(populateImageOptimQueue)
 $(waitFor "ImageOptim")
 
+if [ "true" == $runJPEGmini ]; then
+  `osascript "$cliPath/JPEGmini" run $imgPath` > /dev/null 2>&1
+fi
+
 endTime=$(now)
 
 if [ "true" == $quitOnComplete ]; then
