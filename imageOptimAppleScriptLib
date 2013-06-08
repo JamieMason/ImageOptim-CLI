@@ -1,0 +1,155 @@
+#!/bin/osascript
+
+-- Using the Application's bundle id, get the .app file name if installed
+-- eg. "net.pornel.ImageOptim" -> "ImageOptim.app"
+on hasAppInstalled(appFileId)
+  try
+    tell application "Finder"
+      return name of application file id appFileId
+    end tell
+  on error err_msg number err_num
+    return "NOT_INSTALLED"
+  end try
+end hasAppInstalled
+
+
+-- Return true is GUIScript is enabled, or false
+on hasGuiScript()
+  tell application "System Events"
+    set isEnabled to UI elements enabled
+  end tell
+  return isEnabled as boolean
+end hasGuiScript
+
+
+-- Open System Preferences on the Accessibility view for a user to enable GUIScript
+on openAccessibilityPreferences()
+  tell application "System Preferences"
+    activate
+    set current pane to pane id "com.apple.preference.universalaccess"
+  end tell
+end openAccessibilityPreferences
+
+
+-- Feed a folder of images into JPEGmini
+on runJpegMini(imgPath)
+  try
+    tell application "JPEGmini"
+
+      -- start the app
+      activate
+
+      -- let it boot up
+      delay 2
+
+      -- ensure it still has focus
+      activate
+
+    end tell
+
+    tell application "System Events"
+      tell process "JPEGmini"
+
+        -- Navigate to the File > Open menu
+        click menu item "Open…" of menu 1 of menu bar item "File" of menu bar 1
+
+        -- command+shift+g in Finder lets us enter file paths direct
+        keystroke "g" using {command down, shift down}
+
+        -- enter the path to our folder of images
+        keystroke imgPath
+
+        -- and navigate to it
+        keystroke return
+
+        -- let Finder resolve the path
+        delay 1
+
+        -- start JPEGmini off optimising the folder
+        click button "Open" of sheet 1 of window "JPEGmini"
+
+        -- report success
+        return true
+
+      end tell
+    end tell
+
+    -- report success
+    return true
+
+    on error error_message
+
+      -- report failure
+      return false
+
+  end try
+end runJpegMini
+
+
+-- Watch app until it's finished working with our folder
+on waitFor(processName)
+  tell application "System Events"
+    repeat
+
+      -- get a process id we can pass to `ps`
+      set PID to unix id of process processName
+
+      -- filter active process output to just JPEGmini, then to just the % CPU
+      set getCpuPercent to "ps aux | grep " & PID & " | grep -v grep | awk '{print $3}'"
+
+      -- convert the terminal's string output to a number
+      set cpuPercent to (do shell script getCpuPercent) as number
+
+      -- give the app a little time to work
+      delay 2
+
+      -- if the app is idle
+      if (cpuPercent) < 1 then
+
+        -- we think it's finished
+        exit repeat
+
+      end if
+
+      -- (implied else: by not exiting we repeat again)
+
+    end repeat
+  end tell
+end waitFor
+
+
+-- handle input from terminal
+on run argv
+
+  -- the first option should always be the command to run
+  set command to item 1 of argv
+
+  -- in the case of JPEGmini, we need to know if GUIScript is enabled...
+  if command is "hasAppInstalled" then
+
+    -- we expect the 2nd argument to be the application's bundle id
+    set bundleId to item 2 of argv
+
+    return hasAppInstalled(bundleId)
+
+  -- in the case of JPEGmini, we need to know if GUIScript is enabled...
+  if command is "hasGuiScript" then
+    return hasGuiScript()
+
+  -- ...and if it isn't, help the user find where to go enable it
+  else if command is "openAccessibilityPreferences" then
+    openAccessibilityPreferences()
+
+  -- process a directory using JPEGmini
+  else if command is "runJpegMini" then
+
+    -- we expect the 2nd argument to be the path
+    set imgPath to item 2 of argv
+
+    -- keep the shell script waiting until JPEGmini has finished
+    runJpegMini(imgPath)
+    waitFor("JPEGmini")
+
+  end if
+end run
+
