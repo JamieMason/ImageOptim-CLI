@@ -7,7 +7,7 @@ on run_jpegmini(imgPath, appName)
       activate
 
       -- let it boot up
-      delay 2
+      delay 3
 
       -- ensure it still has focus
       activate
@@ -19,6 +19,9 @@ on run_jpegmini(imgPath, appName)
 
         -- Navigate to the File > Open menu
         click menu item "Open…" of menu 1 of menu bar item "File" of menu bar 1
+
+        -- let Finder spawn the browse dialog
+        delay 1
 
         -- command+shift+g in Finder lets us enter file paths direct
         keystroke "g" using {command down, shift down}
