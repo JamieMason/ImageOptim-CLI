@@ -1,12 +1,12 @@
 # ImageOptim-CLI
 
-Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com) to make lossless optimisation of images part of your automated build process.
+Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com) to make lossless optimisation of images part of your automated build process. Version 1.4 will soon also bring support for automating [JPEGmini for Mac](http://jpegmini.com/mac).
 
 ## Example
 
     $ imageOptim --directory /path/to/images
-	Processing 23 images...
-	✔ Finished in 212 seconds
+	  Processing 23 images...
+	  ✔ Finished in 212 seconds
 
 ## Installation
 
@@ -14,14 +14,34 @@ Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com
     
 ## Usage
 
-	Usage: imageOptim [options]
-	
-	Options:
-	
-	  -d, --directory     directory of images to process
-	  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
-	  -h, --help          output usage information
-	  -v, --version       output the version number
+    Usage: imageOptim [options]
+
+    Options:
+
+      -d, --directory     directory of images to process
+      -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
+      -q, --quit          quit ImageOptim.app when complete
+      -h, --help          output usage information
+      -e, --examples      output usage examples
+      -v, --version       output the version number
+
+## Examples
+
+    Run ImageOptim
+    $ imageOptim -d path/to/images
+    $ imageOptim --directory path/to/images
+
+    Run ImageOptim then quit it when finished
+    $ imageOptim -q -d path/to/images
+    $ imageOptim --quit --directory path/to/images
+
+    Run ImageAlpha then ImageOptim
+    $ imageOptim -a -d path/to/images
+    $ imageOptim --image-alpha --directory path/to/images
+
+    Run ImageAlpha then ImageOptim then quit ImageOptim when finished
+    $ imageOptim -q -a -d path/to/images
+    $ imageOptim --quit --image-alpha --directory path/to/images
 
 ## Grunt Plugin
 
@@ -30,7 +50,3 @@ Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com
 ## Credits
 
 ImageOptim-CLI is the work of [Jamie Mason](https://github.com/JamieMason) and [James Stout](https://github.com/jamesstout). It extends [PorneL](https://github.com/pornel)'s brilliant [ImageOptim](https://github.com/pornel/ImageOptim) GUI Application for the Mac.
-
-## Similar Tools
-
-Another web optimisation tool is [JamieMason/Unreadable](https://github.com/JamieMason/Unreadable), a CSS-aware HTML minifier and optimizer for the command line.

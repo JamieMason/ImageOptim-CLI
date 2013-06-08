@@ -39,6 +39,7 @@ function usage {
   echo "  -j, --jpeg-mini     process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
   echo "  -q, --quit          quit ImageOptim.app when complete"
   echo "  -h, --help          output usage information"
+  echo "  -e, --examples      output usage examples"
   echo "  -v, --version       output the version number"
 }
 
@@ -142,6 +143,10 @@ while [ "$1" != "" ]; do
       ;;
     -h | --help )
       usage;
+      exit 0
+      ;;
+    -e | --examples )
+      examples;
       exit 0
       ;;
     -v | --version )
