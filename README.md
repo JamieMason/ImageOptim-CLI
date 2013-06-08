@@ -1,6 +1,6 @@
 # ImageOptim-CLI
 
-Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com) to make lossless optimisation of images part of your automated build process. Version 1.4 will soon also bring support for automating [JPEGmini for Mac](http://jpegmini.com/mac).
+Automates batch image processing with [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and [JPEGmini for Mac](http://jpegmini.com/mac) to make lossless optimisation of images part of your automated build process.
 
 ## Example
 
@@ -10,8 +10,14 @@ Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com
 
 ## Installation
 
+### 1.3.2 (Stable)
+
     $ sudo npm install -g imageoptim-cli
-    
+
+### 1.4.0-rc.1
+
+    $ sudo npm install -g imageoptim-cli@canary
+
 ## Usage
 
     Usage: imageOptim [options]
@@ -20,6 +26,7 @@ Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com
 
       -d, --directory     directory of images to process
       -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
+      -j, --jpeg-mini     process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723
       -q, --quit          quit ImageOptim.app when complete
       -h, --help          output usage information
       -e, --examples      output usage examples
@@ -27,21 +34,29 @@ Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com
 
 ## Examples
 
+    Run ImageAlpha, ImageOptim & JPEGmini
+    $ imageOptim -j -a -d path/to/images
+    $ imageOptim --jpeg-mini --image-alpha --directory path/to/images
+
+    Run ImageAlpha & ImageOptim
+    $ imageOptim -a -d path/to/images
+    $ imageOptim --image-alpha --directory path/to/images
+
     Run ImageOptim
     $ imageOptim -d path/to/images
     $ imageOptim --directory path/to/images
 
-    Run ImageOptim then quit it when finished
-    $ imageOptim -q -d path/to/images
-    $ imageOptim --quit --directory path/to/images
+    Run ImageAlpha, ImageOptim, JPEGmini & quit them when finished
+    $ imageOptim -j -q -a -d path/to/images
+    $ imageOptim --jpeg-mini --quit --image-alpha --directory path/to/images
 
-    Run ImageAlpha then ImageOptim
-    $ imageOptim -a -d path/to/images
-    $ imageOptim --image-alpha --directory path/to/images
-
-    Run ImageAlpha then ImageOptim then quit ImageOptim when finished
+    Run ImageAlpha, ImageOptim & quit them when finished
     $ imageOptim -q -a -d path/to/images
     $ imageOptim --quit --image-alpha --directory path/to/images
+
+    Run ImageOptim & quit it when finished
+    $ imageOptim -q -d path/to/images
+    $ imageOptim --quit --directory path/to/images
 
 ## Grunt Plugin
 
