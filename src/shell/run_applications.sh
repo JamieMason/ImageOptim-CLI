@@ -13,7 +13,7 @@ $(populateImageOptimQueue)
 $(waitFor "ImageOptim")
 
 if [ "true" == $runJPEGmini ]; then
-  `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini $imgPath` > /dev/null 2>&1
+  `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini $imgPath $jpegMiniAppName` > /dev/null 2>&1
 fi
 
 endTime=$(now)

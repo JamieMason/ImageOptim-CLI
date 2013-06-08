@@ -25,14 +25,17 @@ isBusyIntervalLength={{isBusyIntervalLength}}
 # ImageAlpha
 imageAlphaFileTypes="{{imageAlphaFileTypes}}"
 imageAlphaAppBundleId="{{imageAlphaAppBundleId}}"
+imageAlphaAppName="{{imageAlphaAppName}}"
 imageAlphaAppFileName="{{imageAlphaAppFileName}}"
 
 # ImageOptim
 imageOptimFileTypes="{{imageOptimFileTypes}}"
 imageOptimAppBundleId="{{imageOptimAppBundleId}}"
+imageOptimAppName="{{imageOptimAppName}}"
 imageOptimAppFileName="{{imageOptimAppFileName}}"
 
 # JPEGmini
 jpegMiniFileTypes="{{jpegMiniFileTypes}}"
 jpegMiniAppBundleId="{{jpegMiniAppBundleId}}"
+jpegMiniAppName="{{jpegMiniAppName}}"
 jpegMiniAppFileName="{{jpegMiniAppFileName}}"

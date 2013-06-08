@@ -1,7 +1,7 @@
 -- Feed a folder of images into JPEGmini
-on run_jpegmini(imgPath)
+on run_jpegmini(imgPath, appName)
   try
-    tell application "JPEGmini"
+    tell application appName
 
       -- start the app
       activate
@@ -15,7 +15,7 @@ on run_jpegmini(imgPath)
     end tell
 
     tell application "System Events"
-      tell process "JPEGmini"
+      tell process appName
 
         -- Navigate to the File > Open menu
         click menu item "Open…" of menu 1 of menu bar item "File" of menu bar 1
@@ -33,7 +33,7 @@ on run_jpegmini(imgPath)
         delay 1
 
         -- start JPEGmini off optimising the folder
-        click button "Open" of sheet 1 of window "JPEGmini"
+        click button "Open" of sheet 1 of window appName
 
         -- report success
         return true
