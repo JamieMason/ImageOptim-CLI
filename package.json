@@ -11,8 +11,8 @@
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
   },
   "bin": {
-    "imageOptim": "./imageOptim",
-    "imageOptimAppleScriptLib": "./imageOptimAppleScriptLib"
+    "imageOptim": "bin/imageOptim",
+    "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib"
   },
   "keywords": [
     "advpng",
@@ -31,5 +31,9 @@
     "optipng",
     "pngcrush",
     "pngout"
-  ]
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0"
+  }
 }

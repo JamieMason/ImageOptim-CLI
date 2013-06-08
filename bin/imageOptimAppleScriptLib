@@ -1,8 +1,31 @@
 #!/bin/osascript
 
+-- Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
+-- https://github.com/JamieMason
+
+-- Permission is hereby granted, free of charge, to any person
+-- obtaining a copy of this software and associated documentation files
+-- (the "Software"), to deal in the Software without restriction,
+-- including without limitation the rights to use, copy, modify, merge,
+-- publish, distribute, sublicense, and/or sell copies of the Software,
+-- and to permit persons to whom the Software is furnished to do so,
+-- subject to the following conditions:
+
+-- The above copyright notice and this permission notice shall be
+-- included in all copies or substantial portions of the Software.
+
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+-- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+-- MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+-- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+-- BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+-- ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+-- CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+-- SOFTWARE.
+
 -- Using the Application's bundle id, get the .app file name if installed
 -- eg. "net.pornel.ImageOptim" -> "ImageOptim.app"
-on hasAppInstalled(appFileId)
+on has_app_installed(appFileId)
   try
     tell application "Finder"
       return name of application file id appFileId
@@ -10,29 +33,26 @@ on hasAppInstalled(appFileId)
   on error err_msg number err_num
     return "NOT_INSTALLED"
   end try
-end hasAppInstalled
-
+end has_app_installed
 
 -- Return true is GUIScript is enabled, or false
-on hasGuiScript()
+on has_gui_script()
   tell application "System Events"
     set isEnabled to UI elements enabled
   end tell
   return isEnabled as boolean
-end hasGuiScript
-
+end has_gui_script
 
 -- Open System Preferences on the Accessibility view for a user to enable GUIScript
-on openAccessibilityPreferences()
+on open_accessibility_preferences()
   tell application "System Preferences"
     activate
     set current pane to pane id "com.apple.preference.universalaccess"
   end tell
-end openAccessibilityPreferences
-
+end open_accessibility_preferences
 
 -- Feed a folder of images into JPEGmini
-on runJpegMini(imgPath)
+on run_jpegmini(imgPath)
   try
     tell application "JPEGmini"
 
@@ -83,11 +103,10 @@ on runJpegMini(imgPath)
       return false
 
   end try
-end runJpegMini
-
+end run_jpegmini
 
 -- Watch app until it's finished working with our folder
-on waitFor(processName)
+on wait_for(processName)
   tell application "System Events"
     repeat
 
@@ -115,8 +134,7 @@ on waitFor(processName)
 
     end repeat
   end tell
-end waitFor
-
+end wait_for
 
 -- handle input from terminal
 on run argv
@@ -125,31 +143,30 @@ on run argv
   set command to item 1 of argv
 
   -- in the case of JPEGmini, we need to know if GUIScript is enabled...
-  if command is "hasAppInstalled" then
+  if command is "has_app_installed" then
 
     -- we expect the 2nd argument to be the application's bundle id
     set bundleId to item 2 of argv
 
-    return hasAppInstalled(bundleId)
+    return has_app_installed(bundleId)
 
   -- in the case of JPEGmini, we need to know if GUIScript is enabled...
-  else if command is "hasGuiScript" then
-    return hasGuiScript()
+  else if command is "has_gui_script" then
+    return has_gui_script()
 
   -- ...and if it isn't, help the user find where to go enable it
-  else if command is "openAccessibilityPreferences" then
-    openAccessibilityPreferences()
+  else if command is "open_accessibility_preferences" then
+    open_accessibility_preferences()
 
   -- process a directory using JPEGmini
-  else if command is "runJpegMini" then
+  else if command is "run_jpegmini" then
 
     -- we expect the 2nd argument to be the path
     set imgPath to item 2 of argv
 
     -- keep the shell script waiting until JPEGmini has finished
-    runJpegMini(imgPath)
-    waitFor("JPEGmini")
+    run_jpegmini(imgPath)
+    wait_for("JPEGmini")
 
   end if
 end run
-
