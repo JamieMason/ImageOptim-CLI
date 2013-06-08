@@ -24,7 +24,7 @@
 # SOFTWARE.
 
 # current version of ImageOptim-CLI from package.json
-version="1.4.0"
+version="1.4.0-rc.1"
 
 # path to image directory we should optimise
 imgPath="false"
