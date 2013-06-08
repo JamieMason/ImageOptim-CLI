@@ -38,7 +38,29 @@ function usage {
   echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
   echo "  -q, --quit          quit ImageOptim.app when complete"
   echo "  -h, --help          output usage information"
+  echo "  -e, --examples      output usage examples"
   echo "  -v, --version       output the version number"
+}
+
+# (): Display usage examples
+function examples {
+  echo "Examples:"
+  echo ""
+  echo "Run ImageOptim"
+  echo "$ imageOptim -d path/to/images"
+  echo "$ imageOptim --directory path/to/images"
+  echo ""
+  echo "Run ImageOptim then quit it when finished"
+  echo "$ imageOptim -q -d path/to/images"
+  echo "$ imageOptim --quit --directory path/to/images"
+  echo ""
+  echo "Run ImageAlpha then ImageOptim"
+  echo "$ imageOptim -a -d path/to/images"
+  echo "$ imageOptim --image-alpha --directory path/to/images"
+  echo ""
+  echo "Run ImageAlpha then ImageOptim then quit ImageOptim when finished"
+  echo "$ imageOptim -q -a -d path/to/images"
+  echo "$ imageOptim --quit --image-alpha --directory path/to/images"
 }
 
 # ($1:message): Display a red error message and quit
@@ -145,6 +167,10 @@ while [ "$1" != "" ]; do
       ;;
     -h | --help )
       usage;
+      exit 0
+      ;;
+    -e | --examples )
+      examples;
       exit 0
       ;;
     -v | --version )
