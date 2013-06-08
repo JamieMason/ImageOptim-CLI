@@ -23,7 +23,7 @@ while [ "$1" != "" ]; do
       exit 0
       ;;
     -v | --version )
-      version;
+      echo $version;
       exit 0
       ;;
     * )

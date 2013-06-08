@@ -1,8 +1,3 @@
-# (): Display version number
-function version {
-  echo "1.4.0"
-}
-
 # (): Display usage information
 function usage {
   echo "Usage: imageOptim [options]"
