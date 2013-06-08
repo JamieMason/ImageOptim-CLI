@@ -14,9 +14,11 @@ Automates batch image processing with [ImageOptim](http://imageoptim.com), [Imag
 
     $ sudo npm install -g imageoptim-cli
 
-### 1.4.0-rc.1
+### 1.4.0 (Canary, includes JPEGmini support)
 
     $ sudo npm install -g imageoptim-cli@canary
+
+It would really help if you could try out and report on this version. If you run 1.4.0, please Tweet me [@GotNoSugarBaby](https://twitter.com/GotNoSugarBaby) if it's fine or [open a new issue](https://github.com/JamieMason/ImageOptim-CLI/issues/new) if you're having problems, thanks.
 
 ## Usage
 
