@@ -117,7 +117,7 @@ function validateImageDirectory {
 # (): quit if ImageOptim should be run but is not installed
 function validateImageOptim {
   if [ "true" == $runImageOptim ]; then
-    if [ "$imageOptimAppFileName" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageOptimAppBundleId` ]; then
+    if [ $imageOptimAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageOptimAppBundleId` ]; then
       error "$imageOptimAppFileName is not installed (http://imageoptim.com)"
     fi
   fi
@@ -126,7 +126,7 @@ function validateImageOptim {
 # (): quit if ImageAlpha should be run but is not installed
 function validateImageAlpha {
   if [ "true" == $runImageAlpha ]; then
-    if [ "$imageAlphaAppFileName" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageAlphaAppBundleId` ]; then
+    if [ $imageAlphaAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageAlphaAppBundleId` ]; then
       error "$imageAlphaAppFileName is not installed (http://pngmini.com)"
     fi
   fi
@@ -135,7 +135,7 @@ function validateImageAlpha {
 # (): quit if ImageAlpha should be run but is not installed or cannot run
 function validateJpegMini {
   if [ "true" == $runJPEGmini ]; then
-    if [ "$jpegMiniAppFileName" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $jpegMiniAppBundleId` ]; then
+    if [ $jpegMiniAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $jpegMiniAppBundleId` ]; then
       error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
     fi
     if [ "true" != `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script` ]; then

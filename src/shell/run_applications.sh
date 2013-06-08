@@ -4,16 +4,16 @@ startTime=$(now)
 echo "Processing $(getImgCount) images..."
 
 if [ "true" == $runImageAlpha ]; then
-  $(populateImageAlphaQueue)
-  $(waitFor $imageAlphaAppName)
+  populateImageAlphaQueue
+  waitFor $imageAlphaAppName
   if [ "true" == $quitOnComplete ]; then
     osascript -e "tell application \"$imageAlphaAppName\" to quit"
   fi
 fi
 
 if [ "true" == $runImageOptim ]; then
-  $(populateImageOptimQueue)
-  $(waitFor $imageOptimAppName)
+  populateImageOptimQueue
+  waitFor $imageOptimAppName
   if [ "true" == $quitOnComplete ]; then
     osascript -e "tell application \"$imageOptimAppName\" to quit"
   fi
