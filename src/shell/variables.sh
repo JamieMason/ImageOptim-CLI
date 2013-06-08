@@ -11,7 +11,7 @@ runJPEGmini="false"
 quitOnComplete="false"
 
 # path to this script
-cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cliPath="false"
 
 # how long we will wait before checking again if ImageOptim.app is busy
 isBusyIntervalLength=1

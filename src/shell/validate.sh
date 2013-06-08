@@ -1,3 +1,8 @@
+# handle override
+if [ "false" == $cliPath ]; then
+  cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+fi
+
 # quit if imgPath is not a directory
 if [ ! -d "$imgPath" ]; then
   error "Could not find directory $imgPath"
