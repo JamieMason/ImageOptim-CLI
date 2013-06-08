@@ -8,9 +8,7 @@ on run argv
   if command is "has_app_installed" then
 
     -- we expect the 2nd argument to be the application's bundle id
-    set bundleId to item 2 of argv
-
-    return has_app_installed(bundleId)
+    return has_app_installed(item 2 of argv)
 
   -- in the case of JPEGmini, we need to know if GUIScript is enabled...
   else if command is "has_gui_script" then
@@ -24,11 +22,16 @@ on run argv
   else if command is "run_jpegmini" then
 
     -- we expect the 2nd argument to be the path
-    set imgPath to item 2 of argv
+    -- we expect the 3rd argument to be the app name
+    -- optimise the directory of images
+    run_jpegmini(item 2 of argv, item 3 of argv)
 
-    -- keep the shell script waiting until JPEGmini has finished
-    run_jpegmini(imgPath)
-    wait_for("JPEGmini")
+  -- wait for an app to finish running
+  else if command is "wait_for" then
+
+    -- we expect the 2nd argument to be the app name
+    -- keep the shell script waiting until the app has finished
+    wait_for(item 2 of argv)
 
   end if
 end run
