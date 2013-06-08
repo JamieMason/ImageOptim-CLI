@@ -19,6 +19,7 @@
   "imgPath": "false",
   "isBusyIntervalLength": 1,
   "quitOnComplete": "false",
+  "runImageOptim": "true",
   "runImageAlpha": "false",
   "runJPEGmini": "false"
 }

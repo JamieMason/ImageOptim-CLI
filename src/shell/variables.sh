@@ -7,6 +7,9 @@ imgPath="{{imgPath}}"
 # path to this executable
 cliPath="{{cliPath}}"
 
+# run ImageOptim.app?
+runImageOptim="{{runImageOptim}}"
+
 # run ImageAlpha.app before ImageOptim.app?
 runImageAlpha="{{runImageAlpha}}"
 
