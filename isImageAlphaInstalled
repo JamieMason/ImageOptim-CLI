@@ -1,9 +1,0 @@
-#!/bin/osascript
-
-try
-  tell application "Finder"
-    return name of application file id "net.pornel.ImageAlpha"
-  end tell
-on error err_msg number err_num
-  return null
-end try

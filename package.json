@@ -12,8 +12,7 @@
   },
   "bin": {
     "imageOptim": "./imageOptim",
-    "isImageOptimInstalled": "./isImageOptimInstalled",
-    "isImageAlphaInstalled": "./isImageAlphaInstalled"
+    "imageOptimAppleScriptLib": "./imageOptimAppleScriptLib"
   },
   "keywords": [
     "advpng",
