@@ -4,6 +4,10 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    environment: {
+      base: require('./environment/base.json')
+    },
+
     concat: {
       dist: {
         files: [{
@@ -35,8 +39,44 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.registerMultiTask('environment', 'Apply environment config to build', function() {
+
+    var fs = require('fs');
+    var path = require('path');
+    var task = this;
+    var taskComplete = task.async();
+
+    task.data.version = require('./package.json').version;
+
+    function mergeConfig (filePath, onComplete) {
+      filePath = path.resolve(filePath);
+      fs.readFile(filePath, 'utf8', function (err, fileContents) {
+        var token;
+        if (err) {
+          throw err;
+        }
+        for(token in task.data) {
+          fileContents = fileContents.replace(new RegExp('\\{\\{' + token + '\\}\\}', 'g'), task.data[token]);
+        }
+        fs.writeFile(filePath, fileContents, function (err) {
+          if (err) {
+            throw err;
+          }
+          onComplete();
+        });
+      });
+    }
+
+    mergeConfig('bin/imageOptim', function () {
+      mergeConfig('bin/imageOptimAppleScriptLib', function () {
+        taskComplete();
+      });
+    });
+
+  });
+
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  // grunt.registerTask('test', ['imageoptim', 'nodeunit']);
+  grunt.registerTask('build', ['concat', 'environment']);
 
 };

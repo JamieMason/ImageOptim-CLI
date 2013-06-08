@@ -23,34 +23,41 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# path to image directory we should optimise
-imgPath=0
+# current version of ImageOptim-CLI from package.json
+version="1.4.0"
 
-# whether to run ImageAlpha.app before running ImageOptim.app
+# path to image directory we should optimise
+imgPath="false"
+
+# path to this executable
+cliPath="false"
+
+# run ImageAlpha.app before ImageOptim.app?
 runImageAlpha="false"
 
-# whether to run JPEGmini.app
+# run JPEGmini.app after ImageOptim.app?
 runJPEGmini="false"
 
-# whether to quit ImageOptim.app after processing images
+# quit ImageOptim.app after processing images?
 quitOnComplete="false"
-
-# path to this script
-cliPath="false"
 
 # how long we will wait before checking again if ImageOptim.app is busy
 isBusyIntervalLength=1
 
-# image types supported by ImageOptim.app
-fileTypes='.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'
+# ImageAlpha
+imageAlphaFileTypes=".*(png)"
+imageAlphaAppBundleId="net.pornel.ImageAlpha"
+imageAlphaAppFileName="ImageAlpha.app"
 
-# image types supported by ImageAlpha.app
-imageAlphaFileTypes='.*(png)'
+# ImageOptim
+imageOptimFileTypes=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)"
+imageOptimAppBundleId="net.pornel.ImageOptim"
+imageOptimAppFileName="ImageOptim.app"
 
-# (): Display version number
-function version {
-  echo "1.4.0"
-}
+# JPEGmini
+jpegMiniFileTypes=".*(jpg|jpeg)"
+jpegMiniAppBundleId="com.icvt.JPEGmini"
+jpegMiniAppFileName="JPEGmini.app"
 
 # (): Display usage information
 function usage {
@@ -129,12 +136,12 @@ function getTimeSpent {
 
 # (): How many images are in the directory we're about to process?
 function getImgCount {
-  echo $(find -E "$imgPath" -iregex $fileTypes | wc -l)
+  echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
 }
 
 # (): Send all images to ImageOptim.app for processing
 function populateImageOptimQueue {
-  find -E "$imgPath" -regex $fileTypes -print0 | while IFS= read -r -d $'\0' img; do
+  find -E "$imgPath" -regex $imageOptimFileTypes -print0 | while IFS= read -r -d $'\0' img; do
     open -g -a ImageOptim.app "$img"
   done
 }
@@ -171,7 +178,7 @@ while [ "$1" != "" ]; do
       exit 0
       ;;
     -v | --version )
-      version;
+      echo $version;
       exit 0
       ;;
     * )
@@ -186,31 +193,27 @@ if [ "false" == $cliPath ]; then
   cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 fi
 
-echo $cliPath
-exit
-
 # quit if imgPath is not a directory
 if [ ! -d "$imgPath" ]; then
   error "Could not find directory $imgPath"
 fi
 
 # quit if ImageOptim is not installed
-if [ "ImageOptim.app" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed net.pornel.ImageOptim` ]; then
-  error "ImageOptim.app is not installed (http://imageoptim.com)"
+if [ "$imageOptimAppFileName" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageOptimAppBundleId` ]; then
+  error "$imageOptimAppFileName is not installed (http://imageoptim.com)"
 fi
 
 if [ "true" == $runImageAlpha ]; then
-  if [ "ImageAlpha.app" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed net.pornel.ImageAlpha` ]; then
-    error "ImageAlpha.app is not installed (http://pngmini.com)"
+  if [ "$imageAlphaAppFileName" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageAlphaAppBundleId` ]; then
+    error "$imageAlphaAppFileName is not installed (http://pngmini.com)"
   fi
 fi
 
 if [ "true" == $runJPEGmini ]; then
-  if [ "JPEGmini.app" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed com.icvt.JPEGmini` ]; then
-    error "JPEGmini.app is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+  if [ "$jpegMiniAppFileName" != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $jpegMiniAppBundleId` ]; then
+    error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
   fi
-  if [ "1" != `osascript "$cliPath/JPEGmini" check` ]; then
-    `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script`
+  if [ "1" != `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script` ]; then
     error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
   fi
 fi

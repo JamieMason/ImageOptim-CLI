@@ -1,23 +1,35 @@
+# current version of ImageOptim-CLI from package.json
+version="{{version}}"
+
 # path to image directory we should optimise
-imgPath=0
+imgPath="{{imgPath}}"
 
-# whether to run ImageAlpha.app before running ImageOptim.app
-runImageAlpha="false"
+# path to this executable
+cliPath="{{cliPath}}"
 
-# whether to run JPEGmini.app
-runJPEGmini="false"
+# run ImageAlpha.app before ImageOptim.app?
+runImageAlpha="{{runImageAlpha}}"
 
-# whether to quit ImageOptim.app after processing images
-quitOnComplete="false"
+# run JPEGmini.app after ImageOptim.app?
+runJPEGmini="{{runJPEGmini}}"
 
-# path to this script
-cliPath="false"
+# quit ImageOptim.app after processing images?
+quitOnComplete="{{quitOnComplete}}"
 
 # how long we will wait before checking again if ImageOptim.app is busy
-isBusyIntervalLength=1
+isBusyIntervalLength={{isBusyIntervalLength}}
 
-# image types supported by ImageOptim.app
-fileTypes='.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'
+# ImageAlpha
+imageAlphaFileTypes="{{imageAlphaFileTypes}}"
+imageAlphaAppBundleId="{{imageAlphaAppBundleId}}"
+imageAlphaAppFileName="{{imageAlphaAppFileName}}"
 
-# image types supported by ImageAlpha.app
-imageAlphaFileTypes='.*(png)'
+# ImageOptim
+imageOptimFileTypes="{{imageOptimFileTypes}}"
+imageOptimAppBundleId="{{imageOptimAppBundleId}}"
+imageOptimAppFileName="{{imageOptimAppFileName}}"
+
+# JPEGmini
+jpegMiniFileTypes="{{jpegMiniFileTypes}}"
+jpegMiniAppBundleId="{{jpegMiniAppBundleId}}"
+jpegMiniAppFileName="{{jpegMiniAppFileName}}"

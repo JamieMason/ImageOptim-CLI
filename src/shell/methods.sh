@@ -75,12 +75,12 @@ function getTimeSpent {
 
 # (): How many images are in the directory we're about to process?
 function getImgCount {
-  echo $(find -E "$imgPath" -iregex $fileTypes | wc -l)
+  echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
 }
 
 # (): Send all images to ImageOptim.app for processing
 function populateImageOptimQueue {
-  find -E "$imgPath" -regex $fileTypes -print0 | while IFS= read -r -d $'\0' img; do
+  find -E "$imgPath" -regex $imageOptimFileTypes -print0 | while IFS= read -r -d $'\0' img; do
     open -g -a ImageOptim.app "$img"
   done
 }

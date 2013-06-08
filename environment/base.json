@@ -1,0 +1,24 @@
+{
+  "cliPath": "false",
+
+  "imageAlphaAppBundleId": "net.pornel.ImageAlpha",
+  "imageAlphaAppFileName": "ImageAlpha.app",
+  "imageAlphaAppName": "ImageAlpha",
+  "imageAlphaFileTypes": ".*(png)",
+
+  "imageOptimAppBundleId": "net.pornel.ImageOptim",
+  "imageOptimAppFileName": "ImageOptim.app",
+  "imageOptimAppName": "ImageOptim",
+  "imageOptimFileTypes": ".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)",
+
+  "jpegMiniAppBundleId": "com.icvt.JPEGmini",
+  "jpegMiniAppFileName": "JPEGmini.app",
+  "jpegMiniAppName": "JPEGmini",
+  "jpegMiniFileTypes": ".*(jpg|jpeg)",
+
+  "imgPath": "false",
+  "isBusyIntervalLength": 1,
+  "quitOnComplete": "false",
+  "runImageAlpha": "false",
+  "runJPEGmini": "false"
+}
