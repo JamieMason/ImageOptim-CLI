@@ -133,7 +133,7 @@ on run argv
     return hasAppInstalled(bundleId)
 
   -- in the case of JPEGmini, we need to know if GUIScript is enabled...
-  if command is "hasGuiScript" then
+  else if command is "hasGuiScript" then
     return hasGuiScript()
 
   -- ...and if it isn't, help the user find where to go enable it
