@@ -14,33 +14,34 @@ Controls [ImageOptim](http://imageoptim.com) and [ImageAlpha](http://pngmini.com
     
 ## Usage
 
-	  Usage: imageOptim [options]
-	  
-	  Options:
-	
-	    -d, --directory     directory of images to process
-	    -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
-	    -q, --quit          quit ImageOptim.app when complete
-	    -h, --help          output usage information
-	    -v, --version       output the version number
+    Usage: imageOptim [options]
 
-### Examples
+    Options:
 
-#### Run ImageOptim
+      -d, --directory     directory of images to process
+      -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
+      -q, --quit          quit ImageOptim.app when complete
+      -h, --help          output usage information
+      -e, --examples      output usage examples
+      -v, --version       output the version number
 
-`imageOptim -d path/to/images` or `imageOptim --directory path/to/images`
+## Examples
 
-#### Run ImageOptim then quit it when finished
+    Run ImageOptim
+    $ imageOptim -d path/to/images
+    $ imageOptim --directory path/to/images
 
-`imageOptim -q -d path/to/images` or `imageOptim --quit --directory path/to/images`
+    Run ImageOptim then quit it when finished
+    $ imageOptim -q -d path/to/images
+    $ imageOptim --quit --directory path/to/images
 
-#### Run ImageAlpha then ImageOptim
+    Run ImageAlpha then ImageOptim
+    $ imageOptim -a -d path/to/images
+    $ imageOptim --image-alpha --directory path/to/images
 
-`imageOptim -a -d path/to/images` or `imageOptim --image-alpha --directory path/to/images`
-
-#### Run ImageAlpha then ImageOptim then quit ImageOptim when finished
-
-`imageOptim -q -a -d path/to/images` or `imageOptim --quit --image-alpha --directory path/to/images`
+    Run ImageAlpha then ImageOptim then quit ImageOptim when finished
+    $ imageOptim -q -a -d path/to/images
+    $ imageOptim --quit --image-alpha --directory path/to/images
 
 ## Grunt Plugin
 
