@@ -5,8 +5,10 @@ Automates batch image processing with [ImageOptim](http://imageoptim.com), [Imag
 ## Example
 
     $ imageOptim --directory /path/to/images
-	  Processing 23 images...
-	  ✔ Finished in 212 seconds
+	  Processing 57 images...
+	  ✔ Finished in 54 seconds
+
+You can see also a [video screen recording of ImageOptim-CLI](https://www.youtube.com/watch?v=HGBounRIzSs) on YouTube.
 
 ## Installation
 
