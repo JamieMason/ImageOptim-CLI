@@ -12,15 +12,7 @@ You can see also a [video screen recording of ImageOptim-CLI](https://www.youtub
 
 ## Installation
 
-### 1.3.2 (Stable)
-
-    $ sudo npm install -g imageoptim-cli
-
-### 1.4.0 (Canary, includes JPEGmini support)
-
-    $ sudo npm install -g imageoptim-cli@canary
-
-It would really help if you could try out and report on this version. If you run 1.4.0, please Tweet me [@GotNoSugarBaby](https://twitter.com/GotNoSugarBaby) if it's fine or [open a new issue](https://github.com/JamieMason/ImageOptim-CLI/issues/new) if you're having problems, thanks.
+    $ npm install -g imageoptim-cli
 
 ## Usage
 
