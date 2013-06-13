@@ -10,13 +10,11 @@ on run argv
     -- we expect the 2nd argument to be the application's bundle id
     return has_app_installed(item 2 of argv)
 
-  -- in the case of JPEGmini, we need to know if GUIScript is enabled...
+  -- in the case of JPEGmini
   else if command is "has_gui_script" then
-    return has_gui_script()
 
-  -- ...and if it isn't, help the user find where to go enable it
-  else if command is "open_accessibility_preferences" then
-    open_accessibility_preferences()
+    -- we need to know if GUIScript is enabled
+    return has_gui_script()
 
   -- process a directory using JPEGmini
   else if command is "run_jpegmini" then

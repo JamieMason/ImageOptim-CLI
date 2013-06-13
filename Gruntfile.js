@@ -16,7 +16,6 @@ module.exports = function(grunt) {
             'src/applescript/copyright.txt',
             'src/applescript/has_app_installed.applescript',
             'src/applescript/has_gui_script.applescript',
-            'src/applescript/open_accessibility_preferences.applescript',
             'src/applescript/run_jpegmini.applescript',
             'src/applescript/wait_for.applescript',
             'src/applescript/handle_terminal_input.applescript'
