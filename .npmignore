@@ -1,0 +1,4 @@
+.git*
+environment/
+src/
+.DS_Store
