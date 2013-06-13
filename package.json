@@ -1,11 +1,11 @@
 {
   "name": "imageoptim-cli",
-  "author": "Jamie Mason @GotNoSugarBaby",
+  "author": "Jamie Mason (https://github.com/JamieMason)",
   "description": "Make lossless optimisation of images part of your automated build process.",
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "main": "./imageOptim",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
@@ -35,5 +35,9 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0"
-  }
+  },
+  "contributors": [
+    "Jamie Mason (https://github.com/JamieMason)",
+    "James Stout (https://github.com/jamesstout)"
+  ],
 }
