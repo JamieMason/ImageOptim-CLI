@@ -107,10 +107,20 @@ function initCliPath {
   fi
 }
 
-# (): quit if -d, --directory option does not resolve to a directory
-function validateImageDirectory {
-  if [ ! -d "$imgPath" ]; then
-    error "Could not find directory $imgPath"
+# (): quit if -d, --directory or -f --file options are missing or do not resolve
+function validateImgPath {
+  if [ "{{undefinedRunMode}}" == $runMode ]; then
+    error "Please use either the --directory or --file options to run ImageOptim-CLI"
+  fi
+  if [ "directory" == $runMode ]; then
+    if [ ! -d "$imgPath" ]; then
+      error "$imgPath is not a directory, or could not be found"
+    fi
+  fi
+  if [ "file" == $runMode ]; then
+    if [ ! -f "$imgPath" ]; then
+      error "$imgPath is not a file, or could not be found"
+    fi
   fi
 }
 

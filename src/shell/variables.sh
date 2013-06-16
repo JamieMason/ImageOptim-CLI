@@ -1,6 +1,9 @@
 # current version of ImageOptim-CLI from package.json
 version="{{version}}"
 
+# to be set to "file" or "directory" based on cli options
+runMode="{{undefinedRunMode}}"
+
 # path to image directory we should optimise
 imgPath="{{imgPath}}"
 

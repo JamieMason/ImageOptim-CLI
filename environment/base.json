@@ -16,6 +16,7 @@
   "jpegMiniAppName": "JPEGmini",
   "jpegMiniFileTypes": ".*(jpg|jpeg)",
 
+  "undefinedRunMode": "false",
   "imgPath": "false",
   "isBusyIntervalLength": 1,
   "quitOnComplete": "false",

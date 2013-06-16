@@ -1,5 +1,5 @@
 initCliPath
-validateImageDirectory
+validateImgPath
 validateImageOptim
 validateImageAlpha
 validateJpegMini
