@@ -27,7 +27,6 @@ module.exports = function(grunt) {
             'src/shell/copyright.txt',
             'src/shell/variables.sh',
             'src/shell/methods.sh',
-            'src/shell/process_directory.sh',
             'src/shell/handle_terminal_input.sh',
             'src/shell/validate.sh',
             'src/shell/process.sh'
