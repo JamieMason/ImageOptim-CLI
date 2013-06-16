@@ -16,43 +16,32 @@ You can see also a [video screen recording of ImageOptim-CLI](https://www.youtub
 
 ## Usage
 
-    Usage: imageOptim [options]
-
-    Options:
-
-      -d, --directory     directory of images to process
-      -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
-      -j, --jpeg-mini     process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723
-      -q, --quit          quit ImageOptim.app when complete
-      -h, --help          output usage information
-      -e, --examples      output usage examples
-      -v, --version       output the version number
+	Usage: imageOptim [options]
+	
+	Options:
+	
+	  -d, --directory     directory of images to process
+	  -f, --file          image to process
+	  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
+	  -j, --jpeg-mini     post-process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723
+	  -q, --quit          quit ImageOptim.app when complete
+	  -h, --help          output usage information
+	  -e, --examples      output usage examples
+	  -v, --version       output the version number
 
 ## Examples
 
-    Run ImageAlpha, ImageOptim & JPEGmini
-    $ imageOptim -j -a -d path/to/images
-    $ imageOptim --jpeg-mini --image-alpha --directory path/to/images
-
-    Run ImageAlpha & ImageOptim
-    $ imageOptim -a -d path/to/images
-    $ imageOptim --image-alpha --directory path/to/images
-
-    Run ImageOptim
-    $ imageOptim -d path/to/images
-    $ imageOptim --directory path/to/images
-
-    Run ImageAlpha, ImageOptim, JPEGmini & quit them when finished
-    $ imageOptim -j -q -a -d path/to/images
-    $ imageOptim --jpeg-mini --quit --image-alpha --directory path/to/images
-
-    Run ImageAlpha, ImageOptim & quit them when finished
-    $ imageOptim -q -a -d path/to/images
-    $ imageOptim --quit --image-alpha --directory path/to/images
-
-    Run ImageOptim & quit it when finished
-    $ imageOptim -q -d path/to/images
-    $ imageOptim --quit --directory path/to/images
+	Run ImageAlpha, ImageOptim, JPEGmini, then quit
+	$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
+	$ imageOptim --jpeg-mini --image-alpha --quit --file path/to/image.jpg
+	$ imageOptim -j -a -q -d path/to/images
+	$ imageOptim -j -a -q -f path/to/image.png
+	
+	Run ImageOptim only
+	$ imageOptim --directory path/to/images
+	$ imageOptim --file path/to/images.gif
+	$ imageOptim -d path/to/images
+	$ imageOptim -f path/to/images.jpeg
 
 ## Grunt Plugin
 
