@@ -62,7 +62,7 @@ imageAlphaAppFileName="ImageAlpha.app"
 imageOptimFileTypes=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)"
 imageOptimAppBundleId="net.pornel.ImageOptim"
 imageOptimAppName="ImageOptim"
-imageOptimAppFileName="ImageOptim.app"
+imageOptimAppFileName="ImageOptim.zapp"
 
 # JPEGmini
 jpegMiniFileTypes=".*(jpg|jpeg)"
@@ -185,15 +185,11 @@ function validateImgPath {
   if [ $undefinedRunMode == $runMode ]; then
     error $runModeIsUndefinedMsg
   fi
-  if [ "directory" == $runMode ]; then
-    if [ ! -d "$imgPath" ]; then
-      error $invalidDirectoryMsg
-    fi
+  if [ "directory" == $runMode ] && [ ! -d "$imgPath" ]; then
+    error $invalidDirectoryMsg
   fi
-  if [ "file" == $runMode ]; then
-    if [ ! -f "$imgPath" ]; then
-      error $invalidFileMsg
-    fi
+  if [ "file" == $runMode ] && [ ! -f "$imgPath" ]; then
+    error $invalidFileMsg
   fi
 }
 
@@ -231,18 +227,21 @@ function guiScriptIsEnabled {
   echo `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script`
 }
 
+# ($1:appShouldBeRun, $2:appIsInstalled, $3:isNotInstalledMsg):
+function errorIfNotInstalled {
+  if [ "true" == $1 ] && [ "false" == $2 ]; then
+    error "$3"
+  fi
+}
+
 # (): quit if ImageOptim should be run but is not installed
 function validateImageOptim {
-  if [ "true" == $runImageOptim ] && [ "false" == $(imageOptimIsInstalled) ]; then
-    error $imageOptimNotInstalledMsg
-  fi
+  errorIfNotInstalled $runImageOptim $(imageOptimIsInstalled) "$imageOptimNotInstalledMsg"
 }
 
 # (): quit if ImageAlpha should be run but is not installed
 function validateImageAlpha {
-  if [ "true" == $runImageAlpha ] && [ "false" == $(imageAlphaIsInstalled) ]; then
-    error $imageAlphaNotInstalledMsg
-  fi
+  errorIfNotInstalled $runImageAlpha $(imageAlphaIsInstalled) "$imageAlphaNotInstalledMsg"
 }
 
 # (): quit if ImageAlpha should be run but is not installed or cannot run
