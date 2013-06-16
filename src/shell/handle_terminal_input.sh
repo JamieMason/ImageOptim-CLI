@@ -11,10 +11,10 @@ while [ "$1" != "" ]; do
       imgPath=$1
       ;;
     -a | --image-alpha )
-      runImageAlpha="true"
+      useImageAlpha="true"
       ;;
     -j | --jpeg-mini )
-      runJPEGmini="true"
+      useJPEGmini="true"
       ;;
     -q | --quit )
       quitOnComplete="true"

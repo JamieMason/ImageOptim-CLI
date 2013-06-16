@@ -13,13 +13,13 @@ imgPath="{{imgPath}}"
 cliPath="{{cliPath}}"
 
 # run ImageOptim.app?
-runImageOptim="{{runImageOptim}}"
+useImageOptim="{{useImageOptim}}"
 
 # run ImageAlpha.app before ImageOptim.app?
-runImageAlpha="{{runImageAlpha}}"
+useImageAlpha="{{useImageAlpha}}"
 
 # run JPEGmini.app after ImageOptim.app?
-runJPEGmini="{{runJPEGmini}}"
+useJPEGmini="{{useJPEGmini}}"
 
 # quit ImageOptim.app after processing images?
 quitOnComplete="{{quitOnComplete}}"
@@ -44,12 +44,3 @@ jpegMiniFileTypes="{{jpegMiniFileTypes}}"
 jpegMiniAppBundleId="{{jpegMiniAppBundleId}}"
 jpegMiniAppName="{{jpegMiniAppName}}"
 jpegMiniAppFileName="{{jpegMiniAppFileName}}"
-
-# error messages
-guiScriptIsDisabledMsg="{{guiScriptIsDisabledMsg}}"
-runModeIsUndefinedMsg="{{runModeIsUndefinedMsg}}"
-invalidDirectoryMsg="{{invalidDirectoryMsg}}"
-invalidFileMsg="{{invalidFileMsg}}"
-imageAlphaNotInstalledMsg="{{imageAlphaNotInstalledMsg}}"
-imageOptimNotInstalledMsg="{{imageOptimNotInstalledMsg}}"
-jpegMiniNotInstalledMsg="{{jpegMiniNotInstalledMsg}}"

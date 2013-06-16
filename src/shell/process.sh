@@ -1,5 +1,5 @@
 if [ "directory" == $runMode ]; then
   processDirectory
-else
-  echo "processFile"
+elif [ "file" == $runMode ]; then
+  processImage
 fi

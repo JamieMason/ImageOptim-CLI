@@ -55,7 +55,7 @@ function countProcesses {
 }
 
 # ($1:appName): Sleep until app is done optimising images
-function waitFor {
+function waitForApp {
   # wait for App to spawn a few processes
   sleep 2
   # wait until those processes have completed
@@ -75,10 +75,15 @@ function getImgCount {
   echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
 }
 
+# ($1:appFileName, $2:imageFilePath):
+function addImageToQueue {
+  open -g -a $1 "$2"
+}
+
 # ($1:fileTypes, $2:appFileName): Queue direcory of images
 function addDirectoryToQueue {
   find -E "$imgPath" -regex $1 -print0 | while IFS= read -r -d $'\0' img; do
-    open -g -a $2 "$img"
+    addImageToQueue $2 "$img"
   done
 }
 
@@ -86,7 +91,7 @@ function addDirectoryToQueue {
 function runPornelAppOnDirectory {
   if [ "true" == $1 ]; then
     addDirectoryToQueue $3 $4
-    waitFor $2
+    waitForApp $2
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$2\" to quit"
     fi
@@ -95,18 +100,40 @@ function runPornelAppOnDirectory {
 
 # ():
 function runImageOptimOnDirectory {
-  runPornelAppOnDirectory $runImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
+  runPornelAppOnDirectory $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
 }
 
 # ():
 function runImageAlphaOnDirectory {
-  runPornelAppOnDirectory $runImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+  runPornelAppOnDirectory $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+}
+
+# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName):
+function runPornelAppOnImage {
+  if [ "true" == $1 ]; then
+    addImageToQueue $4 "$imgPath"
+    waitForApp $2
+    if [ "true" == $quitOnComplete ]; then
+      osascript -e "tell application \"$2\" to quit"
+    fi
+  fi
 }
 
 # ():
-function runJPEGminiOnDirectory {
-  if [ "true" == $runJPEGmini ]; then
-    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini $imgPath $jpegMiniAppName` > /dev/null 2>&1
+function runImageOptimOnImage {
+  runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
+}
+
+# ():
+function runImageAlphaOnImage {
+  runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+}
+
+# ():
+function runJPEGmini {
+  if [ "true" == $useJPEGmini ]; then
+    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$imgPath" $jpegMiniAppName` > /dev/null 2>&1
+    sleep 1
     `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$jpegMiniAppName\" to quit"
@@ -124,13 +151,13 @@ function initCliPath {
 # (): quit if -d, --directory or -f --file options are missing or do not resolve
 function validateImgPath {
   if [ $undefinedRunMode == $runMode ]; then
-    error $runModeIsUndefinedMsg
+    error "{{runModeIsUndefinedMsg}}"
   fi
   if [ "directory" == $runMode ] && [ ! -d "$imgPath" ]; then
-    error $invalidDirectoryMsg
+    error "{{invalidDirectoryMsg}}"
   fi
   if [ "file" == $runMode ] && [ ! -f "$imgPath" ]; then
-    error $invalidFileMsg
+    error "{{invalidFileMsg}}"
   fi
 }
 
@@ -177,41 +204,56 @@ function errorIfNotInstalled {
 
 # (): quit if ImageOptim should be run but is not installed
 function validateImageOptim {
-  errorIfNotInstalled $runImageOptim $(imageOptimIsInstalled) "$imageOptimNotInstalledMsg"
+  errorIfNotInstalled $useImageOptim $(imageOptimIsInstalled) "{{imageOptimNotInstalledMsg}}"
 }
 
 # (): quit if ImageAlpha should be run but is not installed
 function validateImageAlpha {
-  errorIfNotInstalled $runImageAlpha $(imageAlphaIsInstalled) "$imageAlphaNotInstalledMsg"
+  errorIfNotInstalled $useImageAlpha $(imageAlphaIsInstalled) "{{imageAlphaNotInstalledMsg}}"
 }
 
 # (): quit if ImageAlpha should be run but is not installed or cannot run
 function validateJpegMini {
 
   # if we're not running JPEGmini then it's all good
-  if [ "false" == $runJPEGmini ]; then
+  if [ "false" == $useJPEGmini ]; then
     return 0
   fi
 
   # if we are and it's not installed
   if [ "false" == $(jpegMiniIsInstalled) ]; then
-    error $jpegMiniNotInstalledMsg
+    error "{{jpegMiniNotInstalledMsg}}"
   fi
 
   # if we are, it's installed but GUIScript is not available
   if [ "false" == $(guiScriptIsEnabled) ]; then
-    error $guiScriptIsDisabledMsg
+    error "{{guiScriptIsDisabledMsg}}"
   fi
 
 }
 
-# (): run applications against a directory of files
+# (): run applications against a directory of images
 function processDirectory {
   startTime=$(now)
   echo "Processing $(getImgCount) images..."
   runImageAlphaOnDirectory
   runImageOptimOnDirectory
-  runJPEGminiOnDirectory
+  runJPEGmini
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
+}
+
+# (): run applications against a single image
+function processImage {
+  echo "Processing $imgPath..."
+  if [ "" != "`echo "$imgPath" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
+    runImageAlphaOnImage
+  fi
+  if [ "" != "`echo "$imgPath" | grep -E '{{imageOptimFileTypes}}'`" ]; then
+    runImageOptimOnImage
+  fi
+  if [ "" != "`echo "$imgPath" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
+    runJPEGmini
+  fi
+  success "Finished processing $imgPath"
 }
