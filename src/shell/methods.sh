@@ -112,17 +112,17 @@ function initCliPath {
 
 # (): quit if -d, --directory or -f --file options are missing or do not resolve
 function validateImgPath {
-  if [ "{{undefinedRunMode}}" == $runMode ]; then
-    error "Please use either the --directory or --file options to run ImageOptim-CLI"
+  if [ $undefinedRunMode == $runMode ]; then
+    error $runModeIsUndefinedMsg
   fi
   if [ "directory" == $runMode ]; then
     if [ ! -d "$imgPath" ]; then
-      error "$imgPath is not a directory, or could not be found"
+      error $invalidDirectoryMsg
     fi
   fi
   if [ "file" == $runMode ]; then
     if [ ! -f "$imgPath" ]; then
-      error "$imgPath is not a file, or could not be found"
+      error $invalidFileMsg
     fi
   fi
 }
@@ -164,14 +164,14 @@ function guiScriptIsEnabled {
 # (): quit if ImageOptim should be run but is not installed
 function validateImageOptim {
   if [ "true" == $runImageOptim ] && [ "false" == $(imageOptimIsInstalled) ]; then
-    error "$imageOptimAppFileName is not installed (http://imageoptim.com)"
+    error $imageOptimNotInstalledMsg
   fi
 }
 
 # (): quit if ImageAlpha should be run but is not installed
 function validateImageAlpha {
   if [ "true" == $runImageAlpha ] && [ "false" == $(imageAlphaIsInstalled) ]; then
-    error "$imageAlphaAppFileName is not installed (http://pngmini.com)"
+    error $imageAlphaNotInstalledMsg
   fi
 }
 
@@ -185,12 +185,12 @@ function validateJpegMini {
 
   # if we are and it's not installed
   if [ "false" == $(jpegMiniIsInstalled) ]; then
-    error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+    error $jpegMiniNotInstalledMsg
   fi
 
   # if we are, it's installed but GUIScript is not available
   if [ "false" == $(guiScriptIsEnabled) ]; then
-    error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
+    error $guiScriptIsDisabledMsg
   fi
 
 }

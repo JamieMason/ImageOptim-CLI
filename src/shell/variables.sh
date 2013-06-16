@@ -1,8 +1,10 @@
 # current version of ImageOptim-CLI from package.json
 version="{{version}}"
 
+undefinedRunMode="{{undefinedRunMode}}"
+
 # to be set to "file" or "directory" based on cli options
-runMode="{{undefinedRunMode}}"
+runMode=$undefinedRunMode
 
 # path to image directory we should optimise
 imgPath="{{imgPath}}"
@@ -42,3 +44,12 @@ jpegMiniFileTypes="{{jpegMiniFileTypes}}"
 jpegMiniAppBundleId="{{jpegMiniAppBundleId}}"
 jpegMiniAppName="{{jpegMiniAppName}}"
 jpegMiniAppFileName="{{jpegMiniAppFileName}}"
+
+# error messages
+guiScriptIsDisabledMsg="{{guiScriptIsDisabledMsg}}"
+runModeIsUndefinedMsg="{{runModeIsUndefinedMsg}}"
+invalidDirectoryMsg="{{invalidDirectoryMsg}}"
+invalidFileMsg="{{invalidFileMsg}}"
+imageAlphaNotInstalledMsg="{{imageAlphaNotInstalledMsg}}"
+imageOptimNotInstalledMsg="{{imageOptimNotInstalledMsg}}"
+jpegMiniNotInstalledMsg="{{jpegMiniNotInstalledMsg}}"
