@@ -197,34 +197,72 @@ function validateImgPath {
   fi
 }
 
+# ($1:appBundleId): eg. "net.pornel.ImageAlpha" -> "ImageAlpha.app" or "NOT_INSTALLED"
+function getAppFileNameByBundleId {
+  echo `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $1`
+}
+
+# ($1:appFileName, $2:appBundleId): -> "true" or "false"
+function appIsInstalled {
+  if [ $1 == $(getAppFileNameByBundleId $2) ]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+
+# (): -> "true" or "false"
+function imageOptimIsInstalled {
+  echo $(appIsInstalled $imageOptimAppFileName $imageOptimAppBundleId)
+}
+
+# (): -> "true" or "false"
+function imageAlphaIsInstalled {
+  echo $(appIsInstalled $imageAlphaAppFileName $imageAlphaAppBundleId)
+}
+
+# (): -> "true" or "false"
+function jpegMiniIsInstalled {
+  echo $(appIsInstalled $jpegMiniAppFileName $jpegMiniAppBundleId)
+}
+
+# (): -> "true" or "false"
+function guiScriptIsEnabled {
+  echo `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script`
+}
+
 # (): quit if ImageOptim should be run but is not installed
 function validateImageOptim {
-  if [ "true" == $runImageOptim ]; then
-    if [ $imageOptimAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageOptimAppBundleId` ]; then
-      error "$imageOptimAppFileName is not installed (http://imageoptim.com)"
-    fi
+  if [ "true" == $runImageOptim ] && [ "false" == $(imageOptimIsInstalled) ]; then
+    error "$imageOptimAppFileName is not installed (http://imageoptim.com)"
   fi
 }
 
 # (): quit if ImageAlpha should be run but is not installed
 function validateImageAlpha {
-  if [ "true" == $runImageAlpha ]; then
-    if [ $imageAlphaAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageAlphaAppBundleId` ]; then
-      error "$imageAlphaAppFileName is not installed (http://pngmini.com)"
-    fi
+  if [ "true" == $runImageAlpha ] && [ "false" == $(imageAlphaIsInstalled) ]; then
+    error "$imageAlphaAppFileName is not installed (http://pngmini.com)"
   fi
 }
 
 # (): quit if ImageAlpha should be run but is not installed or cannot run
 function validateJpegMini {
-  if [ "true" == $runJPEGmini ]; then
-    if [ $jpegMiniAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $jpegMiniAppBundleId` ]; then
-      error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
-    fi
-    if [ "true" != `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script` ]; then
-      error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
-    fi
+
+  # if we're not running JPEGmini then it's all good
+  if [ "false" == $runJPEGmini ]; then
+    return 0
   fi
+
+  # if we are and it's not installed
+  if [ "false" == $(jpegMiniIsInstalled) ]; then
+    error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+  fi
+
+  # if we are, it's installed but GUIScript is not available
+  if [ "false" == $(guiScriptIsEnabled) ]; then
+    error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
+  fi
+
 }
 
 # (): run applications against a directory of files
