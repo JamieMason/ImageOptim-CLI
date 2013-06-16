@@ -62,7 +62,7 @@ imageAlphaAppFileName="ImageAlpha.app"
 imageOptimFileTypes=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)"
 imageOptimAppBundleId="net.pornel.ImageOptim"
 imageOptimAppName="ImageOptim"
-imageOptimAppFileName="ImageOptim.zapp"
+imageOptimAppFileName="ImageOptim.app"
 
 # JPEGmini
 jpegMiniFileTypes=".*(jpg|jpeg)"
@@ -163,14 +163,36 @@ function addDirectoryToQueue {
   done
 }
 
-# ():
-function addDirectoryToImageOptimQueue {
-  addDirectoryToQueue $imageOptimFileTypes $imageOptimAppFileName
+# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName):
+function runPornelAppOnDirectory {
+  if [ "true" == $1 ]; then
+    addDirectoryToQueue $3 $4
+    waitFor $2
+    if [ "true" == $quitOnComplete ]; then
+      osascript -e "tell application \"$2\" to quit"
+    fi
+  fi
 }
 
 # ():
-function addDirectoryToImageAlphaQueue {
-  addDirectoryToQueue $imageAlphaFileTypes $imageAlphaAppFileName
+function runImageOptimOnDirectory {
+  runPornelAppOnDirectory $runImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
+}
+
+# ():
+function runImageAlphaOnDirectory {
+  runPornelAppOnDirectory $runImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+}
+
+# ():
+function runJPEGminiOnDirectory {
+  if [ "true" == $runJPEGmini ]; then
+    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini $imgPath $jpegMiniAppName` > /dev/null 2>&1
+    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
+    if [ "true" == $quitOnComplete ]; then
+      osascript -e "tell application \"$jpegMiniAppName\" to quit"
+    fi
+  fi
 }
 
 # (): if an override is not set, get path to this executable
@@ -266,37 +288,12 @@ function validateJpegMini {
 
 # (): run applications against a directory of files
 function processDirectory {
-  # begin
   startTime=$(now)
-
   echo "Processing $(getImgCount) images..."
-
-  if [ "true" == $runImageAlpha ]; then
-    addDirectoryToImageAlphaQueue
-    waitFor $imageAlphaAppName
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$imageAlphaAppName\" to quit"
-    fi
-  fi
-
-  if [ "true" == $runImageOptim ]; then
-    addDirectoryToImageOptimQueue
-    waitFor $imageOptimAppName
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$imageOptimAppName\" to quit"
-    fi
-  fi
-
-  if [ "true" == $runJPEGmini ]; then
-    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini $imgPath $jpegMiniAppName` > /dev/null 2>&1
-    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$jpegMiniAppName\" to quit"
-    fi
-  fi
-
+  runImageAlphaOnDirectory
+  runImageOptimOnDirectory
+  runJPEGminiOnDirectory
   endTime=$(now)
-
   success "Finished in $(getTimeSpent) seconds" | xargs
 }
 

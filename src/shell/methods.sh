@@ -82,14 +82,36 @@ function addDirectoryToQueue {
   done
 }
 
-# ():
-function addDirectoryToImageOptimQueue {
-  addDirectoryToQueue $imageOptimFileTypes $imageOptimAppFileName
+# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName):
+function runPornelAppOnDirectory {
+  if [ "true" == $1 ]; then
+    addDirectoryToQueue $3 $4
+    waitFor $2
+    if [ "true" == $quitOnComplete ]; then
+      osascript -e "tell application \"$2\" to quit"
+    fi
+  fi
 }
 
 # ():
-function addDirectoryToImageAlphaQueue {
-  addDirectoryToQueue $imageAlphaFileTypes $imageAlphaAppFileName
+function runImageOptimOnDirectory {
+  runPornelAppOnDirectory $runImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
+}
+
+# ():
+function runImageAlphaOnDirectory {
+  runPornelAppOnDirectory $runImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+}
+
+# ():
+function runJPEGminiOnDirectory {
+  if [ "true" == $runJPEGmini ]; then
+    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini $imgPath $jpegMiniAppName` > /dev/null 2>&1
+    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
+    if [ "true" == $quitOnComplete ]; then
+      osascript -e "tell application \"$jpegMiniAppName\" to quit"
+    fi
+  fi
 }
 
 # (): if an override is not set, get path to this executable
