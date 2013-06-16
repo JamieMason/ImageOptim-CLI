@@ -6,7 +6,7 @@ function processDirectory {
   echo "Processing $(getImgCount) images..."
 
   if [ "true" == $runImageAlpha ]; then
-    populateImageAlphaQueue
+    addDirectoryToImageAlphaQueue
     waitFor $imageAlphaAppName
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$imageAlphaAppName\" to quit"
@@ -14,7 +14,7 @@ function processDirectory {
   fi
 
   if [ "true" == $runImageOptim ]; then
-    populateImageOptimQueue
+    addDirectoryToImageOptimQueue
     waitFor $imageOptimAppName
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$imageOptimAppName\" to quit"

@@ -86,18 +86,21 @@ function getImgCount {
   echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
 }
 
-# (): Send all images to ImageOptim.app for processing
-function populateImageOptimQueue {
-  find -E "$imgPath" -regex $imageOptimFileTypes -print0 | while IFS= read -r -d $'\0' img; do
-    open -g -a ImageOptim.app "$img"
+# ($1:fileTypes, $2:appFileName): Queue direcory of images
+function addDirectoryToQueue {
+  find -E "$imgPath" -regex $1 -print0 | while IFS= read -r -d $'\0' img; do
+    open -g -a $2 "$img"
   done
 }
 
-# (): Send all images to ImageOptim.app for processing
-function populateImageAlphaQueue {
-  find -E "$imgPath" -regex $imageAlphaFileTypes -print0 | while IFS= read -r -d $'\0' img; do
-    open -g -a ImageAlpha.app "$img"
-  done
+# ():
+function addDirectoryToImageOptimQueue {
+  addDirectoryToQueue $imageOptimFileTypes $imageOptimAppFileName
+}
+
+# ():
+function addDirectoryToImageAlphaQueue {
+  addDirectoryToQueue $imageAlphaFileTypes $imageAlphaAppFileName
 }
 
 # (): if an override is not set, get path to this executable
