@@ -20,7 +20,7 @@
   "imageAlphaNotInstalledMsg": "$imageAlphaAppFileName is not installed (http://pngmini.com)",
 
   "imageOptimAppBundleId": "net.pornel.ImageOptim",
-  "imageOptimAppFileName": "ImageOptim.zapp",
+  "imageOptimAppFileName": "ImageOptim.app",
   "imageOptimAppName": "ImageOptim",
   "imageOptimFileTypes": ".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)",
   "imageOptimNotInstalledMsg": "$imageOptimAppFileName is not installed (http://imageoptim.com)",
