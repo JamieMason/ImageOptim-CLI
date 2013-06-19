@@ -12,6 +12,7 @@
   "imageOptimFileTypes": ".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)",
 
   "jpegMiniAppBundleId": "com.icvt.JPEGmini",
+  "jpegMiniAppRetailBundleId": "com.icvt.JPEGmini-retail",
   "jpegMiniAppFileName": "JPEGmini.app",
   "jpegMiniAppName": "JPEGmini",
   "jpegMiniFileTypes": ".*(jpg|jpeg)",
