@@ -2,6 +2,8 @@
 
 Automates batch image processing with [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and [JPEGmini for Mac](http://jpegmini.com/mac) to make lossless optimisation of images part of your automated build process.
 
+If you use [Grunt](http://gruntjs.com) there's also an [ImageOptim-CLI Grunt plugin](https://github.com/JamieMason/grunt-imageoptim).
+
 ## Example
 
     $ imageOptim --directory /path/to/images
