@@ -118,7 +118,7 @@ function validateImageDirectory {
 function validateImageOptim {
   if [ "true" == $runImageOptim ]; then
     if [ $imageOptimAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageOptimAppBundleId` ]; then
-      error "$imageOptimAppFileName is not installed (http://imageoptim.com)"
+      error "{{errorNoImageOptim}}"
     fi
   fi
 }
@@ -127,7 +127,7 @@ function validateImageOptim {
 function validateImageAlpha {
   if [ "true" == $runImageAlpha ]; then
     if [ $imageAlphaAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $imageAlphaAppBundleId` ]; then
-      error "$imageAlphaAppFileName is not installed (http://pngmini.com)"
+      error "{{errorNoImageAlpha}}"
     fi
   fi
 }
@@ -138,11 +138,11 @@ function validateJpegMini {
     if [ $jpegMiniAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $jpegMiniAppBundleId` ]; then
       # issue #26: it seems JPEGmini has a different bundle id for elsewhere to the app store - also check for this variant
       if [ $jpegMiniAppFileName != `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $jpegMiniAppRetailBundleId` ]; then
-        error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+        error "{{errorNoJpegMini}}"
       fi
     fi
     if [ "true" != `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script` ]; then
-      error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
+      error "{{errorNoGuiScript}}"
     fi
   fi
 }

@@ -22,5 +22,10 @@
   "quitOnComplete": "false",
   "runImageOptim": "true",
   "runImageAlpha": "false",
-  "runJPEGmini": "false"
+  "runJPEGmini": "false",
+
+  "errorNoImageOptim": "$imageOptimAppFileName is not installed (http://imageoptim.com)",
+  "errorNoImageAlpha": "$imageAlphaAppFileName is not installed (http://pngmini.com)",
+  "errorNoJpegMini": "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)",
+  "errorNoGuiScript": "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
 }
