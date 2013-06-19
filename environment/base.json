@@ -26,6 +26,7 @@
   "imageOptimNotInstalledMsg": "$imageOptimAppFileName is not installed (http://imageoptim.com)",
 
   "jpegMiniAppBundleId": "com.icvt.JPEGmini",
+  "jpegMiniAppRetailBundleId": "com.icvt.JPEGmini-retail",
   "jpegMiniAppFileName": "JPEGmini.app",
   "jpegMiniAppName": "JPEGmini",
   "jpegMiniFileTypes": ".*(jpg|jpeg)",
