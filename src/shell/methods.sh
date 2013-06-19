@@ -187,7 +187,11 @@ function imageAlphaIsInstalled {
 
 # (): -> "true" or "false"
 function jpegMiniIsInstalled {
-  echo $(appIsInstalled $jpegMiniAppFileName $jpegMiniAppBundleId)
+  if [ "true" == $(appIsInstalled $jpegMiniAppFileName $jpegMiniAppBundleId) ] || [ "true" == $(appIsInstalled $jpegMiniAppFileName $jpegMiniAppRetailBundleId) ]; then
+    echo "true"
+  else
+    echo "false"
+  fi
 }
 
 # (): -> "true" or "false"
