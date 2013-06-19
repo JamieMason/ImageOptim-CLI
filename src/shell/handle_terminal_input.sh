@@ -1,13 +1,9 @@
 # Handle Inputs
 while [ "$1" != "" ]; do
   case $1 in
-    -d | --directory | -f | --file )
-      if [[ "$1" == *"d"* ]]; then
-        runMode="directory"
-      else
-        runMode="file"
-      fi
+    -d | --directory )
       shift;
+      runMode="directory"
       imgPath=$1
       ;;
     -a | --image-alpha )

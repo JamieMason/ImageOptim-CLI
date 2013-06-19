@@ -1,5 +1,5 @@
 if [ "directory" == $runMode ]; then
   processDirectory
-elif [ "file" == $runMode ]; then
-  processImage
+elif [ "stdin" == $runMode ]; then
+  processFiles
 fi

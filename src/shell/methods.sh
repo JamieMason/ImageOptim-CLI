@@ -5,7 +5,6 @@ function usage {
   echo "Options:"
   echo ""
   echo "  -d, --directory     directory of images to process"
-  echo "  -f, --file          image to process"
   echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
   echo "  -j, --jpeg-mini     post-process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
   echo "  -q, --quit          quit ImageOptim.app when complete"
@@ -20,15 +19,11 @@ function examples {
   echo ""
   echo "Run ImageAlpha, ImageOptim, JPEGmini, then quit"
   echo "$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images"
-  echo "$ imageOptim --jpeg-mini --image-alpha --quit --file path/to/image.jpg"
   echo "$ imageOptim -j -a -q -d path/to/images"
-  echo "$ imageOptim -j -a -q -f path/to/image.png"
   echo ""
   echo "Run ImageOptim only"
   echo "$ imageOptim --directory path/to/images"
-  echo "$ imageOptim --file path/to/images.gif"
   echo "$ imageOptim -d path/to/images"
-  echo "$ imageOptim -f path/to/images.jpeg"
 }
 
 # ($1:message): Display a red error message and quit
@@ -108,10 +103,10 @@ function runImageAlphaOnDirectory {
   runPornelAppOnDirectory $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
 }
 
-# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName):
+# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:image):
 function runPornelAppOnImage {
   if [ "true" == $1 ]; then
-    addImageToQueue $4 "$imgPath"
+    addImageToQueue $4 "$5"
     waitForApp $2
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$2\" to quit"
@@ -119,20 +114,20 @@ function runPornelAppOnImage {
   fi
 }
 
-# ():
+# ($1:image):
 function runImageOptimOnImage {
-  runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
+  runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
-# ():
+# ($1:image):
 function runImageAlphaOnImage {
-  runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+  runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName "$1"
 }
 
-# ():
+# ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
-    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$imgPath" $jpegMiniAppName` > /dev/null 2>&1
+    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
     sleep 1
     `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
     if [ "true" == $quitOnComplete ]; then
@@ -148,16 +143,10 @@ function initCliPath {
   fi
 }
 
-# (): quit if -d, --directory or -f --file options are missing or do not resolve
+# (): quit if -d, --directory does not resolve
 function validateImgPath {
-  if [ $undefinedRunMode == $runMode ]; then
-    error "{{runModeIsUndefinedMsg}}"
-  fi
   if [ "directory" == $runMode ] && [ ! -d "$imgPath" ]; then
     error "{{invalidDirectoryMsg}}"
-  fi
-  if [ "file" == $runMode ] && [ ! -f "$imgPath" ]; then
-    error "{{invalidFileMsg}}"
   fi
 }
 
@@ -242,22 +231,28 @@ function processDirectory {
   echo "Processing $(getImgCount) images..."
   runImageAlphaOnDirectory
   runImageOptimOnDirectory
-  runJPEGmini
+  runJPEGmini "$imgPath"
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
 }
 
 # (): run applications against a single image
-function processImage {
-  echo "Processing $imgPath..."
-  if [ "" != "`echo "$imgPath" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
-    runImageAlphaOnImage
-  fi
-  if [ "" != "`echo "$imgPath" | grep -E '{{imageOptimFileTypes}}'`" ]; then
-    runImageOptimOnImage
-  fi
-  if [ "" != "`echo "$imgPath" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
-    runJPEGmini
-  fi
-  success "Finished processing $imgPath"
+function processFiles {
+
+  # @TODO: seperate queuing from waiting on apps to finish
+  # so we can first queue up many files, then afterwards start waiting
+
+  while read LINE; do
+    echo "Processing $LINE..."
+    if [ "" != "`echo "$LINE" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
+      runImageAlphaOnImage "$LINE"
+    elif [ "" != "`echo "$LINE" | grep -E '{{imageOptimFileTypes}}'`" ]; then
+      runImageOptimOnImage "$LINE"
+    elif [ "" != "`echo "$LINE" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
+      runJPEGmini "$LINE"
+    else
+      echo "Ignored: $LINE"
+    fi
+    success "Finished processing $LINE"
+  done
 }

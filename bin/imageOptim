@@ -26,10 +26,10 @@
 # current version of ImageOptim-CLI from package.json
 version="1.4.5"
 
-undefinedRunMode="false"
+undefinedRunMode="{{undefinedRunMode}}"
 
-# to be set to "file" or "directory" based on cli options
-runMode=$undefinedRunMode
+# to be set to "stdin" or "directory" based on cli options or piped input
+runMode="stdin"
 
 # path to image directory we should optimise
 imgPath="false"
@@ -77,7 +77,6 @@ function usage {
   echo "Options:"
   echo ""
   echo "  -d, --directory     directory of images to process"
-  echo "  -f, --file          image to process"
   echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
   echo "  -j, --jpeg-mini     post-process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
   echo "  -q, --quit          quit ImageOptim.app when complete"
@@ -92,15 +91,11 @@ function examples {
   echo ""
   echo "Run ImageAlpha, ImageOptim, JPEGmini, then quit"
   echo "$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images"
-  echo "$ imageOptim --jpeg-mini --image-alpha --quit --file path/to/image.jpg"
   echo "$ imageOptim -j -a -q -d path/to/images"
-  echo "$ imageOptim -j -a -q -f path/to/image.png"
   echo ""
   echo "Run ImageOptim only"
   echo "$ imageOptim --directory path/to/images"
-  echo "$ imageOptim --file path/to/images.gif"
   echo "$ imageOptim -d path/to/images"
-  echo "$ imageOptim -f path/to/images.jpeg"
 }
 
 # ($1:message): Display a red error message and quit
@@ -180,10 +175,10 @@ function runImageAlphaOnDirectory {
   runPornelAppOnDirectory $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
 }
 
-# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName):
+# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:image):
 function runPornelAppOnImage {
   if [ "true" == $1 ]; then
-    addImageToQueue $4 "$imgPath"
+    addImageToQueue $4 "$5"
     waitForApp $2
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$2\" to quit"
@@ -191,20 +186,20 @@ function runPornelAppOnImage {
   fi
 }
 
-# ():
+# ($1:image):
 function runImageOptimOnImage {
-  runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName
+  runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
-# ():
+# ($1:image):
 function runImageAlphaOnImage {
-  runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName
+  runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName "$1"
 }
 
-# ():
+# ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
-    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$imgPath" $jpegMiniAppName` > /dev/null 2>&1
+    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
     sleep 1
     `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
     if [ "true" == $quitOnComplete ]; then
@@ -220,16 +215,10 @@ function initCliPath {
   fi
 }
 
-# (): quit if -d, --directory or -f --file options are missing or do not resolve
+# (): quit if -d, --directory does not resolve
 function validateImgPath {
-  if [ $undefinedRunMode == $runMode ]; then
-    error "Please use either the --directory or --file options to run ImageOptim-CLI"
-  fi
   if [ "directory" == $runMode ] && [ ! -d "$imgPath" ]; then
     error "$imgPath is not a directory, or could not be found"
-  fi
-  if [ "file" == $runMode ] && [ ! -f "$imgPath" ]; then
-    error "$imgPath is not a file, or could not be found"
   fi
 }
 
@@ -314,36 +303,38 @@ function processDirectory {
   echo "Processing $(getImgCount) images..."
   runImageAlphaOnDirectory
   runImageOptimOnDirectory
-  runJPEGmini
+  runJPEGmini "$imgPath"
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
 }
 
 # (): run applications against a single image
-function processImage {
-  echo "Processing $imgPath..."
-  if [ "" != "`echo "$imgPath" | grep -E '.*(png)'`" ]; then
-    runImageAlphaOnImage
-  fi
-  if [ "" != "`echo "$imgPath" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
-    runImageOptimOnImage
-  fi
-  if [ "" != "`echo "$imgPath" | grep -E '.*(jpg|jpeg)'`" ]; then
-    runJPEGmini
-  fi
-  success "Finished processing $imgPath"
+function processFiles {
+
+  # @TODO: seperate queuing from waiting on apps to finish
+  # so we can first queue up many files, then afterwards start waiting
+
+  while read LINE; do
+    echo "Processing $LINE..."
+    if [ "" != "`echo "$LINE" | grep -E '.*(png)'`" ]; then
+      runImageAlphaOnImage "$LINE"
+    elif [ "" != "`echo "$LINE" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
+      runImageOptimOnImage "$LINE"
+    elif [ "" != "`echo "$LINE" | grep -E '.*(jpg|jpeg)'`" ]; then
+      runJPEGmini "$LINE"
+    else
+      echo "Ignored: $LINE"
+    fi
+    success "Finished processing $LINE"
+  done
 }
 
 # Handle Inputs
 while [ "$1" != "" ]; do
   case $1 in
-    -d | --directory | -f | --file )
-      if [[ "$1" == *"d"* ]]; then
-        runMode="directory"
-      else
-        runMode="file"
-      fi
+    -d | --directory )
       shift;
+      runMode="directory"
       imgPath=$1
       ;;
     -a | --image-alpha )
@@ -382,6 +373,6 @@ validateJpegMini
 
 if [ "directory" == $runMode ]; then
   processDirectory
-elif [ "file" == $runMode ]; then
-  processImage
+elif [ "stdin" == $runMode ]; then
+  processFiles
 fi

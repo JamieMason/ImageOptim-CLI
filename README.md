@@ -19,11 +19,11 @@ You can see also a [video screen recording of ImageOptim-CLI](https://www.youtub
 ## Usage
 
 	Usage: imageOptim [options]
-	
+
 	Options:
-	
+
 	  -d, --directory     directory of images to process
-	  -f, --file          image to process
+	  -f, --files          image to process
 	  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)
 	  -j, --jpeg-mini     post-process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723
 	  -q, --quit          quit ImageOptim.app when complete
@@ -34,16 +34,14 @@ You can see also a [video screen recording of ImageOptim-CLI](https://www.youtub
 ## Examples
 
 	Run ImageAlpha, ImageOptim, JPEGmini, then quit
-	$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
-	$ imageOptim --jpeg-mini --image-alpha --quit --file path/to/image.jpg
-	$ imageOptim -j -a -q -d path/to/images
-	$ imageOptim -j -a -q -f path/to/image.png
-	
+  $ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
+  $ imageOptim -j -a -q -d path/to/images
+  $ path/to/image.jpg | imageOptim --jpeg-mini --image-alpha --quit
+
 	Run ImageOptim only
 	$ imageOptim --directory path/to/images
-	$ imageOptim --file path/to/images.gif
 	$ imageOptim -d path/to/images
-	$ imageOptim -f path/to/images.jpeg
+  $ path/to/images.gif | imageOptim
 
 ## Credits
 

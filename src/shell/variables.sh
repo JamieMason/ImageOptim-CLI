@@ -3,8 +3,8 @@ version="{{version}}"
 
 undefinedRunMode="{{undefinedRunMode}}"
 
-# to be set to "file" or "directory" based on cli options
-runMode=$undefinedRunMode
+# to be set to "stdin" or "directory" based on cli options or piped input
+runMode="stdin"
 
 # path to image directory we should optimise
 imgPath="{{imgPath}}"
