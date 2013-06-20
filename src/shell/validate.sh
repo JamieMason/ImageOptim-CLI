@@ -1,5 +1,0 @@
-initCliPath
-validateImgPath
-validateImageOptim
-validateImageAlpha
-validateJpegMini

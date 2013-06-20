@@ -26,10 +26,9 @@ module.exports = function(grunt) {
             'src/shell/file_header.txt',
             'src/shell/copyright.txt',
             'src/shell/variables.sh',
-            'src/shell/methods.sh',
-            'src/shell/handle_terminal_input.sh',
-            'src/shell/validate.sh',
-            'src/shell/process.sh'
+            'src/shell/methods/*.sh',
+            'src/shell/options.sh',
+            'src/shell/run.sh'
           ],
           dest: 'bin/imageOptim'
         }]

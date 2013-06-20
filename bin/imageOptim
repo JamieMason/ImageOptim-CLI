@@ -26,8 +26,6 @@
 # current version of ImageOptim-CLI from package.json
 version="1.4.5"
 
-undefinedRunMode="{{undefinedRunMode}}"
-
 # to be set to "stdin" or "directory" based on cli options or piped input
 runMode="stdin"
 
@@ -37,19 +35,15 @@ imgPath="false"
 # path to this executable
 cliPath="false"
 
-# run ImageOptim.app?
+# "true"|"false"
 useImageOptim="true"
-
-# run ImageAlpha.app before ImageOptim.app?
 useImageAlpha="false"
-
-# run JPEGmini.app after ImageOptim.app?
 useJPEGmini="false"
 
-# quit ImageOptim.app after processing images?
+# quit apps after processing images?
 quitOnComplete="false"
 
-# how long we will wait before checking again if ImageOptim.app is busy
+# how long we will wait before checking again if an app is busy
 isBusyIntervalLength=1
 
 # ImageAlpha
@@ -69,78 +63,6 @@ jpegMiniFileTypes=".*(jpg|jpeg)"
 jpegMiniAppBundleId="com.icvt.JPEGmini"
 jpegMiniAppName="JPEGmini"
 jpegMiniAppFileName="JPEGmini.app"
-
-# (): Display usage information
-function usage {
-  echo "Usage: imageOptim [options]"
-  echo ""
-  echo "Options:"
-  echo ""
-  echo "  -d, --directory     directory of images to process"
-  echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
-  echo "  -j, --jpeg-mini     post-process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
-  echo "  -q, --quit          quit ImageOptim.app when complete"
-  echo "  -h, --help          output usage information"
-  echo "  -e, --examples      output usage examples"
-  echo "  -v, --version       output the version number"
-}
-
-# (): Display usage examples
-function examples {
-  echo "Examples:"
-  echo ""
-  echo "Run ImageAlpha, ImageOptim, JPEGmini, then quit"
-  echo "$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images"
-  echo "$ imageOptim -j -a -q -d path/to/images"
-  echo ""
-  echo "Run ImageOptim only"
-  echo "$ imageOptim --directory path/to/images"
-  echo "$ imageOptim -d path/to/images"
-}
-
-# ($1:message): Display a red error message and quit
-function error {
-  printf "\e[31m✘ $1"
-  echo "\033[0m"
-  exit 1
-}
-
-# ($1:message): Display a message in green with a tick by it
-function success {
-  printf "\e[32m✔ ${1}"
-  echo "\033[0m"
-}
-
-# (): Get a timestamp for the current time
-function now {
-  date +"%s"
-}
-
-# ($1:appName): Get the number of processes in use by an Application
-function countProcesses {
-  printf $(ps -aef | grep  "[${1:0:1}]${1:1}" | wc -l)
-}
-
-# ($1:appName): Sleep until app is done optimising images
-function waitForApp {
-  # wait for App to spawn a few processes
-  sleep 2
-  # wait until those processes have completed
-  while [[ "$(countProcesses "$1")" > "1" ]]; do
-    sleep $isBusyIntervalLength
-  done
-}
-
-# (): How long did ImageOptim.app take to process the images?
-function getTimeSpent {
-  let timeSpent=endTime-startTime-$isBusyIntervalLength
-  echo $timeSpent
-}
-
-# (): How many images are in the directory we're about to process?
-function getImgCount {
-  echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
-}
 
 # ($1:appFileName, $2:imageFilePath):
 function addImageToQueue {
@@ -206,6 +128,110 @@ function runJPEGmini {
       osascript -e "tell application \"$jpegMiniAppName\" to quit"
     fi
   fi
+}
+
+# ($1:appName): Get the number of processes in use by an Application
+function countProcesses {
+  printf $(ps -aef | grep  "[${1:0:1}]${1:1}" | wc -l)
+}
+
+# ($1:appName): Sleep until app is done optimising images
+function waitForApp {
+  # wait for App to spawn a few processes
+  sleep 2
+  # wait until those processes have completed
+  while [[ "$(countProcesses "$1")" > "1" ]]; do
+    sleep $isBusyIntervalLength
+  done
+}
+
+# (): Display usage information
+function usage {
+  echo "Usage: imageOptim [options]"
+  echo ""
+  echo "Options:"
+  echo ""
+  echo "  -d, --directory     directory of images to process"
+  echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app (http://pngmini.com)"
+  echo "  -j, --jpeg-mini     post-process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
+  echo "  -q, --quit          quit ImageOptim.app when complete"
+  echo "  -h, --help          output usage information"
+  echo "  -e, --examples      output usage examples"
+  echo "  -v, --version       output the version number"
+}
+
+# (): Display usage examples
+function examples {
+  echo "Examples:"
+  echo ""
+  echo "Run ImageAlpha, ImageOptim, JPEGmini, then quit"
+  echo "$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images"
+  echo "$ imageOptim -j -a -q -d path/to/images"
+  echo ""
+  echo "Run ImageOptim only"
+  echo "$ imageOptim --directory path/to/images"
+  echo "$ imageOptim -d path/to/images"
+}
+
+# ($1:message): Display a red error message and quit
+function error {
+  printf "\e[31m✘ $1"
+  echo "\033[0m"
+  exit 1
+}
+
+# ($1:message): Display a message in green with a tick by it
+function success {
+  printf "\e[32m✔ ${1}"
+  echo "\033[0m"
+}
+
+# (): Get a timestamp for the current time
+function now {
+  date +"%s"
+}
+
+# (): How long did ImageOptim.app take to process the images?
+function getTimeSpent {
+  let timeSpent=endTime-startTime-$isBusyIntervalLength
+  echo $timeSpent
+}
+
+# (): How many images are in the directory we're about to process?
+function getImgCount {
+  echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
+}
+
+# (): run applications against a directory of images
+function processDirectory {
+  startTime=$(now)
+  echo "Processing $(getImgCount) images..."
+  runImageAlphaOnDirectory
+  runImageOptimOnDirectory
+  runJPEGmini "$imgPath"
+  endTime=$(now)
+  success "Finished in $(getTimeSpent) seconds" | xargs
+}
+
+# (): run applications against a single image
+function processFiles {
+
+  # @TODO: seperate queuing from waiting on apps to finish
+  # so we can first queue up many files, then afterwards start waiting
+
+  while read LINE; do
+    echo "Processing $LINE..."
+    if [ "" != "`echo "$LINE" | grep -E '.*(png)'`" ]; then
+      runImageAlphaOnImage "$LINE"
+    elif [ "" != "`echo "$LINE" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
+      runImageOptimOnImage "$LINE"
+    elif [ "" != "`echo "$LINE" | grep -E '.*(jpg|jpeg)'`" ]; then
+      runJPEGmini "$LINE"
+    else
+      echo "Ignored: $LINE"
+    fi
+    success "Finished processing $LINE"
+  done
 }
 
 # (): if an override is not set, get path to this executable
@@ -295,38 +321,6 @@ function validateJpegMini {
     error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
   fi
 
-}
-
-# (): run applications against a directory of images
-function processDirectory {
-  startTime=$(now)
-  echo "Processing $(getImgCount) images..."
-  runImageAlphaOnDirectory
-  runImageOptimOnDirectory
-  runJPEGmini "$imgPath"
-  endTime=$(now)
-  success "Finished in $(getTimeSpent) seconds" | xargs
-}
-
-# (): run applications against a single image
-function processFiles {
-
-  # @TODO: seperate queuing from waiting on apps to finish
-  # so we can first queue up many files, then afterwards start waiting
-
-  while read LINE; do
-    echo "Processing $LINE..."
-    if [ "" != "`echo "$LINE" | grep -E '.*(png)'`" ]; then
-      runImageAlphaOnImage "$LINE"
-    elif [ "" != "`echo "$LINE" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
-      runImageOptimOnImage "$LINE"
-    elif [ "" != "`echo "$LINE" | grep -E '.*(jpg|jpeg)'`" ]; then
-      runJPEGmini "$LINE"
-    else
-      echo "Ignored: $LINE"
-    fi
-    success "Finished processing $LINE"
-  done
 }
 
 # Handle Inputs

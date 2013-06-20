@@ -1,8 +1,6 @@
 # current version of ImageOptim-CLI from package.json
 version="{{version}}"
 
-undefinedRunMode="{{undefinedRunMode}}"
-
 # to be set to "stdin" or "directory" based on cli options or piped input
 runMode="stdin"
 
@@ -12,19 +10,15 @@ imgPath="{{imgPath}}"
 # path to this executable
 cliPath="{{cliPath}}"
 
-# run ImageOptim.app?
+# "true"|"false"
 useImageOptim="{{useImageOptim}}"
-
-# run ImageAlpha.app before ImageOptim.app?
 useImageAlpha="{{useImageAlpha}}"
-
-# run JPEGmini.app after ImageOptim.app?
 useJPEGmini="{{useJPEGmini}}"
 
-# quit ImageOptim.app after processing images?
+# quit apps after processing images?
 quitOnComplete="{{quitOnComplete}}"
 
-# how long we will wait before checking again if ImageOptim.app is busy
+# how long we will wait before checking again if an app is busy
 isBusyIntervalLength={{isBusyIntervalLength}}
 
 # ImageAlpha
