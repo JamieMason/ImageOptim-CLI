@@ -18,9 +18,16 @@ function getImgCount {
 function processDirectory {
   startTime=$(now)
   echo "Processing $(getImgCount) images..."
+
   runImageAlphaOnDirectory
+  waitForImageAlpha
+
   runImageOptimOnDirectory
+  waitForImageOptim
+
   runJPEGmini "$imgPath"
+  waitForJPEGmini
+
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
 }
@@ -44,4 +51,9 @@ function processFiles {
     fi
     success "Finished processing $LINE"
   done
+
+  waitForImageOptim
+  waitForImageAlpha
+  waitForJPEGmini
+
 }

@@ -12,3 +12,36 @@ function waitForApp {
     sleep $isBusyIntervalLength
   done
 }
+
+# ($1:appName):
+function waitForPornelApp {
+  waitForApp $1
+  if [ "true" == $quitOnComplete ]; then
+    osascript -e "tell application \"$1\" to quit"
+  fi
+}
+
+# ():
+function waitForImageOptim {
+  if [ "true" == $useImageOptim ]; then
+    waitForPornelApp $imageOptimAppName
+  fi
+}
+
+# ():
+function waitForImageAlpha {
+  if [ "true" == $useImageAlpha ]; then
+    waitForPornelApp $imageAlphaAppName
+  fi
+}
+
+# ():
+function waitForJPEGmini {
+  if [ "true" == $useJPEGmini ]; then
+    sleep 1
+    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
+    if [ "true" == $quitOnComplete ]; then
+      osascript -e "tell application \"$jpegMiniAppName\" to quit"
+    fi
+  fi
+}

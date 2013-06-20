@@ -14,10 +14,6 @@ function addDirectoryToQueue {
 function runPornelAppOnDirectory {
   if [ "true" == $1 ]; then
     addDirectoryToQueue $3 $4
-    waitForApp $2
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$2\" to quit"
-    fi
   fi
 }
 
@@ -35,10 +31,6 @@ function runImageAlphaOnDirectory {
 function runPornelAppOnImage {
   if [ "true" == $1 ]; then
     addImageToQueue $4 "$5"
-    waitForApp $2
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$2\" to quit"
-    fi
   fi
 }
 
@@ -56,10 +48,5 @@ function runImageAlphaOnImage {
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
     `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
-    sleep 1
-    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$jpegMiniAppName\" to quit"
-    fi
   fi
 }
