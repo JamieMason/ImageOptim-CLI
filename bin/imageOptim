@@ -168,17 +168,19 @@ function waitForJPEGmini {
 # (): Display usage information
 function usage {
   echo "Usage: imageOptim [options]"
-  echo "Usage: find images/*.jpg |imageOptim [options]"
   echo ""
   echo "Options:"
   echo ""
   echo "  -d, --directory     directory of images to process"
-  echo "  -a, --image-alpha   process PNGs with ImageAlpha.app (http://pngmini.com)"
-  echo "  -j, --jpeg-mini     process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723"
+  echo "  -a, --image-alpha   process PNGs with ImageAlpha.app *"
+  echo "  -j, --jpeg-mini     process JPGs with JPEGmini.app **"
   echo "  -q, --quit          quit ImageOptim.app when complete"
   echo "  -h, --help          output usage information"
   echo "  -e, --examples      output usage examples"
   echo "  -v, --version       output the version number"
+  echo ""
+  echo "*  http://pngmini.com"
+  echo "** https://itunes.apple.com/us/app/jpegmini/id498944723"
   echo ""
 }
 
