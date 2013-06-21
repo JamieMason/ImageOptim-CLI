@@ -34,26 +34,38 @@ function processDirectory {
 
 # (): run applications against a single image
 function processFiles {
+  i=0;
 
-  # @TODO: seperate queuing from waiting on apps to finish
-  # so we can first queue up many files, then afterwards start waiting
-
+  # store piped input so we can iterate over it more than once
   while read LINE; do
-    echo "Processing $LINE..."
-    if [ "" != "`echo "$LINE" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
-      runImageAlphaOnImage "$LINE"
-    elif [ "" != "`echo "$LINE" | grep -E '{{imageOptimFileTypes}}'`" ]; then
-      runImageOptimOnImage "$LINE"
-    elif [ "" != "`echo "$LINE" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
-      runJPEGmini "$LINE"
-    else
-      echo "Ignored: $LINE"
+    pipedFiles[$i]="${LINE}"
+    i=$((i+1))
+  done
+
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
+      echo "{{imageAlphaAppName}}: $file"
+      runImageAlphaOnImage "$file"
     fi
-    success "Finished processing $LINE"
+  done
+
+  waitForImageAlpha
+
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '{{imageOptimFileTypes}}'`" ]; then
+      echo "{{imageOptimAppName}}: $file"
+      runImageOptimOnImage "$file"
+    fi
   done
 
   waitForImageOptim
-  waitForImageAlpha
-  waitForJPEGmini
 
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
+      echo "{{jpegMiniAppName}}: $file"
+      runJPEGmini "$file"
+    fi
+  done
+
+  waitForJPEGmini
 }

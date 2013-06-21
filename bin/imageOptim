@@ -242,28 +242,40 @@ function processDirectory {
 
 # (): run applications against a single image
 function processFiles {
+  i=0;
 
-  # @TODO: seperate queuing from waiting on apps to finish
-  # so we can first queue up many files, then afterwards start waiting
-
+  # store piped input so we can iterate over it more than once
   while read LINE; do
-    echo "Processing $LINE..."
-    if [ "" != "`echo "$LINE" | grep -E '.*(png)'`" ]; then
-      runImageAlphaOnImage "$LINE"
-    elif [ "" != "`echo "$LINE" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
-      runImageOptimOnImage "$LINE"
-    elif [ "" != "`echo "$LINE" | grep -E '.*(jpg|jpeg)'`" ]; then
-      runJPEGmini "$LINE"
-    else
-      echo "Ignored: $LINE"
+    pipedFiles[$i]="${LINE}"
+    i=$((i+1))
+  done
+
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '.*(png)'`" ]; then
+      echo "ImageAlpha: $file"
+      runImageAlphaOnImage "$file"
     fi
-    success "Finished processing $LINE"
+  done
+
+  waitForImageAlpha
+
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
+      echo "ImageOptim: $file"
+      runImageOptimOnImage "$file"
+    fi
   done
 
   waitForImageOptim
-  waitForImageAlpha
-  waitForJPEGmini
 
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '.*(jpg|jpeg)'`" ]; then
+      echo "JPEGmini: $file"
+      runJPEGmini "$file"
+    fi
+  done
+
+  waitForJPEGmini
 }
 
 # (): if an override is not set, get path to this executable
