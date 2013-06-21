@@ -3,12 +3,12 @@ Usage: imageOptim [options]
 Options:
 
   -d, --directory     directory of images to process
-  -a, --image-alpha   process PNGs with ImageAlpha.app *
-  -j, --jpeg-mini     process JPGs with JPEGmini.app **
-  -q, --quit          quit ImageOptim.app when complete
-  -h, --help          output usage information
-  -e, --examples      output usage examples
-  -v, --version       output the version number
+  -a, --image-alpha   pre-process PNGs with ImageAlpha.app *
+  -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **
+  -q, --quit          quit all apps when complete
+  -h, --help          display this usage information
+  -e, --examples      display some example commands and uses
+  -v, --version       display the version number
 
 *  http://pngmini.com
 ** https://itunes.apple.com/us/app/jpegmini/id498944723
