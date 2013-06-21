@@ -23,11 +23,11 @@ function processDirectory {
   runImageAlphaOnDirectory "$imgPath"
   waitForImageAlpha
 
-  runImageOptimOnDirectory "$imgPath"
-  waitForImageOptim
-
   runJPEGmini "$imgPath"
   waitForJPEGmini
+
+  runImageOptimOnDirectory "$imgPath"
+  waitForImageOptim
 
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
@@ -55,15 +55,6 @@ function processFiles {
   waitForImageAlpha
 
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '{{imageOptimFileTypes}}'`" ]; then
-      echo "{{imageOptimAppName}}: $file"
-      runImageOptimOnImage "$file"
-    fi
-  done
-
-  waitForImageOptim
-
-  for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
       echo "{{jpegMiniAppName}}: $file"
       runJPEGmini "$file"
@@ -71,4 +62,13 @@ function processFiles {
   done
 
   waitForJPEGmini
+
+  for file in "${pipedFiles[@]}"; do
+    if [ "" != "`echo "$file" | grep -E '{{imageOptimFileTypes}}'`" ]; then
+      echo "{{imageOptimAppName}}: $file"
+      runImageOptimOnImage "$file"
+    fi
+  done
+
+  waitForImageOptim
 }
