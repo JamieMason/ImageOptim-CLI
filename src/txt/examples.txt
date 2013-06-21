@@ -1,0 +1,9 @@
+Examples:
+
+Run ImageAlpha, ImageOptim, JPEGmini, then quit
+$ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
+$ imageOptim -j -a -q -d path/to/images
+
+Run ImageOptim only
+$ imageOptim --directory path/to/images
+$ imageOptim -d path/to/images

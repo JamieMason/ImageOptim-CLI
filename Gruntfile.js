@@ -31,43 +31,83 @@ module.exports = function(grunt) {
             'src/shell/run.sh'
           ],
           dest: 'bin/imageOptim'
+        }, {
+          src: 'src/md/README.md',
+          dest: 'README.md'
         }]
       }
     }
 
   });
 
+  var fs = require('fs');
+  var path = require('path');
+
+  function readFile(filePath, done) {
+    fs.readFile(path.resolve(filePath), 'utf8', function(err, contents) {
+      if (err) {
+        throw err;
+      }
+      done(contents);
+    });
+  }
+
+  function writeFile(filePath, contents, done) {
+    fs.writeFile(path.resolve(filePath), contents, function(err) {
+      if (err) {
+        throw err;
+      }
+      done();
+    });
+  }
+
+  function mergeObjectWithFile(filePath, data, onComplete) {
+    readFile(filePath, function(contents) {
+      Object.keys(data).forEach(function(token){
+        contents = contents.replace(new RegExp('\\{\\{' + token + '\\}\\}', 'g'), data[token]);
+      });
+      writeFile(filePath, contents, onComplete);
+    });
+  }
+
+  function lineToShellEcho (line) {
+    return '  echo "' + line + '"';
+  }
+
+  function lineToMarkdownCodeBlock (line) {
+    return '    ' + line;
+  }
+
   grunt.registerMultiTask('environment', 'Apply environment config to build', function() {
 
-    var fs = require('fs');
-    var path = require('path');
     var task = this;
     var taskComplete = task.async();
 
+    // @TODO: DRY this mess up
+    // @TODO: use promises
+
     task.data.version = require('./package.json').version;
 
-    function mergeConfig (filePath, onComplete) {
-      filePath = path.resolve(filePath);
-      fs.readFile(filePath, 'utf8', function (err, fileContents) {
-        var token;
-        if (err) {
-          throw err;
-        }
-        for(token in task.data) {
-          fileContents = fileContents.replace(new RegExp('\\{\\{' + token + '\\}\\}', 'g'), task.data[token]);
-        }
-        fs.writeFile(filePath, fileContents, function (err) {
-          if (err) {
-            throw err;
-          }
-          onComplete();
-        });
-      });
-    }
+    readFile('src/txt/usage.txt', function(usage) {
 
-    mergeConfig('bin/imageOptim', function () {
-      mergeConfig('bin/imageOptimAppleScriptLib', function () {
-        taskComplete();
+      task.data.usage = usage.split('\n').map(lineToShellEcho).join('\n');
+
+      readFile('src/txt/examples.txt', function(examples) {
+
+        task.data.examples = examples.split('\n').map(lineToShellEcho).join('\n');
+
+        mergeObjectWithFile('bin/imageOptim', task.data, function() {
+          mergeObjectWithFile('bin/imageOptimAppleScriptLib', task.data, function() {
+
+            task.data.usage = usage.split('\n').map(lineToMarkdownCodeBlock).join('\n');
+            task.data.examples = examples.split('\n').map(lineToMarkdownCodeBlock).join('\n');
+
+            mergeObjectWithFile('README.md', task.data, function() {
+              taskComplete();
+            });
+
+          });
+        });
       });
     });
 

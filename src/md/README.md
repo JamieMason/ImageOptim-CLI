@@ -18,32 +18,11 @@ You can see also a [video screen recording of ImageOptim-CLI](https://www.youtub
 
 ## Usage
 
-    Usage: imageOptim [options]
-    Usage: find images/*.jpg |imageOptim [options]
-    
-    Options:
-    
-      -d, --directory     directory of images to process
-      -a, --image-alpha   process PNGs with ImageAlpha.app (http://pngmini.com)
-      -j, --jpeg-mini     process JPGs with JPEGmini.app (https://itunes.apple.com/us/app/jpegmini/id498944723
-      -q, --quit          quit ImageOptim.app when complete
-      -h, --help          output usage information
-      -e, --examples      output usage examples
-      -v, --version       output the version number
-    
+{{usage}}
 
 ## Examples
 
-    Examples:
-    
-    Run ImageAlpha, ImageOptim, JPEGmini, then quit
-    $ imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
-    $ imageOptim -j -a -q -d path/to/images
-    
-    Run ImageOptim only
-    $ imageOptim --directory path/to/images
-    $ imageOptim -d path/to/images
-    
+{{examples}}
 
 ## Credits
 
