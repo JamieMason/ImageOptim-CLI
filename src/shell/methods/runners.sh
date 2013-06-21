@@ -9,20 +9,21 @@ function getTimeSpent {
   echo $timeSpent
 }
 
-# (): How many images are in the directory we're about to process?
+# ($1:dirPath): How many images are in the directory we're about to process?
 function getImgCount {
-  echo $(find -E "$imgPath" -iregex $imageOptimFileTypes | wc -l)
+  echo $(find -E "$1" -iregex $imageOptimFileTypes | wc -l)
 }
 
 # (): run applications against a directory of images
 function processDirectory {
   startTime=$(now)
-  echo "Processing $(getImgCount) images..."
+  imgCount=$(getImgCount "$imgPath")
+  echo "Processing $imgCount images..."
 
-  runImageAlphaOnDirectory
+  runImageAlphaOnDirectory "$imgPath"
   waitForImageAlpha
 
-  runImageOptimOnDirectory
+  runImageOptimOnDirectory "$imgPath"
   waitForImageOptim
 
   runJPEGmini "$imgPath"
@@ -41,6 +42,8 @@ function processFiles {
     pipedFiles[$i]="${LINE}"
     i=$((i+1))
   done
+
+  echo "Processing $i images..."
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
