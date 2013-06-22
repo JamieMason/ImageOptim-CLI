@@ -9,7 +9,6 @@ function waitForApp {
   sleep 2
   # wait until those processes have completed
   while [[ $(countProcesses $1) > "1" ]]; do
-    echo $(countProcesses $1)
     sleep $isBusyIntervalLength
   done
 }
