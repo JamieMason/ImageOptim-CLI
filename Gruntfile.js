@@ -92,7 +92,7 @@ module.exports = function(grunt) {
 
       task.data.usage = usage.split('\n').map(lineToShellEcho).join('\n');
 
-      readFile('src/txt/examples.txt', function(examples) {
+      readFile('src/md/examples.md', function(examples) {
 
         task.data.examples = examples.split('\n').map(lineToShellEcho).join('\n');
 
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
           mergeObjectWithFile('bin/imageOptimAppleScriptLib', task.data, function() {
 
             task.data.usage = usage.split('\n').map(lineToMarkdownCodeBlock).join('\n');
-            task.data.examples = examples.split('\n').map(lineToMarkdownCodeBlock).join('\n');
+            task.data.examples = examples;
 
             mergeObjectWithFile('README.md', task.data, function() {
               taskComplete();
