@@ -102,24 +102,27 @@ function runPornelAppOnImage {
 
 # ($1:image):
 function runImageOptimOnImage {
+  echo "ImageOptim: $1"
   runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
 # ($1:image):
 function runImageAlphaOnImage {
+  echo "ImageAlpha: $1"
   runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName "$1"
 }
 
 # ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
+    echo "JPEGmini: $1"
     `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
   fi
 }
 
 # ($1:appName): Get the number of processes in use by an Application
 function countProcesses {
-  printf $(ps -aef | grep  "[${1:0:1}]${1:1}" | wc -l)
+  printf $(ps -aef | grep  "[${1:0:1}]${1:1}.app" | wc -l)
 }
 
 # ($1:appName): Sleep until app is done optimising images
@@ -127,7 +130,8 @@ function waitForApp {
   # wait for App to spawn a few processes
   sleep 2
   # wait until those processes have completed
-  while [[ "$(countProcesses "$1")" > "1" ]]; do
+  while [[ $(countProcesses $1) > "1" ]]; do
+    echo $(countProcesses $1)
     sleep $isBusyIntervalLength
   done
 }
@@ -280,7 +284,6 @@ function processFiles {
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '.*(png)'`" ]; then
-      echo "ImageAlpha: $file"
       runImageAlphaOnImage "$file"
     fi
   done
@@ -289,7 +292,6 @@ function processFiles {
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '.*(jpg|jpeg)'`" ]; then
-      echo "JPEGmini: $file"
       runJPEGmini "$file"
     fi
   done
@@ -298,7 +300,6 @@ function processFiles {
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
-      echo "ImageOptim: $file"
       runImageOptimOnImage "$file"
     fi
   done
