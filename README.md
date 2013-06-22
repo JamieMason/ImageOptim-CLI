@@ -6,13 +6,52 @@ Automates batch image processing with [ImageOptim](http://imageoptim.com), [Imag
 
     $ npm install -g imageoptim-cli
 
+ImageOptim-CLI is written in Shell and AppleScript, so you don't _need_ Node.js or npm. You can install manually by downloading the latest zip then adding ImageOptim-CLI to your [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
+
+	$ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.4.5
+	$ unzip imageoptim-cli.zip
+	$ export PATH=$PATH:imageoptim-cli/bin
+
 ## Grunt Plugin
 
-If you use [Grunt](http://gruntjs.com) the ImageOptim-CLI plugin is [grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim).
+The ImageOptim-CLI [Grunt](http://gruntjs.com) plugin is [grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim).
 
 ## Demo
 
-There's a [short video on YouTube](https://www.youtube.com/watch?v=HGBounRIzSs) to give you an idea of how it works.
+There's a short [video demo](https://www.youtube.com/watch?v=HGBounRIzSs) to give you an idea of how it works.
+
+## Examples
+
+### Optimise a directory of images
+
+This command will optimise all image files in your Awesome project.
+
+    imageOptim --directory ~/Sites/Awesome # [options]
+
+### Optimise a filtered set of images
+
+This command will optimise just the .jpg files in your Awesome project.
+
+    find ~/Sites/Awesome -name '*.jpg' | imageOptim # [options]
+
+### Passing additional options
+
+The long format for enabling options is as follows;
+
+    imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
+
+The equivalent of the above in short format is as follows;
+
+    imageOptim -j -a -q -d path/to/images
+
+### Adding to git pre-commit hook
+
+Adding the below to `your_project/.git/hooks/pre-commit` will run ImageOptim-CLI
+each time you commit new and changed files into your project. Any files which
+aren't images will be ignored.
+
+    git diff --cached --name-only --diff-filter=ACM | imageOptim # [options]
+
 
 ## Usage
 
@@ -30,39 +69,4 @@ There's a [short video on YouTube](https://www.youtube.com/watch?v=HGBounRIzSs) 
     
     *  http://pngmini.com
     ** https://itunes.apple.com/us/app/jpegmini/id498944723
-    
-
-## Examples
-
-    Examples:
-    
-    OPTIMISE A DIRECTORY OF IMAGES
-    ------------------------------
-    This command will optimise all image files in your Awesome project.
-    
-        imageOptim --directory ~/Sites/Awesome # [options]
-    
-    OPTIMISE A FILTERED SET OF IMAGES
-    ---------------------------------
-    This command will optimise just the .jpg files in your Awesome project.
-    
-        find ~/Sites/Awesome -name '*.jpg' | imageOptim # [options]
-    
-    PASSING ADDITIONAL OPTIONS
-    --------------------------
-    The long format for enabling options is as follows;
-    
-        imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images
-    
-    The equivalent of the above in short format is as follows;
-    
-        imageOptim -j -a -q -d path/to/images
-    
-    GIT PRE-COMMIT HOOK
-    -------------------
-    Adding the below to `your_project/.git/hooks/pre-commit` will run ImageOptim-CLI
-    each time you commit new and changed files into your project. Any files which
-    aren't images will be ignored.
-    
-        git diff --cached --name-only --diff-filter=ACM | imageOptim # [options]
     
