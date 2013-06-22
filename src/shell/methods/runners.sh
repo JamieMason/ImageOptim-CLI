@@ -47,7 +47,6 @@ function processFiles {
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
-      echo "{{imageAlphaAppName}}: $file"
       runImageAlphaOnImage "$file"
     fi
   done
@@ -56,7 +55,6 @@ function processFiles {
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
-      echo "{{jpegMiniAppName}}: $file"
       runJPEGmini "$file"
     fi
   done
@@ -65,7 +63,6 @@ function processFiles {
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '{{imageOptimFileTypes}}'`" ]; then
-      echo "{{imageOptimAppName}}: $file"
       runImageOptimOnImage "$file"
     fi
   done

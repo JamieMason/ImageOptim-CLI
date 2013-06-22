@@ -36,17 +36,20 @@ function runPornelAppOnImage {
 
 # ($1:image):
 function runImageOptimOnImage {
+  echo "{{imageOptimAppName}}: $1"
   runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
 # ($1:image):
 function runImageAlphaOnImage {
+  echo "{{imageAlphaAppName}}: $1"
   runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName "$1"
 }
 
 # ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
+    echo "{{jpegMiniAppName}}: $1"
     `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
   fi
 }
