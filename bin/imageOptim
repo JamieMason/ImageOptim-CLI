@@ -90,7 +90,9 @@ function runImageOptimOnDirectory {
 
 # ($1:dirPath):
 function runImageAlphaOnDirectory {
-  runPornelAppOnDirectory $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName "$1"
+  find -E "$1" -iregex '.*(png)' -print0 | while IFS= read -r -d $'\0' img; do
+    runImageAlphaOnImage "$img"
+  done
 }
 
 # ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:image):
@@ -102,20 +104,17 @@ function runPornelAppOnImage {
 
 # ($1:image):
 function runImageOptimOnImage {
-  echo "ImageOptim: $1"
   runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
 # ($1:image):
 function runImageAlphaOnImage {
-  echo "ImageAlpha: $1"
-  runPornelAppOnImage $useImageAlpha $imageAlphaAppName $imageAlphaFileTypes $imageAlphaAppFileName "$1"
+  /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 "$1"
 }
 
 # ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
-    echo "JPEGmini: $1"
     `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
   fi
 }
@@ -147,13 +146,6 @@ function waitForPornelApp {
 function waitForImageOptim {
   if [ "true" == $useImageOptim ]; then
     waitForPornelApp $imageOptimAppName
-  fi
-}
-
-# ():
-function waitForImageAlpha {
-  if [ "true" == $useImageAlpha ]; then
-    waitForPornelApp $imageAlphaAppName
   fi
 }
 
@@ -257,7 +249,6 @@ function processDirectory {
   echo "Processing $imgCount images..."
 
   runImageAlphaOnDirectory "$imgPath"
-  waitForImageAlpha
 
   runJPEGmini "$imgPath"
   waitForJPEGmini
@@ -286,8 +277,6 @@ function processFiles {
       runImageAlphaOnImage "$file"
     fi
   done
-
-  waitForImageAlpha
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '.*(jpg|jpeg)'`" ]; then

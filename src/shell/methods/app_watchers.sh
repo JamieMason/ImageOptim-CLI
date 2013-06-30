@@ -29,13 +29,6 @@ function waitForImageOptim {
 }
 
 # ():
-function waitForImageAlpha {
-  if [ "true" == $useImageAlpha ]; then
-    waitForPornelApp $imageAlphaAppName
-  fi
-}
-
-# ():
 function waitForJPEGmini {
   if [ "true" == $useJPEGmini ]; then
     sleep 1

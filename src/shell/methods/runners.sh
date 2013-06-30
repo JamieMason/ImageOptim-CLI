@@ -21,7 +21,6 @@ function processDirectory {
   echo "Processing $imgCount images..."
 
   runImageAlphaOnDirectory "$imgPath"
-  waitForImageAlpha
 
   runJPEGmini "$imgPath"
   waitForJPEGmini
@@ -50,8 +49,6 @@ function processFiles {
       runImageAlphaOnImage "$file"
     fi
   done
-
-  waitForImageAlpha
 
   for file in "${pipedFiles[@]}"; do
     if [ "" != "`echo "$file" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
