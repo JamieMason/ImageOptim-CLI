@@ -43,7 +43,7 @@ function runImageOptimOnImage {
 
 # ($1:image):
 function runImageAlphaOnImage {
-  /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 "$1"
+  /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 -- "$1"
 }
 
 # ($1:path):
