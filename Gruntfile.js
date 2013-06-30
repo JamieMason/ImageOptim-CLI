@@ -8,6 +8,16 @@ module.exports = function(grunt) {
       base: require('./environment/base.json')
     },
 
+    watch: {
+      scripts: {
+        files: ['src/**/*'],
+        tasks: ['build'],
+        options: {
+          nospawn: true
+        }
+      }
+    },
+
     concat: {
       dist: {
         files: [{
@@ -114,6 +124,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('build', ['concat', 'environment']);
 

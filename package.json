@@ -34,7 +34,8 @@
   ],
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4"
   },
   "contributors": [
     "Jamie Mason (https://github.com/JamieMason)",
