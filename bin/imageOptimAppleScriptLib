@@ -71,8 +71,9 @@ on run_jpegmini(imgPath, appName)
         -- command+shift+g in Finder lets us enter file paths direct
         keystroke "g" using {command down, shift down}
 
-        -- enter the path to our folder of images
-        keystroke imgPath
+        set value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini" to imgPath
+
+        delay 1
 
         -- and navigate to it
         keystroke return
