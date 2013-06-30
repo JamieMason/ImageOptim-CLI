@@ -19,11 +19,13 @@ function runPornelAppOnDirectory {
 
 # ($1:dirPath):
 function runImageOptimOnDirectory {
+  echo "ImageOptim..."
   runPornelAppOnDirectory $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
 # ($1:dirPath):
 function runImageAlphaOnDirectory {
+  echo "ImageAlpha..."
   find -E "$1" -iregex '{{imageAlphaFileTypes}}' -print0 | while IFS= read -r -d $'\0' img; do
     runImageAlphaOnImage "$img"
   done
@@ -49,6 +51,7 @@ function runImageAlphaOnImage {
 # ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
+    echo "JPEGmini..."
     `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
   fi
 }
