@@ -79,22 +79,24 @@ function addDirectoryToQueue {
 # ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:dirPath):
 function runPornelAppOnDirectory {
   if [ "true" == $1 ]; then
+    echo $2
     addDirectoryToQueue $3 $4 "$5"
   fi
 }
 
 # ($1:dirPath):
 function runImageOptimOnDirectory {
-  echo "ImageOptim..."
   runPornelAppOnDirectory $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
 }
 
 # ($1:dirPath):
 function runImageAlphaOnDirectory {
-  echo "ImageAlpha..."
-  find -E "$1" -iregex '.*(png)' -print0 | while IFS= read -r -d $'\0' img; do
-    runImageAlphaOnImage "$img"
-  done
+  if [ "true" == $useImageAlpha ]; then
+    echo "ImageAlpha..."
+    find -E "$1" -iregex '.*(png)' -print0 | while IFS= read -r -d $'\0' img; do
+      runImageAlphaOnImage "$img"
+    done
+  fi
 }
 
 # ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:image):
