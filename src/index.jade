@@ -1,0 +1,83 @@
+!!! 5
+html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl', manifest='app.appcache')
+  head
+    meta(charset='UTF-8')
+    title ImageOptim-CLI: Batch optimisation of images without loss of quality
+    link(rel='icon', type='image/x-icon', href='favicon.ico')
+    include browser/min.css
+  body.ng-cloak
+    .head
+      hgroup
+        h1 ImageOptim-CLI
+        h2 Automates batch optimisation of images without loss in quality.
+    a(href='https://github.com/JamieMason/ImageOptim-CLI')
+      img.ribbon(src='images/fork-me.png', alt='Fork me on GitHub')
+    .results
+      .filters
+        | Show results for:
+        button.btn(ng-click='ordering.filter=\'\'', ng-class='{\'btn--active\':ordering.filter==\'\'}') ALL
+        button.btn(ng-click='ordering.filter=\'jpg\'', ng-class='{\'btn--active\':ordering.filter==\'jpg\'}') JPEG
+        button.btn(ng-click='ordering.filter=\'png\'', ng-class='{\'btn--active\':ordering.filter==\'png\'}') PNG
+        button.btn(ng-click='ordering.filter=\'gif\'', ng-class='{\'btn--active\':ordering.filter==\'gif\'}') GIF
+      table
+        caption Comparison of popular lossless image optimisers
+        thead
+          tr
+            th(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'image\')') Image
+            th.int.ps(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'size_photoshop\')') Photoshop
+            th.int.iocli(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'diff_imageoptim-cli\')') ImageOptim-CLI
+            th.int.iocli-jpeg(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'diff_imageoptim-cli-jpegmini\')') ImageOptim-CLI +JPEGmini
+            th.int.codekit(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'diff_codekit\')') CodeKit
+            th.int.grunt(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'diff_grunt-contrib-imagemin\')') grunt-contrib-imagemin
+            th.int.smushit(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'diff_smushit\')') Smushit
+            th.int.tinypng(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'diff_tinypng\')') TinyPNG
+          tr.total
+            td.title Total
+            td.int.ps
+              span.result {{total.size_photoshop}} (100)%
+            td.int.iocli(ng-class='css(total,\'imageoptim-cli\')')
+              span.result {{text(total,'imageoptim-cli')}}
+            td.int.iocli-jpeg(ng-class='css(total,\'imageoptim-cli-jpegmini\')')
+              span.result {{text(total,'imageoptim-cli-jpegmini')}}
+            td.int.codekit(ng-class='css(total,\'codekit\')')
+              span.result {{text(total,'codekit')}}
+            td.int.grunt(ng-class='css(total,\'grunt-contrib-imagemin\')')
+              span.result {{text(total,'grunt-contrib-imagemin')}}
+            td.int.smushit(ng-class='css(total,\'smushit\')')
+              span.result {{text(total,'smushit')}}
+            td.int.tinypng(ng-class='css(total,\'tinypng\')')
+              span.result {{text(total,'tinypng')}}
+        tbody
+          tr(ng-repeat='img in results | orderBy:ordering.key:ordering.descending')
+            td
+              | {{img.image}}
+            td.int.ps
+              a.result(ng-href='images/imageoptim-cli-jpegmini/{{img.image}}')
+                | {{img.size_photoshop}} (100)%
+            td.int.iocli(ng-class='css(img,\'imageoptim-cli\')')
+              a.result(ng-href='images/imageoptim-cli/{{img.image}}')
+                | {{text(img,'imageoptim-cli')}}
+            td.int.iocli-jpeg(ng-class='css(img,\'imageoptim-cli-jpegmini\')')
+              a.result(ng-href='images/imageoptim-cli-jpegmini/{{img.image}}')
+                | {{text(img,'imageoptim-cli-jpegmini')}}
+            td.int.codekit(ng-class='css(img,\'codekit\')')
+              a.result(ng-href='images/codekit/{{img.image}}')
+                | {{text(img,'codekit')}}
+            td.int.grunt(ng-class='css(img,\'grunt-contrib-imagemin\')')
+              a.result(ng-href='images/grunt-contrib-imagemin/{{img.image}}')
+                | {{text(img,'grunt-contrib-imagemin')}}
+            td.int.smushit(ng-class='css(img,\'smushit\')')
+              a.result(ng-href='images/smushit/{{img.image}}')
+                | {{text(img,'smushit')}}
+            td.int.tinypng(ng-class='css(img,\'tinypng\')')
+              a.result(ng-href='images/tinypng/{{img.image}}')
+                | {{text(img,'tinypng')}}
+    include browser/min.js
