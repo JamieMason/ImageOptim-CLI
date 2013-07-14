@@ -1,15 +1,15 @@
 !!! 5
-html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl', manifest='app.appcache')
+html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
   head
     meta(charset='UTF-8')
-    title ImageOptim-CLI: Batch optimisation of images without loss of quality
+    title ImageOptim-CLI: Batch optimisation of images
     link(rel='icon', type='image/x-icon', href='favicon.ico')
     include browser/min.css
   body.ng-cloak
     .head
       hgroup
         h1 ImageOptim-CLI
-        h2 Automates batch optimisation of images without loss in quality.
+        h2 Automates batch optimisation of images.
       p
         | See <a href="https://github.com/JamieMason/ImageOptim-CLI#installation">Installation</a>
         |  and <a href="https://github.com/JamieMason/ImageOptim-CLI#examples">examples</a>
@@ -30,7 +30,7 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl', manifest='a
           span.key.noop No Savings
           span.key.degrade Size increased
       table
-        caption Comparison of popular lossless image optimisers
+        caption Comparison of popular image optimisers
         thead
           tr
             th(scope='col')
