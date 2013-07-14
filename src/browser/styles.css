@@ -13,23 +13,18 @@ body {
 table {
   border-collapse:collapse;
   width:100%;
-  font-size: 90%
 }
-
   caption {
     display:none
   }
-
-  thead {
-    font-size: 110%
-  }
-
   th,
   td {
     padding:0.6em;
     text-align:left;
   }
-
+  tbody {
+    font-size: 90%
+  }
   tbody > tr > td,
   tbody > tr > th {
     border:1px dashed #DDD;
@@ -85,20 +80,31 @@ table {
 /* Filters
  **************************************************************************************************/
 
-.filters {
+.toolbar {
   text-align:center;
   margin-bottom:2em;
 }
-  .btn {
-    background: transparent;
-    border-width:0 0 4px 0;
-    border-style: solid;
-    border-color:#CCC;
-    margin:0 0.5em;
-    cursor: pointer;
+  .tbgroup {
+    display: inline-block;
   }
-    .btn--active {
-      border-color:#36C;
+  .filters {
+    margin-right: 2em;
+  }
+    .btn {
+      background: transparent;
+      border-width:0 0 4px 0;
+      border-style: solid;
+      border-color:#CCC;
+      margin:0 0.5em;
+      cursor: pointer;
+    }
+      .btn--active {
+        border-color:#36C;
+      }
+    .key {
+      padding: 0.5em;
+      margin-left: 0.5em;
+      font-size: 90%;
     }
 
 /* Results Table
@@ -108,6 +114,7 @@ table {
 .total > td {
   background:#252525;
   color:#999;
+  /*font-size: 110%*/
 }
   .total > .title {
     font-weight:bold;
@@ -161,7 +168,6 @@ table {
 /* link to each optimised image */
 .result {
   color:#252525;
-  text-decoration: none;
 }
   .result:hover {
     text-decoration: underline;
@@ -172,6 +178,7 @@ table {
 .total > .noop {
   background:#D62323;
 }
+  .noop,
   .total > .noop > .result {
     color:#252525
   }
@@ -181,6 +188,7 @@ table {
 .total > .degrade {
   background:#252525;
 }
+  .degrade,
   .degrade > .result {
     color:#999
   }
@@ -190,6 +198,7 @@ table {
 .total > .best {
   background:#8BBF36;
 }
+  .best,
   .total > .best > .result {
     color:#252525
   }
