@@ -176,6 +176,15 @@ table {
     color:#252525
   }
 
+/* result which made file larger */
+.degrade,
+.total > .degrade {
+  background:#252525;
+}
+  .degrade > .result {
+    color:#999
+  }
+
 /* result with best gains */
 .best,
 .total > .best {

@@ -29,6 +29,8 @@ angular.module('AssessCompress', []).controller('AppCtrl', ['$scope',
 
       if (result['diff_' + key] === 0) {
         classes.push('noop');
+      } else if (result['diff_' + key] < 0) {
+        classes.push('degrade');
       }
 
       return classes.join(' ');
