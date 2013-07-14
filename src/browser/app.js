@@ -1,5 +1,15 @@
-angular.module('AssessCompress', []).controller('AppCtrl', ['$scope',
-  function($scope) {
+angular.module('AssessCompress', [])
+
+.run(function() {
+  angular.element(document).bind('click', function(e) {
+    if (angular.element(e.target).attr('href') === '#') {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  });
+})
+
+.controller('AppCtrl', ['$scope', function($scope) {
 
     'use strict';
 
