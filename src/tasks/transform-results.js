@@ -15,9 +15,9 @@ module.exports = function(grunt) {
     var totals = {};
     var toolNames = [
       'codekit',
-      'grunt-contrib-imagemin',
-      'imageoptim-cli',
-      'imageoptim-cli-jpegmini',
+      'grunt_contrib_imagemin',
+      'imageoptim_cli',
+      'imageoptim_cli_jpegmini',
       'smushit',
       'tinypng'
     ];
@@ -25,9 +25,9 @@ module.exports = function(grunt) {
     function getTotalTracker() {
       return {
         'size_codekit': 0,
-        'size_grunt-contrib-imagemin': 0,
-        'size_imageoptim-cli': 0,
-        'size_imageoptim-cli-jpegmini': 0,
+        'size_grunt_contrib_imagemin': 0,
+        'size_imageoptim_cli': 0,
+        'size_imageoptim_cli_jpegmini': 0,
         'size_photoshop': 0,
         'size_smushit': 0,
         'size_tinypng': 0
@@ -40,9 +40,9 @@ module.exports = function(grunt) {
 
     function addToTotal(totalKey, el) {
       totals[totalKey]['size_codekit'] += el['size_codekit'];
-      totals[totalKey]['size_grunt-contrib-imagemin'] += el['size_grunt-contrib-imagemin'];
-      totals[totalKey]['size_imageoptim-cli'] += el['size_imageoptim-cli'];
-      totals[totalKey]['size_imageoptim-cli-jpegmini'] += el['size_imageoptim-cli-jpegmini'];
+      totals[totalKey]['size_grunt_contrib_imagemin'] += el['size_grunt_contrib_imagemin'];
+      totals[totalKey]['size_imageoptim_cli'] += el['size_imageoptim_cli'];
+      totals[totalKey]['size_imageoptim_cli_jpegmini'] += el['size_imageoptim_cli_jpegmini'];
       totals[totalKey]['size_photoshop'] += el['size_photoshop'];
       totals[totalKey]['size_smushit'] += el['size_smushit'];
       totals[totalKey]['size_tinypng'] += el['size_tinypng'];
@@ -58,9 +58,9 @@ module.exports = function(grunt) {
     function processResult(el) {
       // get number of bytes removed
       getSavings(el, 'codekit');
-      getSavings(el, 'grunt-contrib-imagemin');
-      getSavings(el, 'imageoptim-cli');
-      getSavings(el, 'imageoptim-cli-jpegmini');
+      getSavings(el, 'grunt_contrib_imagemin');
+      getSavings(el, 'imageoptim_cli');
+      getSavings(el, 'imageoptim_cli_jpegmini');
       getSavings(el, 'smushit');
       getSavings(el, 'tinypng');
 

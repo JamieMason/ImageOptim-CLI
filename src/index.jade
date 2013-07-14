@@ -28,13 +28,13 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl', manifest='a
             th.int.ps(scope='col')
               a.sort(href='#', ng-click='orderBy(\'size_photoshop\')') Photoshop
             th.int.iocli(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'diff_imageoptim-cli\')') ImageOptim-CLI
+              a.sort(href='#', ng-click='orderBy(\'diff_imageoptim_cli\')') ImageOptim-CLI
             th.int.iocli-jpeg(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'diff_imageoptim-cli-jpegmini\')') ImageOptim-CLI +JPEGmini
+              a.sort(href='#', ng-click='orderBy(\'diff_imageoptim_cli_jpegmini\')') ImageOptim-CLI +JPEGmini
             th.int.codekit(scope='col')
               a.sort(href='#', ng-click='orderBy(\'diff_codekit\')') CodeKit
             th.int.grunt(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'diff_grunt-contrib-imagemin\')') grunt-contrib-imagemin
+              a.sort(href='#', ng-click='orderBy(\'diff_grunt_contrib_imagemin\')') grunt_contrib_imagemin
             th.int.smushit(scope='col')
               a.sort(href='#', ng-click='orderBy(\'diff_smushit\')') Smushit
             th.int.tinypng(scope='col')
@@ -43,14 +43,14 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl', manifest='a
             td.title Total
             td.int.ps
               span.result {{total.size_photoshop}} (100)%
-            td.int.iocli(ng-class='css(total,\'imageoptim-cli\')')
-              span.result {{text(total,'imageoptim-cli')}}
-            td.int.iocli-jpeg(ng-class='css(total,\'imageoptim-cli-jpegmini\')')
-              span.result {{text(total,'imageoptim-cli-jpegmini')}}
+            td.int.iocli(ng-class='css(total,\'imageoptim_cli\')')
+              span.result {{text(total,'imageoptim_cli')}}
+            td.int.iocli-jpeg(ng-class='css(total,\'imageoptim_cli_jpegmini\')')
+              span.result {{text(total,'imageoptim_cli_jpegmini')}}
             td.int.codekit(ng-class='css(total,\'codekit\')')
               span.result {{text(total,'codekit')}}
-            td.int.grunt(ng-class='css(total,\'grunt-contrib-imagemin\')')
-              span.result {{text(total,'grunt-contrib-imagemin')}}
+            td.int.grunt(ng-class='css(total,\'grunt_contrib_imagemin\')')
+              span.result {{text(total,'grunt_contrib_imagemin')}}
             td.int.smushit(ng-class='css(total,\'smushit\')')
               span.result {{text(total,'smushit')}}
             td.int.tinypng(ng-class='css(total,\'tinypng\')')
@@ -60,20 +60,20 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl', manifest='a
             td
               | {{img.image}}
             td.int.ps
-              a.result(ng-href='images/imageoptim-cli-jpegmini/{{img.image}}')
+              a.result(ng-href='images/imageoptim_cli_jpegmini/{{img.image}}')
                 | {{img.size_photoshop}} (100)%
-            td.int.iocli(ng-class='css(img,\'imageoptim-cli\')')
-              a.result(ng-href='images/imageoptim-cli/{{img.image}}')
-                | {{text(img,'imageoptim-cli')}}
-            td.int.iocli-jpeg(ng-class='css(img,\'imageoptim-cli-jpegmini\')')
-              a.result(ng-href='images/imageoptim-cli-jpegmini/{{img.image}}')
-                | {{text(img,'imageoptim-cli-jpegmini')}}
+            td.int.iocli(ng-class='css(img,\'imageoptim_cli\')')
+              a.result(ng-href='images/imageoptim_cli/{{img.image}}')
+                | {{text(img,'imageoptim_cli')}}
+            td.int.iocli-jpeg(ng-class='css(img,\'imageoptim_cli_jpegmini\')')
+              a.result(ng-href='images/imageoptim_cli_jpegmini/{{img.image}}')
+                | {{text(img,'imageoptim_cli_jpegmini')}}
             td.int.codekit(ng-class='css(img,\'codekit\')')
               a.result(ng-href='images/codekit/{{img.image}}')
                 | {{text(img,'codekit')}}
-            td.int.grunt(ng-class='css(img,\'grunt-contrib-imagemin\')')
-              a.result(ng-href='images/grunt-contrib-imagemin/{{img.image}}')
-                | {{text(img,'grunt-contrib-imagemin')}}
+            td.int.grunt(ng-class='css(img,\'grunt_contrib_imagemin\')')
+              a.result(ng-href='images/grunt_contrib_imagemin/{{img.image}}')
+                | {{text(img,'grunt_contrib_imagemin')}}
             td.int.smushit(ng-class='css(img,\'smushit\')')
               a.result(ng-href='images/smushit/{{img.image}}')
                 | {{text(img,'smushit')}}
