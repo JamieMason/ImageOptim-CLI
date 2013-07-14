@@ -210,7 +210,7 @@ function examples {
   echo ""
   echo "### Adding to git pre-commit hook"
   echo ""
-  echo "Adding the below to `your_project/.git/hooks/pre-commit` will run ImageOptim-CLI"
+  echo "Adding the below to **your_project/.git/hooks/pre-commit** will run ImageOptim-CLI"
   echo "each time you commit new and changed files into your project. Any files which"
   echo "aren't images will be ignored."
   echo ""

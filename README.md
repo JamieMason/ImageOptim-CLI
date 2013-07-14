@@ -46,7 +46,7 @@ The equivalent of the above in short format is as follows;
 
 ### Adding to git pre-commit hook
 
-Adding the below to `your_project/.git/hooks/pre-commit` will run ImageOptim-CLI
+Adding the below to **your_project/.git/hooks/pre-commit** will run ImageOptim-CLI
 each time you commit new and changed files into your project. Any files which
 aren't images will be ignored.
 
