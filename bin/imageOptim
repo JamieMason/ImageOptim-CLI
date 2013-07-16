@@ -61,6 +61,7 @@ imageOptimAppFileName="ImageOptim.app"
 # JPEGmini
 jpegMiniFileTypes=".*(jpg|jpeg)"
 jpegMiniAppBundleId="com.icvt.JPEGmini"
+jpegMiniAppRetailBundleId="com.icvt.JPEGmini-retail"
 jpegMiniAppName="JPEGmini"
 jpegMiniAppFileName="JPEGmini.app"
 

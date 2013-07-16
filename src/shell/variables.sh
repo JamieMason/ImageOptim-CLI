@@ -36,5 +36,6 @@ imageOptimAppFileName="{{imageOptimAppFileName}}"
 # JPEGmini
 jpegMiniFileTypes="{{jpegMiniFileTypes}}"
 jpegMiniAppBundleId="{{jpegMiniAppBundleId}}"
+jpegMiniAppRetailBundleId="{{jpegMiniAppRetailBundleId}}"
 jpegMiniAppName="{{jpegMiniAppName}}"
 jpegMiniAppFileName="{{jpegMiniAppFileName}}"
