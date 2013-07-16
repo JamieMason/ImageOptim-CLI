@@ -24,7 +24,7 @@
 # SOFTWARE.
 
 # current version of ImageOptim-CLI from package.json
-version="1.6.13"
+version="1.6.14"
 
 # to be set to "stdin" or "directory" based on cli options or piped input
 runMode="stdin"
