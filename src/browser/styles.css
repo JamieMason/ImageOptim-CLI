@@ -26,7 +26,8 @@ table {
     font-size: 90%
   }
   tbody > tr > td,
-  tbody > tr > th {
+  tbody > tr > th,
+  .key {
     border:1px dashed #DDD;
   }
 
@@ -118,7 +119,6 @@ table {
 .total > td {
   background:#252525;
   color:#999;
-  /*font-size: 110%*/
 }
   .total > .title {
     font-weight:bold;
@@ -173,36 +173,33 @@ table {
 .result {
   color:#252525;
 }
-  .result:hover {
+  a.result:hover {
     text-decoration: underline;
-  }
-
-/* result which made no gains */
-.noop,
-.total > .noop {
-  background:#D62323;
-}
-  .noop,
-  .total > .noop > .result {
-    color:#252525
   }
 
 /* result which made file larger */
 .degrade,
-.total > .degrade {
-  background:#252525;
+.degrade > .result {
+  background:#D62323;
+  color:#252525
 }
-  .degrade,
-  .degrade > .result {
-    color:#999
-  }
+
+/* result which made no gains */
+.noop,
+.noop > .result {
+  color:#C00;
+}
 
 /* result with best gains */
-.best,
-.total > .best {
+.best {
   background:#8BBF36;
 }
   .best,
-  .total > .best > .result {
+  .best > .result {
     color:#252525
   }
+
+.na,
+.na > .result {
+  color:#CCC;
+}

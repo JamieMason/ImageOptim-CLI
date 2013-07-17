@@ -10,6 +10,9 @@ module.exports = function(grunt) {
     var raw = require(toAbsolutePath(this.data.src));
     var resultsFile = toAbsolutePath(this.data.dest);
     var allImages = [];
+    var allGifs = [];
+    var allJpgs = [];
+    var allPngs = [];
     var indexAll = {};
     var json;
     var totals = {};
@@ -106,15 +109,42 @@ module.exports = function(grunt) {
     totals.png = getTotalTracker();
 
     _(allImages).each(_.partial(addToTotal, 'all'));
-    _(allImages).filter(_.partial(hasExtension, '.gif')).each(_.partial(addToTotal, 'gif'));
-    _(allImages).filter(_.partial(hasExtension, '.jpg')).each(_.partial(addToTotal, 'jpg'));
-    _(allImages).filter(_.partial(hasExtension, '.png')).each(_.partial(addToTotal, 'png'));
+
+    allGifs = _.filter(allImages, _.partial(hasExtension, '.gif'));
+    allJpgs = _.filter(allImages, _.partial(hasExtension, '.jpg'));
+    allPngs = _.filter(allImages, _.partial(hasExtension, '.png'));
+
+    _.each(allGifs, _.partial(addToTotal, 'gif'));
+    _.each(allJpgs, _.partial(addToTotal, 'jpg'));
+    _.each(allPngs, _.partial(addToTotal, 'png'));
 
     // calculate total savings
     processResult(totals.all);
     processResult(totals.gif);
     processResult(totals.jpg);
     processResult(totals.png);
+
+    // add N/A for images outside an app's scope
+    function noTinyPng(el) {
+      el.diff_tinypng = 'N/A';
+      el.saving_tinypng = 'N/A';
+      el.size_tinypng = 'N/A';
+    }
+
+    function noSmushit(el) {
+      el.diff_smushit = 'N/A';
+      el.saving_smushit = 'N/A';
+      el.size_smushit = 'N/A';
+    }
+
+    // TinyPNG - png only
+    _.each([].concat(allGifs, allJpgs), noTinyPng);
+    noTinyPng(totals.jpg);
+    noTinyPng(totals.gif);
+
+    // Smushit, converts gifs to pngs
+    _.each(allGifs, noSmushit);
+    noSmushit(totals.gif);
 
     json = {
       total: totals,

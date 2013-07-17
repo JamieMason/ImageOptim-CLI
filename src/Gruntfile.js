@@ -64,8 +64,8 @@ module.exports = function(grunt) {
         },
         files: {
           'browser/min.js': [
-            'browser/angular-1.0.7.min.js',
             'browser/results.js',
+            'browser/angular-1.0.7.min.js',
             'browser/app.js'
           ]
         }

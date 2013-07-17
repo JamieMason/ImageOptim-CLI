@@ -32,22 +32,26 @@ angular.module('AssessCompress', [])
     $scope.css = function(result, key) {
       var classes = [];
       var best = ' ' + (result.best || []).join(' ') + ' ';
+      var diff = result['diff_' + key];
 
       if (best.indexOf(' ' + key + ' ') !== -1) {
         classes.push('best');
       }
 
-      if (result['diff_' + key] === 0) {
+      if (diff === 0) {
         classes.push('noop');
-      } else if (result['diff_' + key] < 0) {
+      } else if (diff < 0) {
         classes.push('degrade');
+      } else if (diff === 'N/A') {
+        classes.push('na');
       }
 
       return classes.join(' ');
     };
 
     $scope.text = function(result, key) {
-      return result['size_' + key] + ' (' + result['saving_' + key] + '%)';
+      var size = result['size_' + key];
+      return size === 'N/A' ? 'N/A' : result['size_' + key] + ' (' + result['saving_' + key] + '%)';
     };
 
     $scope.$watch('ordering.filter', function(filter, prev) {
