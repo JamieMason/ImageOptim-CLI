@@ -94,5 +94,6 @@ module.exports = function(grunt) {
   grunt.task.loadTasks('tasks');
 
   grunt.task.registerTask('build', ['uglify', 'cssmin', 'jade']);
+  grunt.task.registerTask('data', ['gather', 'transform']);
 
 };
