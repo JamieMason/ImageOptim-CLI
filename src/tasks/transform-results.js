@@ -4,161 +4,94 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('transform', 'Transform raw JSON results to a preferred form.', function() {
 
-    var toAbsolutePath = require('path').resolve;
+    var q = require('q');
     var _ = require('lodash');
-    var fs = require('fs');
+    var toAbsolutePath = require('path').resolve;
     var raw = require(toAbsolutePath(this.data.src));
     var resultsFile = toAbsolutePath(this.data.dest);
-    var allImages = [];
-    var allGifs = [];
-    var allJpgs = [];
-    var allPngs = [];
-    var indexAll = {};
-    var json;
-    var totals = {};
-    var toolNames = [
-      'codekit',
-      'grunt_contrib_imagemin',
-      'imageoptim_cli',
-      'imageoptim_cli_jpegmini',
-      'smushit',
-      'tinypng'
-    ];
+    var writeFile = q.denodeify(require('fs').writeFile);
 
-    function getTotalTracker() {
-      return {
-        'size_codekit': 0,
-        'size_grunt_contrib_imagemin': 0,
-        'size_imageoptim_cli': 0,
-        'size_imageoptim_cli_jpegmini': 0,
-        'size_photoshop': 0,
-        'size_smushit': 0,
-        'size_tinypng': 0
-      };
-    }
+    q(raw)
+      .then(function(list) {
+        return _(list)
 
-    function hasExtension(extension, el) {
-      return el.image.indexOf(extension) !== -1;
-    }
+          // group tool results by image
+          .groupBy(function(img) {
+            return img.image;
+          })
 
-    function addToTotal(totalKey, el) {
-      totals[totalKey]['size_codekit'] += el['size_codekit'];
-      totals[totalKey]['size_grunt_contrib_imagemin'] += el['size_grunt_contrib_imagemin'];
-      totals[totalKey]['size_imageoptim_cli'] += el['size_imageoptim_cli'];
-      totals[totalKey]['size_imageoptim_cli_jpegmini'] += el['size_imageoptim_cli_jpegmini'];
-      totals[totalKey]['size_photoshop'] += el['size_photoshop'];
-      totals[totalKey]['size_smushit'] += el['size_smushit'];
-      totals[totalKey]['size_tinypng'] += el['size_tinypng'];
-    }
+          // store tool results as array and lookup by tool
+          .map(function(results, imageName, list) {
+            return {
+              all: results,
+              index: _.reduce(results, function(memo, img) {
+                memo[img.tool] = img;
+                return memo;
+              }, {})
+            };
+          })
 
-    // get bytes removed and % bytes removed
+          // work out which tool gained the highest file size decrease
+          .each(function(img) {
+            img.all = _(img.all)
+              .sortBy(function(el) {
+                return el.size;
+              })
+              .each(function(el, i, arr) {
+                el.isSmallest = el.size < img.index.photoshop.size && (i === 0 || el.size === arr[0].size);
+              })
+              .value();
+          })
 
-    function getSavings(el, toolName) {
-      el['diff_' + toolName] = el['size_photoshop'] - el['size_' + toolName];
-      el['saving_' + toolName] = parseFloat(((el['diff_' + toolName] / el['size_photoshop']) * 100).toFixed(2));
-    }
+          // store tools, image and size on a flat object
+          .map(function(results) {
+            var img = {};
+            img.image = results.all[0].image;
+            _.each(results.all, function(result) {
+              img[result.tool] = result;
+              delete result.image;
+              delete result.tool;
+            });
+            img.size = img.photoshop.size;
+            delete img.photoshop;
+            return img;
+          })
 
-    function processResult(el) {
-      // get number of bytes removed
-      getSavings(el, 'codekit');
-      getSavings(el, 'grunt_contrib_imagemin');
-      getSavings(el, 'imageoptim_cli');
-      getSavings(el, 'imageoptim_cli_jpegmini');
-      getSavings(el, 'smushit');
-      getSavings(el, 'tinypng');
+          // markup which tools don't handle certain image types
+          .each(function(img) {
+            var extension = img.image.split('.')[1];
+            if (extension !== 'png') {
+              img.tinypng.size = 'N/A';
+              img.tinypng.meanErrorSquared = 'N/A';
+              img.tinypng.sizeLoss = 'N/A';
+              img.tinypng.sizeLossPercent = 'N/A';
+              img.tinypng.qualityLossPercent = 'N/A';
+              img.tinypng.isSmallest = 'N/A';
+            }
+            if (extension === 'gif') {
+              img.smushit.size = 'N/A';
+              img.smushit.meanErrorSquared = 'N/A';
+              img.smushit.sizeLoss = 'N/A';
+              img.smushit.sizeLossPercent = 'N/A';
+              img.smushit.qualityLossPercent = 'N/A';
+              img.smushit.isSmallest = 'N/A';
+            }
+          })
 
-      // order by biggest gains first
-      el.best = _(toolNames).sortBy(function(toolName) {
-        return el['diff_' + toolName];
-      }).value().reverse();
+          // return value to promise
+          .value();
+      })
 
-      // keep best gaining tool or tools if any draw level
-      el.best = _.filter(el.best, function(name) {
-        var bestGain = el['diff_' + el.best[0]];
-        var thisGain = el['diff_' + name];
-        return bestGain !== 0 && thisGain === bestGain;
-      });
-    }
+    // write JSON
+    .then(function(collection) {
+      return writeFile(resultsFile, 'var results = ' + JSON.stringify(collection, null, 2));
+    })
 
-    // create Array of images with each tool's output
-    _.each(raw, function(el, ix) {
-      if (!indexAll[el.image]) {
-        indexAll[el.image] = {
-          image: el.image
-        };
-        allImages.push(indexAll[el.image]);
-      }
-      indexAll[el.image]['size_' + el.tool] = el.size;
-    });
-
-    // calculate savings
-    _.each(allImages, processResult);
-
-    // sort keys
-    allImages = _.map(allImages, function(el, ix, list) {
-      return _.reduce(Object.keys(el).sort(), function(memo, key) {
-        memo[key] = el[key];
-        return memo;
-      }, {});
-    });
-
-    // add up totals
-    totals.all = getTotalTracker();
-    totals.jpg = getTotalTracker();
-    totals.gif = getTotalTracker();
-    totals.png = getTotalTracker();
-
-    _(allImages).each(_.partial(addToTotal, 'all'));
-
-    allGifs = _.filter(allImages, _.partial(hasExtension, '.gif'));
-    allJpgs = _.filter(allImages, _.partial(hasExtension, '.jpg'));
-    allPngs = _.filter(allImages, _.partial(hasExtension, '.png'));
-
-    _.each(allGifs, _.partial(addToTotal, 'gif'));
-    _.each(allJpgs, _.partial(addToTotal, 'jpg'));
-    _.each(allPngs, _.partial(addToTotal, 'png'));
-
-    // calculate total savings
-    processResult(totals.all);
-    processResult(totals.gif);
-    processResult(totals.jpg);
-    processResult(totals.png);
-
-    // add N/A for images outside an app's scope
-    function noTinyPng(el) {
-      el.diff_tinypng = 'N/A';
-      el.saving_tinypng = 'N/A';
-      el.size_tinypng = 'N/A';
-    }
-
-    function noSmushit(el) {
-      el.diff_smushit = 'N/A';
-      el.saving_smushit = 'N/A';
-      el.size_smushit = 'N/A';
-    }
-
-    // TinyPNG - png only
-    _.each([].concat(allGifs, allJpgs), noTinyPng);
-    noTinyPng(totals.jpg);
-    noTinyPng(totals.gif);
-
-    // Smushit, converts gifs to pngs
-    _.each(allGifs, noSmushit);
-    noSmushit(totals.gif);
-
-    json = {
-      total: totals,
-      all: allImages
-    };
-
-    json = JSON.stringify(json, null, 2);
-
-    json = 'var results = ' + json + ';';
-
-    fs.writeFile(resultsFile, json, function(err) {
-      if (err) {
-        throw err;
-      }
+    // finish
+    .done(function() {
+      console.log('SUCCESS');
+    }, function() {
+      console.log('FAIL');
     });
 
   });
