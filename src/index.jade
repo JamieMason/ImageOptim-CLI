@@ -11,9 +11,8 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
         h1 ImageOptim-CLI
         h2 Automates batch optimisation of images.
       p
-        | See <a href="https://github.com/JamieMason/ImageOptim-CLI#installation">Installation</a>
-        |  and <a href="https://github.com/JamieMason/ImageOptim-CLI#examples">examples</a>
-        |  or read <a href="https://github.com/JamieMason/ImageOptim-CLI/tree/gh-pages#gathering-data">about this test</a>.
+        | <a href="https://github.com/JamieMason/ImageOptim-CLI#installation">Installation</a> and <a href="https://github.com/JamieMason/ImageOptim-CLI#examples">examples</a>.
+
     a(href='https://github.com/JamieMason/ImageOptim-CLI')
       img.ribbon(src='fork-me.png', alt='Fork ImageOptim-CLI on GitHub', width=149, height=149)
     .results
@@ -30,6 +29,8 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
           span.key.noop No Savings
           span.key.degrade Size increased
           span.key.na N/A
+        p
+          | {percentage of file size removed} @ {percentage of quality maintained}
       table
         caption Comparison of popular image optimisers
         thead
@@ -62,25 +63,23 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
             td.int.ps
               a.result(ng-href='images/imageoptim_cli_jpegmini/{{img.image}}')
                 | {{img.size}} bytes
-              br
-              br
 
             td.int.iocli(ng-class='css(img,\'imageoptim_cli\')')
-              div(result='img[\'imageoptim_cli\']', tool='imageoptim_cli')
+              div(image='img.image', result='img[\'imageoptim_cli\']', tool='\'imageoptim_cli\'')
 
             td.int.iocli-jpeg(ng-class='css(img,\'imageoptim_cli_jpegmini\')')
-              div(result='img[\'imageoptim_cli_jpegmini\']', tool='imageoptim_cli_jpegmini')
+              div(image='img.image', result='img[\'imageoptim_cli_jpegmini\']', tool='\'imageoptim_cli_jpegmini\'')
 
             td.int.codekit(ng-class='css(img,\'codekit\')')
-              div(result='img[\'codekit\']', tool='codekit')
+              div(image='img.image', result='img[\'codekit\']', tool='\'codekit\'')
 
             td.int.grunt(ng-class='css(img,\'grunt_contrib_imagemin\')')
-              div(result='img[\'grunt_contrib_imagemin\']', tool='grunt_contrib_imagemin')
+              div(image='img.image', result='img[\'grunt_contrib_imagemin\']', tool='\'grunt_contrib_imagemin\'')
 
             td.int.smushit(ng-class='css(img,\'smushit\')')
-              div(result='img[\'smushit\']', tool='smushit')
+              div(image='img.image', result='img[\'smushit\']', tool='\'smushit\'')
 
             td.int.tinypng(ng-class='css(img,\'tinypng\')')
-              div(result='img[\'tinypng\']', tool='tinypng')
+              div(image='img.image', result='img[\'tinypng\']', tool='\'tinypng\'')
 
     include browser/min.js

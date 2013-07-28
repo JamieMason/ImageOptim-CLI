@@ -17,7 +17,7 @@ angular.module('AssessCompress', [])
 
     $scope.results = results;
     $scope.ordering = {
-      key: 'image',
+      key: 'size',
       descending: true,
       filter: ''
     };
@@ -81,16 +81,10 @@ angular.module('AssessCompress', [])
   var template = '';
 
   template += '<div>';
-  template += '  <a ng-if="!isNa" ng-href="images/{{tool}}/{{img.image}}" class="result">';
-  template += '    {{result.size}} bytes';
+  template += '  <a ng-if="!isNa" ng-href="images/{{tool}}/{{image}}" class="result">';
+  template += '    {{result.sizeLossPercent}}% @ {{result.qualityLossPercent}}%';
   template += '  </a>';
-  template += '  <br>';
-  template += '  <span ng-if="isNa">';
-  template += '    N/A';
-  template += '  </span>';
-  template += '  <span ng-if="!isNa">';
-  template += '    <span class="tip" title="Size reduction">{{result.sizeLossPercent}}%</span> / <span class="tip" title="Quality loss">{{result.qualityLossPercent}}%</span>';
-  template += '  </span>';
+  template += '  <span ng-if="isNa">N/A</span>';
   template += '</div>';
 
   return {
@@ -99,7 +93,8 @@ angular.module('AssessCompress', [])
     restrict: 'A',
     scope: {
       result: '=',
-      tool: '='
+      tool: '=',
+      image: '='
     },
     link: function postLink(scope, iElement, iAttrs) {
       scope.isNa = scope.result.size === 'N/A';
