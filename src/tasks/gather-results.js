@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         return {
           path: imgPath,
           image: branches[branches.length - 1],
-          tool: branches[branches.length - 2],
+          tool: branches[branches.length - 2].replace(/\-/g, '_'),
           size: void(0),
           meanErrorSquared: void(0)
         };
@@ -75,6 +75,29 @@ module.exports = function(grunt) {
       }, q(null));
     })
 
+    // calculate file size reduction
+    .then(function (collection) {
+      var originalSize = {};
+      var results = [];
+
+      // separe original from tools
+      _.each(collection, function(img) {
+        if (img.tool === 'photoshop') {
+          originalSize[img.image] = img.size;
+        } else {
+          results.push(img);
+        }
+      });
+
+      // calculate reduction
+      _.each(results, function(img) {
+        img.sizeLoss = originalSize[img.image] - img.size;
+        img.sizeLossPercent = parseFloat(((img.sizeLoss / originalSize[img.image]) * 100).toFixed(2));
+      });
+
+      return collection;
+    })
+
     // calculate % loss
     .then(function(collection) {
       var worstQuality = {};
@@ -98,10 +121,10 @@ module.exports = function(grunt) {
         // 0 / 0 will be NaN
         percentLoss = percentLoss || 0;
 
-        img.qualityLoss = parseFloat(percentLoss.toFixed(2));
+        img.qualityLossPercent = parseFloat(percentLoss.toFixed(2));
       });
 
-      return results;
+      return collection;
     })
 
     // remove path property
