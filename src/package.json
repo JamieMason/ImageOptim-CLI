@@ -18,7 +18,8 @@
     "grunt-contrib-cssmin": "~0.6.1",
     "grunt-inline-css": "~0.1.3",
     "grunt-html-smoosher": "~0.1.1",
-    "q": "~0.9.6"
+    "q": "~0.9.6",
+    "grunt-contrib-watch": "~0.5.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

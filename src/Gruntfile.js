@@ -2,6 +2,8 @@ module.exports = function(grunt) {
 
   'use strict';
 
+  var debug = false;
+
   grunt.initConfig({
 
     imageoptim: {
@@ -60,12 +62,14 @@ module.exports = function(grunt) {
     uglify: {
       browser: {
         options: {
-          beautify: false
+          beautify: debug,
+          mangle: !debug,
+          compress: !debug
         },
         files: {
           'browser/min.js': [
             'browser/results.js',
-            'browser/angular-1.0.7.min.js',
+            'browser/angular-1.1.5.min.js',
             'browser/app.js'
           ]
         }
@@ -75,10 +79,20 @@ module.exports = function(grunt) {
     jade: {
       index: {
         options: {
-          pretty: false
+          pretty: debug
         },
         files: {
           '../index.html': ['index.jade']
+        }
+      }
+    },
+
+    watch: {
+      scripts: {
+        files: ['**/*.js', '**/*.css', '**/*.jade'],
+        tasks: ['build'],
+        options: {
+          nospawn: true
         }
       }
     }
@@ -89,6 +103,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-imageoptim');
 
   grunt.task.loadTasks('tasks');
