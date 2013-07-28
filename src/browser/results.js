@@ -937,20 +937,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_bril.jpg",
-    "worst": {
-      "size": 9292,
-      "meanErrorSquared": 65.8016,
-      "sizeLoss": 91911,
-      "sizeLossPercent": 90.82,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 64026,
       "sizeLossPercent": 63.26,
       "qualityLossPercent": 5.17,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 85704,
@@ -996,20 +989,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_grote-ogen.jpg",
-    "worst": {
-      "size": 9330,
-      "meanErrorSquared": 46.7868,
-      "sizeLoss": 106561,
-      "sizeLossPercent": 91.95,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 89640,
       "sizeLossPercent": 77.35,
       "qualityLossPercent": 10.08,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 100151,
@@ -1055,20 +1041,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_logo.jpg",
-    "worst": {
-      "size": 12701,
-      "meanErrorSquared": 65.8093,
-      "sizeLoss": 56632,
-      "sizeLossPercent": 81.68,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 43602,
       "sizeLossPercent": 62.89,
       "qualityLossPercent": 4.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 47699,
@@ -1114,20 +1093,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_oog.jpg",
-    "worst": {
-      "size": 9540,
-      "meanErrorSquared": 58.3209,
-      "sizeLoss": 152209,
-      "sizeLossPercent": 94.1,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 131988,
       "sizeLossPercent": 81.6,
       "qualityLossPercent": 12.74,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 145248,
@@ -1173,20 +1145,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_patroon.jpg",
-    "worst": {
-      "size": 26644,
-      "meanErrorSquared": 302.72,
-      "sizeLoss": 208369,
-      "sizeLossPercent": 88.66,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 109095,
       "sizeLossPercent": 46.42,
       "qualityLossPercent": 2.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 203036,
@@ -1232,20 +1197,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_rood.jpg",
-    "worst": {
-      "size": 9752,
-      "meanErrorSquared": 58.0147,
-      "sizeLoss": 125982,
-      "sizeLossPercent": 92.82,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 103128,
       "sizeLossPercent": 75.98,
       "qualityLossPercent": 9.54,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 119419,
@@ -1291,20 +1249,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_skyline.jpg",
-    "worst": {
-      "size": 13744,
-      "meanErrorSquared": 150.541,
-      "sizeLoss": 217415,
-      "sizeLossPercent": 94.05,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 169479,
       "sizeLossPercent": 73.32,
       "qualityLossPercent": 12.9,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 209566,
@@ -1350,20 +1301,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_streepjes.jpg",
-    "worst": {
-      "size": 24986,
-      "meanErrorSquared": 759.662,
-      "sizeLoss": 157837,
-      "sizeLossPercent": 86.33,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 147795,
       "sizeLossPercent": 80.84,
       "qualityLossPercent": 10,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 75491,
@@ -1409,20 +1353,13 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_wolk.jpg",
-    "worst": {
-      "size": 8133,
-      "meanErrorSquared": 34.6096,
-      "sizeLoss": 96397,
-      "sizeLossPercent": 92.22,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 82909,
       "sizeLossPercent": 79.32,
       "qualityLossPercent": 4.61,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 81793,
@@ -1468,20 +1405,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_bril.jpg",
-    "worst": {
-      "size": 9292,
-      "meanErrorSquared": 65.8016,
-      "sizeLoss": 84752,
-      "sizeLossPercent": 90.12,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 56867,
       "sizeLossPercent": 60.47,
       "qualityLossPercent": 5.17,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 85704,
@@ -1527,20 +1457,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_grote-ogen.jpg",
-    "worst": {
-      "size": 9330,
-      "meanErrorSquared": 46.7868,
-      "sizeLoss": 100704,
-      "sizeLossPercent": 91.52,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 83783,
       "sizeLossPercent": 76.14,
       "qualityLossPercent": 10.08,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 100151,
@@ -1586,20 +1509,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_logo.jpg",
-    "worst": {
-      "size": 12701,
-      "meanErrorSquared": 65.8093,
-      "sizeLoss": 44444,
-      "sizeLossPercent": 77.77,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 31414,
       "sizeLossPercent": 54.97,
       "qualityLossPercent": 4.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 47699,
@@ -1645,20 +1561,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_oog.jpg",
-    "worst": {
-      "size": 9540,
-      "meanErrorSquared": 58.3209,
-      "sizeLoss": 147744,
-      "sizeLossPercent": 93.93,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 127523,
       "sizeLossPercent": 81.08,
       "qualityLossPercent": 12.74,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 145248,
@@ -1704,20 +1613,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_patroon.jpg",
-    "worst": {
-      "size": 26644,
-      "meanErrorSquared": 302.72,
-      "sizeLoss": 191454,
-      "sizeLossPercent": 87.78,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 92180,
       "sizeLossPercent": 42.27,
       "qualityLossPercent": 2.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 203036,
@@ -1763,20 +1665,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_rood.jpg",
-    "worst": {
-      "size": 9752,
-      "meanErrorSquared": 58.0147,
-      "sizeLoss": 120087,
-      "sizeLossPercent": 92.49,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 97233,
       "sizeLossPercent": 74.89,
       "qualityLossPercent": 9.54,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 119419,
@@ -1822,20 +1717,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_skyline.jpg",
-    "worst": {
-      "size": 13744,
-      "meanErrorSquared": 150.541,
-      "sizeLoss": 213684,
-      "sizeLossPercent": 93.96,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 165748,
       "sizeLossPercent": 72.88,
       "qualityLossPercent": 12.9,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 209566,
@@ -1881,20 +1769,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_streepjes.jpg",
-    "worst": {
-      "size": 24986,
-      "meanErrorSquared": 759.662,
-      "sizeLoss": 65171,
-      "sizeLossPercent": 72.29,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 55129,
       "sizeLossPercent": 61.15,
       "qualityLossPercent": 10,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 75491,
@@ -1940,20 +1821,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_wolk.jpg",
-    "worst": {
-      "size": 8133,
-      "meanErrorSquared": 34.6096,
-      "sizeLoss": 81963,
-      "sizeLossPercent": 90.97,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 68475,
       "sizeLossPercent": 76,
       "qualityLossPercent": 4.61,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 81793,
@@ -1999,20 +1873,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_bril.jpg",
-    "worst": {
-      "size": 6133,
-      "meanErrorSquared": 65.8016,
-      "sizeLoss": 84749,
-      "sizeLossPercent": 93.25,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 53705,
       "sizeLossPercent": 59.09,
       "qualityLossPercent": 5.17,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 85704,
@@ -2058,20 +1925,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_grote-ogen.jpg",
-    "worst": {
-      "size": 6171,
-      "meanErrorSquared": 46.7868,
-      "sizeLoss": 100701,
-      "sizeLossPercent": 94.23,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 80621,
       "sizeLossPercent": 75.44,
       "qualityLossPercent": 10.08,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 100151,
@@ -2117,20 +1977,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_logo.jpg",
-    "worst": {
-      "size": 9542,
-      "meanErrorSquared": 65.8093,
-      "sizeLoss": 44441,
-      "sizeLossPercent": 82.32,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 28252,
       "sizeLossPercent": 52.33,
       "qualityLossPercent": 4.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 47699,
@@ -2176,20 +2029,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_oog.jpg",
-    "worst": {
-      "size": 6381,
-      "meanErrorSquared": 58.3209,
-      "sizeLoss": 147741,
-      "sizeLossPercent": 95.86,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 124361,
       "sizeLossPercent": 80.69,
       "qualityLossPercent": 12.74,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 145248,
@@ -2235,20 +2081,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_patroon.jpg",
-    "worst": {
-      "size": 23485,
-      "meanErrorSquared": 302.72,
-      "sizeLoss": 191451,
-      "sizeLossPercent": 89.07,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 89018,
       "sizeLossPercent": 41.42,
       "qualityLossPercent": 2.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 203036,
@@ -2294,20 +2133,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_rood.jpg",
-    "worst": {
-      "size": 6593,
-      "meanErrorSquared": 58.0147,
-      "sizeLoss": 120084,
-      "sizeLossPercent": 94.8,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 94071,
       "sizeLossPercent": 74.26,
       "qualityLossPercent": 9.54,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 119419,
@@ -2353,20 +2185,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_skyline.jpg",
-    "worst": {
-      "size": 10585,
-      "meanErrorSquared": 150.541,
-      "sizeLoss": 213681,
-      "sizeLossPercent": 95.28,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 162586,
       "sizeLossPercent": 72.5,
       "qualityLossPercent": 12.9,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 209566,
@@ -2412,20 +2237,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_streepjes.jpg",
-    "worst": {
-      "size": 21827,
-      "meanErrorSquared": 759.662,
-      "sizeLoss": 65168,
-      "sizeLossPercent": 74.91,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 51967,
       "sizeLossPercent": 59.74,
       "qualityLossPercent": 10,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 75491,
@@ -2471,20 +2289,13 @@ var results = [
   },
   {
     "image": "jpeg-optimised_wolk.jpg",
-    "worst": {
-      "size": 4974,
-      "meanErrorSquared": 34.6096,
-      "sizeLoss": 81960,
-      "sizeLossPercent": 94.28,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 65313,
       "sizeLossPercent": 75.13,
       "qualityLossPercent": 4.61,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 81793,
@@ -2530,20 +2341,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_bril.jpg",
-    "worst": {
-      "size": 9292,
-      "meanErrorSquared": 65.8016,
-      "sizeLoss": 84752,
-      "sizeLossPercent": 90.12,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 56867,
       "sizeLossPercent": 60.47,
       "qualityLossPercent": 5.17,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 85704,
@@ -2589,20 +2393,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_grote-ogen.jpg",
-    "worst": {
-      "size": 9330,
-      "meanErrorSquared": 46.7868,
-      "sizeLoss": 100704,
-      "sizeLossPercent": 91.52,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 83783,
       "sizeLossPercent": 76.14,
       "qualityLossPercent": 10.08,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 100151,
@@ -2648,20 +2445,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_logo.jpg",
-    "worst": {
-      "size": 12701,
-      "meanErrorSquared": 65.8093,
-      "sizeLoss": 44444,
-      "sizeLossPercent": 77.77,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 31414,
       "sizeLossPercent": 54.97,
       "qualityLossPercent": 4.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 47699,
@@ -2707,20 +2497,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_oog.jpg",
-    "worst": {
-      "size": 9540,
-      "meanErrorSquared": 58.3209,
-      "sizeLoss": 147744,
-      "sizeLossPercent": 93.93,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 127523,
       "sizeLossPercent": 81.08,
       "qualityLossPercent": 12.74,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 145248,
@@ -2766,20 +2549,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_patroon.jpg",
-    "worst": {
-      "size": 26644,
-      "meanErrorSquared": 302.72,
-      "sizeLoss": 191454,
-      "sizeLossPercent": 87.78,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 92180,
       "sizeLossPercent": 42.27,
       "qualityLossPercent": 2.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 203036,
@@ -2825,20 +2601,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_rood.jpg",
-    "worst": {
-      "size": 9752,
-      "meanErrorSquared": 58.0147,
-      "sizeLoss": 120087,
-      "sizeLossPercent": 92.49,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 97233,
       "sizeLossPercent": 74.89,
       "qualityLossPercent": 9.54,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 119419,
@@ -2884,20 +2653,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_skyline.jpg",
-    "worst": {
-      "size": 13744,
-      "meanErrorSquared": 150.541,
-      "sizeLoss": 213684,
-      "sizeLossPercent": 93.96,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 165748,
       "sizeLossPercent": 72.88,
       "qualityLossPercent": 12.9,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 209566,
@@ -2943,20 +2705,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_streepjes.jpg",
-    "worst": {
-      "size": 24986,
-      "meanErrorSquared": 759.662,
-      "sizeLoss": 65171,
-      "sizeLossPercent": 72.29,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 55129,
       "sizeLossPercent": 61.15,
       "qualityLossPercent": 10,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 75491,
@@ -3002,20 +2757,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_wolk.jpg",
-    "worst": {
-      "size": 8133,
-      "meanErrorSquared": 34.6096,
-      "sizeLoss": 81963,
-      "sizeLossPercent": 90.97,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 68475,
       "sizeLossPercent": 76,
       "qualityLossPercent": 4.61,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 81793,
@@ -3061,20 +2809,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_bril.jpg",
-    "worst": {
-      "size": 6133,
-      "meanErrorSquared": 65.8016,
-      "sizeLoss": 81125,
-      "sizeLossPercent": 92.97,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 50081,
       "sizeLossPercent": 57.39,
       "qualityLossPercent": 5.17,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 85704,
@@ -3120,20 +2861,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_grote-ogen.jpg",
-    "worst": {
-      "size": 6171,
-      "meanErrorSquared": 46.7868,
-      "sizeLoss": 96029,
-      "sizeLossPercent": 93.96,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 75949,
       "sizeLossPercent": 74.31,
       "qualityLossPercent": 10.08,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 100151,
@@ -3179,20 +2913,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_logo.jpg",
-    "worst": {
-      "size": 9542,
-      "meanErrorSquared": 65.8093,
-      "sizeLoss": 40937,
-      "sizeLossPercent": 81.1,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 24748,
       "sizeLossPercent": 49.03,
       "qualityLossPercent": 4.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 47699,
@@ -3238,20 +2965,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_oog.jpg",
-    "worst": {
-      "size": 6381,
-      "meanErrorSquared": 58.3209,
-      "sizeLoss": 142870,
-      "sizeLossPercent": 95.72,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 119490,
       "sizeLossPercent": 80.06,
       "qualityLossPercent": 12.74,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 145248,
@@ -3297,20 +3017,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_patroon.jpg",
-    "worst": {
-      "size": 23485,
-      "meanErrorSquared": 302.72,
-      "sizeLoss": 183509,
-      "sizeLossPercent": 88.65,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 81076,
       "sizeLossPercent": 39.17,
       "qualityLossPercent": 2.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 203036,
@@ -3356,20 +3069,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_rood.jpg",
-    "worst": {
-      "size": 6593,
-      "meanErrorSquared": 58.0147,
-      "sizeLoss": 114600,
-      "sizeLossPercent": 94.56,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 88587,
       "sizeLossPercent": 73.1,
       "qualityLossPercent": 9.54,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 119419,
@@ -3415,20 +3121,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_skyline.jpg",
-    "worst": {
-      "size": 10585,
-      "meanErrorSquared": 150.541,
-      "sizeLoss": 202700,
-      "sizeLossPercent": 95.04,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 151605,
       "sizeLossPercent": 71.08,
       "qualityLossPercent": 12.9,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 209566,
@@ -3474,20 +3173,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_streepjes.jpg",
-    "worst": {
-      "size": 21827,
-      "meanErrorSquared": 759.662,
-      "sizeLoss": 65342,
-      "sizeLossPercent": 74.96,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 52141,
       "sizeLossPercent": 59.82,
       "qualityLossPercent": 10,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 75491,
@@ -3533,20 +3225,13 @@ var results = [
   },
   {
     "image": "jpeg-progressive_wolk.jpg",
-    "worst": {
-      "size": 4974,
-      "meanErrorSquared": 34.6096,
-      "sizeLoss": 79402,
-      "sizeLossPercent": 94.1,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 62755,
       "sizeLossPercent": 74.38,
       "qualityLossPercent": 4.61,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 81793,
@@ -3592,20 +3277,13 @@ var results = [
   },
   {
     "image": "jpeg_bril.jpg",
-    "worst": {
-      "size": 6133,
-      "meanErrorSquared": 65.8016,
-      "sizeLoss": 91908,
-      "sizeLossPercent": 93.74,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 60864,
       "sizeLossPercent": 62.08,
       "qualityLossPercent": 5.17,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 85704,
@@ -3651,20 +3329,13 @@ var results = [
   },
   {
     "image": "jpeg_grote-ogen.jpg",
-    "worst": {
-      "size": 6171,
-      "meanErrorSquared": 46.7868,
-      "sizeLoss": 106558,
-      "sizeLossPercent": 94.53,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 86478,
       "sizeLossPercent": 76.71,
       "qualityLossPercent": 10.08,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 100151,
@@ -3710,20 +3381,13 @@ var results = [
   },
   {
     "image": "jpeg_logo.jpg",
-    "worst": {
-      "size": 9542,
-      "meanErrorSquared": 65.8093,
-      "sizeLoss": 56629,
-      "sizeLossPercent": 85.58,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 40440,
       "sizeLossPercent": 61.11,
       "qualityLossPercent": 4.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 47699,
@@ -3769,20 +3433,13 @@ var results = [
   },
   {
     "image": "jpeg_oog.jpg",
-    "worst": {
-      "size": 6381,
-      "meanErrorSquared": 58.3209,
-      "sizeLoss": 152206,
-      "sizeLossPercent": 95.98,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 128826,
       "sizeLossPercent": 81.23,
       "qualityLossPercent": 12.74,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 145248,
@@ -3828,20 +3485,13 @@ var results = [
   },
   {
     "image": "jpeg_patroon.jpg",
-    "worst": {
-      "size": 23485,
-      "meanErrorSquared": 302.72,
-      "sizeLoss": 208366,
-      "sizeLossPercent": 89.87,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 105933,
       "sizeLossPercent": 45.69,
       "qualityLossPercent": 2.1,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 203036,
@@ -3887,20 +3537,13 @@ var results = [
   },
   {
     "image": "jpeg_rood.jpg",
-    "worst": {
-      "size": 6593,
-      "meanErrorSquared": 58.0147,
-      "sizeLoss": 125979,
-      "sizeLossPercent": 95.03,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 99966,
       "sizeLossPercent": 75.41,
       "qualityLossPercent": 9.54,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 119419,
@@ -3946,20 +3589,13 @@ var results = [
   },
   {
     "image": "jpeg_skyline.jpg",
-    "worst": {
-      "size": 10585,
-      "meanErrorSquared": 150.541,
-      "sizeLoss": 217412,
-      "sizeLossPercent": 95.36,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 166317,
       "sizeLossPercent": 72.95,
       "qualityLossPercent": 12.9,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 209566,
@@ -4005,20 +3641,13 @@ var results = [
   },
   {
     "image": "jpeg_streepjes.jpg",
-    "worst": {
-      "size": 21827,
-      "meanErrorSquared": 759.662,
-      "sizeLoss": 157834,
-      "sizeLossPercent": 87.85,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 144633,
       "sizeLossPercent": 80.5,
       "qualityLossPercent": 10,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 75491,
@@ -4064,20 +3693,13 @@ var results = [
   },
   {
     "image": "jpeg_wolk.jpg",
-    "worst": {
-      "size": 4974,
-      "meanErrorSquared": 34.6096,
-      "sizeLoss": 96394,
-      "sizeLossPercent": 95.09,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 79747,
       "sizeLossPercent": 78.67,
       "qualityLossPercent": 4.61,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 81793,
@@ -4123,20 +3745,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_bril.png",
-    "worst": {
-      "size": 37282,
-      "meanErrorSquared": 29.6451,
-      "sizeLoss": 219372,
-      "sizeLossPercent": 85.47,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 86471,
       "meanErrorSquared": 2.81137,
       "sizeLoss": 170183,
       "sizeLossPercent": 66.31,
       "qualityLossPercent": 9.48,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 86502,
@@ -4182,20 +3797,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_grote-ogen.png",
-    "worst": {
-      "size": 38588,
-      "meanErrorSquared": 33.1218,
-      "sizeLoss": 241962,
-      "sizeLossPercent": 86.25,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 84119,
       "meanErrorSquared": 4.19708,
       "sizeLoss": 196431,
       "sizeLossPercent": 70.02,
       "qualityLossPercent": 12.67,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 84119,
@@ -4203,7 +3811,7 @@ var results = [
       "sizeLoss": 196431,
       "sizeLossPercent": 70.02,
       "qualityLossPercent": 12.67,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 86658,
@@ -4241,20 +3849,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_logo.png",
-    "worst": {
-      "size": 4229,
-      "meanErrorSquared": 17.9486,
-      "sizeLoss": 14284,
-      "sizeLossPercent": 77.16,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 5848,
       "meanErrorSquared": 0,
       "sizeLoss": 12665,
       "sizeLossPercent": 68.41,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 5850,
@@ -4300,20 +3901,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_oog.png",
-    "worst": {
-      "size": 61622,
-      "meanErrorSquared": 28.2383,
-      "sizeLoss": 332646,
-      "sizeLossPercent": 84.37,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 133225,
       "meanErrorSquared": 4.62548,
       "sizeLoss": 261043,
       "sizeLossPercent": 66.21,
       "qualityLossPercent": 16.38,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 133244,
@@ -4359,20 +3953,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_patroon.png",
-    "worst": {
-      "size": 2808,
-      "meanErrorSquared": 7.38122,
-      "sizeLoss": 14733,
-      "sizeLossPercent": 83.99,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 3723,
       "meanErrorSquared": 0,
       "sizeLoss": 13818,
       "sizeLossPercent": 78.78,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 3753,
@@ -4418,20 +4005,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_rood.png",
-    "worst": {
-      "size": 52151,
-      "meanErrorSquared": 32.27,
-      "sizeLoss": 290811,
-      "sizeLossPercent": 84.79,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 106103,
       "meanErrorSquared": 5.17417,
       "sizeLoss": 236859,
       "sizeLossPercent": 69.06,
       "qualityLossPercent": 16.03,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 106103,
@@ -4439,7 +4019,7 @@ var results = [
       "sizeLoss": 236859,
       "sizeLossPercent": 69.06,
       "qualityLossPercent": 16.03,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 109891,
@@ -4477,20 +4057,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_skyline.png",
-    "worst": {
-      "size": 78965,
-      "meanErrorSquared": 45.374,
-      "sizeLoss": 377984,
-      "sizeLossPercent": 82.72,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 120869,
       "meanErrorSquared": 8.0605,
       "sizeLoss": 336080,
       "sizeLossPercent": 73.55,
       "qualityLossPercent": 17.76,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 120938,
@@ -4560,13 +4133,6 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": false
     },
-    "worst": {
-      "size": 357,
-      "meanErrorSquared": 0,
-      "sizeLoss": 2382,
-      "sizeLossPercent": 86.97,
-      "isSmallest": false
-    },
     "grunt_contrib_imagemin": {
       "size": 374,
       "meanErrorSquared": 0,
@@ -4595,20 +4161,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_wolk.png",
-    "worst": {
-      "size": 28201,
-      "meanErrorSquared": 32.2211,
-      "sizeLoss": 237202,
-      "sizeLossPercent": 89.37,
-      "isSmallest": true
-    },
     "tinypng": {
       "size": 99758,
       "meanErrorSquared": 1.12587,
       "sizeLoss": 165645,
       "sizeLossPercent": 62.41,
       "qualityLossPercent": 3.49,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 99867,
@@ -4654,20 +4213,13 @@ var results = [
   },
   {
     "image": "png24_bril.png",
-    "worst": {
-      "size": 37282,
-      "meanErrorSquared": 29.6451,
-      "sizeLoss": 179482,
-      "sizeLossPercent": 82.8,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 86495,
       "meanErrorSquared": 2.81137,
       "sizeLoss": 130269,
       "sizeLossPercent": 60.1,
       "qualityLossPercent": 9.48,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 86499,
@@ -4713,20 +4265,13 @@ var results = [
   },
   {
     "image": "png24_grote-ogen.png",
-    "worst": {
-      "size": 38588,
-      "meanErrorSquared": 33.1218,
-      "sizeLoss": 194714,
-      "sizeLossPercent": 83.46,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 84119,
       "meanErrorSquared": 4.19708,
       "sizeLoss": 149183,
       "sizeLossPercent": 63.94,
       "qualityLossPercent": 12.67,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 84119,
@@ -4734,7 +4279,7 @@ var results = [
       "sizeLoss": 149183,
       "sizeLossPercent": 63.94,
       "qualityLossPercent": 12.67,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 86658,
@@ -4772,20 +4317,13 @@ var results = [
   },
   {
     "image": "png24_logo.png",
-    "worst": {
-      "size": 4229,
-      "meanErrorSquared": 17.9486,
-      "sizeLoss": 8532,
-      "sizeLossPercent": 66.86,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 5861,
       "meanErrorSquared": 0,
       "sizeLoss": 6900,
       "sizeLossPercent": 54.07,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 5867,
@@ -4831,20 +4369,13 @@ var results = [
   },
   {
     "image": "png24_oog.png",
-    "worst": {
-      "size": 61622,
-      "meanErrorSquared": 28.2383,
-      "sizeLoss": 272805,
-      "sizeLossPercent": 81.57,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 133203,
       "meanErrorSquared": 4.62548,
       "sizeLoss": 201224,
       "sizeLossPercent": 60.17,
       "qualityLossPercent": 16.38,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 133249,
@@ -4890,20 +4421,13 @@ var results = [
   },
   {
     "image": "png24_patroon.png",
-    "worst": {
-      "size": 2808,
-      "meanErrorSquared": 7.38122,
-      "sizeLoss": 13652,
-      "sizeLossPercent": 82.94,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 3721,
       "meanErrorSquared": 0,
       "sizeLoss": 12739,
       "sizeLossPercent": 77.39,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 3749,
@@ -4949,20 +4473,13 @@ var results = [
   },
   {
     "image": "png24_rood.png",
-    "worst": {
-      "size": 52151,
-      "meanErrorSquared": 32.27,
-      "sizeLoss": 235744,
-      "sizeLossPercent": 81.89,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 106103,
       "meanErrorSquared": 5.17417,
       "sizeLoss": 181792,
       "sizeLossPercent": 63.15,
       "qualityLossPercent": 16.03,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 106103,
@@ -4970,7 +4487,7 @@ var results = [
       "sizeLoss": 181792,
       "sizeLossPercent": 63.15,
       "qualityLossPercent": 16.03,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 109891,
@@ -5008,20 +4525,13 @@ var results = [
   },
   {
     "image": "png24_skyline.png",
-    "worst": {
-      "size": 78965,
-      "meanErrorSquared": 45.374,
-      "sizeLoss": 322033,
-      "sizeLossPercent": 80.31,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 120901,
       "meanErrorSquared": 8.0605,
       "sizeLoss": 280097,
       "sizeLossPercent": 69.85,
       "qualityLossPercent": 17.76,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 120936,
@@ -5099,13 +4609,6 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": false
     },
-    "worst": {
-      "size": 357,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1888,
-      "sizeLossPercent": 84.1,
-      "isSmallest": false
-    },
     "smushit": {
       "size": 1319,
       "meanErrorSquared": 0,
@@ -5126,20 +4629,13 @@ var results = [
   },
   {
     "image": "png24_wolk.png",
-    "worst": {
-      "size": 28201,
-      "meanErrorSquared": 32.2211,
-      "sizeLoss": 201075,
-      "sizeLossPercent": 87.7,
-      "isSmallest": true
-    },
     "tinypng": {
       "size": 99758,
       "meanErrorSquared": 1.12587,
       "sizeLoss": 129518,
       "sizeLossPercent": 56.49,
       "qualityLossPercent": 3.49,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 99867,
@@ -5185,20 +4681,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_bril.png",
-    "worst": {
-      "size": 38627,
-      "meanErrorSquared": 40.1997,
-      "sizeLoss": 36302,
-      "sizeLossPercent": 48.45,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 55392,
       "meanErrorSquared": 0,
       "sizeLoss": 19537,
       "sizeLossPercent": 26.07,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 55395,
@@ -5244,20 +4733,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_grote-ogen.png",
-    "worst": {
-      "size": 39359,
-      "meanErrorSquared": 34.537,
-      "sizeLoss": 46982,
-      "sizeLossPercent": 54.41,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 62260,
       "meanErrorSquared": 0,
       "sizeLoss": 24081,
       "sizeLossPercent": 27.89,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 62260,
@@ -5265,7 +4747,7 @@ var results = [
       "sizeLoss": 24081,
       "sizeLossPercent": 27.89,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 62584,
@@ -5303,20 +4785,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_logo.png",
-    "worst": {
-      "size": 4229,
-      "meanErrorSquared": 17.9486,
-      "sizeLoss": 6110,
-      "sizeLossPercent": 59.1,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 5845,
       "meanErrorSquared": 0,
       "sizeLoss": 4494,
       "sizeLossPercent": 43.47,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 5861,
@@ -5362,20 +4837,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_oog.png",
-    "worst": {
-      "size": 58732,
-      "meanErrorSquared": 44.5188,
-      "sizeLoss": 67340,
-      "sizeLossPercent": 53.41,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 96896,
       "meanErrorSquared": 0,
       "sizeLoss": 29176,
       "sizeLossPercent": 23.14,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 96953,
@@ -5421,20 +4889,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_patroon.png",
-    "worst": {
-      "size": 2808,
-      "meanErrorSquared": 7.38122,
-      "sizeLoss": 3757,
-      "sizeLossPercent": 57.23,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 3724,
       "meanErrorSquared": 0,
       "sizeLoss": 2841,
       "sizeLossPercent": 43.27,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 3746,
@@ -5480,20 +4941,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_rood.png",
-    "worst": {
-      "size": 49219,
-      "meanErrorSquared": 40.477,
-      "sizeLoss": 56433,
-      "sizeLossPercent": 53.41,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 77310,
       "meanErrorSquared": 0,
       "sizeLoss": 28342,
       "sizeLossPercent": 26.83,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 77393,
@@ -5539,20 +4993,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_skyline.png",
-    "worst": {
-      "size": 77216,
-      "meanErrorSquared": 30.6595,
-      "sizeLoss": 54534,
-      "sizeLossPercent": 41.39,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 104107,
       "meanErrorSquared": 0,
       "sizeLoss": 27643,
       "sizeLossPercent": 20.98,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 104107,
@@ -5560,7 +5007,7 @@ var results = [
       "sizeLoss": 27643,
       "sizeLossPercent": 20.98,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 104114,
@@ -5622,13 +5069,6 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": false
     },
-    "worst": {
-      "size": 357,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1638,
-      "sizeLossPercent": 82.11,
-      "isSmallest": false
-    },
     "grunt_contrib_imagemin": {
       "size": 374,
       "meanErrorSquared": 0,
@@ -5657,20 +5097,13 @@ var results = [
   },
   {
     "image": "png8-interlaced_wolk.png",
-    "worst": {
-      "size": 31513,
-      "meanErrorSquared": 29.5992,
-      "sizeLoss": 79999,
-      "sizeLossPercent": 71.74,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 82234,
       "meanErrorSquared": 0,
       "sizeLoss": 29278,
       "sizeLossPercent": 26.26,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 82234,
@@ -5678,7 +5111,7 @@ var results = [
       "sizeLoss": 29278,
       "sizeLossPercent": 26.26,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 82247,
@@ -5716,20 +5149,13 @@ var results = [
   },
   {
     "image": "png8_bril.png",
-    "worst": {
-      "size": 38627,
-      "meanErrorSquared": 40.1997,
-      "sizeLoss": 22242,
-      "sizeLossPercent": 36.54,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 55399,
       "meanErrorSquared": 0,
       "sizeLoss": 5470,
       "sizeLossPercent": 8.99,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 55416,
@@ -5775,20 +5201,13 @@ var results = [
   },
   {
     "image": "png8_grote-ogen.png",
-    "worst": {
-      "size": 39359,
-      "meanErrorSquared": 34.537,
-      "sizeLoss": 28824,
-      "sizeLossPercent": 42.27,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 62260,
       "meanErrorSquared": 0,
       "sizeLoss": 5923,
       "sizeLossPercent": 8.69,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 62260,
@@ -5796,7 +5215,7 @@ var results = [
       "sizeLoss": 5923,
       "sizeLossPercent": 8.69,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 62584,
@@ -5834,20 +5253,13 @@ var results = [
   },
   {
     "image": "png8_logo.png",
-    "worst": {
-      "size": 4229,
-      "meanErrorSquared": 17.9486,
-      "sizeLoss": 3456,
-      "sizeLossPercent": 44.97,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 5836,
       "meanErrorSquared": 0,
       "sizeLoss": 1849,
       "sizeLossPercent": 24.06,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 5869,
@@ -5893,20 +5305,13 @@ var results = [
   },
   {
     "image": "png8_oog.png",
-    "worst": {
-      "size": 58732,
-      "meanErrorSquared": 44.5188,
-      "sizeLoss": 47642,
-      "sizeLossPercent": 44.79,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 96867,
       "meanErrorSquared": 0,
       "sizeLoss": 9507,
       "sizeLossPercent": 8.94,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 96879,
@@ -5952,20 +5357,13 @@ var results = [
   },
   {
     "image": "png8_patroon.png",
-    "worst": {
-      "size": 2808,
-      "meanErrorSquared": 7.38122,
-      "sizeLoss": 3272,
-      "sizeLossPercent": 53.82,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 3723,
       "meanErrorSquared": 0,
       "sizeLoss": 2357,
       "sizeLossPercent": 38.77,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 3752,
@@ -6011,20 +5409,13 @@ var results = [
   },
   {
     "image": "png8_rood.png",
-    "worst": {
-      "size": 49219,
-      "meanErrorSquared": 40.477,
-      "sizeLoss": 34869,
-      "sizeLossPercent": 41.47,
-      "isSmallest": true
-    },
     "imageoptim_cli_jpegmini": {
       "size": 77299,
       "meanErrorSquared": 0,
       "sizeLoss": 6789,
       "sizeLossPercent": 8.07,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli": {
       "size": 77333,
@@ -6070,20 +5461,13 @@ var results = [
   },
   {
     "image": "png8_skyline.png",
-    "worst": {
-      "size": 77216,
-      "meanErrorSquared": 30.6595,
-      "sizeLoss": 34363,
-      "sizeLossPercent": 30.8,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 104107,
       "meanErrorSquared": 0,
       "sizeLoss": 7472,
       "sizeLossPercent": 6.7,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 104107,
@@ -6091,7 +5475,7 @@ var results = [
       "sizeLoss": 7472,
       "sizeLossPercent": 6.7,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 104114,
@@ -6161,13 +5545,6 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": false
     },
-    "worst": {
-      "size": 357,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1436,
-      "sizeLossPercent": 80.09,
-      "isSmallest": false
-    },
     "smushit": {
       "size": 797,
       "meanErrorSquared": 0,
@@ -6188,20 +5565,13 @@ var results = [
   },
   {
     "image": "png8_wolk.png",
-    "worst": {
-      "size": 31513,
-      "meanErrorSquared": 29.5992,
-      "sizeLoss": 61055,
-      "sizeLossPercent": 65.96,
-      "isSmallest": true
-    },
     "imageoptim_cli": {
       "size": 82234,
       "meanErrorSquared": 0,
       "sizeLoss": 10334,
       "sizeLossPercent": 11.16,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "imageoptim_cli_jpegmini": {
       "size": 82234,
@@ -6209,7 +5579,7 @@ var results = [
       "sizeLoss": 10334,
       "sizeLossPercent": 11.16,
       "qualityLossPercent": 0,
-      "isSmallest": false
+      "isSmallest": true
     },
     "tinypng": {
       "size": 82247,
@@ -6245,4 +5615,4 @@ var results = [
     },
     "size": 92568
   }
-]
+];
