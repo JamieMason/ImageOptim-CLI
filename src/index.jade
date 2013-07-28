@@ -41,54 +41,46 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
             th.int.iocli(scope='col')
               a.sort(href='#', ng-click='orderBy(\'saving_imageoptim_cli\')') ImageOptim-CLI
             th.int.iocli-jpeg(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_imageoptim_cli_jpegmini\')') ImageOptim-CLI +JPEGmini
+              a.sort(href='#', ng-click='orderBy(\'saving_imageoptim_cli_jpegmini\')')
+                | ImageOptim-CLI
+                br
+                | + JPEGmini
             th.int.codekit(scope='col')
               a.sort(href='#', ng-click='orderBy(\'saving_codekit\')') CodeKit
             th.int.grunt(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_grunt_contrib_imagemin\')') grunt_contrib_imagemin
+              a.sort(href='#', ng-click='orderBy(\'saving_grunt_contrib_imagemin\')') grunt-contrib-imagemin
             th.int.smushit(scope='col')
               a.sort(href='#', ng-click='orderBy(\'saving_smushit\')') Smushit
             th.int.tinypng(scope='col')
               a.sort(href='#', ng-click='orderBy(\'saving_tinypng\')') TinyPNG
-          tr.total
-            td.title Total
-            td.int.ps
-              span.result {{total.size_photoshop}} (100)%
-            td.int.iocli(ng-class='css(total,\'imageoptim_cli\')')
-              span.result {{text(total,'imageoptim_cli')}}
-            td.int.iocli-jpeg(ng-class='css(total,\'imageoptim_cli_jpegmini\')')
-              span.result {{text(total,'imageoptim_cli_jpegmini')}}
-            td.int.codekit(ng-class='css(total,\'codekit\')')
-              span.result {{text(total,'codekit')}}
-            td.int.grunt(ng-class='css(total,\'grunt_contrib_imagemin\')')
-              span.result {{text(total,'grunt_contrib_imagemin')}}
-            td.int.smushit(ng-class='css(total,\'smushit\')')
-              span.result {{text(total,'smushit')}}
-            td.int.tinypng(ng-class='css(total,\'tinypng\')')
-              span.result {{text(total,'tinypng')}}
         tbody
           tr(ng-repeat='img in results | orderBy:ordering.key:ordering.descending')
+
             td
               | {{img.image}}
+
             td.int.ps
               a.result(ng-href='images/imageoptim_cli_jpegmini/{{img.image}}')
-                | {{img.size_photoshop}} (100)%
+                | {{img.size}} bytes
+              br
+              br
+
             td.int.iocli(ng-class='css(img,\'imageoptim_cli\')')
-              a.result(ng-href='images/imageoptim_cli/{{img.image}}')
-                | {{text(img,'imageoptim_cli')}}
+              div(result='img[\'imageoptim_cli\']', tool='imageoptim_cli')
+
             td.int.iocli-jpeg(ng-class='css(img,\'imageoptim_cli_jpegmini\')')
-              a.result(ng-href='images/imageoptim_cli_jpegmini/{{img.image}}')
-                | {{text(img,'imageoptim_cli_jpegmini')}}
+              div(result='img[\'imageoptim_cli_jpegmini\']', tool='imageoptim_cli_jpegmini')
+
             td.int.codekit(ng-class='css(img,\'codekit\')')
-              a.result(ng-href='images/codekit/{{img.image}}')
-                | {{text(img,'codekit')}}
+              div(result='img[\'codekit\']', tool='codekit')
+
             td.int.grunt(ng-class='css(img,\'grunt_contrib_imagemin\')')
-              a.result(ng-href='images/grunt_contrib_imagemin/{{img.image}}')
-                | {{text(img,'grunt_contrib_imagemin')}}
+              div(result='img[\'grunt_contrib_imagemin\']', tool='grunt_contrib_imagemin')
+
             td.int.smushit(ng-class='css(img,\'smushit\')')
-              a.result(ng-href='images/smushit/{{img.image}}')
-                | {{text(img,'smushit')}}
+              div(result='img[\'smushit\']', tool='smushit')
+
             td.int.tinypng(ng-class='css(img,\'tinypng\')')
-              a.result(ng-href='images/tinypng/{{img.image}}')
-                | {{text(img,'tinypng')}}
+              div(result='img[\'tinypng\']', tool='tinypng')
+
     include browser/min.js

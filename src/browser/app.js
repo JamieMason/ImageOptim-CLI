@@ -14,10 +14,8 @@ angular.module('AssessCompress', [])
     'use strict';
 
     var results = window.results;
-    var filterCache = {};
 
-    $scope.results = results.all;
-    $scope.total = results.total.all;
+    $scope.results = results;
     $scope.ordering = {
       key: 'image',
       descending: true,
@@ -31,48 +29,45 @@ angular.module('AssessCompress', [])
 
     $scope.css = function(result, key) {
       var classes = [];
-      var best = ' ' + (result.best || []).join(' ') + ' ';
-      var diff = result['diff_' + key];
+      var sizeLoss = result[key].sizeLoss;
 
-      if (best.indexOf(' ' + key + ' ') !== -1) {
+      if (result[key].isSmallest === true) {
         classes.push('best');
       }
 
-      if (diff === 0) {
+      if (sizeLoss === 0) {
         classes.push('noop');
-      } else if (diff < 0) {
-        classes.push('degrade');
-      } else if (diff === 'N/A') {
+      } else if (sizeLoss === 'N/A') {
         classes.push('na');
+      } else if (sizeLoss < 0) {
+        classes.push('degrade');
       }
 
       return classes.join(' ');
     };
 
     $scope.text = function(result, key) {
-      var size = result['size_' + key];
-      return size === 'N/A' ? 'N/A' : result['size_' + key] + ' (' + result['saving_' + key] + '%)';
+      var size = result[key].size;
+      return size === 'N/A' ? 'N/A' : size + '<br>(' + result[key].sizeLossPercent + '%) / ' + result[key].qualityLossPercent + '%';
     };
 
     $scope.$watch('ordering.filter', function(filter, prev) {
 
       var i = 0;
-      var len = results.all.length;
+      var len = results.length;
 
       if (filter === prev) {
         return;
       }
 
       if (!filter) {
-        $scope.results = results.all;
-        $scope.total = results.total.all;
+        $scope.results = results;
       } else {
-        $scope.total = results.total[filter];
         $scope.results = [];
 
         for (i = 0; i < len; i++) {
-          if (results.all[i].image.indexOf(filter) !== -1) {
-            $scope.results.push(results.all[i]);
+          if (results[i].image.indexOf(filter) !== -1) {
+            $scope.results.push(results[i]);
           }
         }
       }
@@ -80,4 +75,34 @@ angular.module('AssessCompress', [])
     });
 
   }
-]);
+])
+
+.directive('result', function factory() {
+  var template = '';
+
+  template += '<div>';
+  template += '  <a ng-if="!isNa" ng-href="images/{{tool}}/{{img.image}}" class="result">';
+  template += '    {{result.size}} bytes';
+  template += '  </a>';
+  template += '  <br>';
+  template += '  <span ng-if="isNa">';
+  template += '    N/A';
+  template += '  </span>';
+  template += '  <span ng-if="!isNa">';
+  template += '    <span class="tip" title="Size reduction">{{result.sizeLossPercent}}%</span> / <span class="tip" title="Quality loss">{{result.qualityLossPercent}}%</span>';
+  template += '  </span>';
+  template += '</div>';
+
+  return {
+    template: template,
+    replace: true,
+    restrict: 'A',
+    scope: {
+      result: '=',
+      tool: '='
+    },
+    link: function postLink(scope, iElement, iAttrs) {
+      scope.isNa = scope.result.size === 'N/A';
+    }
+  };
+});

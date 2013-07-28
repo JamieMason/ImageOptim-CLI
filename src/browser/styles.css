@@ -139,31 +139,31 @@ table {
 }
 
 .ps {
-  width:9em
+  width:7em
 }
 
 .iocli {
-  width:9em
+  width:10em
 }
 
 .iocli-jpeg {
-  width: 15em
+  width: 10em
 }
 
 .codekit {
-  width:10em
+  width:8em
 }
 
 .grunt {
-  width:13em
+  width:12em
 }
 
 .smushit {
-  width:9em
+  width:8em
 }
 
 .tinypng {
-  width:10em
+  width:8em
 }
 
 /* Result Cells
@@ -179,14 +179,14 @@ table {
 
 /* result which made file larger */
 .degrade,
-.degrade > .result {
+.degrade .result {
   background:#D62323;
   color:#252525
 }
 
 /* result which made no gains */
 .noop,
-.noop > .result {
+.noop .result {
   color:#C00;
 }
 
@@ -195,11 +195,15 @@ table {
   background:#8BBF36;
 }
   .best,
-  .best > .result {
+  .best .result {
     color:#252525
   }
 
 .na,
-.na > .result {
+.na .result {
   color:#CCC;
+}
+
+.tip {
+  cursor: help;
 }
