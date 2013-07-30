@@ -10,7 +10,8 @@ on wait_for(processName)
       set getCpuPercent to "ps aux | grep " & PID & " | grep -v grep | awk '{print $3}'"
 
       -- convert the terminal's string output to a number
-      set cpuPercent to (do shell script getCpuPercent) as number
+      set cpuPercent to (do shell script getCpuPercent)
+      round cpuPercent rounding toward zero
 
       -- give the app a little time to work
       delay 2
