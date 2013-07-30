@@ -21,6 +21,7 @@ table {
   td {
     padding:0.6em;
     text-align:left;
+    vertical-align:top;
   }
   tbody {
     font-size: 90%
@@ -177,7 +178,7 @@ table {
 .degrade,
 .degrade .result {
   background:#D62323;
-  color:#252525
+  color:#FCC
 }
 
 /* result which made no gains */

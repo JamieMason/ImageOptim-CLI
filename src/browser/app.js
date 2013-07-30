@@ -81,9 +81,12 @@ angular.module('AssessCompress', [])
   var template = '';
 
   template += '<div>';
-  template += '  <a ng-if="!isNa" ng-href="images/{{tool}}/{{image}}" class="result">';
-  template += '    {{result.sizeLossPercent}}% @ {{result.qualityLossPercent}}%';
-  template += '  </a>';
+  template += '  <div ng-if="!isNa">';
+  template += '    <a ng-href="images/{{tool}}/{{image}}" class="result">{{result.size}} bytes</a>';
+  template += '    <br>';
+  template += '    {{result.sizeLossPercent}}% saving';
+  template += '    <span ng-if="result.qualityLossPercent > 0"><br>{{result.qualityLossPercent}}% loss</span>';
+  template += '  </div>';
   template += '  <span ng-if="isNa">N/A</span>';
   template += '</div>';
 

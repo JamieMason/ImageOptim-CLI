@@ -116,7 +116,7 @@ module.exports = function(grunt) {
       _.each(results, function(img) {
         var imgLoss = img.meanErrorSquared;
         var worstLoss = worstQuality[img.image];
-        var percentLoss = ((worstLoss - imgLoss) / worstLoss) * 100;
+        var percentLoss = (imgLoss / worstLoss) * 100;
 
         // 0 / 0 will be NaN
         percentLoss = percentLoss || 0;

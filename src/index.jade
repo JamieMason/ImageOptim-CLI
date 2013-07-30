@@ -13,6 +13,14 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
       p
         | <a href="https://github.com/JamieMason/ImageOptim-CLI#installation">Installation</a> and <a href="https://github.com/JamieMason/ImageOptim-CLI#examples">examples</a>.
 
+      p
+
+        | The table below compares the performance of several image optimisation tools, all of which
+        | give us impressive savings in file size.
+
+        | Click each result to judge the difference between them and the Photoshop originals for
+        | yourself.
+
     a(href='https://github.com/JamieMason/ImageOptim-CLI')
       img.ribbon(src='fork-me.png', alt='Fork ImageOptim-CLI on GitHub', width=149, height=149)
     .results
@@ -29,8 +37,6 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
           span.key.noop No Savings
           span.key.degrade Size increased
           span.key.na N/A
-        p
-          | {percentage of file size removed} @ {percentage of quality maintained}
       table
         caption Comparison of popular image optimisers
         thead
