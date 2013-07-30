@@ -78,6 +78,20 @@ module.exports = function(grunt) {
             img.smushit.sizeLossPercent = 'N/A';
             img.smushit.qualityLossPercent = 'N/A';
             img.smushit.isSmallest = 'N/A';
+
+            img.codekit.size = 'N/A';
+            img.codekit.meanErrorSquared = 'N/A';
+            img.codekit.sizeLoss = 'N/A';
+            img.codekit.sizeLossPercent = 'N/A';
+            img.codekit.qualityLossPercent = 'N/A';
+            img.codekit.isSmallest = 'N/A';
+
+            img.grunt_contrib_imagemin.size = 'N/A';
+            img.grunt_contrib_imagemin.meanErrorSquared = 'N/A';
+            img.grunt_contrib_imagemin.sizeLoss = 'N/A';
+            img.grunt_contrib_imagemin.sizeLossPercent = 'N/A';
+            img.grunt_contrib_imagemin.qualityLossPercent = 'N/A';
+            img.grunt_contrib_imagemin.isSmallest = 'N/A';
           }
         })
 

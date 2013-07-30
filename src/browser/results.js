@@ -18,20 +18,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 68188,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 68188,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -70,20 +70,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 80562,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 80562,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -122,20 +122,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 9903,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 9903,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -174,20 +174,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 117327,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 117327,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -226,20 +226,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 20904,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 20904,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -278,20 +278,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 99005,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 99005,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -330,20 +330,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 127436,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 127436,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -382,20 +382,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 3618,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 3618,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -434,20 +434,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 108607,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 108607,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -486,20 +486,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 75646,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 75646,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -538,20 +538,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 89330,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 89330,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -590,20 +590,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 10577,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 10577,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -642,20 +642,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 125547,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 125547,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -694,20 +694,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 20226,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 20226,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -746,20 +746,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 108099,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 108099,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -798,20 +798,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 136200,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 136200,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -850,20 +850,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 3618,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 3618,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
@@ -902,20 +902,20 @@ var results = [
       "isSmallest": true
     },
     "codekit": {
-      "size": 119143,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "grunt_contrib_imagemin": {
-      "size": 119143,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "isSmallest": false
+      "size": "N/A",
+      "meanErrorSquared": "N/A",
+      "sizeLoss": "N/A",
+      "sizeLossPercent": "N/A",
+      "qualityLossPercent": "N/A",
+      "isSmallest": "N/A"
     },
     "smushit": {
       "size": "N/A",
