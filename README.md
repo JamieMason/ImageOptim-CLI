@@ -1,7 +1,7 @@
 ImageOptim-CLI: gh-pages
 ===============
 
-This is source for the project page for ImageOptim-CLI hosted at [http://jamiemason.github.io/ImageOptim-CLI](http://jamiemason.github.io/ImageOptim-CLI). 
+This is source for the project page for ImageOptim-CLI hosted at [http://jamiemason.github.io/ImageOptim-CLI](http://jamiemason.github.io/ImageOptim-CLI).
 
 ## Sample images
 
@@ -16,7 +16,7 @@ The Photoshop layers were saved as pngs, gifs and jpgs in all possible combinati
         # checkout project
         git clone -b gh-pages https://github.com/JamieMason/ImageOptim-CLI.git ImageOptim-Compare
         cd ImageOptim-Compare
-        
+
         # clear out the original test images
         rm -rf images/codekit
         rm -rf images/grunt_contrib_imagemin
@@ -26,11 +26,11 @@ The Photoshop layers were saved as pngs, gifs and jpgs in all possible combinati
         rm -rf images/tinypng
         rm -rf images/photoshop
         rm -rf images/worst
-        
+
         # we'll need these folders
         mkdir images/photoshop
         mkdir images/worst
-        
+
         # install build tools
         cd src
         npm install
@@ -42,10 +42,10 @@ The Photoshop layers were saved as pngs, gifs and jpgs in all possible combinati
 
         # PNGs
         find ./images/worst -type f -iname "*.png" -exec /Applications/ImageAlpha.app/Contents/Resources/pngquant 16 --quality=0-10 - < {} > {} \;
-        
+
         # JPGs
         find ./images/worst -type f -iname "*.jpg" -exec convert -quality 10 {} {} \;
-        
+
         # GIFs
         # @TODO: 31/Jul/2013
 
