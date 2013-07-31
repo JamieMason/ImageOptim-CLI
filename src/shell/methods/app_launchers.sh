@@ -47,6 +47,13 @@ function runImageOptimOnImage {
 
 # ($1:image):
 function runImageAlphaOnImage {
+
+  # would like to specify the extension here, but pngquant ignores case
+  # if the extension is .PNG, then this command creates a new file
+  # the new file is not passed to imageOptim
+  # waiting on https://github.com/pornel/pngquant/issues/45
+  #extension="${1##*.}"
+
   /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 -- "$1"
 }
 

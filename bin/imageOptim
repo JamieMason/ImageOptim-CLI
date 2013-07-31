@@ -289,7 +289,7 @@ function processFiles {
   # for use with the =~ Regular Expression matching operator
   # http://tldp.org/LDP/abs/html/bashver3.html#REGEXMATCHREF
   shopt -s nocasematch
-  
+
   for file in "${pipedFiles[@]}"; do
     if [[ "$file" =~ .*(png)$ ]]; then
       runImageAlphaOnImage "$file"
@@ -312,7 +312,7 @@ function processFiles {
   
   # unset case-insensitive pattern matching
   shopt -u nocasematch
-
+  
   waitForImageOptim
 }
 
