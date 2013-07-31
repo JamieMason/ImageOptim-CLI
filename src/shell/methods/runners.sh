@@ -44,14 +44,19 @@ function processFiles {
 
   echo "Processing $i images..."
 
+  # Case-insensitive pattern matching
+  # for use with the =~ Regular Expression matching operator
+  # http://tldp.org/LDP/abs/html/bashver3.html#REGEXMATCHREF
+  shopt -s nocasematch
+
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '{{imageAlphaFileTypes}}'`" ]; then
+    if [[ "$file" =~ {{imageAlphaFileTypes}} ]]; then
       runImageAlphaOnImage "$file"
     fi
   done
 
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '{{jpegMiniFileTypes}}'`" ]; then
+    if [[ "$file" =~ {{jpegMiniFileTypes}} ]]; then
       runJPEGmini "$file"
     fi
   done
@@ -59,10 +64,13 @@ function processFiles {
   waitForJPEGmini
 
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '{{imageOptimFileTypes}}'`" ]; then
+    if [[ "$file" =~ {{imageOptimFileTypes}} ]]; then
       runImageOptimOnImage "$file"
     fi
   done
-
+  
+  # unset case-insensitive pattern matching
+  shopt -u nocasematch
+  
   waitForImageOptim
 }
