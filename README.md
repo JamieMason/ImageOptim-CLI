@@ -8,7 +8,7 @@ Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com),
 
 ImageOptim-CLI is written in Shell and AppleScript, so you don't _need_ Node.js or npm. You can install manually by downloading the latest zip then adding ImageOptim-CLI to your [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
-	$ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.6.17
+	$ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.6.18
 	$ unzip imageoptim-cli.zip
 	$ export PATH=$PATH:imageoptim-cli/bin
 
