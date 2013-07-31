@@ -44,22 +44,22 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
             th(scope='col')
               a.sort(href='#', ng-click='orderBy(\'image\')') Image
             th.int.ps(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'size_photoshop\')') Photoshop
+              a.sort(href='#', ng-click='orderBy(\'size\')') Photoshop
             th.int.iocli(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_imageoptim_cli\')') ImageOptim-CLI
+              a.sort(href='#', ng-click='orderBy(\'imageoptim_cli.sizeLossPercent\')') ImageOptim-CLI
             th.int.iocli-jpeg(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_imageoptim_cli_jpegmini\')')
+              a.sort(href='#', ng-click='orderBy(\'imageoptim_cli_jpegmini.sizeLossPercent\')')
                 | ImageOptim-CLI
                 br
                 | + JPEGmini
             th.int.codekit(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_codekit\')') CodeKit
+              a.sort(href='#', ng-click='orderBy(\'codekit.sizeLossPercent\')') CodeKit
             th.int.grunt(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_grunt_contrib_imagemin\')') grunt-contrib-imagemin
+              a.sort(href='#', ng-click='orderBy(\'grunt_contrib_imagemin.sizeLossPercent\')') grunt-contrib-imagemin
             th.int.smushit(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_smushit\')') Smushit
+              a.sort(href='#', ng-click='orderBy(\'smushit.sizeLossPercent\')') Smushit
             th.int.tinypng(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'saving_tinypng\')') TinyPNG
+              a.sort(href='#', ng-click='orderBy(\'tinypng.sizeLossPercent\')') TinyPNG
         tbody
           tr(ng-repeat='img in results | orderBy:ordering.key:ordering.descending')
 
