@@ -16,19 +16,19 @@
   "imageAlphaAppBundleId": "net.pornel.ImageAlpha",
   "imageAlphaAppFileName": "ImageAlpha.app",
   "imageAlphaAppName": "ImageAlpha",
-  "imageAlphaFileTypes": ".*(png)",
+  "imageAlphaFileTypes": ".*(png)$",
   "imageAlphaNotInstalledMsg": "$imageAlphaAppFileName is not installed (http://pngmini.com)",
 
   "imageOptimAppBundleId": "net.pornel.ImageOptim",
   "imageOptimAppFileName": "ImageOptim.app",
   "imageOptimAppName": "ImageOptim",
-  "imageOptimFileTypes": ".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)",
+  "imageOptimFileTypes": ".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$",
   "imageOptimNotInstalledMsg": "$imageOptimAppFileName is not installed (http://imageoptim.com)",
 
   "jpegMiniAppBundleId": "com.icvt.JPEGmini",
   "jpegMiniAppRetailBundleId": "com.icvt.JPEGmini-retail",
   "jpegMiniAppFileName": "JPEGmini.app",
   "jpegMiniAppName": "JPEGmini",
-  "jpegMiniFileTypes": ".*(jpg|jpeg)",
+  "jpegMiniFileTypes": ".*(jpg|jpeg)$",
   "jpegMiniNotInstalledMsg": "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
 }

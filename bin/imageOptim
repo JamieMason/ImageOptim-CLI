@@ -48,19 +48,19 @@ quitOnComplete="false"
 isBusyIntervalLength=1
 
 # ImageAlpha
-imageAlphaFileTypes=".*(png)"
+imageAlphaFileTypes=".*(png)$"
 imageAlphaAppBundleId="net.pornel.ImageAlpha"
 imageAlphaAppName="ImageAlpha"
 imageAlphaAppFileName="ImageAlpha.app"
 
 # ImageOptim
-imageOptimFileTypes=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)"
+imageOptimFileTypes=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$"
 imageOptimAppBundleId="net.pornel.ImageOptim"
 imageOptimAppName="ImageOptim"
 imageOptimAppFileName="ImageOptim.app"
 
 # JPEGmini
-jpegMiniFileTypes=".*(jpg|jpeg)"
+jpegMiniFileTypes=".*(jpg|jpeg)$"
 jpegMiniAppBundleId="com.icvt.JPEGmini"
 jpegMiniAppRetailBundleId="com.icvt.JPEGmini-retail"
 jpegMiniAppName="JPEGmini"
@@ -112,7 +112,7 @@ function runImageOptimOnDirectory {
 function runImageAlphaOnDirectory {
   if [ "true" == $useImageAlpha ]; then
     echo "ImageAlpha..."
-    find -E "$1" -iregex '.*(png)' -print0 | while IFS= read -r -d $'\0' img; do
+    find -E "$1" -iregex '.*(png)$' -print0 | while IFS= read -r -d $'\0' img; do
       runImageAlphaOnImage "$img"
     done
   fi
@@ -132,6 +132,13 @@ function runImageOptimOnImage {
 
 # ($1:image):
 function runImageAlphaOnImage {
+
+  # would like to specify the extension here, but pngquant ignores case
+  # if the extension is .PNG, then this command creates a new file
+  # the new file is not passed to imageOptim
+  # waiting on https://github.com/pornel/pngquant/issues/45
+  #extension="${1##*.}"
+
   /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 -- "$1"
 }
 
@@ -296,14 +303,19 @@ function processFiles {
 
   echo "Processing $i images..."
 
+  # Case-insensitive pattern matching
+  # for use with the =~ Regular Expression matching operator
+  # http://tldp.org/LDP/abs/html/bashver3.html#REGEXMATCHREF
+  shopt -s nocasematch
+
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '.*(png)'`" ]; then
+    if [[ "$file" =~ .*(png)$ ]]; then
       runImageAlphaOnImage "$file"
     fi
   done
 
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '.*(jpg|jpeg)'`" ]; then
+    if [[ "$file" =~ .*(jpg|jpeg)$ ]]; then
       runJPEGmini "$file"
     fi
   done
@@ -311,11 +323,14 @@ function processFiles {
   waitForJPEGmini
 
   for file in "${pipedFiles[@]}"; do
-    if [ "" != "`echo "$file" | grep -E '.*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)'`" ]; then
+    if [[ "$file" =~ .*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$ ]]; then
       runImageOptimOnImage "$file"
     fi
   done
-
+  
+  # unset case-insensitive pattern matching
+  shopt -u nocasematch
+  
   waitForImageOptim
 }
 
