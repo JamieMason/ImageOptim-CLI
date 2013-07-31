@@ -1,5 +1,22 @@
+# see https://github.com/pornel/ImageOptim/issues/24
+# the first file to be added is not processed if ImageOptim
+# is not already running
+function startImageOptim {
+  if [ $(countProcesses $imageOptimAppName) -eq 0 ]; then
+    echo "ImageOptim not running - starting"
+    open -g -a $imageOptimAppFileName
+    sleep 1
+    ImageOptimRunning="true"
+  fi  
+}
+
 # ($1:appFileName, $2:imageFilePath):
 function addImageToQueue {
+
+  if [[ $ImageOptimRunning == "false" ]] && [[ "$1" == "$imageOptimAppFileName" ]]; then
+    startImageOptim
+  fi
+
   open -g -a $1 "$2"
 }
 
