@@ -6,14 +6,14 @@ function startImageOptim {
     echo "ImageOptim not running - starting"
     open -g -a $imageOptimAppFileName
     sleep 1
-    ImageOptimRunning="true"
-  fi  
+    imageOptimIsRunning="true"
+  fi
 }
 
 # ($1:appFileName, $2:imageFilePath):
 function addImageToQueue {
 
-  if [[ $ImageOptimRunning == "false" ]] && [[ "$1" == "$imageOptimAppFileName" ]]; then
+  if [[ $imageOptimIsRunning == "false" ]] && [[ "$1" == "$imageOptimAppFileName" ]]; then
     startImageOptim
   fi
 

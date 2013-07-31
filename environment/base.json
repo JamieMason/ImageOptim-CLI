@@ -6,7 +6,7 @@
   "useImageOptim": "true",
   "useImageAlpha": "false",
   "useJPEGmini": "false",
-  "ImageOptimRunning": "false",
+  "imageOptimIsRunning": "false",
 
   "guiScriptIsDisabledMsg": "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again",
   "runModeIsUndefinedMsg": "Please use either the --directory or --file options to run ImageOptim-CLI",

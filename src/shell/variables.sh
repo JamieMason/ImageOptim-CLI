@@ -14,7 +14,7 @@ cliPath="{{cliPath}}"
 useImageOptim="{{useImageOptim}}"
 useImageAlpha="{{useImageAlpha}}"
 useJPEGmini="{{useJPEGmini}}"
-ImageOptimRunning="{{ImageOptimRunning}}"
+imageOptimIsRunning="{{imageOptimIsRunning}}"
 
 # quit apps after processing images?
 quitOnComplete="{{quitOnComplete}}"
