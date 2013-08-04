@@ -1,7 +1,7 @@
 var results = [
   {
     "image": "gif-interlaced_bril.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
       "sizeLoss": 1046,
@@ -9,7 +9,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 67142,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1046,
+      "sizeLossPercent": 1.53,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 67142,
       "meanErrorSquared": 0,
       "sizeLoss": 1046,
@@ -53,7 +61,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_grote-ogen.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
       "sizeLoss": 1046,
@@ -61,7 +69,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 79516,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1046,
+      "sizeLossPercent": 1.3,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 79516,
       "meanErrorSquared": 0,
       "sizeLoss": 1046,
@@ -105,7 +121,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_logo.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
       "sizeLoss": 1046,
@@ -113,7 +129,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 8857,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1046,
+      "sizeLossPercent": 10.56,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 8857,
       "meanErrorSquared": 0,
       "sizeLoss": 1046,
@@ -157,7 +181,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_oog.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -165,7 +189,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 116282,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 0.89,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 116282,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -209,7 +241,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_patroon.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 19181,
       "meanErrorSquared": 0,
       "sizeLoss": 1723,
@@ -217,7 +249,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 19181,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1723,
+      "sizeLossPercent": 8.24,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 19181,
       "meanErrorSquared": 0,
       "sizeLoss": 1723,
@@ -261,7 +301,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_rood.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -269,7 +309,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 97960,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 1.06,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 97960,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -313,7 +361,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_skyline.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -321,7 +369,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 126391,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 0.82,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 126391,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -365,7 +421,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_streepjes.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -373,7 +429,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 2573,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 28.88,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 2573,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -417,7 +481,7 @@ var results = [
   },
   {
     "image": "gif-interlaced_wolk.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -425,7 +489,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 107562,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 0.96,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 107562,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -469,7 +541,7 @@ var results = [
   },
   {
     "image": "gif_bril.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
       "sizeLoss": 8504,
@@ -477,7 +549,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 67142,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8504,
+      "sizeLossPercent": 11.24,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 67142,
       "meanErrorSquared": 0,
       "sizeLoss": 8504,
@@ -521,7 +601,7 @@ var results = [
   },
   {
     "image": "gif_grote-ogen.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
       "sizeLoss": 9814,
@@ -529,7 +609,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 79516,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9814,
+      "sizeLossPercent": 10.99,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 79516,
       "meanErrorSquared": 0,
       "sizeLoss": 9814,
@@ -573,7 +661,7 @@ var results = [
   },
   {
     "image": "gif_logo.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
       "sizeLoss": 1720,
@@ -581,7 +669,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 8857,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1720,
+      "sizeLossPercent": 16.26,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 8857,
       "meanErrorSquared": 0,
       "sizeLoss": 1720,
@@ -625,7 +721,7 @@ var results = [
   },
   {
     "image": "gif_oog.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
       "sizeLoss": 9265,
@@ -633,7 +729,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 116282,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9265,
+      "sizeLossPercent": 7.38,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 116282,
       "meanErrorSquared": 0,
       "sizeLoss": 9265,
@@ -677,7 +781,7 @@ var results = [
   },
   {
     "image": "gif_patroon.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 19181,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -685,7 +789,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 19181,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 5.17,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 19181,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -729,7 +841,7 @@ var results = [
   },
   {
     "image": "gif_rood.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
       "sizeLoss": 10139,
@@ -737,7 +849,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 97960,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10139,
+      "sizeLossPercent": 9.38,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 97960,
       "meanErrorSquared": 0,
       "sizeLoss": 10139,
@@ -781,7 +901,7 @@ var results = [
   },
   {
     "image": "gif_skyline.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
       "sizeLoss": 9809,
@@ -789,7 +909,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 126391,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9809,
+      "sizeLossPercent": 7.2,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 126391,
       "meanErrorSquared": 0,
       "sizeLoss": 9809,
@@ -833,7 +961,7 @@ var results = [
   },
   {
     "image": "gif_streepjes.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -841,7 +969,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 2573,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 28.88,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 2573,
       "meanErrorSquared": 0,
       "sizeLoss": 1045,
@@ -885,7 +1021,7 @@ var results = [
   },
   {
     "image": "gif_wolk.gif",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
       "sizeLoss": 11581,
@@ -893,7 +1029,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 107562,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11581,
+      "sizeLossPercent": 9.72,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 107562,
       "meanErrorSquared": 0,
       "sizeLoss": 11581,
@@ -937,7 +1081,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_bril.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 64026,
@@ -945,7 +1089,15 @@ var results = [
       "qualityLossPercent": 5.17,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15499,
+      "sizeLossPercent": 15.31,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 85704,
       "meanErrorSquared": 0,
       "sizeLoss": 15499,
@@ -989,7 +1141,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_grote-ogen.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 89640,
@@ -997,7 +1149,15 @@ var results = [
       "qualityLossPercent": 10.08,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15740,
+      "sizeLossPercent": 13.58,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 100151,
       "meanErrorSquared": 0,
       "sizeLoss": 15740,
@@ -1041,7 +1201,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_logo.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 43602,
@@ -1049,7 +1209,15 @@ var results = [
       "qualityLossPercent": 4.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 21634,
+      "sizeLossPercent": 31.2,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 47699,
       "meanErrorSquared": 0,
       "sizeLoss": 21634,
@@ -1093,7 +1261,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_oog.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 131988,
@@ -1101,7 +1269,15 @@ var results = [
       "qualityLossPercent": 12.74,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 16501,
+      "sizeLossPercent": 10.2,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 145248,
       "meanErrorSquared": 0,
       "sizeLoss": 16501,
@@ -1145,7 +1321,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_patroon.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 109095,
@@ -1153,7 +1329,15 @@ var results = [
       "qualityLossPercent": 2.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 31977,
+      "sizeLossPercent": 13.61,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 203036,
       "meanErrorSquared": 0,
       "sizeLoss": 31977,
@@ -1197,7 +1381,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_rood.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 103128,
@@ -1205,7 +1389,15 @@ var results = [
       "qualityLossPercent": 9.54,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 16315,
+      "sizeLossPercent": 12.02,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 119419,
       "meanErrorSquared": 0,
       "sizeLoss": 16315,
@@ -1249,7 +1441,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_skyline.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 169479,
@@ -1257,7 +1449,15 @@ var results = [
       "qualityLossPercent": 12.9,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 21593,
+      "sizeLossPercent": 9.34,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 209566,
       "meanErrorSquared": 0,
       "sizeLoss": 21593,
@@ -1301,7 +1501,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_streepjes.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 147795,
@@ -1309,7 +1509,15 @@ var results = [
       "qualityLossPercent": 10,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 107332,
+      "sizeLossPercent": 58.71,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 75491,
       "meanErrorSquared": 0,
       "sizeLoss": 107332,
@@ -1353,7 +1561,7 @@ var results = [
   },
   {
     "image": "jpeg-colour-profile_wolk.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 82909,
@@ -1361,7 +1569,15 @@ var results = [
       "qualityLossPercent": 4.61,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 22737,
+      "sizeLossPercent": 21.75,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 81793,
       "meanErrorSquared": 0,
       "sizeLoss": 22737,
@@ -1405,7 +1621,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_bril.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 56867,
@@ -1413,7 +1629,15 @@ var results = [
       "qualityLossPercent": 5.17,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8340,
+      "sizeLossPercent": 8.87,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 85704,
       "meanErrorSquared": 0,
       "sizeLoss": 8340,
@@ -1457,7 +1681,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_grote-ogen.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 83783,
@@ -1465,7 +1689,15 @@ var results = [
       "qualityLossPercent": 10.08,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9883,
+      "sizeLossPercent": 8.98,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 100151,
       "meanErrorSquared": 0,
       "sizeLoss": 9883,
@@ -1509,7 +1741,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_logo.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 31414,
@@ -1517,7 +1749,15 @@ var results = [
       "qualityLossPercent": 4.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9446,
+      "sizeLossPercent": 16.53,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 47699,
       "meanErrorSquared": 0,
       "sizeLoss": 9446,
@@ -1561,7 +1801,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_oog.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 127523,
@@ -1569,7 +1809,15 @@ var results = [
       "qualityLossPercent": 12.74,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12036,
+      "sizeLossPercent": 7.65,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 145248,
       "meanErrorSquared": 0,
       "sizeLoss": 12036,
@@ -1613,7 +1861,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_patroon.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 92180,
@@ -1621,7 +1869,15 @@ var results = [
       "qualityLossPercent": 2.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15062,
+      "sizeLossPercent": 6.91,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 203036,
       "meanErrorSquared": 0,
       "sizeLoss": 15062,
@@ -1665,7 +1921,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_rood.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 97233,
@@ -1673,7 +1929,15 @@ var results = [
       "qualityLossPercent": 9.54,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10420,
+      "sizeLossPercent": 8.03,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 119419,
       "meanErrorSquared": 0,
       "sizeLoss": 10420,
@@ -1717,7 +1981,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_skyline.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 165748,
@@ -1725,7 +1989,15 @@ var results = [
       "qualityLossPercent": 12.9,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 17862,
+      "sizeLossPercent": 7.85,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 209566,
       "meanErrorSquared": 0,
       "sizeLoss": 17862,
@@ -1769,7 +2041,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_streepjes.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 55129,
@@ -1777,7 +2049,15 @@ var results = [
       "qualityLossPercent": 10,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14666,
+      "sizeLossPercent": 16.27,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 75491,
       "meanErrorSquared": 0,
       "sizeLoss": 14666,
@@ -1821,7 +2101,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised-colour-profile_wolk.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 68475,
@@ -1829,7 +2109,15 @@ var results = [
       "qualityLossPercent": 4.61,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8303,
+      "sizeLossPercent": 9.22,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 81793,
       "meanErrorSquared": 0,
       "sizeLoss": 8303,
@@ -1873,7 +2161,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_bril.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 53705,
@@ -1881,7 +2169,15 @@ var results = [
       "qualityLossPercent": 5.17,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 5178,
+      "sizeLossPercent": 5.7,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 85704,
       "meanErrorSquared": 0,
       "sizeLoss": 5178,
@@ -1925,7 +2221,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_grote-ogen.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 80621,
@@ -1933,7 +2229,15 @@ var results = [
       "qualityLossPercent": 10.08,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6721,
+      "sizeLossPercent": 6.29,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 100151,
       "meanErrorSquared": 0,
       "sizeLoss": 6721,
@@ -1977,7 +2281,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_logo.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 28252,
@@ -1985,7 +2289,15 @@ var results = [
       "qualityLossPercent": 4.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6284,
+      "sizeLossPercent": 11.64,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 47699,
       "meanErrorSquared": 0,
       "sizeLoss": 6284,
@@ -2029,7 +2341,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_oog.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 124361,
@@ -2037,7 +2349,15 @@ var results = [
       "qualityLossPercent": 12.74,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8874,
+      "sizeLossPercent": 5.76,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 145248,
       "meanErrorSquared": 0,
       "sizeLoss": 8874,
@@ -2081,7 +2401,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_patroon.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 89018,
@@ -2089,7 +2409,15 @@ var results = [
       "qualityLossPercent": 2.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11900,
+      "sizeLossPercent": 5.54,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 203036,
       "meanErrorSquared": 0,
       "sizeLoss": 11900,
@@ -2133,7 +2461,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_rood.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 94071,
@@ -2141,7 +2469,15 @@ var results = [
       "qualityLossPercent": 9.54,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7258,
+      "sizeLossPercent": 5.73,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 119419,
       "meanErrorSquared": 0,
       "sizeLoss": 7258,
@@ -2185,7 +2521,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_skyline.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 162586,
@@ -2193,7 +2529,15 @@ var results = [
       "qualityLossPercent": 12.9,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14700,
+      "sizeLossPercent": 6.55,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 209566,
       "meanErrorSquared": 0,
       "sizeLoss": 14700,
@@ -2237,7 +2581,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_streepjes.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 51967,
@@ -2245,7 +2589,15 @@ var results = [
       "qualityLossPercent": 10,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11504,
+      "sizeLossPercent": 13.22,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 75491,
       "meanErrorSquared": 0,
       "sizeLoss": 11504,
@@ -2289,7 +2641,7 @@ var results = [
   },
   {
     "image": "jpeg-optimised_wolk.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 65313,
@@ -2297,7 +2649,15 @@ var results = [
       "qualityLossPercent": 4.61,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 5141,
+      "sizeLossPercent": 5.91,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 81793,
       "meanErrorSquared": 0,
       "sizeLoss": 5141,
@@ -2341,7 +2701,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_bril.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 56867,
@@ -2349,7 +2709,15 @@ var results = [
       "qualityLossPercent": 5.17,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8340,
+      "sizeLossPercent": 8.87,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 85704,
       "meanErrorSquared": 0,
       "sizeLoss": 8340,
@@ -2393,7 +2761,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_grote-ogen.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 83783,
@@ -2401,7 +2769,15 @@ var results = [
       "qualityLossPercent": 10.08,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9883,
+      "sizeLossPercent": 8.98,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 100151,
       "meanErrorSquared": 0,
       "sizeLoss": 9883,
@@ -2445,7 +2821,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_logo.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 31414,
@@ -2453,7 +2829,15 @@ var results = [
       "qualityLossPercent": 4.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9446,
+      "sizeLossPercent": 16.53,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 47699,
       "meanErrorSquared": 0,
       "sizeLoss": 9446,
@@ -2497,7 +2881,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_oog.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 127523,
@@ -2505,7 +2889,15 @@ var results = [
       "qualityLossPercent": 12.74,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12036,
+      "sizeLossPercent": 7.65,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 145248,
       "meanErrorSquared": 0,
       "sizeLoss": 12036,
@@ -2549,7 +2941,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_patroon.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 92180,
@@ -2557,7 +2949,15 @@ var results = [
       "qualityLossPercent": 2.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15062,
+      "sizeLossPercent": 6.91,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 203036,
       "meanErrorSquared": 0,
       "sizeLoss": 15062,
@@ -2601,7 +3001,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_rood.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 97233,
@@ -2609,7 +3009,15 @@ var results = [
       "qualityLossPercent": 9.54,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10420,
+      "sizeLossPercent": 8.03,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 119419,
       "meanErrorSquared": 0,
       "sizeLoss": 10420,
@@ -2653,7 +3061,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_skyline.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 165748,
@@ -2661,7 +3069,15 @@ var results = [
       "qualityLossPercent": 12.9,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 17862,
+      "sizeLossPercent": 7.85,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 209566,
       "meanErrorSquared": 0,
       "sizeLoss": 17862,
@@ -2705,7 +3121,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_streepjes.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 55129,
@@ -2713,7 +3129,15 @@ var results = [
       "qualityLossPercent": 10,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14666,
+      "sizeLossPercent": 16.27,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 75491,
       "meanErrorSquared": 0,
       "sizeLoss": 14666,
@@ -2757,7 +3181,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive-colour-profile_wolk.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 68475,
@@ -2765,7 +3189,15 @@ var results = [
       "qualityLossPercent": 4.61,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8303,
+      "sizeLossPercent": 9.22,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 81793,
       "meanErrorSquared": 0,
       "sizeLoss": 8303,
@@ -2809,7 +3241,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_bril.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 50081,
@@ -2817,7 +3249,15 @@ var results = [
       "qualityLossPercent": 5.17,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1554,
+      "sizeLossPercent": 1.78,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 85704,
       "meanErrorSquared": 0,
       "sizeLoss": 1554,
@@ -2861,7 +3301,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_grote-ogen.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 75949,
@@ -2869,7 +3309,15 @@ var results = [
       "qualityLossPercent": 10.08,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2049,
+      "sizeLossPercent": 2,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 100151,
       "meanErrorSquared": 0,
       "sizeLoss": 2049,
@@ -2913,7 +3361,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_logo.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 24748,
@@ -2921,7 +3369,15 @@ var results = [
       "qualityLossPercent": 4.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2780,
+      "sizeLossPercent": 5.51,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 47699,
       "meanErrorSquared": 0,
       "sizeLoss": 2780,
@@ -2965,7 +3421,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_oog.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 119490,
@@ -2973,7 +3429,15 @@ var results = [
       "qualityLossPercent": 12.74,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 4003,
+      "sizeLossPercent": 2.68,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 145248,
       "meanErrorSquared": 0,
       "sizeLoss": 4003,
@@ -3017,7 +3481,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_patroon.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 81076,
@@ -3025,7 +3489,15 @@ var results = [
       "qualityLossPercent": 2.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 3958,
+      "sizeLossPercent": 1.91,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 203036,
       "meanErrorSquared": 0,
       "sizeLoss": 3958,
@@ -3069,7 +3541,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_rood.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 88587,
@@ -3077,7 +3549,15 @@ var results = [
       "qualityLossPercent": 9.54,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1774,
+      "sizeLossPercent": 1.46,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 119419,
       "meanErrorSquared": 0,
       "sizeLoss": 1774,
@@ -3121,7 +3601,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_skyline.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 151605,
@@ -3129,7 +3609,15 @@ var results = [
       "qualityLossPercent": 12.9,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 3719,
+      "sizeLossPercent": 1.74,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 209566,
       "meanErrorSquared": 0,
       "sizeLoss": 3719,
@@ -3173,7 +3661,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_streepjes.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 52141,
@@ -3181,7 +3669,15 @@ var results = [
       "qualityLossPercent": 10,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11678,
+      "sizeLossPercent": 13.4,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 75491,
       "meanErrorSquared": 0,
       "sizeLoss": 11678,
@@ -3225,7 +3721,7 @@ var results = [
   },
   {
     "image": "jpeg-progressive_wolk.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 62755,
@@ -3233,7 +3729,15 @@ var results = [
       "qualityLossPercent": 4.61,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2583,
+      "sizeLossPercent": 3.06,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 81793,
       "meanErrorSquared": 0,
       "sizeLoss": 2583,
@@ -3277,7 +3781,7 @@ var results = [
   },
   {
     "image": "jpeg_bril.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 37177,
       "meanErrorSquared": 3.40331,
       "sizeLoss": 60864,
@@ -3285,7 +3789,15 @@ var results = [
       "qualityLossPercent": 5.17,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12337,
+      "sizeLossPercent": 12.58,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 85704,
       "meanErrorSquared": 0,
       "sizeLoss": 12337,
@@ -3329,7 +3841,7 @@ var results = [
   },
   {
     "image": "jpeg_grote-ogen.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 26251,
       "meanErrorSquared": 4.71431,
       "sizeLoss": 86478,
@@ -3337,7 +3849,15 @@ var results = [
       "qualityLossPercent": 10.08,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12578,
+      "sizeLossPercent": 11.16,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 100151,
       "meanErrorSquared": 0,
       "sizeLoss": 12578,
@@ -3381,7 +3901,7 @@ var results = [
   },
   {
     "image": "jpeg_logo.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 25731,
       "meanErrorSquared": 2.69691,
       "sizeLoss": 40440,
@@ -3389,7 +3909,15 @@ var results = [
       "qualityLossPercent": 4.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18472,
+      "sizeLossPercent": 27.92,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 47699,
       "meanErrorSquared": 0,
       "sizeLoss": 18472,
@@ -3433,7 +3961,7 @@ var results = [
   },
   {
     "image": "jpeg_oog.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 29761,
       "meanErrorSquared": 7.43253,
       "sizeLoss": 128826,
@@ -3441,7 +3969,15 @@ var results = [
       "qualityLossPercent": 12.74,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 13339,
+      "sizeLossPercent": 8.41,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 145248,
       "meanErrorSquared": 0,
       "sizeLoss": 13339,
@@ -3485,7 +4021,7 @@ var results = [
   },
   {
     "image": "jpeg_patroon.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 125918,
       "meanErrorSquared": 6.34813,
       "sizeLoss": 105933,
@@ -3493,7 +4029,15 @@ var results = [
       "qualityLossPercent": 2.1,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28815,
+      "sizeLossPercent": 12.43,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 203036,
       "meanErrorSquared": 0,
       "sizeLoss": 28815,
@@ -3537,7 +4081,7 @@ var results = [
   },
   {
     "image": "jpeg_rood.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 32606,
       "meanErrorSquared": 5.53245,
       "sizeLoss": 99966,
@@ -3545,7 +4089,15 @@ var results = [
       "qualityLossPercent": 9.54,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 13153,
+      "sizeLossPercent": 9.92,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 119419,
       "meanErrorSquared": 0,
       "sizeLoss": 13153,
@@ -3589,7 +4141,7 @@ var results = [
   },
   {
     "image": "jpeg_skyline.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 61680,
       "meanErrorSquared": 19.4196,
       "sizeLoss": 166317,
@@ -3597,7 +4149,15 @@ var results = [
       "qualityLossPercent": 12.9,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18431,
+      "sizeLossPercent": 8.08,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 209566,
       "meanErrorSquared": 0,
       "sizeLoss": 18431,
@@ -3641,7 +4201,7 @@ var results = [
   },
   {
     "image": "jpeg_streepjes.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 35028,
       "meanErrorSquared": 75.9357,
       "sizeLoss": 144633,
@@ -3649,7 +4209,15 @@ var results = [
       "qualityLossPercent": 10,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 104170,
+      "sizeLossPercent": 57.98,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 75491,
       "meanErrorSquared": 0,
       "sizeLoss": 104170,
@@ -3693,7 +4261,7 @@ var results = [
   },
   {
     "image": "jpeg_wolk.jpg",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 21621,
       "meanErrorSquared": 1.59552,
       "sizeLoss": 79747,
@@ -3701,7 +4269,15 @@ var results = [
       "qualityLossPercent": 4.61,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19575,
+      "sizeLossPercent": 19.31,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 81793,
       "meanErrorSquared": 0,
       "sizeLoss": 19575,
@@ -3745,21 +4321,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_bril.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 86471,
+    "imageoptim_imagealpha": {
+      "size": 85933,
       "meanErrorSquared": 2.81137,
-      "sizeLoss": 170183,
-      "sizeLossPercent": 66.31,
+      "sizeLoss": 170721,
+      "sizeLossPercent": 66.52,
       "qualityLossPercent": 9.48,
       "isSmallest": true
-    },
-    "imageoptim_cli": {
-      "size": 86502,
-      "meanErrorSquared": 2.81137,
-      "sizeLoss": 170152,
-      "sizeLossPercent": 66.3,
-      "qualityLossPercent": 9.48,
-      "isSmallest": false
     },
     "tinypng": {
       "size": 88704,
@@ -3767,6 +4335,22 @@ var results = [
       "sizeLoss": 167950,
       "sizeLossPercent": 65.44,
       "qualityLossPercent": 10.11,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 197589,
+      "meanErrorSquared": 0,
+      "sizeLoss": 59065,
+      "sizeLossPercent": 23.01,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 197589,
+      "meanErrorSquared": 0,
+      "sizeLoss": 59065,
+      "sizeLossPercent": 23.01,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -3797,19 +4381,11 @@ var results = [
   },
   {
     "image": "png24-interlaced_grote-ogen.png",
-    "imageoptim_cli": {
-      "size": 84119,
+    "imageoptim_imagealpha": {
+      "size": 83874,
       "meanErrorSquared": 4.19708,
-      "sizeLoss": 196431,
-      "sizeLossPercent": 70.02,
-      "qualityLossPercent": 12.67,
-      "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 84119,
-      "meanErrorSquared": 4.19708,
-      "sizeLoss": 196431,
-      "sizeLossPercent": 70.02,
+      "sizeLoss": 196676,
+      "sizeLossPercent": 70.1,
       "qualityLossPercent": 12.67,
       "isSmallest": true
     },
@@ -3819,6 +4395,22 @@ var results = [
       "sizeLoss": 193892,
       "sizeLossPercent": 69.11,
       "qualityLossPercent": 13.14,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 217562,
+      "meanErrorSquared": 0,
+      "sizeLoss": 62988,
+      "sizeLossPercent": 22.45,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 217562,
+      "meanErrorSquared": 0,
+      "sizeLoss": 62988,
+      "sizeLossPercent": 22.45,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -3849,19 +4441,27 @@ var results = [
   },
   {
     "image": "png24-interlaced_logo.png",
-    "imageoptim_cli": {
-      "size": 5848,
+    "imageoptim": {
+      "size": 5568,
       "meanErrorSquared": 0,
-      "sizeLoss": 12665,
-      "sizeLossPercent": 68.41,
+      "sizeLoss": 12945,
+      "sizeLossPercent": 69.92,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 5850,
+    "imageoptim_jpegmini": {
+      "size": 5568,
       "meanErrorSquared": 0,
-      "sizeLoss": 12663,
-      "sizeLossPercent": 68.4,
+      "sizeLoss": 12945,
+      "sizeLossPercent": 69.92,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 5861,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12652,
+      "sizeLossPercent": 68.34,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -3901,21 +4501,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_oog.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 133225,
+    "imageoptim_imagealpha": {
+      "size": 133030,
       "meanErrorSquared": 4.62548,
-      "sizeLoss": 261043,
-      "sizeLossPercent": 66.21,
+      "sizeLoss": 261238,
+      "sizeLossPercent": 66.26,
       "qualityLossPercent": 16.38,
       "isSmallest": true
-    },
-    "imageoptim_cli": {
-      "size": 133244,
-      "meanErrorSquared": 4.62548,
-      "sizeLoss": 261024,
-      "sizeLossPercent": 66.2,
-      "qualityLossPercent": 16.38,
-      "isSmallest": false
     },
     "tinypng": {
       "size": 138711,
@@ -3923,6 +4515,22 @@ var results = [
       "sizeLoss": 255557,
       "sizeLossPercent": 64.82,
       "qualityLossPercent": 17.71,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 307531,
+      "meanErrorSquared": 0,
+      "sizeLoss": 86737,
+      "sizeLossPercent": 22,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 307531,
+      "meanErrorSquared": 0,
+      "sizeLoss": 86737,
+      "sizeLossPercent": 22,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -3953,19 +4561,27 @@ var results = [
   },
   {
     "image": "png24-interlaced_patroon.png",
-    "imageoptim_cli": {
-      "size": 3723,
+    "imageoptim_jpegmini": {
+      "size": 3512,
       "meanErrorSquared": 0,
-      "sizeLoss": 13818,
-      "sizeLossPercent": 78.78,
+      "sizeLoss": 14029,
+      "sizeLossPercent": 79.98,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 3753,
+    "imageoptim": {
+      "size": 3529,
       "meanErrorSquared": 0,
-      "sizeLoss": 13788,
-      "sizeLossPercent": 78.6,
+      "sizeLoss": 14012,
+      "sizeLossPercent": 79.88,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
+      "size": 3683,
+      "meanErrorSquared": 0,
+      "sizeLoss": 13858,
+      "sizeLossPercent": 79,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4005,19 +4621,11 @@ var results = [
   },
   {
     "image": "png24-interlaced_rood.png",
-    "imageoptim_cli": {
-      "size": 106103,
+    "imageoptim_imagealpha": {
+      "size": 105892,
       "meanErrorSquared": 5.17417,
-      "sizeLoss": 236859,
-      "sizeLossPercent": 69.06,
-      "qualityLossPercent": 16.03,
-      "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 106103,
-      "meanErrorSquared": 5.17417,
-      "sizeLoss": 236859,
-      "sizeLossPercent": 69.06,
+      "sizeLoss": 237070,
+      "sizeLossPercent": 69.12,
       "qualityLossPercent": 16.03,
       "isSmallest": true
     },
@@ -4027,6 +4635,22 @@ var results = [
       "sizeLoss": 233071,
       "sizeLossPercent": 67.96,
       "qualityLossPercent": 16.98,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 264725,
+      "meanErrorSquared": 0,
+      "sizeLoss": 78237,
+      "sizeLossPercent": 22.81,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 264725,
+      "meanErrorSquared": 0,
+      "sizeLoss": 78237,
+      "sizeLossPercent": 22.81,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4057,21 +4681,13 @@ var results = [
   },
   {
     "image": "png24-interlaced_skyline.png",
-    "imageoptim_cli": {
-      "size": 120869,
+    "imageoptim_imagealpha": {
+      "size": 120603,
       "meanErrorSquared": 8.0605,
-      "sizeLoss": 336080,
-      "sizeLossPercent": 73.55,
+      "sizeLoss": 336346,
+      "sizeLossPercent": 73.61,
       "qualityLossPercent": 17.76,
       "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 120938,
-      "meanErrorSquared": 8.0605,
-      "sizeLoss": 336011,
-      "sizeLossPercent": 73.53,
-      "qualityLossPercent": 17.76,
-      "isSmallest": false
     },
     "tinypng": {
       "size": 123415,
@@ -4079,6 +4695,22 @@ var results = [
       "sizeLoss": 333534,
       "sizeLossPercent": 72.99,
       "qualityLossPercent": 18.3,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 382779,
+      "meanErrorSquared": 0,
+      "sizeLoss": 74170,
+      "sizeLossPercent": 16.23,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 382779,
+      "meanErrorSquared": 0,
+      "sizeLoss": 74170,
+      "sizeLossPercent": 16.23,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4109,7 +4741,7 @@ var results = [
   },
   {
     "image": "png24-interlaced_streepjes.png",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 2399,
@@ -4117,7 +4749,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2399,
+      "sizeLossPercent": 87.59,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 2399,
@@ -4161,28 +4801,36 @@ var results = [
   },
   {
     "image": "png24-interlaced_wolk.png",
+    "imageoptim_imagealpha": {
+      "size": 99657,
+      "meanErrorSquared": 1.11748,
+      "sizeLoss": 165746,
+      "sizeLossPercent": 62.45,
+      "qualityLossPercent": 3.47,
+      "isSmallest": true
+    },
     "tinypng": {
       "size": 99758,
       "meanErrorSquared": 1.12587,
       "sizeLoss": 165645,
       "sizeLossPercent": 62.41,
       "qualityLossPercent": 3.49,
-      "isSmallest": true
-    },
-    "imageoptim_cli": {
-      "size": 99867,
-      "meanErrorSquared": 1.11748,
-      "sizeLoss": 165536,
-      "sizeLossPercent": 62.37,
-      "qualityLossPercent": 3.47,
       "isSmallest": false
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 99867,
-      "meanErrorSquared": 1.11748,
-      "sizeLoss": 165536,
-      "sizeLossPercent": 62.37,
-      "qualityLossPercent": 3.47,
+    "imageoptim": {
+      "size": 201569,
+      "meanErrorSquared": 0,
+      "sizeLoss": 63834,
+      "sizeLossPercent": 24.05,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 201569,
+      "meanErrorSquared": 0,
+      "sizeLoss": 63834,
+      "sizeLossPercent": 24.05,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4213,21 +4861,13 @@ var results = [
   },
   {
     "image": "png24_bril.png",
-    "imageoptim_cli": {
-      "size": 86495,
+    "imageoptim_imagealpha": {
+      "size": 85933,
       "meanErrorSquared": 2.81137,
-      "sizeLoss": 130269,
-      "sizeLossPercent": 60.1,
+      "sizeLoss": 130831,
+      "sizeLossPercent": 60.36,
       "qualityLossPercent": 9.48,
       "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 86499,
-      "meanErrorSquared": 2.81137,
-      "sizeLoss": 130265,
-      "sizeLossPercent": 60.1,
-      "qualityLossPercent": 9.48,
-      "isSmallest": false
     },
     "tinypng": {
       "size": 88704,
@@ -4235,6 +4875,22 @@ var results = [
       "sizeLoss": 128060,
       "sizeLossPercent": 59.08,
       "qualityLossPercent": 10.11,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 197089,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19675,
+      "sizeLossPercent": 9.08,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 197089,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19675,
+      "sizeLossPercent": 9.08,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4265,19 +4921,11 @@ var results = [
   },
   {
     "image": "png24_grote-ogen.png",
-    "imageoptim_cli": {
-      "size": 84119,
+    "imageoptim_imagealpha": {
+      "size": 83874,
       "meanErrorSquared": 4.19708,
-      "sizeLoss": 149183,
-      "sizeLossPercent": 63.94,
-      "qualityLossPercent": 12.67,
-      "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 84119,
-      "meanErrorSquared": 4.19708,
-      "sizeLoss": 149183,
-      "sizeLossPercent": 63.94,
+      "sizeLoss": 149428,
+      "sizeLossPercent": 64.05,
       "qualityLossPercent": 12.67,
       "isSmallest": true
     },
@@ -4287,6 +4935,22 @@ var results = [
       "sizeLoss": 146644,
       "sizeLossPercent": 62.86,
       "qualityLossPercent": 13.14,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 214296,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19006,
+      "sizeLossPercent": 8.15,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 214296,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19006,
+      "sizeLossPercent": 8.15,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4317,19 +4981,27 @@ var results = [
   },
   {
     "image": "png24_logo.png",
-    "imageoptim_cli": {
+    "imageoptim_jpegmini": {
+      "size": 5550,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7211,
+      "sizeLossPercent": 56.51,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim": {
+      "size": 5587,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7174,
+      "sizeLossPercent": 56.22,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 5861,
       "meanErrorSquared": 0,
       "sizeLoss": 6900,
       "sizeLossPercent": 54.07,
-      "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 5867,
-      "meanErrorSquared": 0,
-      "sizeLoss": 6894,
-      "sizeLossPercent": 54.02,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4369,21 +5041,13 @@ var results = [
   },
   {
     "image": "png24_oog.png",
-    "imageoptim_cli": {
-      "size": 133203,
+    "imageoptim_imagealpha": {
+      "size": 133030,
       "meanErrorSquared": 4.62548,
-      "sizeLoss": 201224,
-      "sizeLossPercent": 60.17,
+      "sizeLoss": 201397,
+      "sizeLossPercent": 60.22,
       "qualityLossPercent": 16.38,
       "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 133249,
-      "meanErrorSquared": 4.62548,
-      "sizeLoss": 201178,
-      "sizeLossPercent": 60.16,
-      "qualityLossPercent": 16.38,
-      "isSmallest": false
     },
     "tinypng": {
       "size": 138711,
@@ -4391,6 +5055,22 @@ var results = [
       "sizeLoss": 195716,
       "sizeLossPercent": 58.52,
       "qualityLossPercent": 17.71,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 307531,
+      "meanErrorSquared": 0,
+      "sizeLoss": 26896,
+      "sizeLossPercent": 8.04,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 307531,
+      "meanErrorSquared": 0,
+      "sizeLoss": 26896,
+      "sizeLossPercent": 8.04,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4421,19 +5101,27 @@ var results = [
   },
   {
     "image": "png24_patroon.png",
-    "imageoptim_cli": {
-      "size": 3721,
+    "imageoptim_jpegmini": {
+      "size": 3526,
       "meanErrorSquared": 0,
-      "sizeLoss": 12739,
-      "sizeLossPercent": 77.39,
+      "sizeLoss": 12934,
+      "sizeLossPercent": 78.58,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 3749,
+    "imageoptim": {
+      "size": 3562,
       "meanErrorSquared": 0,
-      "sizeLoss": 12711,
-      "sizeLossPercent": 77.22,
+      "sizeLoss": 12898,
+      "sizeLossPercent": 78.36,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
+      "size": 3683,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12777,
+      "sizeLossPercent": 77.62,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4473,19 +5161,11 @@ var results = [
   },
   {
     "image": "png24_rood.png",
-    "imageoptim_cli": {
-      "size": 106103,
+    "imageoptim_imagealpha": {
+      "size": 105892,
       "meanErrorSquared": 5.17417,
-      "sizeLoss": 181792,
-      "sizeLossPercent": 63.15,
-      "qualityLossPercent": 16.03,
-      "isSmallest": true
-    },
-    "imageoptim_cli_jpegmini": {
-      "size": 106103,
-      "meanErrorSquared": 5.17417,
-      "sizeLoss": 181792,
-      "sizeLossPercent": 63.15,
+      "sizeLoss": 182003,
+      "sizeLossPercent": 63.22,
       "qualityLossPercent": 16.03,
       "isSmallest": true
     },
@@ -4495,6 +5175,22 @@ var results = [
       "sizeLoss": 178004,
       "sizeLossPercent": 61.83,
       "qualityLossPercent": 16.98,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 264725,
+      "meanErrorSquared": 0,
+      "sizeLoss": 23170,
+      "sizeLossPercent": 8.05,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 264725,
+      "meanErrorSquared": 0,
+      "sizeLoss": 23170,
+      "sizeLossPercent": 8.05,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4525,21 +5221,13 @@ var results = [
   },
   {
     "image": "png24_skyline.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 120901,
+    "imageoptim_imagealpha": {
+      "size": 120603,
       "meanErrorSquared": 8.0605,
-      "sizeLoss": 280097,
-      "sizeLossPercent": 69.85,
+      "sizeLoss": 280395,
+      "sizeLossPercent": 69.92,
       "qualityLossPercent": 17.76,
       "isSmallest": true
-    },
-    "imageoptim_cli": {
-      "size": 120936,
-      "meanErrorSquared": 8.0605,
-      "sizeLoss": 280062,
-      "sizeLossPercent": 69.84,
-      "qualityLossPercent": 17.76,
-      "isSmallest": false
     },
     "tinypng": {
       "size": 123415,
@@ -4547,6 +5235,22 @@ var results = [
       "sizeLoss": 277583,
       "sizeLossPercent": 69.22,
       "qualityLossPercent": 18.3,
+      "isSmallest": false
+    },
+    "imageoptim": {
+      "size": 382779,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18219,
+      "sizeLossPercent": 4.54,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 382779,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18219,
+      "sizeLossPercent": 4.54,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4577,7 +5281,7 @@ var results = [
   },
   {
     "image": "png24_streepjes.png",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1905,
@@ -4585,7 +5289,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1905,
+      "sizeLossPercent": 84.86,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1905,
@@ -4629,28 +5341,36 @@ var results = [
   },
   {
     "image": "png24_wolk.png",
+    "imageoptim_imagealpha": {
+      "size": 99657,
+      "meanErrorSquared": 1.11748,
+      "sizeLoss": 129619,
+      "sizeLossPercent": 56.53,
+      "qualityLossPercent": 3.47,
+      "isSmallest": true
+    },
     "tinypng": {
       "size": 99758,
       "meanErrorSquared": 1.12587,
       "sizeLoss": 129518,
       "sizeLossPercent": 56.49,
       "qualityLossPercent": 3.49,
-      "isSmallest": true
-    },
-    "imageoptim_cli": {
-      "size": 99867,
-      "meanErrorSquared": 1.11748,
-      "sizeLoss": 129409,
-      "sizeLossPercent": 56.44,
-      "qualityLossPercent": 3.47,
       "isSmallest": false
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 99867,
-      "meanErrorSquared": 1.11748,
-      "sizeLoss": 129409,
-      "sizeLossPercent": 56.44,
-      "qualityLossPercent": 3.47,
+    "imageoptim": {
+      "size": 201161,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28115,
+      "sizeLossPercent": 12.26,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 201161,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28115,
+      "sizeLossPercent": 12.26,
+      "qualityLossPercent": 0,
       "isSmallest": false
     },
     "grunt_contrib_imagemin": {
@@ -4681,19 +5401,27 @@ var results = [
   },
   {
     "image": "png8-interlaced_bril.png",
-    "imageoptim_cli": {
-      "size": 55392,
+    "imageoptim": {
+      "size": 54865,
       "meanErrorSquared": 0,
-      "sizeLoss": 19537,
-      "sizeLossPercent": 26.07,
+      "sizeLoss": 20064,
+      "sizeLossPercent": 26.78,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 55395,
+    "imageoptim_jpegmini": {
+      "size": 54865,
       "meanErrorSquared": 0,
-      "sizeLoss": 19534,
-      "sizeLossPercent": 26.07,
+      "sizeLoss": 20064,
+      "sizeLossPercent": 26.78,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 55070,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19859,
+      "sizeLossPercent": 26.5,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4733,21 +5461,29 @@ var results = [
   },
   {
     "image": "png8-interlaced_grote-ogen.png",
-    "imageoptim_cli": {
-      "size": 62260,
+    "imageoptim": {
+      "size": 61904,
       "meanErrorSquared": 0,
-      "sizeLoss": 24081,
-      "sizeLossPercent": 27.89,
+      "sizeLoss": 24437,
+      "sizeLossPercent": 28.3,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 62260,
+    "imageoptim_jpegmini": {
+      "size": 61904,
       "meanErrorSquared": 0,
-      "sizeLoss": 24081,
-      "sizeLossPercent": 27.89,
+      "sizeLoss": 24437,
+      "sizeLossPercent": 28.3,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 62057,
+      "meanErrorSquared": 0,
+      "sizeLoss": 24284,
+      "sizeLossPercent": 28.13,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 62584,
@@ -4785,7 +5521,7 @@ var results = [
   },
   {
     "image": "png8-interlaced_logo.png",
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_jpegmini": {
       "size": 5845,
       "meanErrorSquared": 0,
       "sizeLoss": 4494,
@@ -4793,7 +5529,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
+    "imageoptim": {
+      "size": 5860,
+      "meanErrorSquared": 0,
+      "sizeLoss": 4479,
+      "sizeLossPercent": 43.32,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
       "size": 5861,
       "meanErrorSquared": 0,
       "sizeLoss": 4478,
@@ -4837,19 +5581,27 @@ var results = [
   },
   {
     "image": "png8-interlaced_oog.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 96896,
+    "imageoptim": {
+      "size": 96460,
       "meanErrorSquared": 0,
-      "sizeLoss": 29176,
-      "sizeLossPercent": 23.14,
+      "sizeLoss": 29612,
+      "sizeLossPercent": 23.49,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
-      "size": 96953,
+    "imageoptim_jpegmini": {
+      "size": 96460,
       "meanErrorSquared": 0,
-      "sizeLoss": 29119,
-      "sizeLossPercent": 23.1,
+      "sizeLoss": 29612,
+      "sizeLossPercent": 23.49,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 96684,
+      "meanErrorSquared": 0,
+      "sizeLoss": 29388,
+      "sizeLossPercent": 23.31,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4889,19 +5641,27 @@ var results = [
   },
   {
     "image": "png8-interlaced_patroon.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 3724,
+    "imageoptim_imagealpha": {
+      "size": 3683,
       "meanErrorSquared": 0,
-      "sizeLoss": 2841,
-      "sizeLossPercent": 43.27,
+      "sizeLoss": 2882,
+      "sizeLossPercent": 43.9,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
-      "size": 3746,
+    "imageoptim": {
+      "size": 3694,
       "meanErrorSquared": 0,
-      "sizeLoss": 2819,
-      "sizeLossPercent": 42.94,
+      "sizeLoss": 2871,
+      "sizeLossPercent": 43.73,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 3694,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2871,
+      "sizeLossPercent": 43.73,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4941,27 +5701,35 @@ var results = [
   },
   {
     "image": "png8-interlaced_rood.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 77310,
+    "imageoptim": {
+      "size": 76909,
       "meanErrorSquared": 0,
-      "sizeLoss": 28342,
-      "sizeLossPercent": 26.83,
+      "sizeLoss": 28743,
+      "sizeLossPercent": 27.21,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
+      "size": 76909,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28743,
+      "sizeLossPercent": 27.21,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 77166,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28486,
+      "sizeLossPercent": 26.96,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 77393,
       "meanErrorSquared": 0,
       "sizeLoss": 28259,
       "sizeLossPercent": 26.75,
-      "qualityLossPercent": 0,
-      "isSmallest": false
-    },
-    "imageoptim_cli": {
-      "size": 77398,
-      "meanErrorSquared": 0,
-      "sizeLoss": 28254,
-      "sizeLossPercent": 26.74,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4993,21 +5761,29 @@ var results = [
   },
   {
     "image": "png8-interlaced_skyline.png",
-    "imageoptim_cli": {
-      "size": 104107,
+    "imageoptim": {
+      "size": 103594,
       "meanErrorSquared": 0,
-      "sizeLoss": 27643,
-      "sizeLossPercent": 20.98,
+      "sizeLoss": 28156,
+      "sizeLossPercent": 21.37,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 104107,
+    "imageoptim_jpegmini": {
+      "size": 103594,
       "meanErrorSquared": 0,
-      "sizeLoss": 27643,
-      "sizeLossPercent": 20.98,
+      "sizeLoss": 28156,
+      "sizeLossPercent": 21.37,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 103779,
+      "meanErrorSquared": 0,
+      "sizeLoss": 27971,
+      "sizeLossPercent": 21.23,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 104114,
@@ -5045,7 +5821,7 @@ var results = [
   },
   {
     "image": "png8-interlaced_streepjes.png",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1655,
@@ -5053,7 +5829,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1655,
+      "sizeLossPercent": 82.96,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1655,
@@ -5097,21 +5881,29 @@ var results = [
   },
   {
     "image": "png8-interlaced_wolk.png",
-    "imageoptim_cli": {
-      "size": 82234,
+    "imageoptim": {
+      "size": 82107,
       "meanErrorSquared": 0,
-      "sizeLoss": 29278,
-      "sizeLossPercent": 26.26,
+      "sizeLoss": 29405,
+      "sizeLossPercent": 26.37,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 82234,
+    "imageoptim_jpegmini": {
+      "size": 82107,
       "meanErrorSquared": 0,
-      "sizeLoss": 29278,
-      "sizeLossPercent": 26.26,
+      "sizeLoss": 29405,
+      "sizeLossPercent": 26.37,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 82128,
+      "meanErrorSquared": 0,
+      "sizeLoss": 29384,
+      "sizeLossPercent": 26.35,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 82247,
@@ -5149,19 +5941,27 @@ var results = [
   },
   {
     "image": "png8_bril.png",
-    "imageoptim_cli": {
-      "size": 55399,
+    "imageoptim": {
+      "size": 54865,
       "meanErrorSquared": 0,
-      "sizeLoss": 5470,
-      "sizeLossPercent": 8.99,
+      "sizeLoss": 6004,
+      "sizeLossPercent": 9.86,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 55416,
+    "imageoptim_jpegmini": {
+      "size": 54865,
       "meanErrorSquared": 0,
-      "sizeLoss": 5453,
-      "sizeLossPercent": 8.96,
+      "sizeLoss": 6004,
+      "sizeLossPercent": 9.86,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 55070,
+      "meanErrorSquared": 0,
+      "sizeLoss": 5799,
+      "sizeLossPercent": 9.53,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5201,21 +6001,29 @@ var results = [
   },
   {
     "image": "png8_grote-ogen.png",
-    "imageoptim_cli": {
-      "size": 62260,
+    "imageoptim": {
+      "size": 61904,
       "meanErrorSquared": 0,
-      "sizeLoss": 5923,
-      "sizeLossPercent": 8.69,
+      "sizeLoss": 6279,
+      "sizeLossPercent": 9.21,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 62260,
+    "imageoptim_jpegmini": {
+      "size": 61904,
       "meanErrorSquared": 0,
-      "sizeLoss": 5923,
-      "sizeLossPercent": 8.69,
+      "sizeLoss": 6279,
+      "sizeLossPercent": 9.21,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 62057,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6126,
+      "sizeLossPercent": 8.98,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 62584,
@@ -5253,19 +6061,27 @@ var results = [
   },
   {
     "image": "png8_logo.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 5836,
+    "imageoptim": {
+      "size": 5845,
       "meanErrorSquared": 0,
-      "sizeLoss": 1849,
-      "sizeLossPercent": 24.06,
+      "sizeLoss": 1840,
+      "sizeLossPercent": 23.94,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
-      "size": 5869,
+    "imageoptim_jpegmini": {
+      "size": 5860,
       "meanErrorSquared": 0,
-      "sizeLoss": 1816,
-      "sizeLossPercent": 23.63,
+      "sizeLoss": 1825,
+      "sizeLossPercent": 23.75,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_imagealpha": {
+      "size": 5861,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1824,
+      "sizeLossPercent": 23.73,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5305,19 +6121,27 @@ var results = [
   },
   {
     "image": "png8_oog.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 96867,
+    "imageoptim": {
+      "size": 96460,
       "meanErrorSquared": 0,
-      "sizeLoss": 9507,
-      "sizeLossPercent": 8.94,
+      "sizeLoss": 9914,
+      "sizeLossPercent": 9.32,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
-      "size": 96879,
+    "imageoptim_jpegmini": {
+      "size": 96460,
       "meanErrorSquared": 0,
-      "sizeLoss": 9495,
-      "sizeLossPercent": 8.93,
+      "sizeLoss": 9914,
+      "sizeLossPercent": 9.32,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 96684,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9690,
+      "sizeLossPercent": 9.11,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5357,19 +6181,27 @@ var results = [
   },
   {
     "image": "png8_patroon.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 3723,
+    "imageoptim_imagealpha": {
+      "size": 3683,
       "meanErrorSquared": 0,
-      "sizeLoss": 2357,
-      "sizeLossPercent": 38.77,
+      "sizeLoss": 2397,
+      "sizeLossPercent": 39.42,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
-      "size": 3752,
+    "imageoptim": {
+      "size": 3694,
       "meanErrorSquared": 0,
-      "sizeLoss": 2328,
-      "sizeLossPercent": 38.29,
+      "sizeLoss": 2386,
+      "sizeLossPercent": 39.24,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
+      "size": 3694,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2386,
+      "sizeLossPercent": 39.24,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5409,19 +6241,27 @@ var results = [
   },
   {
     "image": "png8_rood.png",
-    "imageoptim_cli_jpegmini": {
-      "size": 77299,
+    "imageoptim": {
+      "size": 76909,
       "meanErrorSquared": 0,
-      "sizeLoss": 6789,
-      "sizeLossPercent": 8.07,
+      "sizeLoss": 7179,
+      "sizeLossPercent": 8.54,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli": {
-      "size": 77333,
+    "imageoptim_jpegmini": {
+      "size": 76909,
       "meanErrorSquared": 0,
-      "sizeLoss": 6755,
-      "sizeLossPercent": 8.03,
+      "sizeLoss": 7179,
+      "sizeLossPercent": 8.54,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 77166,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6922,
+      "sizeLossPercent": 8.23,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5461,21 +6301,29 @@ var results = [
   },
   {
     "image": "png8_skyline.png",
-    "imageoptim_cli": {
-      "size": 104107,
+    "imageoptim": {
+      "size": 103594,
       "meanErrorSquared": 0,
-      "sizeLoss": 7472,
-      "sizeLossPercent": 6.7,
+      "sizeLoss": 7985,
+      "sizeLossPercent": 7.16,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 104107,
+    "imageoptim_jpegmini": {
+      "size": 103594,
       "meanErrorSquared": 0,
-      "sizeLoss": 7472,
-      "sizeLossPercent": 6.7,
+      "sizeLoss": 7985,
+      "sizeLossPercent": 7.16,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 103779,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7800,
+      "sizeLossPercent": 6.99,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 104114,
@@ -5513,7 +6361,7 @@ var results = [
   },
   {
     "image": "png8_streepjes.png",
-    "imageoptim_cli": {
+    "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1453,
@@ -5521,7 +6369,15 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
+    "imageoptim_imagealpha": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1453,
+      "sizeLossPercent": 81.04,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
+    "imageoptim_jpegmini": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1453,
@@ -5565,21 +6421,29 @@ var results = [
   },
   {
     "image": "png8_wolk.png",
-    "imageoptim_cli": {
-      "size": 82234,
+    "imageoptim": {
+      "size": 82107,
       "meanErrorSquared": 0,
-      "sizeLoss": 10334,
-      "sizeLossPercent": 11.16,
+      "sizeLoss": 10461,
+      "sizeLossPercent": 11.3,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_cli_jpegmini": {
-      "size": 82234,
+    "imageoptim_jpegmini": {
+      "size": 82107,
       "meanErrorSquared": 0,
-      "sizeLoss": 10334,
-      "sizeLossPercent": 11.16,
+      "sizeLoss": 10461,
+      "sizeLossPercent": 11.3,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim_imagealpha": {
+      "size": 82128,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10440,
+      "sizeLossPercent": 11.28,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "tinypng": {
       "size": 82247,

@@ -46,12 +46,11 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
             th.int.ps(scope='col')
               a.sort(href='#', ng-click='orderBy(\'size\')') Photoshop
             th.int.iocli(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'imageoptim_cli.sizeLossPercent\')') ImageOptim-CLI
+              a.sort(href='#', ng-click='orderBy(\'imageoptim.sizeLossPercent\')') ImageOptim-CLI
             th.int.iocli-jpeg(scope='col')
-              a.sort(href='#', ng-click='orderBy(\'imageoptim_cli_jpegmini.sizeLossPercent\')')
-                | ImageOptim-CLI
-                br
-                | + JPEGmini
+              a.sort(href='#', ng-click='orderBy(\'imageoptim_imagealpha.sizeLossPercent\')') ImageOptim-CLI<br>+ ImageAlpha
+            th.int.iocli-jpeg(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'imageoptim_jpegmini.sizeLossPercent\')') ImageOptim-CLI<br>+ JPEGmini
             th.int.codekit(scope='col')
               a.sort(href='#', ng-click='orderBy(\'codekit.sizeLossPercent\')') CodeKit
             th.int.grunt(scope='col')
@@ -70,11 +69,14 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
               a.result(ng-href='images/photoshop/{{img.image}}')
                 | {{img.size}} bytes
 
-            td.int.iocli(ng-class='css(img,\'imageoptim_cli\')')
-              div(image='img.image', result='img[\'imageoptim_cli\']', tool='\'imageoptim_cli\'')
+            td.int.iocli(ng-class='css(img,\'imageoptim\')')
+              div(image='img.image', result='img[\'imageoptim\']', tool='\'imageoptim\'')
 
-            td.int.iocli-jpeg(ng-class='css(img,\'imageoptim_cli_jpegmini\')')
-              div(image='img.image', result='img[\'imageoptim_cli_jpegmini\']', tool='\'imageoptim_cli_jpegmini\'')
+            td.int.iocli(ng-class='css(img,\'imageoptim_imagealpha\')')
+              div(image='img.image', result='img[\'imageoptim_imagealpha\']', tool='\'imageoptim_imagealpha\'')
+
+            td.int.iocli-jpeg(ng-class='css(img,\'imageoptim_jpegmini\')')
+              div(image='img.image', result='img[\'imageoptim_jpegmini\']', tool='\'imageoptim_jpegmini\'')
 
             td.int.codekit(ng-class='css(img,\'codekit\')')
               div(image='img.image', result='img[\'codekit\']', tool='\'codekit\'')
