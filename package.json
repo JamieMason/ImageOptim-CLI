@@ -14,6 +14,10 @@
     "imageOptim": "bin/imageOptim",
     "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib"
   },
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://raw.github.com/JamieMason/ImageOptim-CLI/master/LICENSE"
+  }],
   "keywords": [
     "advpng",
     "build",
