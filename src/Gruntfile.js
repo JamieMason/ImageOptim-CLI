@@ -6,23 +6,34 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    // imageoptim: {
+    //   files: [
+    //     '../images/imageoptim'
+    //   ],
+    //   options: {
+    //     imageAlpha: false,
+    //     jpegMini: false,
+    //     quitAfter: true
+    //   }
+    // },
+
+    // imageoptim: {
+    //   files: [
+    //     '../images/imageoptim_imagealpha'
+    //   ],
+    //   options: {
+    //     imageAlpha: true,
+    //     jpegMini: false,
+    //     quitAfter: true
+    //   }
+    // },
+
     imageoptim: {
       files: [
-        '../images/imageoptim-cli'
+        '../images/imageoptim_jpegmini'
       ],
       options: {
-        imageAlpha: true,
-        jpegMini: false,
-        quitAfter: true
-      }
-    },
-
-    imageoptim_jpegmini: {
-      files: [
-        '../images/imageoptim-cli-jpegmini'
-      ],
-      options: {
-        imageAlpha: true,
+        imageAlpha: false,
         jpegMini: true,
         quitAfter: true
       }
