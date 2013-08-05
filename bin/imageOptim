@@ -278,6 +278,21 @@ function getImagesSizeTotal {
   echo $(find -E "$1" -iregex $imageOptimFileTypes | du -k | awk '{ print $1}')
 }
 
+# ($1:startSize, $2:endSize: Output savings report
+function printReport {
+
+  local startSize="${1:-0}"
+  local endSize="${2:-0}"
+  local saving=$(echo "(1 - ($endSize / $startSize)) * 100" | bc -l | sed -e 's/^\./0./' )
+
+  if [ ${saving/\.*} -gt 0 ]; then
+    printf "Optimised %'d KB to %'d KB (saving %2.2f%%)\n" "$startSize" "$endSize" "$saving"
+  else
+    printf "No savings. Start: %'d KB End: %'d KB\n" "$startSize" "$endSize" 
+  fi
+
+}
+
 # (): run applications against a directory of images
 function processDirectory {
   startTime=$(now)
@@ -294,14 +309,7 @@ function processDirectory {
   waitForImageOptim
 
   endSize=$(getImagesSizeTotal "$imgPath")
-
-  local saving=$(echo "(1 - ($endSize / $startSize)) * 100" | bc -l | sed -e 's/^\./0./' )
-
-  if [ ${saving/\.*} -gt 0 ]; then
-    printf "Optimised %'d KB to %'d KB (saving %2.2f%%)\n" "$startSize" "$endSize" "$saving"
-  else
-    printf "No savings. Start: %'d KB End: %'d KB\n" "$startSize" "$endSize" 
-  fi
+  printReport "$startSize" "$endSize"
 
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
