@@ -139,7 +139,7 @@ function runImageAlphaOnImage {
   # waiting on https://github.com/pornel/pngquant/issues/45
   #extension="${1##*.}"
 
-  /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 -- "$1"
+  /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 --quality=75-100 -- "$1"
 }
 
 # ($1:path):
