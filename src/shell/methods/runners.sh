@@ -16,7 +16,8 @@ function getImgCount {
 
 # ($1:dirPath): The total size of the images in the directory we're about to process
 function getImagesSizeTotal {
-  echo $(find -E "$1" -iregex $imageOptimFileTypes | du -k | awk '{ print $1}')
+  # added quotemeta and xargs in case files have spaces/special chars
+  echo $(find -E "$1" -iregex $imageOptimFileTypes | perl -lne 'print quotemeta' | xargs ls | du -k | awk '{ print $1}')
 }
 
 # ($1:startSize, $2:endSize: Output savings report
@@ -31,7 +32,6 @@ function printReport {
   else
     printf "No savings. Start: %'d KB End: %'d KB\n" "$startSize" "$endSize" 
   fi
-
 }
 
 # (): run applications against a directory of images

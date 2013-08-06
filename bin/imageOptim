@@ -137,6 +137,7 @@ function runImageAlphaOnImage {
   # if the extension is .PNG, then this command creates a new file
   # the new file is not passed to imageOptim
   # waiting on https://github.com/pornel/pngquant/issues/45
+  # fix coming soon: https://github.com/pornel/pngquant/commit/057eb1ee9e9890a74ea363ae367df16feaa4742b
   #extension="${1##*.}"
 
   /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 -- "$1"
@@ -275,7 +276,8 @@ function getImgCount {
 
 # ($1:dirPath): The total size of the images in the directory we're about to process
 function getImagesSizeTotal {
-  echo $(find -E "$1" -iregex $imageOptimFileTypes | du -k | awk '{ print $1}')
+  # added quotemeta and xargs in case files have spaces/special chars
+  echo $(find -E "$1" -iregex $imageOptimFileTypes | perl -lne 'print quotemeta' | xargs ls | du -k | awk '{ print $1}')
 }
 
 # ($1:startSize, $2:endSize: Output savings report
@@ -290,7 +292,6 @@ function printReport {
   else
     printf "No savings. Start: %'d KB End: %'d KB\n" "$startSize" "$endSize" 
   fi
-
 }
 
 # (): run applications against a directory of images
