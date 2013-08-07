@@ -25,6 +25,7 @@ module.exports = function(grunt) {
             'src/applescript/file_header.txt',
             'src/applescript/copyright.txt',
             'src/applescript/has_app_installed.applescript',
+            'src/applescript/has_paid_for_jpegmini.applescript',
             'src/applescript/has_gui_script.applescript',
             'src/applescript/run_jpegmini.applescript',
             'src/applescript/wait_for.applescript',
