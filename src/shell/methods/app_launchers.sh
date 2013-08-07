@@ -77,7 +77,7 @@ function runImageAlphaOnImage {
 # ($1:path):
 function runJPEGmini {
   if [ "true" == $useJPEGmini ]; then
-    echo "JPEGmini..."
-    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
+    echo "JPEGmini...$jpegMiniAppName"
+    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" "$jpegMiniAppName"` > /dev/null 2>&1
   fi
 }
