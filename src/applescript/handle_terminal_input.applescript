@@ -31,5 +31,8 @@ on run argv
     -- keep the shell script waiting until the app has finished
     wait_for(item 2 of argv)
 
+   -- Check prefs plist for the paid key
+  else if command is "has_paid_for_jpegmini" then
+    return has_paid_for_jpegmini()
   end if
 end run
