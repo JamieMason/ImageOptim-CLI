@@ -35,6 +35,37 @@ on has_app_installed(appFileId)
   end try
 end has_app_installed
 
+-- Checks prefs plist for the paid key. Returns true or false
+on has_paid_for_jpegmini()
+  try
+    
+    set _username to system attribute "USER"
+    if _username is "" then
+      set _username to do shell script "whoami"
+    end if
+    
+    if _username is "root" then
+      set _username to do shell script "who | grep console | awk '{print $1}'"
+    end if
+    
+    set _fileName to "/Users/" & _username & "/Library/Containers/com.icvt.JPEGminiLite/Data/Library/Preferences/com.icvt.JPEGminiLite.plist"
+    set theTmpFile to (path to temporary items as string) & "test.plist"
+    
+    do shell script "cp " & _fileName & " " & POSIX path of theTmpFile
+    do shell script "plutil -convert xml1 " & POSIX path of theTmpFile
+    
+    set paid to do shell script "cat " & POSIX path of theTmpFile & "| grep -A1 did-upgrade-to-full | grep -v key | sed -E 's/<//g' | sed -E 's/\\/>//g' | xargs"
+    
+    if (paid is equal to "") then
+      set paid to "false"
+    end if
+    
+    return paid
+  on error
+    return "false"
+  end try
+end has_paid_for_jpegmini
+
 -- Return true is GUIScript is enabled, or false
 on has_gui_script()
   tell application "System Events"
@@ -69,8 +100,10 @@ on run_jpegmini(imgPath, appName)
         delay 1
 
         -- command+shift+g in Finder lets us enter file paths direct
-        keystroke "g" using {command down, shift down}
-
+        --keystroke "g" using {command down, shift down}
+         -- shift-cmd-g doesn't work on my machine, or maybe just with JPEGmini Lite
+        keystroke "/"
+        -- window is called JPEGmini even in the Lite app
         set value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini" to imgPath
 
         delay 1
@@ -82,7 +115,7 @@ on run_jpegmini(imgPath, appName)
         delay 1
 
         -- start JPEGmini off optimising the folder
-        click button "Open" of sheet 1 of window appName
+        click button "Open" of sheet 1 of window "JPEGmini" -- window is called JPEGmini even in the Lite app
 
         -- report success
         return true
@@ -166,5 +199,8 @@ on run argv
     -- keep the shell script waiting until the app has finished
     wait_for(item 2 of argv)
 
+   -- Check prefs plist for the paid key
+  else if command is "has_paid_for_jpegmini" then
+    return has_paid_for_jpegmini()
   end if
 end run

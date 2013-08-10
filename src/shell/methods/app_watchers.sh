@@ -32,7 +32,7 @@ function waitForImageOptim {
 function waitForJPEGmini {
   if [ "true" == $useJPEGmini ]; then
     sleep 1
-    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
+    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for "$jpegMiniAppName"` > /dev/null 2>&1
     if [ "true" == $quitOnComplete ]; then
       osascript -e "tell application \"$jpegMiniAppName\" to quit"
     fi

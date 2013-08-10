@@ -30,5 +30,6 @@
   "jpegMiniAppFileName": "JPEGmini.app",
   "jpegMiniAppName": "JPEGmini",
   "jpegMiniFileTypes": ".*(jpg|jpeg)$",
-  "jpegMiniNotInstalledMsg": "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+  "jpegMiniNotInstalledMsg": "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)",
+  "jpegMiniNotPurchasedMsg": "$jpegMiniAppFileName is not purchased (https://itunes.apple.com/us/app/jpegmini/id498944723)"
 }
