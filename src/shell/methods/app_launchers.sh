@@ -69,6 +69,7 @@ function runImageAlphaOnImage {
   # if the extension is .PNG, then this command creates a new file
   # the new file is not passed to imageOptim
   # waiting on https://github.com/pornel/pngquant/issues/45
+  # fix coming soon: https://github.com/pornel/pngquant/commit/057eb1ee9e9890a74ea363ae367df16feaa4742b
   #extension="${1##*.}"
 
   /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 --quality=75-100 -- "$1"

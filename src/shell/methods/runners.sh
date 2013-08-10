@@ -14,10 +14,31 @@ function getImgCount {
   echo $(find -E "$1" -iregex $imageOptimFileTypes | wc -l)
 }
 
+# ($1:dirPath): The total size of the images in the directory we're about to process
+function getImagesSizeTotal {
+  # added quotemeta and xargs in case files have spaces/special chars
+  echo $(find -E "$1" -iregex $imageOptimFileTypes | perl -lne 'print quotemeta' | xargs ls | du -k | awk '{ print $1}')
+}
+
+# ($1:startSize, $2:endSize: Output savings report
+function printReport {
+
+  local startSize="${1:-0}"
+  local endSize="${2:-0}"
+  local saving=$(echo "(1 - ($endSize / $startSize)) * 100" | bc -l | sed -e 's/^\./0./' )
+
+  if [ ${saving/\.*} -gt 0 ]; then
+    printf "Optimised %'d KB to %'d KB (saving %2.2f%%)\n" "$startSize" "$endSize" "$saving"
+  else
+    printf "No savings. Start: %'d KB End: %'d KB\n" "$startSize" "$endSize" 
+  fi
+}
+
 # (): run applications against a directory of images
 function processDirectory {
   startTime=$(now)
   imgCount=$(getImgCount "$imgPath")
+  startSize=$(getImagesSizeTotal "$imgPath")
   echo "Processing $imgCount images..."
 
   runImageAlphaOnDirectory "$imgPath"
@@ -27,6 +48,9 @@ function processDirectory {
 
   runImageOptimOnDirectory "$imgPath"
   waitForImageOptim
+
+  endSize=$(getImagesSizeTotal "$imgPath")
+  printReport "$startSize" "$endSize"
 
   endTime=$(now)
   success "Finished in $(getTimeSpent) seconds" | xargs
