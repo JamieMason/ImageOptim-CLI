@@ -4322,11 +4322,11 @@ var results = [
   {
     "image": "png24-interlaced_bril.png",
     "imageoptim_imagealpha": {
-      "size": 85933,
-      "meanErrorSquared": 2.81137,
-      "sizeLoss": 170721,
-      "sizeLossPercent": 66.52,
-      "qualityLossPercent": 9.48,
+      "size": 80476,
+      "meanErrorSquared": 2.89982,
+      "sizeLoss": 176178,
+      "sizeLossPercent": 68.64,
+      "qualityLossPercent": 9.78,
       "isSmallest": true
     },
     "tinypng": {
@@ -4382,11 +4382,11 @@ var results = [
   {
     "image": "png24-interlaced_grote-ogen.png",
     "imageoptim_imagealpha": {
-      "size": 83874,
-      "meanErrorSquared": 4.19708,
-      "sizeLoss": 196676,
-      "sizeLossPercent": 70.1,
-      "qualityLossPercent": 12.67,
+      "size": 80937,
+      "meanErrorSquared": 4.39109,
+      "sizeLoss": 199613,
+      "sizeLossPercent": 71.15,
+      "qualityLossPercent": 13.26,
       "isSmallest": true
     },
     "tinypng": {
@@ -4441,27 +4441,27 @@ var results = [
   },
   {
     "image": "png24-interlaced_logo.png",
-    "imageoptim": {
-      "size": 5568,
+    "imageoptim_imagealpha": {
+      "size": 5571,
       "meanErrorSquared": 0,
-      "sizeLoss": 12945,
-      "sizeLossPercent": 69.92,
+      "sizeLoss": 12942,
+      "sizeLossPercent": 69.91,
       "qualityLossPercent": 0,
       "isSmallest": true
+    },
+    "imageoptim": {
+      "size": 5574,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12939,
+      "sizeLossPercent": 69.89,
+      "qualityLossPercent": 0,
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
-      "size": 5568,
+      "size": 5576,
       "meanErrorSquared": 0,
-      "sizeLoss": 12945,
-      "sizeLossPercent": 69.92,
-      "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 5861,
-      "meanErrorSquared": 0,
-      "sizeLoss": 12652,
-      "sizeLossPercent": 68.34,
+      "sizeLoss": 12937,
+      "sizeLossPercent": 69.88,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4502,11 +4502,11 @@ var results = [
   {
     "image": "png24-interlaced_oog.png",
     "imageoptim_imagealpha": {
-      "size": 133030,
-      "meanErrorSquared": 4.62548,
-      "sizeLoss": 261238,
-      "sizeLossPercent": 66.26,
-      "qualityLossPercent": 16.38,
+      "size": 133542,
+      "meanErrorSquared": 4.90467,
+      "sizeLoss": 260726,
+      "sizeLossPercent": 66.13,
+      "qualityLossPercent": 17.37,
       "isSmallest": true
     },
     "tinypng": {
@@ -4561,27 +4561,27 @@ var results = [
   },
   {
     "image": "png24-interlaced_patroon.png",
-    "imageoptim_jpegmini": {
-      "size": 3512,
+    "imageoptim": {
+      "size": 3508,
       "meanErrorSquared": 0,
-      "sizeLoss": 14029,
-      "sizeLossPercent": 79.98,
+      "sizeLoss": 14033,
+      "sizeLossPercent": 80,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim": {
-      "size": 3529,
+    "imageoptim_imagealpha": {
+      "size": 3511,
       "meanErrorSquared": 0,
-      "sizeLoss": 14012,
-      "sizeLossPercent": 79.88,
+      "sizeLoss": 14030,
+      "sizeLossPercent": 79.98,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
-    "imageoptim_imagealpha": {
-      "size": 3683,
+    "imageoptim_jpegmini": {
+      "size": 3516,
       "meanErrorSquared": 0,
-      "sizeLoss": 13858,
-      "sizeLossPercent": 79,
+      "sizeLoss": 14025,
+      "sizeLossPercent": 79.96,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -4622,11 +4622,11 @@ var results = [
   {
     "image": "png24-interlaced_rood.png",
     "imageoptim_imagealpha": {
-      "size": 105892,
-      "meanErrorSquared": 5.17417,
-      "sizeLoss": 237070,
-      "sizeLossPercent": 69.12,
-      "qualityLossPercent": 16.03,
+      "size": 103346,
+      "meanErrorSquared": 5.55653,
+      "sizeLoss": 239616,
+      "sizeLossPercent": 69.87,
+      "qualityLossPercent": 17.22,
       "isSmallest": true
     },
     "tinypng": {
@@ -4682,11 +4682,11 @@ var results = [
   {
     "image": "png24-interlaced_skyline.png",
     "imageoptim_imagealpha": {
-      "size": 120603,
-      "meanErrorSquared": 8.0605,
-      "sizeLoss": 336346,
-      "sizeLossPercent": 73.61,
-      "qualityLossPercent": 17.76,
+      "size": 119706,
+      "meanErrorSquared": 8.31368,
+      "sizeLoss": 337243,
+      "sizeLossPercent": 73.8,
+      "qualityLossPercent": 18.32,
       "isSmallest": true
     },
     "tinypng": {
@@ -4741,21 +4741,21 @@ var results = [
   },
   {
     "image": "png24-interlaced_streepjes.png",
+    "imageoptim_imagealpha": {
+      "size": 339,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2400,
+      "sizeLossPercent": 87.62,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
     "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 2399,
       "sizeLossPercent": 87.59,
       "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 340,
-      "meanErrorSquared": 0,
-      "sizeLoss": 2399,
-      "sizeLossPercent": 87.59,
-      "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
       "size": 340,
@@ -4763,7 +4763,7 @@ var results = [
       "sizeLoss": 2399,
       "sizeLossPercent": 87.59,
       "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "tinypng": {
       "size": 357,
@@ -4802,11 +4802,11 @@ var results = [
   {
     "image": "png24-interlaced_wolk.png",
     "imageoptim_imagealpha": {
-      "size": 99657,
-      "meanErrorSquared": 1.11748,
-      "sizeLoss": 165746,
-      "sizeLossPercent": 62.45,
-      "qualityLossPercent": 3.47,
+      "size": 90422,
+      "meanErrorSquared": 1.08067,
+      "sizeLoss": 174981,
+      "sizeLossPercent": 65.93,
+      "qualityLossPercent": 3.35,
       "isSmallest": true
     },
     "tinypng": {
@@ -4862,11 +4862,11 @@ var results = [
   {
     "image": "png24_bril.png",
     "imageoptim_imagealpha": {
-      "size": 85933,
-      "meanErrorSquared": 2.81137,
-      "sizeLoss": 130831,
-      "sizeLossPercent": 60.36,
-      "qualityLossPercent": 9.48,
+      "size": 80476,
+      "meanErrorSquared": 2.89982,
+      "sizeLoss": 136288,
+      "sizeLossPercent": 62.87,
+      "qualityLossPercent": 9.78,
       "isSmallest": true
     },
     "tinypng": {
@@ -4922,11 +4922,11 @@ var results = [
   {
     "image": "png24_grote-ogen.png",
     "imageoptim_imagealpha": {
-      "size": 83874,
-      "meanErrorSquared": 4.19708,
-      "sizeLoss": 149428,
-      "sizeLossPercent": 64.05,
-      "qualityLossPercent": 12.67,
+      "size": 80937,
+      "meanErrorSquared": 4.39109,
+      "sizeLoss": 152365,
+      "sizeLossPercent": 65.31,
+      "qualityLossPercent": 13.26,
       "isSmallest": true
     },
     "tinypng": {
@@ -4981,27 +4981,27 @@ var results = [
   },
   {
     "image": "png24_logo.png",
-    "imageoptim_jpegmini": {
-      "size": 5550,
+    "imageoptim": {
+      "size": 5566,
       "meanErrorSquared": 0,
-      "sizeLoss": 7211,
-      "sizeLossPercent": 56.51,
+      "sizeLoss": 7195,
+      "sizeLossPercent": 56.38,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim": {
-      "size": 5587,
+    "imageoptim_jpegmini": {
+      "size": 5571,
       "meanErrorSquared": 0,
-      "sizeLoss": 7174,
-      "sizeLossPercent": 56.22,
+      "sizeLoss": 7190,
+      "sizeLossPercent": 56.34,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
     "imageoptim_imagealpha": {
-      "size": 5861,
+      "size": 5577,
       "meanErrorSquared": 0,
-      "sizeLoss": 6900,
-      "sizeLossPercent": 54.07,
+      "sizeLoss": 7184,
+      "sizeLossPercent": 56.3,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5042,11 +5042,11 @@ var results = [
   {
     "image": "png24_oog.png",
     "imageoptim_imagealpha": {
-      "size": 133030,
-      "meanErrorSquared": 4.62548,
-      "sizeLoss": 201397,
-      "sizeLossPercent": 60.22,
-      "qualityLossPercent": 16.38,
+      "size": 133542,
+      "meanErrorSquared": 4.90467,
+      "sizeLoss": 200885,
+      "sizeLossPercent": 60.07,
+      "qualityLossPercent": 17.37,
       "isSmallest": true
     },
     "tinypng": {
@@ -5102,26 +5102,26 @@ var results = [
   {
     "image": "png24_patroon.png",
     "imageoptim_jpegmini": {
-      "size": 3526,
+      "size": 3497,
       "meanErrorSquared": 0,
-      "sizeLoss": 12934,
-      "sizeLossPercent": 78.58,
+      "sizeLoss": 12963,
+      "sizeLossPercent": 78.75,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
     "imageoptim": {
-      "size": 3562,
+      "size": 3509,
       "meanErrorSquared": 0,
-      "sizeLoss": 12898,
-      "sizeLossPercent": 78.36,
+      "sizeLoss": 12951,
+      "sizeLossPercent": 78.68,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
     "imageoptim_imagealpha": {
-      "size": 3683,
+      "size": 3510,
       "meanErrorSquared": 0,
-      "sizeLoss": 12777,
-      "sizeLossPercent": 77.62,
+      "sizeLoss": 12950,
+      "sizeLossPercent": 78.68,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5162,11 +5162,11 @@ var results = [
   {
     "image": "png24_rood.png",
     "imageoptim_imagealpha": {
-      "size": 105892,
-      "meanErrorSquared": 5.17417,
-      "sizeLoss": 182003,
-      "sizeLossPercent": 63.22,
-      "qualityLossPercent": 16.03,
+      "size": 103346,
+      "meanErrorSquared": 5.55653,
+      "sizeLoss": 184549,
+      "sizeLossPercent": 64.1,
+      "qualityLossPercent": 17.22,
       "isSmallest": true
     },
     "tinypng": {
@@ -5222,11 +5222,11 @@ var results = [
   {
     "image": "png24_skyline.png",
     "imageoptim_imagealpha": {
-      "size": 120603,
-      "meanErrorSquared": 8.0605,
-      "sizeLoss": 280395,
-      "sizeLossPercent": 69.92,
-      "qualityLossPercent": 17.76,
+      "size": 119706,
+      "meanErrorSquared": 8.31368,
+      "sizeLoss": 281292,
+      "sizeLossPercent": 70.15,
+      "qualityLossPercent": 18.32,
       "isSmallest": true
     },
     "tinypng": {
@@ -5281,21 +5281,21 @@ var results = [
   },
   {
     "image": "png24_streepjes.png",
+    "imageoptim_imagealpha": {
+      "size": 339,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1906,
+      "sizeLossPercent": 84.9,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
     "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1905,
       "sizeLossPercent": 84.86,
       "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 340,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1905,
-      "sizeLossPercent": 84.86,
-      "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
       "size": 340,
@@ -5303,7 +5303,7 @@ var results = [
       "sizeLoss": 1905,
       "sizeLossPercent": 84.86,
       "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "grunt_contrib_imagemin": {
       "size": 341,
@@ -5342,11 +5342,11 @@ var results = [
   {
     "image": "png24_wolk.png",
     "imageoptim_imagealpha": {
-      "size": 99657,
-      "meanErrorSquared": 1.11748,
-      "sizeLoss": 129619,
-      "sizeLossPercent": 56.53,
-      "qualityLossPercent": 3.47,
+      "size": 90422,
+      "meanErrorSquared": 1.08067,
+      "sizeLoss": 138854,
+      "sizeLossPercent": 60.56,
+      "qualityLossPercent": 3.35,
       "isSmallest": true
     },
     "tinypng": {
@@ -5418,10 +5418,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 55070,
+      "size": 55054,
       "meanErrorSquared": 0,
-      "sizeLoss": 19859,
-      "sizeLossPercent": 26.5,
+      "sizeLoss": 19875,
+      "sizeLossPercent": 26.53,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5478,10 +5478,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 62057,
+      "size": 61978,
       "meanErrorSquared": 0,
-      "sizeLoss": 24284,
-      "sizeLossPercent": 28.13,
+      "sizeLoss": 24363,
+      "sizeLossPercent": 28.22,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5521,27 +5521,27 @@ var results = [
   },
   {
     "image": "png8-interlaced_logo.png",
-    "imageoptim_jpegmini": {
-      "size": 5845,
+    "imageoptim_imagealpha": {
+      "size": 5572,
       "meanErrorSquared": 0,
-      "sizeLoss": 4494,
-      "sizeLossPercent": 43.47,
+      "sizeLoss": 4767,
+      "sizeLossPercent": 46.11,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
     "imageoptim": {
+      "size": 5856,
+      "meanErrorSquared": 0,
+      "sizeLoss": 4483,
+      "sizeLossPercent": 43.36,
+      "qualityLossPercent": 0,
+      "isSmallest": false
+    },
+    "imageoptim_jpegmini": {
       "size": 5860,
       "meanErrorSquared": 0,
       "sizeLoss": 4479,
       "sizeLossPercent": 43.32,
-      "qualityLossPercent": 0,
-      "isSmallest": false
-    },
-    "imageoptim_imagealpha": {
-      "size": 5861,
-      "meanErrorSquared": 0,
-      "sizeLoss": 4478,
-      "sizeLossPercent": 43.31,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5598,10 +5598,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 96684,
+      "size": 96627,
       "meanErrorSquared": 0,
-      "sizeLoss": 29388,
-      "sizeLossPercent": 23.31,
+      "sizeLoss": 29445,
+      "sizeLossPercent": 23.36,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5642,10 +5642,10 @@ var results = [
   {
     "image": "png8-interlaced_patroon.png",
     "imageoptim_imagealpha": {
-      "size": 3683,
+      "size": 3511,
       "meanErrorSquared": 0,
-      "sizeLoss": 2882,
-      "sizeLossPercent": 43.9,
+      "sizeLoss": 3054,
+      "sizeLossPercent": 46.52,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
@@ -5718,10 +5718,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 77166,
+      "size": 77140,
       "meanErrorSquared": 0,
-      "sizeLoss": 28486,
-      "sizeLossPercent": 26.96,
+      "sizeLoss": 28512,
+      "sizeLossPercent": 26.99,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5778,10 +5778,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 103779,
+      "size": 103741,
       "meanErrorSquared": 0,
-      "sizeLoss": 27971,
-      "sizeLossPercent": 21.23,
+      "sizeLoss": 28009,
+      "sizeLossPercent": 21.26,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5821,21 +5821,21 @@ var results = [
   },
   {
     "image": "png8-interlaced_streepjes.png",
+    "imageoptim_imagealpha": {
+      "size": 339,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1656,
+      "sizeLossPercent": 83.01,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
     "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1655,
       "sizeLossPercent": 82.96,
       "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 340,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1655,
-      "sizeLossPercent": 82.96,
-      "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
       "size": 340,
@@ -5843,7 +5843,7 @@ var results = [
       "sizeLoss": 1655,
       "sizeLossPercent": 82.96,
       "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "tinypng": {
       "size": 357,
@@ -5881,27 +5881,27 @@ var results = [
   },
   {
     "image": "png8-interlaced_wolk.png",
+    "imageoptim_imagealpha": {
+      "size": 82051,
+      "meanErrorSquared": 0,
+      "sizeLoss": 29461,
+      "sizeLossPercent": 26.42,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
     "imageoptim": {
       "size": 82107,
       "meanErrorSquared": 0,
       "sizeLoss": 29405,
       "sizeLossPercent": 26.37,
       "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
       "size": 82107,
       "meanErrorSquared": 0,
       "sizeLoss": 29405,
       "sizeLossPercent": 26.37,
-      "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 82128,
-      "meanErrorSquared": 0,
-      "sizeLoss": 29384,
-      "sizeLossPercent": 26.35,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -5958,10 +5958,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 55070,
+      "size": 55054,
       "meanErrorSquared": 0,
-      "sizeLoss": 5799,
-      "sizeLossPercent": 9.53,
+      "sizeLoss": 5815,
+      "sizeLossPercent": 9.55,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -6018,10 +6018,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 62057,
+      "size": 61978,
       "meanErrorSquared": 0,
-      "sizeLoss": 6126,
-      "sizeLossPercent": 8.98,
+      "sizeLoss": 6205,
+      "sizeLossPercent": 9.1,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -6061,15 +6061,15 @@ var results = [
   },
   {
     "image": "png8_logo.png",
-    "imageoptim": {
-      "size": 5845,
+    "imageoptim_imagealpha": {
+      "size": 5565,
       "meanErrorSquared": 0,
-      "sizeLoss": 1840,
-      "sizeLossPercent": 23.94,
+      "sizeLoss": 2120,
+      "sizeLossPercent": 27.59,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
-    "imageoptim_jpegmini": {
+    "imageoptim": {
       "size": 5860,
       "meanErrorSquared": 0,
       "sizeLoss": 1825,
@@ -6077,11 +6077,11 @@ var results = [
       "qualityLossPercent": 0,
       "isSmallest": false
     },
-    "imageoptim_imagealpha": {
-      "size": 5861,
+    "imageoptim_jpegmini": {
+      "size": 5860,
       "meanErrorSquared": 0,
-      "sizeLoss": 1824,
-      "sizeLossPercent": 23.73,
+      "sizeLoss": 1825,
+      "sizeLossPercent": 23.75,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -6138,10 +6138,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 96684,
+      "size": 96627,
       "meanErrorSquared": 0,
-      "sizeLoss": 9690,
-      "sizeLossPercent": 9.11,
+      "sizeLoss": 9747,
+      "sizeLossPercent": 9.16,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -6182,10 +6182,10 @@ var results = [
   {
     "image": "png8_patroon.png",
     "imageoptim_imagealpha": {
-      "size": 3683,
+      "size": 3522,
       "meanErrorSquared": 0,
-      "sizeLoss": 2397,
-      "sizeLossPercent": 39.42,
+      "sizeLoss": 2558,
+      "sizeLossPercent": 42.07,
       "qualityLossPercent": 0,
       "isSmallest": true
     },
@@ -6258,10 +6258,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 77166,
+      "size": 77140,
       "meanErrorSquared": 0,
-      "sizeLoss": 6922,
-      "sizeLossPercent": 8.23,
+      "sizeLoss": 6948,
+      "sizeLossPercent": 8.26,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -6318,10 +6318,10 @@ var results = [
       "isSmallest": true
     },
     "imageoptim_imagealpha": {
-      "size": 103779,
+      "size": 103741,
       "meanErrorSquared": 0,
-      "sizeLoss": 7800,
-      "sizeLossPercent": 6.99,
+      "sizeLoss": 7838,
+      "sizeLossPercent": 7.02,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
@@ -6361,21 +6361,21 @@ var results = [
   },
   {
     "image": "png8_streepjes.png",
+    "imageoptim_imagealpha": {
+      "size": 339,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1454,
+      "sizeLossPercent": 81.09,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
     "imageoptim": {
       "size": 340,
       "meanErrorSquared": 0,
       "sizeLoss": 1453,
       "sizeLossPercent": 81.04,
       "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 340,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1453,
-      "sizeLossPercent": 81.04,
-      "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
       "size": 340,
@@ -6383,7 +6383,7 @@ var results = [
       "sizeLoss": 1453,
       "sizeLossPercent": 81.04,
       "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "grunt_contrib_imagemin": {
       "size": 341,
@@ -6421,27 +6421,27 @@ var results = [
   },
   {
     "image": "png8_wolk.png",
+    "imageoptim_imagealpha": {
+      "size": 82051,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10517,
+      "sizeLossPercent": 11.36,
+      "qualityLossPercent": 0,
+      "isSmallest": true
+    },
     "imageoptim": {
       "size": 82107,
       "meanErrorSquared": 0,
       "sizeLoss": 10461,
       "sizeLossPercent": 11.3,
       "qualityLossPercent": 0,
-      "isSmallest": true
+      "isSmallest": false
     },
     "imageoptim_jpegmini": {
       "size": 82107,
       "meanErrorSquared": 0,
       "sizeLoss": 10461,
       "sizeLossPercent": 11.3,
-      "qualityLossPercent": 0,
-      "isSmallest": true
-    },
-    "imageoptim_imagealpha": {
-      "size": 82128,
-      "meanErrorSquared": 0,
-      "sizeLoss": 10440,
-      "sizeLossPercent": 11.28,
       "qualityLossPercent": 0,
       "isSmallest": false
     },
