@@ -66,7 +66,7 @@ on run_jpegmini(imgPath, appName)
         click menu item "Open…" of menu 1 of menu bar item "File" of menu bar 1
 
         -- let Finder spawn the browse dialog
-        delay 1
+        delay 3
 
         -- command+shift+g in Finder lets us enter file paths direct
         keystroke "g" using {command down, shift down}
