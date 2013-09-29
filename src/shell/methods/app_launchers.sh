@@ -22,7 +22,7 @@ function addImageToQueue {
 
 # ($1:fileTypes, $2:appFileName, $3:dirPath): Queue direcory of images
 function addDirectoryToQueue {
-  find -E "$3" -iregex $1 -print0 | while IFS= read -r -d $'\0' imgPath; do
+  find -E "$3" -iregex $1 -type f -print0 | while IFS= read -r -d $'\0' imgPath; do
     addImageToQueue $2 "$imgPath"
   done
 }
@@ -44,7 +44,7 @@ function runImageOptimOnDirectory {
 function runImageAlphaOnDirectory {
   if [ "true" == $useImageAlpha ]; then
     echo "ImageAlpha..."
-    find -E "$1" -iregex '{{imageAlphaFileTypes}}' -print0 | while IFS= read -r -d $'\0' img; do
+    find -E "$1" -iregex '{{imageAlphaFileTypes}}' -type f -print0 | while IFS= read -r -d $'\0' img; do
       runImageAlphaOnImage "$img"
     done
   fi

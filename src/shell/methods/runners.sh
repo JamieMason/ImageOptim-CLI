@@ -11,7 +11,7 @@ function getTimeSpent {
 
 # ($1:dirPath): How many images are in the directory we're about to process?
 function getImgCount {
-  echo $(find -E "$1" -iregex $imageOptimFileTypes | wc -l)
+  echo $(find -E "$1" -iregex $imageOptimFileTypes -type f | wc -l)
 }
 
 # (): run applications against a directory of images
@@ -68,9 +68,9 @@ function processFiles {
       runImageOptimOnImage "$file"
     fi
   done
-  
+
   # unset case-insensitive pattern matching
   shopt -u nocasematch
-  
+
   waitForImageOptim
 }
