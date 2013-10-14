@@ -4861,6 +4861,978 @@
   },
   {
     "image": "gif-interlaced_bril.gif",
+    "tool": "kraken",
+    "size": 68188,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_grote-ogen.gif",
+    "tool": "kraken",
+    "size": 80562,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_logo.gif",
+    "tool": "kraken",
+    "size": 9903,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_oog.gif",
+    "tool": "kraken",
+    "size": 117327,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_patroon.gif",
+    "tool": "kraken",
+    "size": 20904,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_rood.gif",
+    "tool": "kraken",
+    "size": 99005,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_skyline.gif",
+    "tool": "kraken",
+    "size": 127436,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_streepjes.gif",
+    "tool": "kraken",
+    "size": 3618,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_wolk.gif",
+    "tool": "kraken",
+    "size": 108607,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_bril.gif",
+    "tool": "kraken",
+    "size": 75646,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_grote-ogen.gif",
+    "tool": "kraken",
+    "size": 89330,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_logo.gif",
+    "tool": "kraken",
+    "size": 10577,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_oog.gif",
+    "tool": "kraken",
+    "size": 125547,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_patroon.gif",
+    "tool": "kraken",
+    "size": 20226,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_rood.gif",
+    "tool": "kraken",
+    "size": 108099,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_skyline.gif",
+    "tool": "kraken",
+    "size": 136200,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_streepjes.gif",
+    "tool": "kraken",
+    "size": 3618,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif_wolk.gif",
+    "tool": "kraken",
+    "size": 119143,
+    "meanErrorSquared": 0,
+    "sizeLoss": 0,
+    "sizeLossPercent": 0,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "jpeg-colour-profile_bril.jpg",
+    "tool": "kraken",
+    "size": 13284,
+    "meanErrorSquared": 8.48292,
+    "sizeLoss": 87919,
+    "sizeLossPercent": 86.87,
+    "qualityLossPercent": 12.89
+  },
+  {
+    "image": "jpeg-colour-profile_grote-ogen.jpg",
+    "tool": "kraken",
+    "size": 15811,
+    "meanErrorSquared": 7.80354,
+    "sizeLoss": 100080,
+    "sizeLossPercent": 86.36,
+    "qualityLossPercent": 16.68
+  },
+  {
+    "image": "jpeg-colour-profile_logo.jpg",
+    "tool": "kraken",
+    "size": 30182,
+    "meanErrorSquared": 13.1266,
+    "sizeLoss": 39151,
+    "sizeLossPercent": 56.47,
+    "qualityLossPercent": 19.95
+  },
+  {
+    "image": "jpeg-colour-profile_oog.jpg",
+    "tool": "kraken",
+    "size": 42561,
+    "meanErrorSquared": 5.93374,
+    "sizeLoss": 119188,
+    "sizeLossPercent": 73.69,
+    "qualityLossPercent": 10.17
+  },
+  {
+    "image": "jpeg-colour-profile_patroon.jpg",
+    "tool": "kraken",
+    "size": 105734,
+    "meanErrorSquared": 80.1628,
+    "sizeLoss": 129279,
+    "sizeLossPercent": 55.01,
+    "qualityLossPercent": 26.48
+  },
+  {
+    "image": "jpeg-colour-profile_rood.jpg",
+    "tool": "kraken",
+    "size": 23530,
+    "meanErrorSquared": 8.1078,
+    "sizeLoss": 112204,
+    "sizeLossPercent": 82.66,
+    "qualityLossPercent": 13.98
+  },
+  {
+    "image": "jpeg-colour-profile_skyline.jpg",
+    "tool": "kraken",
+    "size": 90899,
+    "meanErrorSquared": 13.6704,
+    "sizeLoss": 140260,
+    "sizeLossPercent": 60.68,
+    "qualityLossPercent": 9.08
+  },
+  {
+    "image": "jpeg-colour-profile_streepjes.jpg",
+    "tool": "kraken",
+    "size": 35001,
+    "meanErrorSquared": 521.023,
+    "sizeLoss": 147822,
+    "sizeLossPercent": 80.86,
+    "qualityLossPercent": 68.59
+  },
+  {
+    "image": "jpeg-colour-profile_wolk.jpg",
+    "tool": "kraken",
+    "size": 17384,
+    "meanErrorSquared": 2.15152,
+    "sizeLoss": 87146,
+    "sizeLossPercent": 83.37,
+    "qualityLossPercent": 6.22
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_bril.jpg",
+    "tool": "kraken",
+    "size": 13284,
+    "meanErrorSquared": 8.48292,
+    "sizeLoss": 80760,
+    "sizeLossPercent": 85.87,
+    "qualityLossPercent": 12.89
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_grote-ogen.jpg",
+    "tool": "kraken",
+    "size": 15811,
+    "meanErrorSquared": 7.80354,
+    "sizeLoss": 94223,
+    "sizeLossPercent": 85.63,
+    "qualityLossPercent": 16.68
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_logo.jpg",
+    "tool": "kraken",
+    "size": 30182,
+    "meanErrorSquared": 13.1266,
+    "sizeLoss": 26963,
+    "sizeLossPercent": 47.18,
+    "qualityLossPercent": 19.95
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_oog.jpg",
+    "tool": "kraken",
+    "size": 42561,
+    "meanErrorSquared": 5.93374,
+    "sizeLoss": 114723,
+    "sizeLossPercent": 72.94,
+    "qualityLossPercent": 10.17
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_patroon.jpg",
+    "tool": "kraken",
+    "size": 105734,
+    "meanErrorSquared": 80.1628,
+    "sizeLoss": 112364,
+    "sizeLossPercent": 51.52,
+    "qualityLossPercent": 26.48
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_rood.jpg",
+    "tool": "kraken",
+    "size": 23530,
+    "meanErrorSquared": 8.1078,
+    "sizeLoss": 106309,
+    "sizeLossPercent": 81.88,
+    "qualityLossPercent": 13.98
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_skyline.jpg",
+    "tool": "kraken",
+    "size": 90899,
+    "meanErrorSquared": 13.6704,
+    "sizeLoss": 136529,
+    "sizeLossPercent": 60.03,
+    "qualityLossPercent": 9.08
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_streepjes.jpg",
+    "tool": "kraken",
+    "size": 35001,
+    "meanErrorSquared": 521.023,
+    "sizeLoss": 55156,
+    "sizeLossPercent": 61.18,
+    "qualityLossPercent": 68.59
+  },
+  {
+    "image": "jpeg-optimised-colour-profile_wolk.jpg",
+    "tool": "kraken",
+    "size": 17384,
+    "meanErrorSquared": 2.15152,
+    "sizeLoss": 72712,
+    "sizeLossPercent": 80.71,
+    "qualityLossPercent": 6.22
+  },
+  {
+    "image": "jpeg-optimised_bril.jpg",
+    "tool": "kraken",
+    "size": 13284,
+    "meanErrorSquared": 8.48292,
+    "sizeLoss": 77598,
+    "sizeLossPercent": 85.38,
+    "qualityLossPercent": 12.89
+  },
+  {
+    "image": "jpeg-optimised_grote-ogen.jpg",
+    "tool": "kraken",
+    "size": 15811,
+    "meanErrorSquared": 7.80354,
+    "sizeLoss": 91061,
+    "sizeLossPercent": 85.21,
+    "qualityLossPercent": 16.68
+  },
+  {
+    "image": "jpeg-optimised_logo.jpg",
+    "tool": "kraken",
+    "size": 30182,
+    "meanErrorSquared": 13.1266,
+    "sizeLoss": 23801,
+    "sizeLossPercent": 44.09,
+    "qualityLossPercent": 19.95
+  },
+  {
+    "image": "jpeg-optimised_oog.jpg",
+    "tool": "kraken",
+    "size": 42561,
+    "meanErrorSquared": 5.93374,
+    "sizeLoss": 111561,
+    "sizeLossPercent": 72.38,
+    "qualityLossPercent": 10.17
+  },
+  {
+    "image": "jpeg-optimised_patroon.jpg",
+    "tool": "kraken",
+    "size": 105734,
+    "meanErrorSquared": 80.1628,
+    "sizeLoss": 109202,
+    "sizeLossPercent": 50.81,
+    "qualityLossPercent": 26.48
+  },
+  {
+    "image": "jpeg-optimised_rood.jpg",
+    "tool": "kraken",
+    "size": 23530,
+    "meanErrorSquared": 8.1078,
+    "sizeLoss": 103147,
+    "sizeLossPercent": 81.43,
+    "qualityLossPercent": 13.98
+  },
+  {
+    "image": "jpeg-optimised_skyline.jpg",
+    "tool": "kraken",
+    "size": 90899,
+    "meanErrorSquared": 13.6704,
+    "sizeLoss": 133367,
+    "sizeLossPercent": 59.47,
+    "qualityLossPercent": 9.08
+  },
+  {
+    "image": "jpeg-optimised_streepjes.jpg",
+    "tool": "kraken",
+    "size": 35001,
+    "meanErrorSquared": 521.023,
+    "sizeLoss": 51994,
+    "sizeLossPercent": 59.77,
+    "qualityLossPercent": 68.59
+  },
+  {
+    "image": "jpeg-optimised_wolk.jpg",
+    "tool": "kraken",
+    "size": 17384,
+    "meanErrorSquared": 2.15152,
+    "sizeLoss": 69550,
+    "sizeLossPercent": 80,
+    "qualityLossPercent": 6.22
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_bril.jpg",
+    "tool": "kraken",
+    "size": 13284,
+    "meanErrorSquared": 8.48292,
+    "sizeLoss": 80760,
+    "sizeLossPercent": 85.87,
+    "qualityLossPercent": 12.89
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_grote-ogen.jpg",
+    "tool": "kraken",
+    "size": 15811,
+    "meanErrorSquared": 7.80354,
+    "sizeLoss": 94223,
+    "sizeLossPercent": 85.63,
+    "qualityLossPercent": 16.68
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_logo.jpg",
+    "tool": "kraken",
+    "size": 30182,
+    "meanErrorSquared": 13.1266,
+    "sizeLoss": 26963,
+    "sizeLossPercent": 47.18,
+    "qualityLossPercent": 19.95
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_oog.jpg",
+    "tool": "kraken",
+    "size": 42561,
+    "meanErrorSquared": 5.93374,
+    "sizeLoss": 114723,
+    "sizeLossPercent": 72.94,
+    "qualityLossPercent": 10.17
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_patroon.jpg",
+    "tool": "kraken",
+    "size": 105734,
+    "meanErrorSquared": 80.1628,
+    "sizeLoss": 112364,
+    "sizeLossPercent": 51.52,
+    "qualityLossPercent": 26.48
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_rood.jpg",
+    "tool": "kraken",
+    "size": 23530,
+    "meanErrorSquared": 8.1078,
+    "sizeLoss": 106309,
+    "sizeLossPercent": 81.88,
+    "qualityLossPercent": 13.98
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_skyline.jpg",
+    "tool": "kraken",
+    "size": 90899,
+    "meanErrorSquared": 13.6704,
+    "sizeLoss": 136529,
+    "sizeLossPercent": 60.03,
+    "qualityLossPercent": 9.08
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_streepjes.jpg",
+    "tool": "kraken",
+    "size": 35001,
+    "meanErrorSquared": 521.023,
+    "sizeLoss": 55156,
+    "sizeLossPercent": 61.18,
+    "qualityLossPercent": 68.59
+  },
+  {
+    "image": "jpeg-progressive-colour-profile_wolk.jpg",
+    "tool": "kraken",
+    "size": 17384,
+    "meanErrorSquared": 2.15152,
+    "sizeLoss": 72712,
+    "sizeLossPercent": 80.71,
+    "qualityLossPercent": 6.22
+  },
+  {
+    "image": "jpeg-progressive_bril.jpg",
+    "tool": "kraken",
+    "size": 13284,
+    "meanErrorSquared": 8.48292,
+    "sizeLoss": 73974,
+    "sizeLossPercent": 84.78,
+    "qualityLossPercent": 12.89
+  },
+  {
+    "image": "jpeg-progressive_grote-ogen.jpg",
+    "tool": "kraken",
+    "size": 15811,
+    "meanErrorSquared": 7.80354,
+    "sizeLoss": 86389,
+    "sizeLossPercent": 84.53,
+    "qualityLossPercent": 16.68
+  },
+  {
+    "image": "jpeg-progressive_logo.jpg",
+    "tool": "kraken",
+    "size": 30182,
+    "meanErrorSquared": 13.1266,
+    "sizeLoss": 20297,
+    "sizeLossPercent": 40.21,
+    "qualityLossPercent": 19.95
+  },
+  {
+    "image": "jpeg-progressive_oog.jpg",
+    "tool": "kraken",
+    "size": 42561,
+    "meanErrorSquared": 5.93374,
+    "sizeLoss": 106690,
+    "sizeLossPercent": 71.48,
+    "qualityLossPercent": 10.17
+  },
+  {
+    "image": "jpeg-progressive_patroon.jpg",
+    "tool": "kraken",
+    "size": 105734,
+    "meanErrorSquared": 80.1628,
+    "sizeLoss": 101260,
+    "sizeLossPercent": 48.92,
+    "qualityLossPercent": 26.48
+  },
+  {
+    "image": "jpeg-progressive_rood.jpg",
+    "tool": "kraken",
+    "size": 23530,
+    "meanErrorSquared": 8.1078,
+    "sizeLoss": 97663,
+    "sizeLossPercent": 80.58,
+    "qualityLossPercent": 13.98
+  },
+  {
+    "image": "jpeg-progressive_skyline.jpg",
+    "tool": "kraken",
+    "size": 90899,
+    "meanErrorSquared": 13.6704,
+    "sizeLoss": 122386,
+    "sizeLossPercent": 57.38,
+    "qualityLossPercent": 9.08
+  },
+  {
+    "image": "jpeg-progressive_streepjes.jpg",
+    "tool": "kraken",
+    "size": 35001,
+    "meanErrorSquared": 521.023,
+    "sizeLoss": 52168,
+    "sizeLossPercent": 59.85,
+    "qualityLossPercent": 68.59
+  },
+  {
+    "image": "jpeg-progressive_wolk.jpg",
+    "tool": "kraken",
+    "size": 17384,
+    "meanErrorSquared": 2.15152,
+    "sizeLoss": 66992,
+    "sizeLossPercent": 79.4,
+    "qualityLossPercent": 6.22
+  },
+  {
+    "image": "jpeg_bril.jpg",
+    "tool": "kraken",
+    "size": 13284,
+    "meanErrorSquared": 8.48292,
+    "sizeLoss": 84757,
+    "sizeLossPercent": 86.45,
+    "qualityLossPercent": 12.89
+  },
+  {
+    "image": "jpeg_grote-ogen.jpg",
+    "tool": "kraken",
+    "size": 15811,
+    "meanErrorSquared": 7.80354,
+    "sizeLoss": 96918,
+    "sizeLossPercent": 85.97,
+    "qualityLossPercent": 16.68
+  },
+  {
+    "image": "jpeg_logo.jpg",
+    "tool": "kraken",
+    "size": 30182,
+    "meanErrorSquared": 13.1266,
+    "sizeLoss": 35989,
+    "sizeLossPercent": 54.39,
+    "qualityLossPercent": 19.95
+  },
+  {
+    "image": "jpeg_oog.jpg",
+    "tool": "kraken",
+    "size": 42561,
+    "meanErrorSquared": 5.93374,
+    "sizeLoss": 116026,
+    "sizeLossPercent": 73.16,
+    "qualityLossPercent": 10.17
+  },
+  {
+    "image": "jpeg_patroon.jpg",
+    "tool": "kraken",
+    "size": 105734,
+    "meanErrorSquared": 80.1628,
+    "sizeLoss": 126117,
+    "sizeLossPercent": 54.4,
+    "qualityLossPercent": 26.48
+  },
+  {
+    "image": "jpeg_rood.jpg",
+    "tool": "kraken",
+    "size": 23530,
+    "meanErrorSquared": 8.1078,
+    "sizeLoss": 109042,
+    "sizeLossPercent": 82.25,
+    "qualityLossPercent": 13.98
+  },
+  {
+    "image": "jpeg_skyline.jpg",
+    "tool": "kraken",
+    "size": 90899,
+    "meanErrorSquared": 13.6704,
+    "sizeLoss": 137098,
+    "sizeLossPercent": 60.13,
+    "qualityLossPercent": 9.08
+  },
+  {
+    "image": "jpeg_streepjes.jpg",
+    "tool": "kraken",
+    "size": 35001,
+    "meanErrorSquared": 521.023,
+    "sizeLoss": 144660,
+    "sizeLossPercent": 80.52,
+    "qualityLossPercent": 68.59
+  },
+  {
+    "image": "jpeg_wolk.jpg",
+    "tool": "kraken",
+    "size": 17384,
+    "meanErrorSquared": 2.15152,
+    "sizeLoss": 83984,
+    "sizeLossPercent": 82.85,
+    "qualityLossPercent": 6.22
+  },
+  {
+    "image": "png24-interlaced_bril.png",
+    "tool": "kraken",
+    "size": 83074,
+    "meanErrorSquared": 3.04005,
+    "sizeLoss": 173580,
+    "sizeLossPercent": 67.63,
+    "qualityLossPercent": 10.25
+  },
+  {
+    "image": "png24-interlaced_grote-ogen.png",
+    "tool": "kraken",
+    "size": 81904,
+    "meanErrorSquared": 4.59498,
+    "sizeLoss": 198646,
+    "sizeLossPercent": 70.81,
+    "qualityLossPercent": 13.87
+  },
+  {
+    "image": "png24-interlaced_logo.png",
+    "tool": "kraken",
+    "size": 5601,
+    "meanErrorSquared": 0,
+    "sizeLoss": 12912,
+    "sizeLossPercent": 69.75,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png24-interlaced_oog.png",
+    "tool": "kraken",
+    "size": 134414,
+    "meanErrorSquared": 4.92754,
+    "sizeLoss": 259854,
+    "sizeLossPercent": 65.91,
+    "qualityLossPercent": 17.45
+  },
+  {
+    "image": "png24-interlaced_patroon.png",
+    "tool": "kraken",
+    "size": 3367,
+    "meanErrorSquared": 0.0794432,
+    "sizeLoss": 14174,
+    "sizeLossPercent": 80.8,
+    "qualityLossPercent": 1.08
+  },
+  {
+    "image": "png24-interlaced_rood.png",
+    "tool": "kraken",
+    "size": 105049,
+    "meanErrorSquared": 5.63457,
+    "sizeLoss": 237913,
+    "sizeLossPercent": 69.37,
+    "qualityLossPercent": 17.46
+  },
+  {
+    "image": "png24-interlaced_skyline.png",
+    "tool": "kraken",
+    "size": 120586,
+    "meanErrorSquared": 11.9945,
+    "sizeLoss": 336363,
+    "sizeLossPercent": 73.61,
+    "qualityLossPercent": 26.43
+  },
+  {
+    "image": "png24-interlaced_streepjes.png",
+    "tool": "kraken",
+    "size": 369,
+    "meanErrorSquared": 0.0839869,
+    "sizeLoss": 2370,
+    "sizeLossPercent": 86.53,
+    "qualityLossPercent": null
+  },
+  {
+    "image": "png24-interlaced_wolk.png",
+    "tool": "kraken",
+    "size": 90902,
+    "meanErrorSquared": 1.75281,
+    "sizeLoss": 174501,
+    "sizeLossPercent": 65.75,
+    "qualityLossPercent": 5.44
+  },
+  {
+    "image": "png24_bril.png",
+    "tool": "kraken",
+    "size": 83074,
+    "meanErrorSquared": 3.04005,
+    "sizeLoss": 133690,
+    "sizeLossPercent": 61.68,
+    "qualityLossPercent": 10.25
+  },
+  {
+    "image": "png24_grote-ogen.png",
+    "tool": "kraken",
+    "size": 81904,
+    "meanErrorSquared": 4.59498,
+    "sizeLoss": 151398,
+    "sizeLossPercent": 64.89,
+    "qualityLossPercent": 13.87
+  },
+  {
+    "image": "png24_logo.png",
+    "tool": "kraken",
+    "size": 5601,
+    "meanErrorSquared": 0,
+    "sizeLoss": 7160,
+    "sizeLossPercent": 56.11,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png24_oog.png",
+    "tool": "kraken",
+    "size": 134414,
+    "meanErrorSquared": 4.92754,
+    "sizeLoss": 200013,
+    "sizeLossPercent": 59.81,
+    "qualityLossPercent": 17.45
+  },
+  {
+    "image": "png24_patroon.png",
+    "tool": "kraken",
+    "size": 3367,
+    "meanErrorSquared": 0.0794432,
+    "sizeLoss": 13093,
+    "sizeLossPercent": 79.54,
+    "qualityLossPercent": 1.08
+  },
+  {
+    "image": "png24_rood.png",
+    "tool": "kraken",
+    "size": 105049,
+    "meanErrorSquared": 5.63457,
+    "sizeLoss": 182846,
+    "sizeLossPercent": 63.51,
+    "qualityLossPercent": 17.46
+  },
+  {
+    "image": "png24_skyline.png",
+    "tool": "kraken",
+    "size": 120586,
+    "meanErrorSquared": 11.9945,
+    "sizeLoss": 280412,
+    "sizeLossPercent": 69.93,
+    "qualityLossPercent": 26.43
+  },
+  {
+    "image": "png24_streepjes.png",
+    "tool": "kraken",
+    "size": 369,
+    "meanErrorSquared": 0.0839869,
+    "sizeLoss": 1876,
+    "sizeLossPercent": 83.56,
+    "qualityLossPercent": null
+  },
+  {
+    "image": "png24_wolk.png",
+    "tool": "kraken",
+    "size": 90902,
+    "meanErrorSquared": 1.75281,
+    "sizeLoss": 138374,
+    "sizeLossPercent": 60.35,
+    "qualityLossPercent": 5.44
+  },
+  {
+    "image": "png8-interlaced_bril.png",
+    "tool": "kraken",
+    "size": 55104,
+    "meanErrorSquared": 0.0592206,
+    "sizeLoss": 19825,
+    "sizeLossPercent": 26.46,
+    "qualityLossPercent": 0.15
+  },
+  {
+    "image": "png8-interlaced_grote-ogen.png",
+    "tool": "kraken",
+    "size": 61993,
+    "meanErrorSquared": 0.091046,
+    "sizeLoss": 24348,
+    "sizeLossPercent": 28.2,
+    "qualityLossPercent": 0.26
+  },
+  {
+    "image": "png8-interlaced_logo.png",
+    "tool": "kraken",
+    "size": 5601,
+    "meanErrorSquared": 0,
+    "sizeLoss": 4738,
+    "sizeLossPercent": 45.83,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8-interlaced_oog.png",
+    "tool": "kraken",
+    "size": 96696,
+    "meanErrorSquared": 0,
+    "sizeLoss": 29376,
+    "sizeLossPercent": 23.3,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8-interlaced_patroon.png",
+    "tool": "kraken",
+    "size": 3367,
+    "meanErrorSquared": 0.0794432,
+    "sizeLoss": 3198,
+    "sizeLossPercent": 48.71,
+    "qualityLossPercent": 1.08
+  },
+  {
+    "image": "png8-interlaced_rood.png",
+    "tool": "kraken",
+    "size": 77197,
+    "meanErrorSquared": 0,
+    "sizeLoss": 28455,
+    "sizeLossPercent": 26.93,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8-interlaced_skyline.png",
+    "tool": "kraken",
+    "size": 103773,
+    "meanErrorSquared": 0,
+    "sizeLoss": 27977,
+    "sizeLossPercent": 21.23,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8-interlaced_streepjes.png",
+    "tool": "kraken",
+    "size": 369,
+    "meanErrorSquared": 0.0839869,
+    "sizeLoss": 1626,
+    "sizeLossPercent": 81.5,
+    "qualityLossPercent": null
+  },
+  {
+    "image": "png8-interlaced_wolk.png",
+    "tool": "kraken",
+    "size": 82183,
+    "meanErrorSquared": 0,
+    "sizeLoss": 29329,
+    "sizeLossPercent": 26.3,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8_bril.png",
+    "tool": "kraken",
+    "size": 55104,
+    "meanErrorSquared": 0.0592206,
+    "sizeLoss": 5765,
+    "sizeLossPercent": 9.47,
+    "qualityLossPercent": 0.15
+  },
+  {
+    "image": "png8_grote-ogen.png",
+    "tool": "kraken",
+    "size": 61993,
+    "meanErrorSquared": 0.091046,
+    "sizeLoss": 6190,
+    "sizeLossPercent": 9.08,
+    "qualityLossPercent": 0.26
+  },
+  {
+    "image": "png8_logo.png",
+    "tool": "kraken",
+    "size": 5601,
+    "meanErrorSquared": 0,
+    "sizeLoss": 2084,
+    "sizeLossPercent": 27.12,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8_oog.png",
+    "tool": "kraken",
+    "size": 96696,
+    "meanErrorSquared": 0,
+    "sizeLoss": 9678,
+    "sizeLossPercent": 9.1,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8_patroon.png",
+    "tool": "kraken",
+    "size": 3367,
+    "meanErrorSquared": 0.0794432,
+    "sizeLoss": 2713,
+    "sizeLossPercent": 44.62,
+    "qualityLossPercent": 1.08
+  },
+  {
+    "image": "png8_rood.png",
+    "tool": "kraken",
+    "size": 77197,
+    "meanErrorSquared": 0,
+    "sizeLoss": 6891,
+    "sizeLossPercent": 8.19,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8_skyline.png",
+    "tool": "kraken",
+    "size": 103773,
+    "meanErrorSquared": 0,
+    "sizeLoss": 7806,
+    "sizeLossPercent": 7,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "png8_streepjes.png",
+    "tool": "kraken",
+    "size": 369,
+    "meanErrorSquared": 0.0839869,
+    "sizeLoss": 1424,
+    "sizeLossPercent": 79.42,
+    "qualityLossPercent": null
+  },
+  {
+    "image": "png8_wolk.png",
+    "tool": "kraken",
+    "size": 82183,
+    "meanErrorSquared": 0,
+    "sizeLoss": 10385,
+    "sizeLossPercent": 11.22,
+    "qualityLossPercent": 0
+  },
+  {
+    "image": "gif-interlaced_bril.gif",
     "tool": "photoshop",
     "size": 68188,
     "meanErrorSquared": 0,

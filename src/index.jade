@@ -51,6 +51,8 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
               a.sort(href='#', ng-click='orderBy(\'imageoptim_imagealpha.sizeLossPercent\')') ImageOptim-CLI<br>+ ImageAlpha
             th.int.iocli-jpeg(scope='col')
               a.sort(href='#', ng-click='orderBy(\'imageoptim_jpegmini.sizeLossPercent\')') ImageOptim-CLI<br>+ JPEGmini
+            th.int.kraken(scope='col')
+              a.sort(href='#', ng-click='orderBy(\'kraken.sizeLossPercent\')') Kraken
             th.int.codekit(scope='col')
               a.sort(href='#', ng-click='orderBy(\'codekit.sizeLossPercent\')') CodeKit
             th.int.grunt(scope='col')
@@ -77,6 +79,9 @@ html(lang='en-GB', ng-app='AssessCompress', ng-controller='AppCtrl')
 
             td.int.iocli-jpeg(ng-class='css(img,\'imageoptim_jpegmini\')')
               div(image='img.image', result='img[\'imageoptim_jpegmini\']', tool='\'imageoptim_jpegmini\'')
+
+            td.int.kraken(ng-class='css(img,\'kraken\')')
+              div(image='img.image', result='img[\'kraken\']', tool='\'kraken\'')
 
             td.int.codekit(ng-class='css(img,\'codekit\')')
               div(image='img.image', result='img[\'codekit\']', tool='\'codekit\'')
