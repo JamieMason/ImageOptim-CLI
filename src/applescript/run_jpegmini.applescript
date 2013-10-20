@@ -28,13 +28,13 @@ on run_jpegmini(imgPath, appName)
 
         set value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini" to imgPath
 
-        delay 1
+        delay 2
 
         -- and navigate to it
         keystroke return
 
         -- let Finder resolve the path
-        delay 1
+        delay 2
 
         -- start JPEGmini off optimising the folder
         click button "Open" of sheet 1 of window appName
