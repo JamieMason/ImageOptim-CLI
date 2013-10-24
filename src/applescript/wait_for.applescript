@@ -11,7 +11,7 @@ on wait_for(processName)
 
       -- convert the terminal's string output to a number
       set cpuPercent to (do shell script getCpuPercent)
-      round cpuPercent rounding toward zero
+      set cpuPercent to (round (cpuPercent as number) rounding toward zero)
 
       -- give the app a little time to work
       delay 2
