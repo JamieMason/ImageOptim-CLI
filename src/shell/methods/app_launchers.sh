@@ -44,9 +44,10 @@ function runImageOptimOnDirectory {
 function runImageAlphaOnDirectory {
   if [ "true" == $useImageAlpha ]; then
     echo "ImageAlpha..."
-    find -E "$1" -iregex '{{imageAlphaFileTypes}}' -type f -print0 | while IFS= read -r -d $'\0' img; do
-      runImageAlphaOnImage "$img"
-    done
+    find -E "$1" -iregex '{{imageAlphaFileTypes}}' -type f -print0 \
+    | xargs -n10 -P8 -0 \
+    /Applications/ImageAlpha.app/Contents/Resources/pngquant \
+    --ext=.png --force --speed=1 --quality=75-100 --
   fi
 }
 
