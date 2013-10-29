@@ -37,7 +37,7 @@ CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 EXEC_PATH="$PWD"
 
 # {FilePath} The location of our Applescript library file.
-APPLESCRIPT_BIN="$CLI_PATH/bin/imageOptimAppleScriptLib"
+APPLESCRIPT_BIN="$CLI_PATH/imageOptimAppleScriptLib"
 
 # {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
 # original locations.
