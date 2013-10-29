@@ -1,4 +1,5 @@
+.DS_Store
 .git*
 environment/
+Gruntfile.js
 src/
-.DS_Store
