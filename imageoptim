@@ -1,0 +1,253 @@
+#!/bin/bash
+
+# Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
+# https://github.com/JamieMason
+
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation files
+# (the "Software"), to deal in the Software without restriction,
+# including without limitation the rights to use, copy, modify, merge,
+# publish, distribute, sublicense, and/or sell copies of the Software,
+# and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+# BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+# ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# ------------------------------------
+# DEFAULT / ENVIRONMENT VARIABLES
+# ------------------------------------
+
+# current version of ImageOptim-CLI from package.json
+version="2.0.0"
+
+# {DirectoryPath} Absolute file system path to this shell script.
+CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# {DirectoryPath} Absolute file system path to where this shell script was invoked from.
+EXEC_PATH="$PWD"
+
+# {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
+# original locations.
+TEMP_PATH="${EXEC_PATH}/_imageoptim-cli"
+
+# {FilePath} A list of all images we'll be operating on.
+INDEX_FILE="${TEMP_PATH}/index.txt"
+
+# {FilePath[]} The original locations of every image to be processed.
+INDEX_ARRAY=[]
+
+# {Number} How many images in total being processed.
+TOTAL_IMAGES=0
+
+# {DirectoryPath|String} The optionally provided -d or --directory command line argument.
+DIRECTORY_OPTION="false"
+
+# {BooleanString} Optionally overridden with -a or --image-alpha.
+USE_IMAGE_ALPHA="false"
+
+# {BooleanString} Optionally overridden with -j or --jpeg-mini.
+USE_JPEGMINI="false"
+
+# {BooleanString} Optionally overridden with -q or --quit.
+QUIT_ON_COMPLETE="false"
+
+# {RegEx} Supported file extensions for each application.
+FILE_TYPES_REGEX_IMAGE_ALPHA=".*(png)$"
+FILE_TYPES_REGEX_IMAGE_OPTIM=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$"
+FILE_TYPES_REGEX_JPEGMINI=".*(jpg|jpeg)$"
+
+# ------------------------------------
+# INGEST COMMAND LINE ARGUMENTS
+# ------------------------------------
+
+while [ "$1" != "" ]; do
+  case $1 in
+    -d | --directory )
+      shift;
+      DIRECTORY_OPTION="$1"
+      ;;
+    -a | --image-alpha )
+      USE_IMAGE_ALPHA="true"
+      ;;
+    -j | --jpeg-mini )
+      USE_JPEGMINI="true"
+      ;;
+    -q | --quit )
+      QUIT_ON_COMPLETE="true"
+      ;;
+    -h | --help )
+      usage;
+      exit 0
+      ;;
+    -e | --examples )
+      examples;
+      exit 0
+      ;;
+    -v | --version )
+      echo $version;
+      exit 0
+      ;;
+    * )
+    usage
+    exit 1
+  esac
+  shift
+done
+
+# ------------------------------------
+# DETERMINE WHAT EXISTS AT A GIVEN LOCATION
+# ------------------------------------
+
+# State whether the entity at path is a "file", "directory", or "other".
+# param   {EntityPath}  $1  entity
+# return  {String}          file_type
+function get_entity_type {
+  if [ -f "$1" ]; then
+    echo "file"
+  elif [ -d "$1" ]; then
+    echo "directory"
+  else
+    echo "other"
+  fi
+}
+
+# State whether the entity at path is a "png", "jpg", "other", or "unsupported" image file.
+# param   {EntityPath}  $1  entity
+# return  {String}          image_type
+function get_image_type {
+  shopt -s nocasematch
+  if [[ "$1" =~ $FILE_TYPES_REGEX_IMAGE_ALPHA ]]; then
+    echo "png"
+  elif [[ "$1" =~ $FILE_TYPES_REGEX_JPEGMINI ]]; then
+    echo "jpg"
+  elif [[ "$1" =~ $FILE_TYPES_REGEX_IMAGE_OPTIM ]]; then
+    echo "other"
+  else
+    echo "unsupported"
+  fi
+  shopt -u nocasematch
+}
+
+# ------------------------------------
+# GATHER PATHS TO IMAGES
+# ------------------------------------
+
+# Add file received via stdin to our index file.
+# param  {FilePath}  $1  file
+function add_file_to_index {
+  local image_type=$(get_image_type "$1")
+  if [ $image_type != "unsupported" ]; then
+    echo "$1" >> $INDEX_FILE
+  else
+    echo "Ignored as an unsupported file type: $LINE"
+  fi
+}
+
+# Add all files in a directory to our index file.
+# param  {DirectoryPath}  $1  directory
+function add_directory_to_index {
+  find "$1" -iregex $FILE_TYPES_REGEX_IMAGE_OPTIM -type f -print0 | while read -d '' -r file; do
+    add_file_to_index "$file"
+  done
+}
+
+# Read files received via stdin into an index which will outlive the LINE variable.
+function add_stdin_to_index {
+  while read LINE; do
+    local entity_type=$(get_entity_type "$LINE")
+    if [ $entity_type == "file" ]; then
+      add_file_to_index "$LINE"
+    elif [ $entity_type == "directory" ]; then
+      add_directory_to_index "$LINE"
+    else
+      echo "Ignored as neither file or directory: $LINE"
+    fi
+  done
+}
+
+# If -d or --directory were supplied, add the contents of that directory to our processing index.
+function add_directory_option_to_index {
+  if [ "$DIRECTORY_OPTION" != "false" ]; then
+    add_directory_to_index "$DIRECTORY_OPTION"
+  fi
+}
+
+# Remove any duplicate files in our index, which may have occurred when importing directories whose
+# images have already been gathered by other means.
+function remove_duplicate_indexes {
+  sort -f "$INDEX_FILE" | uniq > "$INDEX_FILE.uniq.txt"
+  mv "$INDEX_FILE.uniq.txt" "$INDEX_FILE"
+}
+
+# Read our index file into an Array.
+function parse_index {
+  IFS=$'\n' read -d '' -r -a INDEX_ARRAY < "$INDEX_FILE"
+  TOTAL_IMAGES=${#INDEX_ARRAY[@]}
+}
+
+# Construct a clean Array containing sorted, unique paths to every image we should process.
+function gather_paths_to_images {
+  init_temp_directory
+  add_stdin_to_index
+  add_directory_option_to_index
+  remove_duplicate_indexes
+  parse_index
+}
+
+# ------------------------------------
+# PREPARE A TEMPORARY DIRECTORY
+# ------------------------------------
+
+# Automating JPEGmini is particularily difficult and unusably slow when working with arbitrary sets
+# of files. Instead, we create a temporary directory and pass that once to JPEGmini rather than
+# each file individually.
+function init_temp_directory {
+  rm -rf "$TEMP_PATH"
+  mkdir -p "$TEMP_PATH"
+}
+
+# Determine the location in our temp directory a given file should be held at.
+# param   {FilePath}  $1  file
+# return  {FilePath}      temp_file
+function get_temp_path_for_file {
+  local image_type=$(get_image_type "$1")
+  echo "${TEMP_PATH}/${image_type}$1"
+}
+
+# Copy all files received over stdin to a temp directory, grouped by file extension.
+function populate_temp_directories {
+  local image_type
+  local temp_file
+  for source_file in "${INDEX_ARRAY[@]}"; do
+    image_type=$(get_image_type "$source_file")
+    temp_file=$(get_temp_path_for_file "$source_file")
+    if [[ $image_type != "unsupported" ]]; then
+      ditto "$source_file" "$temp_file"
+    fi
+  done
+}
+
+# ------------------------------------
+# BEGIN PROCESSING
+# ------------------------------------
+
+gather_paths_to_images
+
+if [ $TOTAL_IMAGES -gt 0 ]; then
+  populate_temp_directories
+fi
+
+for file in "${INDEX_ARRAY[@]}"; do
+  temp_file=$(get_temp_path_for_file "$file")
+  echo "$file -> $temp_file"
+done
