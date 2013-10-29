@@ -134,6 +134,8 @@ on wait_for(processName)
       set bad_separator to ","
     end if
 
+    set idleCount to 0
+
     repeat
 
       -- get a process id we can pass to `ps`
@@ -162,9 +164,17 @@ on wait_for(processName)
       -- if the app is idle
       if (cpuPercent) < 1 then
 
-        -- we think it's finished
-        exit repeat
+        -- increment number of times we've found the app consecutively idle
+        set idleCount to idleCount + 1
 
+        -- if it's been idle for long enough we can exit
+        if (idleCount) > 2 then
+          exit repeat
+        end if
+
+      -- otherwise reset the counter to wait for a period of consecutive inactivity vs a blip
+      else
+        set idleCount to 0
       end if
 
       -- (implied else: by not exiting we repeat again)
