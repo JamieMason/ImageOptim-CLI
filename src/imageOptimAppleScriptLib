@@ -116,6 +116,24 @@ end run_jpegmini
 -- ------------------------------------
 on wait_for(processName)
   tell application "System Events"
+
+    -- determine the localised decimal separator we will encounter in the getCpuPercent variable
+    set test_decimal to 1.5
+    set cc to test_decimal as text
+
+    if cc is not test_decimal then
+      set local_separator to (characters 2 thru 2 of cc) as string
+    else
+      set local_separator to "."
+    end if
+
+    -- assuming that there's only either a "." or "," separator — we determine the wrong separator
+    if local_separator = "," then
+      set bad_separator to "."
+    else
+      set bad_separator to ","
+    end if
+
     repeat
 
       -- get a process id we can pass to `ps`
@@ -124,8 +142,18 @@ on wait_for(processName)
       -- filter active process output to just JPEGmini, then to just the % CPU
       set getCpuPercent to "ps aux | grep " & PID & " | grep -v grep | awk '{print $3}'"
 
-      -- convert the terminal's string output to a number
+      -- get raw terminal string output
       set cpuPercent to (do shell script getCpuPercent)
+
+      -- normalise number format, handling different localisations
+      try
+        set cpuPercent to cpuPercent as number
+      on error
+        set AppleScript's text item delimiters to bad_separator
+        set cpuPercent to (text item 1 of cpuPercent) & local_separator & (text item 2 of cpuPercent)
+      end try
+
+      -- convert to number
       set cpuPercent to (round (cpuPercent as number) rounding toward zero)
 
       -- give the app a little time to work
