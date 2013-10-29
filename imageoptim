@@ -69,6 +69,12 @@ FILE_TYPES_REGEX_IMAGE_ALPHA=".*(png)$"
 FILE_TYPES_REGEX_IMAGE_OPTIM=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$"
 FILE_TYPES_REGEX_JPEGMINI=".*(jpg|jpeg)$"
 
+# {FilePath} Location of pngquant executable within ImageAlpha.
+PNGQUANT_PATH="/Applications/ImageAlpha.app/Contents/Resources/pngquant"
+
+# {FilePath} Location of executable within ImageOptim.
+IMAGEOPTIM_BIN_PATH="/Applications/ImageOptim.app/Contents/MacOS/ImageOptim"
+
 # {String} The OS X file names for each Application.
 APP_FILENAME_IMAGE_ALPHA="ImageAlpha.app"
 APP_FILENAME_IMAGE_OPTIM="ImageOptim.app"
@@ -93,6 +99,25 @@ HAS_JPEGMINI_RETAIL="false"
 # order to automate JPEGmini, which offers no command line access. This will be set to true
 # accordingly during initialisation.
 HAS_GUI_SCRIPT="false"
+
+# ------------------------------------
+# LOGGING UTILS
+# ------------------------------------
+
+# Display a red error message and quit
+# param  {String}  $1  message
+function fatal {
+  printf "\e[31m✘ $1"
+  echo "\033[0m"
+  exit 1
+}
+
+# Display a message in green with a tick by it
+# param  {String}  $1  message
+function success {
+  printf "\e[32m✔ $1"
+  echo "\033[0m"
+}
 
 # ------------------------------------
 # INGEST COMMAND LINE ARGUMENTS
@@ -307,10 +332,45 @@ function has_gui_script {
 # INVOKE IMAGE APPLICATIONS
 # ------------------------------------
 
+function run_image_alpha {
+  if [ "true" == $USE_IMAGE_ALPHA ]; then
+    if [ "true" == $HAS_IMAGE_ALPHA ]; then
+      find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 \
+      $PNGQUANT_PATH --ext=.png --force --speed=1 --quality=75-100 --
+    else
+      fatal "ImageAlpha is not installed (http://pngmini.com)"
+    fi
+  fi
+}
 
+function run_jpegmini {
+  if [ "true" == $USE_JPEGMINI ]; then
+    if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ]; then
+      if [ "true" == $HAS_GUI_SCRIPT ]; then
+        `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
+        sleep 1
+        `osascript "$APPLESCRIPT_BIN" wait_for JPEGmini` > /dev/null 2>&1
+        if [ "true" == $QUIT_ON_COMPLETE ]; then
+          osascript -e 'tell application "JPEGmini" to quit'
+        fi
+      else
+        fatal "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for \
+        assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
+      fi
+    else
+      fatal "JPEGmini is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+    fi
+  fi
+}
+
+function run_image_optim {
+  if [ "true" == $HAS_IMAGE_OPTIM ]; then
+    $IMAGEOPTIM_BIN_PATH 2>/dev/null "$TEMP_PATH"
+  fi
+}
 
 # ------------------------------------
-# BEGIN PROCESSING
+# POPULATE VARIABLES
 # ------------------------------------
 
 # Determine which Applications are installed.
@@ -321,20 +381,28 @@ HAS_JPEGMINI_LITE=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI_LITE)
 HAS_JPEGMINI_RETAIL=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI_RETAIL)
 HAS_GUI_SCRIPT=$(has_gui_script)
 
+# ------------------------------------
+# BEGIN PROCESSING
+# ------------------------------------
+
 prepare_images
+run_image_alpha
+run_jpegmini
+run_image_optim
 
 # ------------------------------------
 # TEMPORARY LOGS
 # ------------------------------------
 
-for file in "${INDEX_ARRAY[@]}"; do
-  temp_file=$(get_temp_path_for_file "$file")
-  echo "$file -> $temp_file"
-done
+# for file in "${INDEX_ARRAY[@]}"; do
+#   temp_file=$(get_temp_path_for_file "$file")
+#   echo "$file"
+#   echo "-> $temp_file"
+# done
 
-echo $HAS_IMAGE_ALPHA
-echo $HAS_IMAGE_OPTIM
-echo $HAS_JPEGMINI
-echo $HAS_JPEGMINI_LITE
-echo $HAS_JPEGMINI_RETAIL
-echo $HAS_GUI_SCRIPT
+echo "HAS_IMAGE_ALPHA     : $HAS_IMAGE_ALPHA"
+echo "HAS_IMAGE_OPTIM     : $HAS_IMAGE_OPTIM"
+echo "HAS_JPEGMINI        : $HAS_JPEGMINI"
+echo "HAS_JPEGMINI_LITE   : $HAS_JPEGMINI_LITE"
+echo "HAS_JPEGMINI_RETAIL : $HAS_JPEGMINI_RETAIL"
+echo "HAS_GUI_SCRIPT      : $HAS_GUI_SCRIPT"
