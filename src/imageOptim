@@ -41,7 +41,7 @@ APPLESCRIPT_BIN="$CLI_PATH/imageOptimAppleScriptLib"
 
 # {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
 # original locations.
-TEMP_PATH="${EXEC_PATH}/_imageoptim-cli"
+TEMP_PATH="${TMPDIR}imageoptim-cli"
 
 # {FilePath} A list of all images we'll be operating on.
 INDEX_FILE="${TEMP_PATH}/index.txt"
@@ -264,7 +264,6 @@ function parse_index {
 
 # Construct a clean Array containing sorted, unique paths to every image we should process.
 function gather_paths_to_images {
-  init_temp_directory
   add_stdin_to_index
   add_directory_option_to_index
   remove_duplicate_indexes
@@ -281,6 +280,7 @@ function gather_paths_to_images {
 function init_temp_directory {
   rm -rf "$TEMP_PATH"
   mkdir -p "$TEMP_PATH"
+  chmod -R +rw "$TEMP_PATH"
 }
 
 # Determine the location in our temp directory a given file should be held at.
@@ -399,6 +399,7 @@ HAS_GUI_SCRIPT=$(has_gui_script)
 # BEGIN PROCESSING
 # ------------------------------------
 
+init_temp_directory
 prepare_images
 run_image_alpha
 run_jpegmini
