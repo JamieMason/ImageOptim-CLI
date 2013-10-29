@@ -28,7 +28,7 @@
 # ------------------------------------
 
 # current version of ImageOptim-CLI from package.json
-VERSION="2.0.0"
+VERSION="{{version}}"
 
 # {DirectoryPath} Absolute file system path to this shell script.
 CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -117,6 +117,16 @@ function fatal {
 function success {
   printf "\e[32m✔ $1"
   echo "\033[0m"
+}
+
+# Display usage information
+function usage {
+{{usage}}
+}
+
+# Display usage examples
+function examples {
+{{examples}}
 }
 
 # ------------------------------------

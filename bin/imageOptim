@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Copyright © 2013 Jamie Mason, @GotNoSugarBaby,
 # https://github.com/JamieMason
@@ -23,176 +23,103 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# ------------------------------------
+# DEFAULT / ENVIRONMENT VARIABLES
+# ------------------------------------
+
 # current version of ImageOptim-CLI from package.json
-version="1.6.19"
+VERSION="1.6.19"
 
-# to be set to "stdin" or "directory" based on cli options or piped input
-runMode="stdin"
+# {DirectoryPath} Absolute file system path to this shell script.
+CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# path to image directory we should optimise
-imgPath="false"
+# {DirectoryPath} Absolute file system path to where this shell script was invoked from.
+EXEC_PATH="$PWD"
 
-# path to this executable
-cliPath="false"
+# {FilePath} The location of our Applescript library file.
+APPLESCRIPT_BIN="$CLI_PATH/bin/imageOptimAppleScriptLib"
 
-# "true"|"false"
-useImageOptim="true"
-useImageAlpha="false"
-useJPEGmini="false"
-imageOptimIsRunning="false"
+# {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
+# original locations.
+TEMP_PATH="${EXEC_PATH}/_imageoptim-cli"
 
-# quit apps after processing images?
-quitOnComplete="false"
+# {FilePath} A list of all images we'll be operating on.
+INDEX_FILE="${TEMP_PATH}/index.txt"
 
-# how long we will wait before checking again if an app is busy
-isBusyIntervalLength=1
+# {FilePath[]} The original locations of every image to be processed.
+INDEX_ARRAY=[]
 
-# ImageAlpha
-imageAlphaFileTypes=".*(png)$"
-imageAlphaAppBundleId="net.pornel.ImageAlpha"
-imageAlphaAppName="ImageAlpha"
-imageAlphaAppFileName="ImageAlpha.app"
+# {Number} How many images in total being processed.
+TOTAL_IMAGES=0
 
-# ImageOptim
-imageOptimFileTypes=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$"
-imageOptimAppBundleId="net.pornel.ImageOptim"
-imageOptimAppName="ImageOptim"
-imageOptimAppFileName="ImageOptim.app"
+# {DirectoryPath|String} The optionally provided -d or --directory command line argument.
+DIRECTORY_OPTION="false"
 
-# JPEGmini
-jpegMiniFileTypes=".*(jpg|jpeg)$"
-jpegMiniAppBundleId="com.icvt.JPEGmini"
-jpegMiniAppRetailBundleId="com.icvt.JPEGmini-retail"
-jpegMiniAppName="JPEGmini"
-jpegMiniAppFileName="JPEGmini.app"
+# {BooleanString} Optionally overridden with -a or --image-alpha.
+USE_IMAGE_ALPHA="false"
 
-# see https://github.com/pornel/ImageOptim/issues/24
-# the first file to be added is not processed if ImageOptim
-# is not already running
-function startImageOptim {
-  if [ $(countProcesses $imageOptimAppName) -eq 0 ]; then
-    echo "ImageOptim not running - starting"
-    open -g -a $imageOptimAppFileName
-    sleep 1
-    imageOptimIsRunning="true"
-  fi
+# {BooleanString} Optionally overridden with -j or --jpeg-mini.
+USE_JPEGMINI="false"
+
+# {BooleanString} Optionally overridden with -q or --quit.
+QUIT_ON_COMPLETE="false"
+
+# {RegEx} Supported file extensions for each application.
+FILE_TYPES_REGEX_IMAGE_ALPHA=".*(png)$"
+FILE_TYPES_REGEX_IMAGE_OPTIM=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$"
+FILE_TYPES_REGEX_JPEGMINI=".*(jpg|jpeg)$"
+
+# {FilePath} Location of pngquant executable within ImageAlpha.
+PNGQUANT_PATH="/Applications/ImageAlpha.app/Contents/Resources/pngquant"
+
+# {FilePath} Location of executable within ImageOptim.
+IMAGEOPTIM_BIN_PATH="/Applications/ImageOptim.app/Contents/MacOS/ImageOptim"
+
+# {String} The OS X file names for each Application.
+APP_FILENAME_IMAGE_ALPHA="ImageAlpha.app"
+APP_FILENAME_IMAGE_OPTIM="ImageOptim.app"
+APP_FILENAME_JPEGMINI="JPEGmini.app"
+
+# {String} The OS X Bundle IDs for each Application.
+APP_BUNDLE_ID_IMAGE_ALPHA="net.pornel.ImageAlpha"
+APP_BUNDLE_ID_IMAGE_OPTIM="net.pornel.ImageOptim"
+APP_BUNDLE_ID_JPEGMINI="com.icvt.JPEGmini"
+APP_BUNDLE_ID_JPEGMINI_LITE="com.icvt.JPEGmini-lite"
+APP_BUNDLE_ID_JPEGMINI_RETAIL="com.icvt.JPEGmini-retail"
+
+# {BooleanString} Whether each Application is installed, these will be set to true accordingly
+# during initialisation.
+HAS_IMAGE_ALPHA="false"
+HAS_IMAGE_OPTIM="false"
+HAS_JPEGMINI="false"
+HAS_JPEGMINI_LITE="false"
+HAS_JPEGMINI_RETAIL="false"
+
+# {BooleanString} Whether GUI Scripting is enabled, which is needed to robotically control OS X in
+# order to automate JPEGmini, which offers no command line access. This will be set to true
+# accordingly during initialisation.
+HAS_GUI_SCRIPT="false"
+
+# ------------------------------------
+# LOGGING UTILS
+# ------------------------------------
+
+# Display a red error message and quit
+# param  {String}  $1  message
+function fatal {
+  printf "\e[31m✘ $1"
+  echo "\033[0m"
+  exit 1
 }
 
-# ($1:appFileName, $2:imageFilePath):
-function addImageToQueue {
-
-  if [[ $imageOptimIsRunning == "false" ]] && [[ "$1" == "$imageOptimAppFileName" ]]; then
-    startImageOptim
-  fi
-
-  open -g -a $1 "$2"
+# Display a message in green with a tick by it
+# param  {String}  $1  message
+function success {
+  printf "\e[32m✔ $1"
+  echo "\033[0m"
 }
 
-# ($1:fileTypes, $2:appFileName, $3:dirPath): Queue direcory of images
-function addDirectoryToQueue {
-  find -E "$3" -iregex $1 -type f -print0 | while IFS= read -r -d $'\0' imgPath; do
-    addImageToQueue $2 "$imgPath"
-  done
-}
-
-# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:dirPath):
-function runPornelAppOnDirectory {
-  if [ "true" == $1 ]; then
-    echo $2
-    addDirectoryToQueue $3 $4 "$5"
-  fi
-}
-
-# ($1:dirPath):
-function runImageOptimOnDirectory {
-  runPornelAppOnDirectory $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
-}
-
-# ($1:dirPath):
-function runImageAlphaOnDirectory {
-  if [ "true" == $useImageAlpha ]; then
-    echo "ImageAlpha..."
-    find -E "$1" -iregex '.*(png)$' -type f -print0 \
-    | xargs -n10 -P8 -0 \
-    /Applications/ImageAlpha.app/Contents/Resources/pngquant \
-    --ext=.png --force --speed=1 --quality=75-100 --
-  fi
-}
-
-# ($1:appShouldBeRun, $2:appName, $3:fileTypes, $4:appFileName, $5:image):
-function runPornelAppOnImage {
-  if [ "true" == $1 ]; then
-    addImageToQueue $4 "$5"
-  fi
-}
-
-# ($1:image):
-function runImageOptimOnImage {
-  runPornelAppOnImage $useImageOptim $imageOptimAppName $imageOptimFileTypes $imageOptimAppFileName "$1"
-}
-
-# ($1:image):
-function runImageAlphaOnImage {
-
-  # would like to specify the extension here, but pngquant ignores case
-  # if the extension is .PNG, then this command creates a new file
-  # the new file is not passed to imageOptim
-  # waiting on https://github.com/pornel/pngquant/issues/45
-  #extension="${1##*.}"
-
-  /Applications/ImageAlpha.app/Contents/Resources/pngquant --ext=.png --force --speed=1 --quality=75-100 -- "$1"
-}
-
-# ($1:path):
-function runJPEGmini {
-  if [ "true" == $useJPEGmini ]; then
-    echo "JPEGmini..."
-    `osascript "$cliPath/imageOptimAppleScriptLib" run_jpegmini "$1" $jpegMiniAppName` > /dev/null 2>&1
-  fi
-}
-
-# ($1:appName): Get the number of processes in use by an Application
-function countProcesses {
-  printf $(ps -aef | grep  "[${1:0:1}]${1:1}.app" | wc -l)
-}
-
-# ($1:appName): Sleep until app is done optimising images
-function waitForApp {
-  # wait for App to spawn a few processes
-  sleep 2
-  # wait until those processes have completed
-  while [[ $(countProcesses $1) > "1" ]]; do
-    sleep $isBusyIntervalLength
-  done
-}
-
-# ($1:appName):
-function waitForPornelApp {
-  waitForApp $1
-  if [ "true" == $quitOnComplete ]; then
-    osascript -e "tell application \"$1\" to quit"
-  fi
-}
-
-# ():
-function waitForImageOptim {
-  if [ "true" == $useImageOptim ]; then
-    waitForPornelApp $imageOptimAppName
-  fi
-}
-
-# ():
-function waitForJPEGmini {
-  if [ "true" == $useJPEGmini ]; then
-    sleep 1
-    `osascript "$cliPath/imageOptimAppleScriptLib" wait_for $jpegMiniAppName` > /dev/null 2>&1
-    if [ "true" == $quitOnComplete ]; then
-      osascript -e "tell application \"$jpegMiniAppName\" to quit"
-    fi
-  fi
-}
-
-# (): Display usage information
+# Display usage information
 function usage {
   echo "Usage: imageOptim [options]"
   echo ""
@@ -211,7 +138,7 @@ function usage {
   echo ""
 }
 
-# (): Display usage examples
+# Display usage examples
 function examples {
   echo "### Optimise a directory of images"
   echo ""
@@ -245,201 +172,24 @@ function examples {
   echo ""
 }
 
-# ($1:message): Display a red error message and quit
-function error {
-  printf "\e[31m✘ $1"
-  echo "\033[0m"
-  exit 1
-}
+# ------------------------------------
+# INGEST COMMAND LINE ARGUMENTS
+# ------------------------------------
 
-# ($1:message): Display a message in green with a tick by it
-function success {
-  printf "\e[32m✔ ${1}"
-  echo "\033[0m"
-}
-
-# (): Get a timestamp for the current time
-function now {
-  date +"%s"
-}
-
-# (): How long did ImageOptim.app take to process the images?
-function getTimeSpent {
-  let timeSpent=endTime-startTime-$isBusyIntervalLength
-  echo $timeSpent
-}
-
-# ($1:dirPath): How many images are in the directory we're about to process?
-function getImgCount {
-  echo $(find -E "$1" -iregex $imageOptimFileTypes -type f | wc -l)
-}
-
-# (): run applications against a directory of images
-function processDirectory {
-  startTime=$(now)
-  imgCount=$(getImgCount "$imgPath")
-  echo "Processing $imgCount images..."
-
-  runImageAlphaOnDirectory "$imgPath"
-
-  runJPEGmini "$imgPath"
-  waitForJPEGmini
-
-  runImageOptimOnDirectory "$imgPath"
-  waitForImageOptim
-
-  endTime=$(now)
-  success "Finished in $(getTimeSpent) seconds" | xargs
-}
-
-# (): run applications against a single image
-function processFiles {
-  i=0;
-
-  # store piped input so we can iterate over it more than once
-  while read LINE; do
-    pipedFiles[$i]="${LINE}"
-    i=$((i+1))
-  done
-
-  echo "Processing $i images..."
-
-  # Case-insensitive pattern matching
-  # for use with the =~ Regular Expression matching operator
-  # http://tldp.org/LDP/abs/html/bashver3.html#REGEXMATCHREF
-  shopt -s nocasematch
-
-  for file in "${pipedFiles[@]}"; do
-    if [[ "$file" =~ .*(png)$ ]]; then
-      runImageAlphaOnImage "$file"
-    fi
-  done
-
-  for file in "${pipedFiles[@]}"; do
-    if [[ "$file" =~ .*(jpg|jpeg)$ ]]; then
-      runJPEGmini "$file"
-    fi
-  done
-
-  waitForJPEGmini
-
-  for file in "${pipedFiles[@]}"; do
-    if [[ "$file" =~ .*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$ ]]; then
-      runImageOptimOnImage "$file"
-    fi
-  done
-
-  # unset case-insensitive pattern matching
-  shopt -u nocasematch
-
-  waitForImageOptim
-}
-
-# (): if an override is not set, get path to this executable
-function initCliPath {
-  if [ "false" == $cliPath ]; then
-    cliPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-  fi
-}
-
-# (): quit if -d, --directory does not resolve
-function validateImgPath {
-  if [ "directory" == $runMode ] && [ ! -d "$imgPath" ]; then
-    error "$imgPath is not a directory, or could not be found"
-  fi
-}
-
-# ($1:appBundleId): eg. "net.pornel.ImageAlpha" -> "ImageAlpha.app" or "NOT_INSTALLED"
-function getAppFileNameByBundleId {
-  echo `osascript "$cliPath/imageOptimAppleScriptLib" has_app_installed $1`
-}
-
-# ($1:appFileName, $2:appBundleId): -> "true" or "false"
-function appIsInstalled {
-  if [ $1 == $(getAppFileNameByBundleId $2) ]; then
-    echo "true"
-  else
-    echo "false"
-  fi
-}
-
-# (): -> "true" or "false"
-function imageOptimIsInstalled {
-  echo $(appIsInstalled $imageOptimAppFileName $imageOptimAppBundleId)
-}
-
-# (): -> "true" or "false"
-function imageAlphaIsInstalled {
-  echo $(appIsInstalled $imageAlphaAppFileName $imageAlphaAppBundleId)
-}
-
-# (): -> "true" or "false"
-function jpegMiniIsInstalled {
-  if [ "true" == $(appIsInstalled $jpegMiniAppFileName $jpegMiniAppBundleId) ] || [ "true" == $(appIsInstalled $jpegMiniAppFileName $jpegMiniAppRetailBundleId) ]; then
-    echo "true"
-  else
-    echo "false"
-  fi
-}
-
-# (): -> "true" or "false"
-function guiScriptIsEnabled {
-  echo `osascript "$cliPath/imageOptimAppleScriptLib" has_gui_script`
-}
-
-# ($1:appShouldBeRun, $2:appIsInstalled, $3:isNotInstalledMsg):
-function errorIfNotInstalled {
-  if [ "true" == $1 ] && [ "false" == $2 ]; then
-    error "$3"
-  fi
-}
-
-# (): quit if ImageOptim should be run but is not installed
-function validateImageOptim {
-  errorIfNotInstalled $useImageOptim $(imageOptimIsInstalled) "$imageOptimAppFileName is not installed (http://imageoptim.com)"
-}
-
-# (): quit if ImageAlpha should be run but is not installed
-function validateImageAlpha {
-  errorIfNotInstalled $useImageAlpha $(imageAlphaIsInstalled) "$imageAlphaAppFileName is not installed (http://pngmini.com)"
-}
-
-# (): quit if ImageAlpha should be run but is not installed or cannot run
-function validateJpegMini {
-
-  # if we're not running JPEGmini then it's all good
-  if [ "false" == $useJPEGmini ]; then
-    return 0
-  fi
-
-  # if we are and it's not installed
-  if [ "false" == $(jpegMiniIsInstalled) ]; then
-    error "$jpegMiniAppFileName is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
-  fi
-
-  # if we are, it's installed but GUIScript is not available
-  if [ "false" == $(guiScriptIsEnabled) ]; then
-    error "To automate JPEGmini we need to enable GUI Scripting, check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
-  fi
-
-}
-
-# Handle Inputs
 while [ "$1" != "" ]; do
   case $1 in
     -d | --directory )
       shift;
-      runMode="directory"
-      imgPath=$1
+      DIRECTORY_OPTION="$1"
       ;;
     -a | --image-alpha )
-      useImageAlpha="true"
+      USE_IMAGE_ALPHA="true"
       ;;
     -j | --jpeg-mini )
-      useJPEGmini="true"
+      USE_JPEGMINI="true"
       ;;
     -q | --quit )
-      quitOnComplete="true"
+      QUIT_ON_COMPLETE="true"
       ;;
     -h | --help )
       usage;
@@ -450,7 +200,7 @@ while [ "$1" != "" ]; do
       exit 0
       ;;
     -v | --version )
-      echo $version;
+      echo $VERSION;
       exit 0
       ;;
     * )
@@ -460,14 +210,252 @@ while [ "$1" != "" ]; do
   shift
 done
 
-initCliPath
-validateImgPath
-validateImageOptim
-validateImageAlpha
-validateJpegMini
+# ------------------------------------
+# DETERMINE WHAT EXISTS AT A GIVEN LOCATION
+# ------------------------------------
 
-if [ "directory" == $runMode ]; then
-  processDirectory
-elif [ "stdin" == $runMode ]; then
-  processFiles
-fi
+# State whether the entity at path is a "file", "directory", or "other".
+# param   {EntityPath}  $1  entity
+# return  {String}          file_type
+function get_entity_type {
+  if [ -f "$1" ]; then
+    echo "file"
+  elif [ -d "$1" ]; then
+    echo "directory"
+  else
+    echo "other"
+  fi
+}
+
+# State whether the entity at path is a "png", "jpg", "other", or "unsupported" image file.
+# param   {EntityPath}  $1  entity
+# return  {String}          image_type
+function get_image_type {
+  shopt -s nocasematch
+  if [[ "$1" =~ $FILE_TYPES_REGEX_IMAGE_ALPHA ]]; then
+    echo "png"
+  elif [[ "$1" =~ $FILE_TYPES_REGEX_JPEGMINI ]]; then
+    echo "jpg"
+  elif [[ "$1" =~ $FILE_TYPES_REGEX_IMAGE_OPTIM ]]; then
+    echo "other"
+  else
+    echo "unsupported"
+  fi
+  shopt -u nocasematch
+}
+
+# ------------------------------------
+# GATHER PATHS TO IMAGES
+# ------------------------------------
+
+# Add file received via stdin to our index file.
+# param  {FilePath}  $1  file
+function add_file_to_index {
+  local image_type=$(get_image_type "$1")
+  if [ $image_type != "unsupported" ]; then
+    echo "$1" >> $INDEX_FILE
+  else
+    echo "Ignored as an unsupported file type: $LINE"
+  fi
+}
+
+# Add all files in a directory to our index file.
+# param  {DirectoryPath}  $1  directory
+function add_directory_to_index {
+  find "$1" -iregex $FILE_TYPES_REGEX_IMAGE_OPTIM -type f -print0 | while read -d '' -r file; do
+    add_file_to_index "$file"
+  done
+}
+
+# Read files received via stdin into an index which will outlive the LINE variable.
+function add_stdin_to_index {
+  while read LINE; do
+    local entity_type=$(get_entity_type "$LINE")
+    if [ $entity_type == "file" ]; then
+      add_file_to_index "$LINE"
+    elif [ $entity_type == "directory" ]; then
+      add_directory_to_index "$LINE"
+    else
+      echo "Ignored as neither file or directory: $LINE"
+    fi
+  done
+}
+
+# If -d or --directory were supplied, add the contents of that directory to our processing index.
+function add_directory_option_to_index {
+  if [ "$DIRECTORY_OPTION" != "false" ]; then
+    add_directory_to_index "$DIRECTORY_OPTION"
+  fi
+}
+
+# Remove any duplicate files in our index, which may have occurred when importing directories whose
+# images have already been gathered by other means.
+function remove_duplicate_indexes {
+  sort -f "$INDEX_FILE" | uniq > "$INDEX_FILE.uniq.txt"
+  mv "$INDEX_FILE.uniq.txt" "$INDEX_FILE"
+}
+
+# Read our index file into an Array.
+function parse_index {
+  IFS=$'\n' read -d '' -r -a INDEX_ARRAY < "$INDEX_FILE"
+  TOTAL_IMAGES=${#INDEX_ARRAY[@]}
+}
+
+# Construct a clean Array containing sorted, unique paths to every image we should process.
+function gather_paths_to_images {
+  init_temp_directory
+  add_stdin_to_index
+  add_directory_option_to_index
+  remove_duplicate_indexes
+  parse_index
+}
+
+# ------------------------------------
+# PREPARE A TEMPORARY DIRECTORY
+# ------------------------------------
+
+# Automating JPEGmini is particularily difficult and unusably slow when working with arbitrary sets
+# of files. Instead, we create a temporary directory and pass that once to JPEGmini rather than
+# each file individually.
+function init_temp_directory {
+  rm -rf "$TEMP_PATH"
+  mkdir -p "$TEMP_PATH"
+}
+
+# Determine the location in our temp directory a given file should be held at.
+# param   {FilePath}  $1  file
+# return  {FilePath}      temp_file
+function get_temp_path_for_file {
+  local image_type=$(get_image_type "$1")
+  echo "${TEMP_PATH}/${image_type}$1"
+}
+
+# Copy all files received over stdin to a temp directory, grouped by file extension.
+function populate_temp_directories {
+  local image_type
+  local temp_file
+  for source_file in "${INDEX_ARRAY[@]}"; do
+    image_type=$(get_image_type "$source_file")
+    temp_file=$(get_temp_path_for_file "$source_file")
+    if [[ $image_type != "unsupported" ]]; then
+      ditto "$source_file" "$temp_file"
+    fi
+  done
+}
+
+# Gather paths to all images we should process and prepare a temporary directory containing copies.
+function prepare_images {
+  gather_paths_to_images
+  if [ $TOTAL_IMAGES -gt 0 ]; then
+    populate_temp_directories
+  fi
+}
+
+# ------------------------------------
+# INSPECT IMAGE APPLICATIONS
+# ------------------------------------
+
+# Use an Application's bundle id to locate the path to the installed Application.
+# param   {String}  $1  app_bundle_id
+# return  {String}  $1  path_to_app
+function get_path_to_app_by_bundle_id {
+  echo `osascript "$APPLESCRIPT_BIN" has_app_installed "$1"`
+}
+
+# Is an Application at path_to_app with the expected app_bundle_id installed on this machine?
+# param   {String}  $1  path_to_app
+# param   {String}  $2  app_bundle_id
+# return  {BooleanString}
+function has_app {
+  local expected_app_name="$1"
+  local actual_app_name=$(get_path_to_app_by_bundle_id "$2")
+  if [ $actual_app_name == $expected_app_name ]; then
+    echo "true"
+  else
+    echo "false"
+  fi
+}
+
+# Determine whether GUI Scripting is enabled, which is needed to automate JPEGmini.
+function has_gui_script {
+  echo `osascript "$APPLESCRIPT_BIN" has_gui_script`
+}
+
+# ------------------------------------
+# INVOKE IMAGE APPLICATIONS
+# ------------------------------------
+
+function run_image_alpha {
+  if [ "true" == $USE_IMAGE_ALPHA ]; then
+    if [ "true" == $HAS_IMAGE_ALPHA ]; then
+      find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 \
+      $PNGQUANT_PATH --ext=.png --force --speed=1 --quality=75-100 --
+    else
+      fatal "ImageAlpha is not installed (http://pngmini.com)"
+    fi
+  fi
+}
+
+function run_jpegmini {
+  if [ "true" == $USE_JPEGMINI ]; then
+    if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ]; then
+      if [ "true" == $HAS_GUI_SCRIPT ]; then
+        `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
+        sleep 1
+        `osascript "$APPLESCRIPT_BIN" wait_for JPEGmini` > /dev/null 2>&1
+        if [ "true" == $QUIT_ON_COMPLETE ]; then
+          osascript -e 'tell application "JPEGmini" to quit'
+        fi
+      else
+        fatal "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for \
+        assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
+      fi
+    else
+      fatal "JPEGmini is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+    fi
+  fi
+}
+
+function run_image_optim {
+  if [ "true" == $HAS_IMAGE_OPTIM ]; then
+    $IMAGEOPTIM_BIN_PATH 2>/dev/null "$TEMP_PATH"
+  fi
+}
+
+# ------------------------------------
+# POPULATE VARIABLES
+# ------------------------------------
+
+# Determine which Applications are installed.
+HAS_IMAGE_ALPHA=$(has_app $APP_FILENAME_IMAGE_ALPHA $APP_BUNDLE_ID_IMAGE_ALPHA)
+HAS_IMAGE_OPTIM=$(has_app $APP_FILENAME_IMAGE_ALPHA $APP_BUNDLE_ID_IMAGE_ALPHA)
+HAS_JPEGMINI=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI)
+HAS_JPEGMINI_LITE=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI_LITE)
+HAS_JPEGMINI_RETAIL=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI_RETAIL)
+HAS_GUI_SCRIPT=$(has_gui_script)
+
+# ------------------------------------
+# BEGIN PROCESSING
+# ------------------------------------
+
+prepare_images
+run_image_alpha
+run_jpegmini
+run_image_optim
+
+# ------------------------------------
+# TEMPORARY LOGS
+# ------------------------------------
+
+# for file in "${INDEX_ARRAY[@]}"; do
+#   temp_file=$(get_temp_path_for_file "$file")
+#   echo "$file"
+#   echo "-> $temp_file"
+# done
+
+echo "HAS_IMAGE_ALPHA     : $HAS_IMAGE_ALPHA"
+echo "HAS_IMAGE_OPTIM     : $HAS_IMAGE_OPTIM"
+echo "HAS_JPEGMINI        : $HAS_JPEGMINI"
+echo "HAS_JPEGMINI_LITE   : $HAS_JPEGMINI_LITE"
+echo "HAS_JPEGMINI_RETAIL : $HAS_JPEGMINI_RETAIL"
+echo "HAS_GUI_SCRIPT      : $HAS_GUI_SCRIPT"

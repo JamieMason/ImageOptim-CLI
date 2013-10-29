@@ -4,10 +4,6 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    environment: {
-      base: require('./environment/base.json')
-    },
-
     watch: {
       scripts: {
         files: ['src/**/*'],
@@ -21,28 +17,13 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         files: [{
-          src: [
-            'src/applescript/file_header.txt',
-            'src/applescript/copyright.txt',
-            'src/applescript/has_app_installed.applescript',
-            'src/applescript/has_gui_script.applescript',
-            'src/applescript/run_jpegmini.applescript',
-            'src/applescript/wait_for.applescript',
-            'src/applescript/handle_terminal_input.applescript'
-          ],
+          src: 'src/imageOptimAppleScriptLib',
           dest: 'bin/imageOptimAppleScriptLib'
         }, {
-          src: [
-            'src/shell/file_header.txt',
-            'src/shell/copyright.txt',
-            'src/shell/variables.sh',
-            'src/shell/methods/*.sh',
-            'src/shell/options.sh',
-            'src/shell/run.sh'
-          ],
+          src: 'src/imageOptim',
           dest: 'bin/imageOptim'
         }, {
-          src: 'src/md/README.md',
+          src: 'src/README.md',
           dest: 'README.md'
         }]
       }
@@ -73,47 +54,44 @@ module.exports = function(grunt) {
 
   function mergeObjectWithFile(filePath, data, onComplete) {
     readFile(filePath, function(contents) {
-      Object.keys(data).forEach(function(token){
+      Object.keys(data).forEach(function(token) {
         contents = contents.replace(new RegExp('\\{\\{' + token + '\\}\\}', 'g'), data[token]);
       });
       writeFile(filePath, contents, onComplete);
     });
   }
 
-  function lineToShellEcho (line) {
+  function lineToShellEcho(line) {
     return '  echo "' + line + '"';
   }
 
-  function lineToMarkdownCodeBlock (line) {
+  function lineToMarkdownCodeBlock(line) {
     return '    ' + line;
   }
 
-  grunt.registerMultiTask('environment', 'Apply environment config to build', function() {
+  grunt.registerTask('environment', 'Apply environment config to build', function() {
 
-    var task = this;
-    var taskComplete = task.async();
+    var done = this.async();
+    var data = {
+      version: require('./package.json').version
+    };
 
-    // @TODO: DRY this mess up
-    // @TODO: use promises
+    readFile('src/usage.txt', function(usage) {
 
-    task.data.version = require('./package.json').version;
+      data.usage = usage.split('\n').map(lineToShellEcho).join('\n');
 
-    readFile('src/txt/usage.txt', function(usage) {
+      readFile('src/examples.md', function(examples) {
 
-      task.data.usage = usage.split('\n').map(lineToShellEcho).join('\n');
+        data.examples = examples.split('\n').map(lineToShellEcho).join('\n');
 
-      readFile('src/md/examples.md', function(examples) {
+        mergeObjectWithFile('bin/imageOptim', data, function() {
+          mergeObjectWithFile('bin/imageOptimAppleScriptLib', data, function() {
 
-        task.data.examples = examples.split('\n').map(lineToShellEcho).join('\n');
+            data.usage = usage.split('\n').map(lineToMarkdownCodeBlock).join('\n');
+            data.examples = examples;
 
-        mergeObjectWithFile('bin/imageOptim', task.data, function() {
-          mergeObjectWithFile('bin/imageOptimAppleScriptLib', task.data, function() {
-
-            task.data.usage = usage.split('\n').map(lineToMarkdownCodeBlock).join('\n');
-            task.data.examples = examples;
-
-            mergeObjectWithFile('README.md', task.data, function() {
-              taskComplete();
+            mergeObjectWithFile('README.md', data, function() {
+              done();
             });
 
           });
