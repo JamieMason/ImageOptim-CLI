@@ -241,7 +241,11 @@ function add_stdin_to_index {
 # If -d or --directory were supplied, add the contents of that directory to our processing index.
 function add_directory_option_to_index {
   if [ "$DIRECTORY_OPTION" != "false" ]; then
-    add_directory_to_index "$DIRECTORY_OPTION"
+    if [ -d "$DIRECTORY_OPTION" ]; then
+      add_directory_to_index "$DIRECTORY_OPTION"
+    else
+      echo "Value for --directory is not a directory: $LINE"
+    fi
   fi
 }
 
@@ -399,20 +403,3 @@ prepare_images
 run_image_alpha
 run_jpegmini
 run_image_optim
-
-# ------------------------------------
-# TEMPORARY LOGS
-# ------------------------------------
-
-# for file in "${INDEX_ARRAY[@]}"; do
-#   temp_file=$(get_temp_path_for_file "$file")
-#   echo "$file"
-#   echo "-> $temp_file"
-# done
-
-echo "HAS_IMAGE_ALPHA     : $HAS_IMAGE_ALPHA"
-echo "HAS_IMAGE_OPTIM     : $HAS_IMAGE_OPTIM"
-echo "HAS_JPEGMINI        : $HAS_JPEGMINI"
-echo "HAS_JPEGMINI_LITE   : $HAS_JPEGMINI_LITE"
-echo "HAS_JPEGMINI_RETAIL : $HAS_JPEGMINI_RETAIL"
-echo "HAS_GUI_SCRIPT      : $HAS_GUI_SCRIPT"
