@@ -262,7 +262,7 @@ function add_file_to_index {
 # Add all files in a directory to our index file.
 # param  {DirectoryPath}  $1  directory
 function add_directory_to_index {
-  find "$1" -iregex $FILE_TYPES_REGEX_IMAGE_OPTIM -type f -print0 | while read -d '' -r file; do
+  find -E "$1" -iregex $FILE_TYPES_REGEX_IMAGE_OPTIM -type f -print0 | while read -d '' -r file; do
     add_file_to_index "$file"
   done
 }
