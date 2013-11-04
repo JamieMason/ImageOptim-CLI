@@ -36,10 +36,18 @@
     "pngcrush",
     "pngout"
   ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
   "devDependencies": {
-    "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-watch": "~0.4.4"
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-jasmine-node": "~0.1.0",
+    "jasmine-expect": "~1.21.0"
   },
   "contributors": [
     "Jamie Mason (https://github.com/JamieMason)",
