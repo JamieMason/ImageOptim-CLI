@@ -3,3 +3,5 @@
 environment/
 Gruntfile.js
 src/
+test/
+tasks/
