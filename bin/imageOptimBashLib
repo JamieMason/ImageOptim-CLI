@@ -28,7 +28,7 @@
 # ------------------------------------
 
 # current version of ImageOptim-CLI from package.json
-VERSION="{{version}}"
+VERSION="1.6.23"
 
 # {DirectoryPath} Absolute file system path to this shell script.
 CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -121,51 +121,56 @@ function success {
 
 # Display usage information
 function usage {
-{{usage}}
+  echo "Usage: imageOptim [options]"
+  echo ""
+  echo "Options:"
+  echo ""
+  echo "  -d, --directory     directory of images to process"
+  echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app *"
+  echo "  -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **"
+  echo "  -q, --quit          quit all apps when complete"
+  echo "  -h, --help          display this usage information"
+  echo "  -e, --examples      display some example commands and uses"
+  echo "  -v, --version       display the version number"
+  echo ""
+  echo "*  http://pngmini.com"
+  echo "** https://itunes.apple.com/us/app/jpegmini/id498944723"
+  echo ""
 }
 
 # Display usage examples
 function examples {
-{{examples}}
+  echo "### Optimise a directory of images"
+  echo ""
+  echo "This command will optimise all image files in your Awesome project."
+  echo ""
+  echo "    imageOptim --directory ~/Sites/Awesome # [options]"
+  echo ""
+  echo "### Optimise a filtered set of images"
+  echo ""
+  echo "This command will optimise just the .jpg files in your Awesome project."
+  echo ""
+  echo "    find ~/Sites/Awesome -name '*.jpg' | imageOptim # [options]"
+  echo ""
+  echo "### Passing additional options"
+  echo ""
+  echo "The long format for enabling options is as follows;"
+  echo ""
+  echo "    imageOptim --jpeg-mini --image-alpha --quit --directory path/to/images"
+  echo ""
+  echo "The equivalent of the above in short format is as follows;"
+  echo ""
+  echo "    imageOptim -j -a -q -d path/to/images"
+  echo ""
+  echo "### Adding to git pre-commit hook"
+  echo ""
+  echo "Adding the below to **your_project/.git/hooks/pre-commit** will run ImageOptim-CLI"
+  echo "each time you commit new and changed files into your project. Any files which"
+  echo "aren't images will be ignored."
+  echo ""
+  echo "    git diff --cached --name-only --diff-filter=ACM | imageOptim # [options]"
+  echo ""
 }
-
-# ------------------------------------
-# INGEST COMMAND LINE ARGUMENTS
-# ------------------------------------
-
-while [ "$1" != "" ]; do
-  case $1 in
-    -d | --directory )
-      shift;
-      DIRECTORY_OPTION="$1"
-      ;;
-    -a | --image-alpha )
-      USE_IMAGE_ALPHA="true"
-      ;;
-    -j | --jpeg-mini )
-      USE_JPEGMINI="true"
-      ;;
-    -q | --quit )
-      QUIT_ON_COMPLETE="true"
-      ;;
-    -h | --help )
-      usage;
-      exit 0
-      ;;
-    -e | --examples )
-      examples;
-      exit 0
-      ;;
-    -v | --version )
-      echo $VERSION;
-      exit 0
-      ;;
-    * )
-    usage
-    exit 1
-  esac
-  shift
-done
 
 # ------------------------------------
 # DETERMINE WHAT EXISTS AT A GIVEN LOCATION

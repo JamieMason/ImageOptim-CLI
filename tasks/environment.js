@@ -47,6 +47,7 @@ module.exports = function(grunt) {
     var paths = {
       examples: 'src/examples.md',
       imageOptim: 'bin/imageOptim',
+      imageOptimBashLib: 'bin/imageOptimBashLib',
       imageOptimAppleScriptLib: 'bin/imageOptimAppleScriptLib',
       npmMeta: 'package.json',
       readme: 'README.md',
@@ -59,20 +60,46 @@ module.exports = function(grunt) {
 
     data.version = require(paths.npmMeta).version;
 
+    // get usage template
     readFile(paths.usage, function(usage) {
+
+      // format usage appropriately for the terminal
       data.usage = usage.split('\n').map(lineToShellEcho).join('\n');
+
+      // get usage examples
       readFile(paths.examples, function(examples) {
+
+        // format usage examples appropriately for the terminal
         data.examples = examples.split('\n').map(lineToShellEcho).join('\n');
+
+        // interpolate data with the imageoptim-cli bash script
         mergeObjectWithFile(paths.imageOptim, data, function() {
-          mergeObjectWithFile(paths.imageOptimAppleScriptLib, data, function() {
-            data.usage = usage.split('\n').map(lineToMarkdownCodeBlock).join('\n');
-            data.examples = examples;
-            mergeObjectWithFile(paths.readme, data, function() {
-              done();
+
+          // interpolate data with the imageoptim-cli bash library
+          mergeObjectWithFile(paths.imageOptimBashLib, data, function() {
+
+            // interpolate data with the imageoptim-cli applescript library
+            mergeObjectWithFile(paths.imageOptimAppleScriptLib, data, function() {
+
+              // format usage appropriately for the readme
+              data.usage = usage.split('\n').map(lineToMarkdownCodeBlock).join('\n');
+
+              // take original example usage data which is appropriate for the readme
+              data.examples = examples;
+
+              // interpolate data with the readme
+              mergeObjectWithFile(paths.readme, data, function() {
+                done();
+              });
+
             });
+
           });
+
         });
+
       });
+
     });
 
   });
