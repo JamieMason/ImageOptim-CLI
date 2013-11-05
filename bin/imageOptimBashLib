@@ -119,15 +119,21 @@ function success {
   echo "\033[0m"
 }
 
+# Display an info message
+# param  {String}  $1  message
+function info {
+  printf "\e[90m$1\e[39m\n"
+}
+
 # Display a message in green
 # param  {String}  $1  message
-function green {
+function format_green {
   echo "\e[32m$1\e[39m"
 }
 
 # Display a message in red
 # param  {String}  $1  message
-function red {
+function format_red {
   echo "\e[31m$1\e[39m"
 }
 
@@ -191,10 +197,10 @@ function examples {
 function render_result {
   let local savings=$2-$3
   local savings_percent=$(bc <<< "scale=2; $savings/$2 * 100")
-  local size_before=$(red "$(toKb $2)kb")
-  local size_after=$(green "$(toKb $3)kb")
-  local savings=$(green "$(toKb $savings)kb")
-  local savings_percent=$(green "$savings_percent%%")
+  local size_before=$(format_red "$(toKb $2)kb")
+  local size_after=$(format_green "$(toKb $3)kb")
+  local savings=$(format_green "$(toKb $savings)kb")
+  local savings_percent=$(format_green "$savings_percent%%")
   printf "$1 was: $size_before now: $size_after saving: $savings ($savings_percent)\n"
 }
 
@@ -418,6 +424,7 @@ function has_gui_script {
 function run_image_alpha {
   if [ "true" == $USE_IMAGE_ALPHA ]; then
     if [ "true" == $HAS_IMAGE_ALPHA ]; then
+      info "Running ImageAlpha..."
       find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 \
       $PNGQUANT_PATH --ext=.png --force --speed=1 --quality=75-100 --
     else
@@ -431,6 +438,7 @@ function run_jpegmini {
   if [ "true" == $USE_JPEGMINI ]; then
     if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ]; then
       if [ "true" == $HAS_GUI_SCRIPT ]; then
+        info "Running JPEGmini..."
         `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
         sleep 1
         `osascript "$APPLESCRIPT_BIN" wait_for JPEGmini` > /dev/null 2>&1
@@ -450,7 +458,10 @@ function run_jpegmini {
 # If enabled and installed, run ImageOptim on our temp directory
 function run_image_optim {
   if [ "true" == $HAS_IMAGE_OPTIM ]; then
+    info "Running ImageOptim..."
     $IMAGEOPTIM_BIN_PATH 2>/dev/null "$TEMP_PATH"
+  else
+    fatal "ImageOptim is not installed (http://imageoptim.com)"
   fi
 }
 
