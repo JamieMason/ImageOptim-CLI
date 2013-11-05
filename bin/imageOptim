@@ -68,7 +68,8 @@ HAS_GUI_SCRIPT=$(has_gui_script)
 
 init_temp_directory
 prepare_images
-# run_image_alpha
-# run_jpegmini
-# run_image_optim
+run_image_alpha
+run_jpegmini
+run_image_optim
 output_savings
+replace_originals

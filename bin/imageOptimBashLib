@@ -186,11 +186,11 @@ function examples {
 
 # Display the before/after result of a file
 # param  {String}  $1  label
-# param  {Number}  $1  size_before
-# param  {Number}  $1  size_after
+# param  {Number}  $2  size_before
+# param  {Number}  $3  size_after
 function render_result {
   let local savings=$2-$3
-  let local savings_percent=($savings/$2)*100
+  local savings_percent=$(bc <<< "scale=2; $savings/$2 * 100")
   local size_before=$(red "$(toKb $2)kb")
   local size_after=$(green "$(toKb $3)kb")
   local savings=$(green "$(toKb $savings)kb")
@@ -343,7 +343,7 @@ function get_temp_path_for_file {
   echo "${TEMP_PATH}/${image_type}$1"
 }
 
-# Copy all files received over stdin to a temp directory, grouped by file extension.
+# Copy all files received to a temp directory, grouped by file extension.
 function populate_temp_directories {
   local image_type
   local temp_file
@@ -352,6 +352,22 @@ function populate_temp_directories {
     temp_file=$(get_temp_path_for_file "$source_file")
     if [[ $image_type != "unsupported" ]]; then
       ditto "$source_file" "$temp_file"
+    fi
+  done
+}
+
+# @TODO: DRY these two methods
+
+# Copy all files received back to their original locations.
+function replace_originals {
+  local image_type
+  local temp_file
+  for source_file in "${INDEX_ARRAY[@]}"; do
+    image_type=$(get_image_type "$source_file")
+    temp_file=$(get_temp_path_for_file "$source_file")
+    if [[ $image_type != "unsupported" ]]; then
+      ditto "$temp_file" "$source_file"
+      rm "$temp_file"
     fi
   done
 }

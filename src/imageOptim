@@ -72,3 +72,4 @@ run_image_alpha
 run_jpegmini
 run_image_optim
 output_savings
+replace_originals
