@@ -140,7 +140,7 @@ on wait_for(processName)
       set cpuPercent to (do shell script getCpuPercent) as number
 
       -- give the app a little time to work
-      delay 2
+      delay 0.5
 
       -- if the app is idle
       if (cpuPercent) < 1 then
