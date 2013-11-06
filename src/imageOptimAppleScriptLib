@@ -117,69 +117,45 @@ end run_jpegmini
 on wait_for(processName)
   tell application "System Events"
 
-    -- determine the localised decimal separator we will encounter in the getCpuPercent variable
-    set test_decimal to 1.5
-    set cc to test_decimal as text
-
-    if cc is not test_decimal then
-      set local_separator to (characters 2 thru 2 of cc) as string
-    else
-      set local_separator to "."
-    end if
-
-    -- assuming that there's only either a "." or "," separator — we determine the wrong separator
-    if local_separator = "," then
-      set bad_separator to "."
-    else
-      set bad_separator to ","
-    end if
-
     set idleCount to 0
 
     repeat
 
-      -- get a process id we can pass to `ps`
-      set PID to unix id of process processName
+      -- get all process information | filtered to JPEGmini
+      set getRawProcess to "ps aux | grep '/Applications/JPEGmini'"
 
-      -- filter active process output to just JPEGmini, then to just the % CPU
-      set getCpuPercent to "ps aux | grep " & PID & " | grep -v grep | awk '{print $3}'"
+      -- filter out JPEGmini grep | get column 3 of output (% CPU)
+      set filterRawProcess to "grep -v grep | awk '{print $3}'"
+
+      -- store above pipe chain in a variable
+      set getRawCpu to "RAWCPU=$(" & getRawProcess & " | " & filterRawProcess & ")"
+
+      -- round that variable to a whole number
+      set outputRoundedCpu to "$(printf \"%.0f\" $(echo \"scale=2;$RAWCPU\" | bc))"
+
+      -- join the two commands and echo it out to applescript
+      set getCpuPercent to getRawCpu & " && echo " & outputRoundedCpu
 
       -- get raw terminal string output
-      set cpuPercent to (do shell script getCpuPercent)
-
-      -- normalise number format, handling different localisations
-      try
-        set cpuPercent to cpuPercent as number
-      on error
-        set AppleScript's text item delimiters to bad_separator
-        set cpuPercent to (text item 1 of cpuPercent) & local_separator & (text item 2 of cpuPercent)
-      end try
-
-      -- convert to number
-      set cpuPercent to (round (cpuPercent as number) rounding toward zero)
+      set cpuPercent to (do shell script getCpuPercent) as number
 
       -- give the app a little time to work
       delay 2
 
       -- if the app is idle
       if (cpuPercent) < 1 then
-
         -- increment number of times we've found the app consecutively idle
         set idleCount to idleCount + 1
-
         -- if it's been idle for long enough we can exit
         if (idleCount) > 2 then
           exit repeat
         end if
-
-      -- otherwise reset the counter to wait for a period of consecutive inactivity vs a blip
-      else
-        set idleCount to 0
       end if
 
       -- (implied else: by not exiting we repeat again)
 
     end repeat
+
   end tell
 end wait_for
 
