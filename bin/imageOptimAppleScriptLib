@@ -80,12 +80,20 @@ on run_jpegmini(imgPath, appName)
         -- command+shift+g in Finder lets us enter file paths direct
         keystroke "g" using {command down, shift down}
 
+        -- enter path
         set value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini" to imgPath
 
-        delay 2
-
-        -- and navigate to it
-        keystroke return
+        -- wait for Finder to do it
+        repeat
+          set actualValue to value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini"
+          if actualValue is not equal to imgPath then
+            delay 0.5
+          else
+            -- and navigate to it
+            keystroke return
+            exit repeat
+          end if
+        end repeat
 
         -- let Finder resolve the path
         delay 2
