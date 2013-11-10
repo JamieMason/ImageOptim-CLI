@@ -94,6 +94,7 @@ HAS_IMAGE_OPTIM="false"
 HAS_JPEGMINI="false"
 HAS_JPEGMINI_LITE="false"
 HAS_JPEGMINI_RETAIL="false"
+HAS_IMAGEMAGICK="false"
 
 # {BooleanString} Whether GUI Scripting is enabled, which is needed to robotically control OS X in
 # order to automate JPEGmini, which offers no command line access. This will be set to true
@@ -151,6 +152,7 @@ function examples {
 # param  {String}  $1  label
 # param  {Number}  $2  size_before
 # param  {Number}  $3  size_after
+# param  {Number}  $4  quality_loss
 function render_result {
   let local savings=$2-$3
   local savings_percent=$(bc <<< "scale=2; $savings/$2 * 100")
@@ -158,13 +160,21 @@ function render_result {
   local size_after=$(format_green "$(toKb $3)kb")
   local savings=$(format_green "$(toKb $savings)kb")
   local savings_percent=$(format_green "$savings_percent%%")
-  printf "$1 was: $size_before now: $size_after saving: $savings ($savings_percent)\n"
+  local quality_loss=$(bc <<< "scale=2; 100-$4")
+  local quality_loss=$(format_green "$quality_loss%%")
+  local output="$1 was: $size_before now: $size_after saving: $savings ($savings_percent)"
+  if [[ $HAS_IMAGEMAGICK != "false" ]]; then
+    local output="$output quality: $quality_loss"
+  fi
+  printf "$output\n"
 }
 
 # Display the before/after results of all files
 function output_savings {
   local total_before=0
   local total_after=0
+  local perfect_quality=0
+  local actual_quality=0
   for source_file in "${INDEX_ARRAY[@]}"; do
     local image_type=$(get_image_type "$source_file")
     if [[ $image_type != "unsupported" ]]; then
@@ -173,15 +183,30 @@ function output_savings {
       local size_after=$(sizeInBytes "$temp_file")
       let local total_before=$total_before+$size_before
       let local total_after=$total_after+$size_after
-      render_result "$source_file" $size_before $size_after
+      local perfect_quality=$(bc <<< "scale=2; $perfect_quality+100")
+      local quality_loss="false"
+      if [[ $HAS_IMAGEMAGICK == "true" ]]; then
+        local quality_loss=$(compare -metric MSE "$source_file" "$temp_file" /dev/null 2>&1 >/dev/null | awk '{print $1}')
+        local actual_quality=$(bc <<< "scale=2; $actual_quality+$quality_loss")
+      fi
+      render_result "$source_file" $size_before $size_after $quality_loss
     fi
   done
-  render_result "TOTAL" $total_before $total_after
+  render_result "TOTAL" $total_before $total_after $quality_loss
 }
 
 # ------------------------------------
 # DETERMINE WHAT EXISTS AT A GIVEN LOCATION
 # ------------------------------------
+
+# State whether eg node, brew, gem etc is installed
+# param   {CliApp}         $1  bin
+# return  {BooleanString}      is_installed
+function bin_is_installed {
+  local is_installed="true"
+  type $1 >/dev/null 2>&1 || { local is_installed="false"; }
+  echo "$is_installed"
+}
 
 # State whether the entity at path is a "file", "directory", or "other".
 # param   {EntityPath}  $1  entity
@@ -417,6 +442,9 @@ function run_image_optim {
     info "Running ImageOptim..."
     open -g -a $APP_FILENAME_IMAGE_OPTIM "$TEMP_PATH"
     `osascript "$APPLESCRIPT_BIN" wait_for ImageOptim` > /dev/null 2>&1
+    if [ "true" == $QUIT_ON_COMPLETE ]; then
+      osascript -e 'tell application "ImageOptim" to quit'
+    fi
   else
     fatal "ImageOptim is not installed (http://imageoptim.com)"
   fi
