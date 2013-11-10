@@ -6,11 +6,11 @@
 + Improved performance when automating JPEGmini with files received via stdin.
 + Added a colourful summary of file sizes before and after optimisation — plus what percentage of the original file was removed:
 
-      images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%)
-      
+        images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%)
+
 + If [ImageMagick](http://www.imagemagick.org) is installed, the summary will also include what percentage of the original file's quality was retained during optimisation.
 
-      images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%) quality: 96.06224%
+        images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%) quality: 96.06224%
 
 + ImageAlpha's improved pngquant is run over multiple cores for better performance.
 + Fixed issue where JPEGmini can display a prompt regarding it wanting to quit.
