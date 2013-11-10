@@ -28,7 +28,7 @@
 # ------------------------------------
 
 # current version of ImageOptim-CLI from package.json
-VERSION="1.7.0"
+VERSION="1.7.1"
 
 # {DirectoryPath} Absolute file system path to this shell script.
 CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -306,7 +306,7 @@ function add_directory_to_index {
 
 # Read files received via stdin into an index which will outlive the LINE variable.
 function add_stdin_to_index {
-  if [ "$DIRECTORY_OPTION" != "false" ]; then
+  if [ "$DIRECTORY_OPTION" == "false" ]; then
     while read LINE; do
       local entity_type=$(get_entity_type "$LINE")
       if [ $entity_type == "file" ]; then
