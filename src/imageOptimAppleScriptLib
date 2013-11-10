@@ -81,11 +81,11 @@ on run_jpegmini(imgPath, appName)
         keystroke "g" using {command down, shift down}
 
         -- enter path
-        set value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini" to imgPath
+        set value of text field 1 of sheet 1 of sheet 1 of window appName to imgPath
 
         -- wait for Finder to do it
         repeat
-          set actualValue to value of text field 1 of sheet 1 of sheet 1 of window "JPEGmini"
+          set actualValue to value of text field 1 of sheet 1 of sheet 1 of window appName
           if actualValue is not equal to imgPath then
             delay 0.5
           else
@@ -130,7 +130,7 @@ on wait_for(processName)
     repeat
 
       -- get all process information | filtered to JPEGmini
-      set getRawProcess to "ps aux | grep '/Applications/JPEGmini'"
+      set getRawProcess to "ps aux | grep '/Applications/" & processName & "'"
 
       -- filter out JPEGmini grep | get column 3 of output (% CPU)
       set filterRawProcess to "grep -v grep | awk '{print $3}'"
