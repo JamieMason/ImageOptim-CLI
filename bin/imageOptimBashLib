@@ -292,7 +292,7 @@ function add_file_to_index {
   if [ $image_type != "unsupported" ]; then
     echo "$1" >> $INDEX_FILE
   else
-    echo "Ignored as an unsupported file type: $LINE"
+    info "Ignored as an unsupported file type: $LINE"
   fi
 }
 
@@ -308,14 +308,13 @@ function add_directory_to_index {
 function add_stdin_to_index {
   if ! [ -t 0 ]; then
     while read LINE; do
-      echo 33
       local entity_type=$(get_entity_type "$LINE")
       if [ $entity_type == "file" ]; then
         add_file_to_index "$LINE"
       elif [ $entity_type == "directory" ]; then
         add_directory_to_index "$LINE"
       else
-        echo "Ignored as neither file or directory: $LINE"
+        info "Ignored as neither file or directory: $LINE"
       fi
     done
   fi
@@ -327,7 +326,7 @@ function add_directory_option_to_index {
     if [ -d "$DIRECTORY_OPTION" ]; then
       add_directory_to_index "$DIRECTORY_OPTION"
     else
-      echo "Value for --directory is not a directory: $LINE"
+      info "Value for --directory is not a directory: $LINE"
     fi
   fi
 }
