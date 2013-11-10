@@ -440,7 +440,6 @@ function run_jpegmini {
       if [ "true" == $HAS_GUI_SCRIPT ]; then
         info "Running JPEGmini..."
         `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
-        sleep 1
         `osascript "$APPLESCRIPT_BIN" wait_for JPEGmini` > /dev/null 2>&1
         if [ "true" == $QUIT_ON_COMPLETE ]; then
           osascript -e 'tell application "JPEGmini" to quit'
@@ -459,7 +458,8 @@ function run_jpegmini {
 function run_image_optim {
   if [ "true" == $HAS_IMAGE_OPTIM ]; then
     info "Running ImageOptim..."
-    $IMAGEOPTIM_BIN_PATH 2>/dev/null "$TEMP_PATH"
+    open -g -a $APP_FILENAME_IMAGE_OPTIM "$TEMP_PATH"
+    `osascript "$APPLESCRIPT_BIN" wait_for ImageOptim` > /dev/null 2>&1
   else
     fatal "ImageOptim is not installed (http://imageoptim.com)"
   fi
