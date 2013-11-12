@@ -1,5 +1,9 @@
 # Change Log
 
+**1.7.2** — Nov. 12, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.1...1.7.2)
+
++ Applied bug fix for checking whether ImageOptim is installed.
+
 **1.7.1** — Nov. 10, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.6.19...1.7.1)
 
 + Started keeping this CHANGELOG.md.
