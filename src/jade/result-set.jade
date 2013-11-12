@@ -1,0 +1,112 @@
+//- ------------------------------------
+//- MIXINS
+//- ------------------------------------
+
+mixin button(key, label)
+  a.btn(href='/comparison/#{key}/#{sortBy}/#{sortDirection}/', class=filter == '#{key}' ? 'btn--active filter-#{key}' : 'filter-#{key}')
+    | #{label}
+
+mixin header(key)
+  th.heading.heading-col.heading-value(scope='col', class='#{key}')
+    a.sort(href='/comparison/#{filter}/#{key}/#{sortDirectionToggle}/')
+      = tools[key]
+
+mixin column(toolResult, imageResult, toolName)
+  td.value(class='#{toolResult.classNames}')
+    if toolResult.exclude
+      | N/A
+    else if toolResult.isNoOp
+      | No savings
+    else
+      a(href='/images/#{toolName}/#{imageResult.image}')
+        span.saving
+          | #{toolResult.sizeLossPercent}%
+        if !toolResult.isLossless
+          span.loss
+            | #{toolResult.qualityLossPercent}%
+
+//- ------------------------------------
+//- DOCUMENT
+//- ------------------------------------
+
+!!! 5
+html(lang='en-GB')
+  head
+    meta(charset='UTF-8')
+    title Comparison of #{filter} optimisation tools | ImageOptim-CLI
+    link(rel='icon', type='image/x-icon', href='/static/favicon.ico')
+    link(rel='stylesheet', href='/src/css/styles.min.css')
+  body
+
+    .head
+      hgroup
+        h1 ImageOptim-CLI
+        h2 Automates batch optimisation of images.
+      p
+        | Speeding up images often comes with a cost in picture quality and finding the right
+        | balance can be difficult.
+      p
+        | Here we compare the percentage file size savings across several image optimisation tools,
+        | followed by the percentage of quality lost.
+      p
+        | See the <a href="https://github.com/JamieMason/ImageOptim-CLI#installation">installation guide</a>, <a href="https://github.com/JamieMason/ImageOptim-CLI#examples">examples</a> and <a href="https://github.com/JamieMason/grunt-imageoptim">grunt-imageoptim</a>.
+
+    a(href='https://github.com/JamieMason/ImageOptim-CLI')
+      img.ribbon(src='/static/fork-me.png', alt='Fork ImageOptim-CLI on GitHub', width=149, height=149)
+
+    .results
+
+      .toolbar
+        .tbgroup.filters
+          | Show results for:
+          +button('all', 'All')
+          +button('gif', 'GIF')
+          +button('jpeg', 'JPEG')
+          +button('png', 'PNG')
+        .tbgroup.legend
+          | Legend:
+          span.key.best-score Best optimisation
+          span.key.degraded Size increased
+          span.key.lossiest Highest quality loss
+
+      table
+        caption
+          | Here we display the file sizes and quality loss of a collection of images after they
+          | have been compressed by each respective tool.
+
+        thead
+          tr
+            th.heading.heading-col.heading-heading(scope='col')
+              | Image
+            +header('imageoptim')
+            +header('imagealpha-and-imageoptim')
+            +header('jpegmini-and-imageoptim')
+            +header('kraken')
+            +header('codekit')
+            +header('grunt-contrib-imagemin')
+            +header('smushit')
+            +header('tinypng')
+
+        tbody
+          each imageResult in results
+            tr
+              th.heading.heading-row(scope='row')
+                a(href='/images/photoshop/#{imageResult.image}')
+                  | #{imageResult.image}
+                |  #{imageResult.size} bytes
+              +column(imageResult['imageoptim'], imageResult, 'imageoptim')
+              +column(imageResult['imagealpha-and-imageoptim'], imageResult, 'imagealpha-and-imageoptim')
+              +column(imageResult['jpegmini-and-imageoptim'], imageResult, 'jpegmini-and-imageoptim')
+              +column(imageResult['kraken'], imageResult, 'kraken')
+              +column(imageResult['codekit'], imageResult, 'codekit')
+              +column(imageResult['grunt-contrib-imagemin'], imageResult, 'grunt-contrib-imagemin')
+              +column(imageResult['smushit'], imageResult, 'smushit')
+              +column(imageResult['tinypng'], imageResult, 'tinypng')
+
+  script.
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-45466560-2', 'jamiemason.github.io');
+    ga('send', 'pageview');

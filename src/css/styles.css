@@ -1,0 +1,162 @@
+html,
+body {
+  margin: 0;
+  padding: 0.5em;
+  padding-top: 0;
+}
+body {
+  font: 14px "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.4;
+  background: #E3E3E3;
+  color: #252525;
+}
+a,
+a:visited {
+  color: #36C;
+}
+.sort,
+.sort:visited {
+  color: #252525;
+}
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+  caption {
+    display: none;
+  }
+  th,
+  td {
+    padding: 0.6em;
+  }
+  tbody {
+    font-size: 90%
+  }
+  tbody > tr > td,
+  tbody > tr > th {
+    border: 1px dashed #DDD;
+  }
+
+/* Common
+ ------------------------------------ */
+
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+/* Header/Summary
+ ------------------------------------ */
+
+.head {
+  width: 31em;
+  margin: 3em auto;
+  font-size: 130%;
+}
+  h1,
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 300%;
+  }
+  h2 {
+    font-weight: normal;
+    font-size: 140%;
+  }
+
+/* Results
+ ------------------------------------ */
+
+.results {
+  background: #F9F9F9;
+  padding: 2em;
+}
+
+/* Filters
+ ------------------------------------ */
+
+.toolbar {
+  text-align: center;
+  margin-bottom: 2em;
+}
+  .tbgroup {
+    display: inline-block;
+  }
+  .filters {
+    margin-right: 5em;
+  }
+    .btn {
+      background: transparent;
+      border-width: 0 0 4px 0;
+      border-style: solid;
+      border-color: #CCC;
+      color: #252525;
+      padding: 0.5em;
+      margin: 0 0.5em;
+      cursor: pointer;
+    }
+      .btn--active {
+        border-color: #36C;
+      }
+    .key {
+      padding: 0.5em;
+      margin-left: 0.5em;
+      font-size: 90%;
+    }
+
+/* Results Table
+ ------------------------------------ */
+
+.heading-heading {
+  width: 20em;
+}
+.heading-value {
+  width: 7em;
+  text-align: right;
+}
+.heading-heading,
+.heading-row {
+  text-align: left;
+}
+.heading-row {
+  font-weight: normal;
+}
+.value {
+  text-align: right;
+}
+
+/* Result Cells
+ ------------------------------------ */
+
+.value > a {
+  color: #252525;
+  text-decoration: none;
+}
+.value > a:hover {
+  text-decoration: underline;
+}
+.degraded,
+.degraded a {
+  background: #D62323;
+  color: #FCC
+}
+.best-score {
+  background: #8BBF36;
+}
+.lossiest .loss,
+.legend .lossiest {
+  color: #C00;
+}
+.loss:before {
+  content: ', ';
+}
+.na {
+  color: #CCC;
+  text-align: center;
+  vertical-align: middle;
+}
