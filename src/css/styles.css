@@ -26,6 +26,9 @@ table {
   caption {
     display: none;
   }
+  tr:nth-of-type(even) {
+    background: #F6F6F6;
+  }
   th,
   td {
     padding: 0.6em;
@@ -76,6 +79,9 @@ table {
   background: #F9F9F9;
   padding: 2em;
 }
+  .overflow {
+    overflow: auto;
+  }
 
 /* Filters
  ------------------------------------ */
@@ -86,9 +92,8 @@ table {
 }
   .tbgroup {
     display: inline-block;
-  }
-  .filters {
-    margin-right: 5em;
+    height: 3em;
+    margin: 0 1em;
   }
     .btn {
       background: transparent;
@@ -140,11 +145,6 @@ table {
 .value > a:hover {
   text-decoration: underline;
 }
-.degraded,
-.degraded a {
-  background: #D62323;
-  color: #FCC
-}
 .best-score {
   background: #8BBF36;
 }
@@ -156,8 +156,88 @@ table {
   content: ', ';
   color: #252525;
 }
+.degraded,
+.degraded a,
+.degraded .loss:before {
+  background: #D62323;
+  color: #FCC
+}
 .na {
   color: #CCC;
-  text-align: center;
-  vertical-align: middle;
+}
+
+@media
+  only screen and (max-width: 900px) {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+  }
+
+  tbody {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+
+  tbody .heading-row {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  tbody td {
+    /* Behave  like a "row" */
+    /*border: none;
+    border-bottom: 1px solid #eee;*/
+    position: relative;
+    padding-left: 50%;
+  }
+
+  tbody td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    /*padding-right: 10px;*/
+    white-space: nowrap;
+  }
+
+  /*
+  Label the data
+  */
+  td:nth-of-type(1):before { content: "ImageOptim"; }
+  td:nth-of-type(2):before { content: "ImageAlpha & ImageOptim"; }
+  td:nth-of-type(3):before { content: "JPEGmini & ImageOptim"; }
+  td:nth-of-type(4):before { content: "Kraken"; }
+  td:nth-of-type(5):before { content: "CodeKit"; }
+  td:nth-of-type(6):before { content: "grunt-contrib-imagemin"; }
+  td:nth-of-type(7):before { content: "Smushit"; }
+  td:nth-of-type(8):before { content: "TinyPNG"; }
+}
+
+@media
+  only screen and (max-width: 680px) {
+
+  tbody {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
 }

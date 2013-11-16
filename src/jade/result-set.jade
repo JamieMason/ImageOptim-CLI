@@ -69,39 +69,40 @@ html(lang='en-GB')
           span.key.degraded Size increased
           span.key.lossiest Highest quality loss
 
-      table
-        caption
-          | Here we display the file sizes and quality loss of a collection of images after they
-          | have been compressed by each respective tool.
+      .overflow
+        table
+          caption
+            | Here we display the file sizes and quality loss of a collection of images after they
+            | have been compressed by each respective tool.
 
-        thead
-          tr
-            th.heading.heading-col.heading-heading(scope='col')
-              | Image
-            +header('imageoptim')
-            +header('imagealpha-and-imageoptim')
-            +header('jpegmini-and-imageoptim')
-            +header('kraken')
-            +header('codekit')
-            +header('grunt-contrib-imagemin')
-            +header('smushit')
-            +header('tinypng')
-
-        tbody
-          each imageResult in results
+          thead
             tr
-              th.heading.heading-row(scope='row')
-                a(href='/ImageOptim-CLI/images/photoshop/#{imageResult.image}')
-                  | #{imageResult.image}
-                |  #{imageResult.size} bytes
-              +column(imageResult['imageoptim'], imageResult, 'imageoptim')
-              +column(imageResult['imagealpha-and-imageoptim'], imageResult, 'imagealpha-and-imageoptim')
-              +column(imageResult['jpegmini-and-imageoptim'], imageResult, 'jpegmini-and-imageoptim')
-              +column(imageResult['kraken'], imageResult, 'kraken')
-              +column(imageResult['codekit'], imageResult, 'codekit')
-              +column(imageResult['grunt-contrib-imagemin'], imageResult, 'grunt-contrib-imagemin')
-              +column(imageResult['smushit'], imageResult, 'smushit')
-              +column(imageResult['tinypng'], imageResult, 'tinypng')
+              th.heading.heading-col.heading-heading(scope='col')
+                | Image
+              +header('imageoptim')
+              +header('imagealpha-and-imageoptim')
+              +header('jpegmini-and-imageoptim')
+              +header('kraken')
+              +header('codekit')
+              +header('grunt-contrib-imagemin')
+              +header('smushit')
+              +header('tinypng')
+
+          tbody
+            each imageResult in results
+              tr
+                th.heading.heading-row(scope='row')
+                  a(href='/ImageOptim-CLI/images/photoshop/#{imageResult.image}')
+                    | #{imageResult.image}
+                  |  #{imageResult.size} bytes
+                +column(imageResult['imageoptim'], imageResult, 'imageoptim')
+                +column(imageResult['imagealpha-and-imageoptim'], imageResult, 'imagealpha-and-imageoptim')
+                +column(imageResult['jpegmini-and-imageoptim'], imageResult, 'jpegmini-and-imageoptim')
+                +column(imageResult['kraken'], imageResult, 'kraken')
+                +column(imageResult['codekit'], imageResult, 'codekit')
+                +column(imageResult['grunt-contrib-imagemin'], imageResult, 'grunt-contrib-imagemin')
+                +column(imageResult['smushit'], imageResult, 'smushit')
+                +column(imageResult['tinypng'], imageResult, 'tinypng')
 
   script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
