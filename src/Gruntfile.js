@@ -19,10 +19,10 @@ module.exports = function(grunt) {
 
   var tools = {
     'codekit': 'CodeKit',
-    'grunt-contrib-imagemin': 'Grunt',
-    'imageoptim': 'Optim',
-    'imagealpha-and-imageoptim': 'Optim/IA',
-    'jpegmini-and-imageoptim': 'Optim/JM',
+    'grunt-contrib-imagemin': 'grunt-contrib-imagemin',
+    'imageoptim': 'ImageOptim',
+    'imagealpha-and-imageoptim': 'ImageAlpha & ImageOptim',
+    'jpegmini-and-imageoptim': 'JPEGmini & ImageOptim',
     'kraken': 'Kraken',
     'photoshop': 'Photoshop',
     'smushit': 'Smushit',
