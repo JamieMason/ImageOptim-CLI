@@ -154,6 +154,7 @@ table {
 }
 .loss:before {
   content: ', ';
+  color: #252525;
 }
 .na {
   color: #CCC;
