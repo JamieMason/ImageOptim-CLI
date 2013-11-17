@@ -39,6 +39,9 @@ EXEC_PATH="$PWD"
 # {FilePath} The location of our Applescript library file.
 APPLESCRIPT_BIN="$CLI_PATH/imageOptimAppleScriptLib"
 
+# {FilePath} The location of stat (see issue #59 with stat & homebrew)
+STAT_BIN="/usr/bin/stat"
+
 # {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
 # original locations.
 TEMP_PATH="${TMPDIR}imageoptim-cli"
@@ -457,7 +460,7 @@ function run_image_optim {
 # param   {FilePath}  $1  file
 # return  {Number}        file_size
 function sizeInBytes {
-  stat -f %z "$1"
+  echo $($STAT_BIN -f %z "$1")
 }
 
 # Convert a value in bytes to kilobytes in 3 decimal places, 1b is 0.001kb for example.
