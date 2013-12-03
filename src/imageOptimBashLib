@@ -321,8 +321,7 @@ function gather_paths_to_images {
 # each file individually.
 function init_temp_directory {
   rm -rf "$TEMP_PATH"
-  mkdir -p "$TEMP_PATH"
-  chmod 777 "$TEMP_PATH"
+  mkdir -p -m 777 "$TEMP_PATH"
 }
 
 # Determine the location in our temp directory a given file should be held at.
@@ -442,11 +441,7 @@ function run_jpegmini {
 function run_image_optim {
   if [ "true" == $HAS_IMAGE_OPTIM ]; then
     info "Running ImageOptim..."
-    open -g -a $APP_FILENAME_IMAGE_OPTIM "$TEMP_PATH"
-    `osascript "$APPLESCRIPT_BIN" wait_for ImageOptim` > /dev/null 2>&1
-    if [ "true" == $QUIT_ON_COMPLETE ]; then
-      osascript -e 'tell application "ImageOptim" to quit'
-    fi
+    $IMAGEOPTIM_BIN_PATH 2> /dev/null "$TEMP_PATH"
   else
     fatal "ImageOptim is not installed (http://imageoptim.com)"
   fi
