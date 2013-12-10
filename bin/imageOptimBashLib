@@ -111,16 +111,14 @@ HAS_GUI_SCRIPT="false"
 # Display a red error message and quit
 # param  {String}  $1  message
 function fatal {
-  printf "\e[31m✘ $1"
-  echo "\033[0m"
+  printf "\e[31m✘ $1\033[0m\n"
   exit 1
 }
 
 # Display a message in green with a tick by it
 # param  {String}  $1  message
 function success {
-  printf "\e[32m✔ $1"
-  echo "\033[0m"
+  printf "\e[32m✔ $1\033[0m\n"
 }
 
 # Display an info message
@@ -364,8 +362,7 @@ function gather_paths_to_images {
 # each file individually.
 function init_temp_directory {
   rm -rf "$TEMP_PATH"
-  mkdir -p "$TEMP_PATH"
-  chmod 777 "$TEMP_PATH"
+  mkdir -p -m 777 "$TEMP_PATH"
 }
 
 # Determine the location in our temp directory a given file should be held at.
@@ -472,8 +469,11 @@ function run_jpegmini {
           osascript -e 'tell application "JPEGmini" to quit'
         fi
       else
-        fatal "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for \
-        assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
+        local message=""
+        message="${message}To automate JPEGmini we need to enable GUI Scripting. Check 'Enable "
+        message="${message}access for assistive devices' under Accessibility in System Preferences"
+        message="${message}, then run ImageOptim-CLI again."
+        fatal "$message"
       fi
     else
       fatal "JPEGmini is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
@@ -485,11 +485,7 @@ function run_jpegmini {
 function run_image_optim {
   if [ "true" == $HAS_IMAGE_OPTIM ]; then
     info "Running ImageOptim..."
-    open -g -a $APP_FILENAME_IMAGE_OPTIM "$TEMP_PATH"
-    `osascript "$APPLESCRIPT_BIN" wait_for ImageOptim` > /dev/null 2>&1
-    if [ "true" == $QUIT_ON_COMPLETE ]; then
-      osascript -e 'tell application "ImageOptim" to quit'
-    fi
+    $IMAGEOPTIM_BIN_PATH 2> /dev/null "$TEMP_PATH"
   else
     fatal "ImageOptim is not installed (http://imageoptim.com)"
   fi
