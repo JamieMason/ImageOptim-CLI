@@ -327,7 +327,7 @@ function add_directory_option_to_index {
     if [ -d "$DIRECTORY_OPTION" ]; then
       add_directory_to_index "$DIRECTORY_OPTION"
     else
-      info "Value for --directory is not a directory: $LINE"
+      fatal "Value for --directory is not a directory: $LINE"
     fi
   fi
 }
