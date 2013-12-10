@@ -1,5 +1,14 @@
 # Change Log
 
+**1.7.9** — Dec. 10, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.3...1.7.9)
+
++ Added support for JPEGmini Lite (#41).
++ Changed CLI to exit instead of displaying a warning if the `--directory` option is not valid.
++ Fixed issue in Mavericks where JPEGmini would open but not select any files (#60).
++ Changed to run ImageOptim in CLI mode instead of using AppleScript, this removes support for Leopard and older (#61, #62, 53).
++ Fix minor formatting issues in Terminal output.
++ Ensure trailing slash on $TMPDIR.
+
 **1.7.3** — Nov. 17, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.2...1.7.3)
 
 + Applied bug fix for checking whether ImageOptim is installed.
