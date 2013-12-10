@@ -460,7 +460,7 @@ function run_image_alpha {
 # If enabled and installed, run JPEGmini on our temp directory
 function run_jpegmini {
   if [ "true" == $USE_JPEGMINI ]; then
-    if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ]; then
+    if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ] || [ "true" == $HAS_JPEGMINI_LITE ]; then
       if [ "true" == $HAS_GUI_SCRIPT ]; then
         info "Running JPEGmini..."
         `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
