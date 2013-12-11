@@ -323,12 +323,26 @@ function init_temp_directory {
   chmod 777 "$TEMP_PATH"
 }
 
+# Get the absolute path of an entity
+# param   {EntityPath}  $1  entity
+# return  {EntityPath}      absolute_path
+function to_absolute {
+  local present_dir="$PWD"
+  local file_dir=$(dirname "$1")
+  local file_name=$(basename "$1")
+  cd "$file_dir"
+  local absolute_dir="$PWD"
+  cd "$present_dir"
+  echo "${absolute_dir}/${file_name}"
+}
+
 # Determine the location in our temp directory a given file should be held at.
 # param   {FilePath}  $1  file
 # return  {FilePath}      temp_file
 function get_temp_path_for_file {
-  local image_type=$(get_image_type "$1")
-  echo "${TEMP_PATH}/${image_type}$1"
+  local absolute_path=$(to_absolute "$1")
+  local image_type=$(get_image_type "$absolute_path")
+  echo "${TEMP_PATH}/${image_type}/$absolute_path"
 }
 
 # Copy all files received to a temp directory, grouped by file extension.
