@@ -1,5 +1,9 @@
 # Change Log
 
+**1.7.10** — Dec. 11, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.9...1.7.10)
+
++ Expand paths to avoid issues with some formats of relative paths (#65).
+
 **1.7.9** — Dec. 10, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.3...1.7.9)
 
 + Added support for JPEGmini Lite (#41).
