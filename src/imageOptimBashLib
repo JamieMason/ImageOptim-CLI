@@ -87,7 +87,7 @@ APP_FILENAME_JPEGMINI="JPEGmini.app"
 APP_BUNDLE_ID_IMAGE_ALPHA="net.pornel.ImageAlpha"
 APP_BUNDLE_ID_IMAGE_OPTIM="net.pornel.ImageOptim"
 APP_BUNDLE_ID_JPEGMINI="com.icvt.JPEGmini"
-APP_BUNDLE_ID_JPEGMINI_LITE="com.icvt.JPEGmini-lite"
+APP_BUNDLE_ID_JPEGMINI_LITE="com.icvt.JPEGminiLite"
 APP_BUNDLE_ID_JPEGMINI_RETAIL="com.icvt.JPEGmini-retail"
 
 # {BooleanString} Whether each Application is installed, these will be set to true accordingly
