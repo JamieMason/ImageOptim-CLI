@@ -33,6 +33,10 @@ See [how ImageOptim performs compared to other image optimisation tools](http://
 
 The ImageOptim-CLI [Grunt](http://gruntjs.com) plugin is [grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim).
 
+## Alfred Workflow
+
+The ImageOptim-CLI Workflow for Alfred app is [alfred-image-optim-workflow](https://github.com/ramiroaraujo/alfred-image-optim-workflow)
+
 ## Demo
 
 There's a short [video demo](https://www.youtube.com/watch?v=HGBounRIzSs) to give you an idea of how it works.
