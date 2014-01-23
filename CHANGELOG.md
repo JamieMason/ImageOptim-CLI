@@ -1,5 +1,9 @@
 # Change Log
 
+**1.7.11** — Jan. 23, 2014 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.10...1.7.11)
+
++ Add FAQs and related projects to README.
+
 **1.7.10** — Dec. 11, 2013 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.9...1.7.10)
 
 + Expand paths to avoid issues with some formats of relative paths (#65).
