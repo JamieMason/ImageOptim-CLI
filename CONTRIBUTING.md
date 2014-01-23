@@ -2,6 +2,8 @@
 
 ## Creating issues
 
+Please first consult the README, which has a list of FAQs.
+
 Please include the version number of ImageOptim-CLI you're using (`imageOptim --version`) and if applicable to your issue the version numbers of ImageOptim, ImageAlpha and JPEGmini.
 
 ## Contributing code
