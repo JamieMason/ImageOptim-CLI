@@ -121,7 +121,10 @@ Adding the below to **your_project/.git/hooks/pre-commit** will run ImageOptim-C
 each time you commit new and changed files into your project. Any files which
 aren't images will be ignored.
 
-    git diff --cached --name-only --diff-filter=ACM | imageOptim # [options]
+```shell
+images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- '*.png' '*.jpg')
+$(exit $?) || echo $images | imageOptim && git add $images
+```
 
 
 
