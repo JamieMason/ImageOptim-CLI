@@ -31,7 +31,6 @@ see how it works.
   + [Comparison of image optimization tools](#comparison-of-image-optimization-tools)
   + [Article for Smashing Magazine](#article-for-smashing-magazine)
   + [Alfred workflow](#alfred-workflow)
-  + [Gulp Plugin](#gulp-plugin)
 + [FAQs](#faqs)
   + [General](#general)
   + [ImageOptim](#imageoptim)
@@ -156,12 +155,6 @@ Tool](http://www.smashingmagazine.com/2013/12/17/imageoptim-cli-batch-compressio
 
 The ImageOptim-CLI Workflow for Alfred app
 is [alfred-image-optim-workflow](https://github.com/ramiroaraujo/alfred-image-optim-workflow)
-
-
-### Gulp Plugin
-
-The ImageOptim-CLI [Gulp](http://gulpjs.com) plugin is
-[gulp-imageoptim](https://github.com/JamieMason/gulp-imageoptim).
 
 
 
