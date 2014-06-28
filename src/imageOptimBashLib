@@ -82,6 +82,7 @@ IMAGEOPTIM_BIN_PATH="/Applications/ImageOptim.app/Contents/MacOS/ImageOptim"
 APP_FILENAME_IMAGE_ALPHA="ImageAlpha.app"
 APP_FILENAME_IMAGE_OPTIM="ImageOptim.app"
 APP_FILENAME_JPEGMINI="JPEGmini.app"
+APP_FILENAME_JPEGMINI_LITE="JPEGmini Lite.app"
 
 # {String} The OS X application names.
 APP_NAME_JPEGMINI="JPEGmini"
@@ -404,7 +405,7 @@ function get_path_to_app_by_bundle_id {
 function has_app {
   local expected_app_name="$1"
   local actual_app_name=$(get_path_to_app_by_bundle_id "$2")
-  if [ $actual_app_name == $expected_app_name ]; then
+  if [ "$actual_app_name" == "$expected_app_name" ]; then
     echo "true"
   else
     echo "false"
