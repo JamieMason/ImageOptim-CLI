@@ -1,23 +1,6 @@
 [
   {
     "image": "gif-interlaced_bril.gif",
-    "imageoptim": {
-      "size": 67142,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1046,
-      "sizeLossPercent": 1.53,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.53,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
@@ -35,6 +18,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 67142,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1046,
+      "sizeLossPercent": 1.53,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.53,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
@@ -51,6 +51,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.01,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -85,23 +102,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -141,23 +141,6 @@
   },
   {
     "image": "gif-interlaced_grote-ogen.gif",
-    "imageoptim": {
-      "size": 79516,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1046,
-      "sizeLossPercent": 1.3,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.3,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
@@ -175,6 +158,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 79516,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1046,
+      "sizeLossPercent": 1.3,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.3,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
@@ -191,6 +191,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.01,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -225,23 +242,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -281,23 +281,6 @@
   },
   {
     "image": "gif-interlaced_logo.gif",
-    "imageoptim": {
-      "size": 8857,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1046,
-      "sizeLossPercent": 10.56,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 10.56,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
@@ -315,6 +298,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 8857,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1046,
+      "sizeLossPercent": 10.56,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 10.56,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
@@ -331,6 +331,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.08,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -365,23 +382,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -421,23 +421,6 @@
   },
   {
     "image": "gif-interlaced_oog.gif",
-    "imageoptim": {
-      "size": 116282,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 0.89,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 0.89,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
@@ -455,6 +438,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 116282,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 0.89,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 0.89,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
@@ -471,6 +471,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.01,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -505,23 +522,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -561,23 +561,6 @@
   },
   {
     "image": "gif-interlaced_patroon.gif",
-    "imageoptim": {
-      "size": 19181,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1723,
-      "sizeLossPercent": 8.24,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.24,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 19181,
       "meanErrorSquared": 0,
@@ -595,6 +578,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 19181,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1723,
+      "sizeLossPercent": 8.24,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.24,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 19181,
       "meanErrorSquared": 0,
@@ -611,6 +611,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.04,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -645,23 +662,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -701,23 +701,6 @@
   },
   {
     "image": "gif-interlaced_rood.gif",
-    "imageoptim": {
-      "size": 97960,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 1.06,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.06,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
@@ -735,6 +718,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 97960,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 1.06,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.06,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
@@ -751,6 +751,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.01,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -785,23 +802,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -841,23 +841,6 @@
   },
   {
     "image": "gif-interlaced_skyline.gif",
-    "imageoptim": {
-      "size": 126391,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 0.82,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 0.82,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
@@ -875,6 +858,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 126391,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 0.82,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 0.82,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
@@ -891,6 +891,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.01,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -925,23 +942,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -981,23 +981,6 @@
   },
   {
     "image": "gif-interlaced_streepjes.gif",
-    "imageoptim": {
-      "size": 2573,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 28.88,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 28.88,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
@@ -1015,6 +998,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 2573,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 28.88,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 28.88,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
@@ -1031,6 +1031,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.22,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -1065,23 +1082,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -1121,23 +1121,6 @@
   },
   {
     "image": "gif-interlaced_wolk.gif",
-    "imageoptim": {
-      "size": 107562,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 0.96,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 0.96,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
@@ -1155,6 +1138,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 107562,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 0.96,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 0.96,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
@@ -1171,6 +1171,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 0.96,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken best-score smallest lossless na"
     },
     "codekit": {
       "size": 0,
@@ -1205,23 +1222,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -1261,23 +1261,6 @@
   },
   {
     "image": "gif_bril.gif",
-    "imageoptim": {
-      "size": 67142,
-      "meanErrorSquared": 0,
-      "sizeLoss": 8504,
-      "sizeLossPercent": 11.24,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 11.24,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
@@ -1295,6 +1278,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 67142,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8504,
+      "sizeLossPercent": 11.24,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.24,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
@@ -1311,6 +1311,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 11.24,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken best-score smallest lossless na"
     },
     "codekit": {
       "size": 0,
@@ -1345,23 +1362,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -1401,23 +1401,6 @@
   },
   {
     "image": "gif_grote-ogen.gif",
-    "imageoptim": {
-      "size": 79516,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9814,
-      "sizeLossPercent": 10.99,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 10.99,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
@@ -1435,6 +1418,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 79516,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9814,
+      "sizeLossPercent": 10.99,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 10.99,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
@@ -1451,6 +1451,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 9.82,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -1485,23 +1502,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -1541,23 +1541,6 @@
   },
   {
     "image": "gif_logo.gif",
-    "imageoptim": {
-      "size": 8857,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1720,
-      "sizeLossPercent": 16.26,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 16.26,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
@@ -1575,6 +1558,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 8857,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1720,
+      "sizeLossPercent": 16.26,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 16.26,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
@@ -1591,6 +1591,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 16.26,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken best-score smallest lossless na"
     },
     "codekit": {
       "size": 0,
@@ -1625,23 +1642,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -1681,23 +1681,6 @@
   },
   {
     "image": "gif_oog.gif",
-    "imageoptim": {
-      "size": 116282,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9265,
-      "sizeLossPercent": 7.38,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7.38,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
@@ -1715,6 +1698,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 116282,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9265,
+      "sizeLossPercent": 7.38,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.38,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
@@ -1731,6 +1731,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 6.55,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -1765,23 +1782,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -1821,23 +1821,6 @@
   },
   {
     "image": "gif_patroon.gif",
-    "imageoptim": {
-      "size": 19181,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 5.17,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.17,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 19181,
       "meanErrorSquared": 0,
@@ -1854,6 +1837,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
+    },
+    "imageoptim": {
+      "size": 19181,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 5.17,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.17,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 19181,
@@ -1961,23 +1961,6 @@
   },
   {
     "image": "gif_rood.gif",
-    "imageoptim": {
-      "size": 97960,
-      "meanErrorSquared": 0,
-      "sizeLoss": 10139,
-      "sizeLossPercent": 9.38,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.38,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
@@ -1995,6 +1978,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 97960,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10139,
+      "sizeLossPercent": 9.38,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.38,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
@@ -2011,6 +2011,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 9.38,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken best-score smallest lossless na"
     },
     "codekit": {
       "size": 0,
@@ -2045,23 +2062,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -2101,23 +2101,6 @@
   },
   {
     "image": "gif_skyline.gif",
-    "imageoptim": {
-      "size": 126391,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9809,
-      "sizeLossPercent": 7.2,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7.2,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
@@ -2135,6 +2118,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 126391,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9809,
+      "sizeLossPercent": 7.2,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.2,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
@@ -2151,6 +2151,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 6.44,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -2185,23 +2202,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -2241,23 +2241,6 @@
   },
   {
     "image": "gif_streepjes.gif",
-    "imageoptim": {
-      "size": 2573,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1045,
-      "sizeLossPercent": 28.88,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 28.88,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
@@ -2275,6 +2258,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 2573,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1045,
+      "sizeLossPercent": 28.88,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 28.88,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
@@ -2291,6 +2291,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 28.88,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken best-score smallest lossless na"
     },
     "codekit": {
       "size": 0,
@@ -2325,23 +2342,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -2381,23 +2381,6 @@
   },
   {
     "image": "gif_wolk.gif",
-    "imageoptim": {
-      "size": 107562,
-      "meanErrorSquared": 0,
-      "sizeLoss": 11581,
-      "sizeLossPercent": 9.72,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.72,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
@@ -2415,6 +2398,23 @@
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
     },
+    "imageoptim": {
+      "size": 107562,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11581,
+      "sizeLossPercent": 9.72,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.72,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "imageoptim best-score smallest lossless"
+    },
     "jpegmini-and-imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
@@ -2431,6 +2431,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+    },
+    "kraken": {
+      "size": 0,
+      "meanErrorSquared": 0,
+      "sizeLoss": 0,
+      "sizeLossPercent": 0,
+      "qualityLossPercent": 0,
+      "exclude": true,
+      "score": 8.85,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken lossless na"
     },
     "codekit": {
       "size": 0,
@@ -2465,23 +2482,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "grunt-contrib-imagemin noop na"
-    },
-    "kraken": {
-      "size": 0,
-      "meanErrorSquared": 0,
-      "sizeLoss": 0,
-      "sizeLossPercent": 0,
-      "qualityLossPercent": 0,
-      "exclude": true,
-      "score": 0,
-      "isNoOp": true,
-      "isLossless": false,
-      "isSmaller": false,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken noop na"
     },
     "smushit": {
       "size": 0,
@@ -2522,13 +2522,13 @@
   {
     "image": "jpeg-colour-profile_bril.jpg",
     "kraken": {
-      "size": 13284,
+      "size": 13330,
       "meanErrorSquared": 8.48292,
-      "sizeLoss": 87919,
-      "sizeLossPercent": 86.87,
+      "sizeLoss": 87873,
+      "sizeLossPercent": 86.83,
       "qualityLossPercent": 12.89,
       "exclude": false,
-      "score": 61.09,
+      "score": 61.05,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -2555,23 +2555,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 85704,
-      "meanErrorSquared": 0,
-      "sizeLoss": 15499,
-      "sizeLossPercent": 15.31,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 15.31,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -2588,6 +2571,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15499,
+      "sizeLossPercent": 15.31,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 15.31,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 89934,
@@ -2662,13 +2662,13 @@
   {
     "image": "jpeg-colour-profile_grote-ogen.jpg",
     "kraken": {
-      "size": 15811,
+      "size": 15772,
       "meanErrorSquared": 7.80354,
-      "sizeLoss": 100080,
-      "sizeLossPercent": 86.36,
+      "sizeLoss": 100119,
+      "sizeLossPercent": 86.39,
       "qualityLossPercent": 16.68,
       "exclude": false,
-      "score": 53,
+      "score": 53.03,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -2695,23 +2695,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 100151,
-      "meanErrorSquared": 0,
-      "sizeLoss": 15740,
-      "sizeLossPercent": 13.58,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 13.58,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -2728,6 +2711,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15740,
+      "sizeLossPercent": 13.58,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 13.58,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 104758,
@@ -2802,13 +2802,13 @@
   {
     "image": "jpeg-colour-profile_logo.jpg",
     "kraken": {
-      "size": 30182,
+      "size": 30240,
       "meanErrorSquared": 13.1266,
-      "sizeLoss": 39151,
-      "sizeLossPercent": 56.47,
+      "sizeLoss": 39093,
+      "sizeLossPercent": 56.38,
       "qualityLossPercent": 19.95,
       "exclude": false,
-      "score": 16.57,
+      "score": 16.48,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -2835,23 +2835,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest"
     },
-    "imageoptim": {
-      "size": 47699,
-      "meanErrorSquared": 0,
-      "sizeLoss": 21634,
-      "sizeLossPercent": 31.2,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 31.2,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 47699,
       "meanErrorSquared": 0,
@@ -2868,6 +2851,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 21634,
+      "sizeLossPercent": 31.2,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 31.2,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 53076,
@@ -2959,13 +2959,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 42561,
+      "size": 42715,
       "meanErrorSquared": 5.93374,
-      "sizeLoss": 119188,
-      "sizeLossPercent": 73.69,
+      "sizeLoss": 119034,
+      "sizeLossPercent": 73.59,
       "qualityLossPercent": 10.17,
       "exclude": false,
-      "score": 53.35,
+      "score": 53.25,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -2974,23 +2974,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 145248,
-      "meanErrorSquared": 0,
-      "sizeLoss": 16501,
-      "sizeLossPercent": 10.2,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 10.2,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 145248,
@@ -3008,6 +2991,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 16501,
+      "sizeLossPercent": 10.2,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 10.2,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 150377,
@@ -3082,13 +3082,13 @@
   {
     "image": "jpeg-colour-profile_patroon.jpg",
     "kraken": {
-      "size": 105734,
+      "size": 105979,
       "meanErrorSquared": 80.1628,
-      "sizeLoss": 129279,
-      "sizeLossPercent": 55.01,
+      "sizeLoss": 129034,
+      "sizeLossPercent": 54.91,
       "qualityLossPercent": 26.48,
       "exclude": false,
-      "score": 2.05,
+      "score": 1.95,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3115,23 +3115,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 203036,
-      "meanErrorSquared": 0,
-      "sizeLoss": 31977,
-      "sizeLossPercent": 13.61,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 13.61,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 203036,
       "meanErrorSquared": 0,
@@ -3148,6 +3131,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 31977,
+      "sizeLossPercent": 13.61,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 13.61,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 210476,
@@ -3222,13 +3222,13 @@
   {
     "image": "jpeg-colour-profile_rood.jpg",
     "kraken": {
-      "size": 23530,
+      "size": 23604,
       "meanErrorSquared": 8.1078,
-      "sizeLoss": 112204,
-      "sizeLossPercent": 82.66,
+      "sizeLoss": 112130,
+      "sizeLossPercent": 82.61,
       "qualityLossPercent": 13.98,
       "exclude": false,
-      "score": 54.7,
+      "score": 54.65,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3255,23 +3255,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 119419,
-      "meanErrorSquared": 0,
-      "sizeLoss": 16315,
-      "sizeLossPercent": 12.02,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 12.02,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -3288,6 +3271,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 16315,
+      "sizeLossPercent": 12.02,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 12.02,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 123900,
@@ -3379,13 +3379,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 90899,
+      "size": 91031,
       "meanErrorSquared": 13.6704,
-      "sizeLoss": 140260,
-      "sizeLossPercent": 60.68,
+      "sizeLoss": 140128,
+      "sizeLossPercent": 60.62,
       "qualityLossPercent": 9.08,
       "exclude": false,
-      "score": 42.52,
+      "score": 42.46,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3394,23 +3394,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 209566,
-      "meanErrorSquared": 0,
-      "sizeLoss": 21593,
-      "sizeLossPercent": 9.34,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.34,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 209566,
@@ -3428,6 +3411,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 21593,
+      "sizeLossPercent": 9.34,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.34,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 215943,
@@ -3502,13 +3502,13 @@
   {
     "image": "jpeg-colour-profile_streepjes.jpg",
     "kraken": {
-      "size": 35001,
+      "size": 34951,
       "meanErrorSquared": 521.023,
-      "sizeLoss": 147822,
-      "sizeLossPercent": 80.86,
+      "sizeLoss": 147872,
+      "sizeLossPercent": 80.88,
       "qualityLossPercent": 68.59,
       "exclude": false,
-      "score": -56.32,
+      "score": -56.3,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3535,23 +3535,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 75491,
-      "meanErrorSquared": 0,
-      "sizeLoss": 107332,
-      "sizeLossPercent": 58.71,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 58.71,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 75491,
       "meanErrorSquared": 0,
@@ -3568,6 +3551,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 107332,
+      "sizeLossPercent": 58.71,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 58.71,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 86085,
@@ -3642,13 +3642,13 @@
   {
     "image": "jpeg-colour-profile_wolk.jpg",
     "kraken": {
-      "size": 17384,
+      "size": 17536,
       "meanErrorSquared": 2.15152,
-      "sizeLoss": 87146,
-      "sizeLossPercent": 83.37,
+      "sizeLoss": 86994,
+      "sizeLossPercent": 83.22,
       "qualityLossPercent": 6.22,
       "exclude": false,
-      "score": 70.93,
+      "score": 70.78,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3675,23 +3675,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 81793,
-      "meanErrorSquared": 0,
-      "sizeLoss": 22737,
-      "sizeLossPercent": 21.75,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 21.75,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -3708,6 +3691,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 22737,
+      "sizeLossPercent": 21.75,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 21.75,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 86058,
@@ -3782,13 +3782,13 @@
   {
     "image": "jpeg-optimised-colour-profile_bril.jpg",
     "kraken": {
-      "size": 13284,
+      "size": 13330,
       "meanErrorSquared": 8.48292,
-      "sizeLoss": 80760,
-      "sizeLossPercent": 85.87,
+      "sizeLoss": 80714,
+      "sizeLossPercent": 85.83,
       "qualityLossPercent": 12.89,
       "exclude": false,
-      "score": 60.09,
+      "score": 60.05,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3815,23 +3815,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 85704,
-      "meanErrorSquared": 0,
-      "sizeLoss": 8340,
-      "sizeLossPercent": 8.87,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.87,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -3848,6 +3831,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8340,
+      "sizeLossPercent": 8.87,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.87,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 89934,
@@ -3922,13 +3922,13 @@
   {
     "image": "jpeg-optimised-colour-profile_grote-ogen.jpg",
     "kraken": {
-      "size": 15811,
+      "size": 15772,
       "meanErrorSquared": 7.80354,
-      "sizeLoss": 94223,
-      "sizeLossPercent": 85.63,
+      "sizeLoss": 94262,
+      "sizeLossPercent": 85.67,
       "qualityLossPercent": 16.68,
       "exclude": false,
-      "score": 52.27,
+      "score": 52.31,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -3955,23 +3955,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 100151,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9883,
-      "sizeLossPercent": 8.98,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.98,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -3988,6 +3971,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9883,
+      "sizeLossPercent": 8.98,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.98,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 104758,
@@ -4062,13 +4062,13 @@
   {
     "image": "jpeg-optimised-colour-profile_logo.jpg",
     "kraken": {
-      "size": 30182,
+      "size": 30240,
       "meanErrorSquared": 13.1266,
-      "sizeLoss": 26963,
-      "sizeLossPercent": 47.18,
+      "sizeLoss": 26905,
+      "sizeLossPercent": 47.08,
       "qualityLossPercent": 19.95,
       "exclude": false,
-      "score": 7.28,
+      "score": 7.18,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4095,23 +4095,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest"
     },
-    "imageoptim": {
-      "size": 47699,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9446,
-      "sizeLossPercent": 16.53,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 16.53,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 47699,
       "meanErrorSquared": 0,
@@ -4128,6 +4111,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9446,
+      "sizeLossPercent": 16.53,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 16.53,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 53076,
@@ -4219,13 +4219,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 42561,
+      "size": 42715,
       "meanErrorSquared": 5.93374,
-      "sizeLoss": 114723,
-      "sizeLossPercent": 72.94,
+      "sizeLoss": 114569,
+      "sizeLossPercent": 72.84,
       "qualityLossPercent": 10.17,
       "exclude": false,
-      "score": 52.6,
+      "score": 52.5,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4234,23 +4234,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 145248,
-      "meanErrorSquared": 0,
-      "sizeLoss": 12036,
-      "sizeLossPercent": 7.65,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7.65,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 145248,
@@ -4268,6 +4251,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12036,
+      "sizeLossPercent": 7.65,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.65,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 150377,
@@ -4342,13 +4342,13 @@
   {
     "image": "jpeg-optimised-colour-profile_patroon.jpg",
     "kraken": {
-      "size": 105734,
+      "size": 105979,
       "meanErrorSquared": 80.1628,
-      "sizeLoss": 112364,
-      "sizeLossPercent": 51.52,
+      "sizeLoss": 112119,
+      "sizeLossPercent": 51.41,
       "qualityLossPercent": 26.48,
       "exclude": false,
-      "score": -1.44,
+      "score": -1.55,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4375,23 +4375,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 203036,
-      "meanErrorSquared": 0,
-      "sizeLoss": 15062,
-      "sizeLossPercent": 6.91,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 6.91,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 203036,
       "meanErrorSquared": 0,
@@ -4408,6 +4391,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15062,
+      "sizeLossPercent": 6.91,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.91,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 210476,
@@ -4482,13 +4482,13 @@
   {
     "image": "jpeg-optimised-colour-profile_rood.jpg",
     "kraken": {
-      "size": 23530,
+      "size": 23604,
       "meanErrorSquared": 8.1078,
-      "sizeLoss": 106309,
-      "sizeLossPercent": 81.88,
+      "sizeLoss": 106235,
+      "sizeLossPercent": 81.82,
       "qualityLossPercent": 13.98,
       "exclude": false,
-      "score": 53.92,
+      "score": 53.86,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4515,23 +4515,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 119419,
-      "meanErrorSquared": 0,
-      "sizeLoss": 10420,
-      "sizeLossPercent": 8.03,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.03,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -4548,6 +4531,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10420,
+      "sizeLossPercent": 8.03,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.03,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 123900,
@@ -4639,13 +4639,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 90899,
+      "size": 91031,
       "meanErrorSquared": 13.6704,
-      "sizeLoss": 136529,
-      "sizeLossPercent": 60.03,
+      "sizeLoss": 136397,
+      "sizeLossPercent": 59.97,
       "qualityLossPercent": 9.08,
       "exclude": false,
-      "score": 41.87,
+      "score": 41.81,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4654,23 +4654,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 209566,
-      "meanErrorSquared": 0,
-      "sizeLoss": 17862,
-      "sizeLossPercent": 7.85,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7.85,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 209566,
@@ -4688,6 +4671,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 17862,
+      "sizeLossPercent": 7.85,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.85,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 215943,
@@ -4762,13 +4762,13 @@
   {
     "image": "jpeg-optimised-colour-profile_streepjes.jpg",
     "kraken": {
-      "size": 35001,
+      "size": 34951,
       "meanErrorSquared": 521.023,
-      "sizeLoss": 55156,
-      "sizeLossPercent": 61.18,
+      "sizeLoss": 55206,
+      "sizeLossPercent": 61.23,
       "qualityLossPercent": 68.59,
       "exclude": false,
-      "score": -76,
+      "score": -75.95,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4795,23 +4795,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 75491,
-      "meanErrorSquared": 0,
-      "sizeLoss": 14666,
-      "sizeLossPercent": 16.27,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 16.27,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 75491,
       "meanErrorSquared": 0,
@@ -4828,6 +4811,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14666,
+      "sizeLossPercent": 16.27,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 16.27,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 86085,
@@ -4902,13 +4902,13 @@
   {
     "image": "jpeg-optimised-colour-profile_wolk.jpg",
     "kraken": {
-      "size": 17384,
+      "size": 17536,
       "meanErrorSquared": 2.15152,
-      "sizeLoss": 72712,
-      "sizeLossPercent": 80.71,
+      "sizeLoss": 72560,
+      "sizeLossPercent": 80.54,
       "qualityLossPercent": 6.22,
       "exclude": false,
-      "score": 68.27,
+      "score": 68.1,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -4935,23 +4935,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 81793,
-      "meanErrorSquared": 0,
-      "sizeLoss": 8303,
-      "sizeLossPercent": 9.22,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.22,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -4968,6 +4951,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8303,
+      "sizeLossPercent": 9.22,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.22,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 86058,
@@ -5042,13 +5042,13 @@
   {
     "image": "jpeg-optimised_bril.jpg",
     "kraken": {
-      "size": 13284,
+      "size": 13330,
       "meanErrorSquared": 8.48292,
-      "sizeLoss": 77598,
-      "sizeLossPercent": 85.38,
+      "sizeLoss": 77552,
+      "sizeLossPercent": 85.33,
       "qualityLossPercent": 12.89,
       "exclude": false,
-      "score": 59.6,
+      "score": 59.55,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5075,23 +5075,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 85704,
-      "meanErrorSquared": 0,
-      "sizeLoss": 5178,
-      "sizeLossPercent": 5.7,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.7,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -5108,6 +5091,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 5178,
+      "sizeLossPercent": 5.7,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.7,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 86911,
@@ -5182,13 +5182,13 @@
   {
     "image": "jpeg-optimised_grote-ogen.jpg",
     "kraken": {
-      "size": 15811,
+      "size": 15772,
       "meanErrorSquared": 7.80354,
-      "sizeLoss": 91061,
-      "sizeLossPercent": 85.21,
+      "sizeLoss": 91100,
+      "sizeLossPercent": 85.24,
       "qualityLossPercent": 16.68,
       "exclude": false,
-      "score": 51.85,
+      "score": 51.88,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5215,23 +5215,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 100151,
-      "meanErrorSquared": 0,
-      "sizeLoss": 6721,
-      "sizeLossPercent": 6.29,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 6.29,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -5248,6 +5231,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6721,
+      "sizeLossPercent": 6.29,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.29,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 101596,
@@ -5322,13 +5322,13 @@
   {
     "image": "jpeg-optimised_logo.jpg",
     "kraken": {
-      "size": 30182,
+      "size": 30240,
       "meanErrorSquared": 13.1266,
-      "sizeLoss": 23801,
-      "sizeLossPercent": 44.09,
+      "sizeLoss": 23743,
+      "sizeLossPercent": 43.98,
       "qualityLossPercent": 19.95,
       "exclude": false,
-      "score": 4.19,
+      "score": 4.08,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5355,23 +5355,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest"
     },
-    "imageoptim": {
-      "size": 47699,
-      "meanErrorSquared": 0,
-      "sizeLoss": 6284,
-      "sizeLossPercent": 11.64,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 11.64,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 47699,
       "meanErrorSquared": 0,
@@ -5388,6 +5371,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6284,
+      "sizeLossPercent": 11.64,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.64,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 50367,
@@ -5479,13 +5479,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 42561,
+      "size": 42715,
       "meanErrorSquared": 5.93374,
-      "sizeLoss": 111561,
-      "sizeLossPercent": 72.38,
+      "sizeLoss": 111407,
+      "sizeLossPercent": 72.28,
       "qualityLossPercent": 10.17,
       "exclude": false,
-      "score": 52.04,
+      "score": 51.94,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5494,23 +5494,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 145248,
-      "meanErrorSquared": 0,
-      "sizeLoss": 8874,
-      "sizeLossPercent": 5.76,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.76,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 145248,
@@ -5528,6 +5511,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8874,
+      "sizeLossPercent": 5.76,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.76,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 147215,
@@ -5602,13 +5602,13 @@
   {
     "image": "jpeg-optimised_patroon.jpg",
     "kraken": {
-      "size": 105734,
+      "size": 105979,
       "meanErrorSquared": 80.1628,
-      "sizeLoss": 109202,
-      "sizeLossPercent": 50.81,
+      "sizeLoss": 108957,
+      "sizeLossPercent": 50.69,
       "qualityLossPercent": 26.48,
       "exclude": false,
-      "score": -2.15,
+      "score": -2.27,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5635,23 +5635,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 203036,
-      "meanErrorSquared": 0,
-      "sizeLoss": 11900,
-      "sizeLossPercent": 5.54,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.54,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 203036,
       "meanErrorSquared": 0,
@@ -5668,6 +5651,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11900,
+      "sizeLossPercent": 5.54,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.54,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 207314,
@@ -5742,13 +5742,13 @@
   {
     "image": "jpeg-optimised_rood.jpg",
     "kraken": {
-      "size": 23530,
+      "size": 23604,
       "meanErrorSquared": 8.1078,
-      "sizeLoss": 103147,
-      "sizeLossPercent": 81.43,
+      "sizeLoss": 103073,
+      "sizeLossPercent": 81.37,
       "qualityLossPercent": 13.98,
       "exclude": false,
-      "score": 53.47,
+      "score": 53.41,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5775,23 +5775,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 119419,
-      "meanErrorSquared": 0,
-      "sizeLoss": 7258,
-      "sizeLossPercent": 5.73,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.73,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -5808,6 +5791,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7258,
+      "sizeLossPercent": 5.73,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.73,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 120738,
@@ -5899,13 +5899,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 90899,
+      "size": 91031,
       "meanErrorSquared": 13.6704,
-      "sizeLoss": 133367,
-      "sizeLossPercent": 59.47,
+      "sizeLoss": 133235,
+      "sizeLossPercent": 59.41,
       "qualityLossPercent": 9.08,
       "exclude": false,
-      "score": 41.31,
+      "score": 41.25,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -5914,23 +5914,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 209566,
-      "meanErrorSquared": 0,
-      "sizeLoss": 14700,
-      "sizeLossPercent": 6.55,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 6.55,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 209566,
@@ -5948,6 +5931,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14700,
+      "sizeLossPercent": 6.55,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.55,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 212781,
@@ -6022,13 +6022,13 @@
   {
     "image": "jpeg-optimised_streepjes.jpg",
     "kraken": {
-      "size": 35001,
+      "size": 34951,
       "meanErrorSquared": 521.023,
-      "sizeLoss": 51994,
-      "sizeLossPercent": 59.77,
+      "sizeLoss": 52044,
+      "sizeLossPercent": 59.82,
       "qualityLossPercent": 68.59,
       "exclude": false,
-      "score": -77.41,
+      "score": -77.36,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6055,23 +6055,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 75491,
-      "meanErrorSquared": 0,
-      "sizeLoss": 11504,
-      "sizeLossPercent": 13.22,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 13.22,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 75491,
       "meanErrorSquared": 0,
@@ -6088,6 +6071,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11504,
+      "sizeLossPercent": 13.22,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 13.22,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 84075,
@@ -6162,13 +6162,13 @@
   {
     "image": "jpeg-optimised_wolk.jpg",
     "kraken": {
-      "size": 17384,
+      "size": 17536,
       "meanErrorSquared": 2.15152,
-      "sizeLoss": 69550,
-      "sizeLossPercent": 80,
+      "sizeLoss": 69398,
+      "sizeLossPercent": 79.83,
       "qualityLossPercent": 6.22,
       "exclude": false,
-      "score": 67.56,
+      "score": 67.39,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6195,23 +6195,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 81793,
-      "meanErrorSquared": 0,
-      "sizeLoss": 5141,
-      "sizeLossPercent": 5.91,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.91,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -6228,6 +6211,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 5141,
+      "sizeLossPercent": 5.91,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.91,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 83173,
@@ -6302,13 +6302,13 @@
   {
     "image": "jpeg-progressive-colour-profile_bril.jpg",
     "kraken": {
-      "size": 13284,
+      "size": 13330,
       "meanErrorSquared": 8.48292,
-      "sizeLoss": 80760,
-      "sizeLossPercent": 85.87,
+      "sizeLoss": 80714,
+      "sizeLossPercent": 85.83,
       "qualityLossPercent": 12.89,
       "exclude": false,
-      "score": 60.09,
+      "score": 60.05,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6335,23 +6335,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 85704,
-      "meanErrorSquared": 0,
-      "sizeLoss": 8340,
-      "sizeLossPercent": 8.87,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.87,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -6368,6 +6351,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8340,
+      "sizeLossPercent": 8.87,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.87,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 89934,
@@ -6442,13 +6442,13 @@
   {
     "image": "jpeg-progressive-colour-profile_grote-ogen.jpg",
     "kraken": {
-      "size": 15811,
+      "size": 15772,
       "meanErrorSquared": 7.80354,
-      "sizeLoss": 94223,
-      "sizeLossPercent": 85.63,
+      "sizeLoss": 94262,
+      "sizeLossPercent": 85.67,
       "qualityLossPercent": 16.68,
       "exclude": false,
-      "score": 52.27,
+      "score": 52.31,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6475,23 +6475,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 100151,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9883,
-      "sizeLossPercent": 8.98,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.98,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -6508,6 +6491,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9883,
+      "sizeLossPercent": 8.98,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.98,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 104758,
@@ -6582,13 +6582,13 @@
   {
     "image": "jpeg-progressive-colour-profile_logo.jpg",
     "kraken": {
-      "size": 30182,
+      "size": 30240,
       "meanErrorSquared": 13.1266,
-      "sizeLoss": 26963,
-      "sizeLossPercent": 47.18,
+      "sizeLoss": 26905,
+      "sizeLossPercent": 47.08,
       "qualityLossPercent": 19.95,
       "exclude": false,
-      "score": 7.28,
+      "score": 7.18,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6615,23 +6615,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest"
     },
-    "imageoptim": {
-      "size": 47699,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9446,
-      "sizeLossPercent": 16.53,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 16.53,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 47699,
       "meanErrorSquared": 0,
@@ -6648,6 +6631,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9446,
+      "sizeLossPercent": 16.53,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 16.53,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 53076,
@@ -6739,13 +6739,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 42561,
+      "size": 42715,
       "meanErrorSquared": 5.93374,
-      "sizeLoss": 114723,
-      "sizeLossPercent": 72.94,
+      "sizeLoss": 114569,
+      "sizeLossPercent": 72.84,
       "qualityLossPercent": 10.17,
       "exclude": false,
-      "score": 52.6,
+      "score": 52.5,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6754,23 +6754,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 145248,
-      "meanErrorSquared": 0,
-      "sizeLoss": 12036,
-      "sizeLossPercent": 7.65,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7.65,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 145248,
@@ -6788,6 +6771,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12036,
+      "sizeLossPercent": 7.65,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.65,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 150377,
@@ -6862,13 +6862,13 @@
   {
     "image": "jpeg-progressive-colour-profile_patroon.jpg",
     "kraken": {
-      "size": 105734,
+      "size": 105979,
       "meanErrorSquared": 80.1628,
-      "sizeLoss": 112364,
-      "sizeLossPercent": 51.52,
+      "sizeLoss": 112119,
+      "sizeLossPercent": 51.41,
       "qualityLossPercent": 26.48,
       "exclude": false,
-      "score": -1.44,
+      "score": -1.55,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -6895,23 +6895,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 203036,
-      "meanErrorSquared": 0,
-      "sizeLoss": 15062,
-      "sizeLossPercent": 6.91,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 6.91,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 203036,
       "meanErrorSquared": 0,
@@ -6928,6 +6911,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 15062,
+      "sizeLossPercent": 6.91,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.91,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 210476,
@@ -7002,13 +7002,13 @@
   {
     "image": "jpeg-progressive-colour-profile_rood.jpg",
     "kraken": {
-      "size": 23530,
+      "size": 23604,
       "meanErrorSquared": 8.1078,
-      "sizeLoss": 106309,
-      "sizeLossPercent": 81.88,
+      "sizeLoss": 106235,
+      "sizeLossPercent": 81.82,
       "qualityLossPercent": 13.98,
       "exclude": false,
-      "score": 53.92,
+      "score": 53.86,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7035,23 +7035,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 119419,
-      "meanErrorSquared": 0,
-      "sizeLoss": 10420,
-      "sizeLossPercent": 8.03,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.03,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -7068,6 +7051,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10420,
+      "sizeLossPercent": 8.03,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.03,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 123900,
@@ -7159,13 +7159,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 90899,
+      "size": 91031,
       "meanErrorSquared": 13.6704,
-      "sizeLoss": 136529,
-      "sizeLossPercent": 60.03,
+      "sizeLoss": 136397,
+      "sizeLossPercent": 59.97,
       "qualityLossPercent": 9.08,
       "exclude": false,
-      "score": 41.87,
+      "score": 41.81,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7174,23 +7174,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 209566,
-      "meanErrorSquared": 0,
-      "sizeLoss": 17862,
-      "sizeLossPercent": 7.85,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7.85,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 209566,
@@ -7208,6 +7191,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 17862,
+      "sizeLossPercent": 7.85,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.85,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 215943,
@@ -7282,13 +7282,13 @@
   {
     "image": "jpeg-progressive-colour-profile_streepjes.jpg",
     "kraken": {
-      "size": 35001,
+      "size": 34951,
       "meanErrorSquared": 521.023,
-      "sizeLoss": 55156,
-      "sizeLossPercent": 61.18,
+      "sizeLoss": 55206,
+      "sizeLossPercent": 61.23,
       "qualityLossPercent": 68.59,
       "exclude": false,
-      "score": -76,
+      "score": -75.95,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7315,23 +7315,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 75491,
-      "meanErrorSquared": 0,
-      "sizeLoss": 14666,
-      "sizeLossPercent": 16.27,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 16.27,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 75491,
       "meanErrorSquared": 0,
@@ -7348,6 +7331,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14666,
+      "sizeLossPercent": 16.27,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 16.27,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 86085,
@@ -7422,13 +7422,13 @@
   {
     "image": "jpeg-progressive-colour-profile_wolk.jpg",
     "kraken": {
-      "size": 17384,
+      "size": 17536,
       "meanErrorSquared": 2.15152,
-      "sizeLoss": 72712,
-      "sizeLossPercent": 80.71,
+      "sizeLoss": 72560,
+      "sizeLossPercent": 80.54,
       "qualityLossPercent": 6.22,
       "exclude": false,
-      "score": 68.27,
+      "score": 68.1,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7455,23 +7455,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 81793,
-      "meanErrorSquared": 0,
-      "sizeLoss": 8303,
-      "sizeLossPercent": 9.22,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.22,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -7488,6 +7471,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8303,
+      "sizeLossPercent": 9.22,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.22,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 86058,
@@ -7562,13 +7562,13 @@
   {
     "image": "jpeg-progressive_bril.jpg",
     "kraken": {
-      "size": 13284,
+      "size": 13330,
       "meanErrorSquared": 8.48292,
-      "sizeLoss": 73974,
-      "sizeLossPercent": 84.78,
+      "sizeLoss": 73928,
+      "sizeLossPercent": 84.72,
       "qualityLossPercent": 12.89,
       "exclude": false,
-      "score": 59,
+      "score": 58.94,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7595,23 +7595,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 85704,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1554,
-      "sizeLossPercent": 1.78,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.78,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -7628,6 +7611,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1554,
+      "sizeLossPercent": 1.78,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.78,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 86935,
@@ -7702,13 +7702,13 @@
   {
     "image": "jpeg-progressive_grote-ogen.jpg",
     "kraken": {
-      "size": 15811,
+      "size": 15772,
       "meanErrorSquared": 7.80354,
-      "sizeLoss": 86389,
-      "sizeLossPercent": 84.53,
+      "sizeLoss": 86428,
+      "sizeLossPercent": 84.57,
       "qualityLossPercent": 16.68,
       "exclude": false,
-      "score": 51.17,
+      "score": 51.21,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7735,23 +7735,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 100151,
-      "meanErrorSquared": 0,
-      "sizeLoss": 2049,
-      "sizeLossPercent": 2,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 2,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -7768,6 +7751,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2049,
+      "sizeLossPercent": 2,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 2,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 101620,
@@ -7842,13 +7842,13 @@
   {
     "image": "jpeg-progressive_logo.jpg",
     "kraken": {
-      "size": 30182,
+      "size": 30240,
       "meanErrorSquared": 13.1266,
-      "sizeLoss": 20297,
-      "sizeLossPercent": 40.21,
+      "sizeLoss": 20239,
+      "sizeLossPercent": 40.09,
       "qualityLossPercent": 19.95,
       "exclude": false,
-      "score": 0.31,
+      "score": 0.19,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -7875,23 +7875,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest"
     },
-    "imageoptim": {
-      "size": 47699,
-      "meanErrorSquared": 0,
-      "sizeLoss": 2780,
-      "sizeLossPercent": 5.51,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 5.51,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 47699,
       "meanErrorSquared": 0,
@@ -7908,6 +7891,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2780,
+      "sizeLossPercent": 5.51,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.51,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 50391,
@@ -7999,13 +7999,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 42561,
+      "size": 42715,
       "meanErrorSquared": 5.93374,
-      "sizeLoss": 106690,
-      "sizeLossPercent": 71.48,
+      "sizeLoss": 106536,
+      "sizeLossPercent": 71.38,
       "qualityLossPercent": 10.17,
       "exclude": false,
-      "score": 51.14,
+      "score": 51.04,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8014,23 +8014,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 145248,
-      "meanErrorSquared": 0,
-      "sizeLoss": 4003,
-      "sizeLossPercent": 2.68,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 2.68,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 145248,
@@ -8048,6 +8031,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 4003,
+      "sizeLossPercent": 2.68,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 2.68,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 147239,
@@ -8122,13 +8122,13 @@
   {
     "image": "jpeg-progressive_patroon.jpg",
     "kraken": {
-      "size": 105734,
+      "size": 105979,
       "meanErrorSquared": 80.1628,
-      "sizeLoss": 101260,
-      "sizeLossPercent": 48.92,
+      "sizeLoss": 101015,
+      "sizeLossPercent": 48.8,
       "qualityLossPercent": 26.48,
       "exclude": false,
-      "score": -4.04,
+      "score": -4.16,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8155,23 +8155,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 203036,
-      "meanErrorSquared": 0,
-      "sizeLoss": 3958,
-      "sizeLossPercent": 1.91,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.91,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 203036,
       "meanErrorSquared": 0,
@@ -8188,6 +8171,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 3958,
+      "sizeLossPercent": 1.91,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.91,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "codekit": {
       "size": 206994,
@@ -8262,13 +8262,13 @@
   {
     "image": "jpeg-progressive_rood.jpg",
     "kraken": {
-      "size": 23530,
+      "size": 23604,
       "meanErrorSquared": 8.1078,
-      "sizeLoss": 97663,
-      "sizeLossPercent": 80.58,
+      "sizeLoss": 97589,
+      "sizeLossPercent": 80.52,
       "qualityLossPercent": 13.98,
       "exclude": false,
-      "score": 52.62,
+      "score": 52.56,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8295,23 +8295,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 119419,
-      "meanErrorSquared": 0,
-      "sizeLoss": 1774,
-      "sizeLossPercent": 1.46,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.46,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -8328,6 +8311,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1774,
+      "sizeLossPercent": 1.46,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.46,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 120762,
@@ -8419,13 +8419,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 90899,
+      "size": 91031,
       "meanErrorSquared": 13.6704,
-      "sizeLoss": 122386,
-      "sizeLossPercent": 57.38,
+      "sizeLoss": 122254,
+      "sizeLossPercent": 57.32,
       "qualityLossPercent": 9.08,
       "exclude": false,
-      "score": 39.22,
+      "score": 39.16,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8434,23 +8434,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 209566,
-      "meanErrorSquared": 0,
-      "sizeLoss": 3719,
-      "sizeLossPercent": 1.74,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 1.74,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 209566,
@@ -8468,6 +8451,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 3719,
+      "sizeLossPercent": 1.74,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.74,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 212805,
@@ -8542,13 +8542,13 @@
   {
     "image": "jpeg-progressive_streepjes.jpg",
     "kraken": {
-      "size": 35001,
+      "size": 34951,
       "meanErrorSquared": 521.023,
-      "sizeLoss": 52168,
-      "sizeLossPercent": 59.85,
+      "sizeLoss": 52218,
+      "sizeLossPercent": 59.9,
       "qualityLossPercent": 68.59,
       "exclude": false,
-      "score": -77.33,
+      "score": -77.28,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8575,23 +8575,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 75491,
-      "meanErrorSquared": 0,
-      "sizeLoss": 11678,
-      "sizeLossPercent": 13.4,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 13.4,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 75491,
       "meanErrorSquared": 0,
@@ -8608,6 +8591,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11678,
+      "sizeLossPercent": 13.4,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 13.4,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 84099,
@@ -8682,13 +8682,13 @@
   {
     "image": "jpeg-progressive_wolk.jpg",
     "kraken": {
-      "size": 17384,
+      "size": 17536,
       "meanErrorSquared": 2.15152,
-      "sizeLoss": 66992,
-      "sizeLossPercent": 79.4,
+      "sizeLoss": 66840,
+      "sizeLossPercent": 79.22,
       "qualityLossPercent": 6.22,
       "exclude": false,
-      "score": 66.96,
+      "score": 66.78,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8715,23 +8715,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 81793,
-      "meanErrorSquared": 0,
-      "sizeLoss": 2583,
-      "sizeLossPercent": 3.06,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 3.06,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -8748,6 +8731,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2583,
+      "sizeLossPercent": 3.06,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 3.06,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 83197,
@@ -8822,13 +8822,13 @@
   {
     "image": "jpeg_bril.jpg",
     "kraken": {
-      "size": 13284,
+      "size": 13330,
       "meanErrorSquared": 8.48292,
-      "sizeLoss": 84757,
-      "sizeLossPercent": 86.45,
+      "sizeLoss": 84711,
+      "sizeLossPercent": 86.4,
       "qualityLossPercent": 12.89,
       "exclude": false,
-      "score": 60.67,
+      "score": 60.62,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8855,23 +8855,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 85704,
-      "meanErrorSquared": 0,
-      "sizeLoss": 12337,
-      "sizeLossPercent": 12.58,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 12.58,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -8888,6 +8871,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 85704,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12337,
+      "sizeLossPercent": 12.58,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 12.58,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 86911,
@@ -8962,13 +8962,13 @@
   {
     "image": "jpeg_grote-ogen.jpg",
     "kraken": {
-      "size": 15811,
+      "size": 15772,
       "meanErrorSquared": 7.80354,
-      "sizeLoss": 96918,
-      "sizeLossPercent": 85.97,
+      "sizeLoss": 96957,
+      "sizeLossPercent": 86.01,
       "qualityLossPercent": 16.68,
       "exclude": false,
-      "score": 52.61,
+      "score": 52.65,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -8995,23 +8995,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 100151,
-      "meanErrorSquared": 0,
-      "sizeLoss": 12578,
-      "sizeLossPercent": 11.16,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 11.16,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -9028,6 +9011,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 100151,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12578,
+      "sizeLossPercent": 11.16,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.16,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 101596,
@@ -9102,13 +9102,13 @@
   {
     "image": "jpeg_logo.jpg",
     "kraken": {
-      "size": 30182,
+      "size": 30240,
       "meanErrorSquared": 13.1266,
-      "sizeLoss": 35989,
-      "sizeLossPercent": 54.39,
+      "sizeLoss": 35931,
+      "sizeLossPercent": 54.3,
       "qualityLossPercent": 19.95,
       "exclude": false,
-      "score": 14.49,
+      "score": 14.4,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9135,23 +9135,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score smallest"
     },
-    "imageoptim": {
-      "size": 47699,
-      "meanErrorSquared": 0,
-      "sizeLoss": 18472,
-      "sizeLossPercent": 27.92,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 27.92,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 47699,
       "meanErrorSquared": 0,
@@ -9168,6 +9151,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 47699,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18472,
+      "sizeLossPercent": 27.92,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 27.92,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 50367,
@@ -9259,13 +9259,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 42561,
+      "size": 42715,
       "meanErrorSquared": 5.93374,
-      "sizeLoss": 116026,
-      "sizeLossPercent": 73.16,
+      "sizeLoss": 115872,
+      "sizeLossPercent": 73.07,
       "qualityLossPercent": 10.17,
       "exclude": false,
-      "score": 52.82,
+      "score": 52.73,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9274,23 +9274,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 145248,
-      "meanErrorSquared": 0,
-      "sizeLoss": 13339,
-      "sizeLossPercent": 8.41,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.41,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 145248,
@@ -9308,6 +9291,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 145248,
+      "meanErrorSquared": 0,
+      "sizeLoss": 13339,
+      "sizeLossPercent": 8.41,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.41,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 147215,
@@ -9382,13 +9382,13 @@
   {
     "image": "jpeg_patroon.jpg",
     "kraken": {
-      "size": 105734,
+      "size": 105979,
       "meanErrorSquared": 80.1628,
-      "sizeLoss": 126117,
-      "sizeLossPercent": 54.4,
+      "sizeLoss": 125872,
+      "sizeLossPercent": 54.29,
       "qualityLossPercent": 26.48,
       "exclude": false,
-      "score": 1.44,
+      "score": 1.33,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9415,23 +9415,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 203036,
-      "meanErrorSquared": 0,
-      "sizeLoss": 28815,
-      "sizeLossPercent": 12.43,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 12.43,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 203036,
       "meanErrorSquared": 0,
@@ -9448,6 +9431,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 203036,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28815,
+      "sizeLossPercent": 12.43,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 12.43,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 207314,
@@ -9522,13 +9522,13 @@
   {
     "image": "jpeg_rood.jpg",
     "kraken": {
-      "size": 23530,
+      "size": 23604,
       "meanErrorSquared": 8.1078,
-      "sizeLoss": 109042,
-      "sizeLossPercent": 82.25,
+      "sizeLoss": 108968,
+      "sizeLossPercent": 82.2,
       "qualityLossPercent": 13.98,
       "exclude": false,
-      "score": 54.29,
+      "score": 54.24,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9555,23 +9555,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 119419,
-      "meanErrorSquared": 0,
-      "sizeLoss": 13153,
-      "sizeLossPercent": 9.92,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.92,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -9588,6 +9571,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 119419,
+      "meanErrorSquared": 0,
+      "sizeLoss": 13153,
+      "sizeLossPercent": 9.92,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.92,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 120738,
@@ -9679,13 +9679,13 @@
       "classNames": "jpegmini-and-imageoptim best-score smallest lossiest"
     },
     "kraken": {
-      "size": 90899,
+      "size": 91031,
       "meanErrorSquared": 13.6704,
-      "sizeLoss": 137098,
-      "sizeLossPercent": 60.13,
+      "sizeLoss": 136966,
+      "sizeLossPercent": 60.07,
       "qualityLossPercent": 9.08,
       "exclude": false,
-      "score": 41.97,
+      "score": 41.91,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9694,23 +9694,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "kraken"
-    },
-    "imageoptim": {
-      "size": 209566,
-      "meanErrorSquared": 0,
-      "sizeLoss": 18431,
-      "sizeLossPercent": 8.08,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.08,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 209566,
@@ -9728,6 +9711,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 209566,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18431,
+      "sizeLossPercent": 8.08,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.08,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 212781,
@@ -9802,13 +9802,13 @@
   {
     "image": "jpeg_streepjes.jpg",
     "kraken": {
-      "size": 35001,
+      "size": 34951,
       "meanErrorSquared": 521.023,
-      "sizeLoss": 144660,
-      "sizeLossPercent": 80.52,
+      "sizeLoss": 144710,
+      "sizeLossPercent": 80.55,
       "qualityLossPercent": 68.59,
       "exclude": false,
-      "score": -56.66,
+      "score": -56.63,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9835,23 +9835,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
-    "imageoptim": {
-      "size": 75491,
-      "meanErrorSquared": 0,
-      "sizeLoss": 104170,
-      "sizeLossPercent": 57.98,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 57.98,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 75491,
       "meanErrorSquared": 0,
@@ -9868,6 +9851,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 75491,
+      "meanErrorSquared": 0,
+      "sizeLoss": 104170,
+      "sizeLossPercent": 57.98,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 57.98,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 84075,
@@ -9942,13 +9942,13 @@
   {
     "image": "jpeg_wolk.jpg",
     "kraken": {
-      "size": 17384,
+      "size": 17536,
       "meanErrorSquared": 2.15152,
-      "sizeLoss": 83984,
-      "sizeLossPercent": 82.85,
+      "sizeLoss": 83832,
+      "sizeLossPercent": 82.7,
       "qualityLossPercent": 6.22,
       "exclude": false,
-      "score": 70.41,
+      "score": 70.26,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -9975,23 +9975,6 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
-    "imageoptim": {
-      "size": 81793,
-      "meanErrorSquared": 0,
-      "sizeLoss": 19575,
-      "sizeLossPercent": 19.31,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 19.31,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "imageoptim lossless"
-    },
     "imagealpha-and-imageoptim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -10008,6 +9991,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
+    },
+    "imageoptim": {
+      "size": 81793,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19575,
+      "sizeLossPercent": 19.31,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 19.31,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imageoptim lossless"
     },
     "smushit": {
       "size": 83173,
@@ -10081,23 +10081,6 @@
   },
   {
     "image": "png24-interlaced_bril.png",
-    "kraken": {
-      "size": 83074,
-      "meanErrorSquared": 3.04005,
-      "sizeLoss": 173580,
-      "sizeLossPercent": 67.63,
-      "qualityLossPercent": 10.25,
-      "exclude": false,
-      "score": 47.13,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": true,
-      "classNames": "kraken lossiest"
-    },
     "tinypng": {
       "size": 88704,
       "meanErrorSquared": 2.99581,
@@ -10112,8 +10095,25 @@
       "isDegraded": false,
       "hasBestScore": false,
       "isSmallest": false,
+      "isLossiest": true,
+      "classNames": "tinypng lossiest"
+    },
+    "kraken": {
+      "size": 78805,
+      "meanErrorSquared": 2.9084,
+      "sizeLoss": 177849,
+      "sizeLossPercent": 69.3,
+      "qualityLossPercent": 9.81,
+      "exclude": false,
+      "score": 49.68,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
       "isLossiest": false,
-      "classNames": "tinypng"
+      "classNames": "kraken best-score smallest"
     },
     "imagealpha-and-imageoptim": {
       "size": 80476,
@@ -10127,10 +10127,10 @@
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
+      "hasBestScore": false,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "classNames": "imagealpha-and-imageoptim"
     },
     "imageoptim": {
       "size": 197589,
@@ -10222,21 +10222,21 @@
   {
     "image": "png24-interlaced_grote-ogen.png",
     "kraken": {
-      "size": 81904,
-      "meanErrorSquared": 4.59498,
-      "sizeLoss": 198646,
-      "sizeLossPercent": 70.81,
-      "qualityLossPercent": 13.87,
+      "size": 80437,
+      "meanErrorSquared": 4.52085,
+      "sizeLoss": 200113,
+      "sizeLossPercent": 71.33,
+      "qualityLossPercent": 13.65,
       "exclude": false,
-      "score": 43.07,
+      "score": 44.03,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": false,
+      "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imagealpha-and-imageoptim": {
       "size": 80937,
@@ -10251,9 +10251,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "classNames": "imagealpha-and-imageoptim best-score"
     },
     "tinypng": {
       "size": 86658,
@@ -10361,6 +10361,23 @@
   },
   {
     "image": "png24-interlaced_logo.png",
+    "kraken": {
+      "size": 5248,
+      "meanErrorSquared": 0.385311,
+      "sizeLoss": 13265,
+      "sizeLossPercent": 71.65,
+      "qualityLossPercent": 2.15,
+      "exclude": false,
+      "score": 67.35,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imagealpha-and-imageoptim": {
       "size": 5571,
       "meanErrorSquared": 0,
@@ -10374,9 +10391,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
+      "classNames": "imagealpha-and-imageoptim best-score lossless"
     },
     "imageoptim": {
       "size": 5574,
@@ -10411,23 +10428,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 5601,
-      "meanErrorSquared": 0,
-      "sizeLoss": 12912,
-      "sizeLossPercent": 69.75,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 69.75,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 6205,
@@ -10519,13 +10519,13 @@
       "classNames": "tinypng lossiest"
     },
     "kraken": {
-      "size": 134414,
-      "meanErrorSquared": 4.92754,
-      "sizeLoss": 259854,
-      "sizeLossPercent": 65.91,
-      "qualityLossPercent": 17.45,
+      "size": 134307,
+      "meanErrorSquared": 4.97065,
+      "sizeLoss": 259961,
+      "sizeLossPercent": 65.94,
+      "qualityLossPercent": 17.6,
       "exclude": false,
-      "score": 31.01,
+      "score": 30.74,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -10642,13 +10642,13 @@
   {
     "image": "png24-interlaced_patroon.png",
     "kraken": {
-      "size": 3367,
-      "meanErrorSquared": 0.0794432,
-      "sizeLoss": 14174,
-      "sizeLossPercent": 80.8,
-      "qualityLossPercent": 1.08,
+      "size": 2568,
+      "meanErrorSquared": 0.43523,
+      "sizeLoss": 14973,
+      "sizeLossPercent": 85.36,
+      "qualityLossPercent": 5.9,
       "exclude": false,
-      "score": 78.64,
+      "score": 73.56,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -10781,23 +10781,6 @@
   },
   {
     "image": "png24-interlaced_rood.png",
-    "kraken": {
-      "size": 105049,
-      "meanErrorSquared": 5.63457,
-      "sizeLoss": 237913,
-      "sizeLossPercent": 69.37,
-      "qualityLossPercent": 17.46,
-      "exclude": false,
-      "score": 34.45,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": true,
-      "classNames": "kraken lossiest"
-    },
     "imagealpha-and-imageoptim": {
       "size": 103346,
       "meanErrorSquared": 5.55653,
@@ -10810,10 +10793,10 @@
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
-      "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": true,
+      "classNames": "imagealpha-and-imageoptim lossiest"
     },
     "tinypng": {
       "size": 109891,
@@ -10831,6 +10814,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "tinypng"
+    },
+    "kraken": {
+      "size": 100501,
+      "meanErrorSquared": 5.42233,
+      "sizeLoss": 242461,
+      "sizeLossPercent": 70.7,
+      "qualityLossPercent": 16.8,
+      "exclude": false,
+      "score": 37.1,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "kraken best-score smallest"
     },
     "imageoptim": {
       "size": 264725,
@@ -10922,13 +10922,13 @@
   {
     "image": "png24-interlaced_skyline.png",
     "kraken": {
-      "size": 120586,
-      "meanErrorSquared": 11.9945,
-      "sizeLoss": 336363,
-      "sizeLossPercent": 73.61,
-      "qualityLossPercent": 26.43,
+      "size": 120029,
+      "meanErrorSquared": 8.32321,
+      "sizeLoss": 336920,
+      "sizeLossPercent": 73.73,
+      "qualityLossPercent": 18.34,
       "exclude": false,
-      "score": 20.75,
+      "score": 37.05,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -11112,6 +11112,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
     },
+    "kraken": {
+      "size": 340,
+      "meanErrorSquared": 0.0839869,
+      "sizeLoss": 2399,
+      "sizeLossPercent": 87.59,
+      "qualityLossPercent": null,
+      "exclude": false,
+      "score": 87.59,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken"
+    },
     "tinypng": {
       "size": 357,
       "meanErrorSquared": 0,
@@ -11128,23 +11145,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "tinypng lossless"
-    },
-    "kraken": {
-      "size": 369,
-      "meanErrorSquared": 0.0839869,
-      "sizeLoss": 2370,
-      "sizeLossPercent": 86.53,
-      "qualityLossPercent": null,
-      "exclude": false,
-      "score": 86.53,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken"
     },
     "grunt-contrib-imagemin": {
       "size": 374,
@@ -11201,23 +11201,6 @@
   },
   {
     "image": "png24-interlaced_wolk.png",
-    "kraken": {
-      "size": 90902,
-      "meanErrorSquared": 1.75281,
-      "sizeLoss": 174501,
-      "sizeLossPercent": 65.75,
-      "qualityLossPercent": 5.44,
-      "exclude": false,
-      "score": 54.87,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": true,
-      "classNames": "kraken lossiest"
-    },
     "tinypng": {
       "size": 99758,
       "meanErrorSquared": 1.12587,
@@ -11232,8 +11215,8 @@
       "isDegraded": false,
       "hasBestScore": false,
       "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "tinypng"
+      "isLossiest": true,
+      "classNames": "tinypng lossiest"
     },
     "imagealpha-and-imageoptim": {
       "size": 90422,
@@ -11247,10 +11230,27 @@
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imagealpha-and-imageoptim"
+    },
+    "kraken": {
+      "size": 89743,
+      "meanErrorSquared": 1.05127,
+      "sizeLoss": 175660,
+      "sizeLossPercent": 66.19,
+      "qualityLossPercent": 3.26,
+      "exclude": false,
+      "score": 59.67,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
       "hasBestScore": true,
       "isSmallest": true,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "classNames": "kraken best-score smallest"
     },
     "imageoptim": {
       "size": 201569,
@@ -11341,23 +11341,6 @@
   },
   {
     "image": "png24_bril.png",
-    "kraken": {
-      "size": 83074,
-      "meanErrorSquared": 3.04005,
-      "sizeLoss": 133690,
-      "sizeLossPercent": 61.68,
-      "qualityLossPercent": 10.25,
-      "exclude": false,
-      "score": 41.18,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": true,
-      "classNames": "kraken lossiest"
-    },
     "tinypng": {
       "size": 88704,
       "meanErrorSquared": 2.99581,
@@ -11372,8 +11355,25 @@
       "isDegraded": false,
       "hasBestScore": false,
       "isSmallest": false,
+      "isLossiest": true,
+      "classNames": "tinypng lossiest"
+    },
+    "kraken": {
+      "size": 80967,
+      "meanErrorSquared": 2.93787,
+      "sizeLoss": 135797,
+      "sizeLossPercent": 62.65,
+      "qualityLossPercent": 9.91,
+      "exclude": false,
+      "score": 42.83,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "tinypng"
+      "classNames": "kraken"
     },
     "imagealpha-and-imageoptim": {
       "size": 80476,
@@ -11482,21 +11482,21 @@
   {
     "image": "png24_grote-ogen.png",
     "kraken": {
-      "size": 81904,
-      "meanErrorSquared": 4.59498,
-      "sizeLoss": 151398,
-      "sizeLossPercent": 64.89,
-      "qualityLossPercent": 13.87,
+      "size": 80437,
+      "meanErrorSquared": 4.52085,
+      "sizeLoss": 152865,
+      "sizeLossPercent": 65.52,
+      "qualityLossPercent": 13.65,
       "exclude": false,
-      "score": 37.15,
+      "score": 38.22,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": false,
+      "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imagealpha-and-imageoptim": {
       "size": 80937,
@@ -11511,9 +11511,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "classNames": "imagealpha-and-imageoptim best-score"
     },
     "tinypng": {
       "size": 86658,
@@ -11621,6 +11621,23 @@
   },
   {
     "image": "png24_logo.png",
+    "kraken": {
+      "size": 4594,
+      "meanErrorSquared": 2.25857,
+      "sizeLoss": 8167,
+      "sizeLossPercent": 64,
+      "qualityLossPercent": 12.58,
+      "exclude": false,
+      "score": 38.84,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 5566,
       "meanErrorSquared": 0,
@@ -11634,9 +11651,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 5571,
@@ -11671,23 +11688,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 5601,
-      "meanErrorSquared": 0,
-      "sizeLoss": 7160,
-      "sizeLossPercent": 56.11,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 56.11,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 6205,
@@ -11779,13 +11779,13 @@
       "classNames": "tinypng lossiest"
     },
     "kraken": {
-      "size": 134414,
-      "meanErrorSquared": 4.92754,
-      "sizeLoss": 200013,
-      "sizeLossPercent": 59.81,
-      "qualityLossPercent": 17.45,
+      "size": 134102,
+      "meanErrorSquared": 4.96457,
+      "sizeLoss": 200325,
+      "sizeLossPercent": 59.9,
+      "qualityLossPercent": 17.58,
       "exclude": false,
-      "score": 24.91,
+      "score": 24.74,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -11902,13 +11902,13 @@
   {
     "image": "png24_patroon.png",
     "kraken": {
-      "size": 3367,
-      "meanErrorSquared": 0.0794432,
-      "sizeLoss": 13093,
-      "sizeLossPercent": 79.54,
-      "qualityLossPercent": 1.08,
+      "size": 2446,
+      "meanErrorSquared": 1.27573,
+      "sizeLoss": 14014,
+      "sizeLossPercent": 85.14,
+      "qualityLossPercent": 17.28,
       "exclude": false,
-      "score": 77.38,
+      "score": 50.58,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -12041,23 +12041,6 @@
   },
   {
     "image": "png24_rood.png",
-    "kraken": {
-      "size": 105049,
-      "meanErrorSquared": 5.63457,
-      "sizeLoss": 182846,
-      "sizeLossPercent": 63.51,
-      "qualityLossPercent": 17.46,
-      "exclude": false,
-      "score": 28.59,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": true,
-      "classNames": "kraken lossiest"
-    },
     "imagealpha-and-imageoptim": {
       "size": 103346,
       "meanErrorSquared": 5.55653,
@@ -12070,10 +12053,27 @@
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": true,
+      "classNames": "imagealpha-and-imageoptim lossiest"
+    },
+    "kraken": {
+      "size": 101374,
+      "meanErrorSquared": 5.54853,
+      "sizeLoss": 186521,
+      "sizeLossPercent": 64.79,
+      "qualityLossPercent": 17.19,
+      "exclude": false,
+      "score": 30.41,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
       "hasBestScore": true,
       "isSmallest": true,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "classNames": "kraken best-score smallest"
     },
     "tinypng": {
       "size": 109891,
@@ -12182,13 +12182,13 @@
   {
     "image": "png24_skyline.png",
     "kraken": {
-      "size": 120586,
-      "meanErrorSquared": 11.9945,
-      "sizeLoss": 280412,
-      "sizeLossPercent": 69.93,
-      "qualityLossPercent": 26.43,
+      "size": 120029,
+      "meanErrorSquared": 8.32321,
+      "sizeLoss": 280969,
+      "sizeLossPercent": 70.07,
+      "qualityLossPercent": 18.34,
       "exclude": false,
-      "score": 17.07,
+      "score": 33.39,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -12372,6 +12372,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
     },
+    "kraken": {
+      "size": 340,
+      "meanErrorSquared": 0.0839869,
+      "sizeLoss": 1905,
+      "sizeLossPercent": 84.86,
+      "qualityLossPercent": null,
+      "exclude": false,
+      "score": 84.86,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken"
+    },
     "grunt-contrib-imagemin": {
       "size": 341,
       "meanErrorSquared": 0,
@@ -12405,23 +12422,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "tinypng lossless"
-    },
-    "kraken": {
-      "size": 369,
-      "meanErrorSquared": 0.0839869,
-      "sizeLoss": 1876,
-      "sizeLossPercent": 83.56,
-      "qualityLossPercent": null,
-      "exclude": false,
-      "score": 83.56,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken"
     },
     "smushit": {
       "size": 1319,
@@ -12461,23 +12461,6 @@
   },
   {
     "image": "png24_wolk.png",
-    "kraken": {
-      "size": 90902,
-      "meanErrorSquared": 1.75281,
-      "sizeLoss": 138374,
-      "sizeLossPercent": 60.35,
-      "qualityLossPercent": 5.44,
-      "exclude": false,
-      "score": 49.47,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": true,
-      "classNames": "kraken lossiest"
-    },
     "tinypng": {
       "size": 99758,
       "meanErrorSquared": 1.12587,
@@ -12492,8 +12475,8 @@
       "isDegraded": false,
       "hasBestScore": false,
       "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "tinypng"
+      "isLossiest": true,
+      "classNames": "tinypng lossiest"
     },
     "imagealpha-and-imageoptim": {
       "size": 90422,
@@ -12507,10 +12490,27 @@
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "imagealpha-and-imageoptim"
+    },
+    "kraken": {
+      "size": 89743,
+      "meanErrorSquared": 1.05127,
+      "sizeLoss": 139533,
+      "sizeLossPercent": 60.86,
+      "qualityLossPercent": 3.26,
+      "exclude": false,
+      "score": 54.34,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
       "hasBestScore": true,
       "isSmallest": true,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest"
+      "classNames": "kraken best-score smallest"
     },
     "imageoptim": {
       "size": 201161,
@@ -12602,21 +12602,21 @@
   {
     "image": "png8-interlaced_bril.png",
     "kraken": {
-      "size": 55104,
-      "meanErrorSquared": 0.0592206,
-      "sizeLoss": 19825,
-      "sizeLossPercent": 26.46,
-      "qualityLossPercent": 0.15,
+      "size": 51085,
+      "meanErrorSquared": 2.32254,
+      "sizeLoss": 23844,
+      "sizeLossPercent": 31.82,
+      "qualityLossPercent": 5.78,
       "exclude": false,
-      "score": 26.16,
+      "score": 20.26,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": false,
+      "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imageoptim": {
       "size": 54865,
@@ -12631,9 +12631,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 54865,
@@ -12648,9 +12648,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 55054,
@@ -12742,21 +12742,21 @@
   {
     "image": "png8-interlaced_grote-ogen.png",
     "kraken": {
-      "size": 61993,
-      "meanErrorSquared": 0.091046,
-      "sizeLoss": 24348,
-      "sizeLossPercent": 28.2,
-      "qualityLossPercent": 0.26,
+      "size": 57588,
+      "meanErrorSquared": 2.00095,
+      "sizeLoss": 28753,
+      "sizeLossPercent": 33.3,
+      "qualityLossPercent": 5.79,
       "exclude": false,
-      "score": 27.68,
+      "score": 21.72,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": false,
+      "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imageoptim": {
       "size": 61904,
@@ -12771,9 +12771,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 61904,
@@ -12788,9 +12788,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 61978,
@@ -12881,6 +12881,23 @@
   },
   {
     "image": "png8-interlaced_logo.png",
+    "kraken": {
+      "size": 4594,
+      "meanErrorSquared": 2.25857,
+      "sizeLoss": 5745,
+      "sizeLossPercent": 55.57,
+      "qualityLossPercent": 12.58,
+      "exclude": false,
+      "score": 30.41,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imagealpha-and-imageoptim": {
       "size": 5572,
       "meanErrorSquared": 0,
@@ -12894,26 +12911,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
-    },
-    "kraken": {
-      "size": 5601,
-      "meanErrorSquared": 0,
-      "sizeLoss": 4738,
-      "sizeLossPercent": 45.83,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 45.83,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
       "isSmallest": false,
       "isLossiest": false,
-      "classNames": "kraken lossless"
+      "classNames": "imagealpha-and-imageoptim best-score lossless"
     },
     "imageoptim": {
       "size": 5856,
@@ -13021,6 +13021,23 @@
   },
   {
     "image": "png8-interlaced_oog.png",
+    "kraken": {
+      "size": 92143,
+      "meanErrorSquared": 2.33342,
+      "sizeLoss": 33929,
+      "sizeLossPercent": 26.91,
+      "qualityLossPercent": 5.24,
+      "exclude": false,
+      "score": 16.43,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 96460,
       "meanErrorSquared": 0,
@@ -13034,9 +13051,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 96460,
@@ -13051,9 +13068,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 96627,
@@ -13071,23 +13088,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 96696,
-      "meanErrorSquared": 0,
-      "sizeLoss": 29376,
-      "sizeLossPercent": 23.3,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 23.3,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 97311,
@@ -13162,21 +13162,21 @@
   {
     "image": "png8-interlaced_patroon.png",
     "kraken": {
-      "size": 3367,
-      "meanErrorSquared": 0.0794432,
-      "sizeLoss": 3198,
-      "sizeLossPercent": 48.71,
-      "qualityLossPercent": 1.08,
+      "size": 2446,
+      "meanErrorSquared": 1.27573,
+      "sizeLoss": 4119,
+      "sizeLossPercent": 62.74,
+      "qualityLossPercent": 17.28,
       "exclude": false,
-      "score": 46.55,
+      "score": 28.18,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
-      "hasBestScore": true,
+      "hasBestScore": false,
       "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken best-score smallest lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imagealpha-and-imageoptim": {
       "size": 3511,
@@ -13190,10 +13190,10 @@
       "isLossless": true,
       "isSmaller": true,
       "isDegraded": false,
-      "hasBestScore": false,
+      "hasBestScore": true,
       "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim lossless"
+      "classNames": "imagealpha-and-imageoptim best-score lossless"
     },
     "imageoptim": {
       "size": 3694,
@@ -13301,6 +13301,23 @@
   },
   {
     "image": "png8-interlaced_rood.png",
+    "kraken": {
+      "size": 71375,
+      "meanErrorSquared": 2.37627,
+      "sizeLoss": 34277,
+      "sizeLossPercent": 32.44,
+      "qualityLossPercent": 5.87,
+      "exclude": false,
+      "score": 20.7,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 76909,
       "meanErrorSquared": 0,
@@ -13314,9 +13331,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 76909,
@@ -13331,9 +13348,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 77140,
@@ -13351,23 +13368,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 77197,
-      "meanErrorSquared": 0,
-      "sizeLoss": 28455,
-      "sizeLossPercent": 26.93,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 26.93,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 77393,
@@ -13441,6 +13441,23 @@
   },
   {
     "image": "png8-interlaced_skyline.png",
+    "kraken": {
+      "size": 98688,
+      "meanErrorSquared": 2.62669,
+      "sizeLoss": 33062,
+      "sizeLossPercent": 25.09,
+      "qualityLossPercent": 8.57,
+      "exclude": false,
+      "score": 7.95,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 103594,
       "meanErrorSquared": 0,
@@ -13454,9 +13471,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 103594,
@@ -13471,9 +13488,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 103741,
@@ -13491,23 +13508,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 103773,
-      "meanErrorSquared": 0,
-      "sizeLoss": 27977,
-      "sizeLossPercent": 21.23,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 21.23,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 104114,
@@ -13632,6 +13632,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
     },
+    "kraken": {
+      "size": 340,
+      "meanErrorSquared": 0.0839869,
+      "sizeLoss": 1655,
+      "sizeLossPercent": 82.96,
+      "qualityLossPercent": null,
+      "exclude": false,
+      "score": 82.96,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken"
+    },
     "tinypng": {
       "size": 357,
       "meanErrorSquared": 0,
@@ -13648,23 +13665,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "tinypng lossless"
-    },
-    "kraken": {
-      "size": 369,
-      "meanErrorSquared": 0.0839869,
-      "sizeLoss": 1626,
-      "sizeLossPercent": 81.5,
-      "qualityLossPercent": null,
-      "exclude": false,
-      "score": 81.5,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken"
     },
     "grunt-contrib-imagemin": {
       "size": 374,
@@ -13721,6 +13721,23 @@
   },
   {
     "image": "png8-interlaced_wolk.png",
+    "kraken": {
+      "size": 54845,
+      "meanErrorSquared": 5.06907,
+      "sizeLoss": 56667,
+      "sizeLossPercent": 50.82,
+      "qualityLossPercent": 17.13,
+      "exclude": false,
+      "score": 16.56,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imagealpha-and-imageoptim": {
       "size": 82051,
       "meanErrorSquared": 0,
@@ -13734,9 +13751,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
+      "classNames": "imagealpha-and-imageoptim best-score lossless"
     },
     "imageoptim": {
       "size": 82107,
@@ -13771,23 +13788,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 82183,
-      "meanErrorSquared": 0,
-      "sizeLoss": 29329,
-      "sizeLossPercent": 26.3,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 26.3,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 82247,
@@ -13862,21 +13862,21 @@
   {
     "image": "png8_bril.png",
     "kraken": {
-      "size": 55104,
-      "meanErrorSquared": 0.0592206,
-      "sizeLoss": 5765,
-      "sizeLossPercent": 9.47,
-      "qualityLossPercent": 0.15,
+      "size": 51085,
+      "meanErrorSquared": 2.32254,
+      "sizeLoss": 9784,
+      "sizeLossPercent": 16.07,
+      "qualityLossPercent": 5.78,
       "exclude": false,
-      "score": 9.17,
+      "score": 4.51,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": false,
+      "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imageoptim": {
       "size": 54865,
@@ -13891,9 +13891,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 54865,
@@ -13908,9 +13908,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 55054,
@@ -14002,21 +14002,21 @@
   {
     "image": "png8_grote-ogen.png",
     "kraken": {
-      "size": 61993,
-      "meanErrorSquared": 0.091046,
-      "sizeLoss": 6190,
-      "sizeLossPercent": 9.08,
-      "qualityLossPercent": 0.26,
+      "size": 57518,
+      "meanErrorSquared": 2.74078,
+      "sizeLoss": 10665,
+      "sizeLossPercent": 15.64,
+      "qualityLossPercent": 7.94,
       "exclude": false,
-      "score": 8.56,
+      "score": -0.24,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": false,
+      "isSmallest": true,
       "isLossiest": true,
-      "classNames": "kraken lossiest"
+      "classNames": "kraken smallest lossiest"
     },
     "imageoptim": {
       "size": 61904,
@@ -14031,9 +14031,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 61904,
@@ -14048,9 +14048,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 61978,
@@ -14141,6 +14141,23 @@
   },
   {
     "image": "png8_logo.png",
+    "kraken": {
+      "size": 4594,
+      "meanErrorSquared": 2.25857,
+      "sizeLoss": 3091,
+      "sizeLossPercent": 40.22,
+      "qualityLossPercent": 12.58,
+      "exclude": false,
+      "score": 15.06,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imagealpha-and-imageoptim": {
       "size": 5565,
       "meanErrorSquared": 0,
@@ -14154,26 +14171,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
-      "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
-    },
-    "kraken": {
-      "size": 5601,
-      "meanErrorSquared": 0,
-      "sizeLoss": 2084,
-      "sizeLossPercent": 27.12,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 27.12,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
       "isSmallest": false,
       "isLossiest": false,
-      "classNames": "kraken lossless"
+      "classNames": "imagealpha-and-imageoptim best-score lossless"
     },
     "imageoptim": {
       "size": 5860,
@@ -14281,6 +14281,23 @@
   },
   {
     "image": "png8_oog.png",
+    "kraken": {
+      "size": 92095,
+      "meanErrorSquared": 2.28167,
+      "sizeLoss": 14279,
+      "sizeLossPercent": 13.42,
+      "qualityLossPercent": 5.13,
+      "exclude": false,
+      "score": 3.16,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 96460,
       "meanErrorSquared": 0,
@@ -14294,9 +14311,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 96460,
@@ -14311,9 +14328,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 96627,
@@ -14331,23 +14348,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 96696,
-      "meanErrorSquared": 0,
-      "sizeLoss": 9678,
-      "sizeLossPercent": 9.1,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 9.1,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 97311,
@@ -14422,13 +14422,13 @@
   {
     "image": "png8_patroon.png",
     "kraken": {
-      "size": 3367,
-      "meanErrorSquared": 0.0794432,
-      "sizeLoss": 2713,
-      "sizeLossPercent": 44.62,
-      "qualityLossPercent": 1.08,
+      "size": 2568,
+      "meanErrorSquared": 0.43523,
+      "sizeLoss": 3512,
+      "sizeLossPercent": 57.76,
+      "qualityLossPercent": 5.9,
       "exclude": false,
-      "score": 42.46,
+      "score": 45.96,
       "isNoOp": false,
       "isLossless": false,
       "isSmaller": true,
@@ -14561,6 +14561,23 @@
   },
   {
     "image": "png8_rood.png",
+    "kraken": {
+      "size": 71375,
+      "meanErrorSquared": 2.37627,
+      "sizeLoss": 12713,
+      "sizeLossPercent": 15.12,
+      "qualityLossPercent": 5.87,
+      "exclude": false,
+      "score": 3.38,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 76909,
       "meanErrorSquared": 0,
@@ -14574,9 +14591,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 76909,
@@ -14591,9 +14608,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 77140,
@@ -14611,23 +14628,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 77197,
-      "meanErrorSquared": 0,
-      "sizeLoss": 6891,
-      "sizeLossPercent": 8.19,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 8.19,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 77393,
@@ -14701,6 +14701,23 @@
   },
   {
     "image": "png8_skyline.png",
+    "kraken": {
+      "size": 98688,
+      "meanErrorSquared": 2.62669,
+      "sizeLoss": 12891,
+      "sizeLossPercent": 11.55,
+      "qualityLossPercent": 8.57,
+      "exclude": false,
+      "score": -5.59,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imageoptim": {
       "size": 103594,
       "meanErrorSquared": 0,
@@ -14714,9 +14731,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imageoptim best-score smallest lossless"
+      "classNames": "imageoptim best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 103594,
@@ -14731,9 +14748,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "jpegmini-and-imageoptim best-score smallest lossless"
+      "classNames": "jpegmini-and-imageoptim best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 103741,
@@ -14751,23 +14768,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "imagealpha-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 103773,
-      "meanErrorSquared": 0,
-      "sizeLoss": 7806,
-      "sizeLossPercent": 7,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 7,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 104114,
@@ -14892,6 +14892,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
     },
+    "kraken": {
+      "size": 340,
+      "meanErrorSquared": 0.0839869,
+      "sizeLoss": 1453,
+      "sizeLossPercent": 81.04,
+      "qualityLossPercent": null,
+      "exclude": false,
+      "score": 81.04,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "kraken"
+    },
     "grunt-contrib-imagemin": {
       "size": 341,
       "meanErrorSquared": 0,
@@ -14925,23 +14942,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "tinypng lossless"
-    },
-    "kraken": {
-      "size": 369,
-      "meanErrorSquared": 0.0839869,
-      "sizeLoss": 1424,
-      "sizeLossPercent": 79.42,
-      "qualityLossPercent": null,
-      "exclude": false,
-      "score": 79.42,
-      "isNoOp": false,
-      "isLossless": false,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken"
     },
     "smushit": {
       "size": 797,
@@ -14981,6 +14981,23 @@
   },
   {
     "image": "png8_wolk.png",
+    "kraken": {
+      "size": 54845,
+      "meanErrorSquared": 5.06907,
+      "sizeLoss": 37723,
+      "sizeLossPercent": 40.75,
+      "qualityLossPercent": 17.13,
+      "exclude": false,
+      "score": 6.49,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": true,
+      "classNames": "kraken smallest lossiest"
+    },
     "imagealpha-and-imageoptim": {
       "size": 82051,
       "meanErrorSquared": 0,
@@ -14994,9 +15011,9 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": true,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": false,
-      "classNames": "imagealpha-and-imageoptim best-score smallest lossless"
+      "classNames": "imagealpha-and-imageoptim best-score lossless"
     },
     "imageoptim": {
       "size": 82107,
@@ -15031,23 +15048,6 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim lossless"
-    },
-    "kraken": {
-      "size": 82183,
-      "meanErrorSquared": 0,
-      "sizeLoss": 10385,
-      "sizeLossPercent": 11.22,
-      "qualityLossPercent": 0,
-      "exclude": false,
-      "score": 11.22,
-      "isNoOp": false,
-      "isLossless": true,
-      "isSmaller": true,
-      "isDegraded": false,
-      "hasBestScore": false,
-      "isSmallest": false,
-      "isLossiest": false,
-      "classNames": "kraken lossless"
     },
     "tinypng": {
       "size": 82247,
