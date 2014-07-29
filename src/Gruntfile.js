@@ -3,65 +3,7 @@ module.exports = function(grunt) {
   'use strict';
 
   var _ = require('lodash');
-  var debug = false;
-  var results = require('./json/transformed-results.json');
-  var baseJadeOptions = {
-    pretty: debug,
-    data: {
-      sortBy: 'image',
-      sortDirection: 'asc',
-      sortDirectionToggle: 'desc',
-      filter: 'all',
-      results: results,
-      tools: tools
-    }
-  };
-
-  var tools = {
-    'codekit': 'CodeKit',
-    'grunt-contrib-imagemin': 'grunt-contrib-imagemin',
-    'imageoptim': 'ImageOptim',
-    'imagealpha-and-imageoptim': 'ImageAlpha & ImageOptim',
-    'jpegmini-and-imageoptim': 'JPEGmini & ImageOptim',
-    'kraken': 'Kraken',
-    'photoshop': 'Photoshop',
-    'smushit': 'Smushit',
-    'tinypng': 'TinyPNG'
-  };
-  var filters = ['all', 'jpeg', 'png', 'gif'];
-  var sortDirections = ['asc', 'desc'];
-  var toolNames = Object.keys(tools);
-
-  var documents = filters.reduce(function(memo, filter) {
-    toolNames.forEach(function(toolName) {
-      sortDirections.forEach(function(sortDirection) {
-        var documentName = filter + '/' + toolName + '/' + sortDirection;
-        var files = {};
-        var filteredResults = filter !== 'all' ? _.filter(results, function(el) {
-          return el.image.indexOf(filter) !== -1;
-        }) : results;
-        var sortedResults = _.sortBy(filteredResults, function(el) {
-          return toolName === 'photoshop' ? el.size : el[toolName].size;
-        });
-        files['../comparison/' + documentName + '/index.html'] = ['jade/result-set.jade'];
-        memo[documentName] = {
-          files: files,
-          options: {
-            pretty: debug,
-            data: {
-              sortBy: toolName,
-              sortDirection: sortDirection,
-              sortDirectionToggle: sortDirection === 'desc' ? 'asc' : 'desc',
-              filter: filter,
-              results: sortDirection === 'desc' ? sortedResults.reverse() : sortedResults,
-              tools: tools
-            }
-          }
-        };
-      });
-    });
-    return memo;
-  }, {});
+  var jadeConfig = {};
 
   grunt.initConfig({
 
@@ -78,7 +20,7 @@ module.exports = function(grunt) {
 
     // imageoptim: {
     //   files: [
-    //     '../images/imageoptim_imagealpha'
+    //     '../images/imagealpha-and-imageoptim'
     //   ],
     //   options: {
     //     imageAlpha: true,
@@ -89,7 +31,7 @@ module.exports = function(grunt) {
 
     imageoptim: {
       files: [
-        '../images/imageoptim_jpegmini'
+        '../images/jpegmini-and-imageoptim'
       ],
       options: {
         imageAlpha: false,
@@ -128,7 +70,7 @@ module.exports = function(grunt) {
       }
     },
 
-    jade: documents,
+    jade: jadeConfig,
 
     shell: {
       chooseIndex: {
@@ -148,6 +90,72 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.task.registerTask('prepare-jade', function() {
+
+    var debug = false;
+    var results = require('./json/transformed-results.json');
+    var baseJadeOptions = {
+      pretty: debug,
+      data: {
+        sortBy: 'image',
+        sortDirection: 'asc',
+        sortDirectionToggle: 'desc',
+        filter: 'all',
+        results: results,
+        tools: tools
+      }
+    };
+
+    var tools = {
+      'codekit': 'CodeKit',
+      'grunt-contrib-imagemin': 'grunt-contrib-imagemin',
+      'imageoptim': 'ImageOptim',
+      'imagealpha-and-imageoptim': 'ImageAlpha & ImageOptim',
+      'jpegmini-and-imageoptim': 'JPEGmini & ImageOptim',
+      'kraken': 'Kraken',
+      'photoshop': 'Photoshop',
+      'smushit': 'Smushit',
+      'tinypng': 'TinyPNG'
+    };
+    var filters = ['all', 'jpeg', 'png', 'gif'];
+    var sortDirections = ['asc', 'desc'];
+    var toolNames = Object.keys(tools);
+
+    jadeConfig = filters.reduce(function(memo, filter) {
+      toolNames.forEach(function(toolName) {
+        sortDirections.forEach(function(sortDirection) {
+          var documentName = filter + '/' + toolName + '/' + sortDirection;
+          var files = {};
+          var filteredResults = filter !== 'all' ? _.filter(results, function(el) {
+            return el.image.indexOf(filter) !== -1;
+          }) : results;
+          var sortedResults = _.sortBy(filteredResults, function(el) {
+            return toolName === 'photoshop' ? el.size : el[toolName].size;
+          });
+          files['../comparison/' + documentName + '/index.html'] = ['jade/result-set.jade'];
+          memo[documentName] = {
+            files: files,
+            options: {
+              pretty: debug,
+              data: {
+                sortBy: toolName,
+                sortDirection: sortDirection,
+                sortDirectionToggle: sortDirection === 'desc' ? 'asc' : 'desc',
+                filter: filter,
+                results: sortDirection === 'desc' ? sortedResults.reverse() : sortedResults,
+                tools: tools
+              }
+            }
+          };
+        });
+      });
+
+      return memo;
+
+    }, jadeConfig);
+
+  });
+
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-jade');
@@ -159,6 +167,7 @@ module.exports = function(grunt) {
 
   grunt.task.registerTask('build', [
     'cssmin',
+    'prepare-jade',
     'jade',
     'shell'
   ]);

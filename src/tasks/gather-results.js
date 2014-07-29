@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         return {
           path: imgPath,
           image: branches[branches.length - 1],
-          tool: branches[branches.length - 2].replace(/\-/g, '_'),
+          tool: branches[branches.length - 2],
           size: void(0),
           meanErrorSquared: void(0)
         };
@@ -137,7 +137,7 @@ module.exports = function(grunt) {
 
     // write to JSON
     .then(function(collection) {
-      return writeFile('raw-results.json', JSON.stringify(collection, null, 2));
+      return writeFile('json/raw-results.json', JSON.stringify(collection, null, 2));
     })
 
     .done(function() {

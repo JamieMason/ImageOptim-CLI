@@ -29,20 +29,7 @@ module.exports = function(grunt) {
 
         // group tool results by image
         .groupBy(function(img) {
-
-          // rename keys
-          if (img.tool === 'grunt_contrib_imagemin') {
-            img.tool = 'grunt-contrib-imagemin';
-          }
-          if (img.tool === 'imageoptim_imagealpha') {
-            img.tool = 'imagealpha-and-imageoptim';
-          }
-          if (img.tool === 'imageoptim_jpegmini') {
-            img.tool = 'jpegmini-and-imageoptim';
-          }
-
           return img.image;
-
         })
 
         // store tool results as array and lookup by tool
