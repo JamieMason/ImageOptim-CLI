@@ -76,7 +76,8 @@ essential. Saving to `/Applications` is **not** recommended, do not do this.
       -h, --help          display this usage information
       -e, --examples      display some example commands and uses
       -v, --version       display the version number
-    
+      --verbose           display detailed, per-file info on optimizations
+   
     *  http://pngmini.com
     ** https://itunes.apple.com/us/app/jpegmini/id498944723
     

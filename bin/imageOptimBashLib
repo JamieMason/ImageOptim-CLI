@@ -104,6 +104,9 @@ HAS_IMAGEMAGICK="false"
 # accordingly during initialisation.
 HAS_GUI_SCRIPT="false"
 
+# {BooleanString} Whether to print detailed information about the optimizations
+IS_VERBOSE="false"
+
 # ------------------------------------
 # LOGGING UTILS
 # ------------------------------------
@@ -152,6 +155,7 @@ function usage {
   echo "  -h, --help          display this usage information"
   echo "  -e, --examples      display some example commands and uses"
   echo "  -v, --version       display the version number"
+  echo "  --verbose            display detailed, per-file info on optimizations"
   echo ""
   echo "*  http://pngmini.com"
   echo "** https://itunes.apple.com/us/app/jpegmini/id498944723"
@@ -233,7 +237,9 @@ function output_savings {
         local quality_loss=$(compare -metric MSE "$source_file" "$temp_file" /dev/null 2>&1 >/dev/null | awk '{print $1}')
         local actual_quality=$(bc <<< "scale=2; $actual_quality+$quality_loss")
       fi
-      render_result "$source_file" $size_before $size_after $quality_loss
+      if [[ $IS_VERBOSE == "true" ]]; then
+        render_result "$source_file" $size_before $size_after $quality_loss
+      fi
     fi
   done
   render_result "TOTAL" $total_before $total_after $quality_loss
