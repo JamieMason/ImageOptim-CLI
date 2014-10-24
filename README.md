@@ -54,9 +54,9 @@ ImageOptim-CLI is written in Shell and AppleScript, you don't _need_ Node.js to 
 You can install manually by downloading the latest zip then adding ImageOptim-CLI to your
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
-  $ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.7.11
-  $ unzip imageoptim-cli.zip
-  $ export PATH=$PATH:imageoptim-cli/bin
+    $ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.7.11
+    $ unzip imageoptim-cli.zip
+    $ export PATH=$PATH:imageoptim-cli/bin
 
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
 essential. Saving to `/Applications` is **not** recommended, do not do this.
