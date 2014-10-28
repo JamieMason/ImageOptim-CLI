@@ -23,6 +23,7 @@ see how it works.
 + [Examples](#examples)
   + [Optimise a directory of images](#optimise-a-directory-of-images)
   + [Optimise a filtered set of images](#optimise-a-filtered-set-of-images)
+  + [Optimise a single image](#optimise-a-single-image)
   + [Passing additional options](#passing-additional-options)
   + [Adding to git pre-commit hook](#adding-to-git-pre-commit-hook)
 + [Related projects](#related-projects)
@@ -30,7 +31,6 @@ see how it works.
   + [Comparison of image optimization tools](#comparison-of-image-optimization-tools)
   + [Article for Smashing Magazine](#article-for-smashing-magazine)
   + [Alfred workflow](#alfred-workflow)
-  + [Gulp Plugin](#gulp-plugin)
 + [FAQs](#faqs)
   + [General](#general)
   + [ImageOptim](#imageoptim)
@@ -54,9 +54,9 @@ ImageOptim-CLI is written in Shell and AppleScript, you don't _need_ Node.js to 
 You can install manually by downloading the latest zip then adding ImageOptim-CLI to your
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
-	$ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.7.10
-	$ unzip imageoptim-cli.zip
-	$ export PATH=$PATH:imageoptim-cli/bin
+  $ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.7.11
+  $ unzip imageoptim-cli.zip
+  $ export PATH=$PATH:imageoptim-cli/bin
 
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
 essential. Saving to `/Applications` is **not** recommended, do not do this.
@@ -97,6 +97,12 @@ This command will optimise all image files in your Awesome project.
 This command will optimise just the .jpg files in your Awesome project.
 
     find ~/Sites/Awesome -name '*.jpg' | imageOptim # [options]
+
+### Optimise a single image
+
+This command will optimise just guybrush.jpg in your Awesome project.
+
+    find guybrush.jpg | imageOptim # [options]
 
 ### Passing additional options
 
@@ -149,12 +155,6 @@ Tool](http://www.smashingmagazine.com/2013/12/17/imageoptim-cli-batch-compressio
 
 The ImageOptim-CLI Workflow for Alfred app
 is [alfred-image-optim-workflow](https://github.com/ramiroaraujo/alfred-image-optim-workflow)
-
-
-### Gulp Plugin
-
-The ImageOptim-CLI [Gulp](http://gulpjs.com) plugin is
-[gulp-imageoptim](https://github.com/JamieMason/gulp-imageoptim).
 
 
 
