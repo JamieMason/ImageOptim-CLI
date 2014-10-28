@@ -44,7 +44,7 @@ STAT_BIN="/usr/bin/stat"
 
 # {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
 # original locations.
-TEMP_PATH="${TMPDIR}/imageoptim-cli"
+TEMP_PATH="${TMPDIR}imageoptim-cli"
 
 # {FilePath} A list of all images we'll be operating on.
 INDEX_FILE="${TEMP_PATH}/index.txt"
@@ -82,12 +82,17 @@ IMAGEOPTIM_BIN_PATH="/Applications/ImageOptim.app/Contents/MacOS/ImageOptim"
 APP_FILENAME_IMAGE_ALPHA="ImageAlpha.app"
 APP_FILENAME_IMAGE_OPTIM="ImageOptim.app"
 APP_FILENAME_JPEGMINI="JPEGmini.app"
+APP_FILENAME_JPEGMINI_LITE="JPEGmini Lite.app"
+
+# {String} The OS X application names.
+APP_NAME_JPEGMINI="JPEGmini"
+APP_NAME_JPEGMINI_LITE="JPEGmini Lite"
 
 # {String} The OS X Bundle IDs for each Application.
 APP_BUNDLE_ID_IMAGE_ALPHA="net.pornel.ImageAlpha"
 APP_BUNDLE_ID_IMAGE_OPTIM="net.pornel.ImageOptim"
 APP_BUNDLE_ID_JPEGMINI="com.icvt.JPEGmini"
-APP_BUNDLE_ID_JPEGMINI_LITE="com.icvt.JPEGmini-lite"
+APP_BUNDLE_ID_JPEGMINI_LITE="com.icvt.JPEGminiLite"
 APP_BUNDLE_ID_JPEGMINI_RETAIL="com.icvt.JPEGmini-retail"
 
 # {BooleanString} Whether each Application is installed, these will be set to true accordingly
@@ -400,7 +405,7 @@ function get_path_to_app_by_bundle_id {
 function has_app {
   local expected_app_name="$1"
   local actual_app_name=$(get_path_to_app_by_bundle_id "$2")
-  if [ $actual_app_name == $expected_app_name ]; then
+  if [ "$actual_app_name" == "$expected_app_name" ]; then
     echo "true"
   else
     echo "false"
@@ -431,25 +436,35 @@ function run_image_alpha {
 
 # If enabled and installed, run JPEGmini on our temp directory
 function run_jpegmini {
-  if [ "true" == $USE_JPEGMINI ]; then
-    if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ] || [ "true" == $HAS_JPEGMINI_LITE ]; then
-      if [ "true" == $HAS_GUI_SCRIPT ]; then
-        info "Running JPEGmini..."
-        `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
-        `osascript "$APPLESCRIPT_BIN" wait_for JPEGmini` > /dev/null 2>&1
-        if [ "true" == $QUIT_ON_COMPLETE ]; then
-          osascript -e 'tell application "JPEGmini" to quit'
-        fi
-      else
-        local message=""
-        message="${message}To automate JPEGmini we need to enable GUI Scripting. Check 'Enable "
-        message="${message}access for assistive devices' under Accessibility in System Preferences"
-        message="${message}, then run ImageOptim-CLI again."
-        fatal "$message"
-      fi
-    else
-      fatal "JPEGmini is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
-    fi
+  # nothing to do if we're not asked to run JPEGmini
+  if [ "true" != "$USE_JPEGMINI" ]; then
+    return 0
+  fi
+  # if no known version is installed we can't continue
+  if [ "true" != "$HAS_JPEGMINI" ] && [ "true" != "$HAS_JPEGMINI_RETAIL" ] && [ "true" != "$HAS_JPEGMINI_LITE" ]; then
+    fatal "JPEGmini is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
+  fi
+  # if GUI scripting is not enabled we can't control OSX/JPEGmini
+  if [ "true" != "$HAS_GUI_SCRIPT" ]; then
+    local message=""
+    message="${message}To automate JPEGmini we need to enable GUI Scripting. Check 'Enable "
+    message="${message}access for assistive devices' under Accessibility in System Preferences"
+    message="${message}, then run ImageOptim-CLI again."
+    fatal "$message"
+  fi
+  # determine the required app name
+  if [ "true" == "$HAS_JPEGMINI_LITE" ]; then
+    local app_name="$APP_NAME_JPEGMINI_LITE"
+  else
+    local app_name="$APP_NAME_JPEGMINI"
+  fi
+  # run and monitor JEPGmini
+  info "Running JPEGmini..."
+  `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" "$app_name"` > /dev/null 2>&1
+  `osascript "$APPLESCRIPT_BIN" wait_for "$app_name"` > /dev/null 2>&1
+  # quit once complete
+  if [ "true" == "$QUIT_ON_COMPLETE" ]; then
+    osascript -e 'tell application "$app_name" to quit'
   fi
 }
 
