@@ -23,36 +23,16 @@
 -- CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 
-on logInfo(message)
-  log "[INFO] " & message
-end logInfo
-
-on logVerbose(message)
-  if VERBOSE equals true then
-   log "[VERBOSE] " & message
-  end if
-end logVerbose
-
-(*
- * @description
- * Check whether access for assistive devices is enabled under System
- * Preferences, needed to perform synthetic user actions so JPEGmini can be
- * automated.
- *
- * Enable access for assistive devices in Mavericks;
- * http://www.tekrevue.com/how-to-enable-access-for-assistive-devices-in-os-x-mavericks/
- *
- * Enable access for assistive devices in Yosemite;
- * https://thequantumself.wordpress.com/2014/06/26/enable-access-for-assistive-devices-in-osx-yosmite/
- *
- * @return  {Boolean}
- *)
-on supportsAssistiveDevices()
-  tell application "System Events"
-    set isEnabled to UI elements enabled
-  end tell
-  return isEnabled as boolean
-end supportsAssistiveDevices
+global DIRECTORY_GIF
+global DIRECTORY_JPG
+global DIRECTORY_PNG
+global DIRECTORY_TEMP
+global ID_IMAGEOPTIM
+global ID_JPEGMINI
+global ID_JPEGMINI_LITE
+global ID_JPEGMINI_PRO
+global ID_JPEGMINI_RETAIL
+global JPEGMINI_APP_NAME
 
 (*
  * @description
@@ -72,40 +52,26 @@ end isInstalled
 
 (*
  * @description
- * Get the absolute path to a .app already known to be installed.
+ * Check whether access for assistive devices is enabled under System
+ * Preferences, needed to perform synthetic user actions so JPEGmini can be
+ * automated.
  *
- * @param   {String}   bundleId  eg. ID_IMAGEOPTIM
- * @return  {String}             eg. "/Applications/ImageOptim.app/"
+ * Enable access for assistive devices in Mavericks;
+ * http://www.tekrevue.com/how-to-enable-access-for-assistive-devices-in-os-x-mavericks/
+ *
+ * Enable access for assistive devices in Yosemite;
+ * https://thequantumself.wordpress.com/2014/06/26/enable-access-for-assistive-devices-in-osx-yosmite/
+ *
+ * @return  {Boolean}
  *)
-on getAppPath(bundleId)
+on supportsAssistiveDevices()
   try
-    tell application "Finder"
-      return "/Applications/" & (name of application file id bundleId) & "/"
-    end tell
+    -- return do shell script "osascript -e 'tell application \"System Events\" to get UI elements enabled'"
+    tell application "System Events" to get UI elements enabled
   on error
-    error bundleId & " is not installed in /Applications"
+    return "ERROR_GUISCRIPT_UNREADABLE"
   end try
-end getAppPath
-
-(*
- * @description
- * Find the appropriate JPEGmini bundle id, starting with the paid-for plans
- * down to the free one.
- *
- * @return  {String}  eg. ID_JPEGMINI_PRO
- *)
-on getJpegMiniBundleId()
-  if isInstalled(ID_JPEGMINI_PRO) then
-    return ID_JPEGMINI_PRO
-  else if isInstalled(ID_JPEGMINI) then
-    return ID_JPEGMINI
-  else if isInstalled(ID_JPEGMINI_RETAIL) then
-    return ID_JPEGMINI_RETAIL
-  else if isInstalled(ID_JPEGMINI_LITE) then
-    return ID_JPEGMINI_LITE
-  end if
-  return ""
-end getJpegMiniBundleId
+end supportsAssistiveDevices
 
 (*
  * @description
@@ -122,49 +88,20 @@ on getJpegMiniAppName()
   else if isInstalled(ID_JPEGMINI_LITE) then
     return "JPEGmini Lite"
   end if
-  return ""
+  return "false"
 end getJpegMiniAppName
 
-(*
- * @description
- * Quit this app once we're done with it.
- *
- * @param  {String}  appName  eg. "ImageOptim"
- *)
-on quitApp(appName)
-  logVerbose("Quitting " & appName)
-  tell application appName to quit
-end quitApp
-
-(*
- * @description
- * Run ImageAlpha over the contents of DIRECTORY_PNG.
- *)
-on runImageAlpha()
-  if isInstalled(ID_IMAGEALPHA) then
-    logInfo("Running ImageAlpha")
-    set pngquant to getAppPath(ID_IMAGEALPHA) & "Contents/Resources/pngquant"
-    (* do shell script *)
-    logVerbose("find '" & DIRECTORY_PNG & "' -type f -print0 | xargs -n10 -P8 -0 '" & pngquant & "' --ext=.png --force --speed=1 --skip-if-larger --quality=75-100 --")
+on hasJPEGmini()
+  if getJpegMiniAppName() is "false" then
+    return false
+  else
+    return true
   end if
-end runImageAlpha
+end hasJPEGmini
 
-(*
- * @description
- * Run ImageOptim over the contents of DIRECTORY_TEMP.
- *)
-on runImageOptim()
-  if isInstalled(ID_IMAGEOPTIM) then
-    logInfo("Running ImageOptim")
-    set imageOptim to getAppPath(ID_IMAGEOPTIM) & "Contents/MacOS/ImageOptim"
-    (* do shell script *)
-    logVerbose(imageOptim & " 2> /dev/null " & DIRECTORY_TEMP)
-    (* QUIT WHEN FINISHED *)
-    if QUIT_APPS_ON_COMPLETE then
-      quitApp("ImageOptim")
-    end if
-  end if
-end runImageOptim
+on hasImageOptim()
+  return isInstalled(ID_IMAGEOPTIM)
+end hasImageOptim
 
 (*
  * @description
@@ -172,20 +109,13 @@ end runImageOptim
  *)
 on runJPEGmini()
   (* DETERMINE WHICH VERSION IS INSTALLED *)
-  set JPEGmini to getJpegMiniAppName()
+  set JPEGMINI_APP_NAME to getJpegMiniAppName()
   (* QUIT IF NOT INSTALLED *)
-  if JPEGmini is "" then
-    error ERROR_JPEGMINI_UNAVAILABLE
-    return
-  end if
-  logInfo("Running " & JPEGmini)
-  (* CHECK GUI SCRIPTING IS ENABLED *)
-  if supportsAssistiveDevices() is false then
-    error ERROR_GUISCRIPT_UNAVAILABLE
-    return
+  if JPEGMINI_APP_NAME is "false" then
+    return "ERROR_JPEGMINI_UNAVAILABLE"
   end if
   (* OPEN AND FOCUS JPEGMINI *)
-  tell application JPEGmini
+  tell application JPEGMINI_APP_NAME
     activate
     delay 3
     activate
@@ -199,7 +129,7 @@ on runJPEGmini()
   end tell
   (* NAVIGATE TO OUR FOLDER OF IMAGES *)
   tell application "System Events"
-    tell process JPEGmini
+    tell process JPEGMINI_APP_NAME
       set value of text field 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
       repeat
         if (value of text field 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
@@ -221,7 +151,7 @@ on runJPEGmini()
     set timesIdle to 0
     repeat
       -- get all process information | filtered to JPEGmini
-      set getRawProcess to "ps aux | grep '/Applications/" & JPEGmini & "'"
+      set getRawProcess to "ps aux | grep '/Applications/" & JPEGMINI_APP_NAME & "'"
       -- filter out JPEGmini grep | get column 3 of output (% CPU)
       set filterRawProcess to "grep -v grep | awk '{print $3}'"
       -- store above pipe chain in a variable
@@ -239,18 +169,30 @@ on runJPEGmini()
         -- increment number of times we've found the app consecutively idle
         set timesIdle to timesIdle + 1
         -- if it's been idle for long enough we can exit
-        if (timesIdle) > 2 then
+        if (timesIdle) > 5 then
           exit repeat
         end if
       end if
       -- (implied else: by not exiting we repeat again)
     end repeat
+    delay 0.5
   end tell
-  (* QUIT WHEN FINISHED *)
-  if QUIT_APPS_ON_COMPLETE then
-    quitApp(JPEGmini)
-  end if
 end runJPEGmini
+
+(*
+ * @param  {String}  appName  eg. "ImageOptim"
+ *)
+on quitApp(appName)
+  tell application appName to quit
+end quitApp
+
+on quitImageOptim()
+  quitApp("ImageOptim")
+end runImageOptim
+
+on quitJPEGmini()
+  quitApp(getJpegMiniAppName())
+end runImageOptim
 
 (*
  * @description
@@ -263,74 +205,36 @@ on run argv
 
   (* INITIALISE GLOBALS *)
 
-  global DIRECTORY_TEMP
-  set DIRECTORY_TEMP to "/Users/jdog/Desktop/images/" -- do shell script "echo $TMPDIR"
-
-  global DIRECTORY_GIF
+  set DIRECTORY_TEMP to (do shell script "echo $TMPDIR") & "imageoptim-cli/"
   set DIRECTORY_GIF to DIRECTORY_TEMP & "gif"
-
-  global DIRECTORY_JPG
   set DIRECTORY_JPG to DIRECTORY_TEMP & "jpg"
-
-  global DIRECTORY_PNG
   set DIRECTORY_PNG to DIRECTORY_TEMP & "png"
-
-  global ERROR_GUISCRIPT_UNAVAILABLE
-  set ERROR_GUISCRIPT_UNAVAILABLE to "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again"
-
-  global ERROR_IMAGEALPHA_UNAVAILABLE
-  set ERROR_IMAGEALPHA_UNAVAILABLE to "Unable to find ImageAlpha (http://pngmini.com)"
-
-  global ERROR_IMAGEOPTIM_UNAVAILABLE
-  set ERROR_IMAGEOPTIM_UNAVAILABLE to "Unable to find ImageOptim (http://imageoptim.com)"
-
-  global ERROR_JPEGMINI_UNAVAILABLE
-  set ERROR_JPEGMINI_UNAVAILABLE to "Unable to find JPEGmini, JPEGmini Lite, or JPEGmini Pro (https://itunes.apple.com/us/app/jpegmini/id498944723)"
-
-  global ID_IMAGEALPHA
-  set ID_IMAGEALPHA to "net.pornel.ImageAlpha"
-
-  global ID_IMAGEOPTIM
   set ID_IMAGEOPTIM to "net.pornel.ImageOptim"
-
-  global ID_JPEGMINI
   set ID_JPEGMINI to "com.icvt.JPEGmini"
-
-  global ID_JPEGMINI_LITE
   set ID_JPEGMINI_LITE to "com.icvt.JPEGminiLite"
-
-  global ID_JPEGMINI_PRO
   set ID_JPEGMINI_PRO to "com.icvt.JPEGminiPro"
-
-  global ID_JPEGMINI_RETAIL
   set ID_JPEGMINI_RETAIL to "com.icvt.JPEGmini-retail"
-
-  global QUIT_APPS_ON_COMPLETE
-  set QUIT_APPS_ON_COMPLETE to false
-
-  global VERBOSE
-  set VERBOSE to true
 
   (* HANDLE COMMAND LINE ARGUMENTS *)
 
   set action to item 1 of argv
-  set quitAfter to item 2 of argv
-
-  (* TOGGLE QUITTING *)
-  if quitAfter equals "true" then
-    set QUIT_APPS_ON_COMPLETE to true
-  end if
 
   (* PERFORM ACTION *)
 
-  if action is "runImageAlpha" then
-    runImageAlpha()
-  else if action is "runImageOptim" then
-    runImageOptim()
+  if action is "quitImageOptim" then
+    return quitImageOptim()
+  else if action is "quitJPEGmini" then
+    return quitJPEGmini()
   else if action is "runJPEGmini" then
-    runJPEGmini()
-  else
-    error "imageOptimAppleScriptLib '<action>' '<quitAfter>'"
+    return runJPEGmini()
+  else if action is "supportsAssistiveDevices" then
+    return supportsAssistiveDevices()
+  else if action is "getJpegMiniAppName" then
+    return getJpegMiniAppName()
+  else if action is "hasJPEGmini" then
+    return hasJPEGmini()
+  else if action is "hasImageOptim" then
+    return hasImageOptim()
   end if
 
 end run

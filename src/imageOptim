@@ -51,14 +51,23 @@ while [ "$1" != "" ]; do
 done
 
 # ------------------------------------
+# POPULATE VARIABLES
+# ------------------------------------
+
+# Determine which Applications are installed.
+HAS_IMAGE_OPTIM=$(has_imageoptim)
+HAS_JPEGMINI=$(has_jpegmini)
+HAS_IMAGEMAGICK=$(has_imagemagick)
+HAS_GUI_SCRIPT=`osascript -e 'tell application "System Events" to get UI elements enabled'`
+JPEGMINI_NAME=$(get_jpegmini_app_name)
+
+# ------------------------------------
 # BEGIN PROCESSING
 # ------------------------------------
 
-init_temp_directory
-prepare_images
+start
 run_image_alpha
 run_jpegmini
 run_image_optim
 output_savings
-replace_originals
-clean
+finish
