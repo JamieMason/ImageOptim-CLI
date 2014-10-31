@@ -414,7 +414,8 @@ function run_jpegmini {
         fatal "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again."
       fi
       info "Running ${JPEGMINI_NAME}..."
-      open "/Applications/${JPEGMINI_NAME}.app"
+      local location=`osascript -e "POSIX path of (path to application \"${JPEGMINI_NAME}\")"`
+      open "${location}"
       osascript "$APPLESCRIPT_BIN" runJPEGmini
       if [ "true" == "$QUIT_ON_COMPLETE" ]; then
         osascript "$APPLESCRIPT_BIN" quitJPEGmini
@@ -428,7 +429,8 @@ function run_jpegmini {
 # If enabled and installed, run ImageOptim on our temp directory
 function run_image_optim {
   info "Running ImageOptim..."
-  /Applications/ImageOptim.app/Contents/MacOS/ImageOptim 2> /dev/null "${TEMP_PATH}"
+  local location=`osascript -e 'POSIX path of (path to application "ImageOptim")'`
+  "${location}Contents/MacOS/ImageOptim" 2> /dev/null "${TEMP_PATH}"
 }
 
 # ------------------------------------
