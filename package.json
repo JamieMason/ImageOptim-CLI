@@ -5,7 +5,7 @@
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "main": "./bin/imageOptim",
-  "version": "1.11.2",
+  "version": "1.11.3",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
@@ -13,7 +13,8 @@
   "bin": {
     "imageOptim": "bin/imageOptim",
     "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib",
-    "imageOptimBashLib": "bin/imageOptimBashLib"
+    "imageOptimBashLib": "bin/imageOptimBashLib",
+    "pngquant": "bin/pngquant"
   },
   "licenses": [{
     "type": "MIT",
