@@ -30,17 +30,6 @@ module.exports = function(grunt) {
           dest: 'README.md'
         }]
       }
-    },
-
-    shell: {
-      bashTests: {
-        command: './test/imageOptimBashLib_test',
-        options: {
-          callback: function(err, stdout) {
-            return err ? grunt.fatal(stdout) : grunt.log.write(stdout);
-          }
-        }
-      }
     }
 
   });
@@ -49,9 +38,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('build', ['concat', 'environment']);
-  grunt.registerTask('test', ['shell:bashTests']);
 
 };

@@ -6,6 +6,7 @@ Options:
   -a, --image-alpha   pre-process PNGs with ImageAlpha.app *
   -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **
   -q, --quit          quit all apps when complete
+  -c, --no-color      disable color output
   -h, --help          display this usage information
   -e, --examples      display some example commands and uses
   -v, --version       display the version number

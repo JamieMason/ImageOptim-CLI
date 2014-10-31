@@ -12,6 +12,8 @@ lossy optimizations.
 Check out this short [video demo of ImageOptim-CLI](https://www.youtube.com/watch?v=HGBounRIzSs) to
 see how it works.
 
+Jamie Mason / [@fold_left](https://twitter.com/fold_left).
+
 
 
 

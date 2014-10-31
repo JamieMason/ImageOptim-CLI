@@ -12,6 +12,8 @@ lossy optimizations.
 Check out this short [video demo of ImageOptim-CLI](https://www.youtube.com/watch?v=HGBounRIzSs) to
 see how it works.
 
+Jamie Mason / [@fold_left](https://twitter.com/fold_left).
+
 
 
 
@@ -75,6 +77,7 @@ essential. Saving to `/Applications` is **not** recommended, do not do this.
       -a, --image-alpha   pre-process PNGs with ImageAlpha.app *
       -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **
       -q, --quit          quit all apps when complete
+      -c, --no-color      disable color output
       -h, --help          display this usage information
       -e, --examples      display some example commands and uses
       -v, --version       display the version number
@@ -109,13 +112,13 @@ find ~/Sites/Awesome -name '*.jpg' | imageoptim # [options]
 The long format for enabling options is as follows;
 
 ```shell
-imageoptim --jpeg-mini --image-alpha --quit --directory path/to/images
+imageoptim --jpeg-mini --image-alpha --quit --no-color --directory path/to/images
 ```
 
 The equivalent of the above in short format is as follows;
 
 ```shell
-imageoptim -j -a -q -d path/to/images
+imageoptim -j -a -q -d -c path/to/images
 ```
 
 ### Adding to git pre-commit hook

@@ -19,13 +19,13 @@ find ~/Sites/Awesome -name '*.jpg' | imageoptim # [options]
 The long format for enabling options is as follows;
 
 ```shell
-imageoptim --jpeg-mini --image-alpha --quit --directory path/to/images
+imageoptim --jpeg-mini --image-alpha --quit --no-color --directory path/to/images
 ```
 
 The equivalent of the above in short format is as follows;
 
 ```shell
-imageoptim -j -a -q -d path/to/images
+imageoptim -j -a -q -d -c path/to/images
 ```
 
 ### Adding to git pre-commit hook
