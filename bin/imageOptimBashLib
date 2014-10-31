@@ -73,36 +73,14 @@ FILE_TYPES_REGEX_IMAGE_OPTIM=".*(bmp|gif|jpeg|jpg|pcx|png|pnm|tga|tiff)$"
 FILE_TYPES_REGEX_JPEGMINI=".*(jpg|jpeg)$"
 
 # {FilePath} Location of pngquant executable within ImageAlpha.
-PNGQUANT_PATH="/Applications/ImageAlpha.app/Contents/Resources/pngquant"
+PNGQUANT_PATH="${CLI_PATH}/pngquant"
 
 # {FilePath} Location of executable within ImageOptim.
 IMAGEOPTIM_BIN_PATH="/Applications/ImageOptim.app/Contents/MacOS/ImageOptim"
 
-# {String} The OS X file names for each Application.
-APP_FILENAME_IMAGE_ALPHA="ImageAlpha.app"
-APP_FILENAME_IMAGE_OPTIM="ImageOptim.app"
-APP_FILENAME_JPEGMINI="JPEGmini.app"
-
-# {String} The OS X Bundle IDs for each Application.
-APP_BUNDLE_ID_IMAGE_ALPHA="net.pornel.ImageAlpha"
-APP_BUNDLE_ID_IMAGE_OPTIM="net.pornel.ImageOptim"
-APP_BUNDLE_ID_JPEGMINI="com.icvt.JPEGmini"
-APP_BUNDLE_ID_JPEGMINI_LITE="com.icvt.JPEGmini-lite"
-APP_BUNDLE_ID_JPEGMINI_RETAIL="com.icvt.JPEGmini-retail"
-
-# {BooleanString} Whether each Application is installed, these will be set to true accordingly
-# during initialisation.
-HAS_IMAGE_ALPHA="false"
-HAS_IMAGE_OPTIM="false"
-HAS_JPEGMINI="false"
-HAS_JPEGMINI_LITE="false"
-HAS_JPEGMINI_RETAIL="false"
+# {BooleanString} Whether we can compare file quality afterwards, will be set to
+# true accordingly during initialisation.
 HAS_IMAGEMAGICK="false"
-
-# {BooleanString} Whether GUI Scripting is enabled, which is needed to robotically control OS X in
-# order to automate JPEGmini, which offers no command line access. This will be set to true
-# accordingly during initialisation.
-HAS_GUI_SCRIPT="false"
 
 # ------------------------------------
 # LOGGING UTILS
@@ -242,6 +220,9 @@ function output_savings {
       local quality_loss="false"
       if [[ $HAS_IMAGEMAGICK == "true" ]]; then
         local quality_loss=$(compare -metric MSE "$source_file" "$temp_file" /dev/null 2>&1 >/dev/null | awk '{print $1}')
+        if [[ $quality_loss == *:* ]]; then
+          quality_loss=0
+        fi
         local actual_quality=$(bc <<< "scale=2; $actual_quality+$quality_loss")
       fi
       render_result "$source_file" $size_before $size_after $quality_loss
@@ -253,15 +234,6 @@ function output_savings {
 # ------------------------------------
 # DETERMINE WHAT EXISTS AT A GIVEN LOCATION
 # ------------------------------------
-
-# State whether eg node, brew, gem etc is installed
-# param   {CliApp}         $1  bin
-# return  {BooleanString}      is_installed
-function bin_is_installed {
-  local is_installed="true"
-  type $1 >/dev/null 2>&1 || { local is_installed="false"; }
-  echo "$is_installed"
-}
 
 # State whether the entity at path is a "file", "directory", or "other".
 # param   {EntityPath}  $1  entity
@@ -368,11 +340,15 @@ function gather_paths_to_images {
 # PREPARE A TEMPORARY DIRECTORY
 # ------------------------------------
 
+function clean {
+  rm -rf "$TEMP_PATH"
+}
+
 # Automating JPEGmini is particularily difficult and unusably slow when working with arbitrary sets
 # of files. Instead, we create a temporary directory and pass that once to JPEGmini rather than
 # each file individually.
 function init_temp_directory {
-  rm -rf "$TEMP_PATH"
+  clean
   mkdir -p "$TEMP_PATH"
   chmod 777 "$TEMP_PATH"
 }
@@ -436,70 +412,66 @@ function prepare_images {
   fi
 }
 
-# ------------------------------------
-# INSPECT IMAGE APPLICATIONS
-# ------------------------------------
-
-# Use an Application's bundle id to locate the path to the installed Application.
-# param   {String}  $1  app_bundle_id
-# return  {String}  $1  path_to_app
-function get_path_to_app_by_bundle_id {
-  echo `osascript "$APPLESCRIPT_BIN" has_app_installed "$1"`
+function start {
+  init_temp_directory
+  prepare_images
 }
 
-# Is an Application at path_to_app with the expected app_bundle_id installed on this machine?
-# param   {String}  $1  path_to_app
-# param   {String}  $2  app_bundle_id
-# return  {BooleanString}
-function has_app {
-  local expected_app_name="$1"
-  local actual_app_name=$(get_path_to_app_by_bundle_id "$2")
-  if [ $actual_app_name == $expected_app_name ]; then
-    echo "true"
-  else
-    echo "false"
-  fi
-}
-
-# Determine whether GUI Scripting is enabled, which is needed to automate JPEGmini.
-function has_gui_script {
-  echo `osascript "$APPLESCRIPT_BIN" has_gui_script`
+function finish {
+  replace_originals
+  clean
 }
 
 # ------------------------------------
 # INVOKE IMAGE APPLICATIONS
 # ------------------------------------
 
+# Determine whether GUI Scripting is enabled, which is needed to automate JPEGmini.
+function has_gui_script {
+  echo `osascript "$APPLESCRIPT_BIN" supportsAssistiveDevices`
+}
+
+# State whether eg node, brew, gem etc is installed
+# param   {CliApp}         $1  bin
+# return  {BooleanString}      is_installed
+function has_imagemagick {
+  local is_installed="true"
+  type compare >/dev/null 2>&1 || { local is_installed="false"; }
+  echo "$is_installed"
+}
+
+function has_imageoptim {
+  echo `osascript "$APPLESCRIPT_BIN" hasImageOptim`
+}
+
+function has_jpegmini {
+  echo `osascript "$APPLESCRIPT_BIN" hasJPEGmini`
+}
+
+function get_jpegmini_app_name {
+  echo `osascript "$APPLESCRIPT_BIN" getJpegMiniAppName`
+}
+
 # If enabled and installed, run ImageAlpha on our temp directory
 function run_image_alpha {
-  if [ "true" == $USE_IMAGE_ALPHA ]; then
-    if [ "true" == $HAS_IMAGE_ALPHA ]; then
-      info "Running ImageAlpha..."
-      find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 \
-      $PNGQUANT_PATH --ext=.png --force --speed=1 --quality=75-100 --
-    else
-      fatal "ImageAlpha is not installed (http://pngmini.com)"
-    fi
+  if [ "true" == "$USE_IMAGE_ALPHA" ]; then
+    info "Running ImageAlpha..."
+    find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 "$PNGQUANT_PATH" --ext=.png --force --speed=1 --quality=75-100 --skip-if-larger --
   fi
 }
 
 # If enabled and installed, run JPEGmini on our temp directory
 function run_jpegmini {
-  if [ "true" == $USE_JPEGMINI ]; then
-    if [ "true" == $HAS_JPEGMINI ] || [ "true" == $HAS_JPEGMINI_RETAIL ] || [ "true" == $HAS_JPEGMINI_LITE ]; then
-      if [ "true" == $HAS_GUI_SCRIPT ]; then
-        info "Running JPEGmini..."
-        `osascript "$APPLESCRIPT_BIN" run_jpegmini "${TEMP_PATH}/jpg" JPEGmini` > /dev/null 2>&1
-        `osascript "$APPLESCRIPT_BIN" wait_for JPEGmini` > /dev/null 2>&1
-        if [ "true" == $QUIT_ON_COMPLETE ]; then
-          osascript -e 'tell application "JPEGmini" to quit'
-        fi
-      else
-        local message=""
-        message="${message}To automate JPEGmini we need to enable GUI Scripting. Check 'Enable "
-        message="${message}access for assistive devices' under Accessibility in System Preferences"
-        message="${message}, then run ImageOptim-CLI again."
-        fatal "$message"
+  if [ "true" == "$USE_JPEGMINI" ]; then
+    if [ "true" == "$HAS_JPEGMINI" ]; then
+      if [ "true" != "$HAS_GUI_SCRIPT" ]; then
+        fatal "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again."
+      fi
+      info "Running ${JPEGMINI_NAME}..."
+      open "/Applications/${JPEGMINI_NAME}.app"
+      osascript "$APPLESCRIPT_BIN" runJPEGmini
+      if [ "true" == "$QUIT_ON_COMPLETE" ]; then
+        osascript "$APPLESCRIPT_BIN" quitJPEGmini
       fi
     else
       fatal "JPEGmini is not installed (https://itunes.apple.com/us/app/jpegmini/id498944723)"
@@ -509,12 +481,8 @@ function run_jpegmini {
 
 # If enabled and installed, run ImageOptim on our temp directory
 function run_image_optim {
-  if [ "true" == $HAS_IMAGE_OPTIM ]; then
-    info "Running ImageOptim..."
-    $IMAGEOPTIM_BIN_PATH 2> /dev/null "$TEMP_PATH"
-  else
-    fatal "ImageOptim is not installed (http://imageoptim.com)"
-  fi
+  info "Running ImageOptim..."
+  /Applications/ImageOptim.app/Contents/MacOS/ImageOptim 2> /dev/null "${TEMP_PATH}"
 }
 
 # ------------------------------------
