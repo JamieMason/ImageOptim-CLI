@@ -57,7 +57,7 @@ You can install manually by downloading the latest zip then adding ImageOptim-CL
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
 ```shell
-curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.11.2
+curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.11.3
 unzip imageoptim-cli.zip
 export PATH=$PATH:imageoptim-cli/bin
 ```
