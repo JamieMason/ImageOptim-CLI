@@ -13,7 +13,8 @@
   "bin": {
     "imageOptim": "bin/imageOptim",
     "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib",
-    "imageOptimBashLib": "bin/imageOptimBashLib"
+    "imageOptimBashLib": "bin/imageOptimBashLib",
+    "pngquant": "bin/pngquant"
   },
   "licenses": [{
     "type": "MIT",
