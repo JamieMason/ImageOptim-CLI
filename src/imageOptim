@@ -31,6 +31,9 @@ while [ "$1" != "" ]; do
     -q | --quit )
       QUIT_ON_COMPLETE="true"
       ;;
+    -c | --no-color )
+      NO_COLOR="true"
+      ;;
     -h | --help )
       usage;
       exit 0
@@ -55,22 +58,19 @@ done
 # ------------------------------------
 
 # Determine which Applications are installed.
-HAS_IMAGE_ALPHA=$(has_app $APP_FILENAME_IMAGE_ALPHA $APP_BUNDLE_ID_IMAGE_ALPHA)
-HAS_IMAGE_OPTIM=$(has_app $APP_FILENAME_IMAGE_OPTIM $APP_BUNDLE_ID_IMAGE_OPTIM)
-HAS_JPEGMINI=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI)
-HAS_JPEGMINI_LITE=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI_LITE)
-HAS_JPEGMINI_RETAIL=$(has_app $APP_FILENAME_JPEGMINI $APP_BUNDLE_ID_JPEGMINI_RETAIL)
-HAS_IMAGEMAGICK=$(bin_is_installed compare)
-HAS_GUI_SCRIPT=$(has_gui_script)
+HAS_IMAGE_OPTIM=$(has_imageoptim)
+HAS_JPEGMINI=$(has_jpegmini)
+HAS_IMAGEMAGICK=$(has_imagemagick)
+HAS_GUI_SCRIPT=`osascript -e 'tell application "System Events" to get UI elements enabled'`
+JPEGMINI_NAME=$(get_jpegmini_app_name)
 
 # ------------------------------------
 # BEGIN PROCESSING
 # ------------------------------------
 
-init_temp_directory
-prepare_images
+start
 run_image_alpha
 run_jpegmini
 run_image_optim
 output_savings
-replace_originals
+finish

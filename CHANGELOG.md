@@ -1,5 +1,13 @@
 # Change Log
 
+**1.11.2** — Nov. 01, 2014 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.11...1.11.2)
+
++ Provide a parameter to disable color output, fixes #78.
++ Add support for .apps installed outside /Applications, fixes #90.
++ Add support for JPEGmini Lite (#67), JPEGmini Pro (#79), and OS X Yosemite (#89).
++ Upgrade to pngquant 2.3.1 to access --skip-if-larger, fixes #81.
++ Change git pre-commit hook, fixes #82.
+
 **1.7.11** — Jan. 23, 2014 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.10...1.7.11)
 
 + Add FAQs and related projects to README.
@@ -31,11 +39,15 @@
 + Improved performance when automating JPEGmini with files received via stdin.
 + Added a colourful summary of file sizes before and after optimisation — plus what percentage of the original file was removed:
 
-        images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%)
+```
+images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%)
+```
 
 + If [ImageMagick](http://www.imagemagick.org) is installed, the summary will also include what percentage of the original file's quality was retained during optimisation.
 
-        images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%) quality: 96.06224%
+```
+images/Totoro.png was: 95.072kb now: 31.501kb saving: 63.571kb (66.00%) quality: 96.06224%
+```
 
 + ImageAlpha's improved pngquant is run over multiple cores for better performance.
 + Fixed issue where JPEGmini can display a prompt regarding it wanting to quit.

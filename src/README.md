@@ -12,6 +12,8 @@ lossy optimizations.
 Check out this short [video demo of ImageOptim-CLI](https://www.youtube.com/watch?v=HGBounRIzSs) to
 see how it works.
 
+Jamie Mason / [@fold_left](https://twitter.com/fold_left).
+
 
 
 
@@ -30,7 +32,6 @@ see how it works.
   + [Comparison of image optimization tools](#comparison-of-image-optimization-tools)
   + [Article for Smashing Magazine](#article-for-smashing-magazine)
   + [Alfred workflow](#alfred-workflow)
-  + [Gulp Plugin](#gulp-plugin)
 + [FAQs](#faqs)
   + [General](#general)
   + [ImageOptim](#imageoptim)
@@ -46,17 +47,20 @@ see how it works.
 ImageOptim-CLI is written in Shell and AppleScript, you don't _need_ Node.js to run it.
 [npm](https://npmjs.org/) is suggested because it makes installation very convenient.
 
-    $ npm install -g imageoptim-cli
-
+```shell
+npm install -g imageoptim-cli
+```
 
 ### Manual Installation
 
 You can install manually by downloading the latest zip then adding ImageOptim-CLI to your
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
-	$ curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/{{version}}
-	$ unzip imageoptim-cli.zip
-	$ export PATH=$PATH:imageoptim-cli/bin
+```shell
+curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/{{version}}
+unzip imageoptim-cli.zip
+export PATH=$PATH:imageoptim-cli/bin
+```
 
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
 essential. Saving to `/Applications` is **not** recommended, do not do this.
@@ -108,12 +112,6 @@ The ImageOptim-CLI Workflow for Alfred app
 is [alfred-image-optim-workflow](https://github.com/ramiroaraujo/alfred-image-optim-workflow)
 
 
-### Gulp Plugin
-
-The ImageOptim-CLI [Gulp](http://gulpjs.com) plugin is
-[gulp-imageoptim](https://github.com/JamieMason/gulp-imageoptim).
-
-
 
 
 ## FAQs
@@ -155,7 +153,7 @@ in those applications rather than this automator.
 ### ImageOptim
 
 
-#### ImageOptim got my fans ackin' straight up Cray Cray.
+#### ImageOptim makes the fans on my Mac run at full power.
 
 Optimising images is a pretty intensive process, so instead of optimising one image at a time (which
 would take forever) — ImageOptim optimises many images at the same time until all of them are done.

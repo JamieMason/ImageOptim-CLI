@@ -1,11 +1,11 @@
 {
   "name": "imageoptim-cli",
-  "author": "Jamie Mason (https://github.com/JamieMason)",
+  "author": "Jamie Mason <siunmaru@gmail.com>",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "main": "./bin/imageOptim",
-  "version": "1.7.11",
+  "version": "1.11.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
@@ -17,12 +17,10 @@
   },
   "licenses": [{
     "type": "MIT",
-    "url": "https://raw.github.com/JamieMason/ImageOptim-CLI/master/LICENSE"
+    "url": "https://raw.githubusercontent.com/JamieMason/LICENSES/master/LICENSE-MIT"
   }],
   "keywords": [
     "advpng",
-    "build",
-    "codekit",
     "compress",
     "gifsicle",
     "imagealpha",
@@ -32,34 +30,28 @@
     "jpegmini",
     "jpegoptim",
     "jpegtran",
-    "kraken",
-    "mac",
-    "optimisation",
-    "optimise",
-    "optimization",
-    "optimize",
+    "image optimisation",
+    "optimise images",
+    "image compression",
+    "compress images",
     "optipng",
-    "osx",
     "pngcrush",
+    "pngquant",
     "pngout",
     "smushit",
     "tinypng"
   ],
-  "scripts": {
-    "test": "grunt test"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.1"
-  },
   "devDependencies": {
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-shell": "~0.5.0"
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-watch": "^0.6.1"
   },
   "contributors": [
     "Jamie Mason (https://github.com/JamieMason)",
     "James Stout (https://github.com/jamesstout)",
-    "Simen Brekken (https://github.com/sbrekken)"
+    "Simen Brekken (https://github.com/sbrekken)",
+    "Martin Schürrer (https://github.com/MSch)",
+    "Adam Kiss (https://github.com/adamkiss)"
   ]
 }
