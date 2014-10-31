@@ -31,6 +31,9 @@ while [ "$1" != "" ]; do
     -q | --quit )
       QUIT_ON_COMPLETE="true"
       ;;
+    -c | --no-color )
+      NO_COLOR="true"
+      ;;
     -h | --help )
       usage;
       exit 0
