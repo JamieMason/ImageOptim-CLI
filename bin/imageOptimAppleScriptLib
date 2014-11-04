@@ -191,7 +191,7 @@ on run argv
   set ID_IMAGEOPTIM to "net.pornel.ImageOptim"
   set ID_JPEGMINI to "com.icvt.JPEGmini"
   set ID_JPEGMINI_LITE to "com.icvt.JPEGminiLite"
-  set ID_JPEGMINI_PRO to "com.icvt.JPEGminiPro"
+  set ID_JPEGMINI_PRO to "com.icvt.JPEGmini-Pro-retail"
   set ID_JPEGMINI_RETAIL to "com.icvt.JPEGmini-retail"
 
   (* HANDLE COMMAND LINE ARGUMENTS *)

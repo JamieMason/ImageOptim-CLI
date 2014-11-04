@@ -1,5 +1,9 @@
 # Change Log
 
+**1.11.4** — Nov. 01, 2014 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.3...1.11.4)
+
++ Amend the application id for JPEGmini Pro, refs #79.
+
 **1.11.3** — Nov. 01, 2014 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.7.11...1.11.3)
 
 + Provide a parameter to disable color output, fixes #78.
