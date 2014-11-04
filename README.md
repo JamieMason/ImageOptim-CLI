@@ -21,6 +21,7 @@ Jamie Mason / [@fold_left](https://twitter.com/fold_left).
 
 + [Installation](#installation)
   + [Manual Installation](#manual-installation)
+  + [JPEGmini and support for assistive devices](#jpegmini-and-support-for-assistive-devices)
 + [Usage](#usage)
 + [Examples](#examples)
   + [Optimise a directory of images](#optimise-a-directory-of-images)
@@ -64,6 +65,21 @@ export PATH=$PATH:imageoptim-cli/bin
 
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
 essential. Saving to `/Applications` is **not** recommended, do not do this.
+
+### JPEGmini and support for assistive devices
+
+You may be presented with the following message the first time you run ImageOptim-CLI with the `--jpeg-mini` flag.
+
+> To automate JPEGmini we need to add Terminal.app (or iTerm.app etc) to the 'support for assistive devices' whitelist.
+
+The JPEGmini OS X Apps don't include a command line API, so a real user is
+simulated by entering synthetic clicks and keyboard commands instead. This
+requires your permission and is easily set up in System Preferences as shown by
+these guides.
+
++ [Enable access for assistive devices in OS X Yosemite](http://www.klabouch.com/?p=98).
++ [OS X Mavericks: Enable access for assistive devices and applications](http://support.apple.com/en-us/HT6026)
+
 
 
 

@@ -468,7 +468,7 @@ function run_jpegmini {
   if [ "true" == "$USE_JPEGMINI" ]; then
     if [ "true" == "$HAS_JPEGMINI" ]; then
       if [ "true" != "$HAS_GUI_SCRIPT" ]; then
-        fatal "To automate JPEGmini we need to enable GUI Scripting. Check 'Enable access for assistive devices' under Accessibility in System Preferences, then run ImageOptim-CLI again."
+        fatal "To automate JPEGmini we need to add Terminal.app (or iTerm.app etc) to the 'support for assistive devices' whitelist. Please see README for more details."
       fi
       info "Running ${JPEGMINI_NAME}..."
       local location=`osascript -e "POSIX path of (path to application \"${JPEGMINI_NAME}\")"`
