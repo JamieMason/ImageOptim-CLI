@@ -21,6 +21,7 @@ The Photoshop layers were saved as pngs, gifs and jpgs in all possible combinati
         rm -rf images/codekit
         rm -rf images/grunt-contrib-imagemin
         rm -rf images/imageoptim
+        rm -rf images/image_optim
         rm -rf images/jpegmini-and-imageoptim
         rm -rf images/kraken
         rm -rf images/photoshop

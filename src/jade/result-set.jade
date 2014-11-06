@@ -87,6 +87,7 @@ html(lang='en-GB')
               +header('grunt-contrib-imagemin')
               +header('smushit')
               +header('tinypng')
+              +header('image_optim')
 
           tbody
             each imageResult in results
@@ -103,6 +104,7 @@ html(lang='en-GB')
                 +column(imageResult['grunt-contrib-imagemin'], imageResult, 'grunt-contrib-imagemin')
                 +column(imageResult['smushit'], imageResult, 'smushit')
                 +column(imageResult['tinypng'], imageResult, 'tinypng')
+                +column(imageResult['image_optim'], imageResult, 'image_optim')
 
   script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

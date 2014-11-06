@@ -229,6 +229,7 @@ table {
   td:nth-of-type(6):before { content: "grunt-contrib-imagemin"; }
   td:nth-of-type(7):before { content: "Smushit"; }
   td:nth-of-type(8):before { content: "TinyPNG"; }
+  td:nth-of-type(9):before { content: "image_optim"; }
 }
 
 @media
