@@ -115,7 +115,9 @@ module.exports = function(grunt) {
       'kraken': 'Kraken',
       'photoshop': 'Photoshop',
       'smushit': 'Smushit',
-      'tinypng': 'TinyPNG'
+      'tinypng': 'TinyPNG',
+      'image_optim': 'image_optim',
+      'image_optim-lossy': 'image_optim lossy',
     };
     var filters = ['all', 'jpeg', 'png', 'gif'];
     var sortDirections = ['asc', 'desc'];
