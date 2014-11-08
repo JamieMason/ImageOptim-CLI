@@ -18,6 +18,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 67058,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 1.66,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.66,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 67142,
       "meanErrorSquared": 0,
@@ -174,6 +191,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 79432,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 1.4,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.4,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 79516,
@@ -332,6 +366,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 8773,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 11.41,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.41,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 8857,
       "meanErrorSquared": 0,
@@ -488,6 +539,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 116197,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 0.96,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 0.96,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 116282,
@@ -646,6 +714,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 18820,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2084,
+      "sizeLossPercent": 9.97,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.97,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 19181,
       "meanErrorSquared": 0,
@@ -802,6 +887,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 97875,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 1.14,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.14,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 97960,
@@ -960,6 +1062,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 126306,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 0.89,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 0.89,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 126391,
       "meanErrorSquared": 0,
@@ -1116,6 +1235,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 2488,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 31.23,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 31.23,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 2573,
@@ -1274,6 +1410,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 107477,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 1.04,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 1.04,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 107562,
       "meanErrorSquared": 0,
@@ -1430,6 +1583,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 67058,
+      "meanErrorSquared": 0,
+      "sizeLoss": 8588,
+      "sizeLossPercent": 11.35,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.35,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 67142,
@@ -1588,6 +1758,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 79432,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9898,
+      "sizeLossPercent": 11.08,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.08,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 79516,
       "meanErrorSquared": 0,
@@ -1744,6 +1931,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 8773,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1804,
+      "sizeLossPercent": 17.06,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 17.06,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 8857,
@@ -1902,6 +2106,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 116197,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9350,
+      "sizeLossPercent": 7.45,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.45,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 116282,
       "meanErrorSquared": 0,
@@ -2058,6 +2279,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 18820,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1406,
+      "sizeLossPercent": 6.95,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.95,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 19181,
@@ -2216,6 +2454,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 97875,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10224,
+      "sizeLossPercent": 9.46,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.46,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 97960,
       "meanErrorSquared": 0,
@@ -2372,6 +2627,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 126306,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9894,
+      "sizeLossPercent": 7.26,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.26,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 126391,
@@ -2530,6 +2802,23 @@
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
     },
+    "image_optim-lossy": {
+      "size": 2488,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1130,
+      "sizeLossPercent": 31.23,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 31.23,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 2573,
       "meanErrorSquared": 0,
@@ -2686,6 +2975,23 @@
       "isSmallest": true,
       "isLossiest": false,
       "classNames": "image_optim best-score smallest lossless"
+    },
+    "image_optim-lossy": {
+      "size": 107477,
+      "meanErrorSquared": 0,
+      "sizeLoss": 11666,
+      "sizeLossPercent": 9.79,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.79,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score smallest lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 107562,
@@ -2861,6 +3167,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
+    "image_optim-lossy": {
+      "size": 34788,
+      "meanErrorSquared": 2.92616,
+      "sizeLoss": 66415,
+      "sizeLossPercent": 65.63,
+      "qualityLossPercent": 4.45,
+      "exclude": false,
+      "score": 56.73,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 85704,
       "meanErrorSquared": 0,
@@ -3018,6 +3341,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 39657,
+      "meanErrorSquared": 3.28296,
+      "sizeLoss": 76234,
+      "sizeLossPercent": 65.78,
+      "qualityLossPercent": 7.02,
+      "exclude": false,
+      "score": 51.74,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -3157,6 +3497,23 @@
       "isSmallest": false,
       "isLossiest": true,
       "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 27519,
+      "meanErrorSquared": 7.34809,
+      "sizeLoss": 41814,
+      "sizeLossPercent": 60.31,
+      "qualityLossPercent": 11.17,
+      "exclude": false,
+      "score": 37.97,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "jpegmini-and-imageoptim": {
       "size": 25731,
@@ -3332,6 +3689,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 59059,
+      "meanErrorSquared": 4.0718,
+      "sizeLoss": 102690,
+      "sizeLossPercent": 63.49,
+      "qualityLossPercent": 6.98,
+      "exclude": false,
+      "score": 49.53,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 145248,
       "meanErrorSquared": 0,
@@ -3468,9 +3842,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 98884,
+      "meanErrorSquared": 52.115,
+      "sizeLoss": 136129,
+      "sizeLossPercent": 57.92,
+      "qualityLossPercent": 17.22,
+      "exclude": false,
+      "score": 23.48,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 125918,
@@ -3646,6 +4037,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 47472,
+      "meanErrorSquared": 4.05488,
+      "sizeLoss": 88262,
+      "sizeLossPercent": 65.03,
+      "qualityLossPercent": 6.99,
+      "exclude": false,
+      "score": 51.05,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -3803,6 +4211,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 86699,
+      "meanErrorSquared": 12.698,
+      "sizeLoss": 144460,
+      "sizeLossPercent": 62.49,
+      "qualityLossPercent": 8.43,
+      "exclude": false,
+      "score": 45.63,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 209566,
       "meanErrorSquared": 0,
@@ -3939,9 +4364,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 31409,
+      "meanErrorSquared": 287.137,
+      "sizeLoss": 151414,
+      "sizeLossPercent": 82.82,
+      "qualityLossPercent": 37.8,
+      "exclude": false,
+      "score": 7.22,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 35028,
@@ -4117,6 +4559,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
+    "image_optim-lossy": {
+      "size": 26593,
+      "meanErrorSquared": 1.52885,
+      "sizeLoss": 77937,
+      "sizeLossPercent": 74.56,
+      "qualityLossPercent": 4.42,
+      "exclude": false,
+      "score": 65.72,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -4273,6 +4732,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
+    },
+    "image_optim-lossy": {
+      "size": 34788,
+      "meanErrorSquared": 2.92616,
+      "sizeLoss": 59256,
+      "sizeLossPercent": 63.01,
+      "qualityLossPercent": 4.45,
+      "exclude": false,
+      "score": 54.11,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "image_optim": {
       "size": 85704,
@@ -4431,6 +4907,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 39657,
+      "meanErrorSquared": 3.28296,
+      "sizeLoss": 70377,
+      "sizeLossPercent": 63.96,
+      "qualityLossPercent": 7.02,
+      "exclude": false,
+      "score": 49.92,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -4570,6 +5063,23 @@
       "isSmallest": false,
       "isLossiest": true,
       "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 27519,
+      "meanErrorSquared": 7.34809,
+      "sizeLoss": 29626,
+      "sizeLossPercent": 51.84,
+      "qualityLossPercent": 11.17,
+      "exclude": false,
+      "score": 29.5,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "jpegmini-and-imageoptim": {
       "size": 25731,
@@ -4745,6 +5255,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 59059,
+      "meanErrorSquared": 4.0718,
+      "sizeLoss": 98225,
+      "sizeLossPercent": 62.45,
+      "qualityLossPercent": 6.98,
+      "exclude": false,
+      "score": 48.49,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 145248,
       "meanErrorSquared": 0,
@@ -4881,9 +5408,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 98884,
+      "meanErrorSquared": 52.115,
+      "sizeLoss": 119214,
+      "sizeLossPercent": 54.66,
+      "qualityLossPercent": 17.22,
+      "exclude": false,
+      "score": 20.22,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 125918,
@@ -5059,6 +5603,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 47472,
+      "meanErrorSquared": 4.05488,
+      "sizeLoss": 82367,
+      "sizeLossPercent": 63.44,
+      "qualityLossPercent": 6.99,
+      "exclude": false,
+      "score": 49.46,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -5216,6 +5777,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 86699,
+      "meanErrorSquared": 12.698,
+      "sizeLoss": 140729,
+      "sizeLossPercent": 61.88,
+      "qualityLossPercent": 8.43,
+      "exclude": false,
+      "score": 45.02,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 209566,
       "meanErrorSquared": 0,
@@ -5352,9 +5930,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 31409,
+      "meanErrorSquared": 287.137,
+      "sizeLoss": 58748,
+      "sizeLossPercent": 65.16,
+      "qualityLossPercent": 37.8,
+      "exclude": false,
+      "score": -10.44,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 35028,
@@ -5530,6 +6125,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
+    "image_optim-lossy": {
+      "size": 26593,
+      "meanErrorSquared": 1.52885,
+      "sizeLoss": 63503,
+      "sizeLossPercent": 70.48,
+      "qualityLossPercent": 4.42,
+      "exclude": false,
+      "score": 61.64,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -5686,6 +6298,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
+    },
+    "image_optim-lossy": {
+      "size": 34788,
+      "meanErrorSquared": 2.92616,
+      "sizeLoss": 56094,
+      "sizeLossPercent": 61.72,
+      "qualityLossPercent": 4.45,
+      "exclude": false,
+      "score": 52.82,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "image_optim": {
       "size": 85704,
@@ -5844,6 +6473,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 39657,
+      "meanErrorSquared": 3.28296,
+      "sizeLoss": 67215,
+      "sizeLossPercent": 62.89,
+      "qualityLossPercent": 7.02,
+      "exclude": false,
+      "score": 48.85,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -5983,6 +6629,23 @@
       "isSmallest": false,
       "isLossiest": true,
       "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 27519,
+      "meanErrorSquared": 7.34809,
+      "sizeLoss": 26464,
+      "sizeLossPercent": 49.02,
+      "qualityLossPercent": 11.17,
+      "exclude": false,
+      "score": 26.68,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "jpegmini-and-imageoptim": {
       "size": 25731,
@@ -6158,6 +6821,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 59059,
+      "meanErrorSquared": 4.0718,
+      "sizeLoss": 95063,
+      "sizeLossPercent": 61.68,
+      "qualityLossPercent": 6.98,
+      "exclude": false,
+      "score": 47.72,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 145248,
       "meanErrorSquared": 0,
@@ -6294,9 +6974,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 98884,
+      "meanErrorSquared": 52.115,
+      "sizeLoss": 116052,
+      "sizeLossPercent": 53.99,
+      "qualityLossPercent": 17.22,
+      "exclude": false,
+      "score": 19.55,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 125918,
@@ -6472,6 +7169,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 47472,
+      "meanErrorSquared": 4.05488,
+      "sizeLoss": 79205,
+      "sizeLossPercent": 62.53,
+      "qualityLossPercent": 6.99,
+      "exclude": false,
+      "score": 48.55,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -6629,6 +7343,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 86699,
+      "meanErrorSquared": 12.698,
+      "sizeLoss": 137567,
+      "sizeLossPercent": 61.34,
+      "qualityLossPercent": 8.43,
+      "exclude": false,
+      "score": 44.48,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 209566,
       "meanErrorSquared": 0,
@@ -6765,9 +7496,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 31409,
+      "meanErrorSquared": 287.137,
+      "sizeLoss": 55586,
+      "sizeLossPercent": 63.9,
+      "qualityLossPercent": 37.8,
+      "exclude": false,
+      "score": -11.7,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 35028,
@@ -6943,6 +7691,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
+    "image_optim-lossy": {
+      "size": 26593,
+      "meanErrorSquared": 1.52885,
+      "sizeLoss": 60341,
+      "sizeLossPercent": 69.41,
+      "qualityLossPercent": 4.42,
+      "exclude": false,
+      "score": 60.57,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -7099,6 +7864,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
+    },
+    "image_optim-lossy": {
+      "size": 34788,
+      "meanErrorSquared": 2.92616,
+      "sizeLoss": 59256,
+      "sizeLossPercent": 63.01,
+      "qualityLossPercent": 4.45,
+      "exclude": false,
+      "score": 54.11,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "image_optim": {
       "size": 85704,
@@ -7257,6 +8039,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 39657,
+      "meanErrorSquared": 3.28296,
+      "sizeLoss": 70377,
+      "sizeLossPercent": 63.96,
+      "qualityLossPercent": 7.02,
+      "exclude": false,
+      "score": 49.92,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -7396,6 +8195,23 @@
       "isSmallest": false,
       "isLossiest": true,
       "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 27519,
+      "meanErrorSquared": 7.34809,
+      "sizeLoss": 29626,
+      "sizeLossPercent": 51.84,
+      "qualityLossPercent": 11.17,
+      "exclude": false,
+      "score": 29.5,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "jpegmini-and-imageoptim": {
       "size": 25731,
@@ -7571,6 +8387,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 59059,
+      "meanErrorSquared": 4.0718,
+      "sizeLoss": 98225,
+      "sizeLossPercent": 62.45,
+      "qualityLossPercent": 6.98,
+      "exclude": false,
+      "score": 48.49,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 145248,
       "meanErrorSquared": 0,
@@ -7707,9 +8540,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 98884,
+      "meanErrorSquared": 52.115,
+      "sizeLoss": 119214,
+      "sizeLossPercent": 54.66,
+      "qualityLossPercent": 17.22,
+      "exclude": false,
+      "score": 20.22,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 125918,
@@ -7885,6 +8735,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 47472,
+      "meanErrorSquared": 4.05488,
+      "sizeLoss": 82367,
+      "sizeLossPercent": 63.44,
+      "qualityLossPercent": 6.99,
+      "exclude": false,
+      "score": 49.46,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -8042,6 +8909,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 86699,
+      "meanErrorSquared": 12.698,
+      "sizeLoss": 140729,
+      "sizeLossPercent": 61.88,
+      "qualityLossPercent": 8.43,
+      "exclude": false,
+      "score": 45.02,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 209566,
       "meanErrorSquared": 0,
@@ -8178,9 +9062,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 31409,
+      "meanErrorSquared": 287.137,
+      "sizeLoss": 58748,
+      "sizeLossPercent": 65.16,
+      "qualityLossPercent": 37.8,
+      "exclude": false,
+      "score": -10.44,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 35028,
@@ -8356,6 +9257,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
+    "image_optim-lossy": {
+      "size": 26593,
+      "meanErrorSquared": 1.52885,
+      "sizeLoss": 63503,
+      "sizeLossPercent": 70.48,
+      "qualityLossPercent": 4.42,
+      "exclude": false,
+      "score": 61.64,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -8512,6 +9430,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
+    },
+    "image_optim-lossy": {
+      "size": 34788,
+      "meanErrorSquared": 2.92616,
+      "sizeLoss": 52470,
+      "sizeLossPercent": 60.13,
+      "qualityLossPercent": 4.45,
+      "exclude": false,
+      "score": 51.23,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "image_optim": {
       "size": 85704,
@@ -8670,6 +9605,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 39657,
+      "meanErrorSquared": 3.28296,
+      "sizeLoss": 62543,
+      "sizeLossPercent": 61.2,
+      "qualityLossPercent": 7.02,
+      "exclude": false,
+      "score": 47.16,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -8809,6 +9761,23 @@
       "isSmallest": false,
       "isLossiest": true,
       "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 27519,
+      "meanErrorSquared": 7.34809,
+      "sizeLoss": 22960,
+      "sizeLossPercent": 45.48,
+      "qualityLossPercent": 11.17,
+      "exclude": false,
+      "score": 23.14,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "jpegmini-and-imageoptim": {
       "size": 25731,
@@ -8984,6 +9953,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 59059,
+      "meanErrorSquared": 4.0718,
+      "sizeLoss": 90192,
+      "sizeLossPercent": 60.43,
+      "qualityLossPercent": 6.98,
+      "exclude": false,
+      "score": 46.47,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 145248,
       "meanErrorSquared": 0,
@@ -9120,9 +10106,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 98884,
+      "meanErrorSquared": 52.115,
+      "sizeLoss": 108110,
+      "sizeLossPercent": 52.23,
+      "qualityLossPercent": 17.22,
+      "exclude": false,
+      "score": 17.79,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 125918,
@@ -9298,6 +10301,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 47472,
+      "meanErrorSquared": 4.05488,
+      "sizeLoss": 73721,
+      "sizeLossPercent": 60.83,
+      "qualityLossPercent": 6.99,
+      "exclude": false,
+      "score": 46.85,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -9455,6 +10475,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 86699,
+      "meanErrorSquared": 12.698,
+      "sizeLoss": 126586,
+      "sizeLossPercent": 59.35,
+      "qualityLossPercent": 8.43,
+      "exclude": false,
+      "score": 42.49,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 209566,
       "meanErrorSquared": 0,
@@ -9591,9 +10628,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 31409,
+      "meanErrorSquared": 287.137,
+      "sizeLoss": 55760,
+      "sizeLossPercent": 63.97,
+      "qualityLossPercent": 37.8,
+      "exclude": false,
+      "score": -11.63,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 35028,
@@ -9769,6 +10823,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
     },
+    "image_optim-lossy": {
+      "size": 26593,
+      "meanErrorSquared": 1.52885,
+      "sizeLoss": 57783,
+      "sizeLossPercent": 68.48,
+      "qualityLossPercent": 4.42,
+      "exclude": false,
+      "score": 59.64,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 81793,
       "meanErrorSquared": 0,
@@ -9925,6 +10996,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
+    },
+    "image_optim-lossy": {
+      "size": 34788,
+      "meanErrorSquared": 2.92616,
+      "sizeLoss": 63253,
+      "sizeLossPercent": 64.52,
+      "qualityLossPercent": 4.45,
+      "exclude": false,
+      "score": 55.62,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "image_optim": {
       "size": 85704,
@@ -10083,6 +11171,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 39657,
+      "meanErrorSquared": 3.28296,
+      "sizeLoss": 73072,
+      "sizeLossPercent": 64.82,
+      "qualityLossPercent": 7.02,
+      "exclude": false,
+      "score": 50.78,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 100151,
       "meanErrorSquared": 0,
@@ -10222,6 +11327,23 @@
       "isSmallest": false,
       "isLossiest": true,
       "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 27519,
+      "meanErrorSquared": 7.34809,
+      "sizeLoss": 38652,
+      "sizeLossPercent": 58.41,
+      "qualityLossPercent": 11.17,
+      "exclude": false,
+      "score": 36.07,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "jpegmini-and-imageoptim": {
       "size": 25731,
@@ -10397,6 +11519,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 59059,
+      "meanErrorSquared": 4.0718,
+      "sizeLoss": 99528,
+      "sizeLossPercent": 62.76,
+      "qualityLossPercent": 6.98,
+      "exclude": false,
+      "score": 48.8,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 145248,
       "meanErrorSquared": 0,
@@ -10533,9 +11672,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 98884,
+      "meanErrorSquared": 52.115,
+      "sizeLoss": 132967,
+      "sizeLossPercent": 57.35,
+      "qualityLossPercent": 17.22,
+      "exclude": false,
+      "score": 22.91,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 125918,
@@ -10711,6 +11867,23 @@
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim best-score"
     },
+    "image_optim-lossy": {
+      "size": 47472,
+      "meanErrorSquared": 4.05488,
+      "sizeLoss": 85100,
+      "sizeLossPercent": 64.19,
+      "qualityLossPercent": 6.99,
+      "exclude": false,
+      "score": 50.21,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 119419,
       "meanErrorSquared": 0,
@@ -10868,6 +12041,23 @@
       "isLossiest": false,
       "classNames": "kraken"
     },
+    "image_optim-lossy": {
+      "size": 86699,
+      "meanErrorSquared": 12.698,
+      "sizeLoss": 141298,
+      "sizeLossPercent": 61.97,
+      "qualityLossPercent": 8.43,
+      "exclude": false,
+      "score": 45.11,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
+    },
     "image_optim": {
       "size": 209566,
       "meanErrorSquared": 0,
@@ -11004,9 +12194,26 @@
       "isSmaller": true,
       "isDegraded": false,
       "hasBestScore": false,
-      "isSmallest": true,
+      "isSmallest": false,
       "isLossiest": true,
-      "classNames": "kraken smallest lossiest"
+      "classNames": "kraken lossiest"
+    },
+    "image_optim-lossy": {
+      "size": 31409,
+      "meanErrorSquared": 287.137,
+      "sizeLoss": 148252,
+      "sizeLossPercent": 82.52,
+      "qualityLossPercent": 37.8,
+      "exclude": false,
+      "score": 6.92,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": true,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy smallest"
     },
     "jpegmini-and-imageoptim": {
       "size": 35028,
@@ -11181,6 +12388,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "jpegmini-and-imageoptim"
+    },
+    "image_optim-lossy": {
+      "size": 26593,
+      "meanErrorSquared": 1.52885,
+      "sizeLoss": 74775,
+      "sizeLossPercent": 73.77,
+      "qualityLossPercent": 4.42,
+      "exclude": false,
+      "score": 64.93,
+      "isNoOp": false,
+      "isLossless": false,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy"
     },
     "image_optim": {
       "size": 81793,
@@ -11407,6 +12631,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 198904,
+      "meanErrorSquared": 0,
+      "sizeLoss": 57750,
+      "sizeLossPercent": 22.5,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 22.5,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 246944,
       "meanErrorSquared": 0,
@@ -11564,6 +12805,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 219034,
+      "meanErrorSquared": 0,
+      "sizeLoss": 61516,
+      "sizeLossPercent": 21.93,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 21.93,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 266630,
       "meanErrorSquared": 0,
@@ -11652,6 +12910,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 5559,
+      "meanErrorSquared": 0,
+      "sizeLoss": 12954,
+      "sizeLossPercent": 69.97,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 69.97,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 5571,
@@ -11878,6 +13153,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 312442,
+      "meanErrorSquared": 0,
+      "sizeLoss": 81826,
+      "sizeLossPercent": 20.75,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 20.75,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 382105,
       "meanErrorSquared": 0,
@@ -11966,6 +13258,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 3369,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14172,
+      "sizeLossPercent": 80.79,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 80.79,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "imageoptim": {
       "size": 3508,
@@ -12192,6 +13501,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 271406,
+      "meanErrorSquared": 0,
+      "sizeLoss": 71556,
+      "sizeLossPercent": 20.86,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 20.86,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 327089,
       "meanErrorSquared": 0,
@@ -12349,6 +13675,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 386514,
+      "meanErrorSquared": 0,
+      "sizeLoss": 70435,
+      "sizeLossPercent": 15.41,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 15.41,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 443931,
       "meanErrorSquared": 0,
@@ -12437,6 +13780,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2399,
+      "sizeLossPercent": 87.59,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 87.59,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "imageoptim": {
       "size": 340,
@@ -12663,6 +14023,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 211205,
+      "meanErrorSquared": 0,
+      "sizeLoss": 54198,
+      "sizeLossPercent": 20.42,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 20.42,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 237762,
       "meanErrorSquared": 0,
@@ -12819,6 +14196,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 198904,
+      "meanErrorSquared": 0,
+      "sizeLoss": 17860,
+      "sizeLossPercent": 8.24,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.24,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "grunt-contrib-imagemin": {
       "size": 205029,
@@ -12977,6 +14371,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 219034,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14268,
+      "sizeLossPercent": 6.12,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.12,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 221102,
       "meanErrorSquared": 0,
@@ -13065,6 +14476,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 5559,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7202,
+      "sizeLossPercent": 56.44,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 56.44,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "imageoptim": {
       "size": 5566,
@@ -13291,6 +14719,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 312442,
+      "meanErrorSquared": 0,
+      "sizeLoss": 21985,
+      "sizeLossPercent": 6.57,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 6.57,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 317077,
       "meanErrorSquared": 0,
@@ -13379,6 +14824,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 3369,
+      "meanErrorSquared": 0,
+      "sizeLoss": 13091,
+      "sizeLossPercent": 79.53,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 79.53,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "jpegmini-and-imageoptim": {
       "size": 3497,
@@ -13605,6 +15067,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 271406,
+      "meanErrorSquared": 0,
+      "sizeLoss": 16489,
+      "sizeLossPercent": 5.73,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 5.73,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "grunt-contrib-imagemin": {
       "size": 271907,
       "meanErrorSquared": 0,
@@ -13779,6 +15258,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 386063,
+      "meanErrorSquared": 0,
+      "sizeLoss": 14935,
+      "sizeLossPercent": 3.72,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 3.72,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "smushit": {
       "size": 386063,
       "meanErrorSquared": 0,
@@ -13850,6 +15346,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1905,
+      "sizeLossPercent": 84.86,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 84.86,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "imageoptim": {
       "size": 340,
@@ -14093,6 +15606,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 211205,
+      "meanErrorSquared": 0,
+      "sizeLoss": 18071,
+      "sizeLossPercent": 7.88,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.88,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "smushit": {
       "size": 216993,
       "meanErrorSquared": 0,
@@ -14215,6 +15745,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 55104,
+      "meanErrorSquared": 0,
+      "sizeLoss": 19825,
+      "sizeLossPercent": 26.46,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 26.46,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "tinypng": {
       "size": 55699,
@@ -14373,6 +15920,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 62048,
+      "meanErrorSquared": 0,
+      "sizeLoss": 24293,
+      "sizeLossPercent": 28.14,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 28.14,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "tinypng": {
       "size": 62584,
       "meanErrorSquared": 0,
@@ -14478,6 +16042,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 5559,
+      "meanErrorSquared": 0,
+      "sizeLoss": 4780,
+      "sizeLossPercent": 46.23,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 46.23,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 5572,
@@ -14687,6 +16268,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 96667,
+      "meanErrorSquared": 0,
+      "sizeLoss": 29405,
+      "sizeLossPercent": 23.32,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 23.32,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "tinypng": {
       "size": 97311,
       "meanErrorSquared": 0,
@@ -14792,6 +16390,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 3369,
+      "meanErrorSquared": 0,
+      "sizeLoss": 3196,
+      "sizeLossPercent": 48.68,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 48.68,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 3511,
@@ -14984,6 +16599,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 77043,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28609,
+      "sizeLossPercent": 27.08,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 27.08,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 77140,
       "meanErrorSquared": 0,
@@ -15141,6 +16773,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 103723,
+      "meanErrorSquared": 0,
+      "sizeLoss": 28027,
+      "sizeLossPercent": 21.27,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 21.27,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 103741,
       "meanErrorSquared": 0,
@@ -15263,6 +16912,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1655,
+      "sizeLossPercent": 82.96,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 82.96,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "imageoptim": {
       "size": 340,
@@ -15472,6 +17138,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 82184,
+      "meanErrorSquared": 0,
+      "sizeLoss": 29328,
+      "sizeLossPercent": 26.3,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 26.3,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "tinypng": {
       "size": 82247,
       "meanErrorSquared": 0,
@@ -15628,6 +17311,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 55104,
+      "meanErrorSquared": 0,
+      "sizeLoss": 5765,
+      "sizeLossPercent": 9.47,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.47,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "tinypng": {
       "size": 55699,
@@ -15786,6 +17486,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 62048,
+      "meanErrorSquared": 0,
+      "sizeLoss": 6135,
+      "sizeLossPercent": 9,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "tinypng": {
       "size": 62584,
       "meanErrorSquared": 0,
@@ -15891,6 +17608,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim best-score lossless"
+    },
+    "image_optim-lossy": {
+      "size": 5559,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2126,
+      "sizeLossPercent": 27.66,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 27.66,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": true,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy best-score lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 5565,
@@ -16100,6 +17834,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 96667,
+      "meanErrorSquared": 0,
+      "sizeLoss": 9707,
+      "sizeLossPercent": 9.13,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 9.13,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "tinypng": {
       "size": 97311,
       "meanErrorSquared": 0,
@@ -16205,6 +17956,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 3369,
+      "meanErrorSquared": 0,
+      "sizeLoss": 2711,
+      "sizeLossPercent": 44.59,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 44.59,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "imagealpha-and-imageoptim": {
       "size": 3522,
@@ -16397,6 +18165,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 77043,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7045,
+      "sizeLossPercent": 8.38,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 8.38,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "imagealpha-and-imageoptim": {
       "size": 77140,
       "meanErrorSquared": 0,
@@ -16571,6 +18356,23 @@
       "isLossiest": false,
       "classNames": "image_optim lossless"
     },
+    "image_optim-lossy": {
+      "size": 103756,
+      "meanErrorSquared": 0,
+      "sizeLoss": 7823,
+      "sizeLossPercent": 7.01,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 7.01,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
+    },
     "tinypng": {
       "size": 104114,
       "meanErrorSquared": 0,
@@ -16676,6 +18478,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 340,
+      "meanErrorSquared": 0,
+      "sizeLoss": 1453,
+      "sizeLossPercent": 81.04,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 81.04,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "imageoptim": {
       "size": 340,
@@ -16884,6 +18703,23 @@
       "isSmallest": false,
       "isLossiest": false,
       "classNames": "image_optim lossless"
+    },
+    "image_optim-lossy": {
+      "size": 82211,
+      "meanErrorSquared": 0,
+      "sizeLoss": 10357,
+      "sizeLossPercent": 11.19,
+      "qualityLossPercent": 0,
+      "exclude": false,
+      "score": 11.19,
+      "isNoOp": false,
+      "isLossless": true,
+      "isSmaller": true,
+      "isDegraded": false,
+      "hasBestScore": false,
+      "isSmallest": false,
+      "isLossiest": false,
+      "classNames": "image_optim-lossy lossless"
     },
     "tinypng": {
       "size": 82247,
