@@ -230,6 +230,7 @@ table {
   td:nth-of-type(7):before { content: "Smushit"; }
   td:nth-of-type(8):before { content: "TinyPNG"; }
   td:nth-of-type(9):before { content: "image_optim"; }
+  td:nth-of-type(10):before { content: "image_optim lossy"; }
 }
 
 @media
