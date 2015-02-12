@@ -8,9 +8,11 @@ global DIRECTORY_PNG
 global DIRECTORY_TEMP
 global ID_IMAGEOPTIM
 global ID_JPEGMINI
-global ID_JPEGMINI_LITE
-global ID_JPEGMINI_PRO
 global ID_JPEGMINI_RETAIL
+global ID_JPEGMINI_LITE
+global ID_JPEGMINI_LITE_RETAIL
+global ID_JPEGMINI_PRO
+global ID_JPEGMINI_PRO_RETAIL
 global JPEGMINI_APP_NAME
 
 (*
@@ -60,11 +62,11 @@ end supportsAssistiveDevices
  * @return  {String}  eg. "JPEGmini Pro"
  *)
 on getJpegMiniAppName()
-  if isInstalled(ID_JPEGMINI_PRO) then
+  if isInstalled(ID_JPEGMINI_PRO) or isInstalled(ID_JPEGMINI_PRO_RETAIL) then
     return "JPEGmini Pro"
   else if isInstalled(ID_JPEGMINI) or isInstalled(ID_JPEGMINI_RETAIL) then
     return "JPEGmini"
-  else if isInstalled(ID_JPEGMINI_LITE) then
+  else if isInstalled(ID_JPEGMINI_LITE) or isInstalled(ID_JPEGMINI_LITE_RETAIL) then
     return "JPEGmini Lite"
   end if
   return "false"
@@ -119,10 +121,13 @@ on runJPEGmini()
       end repeat
       -- give Finder time to resolve the path
       delay 2
+      keystroke return
+      delay 2
+      keystroke return
       -- start optimising (>= Yosemite)
-      click button "Go" of sheet 1 of window 1
+      -- click button "Go" of sheet 1 of window 1
       -- start optimising (<= Mavericks)
-      click button "Open" of sheet 1 of window 1
+      -- click button "Open" of sheet 1 of window 1
     end tell
   end tell
   (* WAIT FOR JPEGMINI TO FINISH RUNNING *)
@@ -190,9 +195,11 @@ on run argv
   set DIRECTORY_PNG to DIRECTORY_TEMP & "png"
   set ID_IMAGEOPTIM to "net.pornel.ImageOptim"
   set ID_JPEGMINI to "com.icvt.JPEGmini"
-  set ID_JPEGMINI_LITE to "com.icvt.JPEGminiLite"
-  set ID_JPEGMINI_PRO to "com.icvt.JPEGmini-Pro-retail"
   set ID_JPEGMINI_RETAIL to "com.icvt.JPEGmini-retail"
+  set ID_JPEGMINI_LITE to "com.icvt.JPEGminiLite"
+  set ID_JPEGMINI_LITE_RETAIL to "com.icvt.JPEGminiLite-retail"
+  set ID_JPEGMINI_PRO to "com.icvt.JPEGmini-Pro"
+  set ID_JPEGMINI_PRO_RETAIL to "com.icvt.JPEGmini-Pro-retail"
 
   (* HANDLE COMMAND LINE ARGUMENTS *)
 
