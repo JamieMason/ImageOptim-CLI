@@ -486,8 +486,15 @@ function run_jpegmini {
 # If enabled and installed, run ImageOptim on our temp directory
 function run_image_optim {
   info "Running ImageOptim..."
+  # find where imageoptim is installed (opens app)
   local location=`osascript -e 'POSIX path of (path to application "ImageOptim")'`
+  # close duplicate app
+  osascript "$APPLESCRIPT_BIN" quitImageOptim
+  # run images over the app
   "${location}Contents/MacOS/ImageOptim" 2> /dev/null "${TEMP_PATH}"
+  if [ "true" == "$QUIT_ON_COMPLETE" ]; then
+    osascript "$APPLESCRIPT_BIN" quitImageOptim
+  fi
 }
 
 # ------------------------------------
