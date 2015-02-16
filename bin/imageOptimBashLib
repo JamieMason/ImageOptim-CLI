@@ -7,7 +7,7 @@
 # ------------------------------------
 
 # current version of ImageOptim-CLI from package.json
-VERSION="1.11.4"
+VERSION="1.11.6"
 
 # {DirectoryPath} Absolute file system path to this shell script.
 CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
