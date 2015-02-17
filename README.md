@@ -1,5 +1,7 @@
 # ImageOptim-CLI
 
+[![Join the chat at https://gitter.im/JamieMason/ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 > Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and
 > [JPEGmini for Mac](http://jpegmini.com/mac) to make batch optimisation of images part of your
 > automated build process.
