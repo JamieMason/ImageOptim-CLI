@@ -94,6 +94,7 @@ these guides.
       -d, --directory     directory of images to process
       -a, --image-alpha   pre-process PNGs with ImageAlpha.app *
       -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **
+      -m, --min-quality   pngquant min quality parameter
       -q, --quit          quit all apps when complete
       -c, --no-color      disable color output
       -h, --help          display this usage information
