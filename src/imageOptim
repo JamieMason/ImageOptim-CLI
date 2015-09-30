@@ -28,6 +28,10 @@ while [ "$1" != "" ]; do
     -j | --jpeg-mini )
       USE_JPEGMINI="true"
       ;;
+    -m | --min-quality )
+      shift;
+      MIN_QUALITY="$1"
+      ;;
     -q | --quit )
       QUIT_ON_COMPLETE="true"
       ;;
