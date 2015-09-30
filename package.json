@@ -5,7 +5,7 @@
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "main": "./bin/imageOptim",
-  "version": "1.11.6",
+  "version": "1.11.6b",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"

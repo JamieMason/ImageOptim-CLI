@@ -1,3 +1,22 @@
+# Custom ImageOptim-CLI
+Forked branch that fixes issues with pngquant minimum quality parameters.
+
+### Manual Installation
+
+You can install manually by downloading the latest zip then adding ImageOptim-CLI to your
+[$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
+
+```shell
+curl --output imageoptim-cli.zip https://codeload.github.com/fbbarros/ImageOptim-CLI/zip/1.11.6b
+unzip imageoptim-cli.zip
+export PATH=$PATH:imageoptim-cli/bin
+```
+
+> Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
+essential. Saving to `/Applications` is **not** recommended, do not do this.
+
+------------------------------------------------------------------------------
+
 # ImageOptim-CLI
 
 [![Join the chat at https://gitter.im/JamieMason/ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -60,7 +79,7 @@ You can install manually by downloading the latest zip then adding ImageOptim-CL
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
 ```shell
-curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.11.6
+curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.11.6b
 unzip imageoptim-cli.zip
 export PATH=$PATH:imageoptim-cli/bin
 ```

@@ -7,7 +7,7 @@
 # ------------------------------------
 
 # current version of ImageOptim-CLI from package.json
-VERSION="1.11.6"
+VERSION="1.11.6b"
 
 # {DirectoryPath} Absolute file system path to this shell script.
 CLI_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -36,6 +36,9 @@ TOTAL_IMAGES=0
 
 # {DirectoryPath|String} The optionally provided -d or --directory command line argument.
 DIRECTORY_OPTION="false"
+
+# {Number} Optinally overriden with -m or --min-quality
+MIN_QUALITY="75"
 
 # {BooleanString} Optionally overridden with -a or --image-alpha.
 USE_IMAGE_ALPHA="false"
@@ -128,6 +131,7 @@ function usage {
   echo "  -d, --directory     directory of images to process"
   echo "  -a, --image-alpha   pre-process PNGs with ImageAlpha.app *"
   echo "  -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **"
+  echo "  -m, --min-quality   pngquant min quality parameter"
   echo "  -q, --quit          quit all apps when complete"
   echo "  -c, --no-color      disable color output"
   echo "  -h, --help          display this usage information"
@@ -459,7 +463,7 @@ function get_jpegmini_app_name {
 function run_image_alpha {
   if [ "true" == "$USE_IMAGE_ALPHA" ]; then
     info "Running ImageAlpha..."
-    find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 "$PNGQUANT_PATH" --ext=.png --force --speed=1 --quality=75-100 --skip-if-larger --
+    find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 "$PNGQUANT_PATH" --ext=.png --force --speed=1 --quality="$MIN_QUALITY"-100 --skip-if-larger --
   fi
 }
 
