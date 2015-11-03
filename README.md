@@ -1,6 +1,23 @@
-# ImageOptim-CLI
+# Custom ImageOptim-CLI
+Forked branch that fixes issues with pngquant minimum quality parameters.
 
-[![Join the chat at https://gitter.im/JamieMason/ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+### Manual Installation
+
+You can install manually by downloading the latest zip then adding ImageOptim-CLI to your
+[$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
+
+```shell
+curl --output imageoptim-cli.zip https://codeload.github.com/fbbarros/ImageOptim-CLI/zip/1.11.6c
+unzip imageoptim-cli.zip
+export PATH=$PATH:imageoptim-cli/bin
+```
+
+> Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
+essential. Saving to `/Applications` is **not** recommended, do not do this.
+
+------------------------------------------------------------------------------
+
+# ImageOptim-CLI
 
 > Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and
 > [JPEGmini for Mac](http://jpegmini.com/mac) to make batch optimisation of images part of your
@@ -60,7 +77,7 @@ You can install manually by downloading the latest zip then adding ImageOptim-CL
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
 ```shell
-curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.11.6
+curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.11.6d
 unzip imageoptim-cli.zip
 export PATH=$PATH:imageoptim-cli/bin
 ```
@@ -91,14 +108,16 @@ these guides.
     
     Options:
     
-      -d, --directory     directory of images to process
-      -a, --image-alpha   pre-process PNGs with ImageAlpha.app *
-      -j, --jpeg-mini     pre-process JPGs with JPEGmini.app **
-      -q, --quit          quit all apps when complete
-      -c, --no-color      disable color output
-      -h, --help          display this usage information
-      -e, --examples      display some example commands and uses
-      -v, --version       display the version number
+      -d, --directory     	directory of images to process
+      -a, --image-alpha   	pre-process PNGs with ImageAlpha.app *
+      -j, --jpeg-mini     	pre-process JPGs with JPEGmini.app **
+      -m, --min-quality   	pngquant min quality parameter
+      -s, --skip-if-larger	pngquant use --skip-if-larger
+      -q, --quit          	quit all apps when complete
+      -c, --no-color      	disable color output
+      -h, --help          	display this usage information
+      -e, --examples      	display some example commands and uses
+      -v, --version       	display the version number
     
     *  http://pngmini.com
     ** https://itunes.apple.com/us/app/jpegmini/id498944723

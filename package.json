@@ -1,14 +1,14 @@
 {
-  "name": "imageoptim-cli",
+  "name": "pretty-imageoptim",
   "author": "Jamie Mason <siunmaru@gmail.com>",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
-  "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
-  "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
+  "homepage": "https://github.com/fbbarros/ImageOptim-CLI",
+  "bugs": "https://github.com/fbbarros/ImageOptim-CLI/issues",
   "main": "./bin/imageOptim",
-  "version": "1.11.6",
+  "version": "1.11.6d",
   "repository": {
     "type": "git",
-    "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
+    "url": "git://github.com/fbbarros/ImageOptim-CLI.git"
   },
   "bin": {
     "imageOptim": "bin/imageOptim",
@@ -53,6 +53,7 @@
     "James Stout (https://github.com/jamesstout)",
     "Simen Brekken (https://github.com/sbrekken)",
     "Martin Schürrer (https://github.com/MSch)",
-    "Adam Kiss (https://github.com/adamkiss)"
+    "Adam Kiss (https://github.com/adamkiss)",
+    "Fernando Barros (https://github.com/fbbarros)"
   ]
 }

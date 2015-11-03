@@ -37,6 +37,12 @@ TOTAL_IMAGES=0
 # {DirectoryPath|String} The optionally provided -d or --directory command line argument.
 DIRECTORY_OPTION="false"
 
+# {Number} Optinally overriden with -m or --min-quality
+MIN_QUALITY="75"
+
+# {BooleanString} Optionally use -s or --skip-if-larger with pngquant
+SKIP_IF_LARGER="false"
+
 # {BooleanString} Optionally overridden with -a or --image-alpha.
 USE_IMAGE_ALPHA="false"
 
@@ -404,7 +410,11 @@ function get_jpegmini_app_name {
 function run_image_alpha {
   if [ "true" == "$USE_IMAGE_ALPHA" ]; then
     info "Running ImageAlpha..."
-    find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 "$PNGQUANT_PATH" --ext=.png --force --speed=1 --quality=75-100 --skip-if-larger --
+    local added_options
+    if [ "true" == "$SKIP_IF_LARGER" ]; then
+      added_options="--skip-if-larger"
+    fi
+    find "${TEMP_PATH}/png" -type f -print0 | xargs -n10 -P8 -0 "$PNGQUANT_PATH" --ext=.png --force --speed=1 --quality="$MIN_QUALITY"-100 ${added_options} --
   fi
 }
 
