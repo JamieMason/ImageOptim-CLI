@@ -1,7 +1,9 @@
 # Change Log
 
-**1.14.6** — Feb. 09, 2016 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.6...1.14.6)
+**1.14.8** — Feb. 09, 2016 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.6...1.14.8)
 
+* **filesystem:** remove additional trailing slash after $TMPDIR, fixes #87.
+* **examples:** remove shell syntax highlighting.
 + **logging:** per-file reporting is now opt-in via a --verbose flag.
 + **pngquant:** add --skip-if-larger option.
 + **pngquant:** replace hard-coded value with -m/--min-quality param.
