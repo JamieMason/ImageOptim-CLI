@@ -1,5 +1,11 @@
 # Change Log
 
+**1.14.6** — Feb. 09, 2016 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.6...1.14.6)
+
++ **logging:** per-file reporting is now opt-in via a --verbose flag.
++ **pngquant:** add --skip-if-larger option.
++ **pngquant:** replace hard-coded value with -m/--min-quality param.
+
 **1.11.6** — Feb. 16, 2015 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.4...1.11.6)
 
 + Handle "standard" and "retail" JPEGmini variants, fixes #98.
