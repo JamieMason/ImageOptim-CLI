@@ -23,7 +23,7 @@ STAT_BIN="/usr/bin/stat"
 
 # {DirectoryPath} Where we'll copy all images to be processed, compared, then returned to their
 # original locations.
-TEMP_PATH="${TMPDIR}/imageoptim-cli"
+TEMP_PATH="${TMPDIR}imageoptim-cli"
 
 # {FilePath} A list of all images we'll be operating on.
 INDEX_FILE="${TEMP_PATH}/index.txt"
