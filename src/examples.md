@@ -36,5 +36,5 @@ aren't images will be ignored.
 
 ```shell
 images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- '*.png' '*.jpg')
-$(exit $?) || echo $images | imageoptim && git add $images
+$(exit $?) || (echo "$images" | imageoptim && git add $images)
 ```

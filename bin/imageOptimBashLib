@@ -187,7 +187,7 @@ function examples {
   echo ""
   echo "```shell"
   echo "images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- '*.png' '*.jpg')"
-  echo "$(exit $?) || echo $images | imageoptim && git add $images"
+  echo "$(exit $?) || (echo "$images" | imageoptim && git add $images)"
   echo "```"
   echo ""
 }
