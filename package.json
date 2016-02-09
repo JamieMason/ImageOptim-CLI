@@ -1,46 +1,25 @@
 {
   "name": "imageoptim-cli",
-  "author": "Jamie Mason <siunmaru@gmail.com>",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
-  "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
-  "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
-  "main": "./bin/imageOptim",
   "version": "1.11.6c",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
-  },
+  "author": "Jamie Mason <siunmaru@gmail.com>",
   "bin": {
     "imageOptim": "bin/imageOptim",
     "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib",
     "imageOptimBashLib": "bin/imageOptimBashLib",
     "pngquant": "bin/pngquant"
   },
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://raw.githubusercontent.com/JamieMason/LICENSES/master/LICENSE-MIT"
-  }],
-  "keywords": [
-    "advpng",
-    "compress",
-    "gifsicle",
-    "imagealpha",
-    "imagemin",
-    "imageoptim",
-    "images",
-    "jpegmini",
-    "jpegoptim",
-    "jpegtran",
-    "image optimisation",
-    "optimise images",
-    "image compression",
-    "compress images",
-    "optipng",
-    "pngcrush",
-    "pngquant",
-    "pngout",
-    "smushit",
-    "tinypng"
+  "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
+  "contributors": [
+    "Adam Kiss (https://github.com/adamkiss)",
+    "Fernando Barrosl (https://github.com/)",
+    "James Stout (https://github.com/jamesstout)",
+    "Jamie Mason (https://github.com/JamieMason)",
+    "Jason Grantl (https://github.com/oo12)",
+    "Martin Schürrer (https://github.com/MSch)",
+    "Ramiro Araujol (https://github.com/ramiroaraujo)",
+    "Simen Brekken (https://github.com/sbrekken)",
+    "Tom Chenl (https://github.com/tomchentw)"
   ],
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -48,11 +27,38 @@
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1"
   },
-  "contributors": [
-    "Jamie Mason (https://github.com/JamieMason)",
-    "James Stout (https://github.com/jamesstout)",
-    "Simen Brekken (https://github.com/sbrekken)",
-    "Martin Schürrer (https://github.com/MSch)",
-    "Adam Kiss (https://github.com/adamkiss)"
-  ]
+  "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
+  "keywords": [
+    "advpng",
+    "compress",
+    "compress images",
+    "gifsicle",
+    "image compression",
+    "image optimisation",
+    "imagealpha",
+    "imagemin",
+    "imageoptim",
+    "images",
+    "jpegmini",
+    "jpegoptim",
+    "jpegtran",
+    "optimise images",
+    "optipng",
+    "pngcrush",
+    "pngout",
+    "pngquant",
+    "smushit",
+    "tinypng"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/JamieMason/LICENSES/master/LICENSE-MIT"
+    }
+  ],
+  "main": "./bin/imageOptim",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
+  }
 }
