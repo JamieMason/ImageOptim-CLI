@@ -49,6 +49,9 @@ while [ "$1" != "" ]; do
       examples;
       exit 0
       ;;
+    --verbose )
+      IS_VERBOSE="true"
+      ;;
     -v | --version )
       echo $VERSION;
       exit 0

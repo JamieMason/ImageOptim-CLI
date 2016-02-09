@@ -70,6 +70,9 @@ HAS_IMAGEMAGICK="false"
 # {BooleanString} Whether to disable ANSI colour output.
 NO_COLOR="false"
 
+# {BooleanString} Whether to print detailed information about the optimizations
+IS_VERBOSE="false"
+
 # ------------------------------------
 # LOGGING UTILS
 # ------------------------------------
@@ -131,16 +134,17 @@ function usage {
   echo ""
   echo "Options:"
   echo ""
-  echo "  -d, --directory     	directory of images to process"
-  echo "  -a, --image-alpha   	pre-process PNGs with ImageAlpha.app *"
-  echo "  -j, --jpeg-mini     	pre-process JPGs with JPEGmini.app **"
-  echo "  -m, --min-quality   	pngquant min quality parameter"
-  echo "  -s, --skip-if-larger	pngquant use --skip-if-larger"
-  echo "  -q, --quit          	quit all apps when complete"
-  echo "  -c, --no-color      	disable color output"
-  echo "  -h, --help          	display this usage information"
-  echo "  -e, --examples      	display some example commands and uses"
-  echo "  -v, --version       	display the version number"
+  echo "  -d, --directory       directory of images to process"
+  echo "  -a, --image-alpha     pre-process PNGs with ImageAlpha.app *"
+  echo "  -j, --jpeg-mini       pre-process JPGs with JPEGmini.app **"
+  echo "  -m, --min-quality     pngquant min quality parameter"
+  echo "  -s, --skip-if-larger  pngquant use --skip-if-larger"
+  echo "  -q, --quit            quit all apps when complete"
+  echo "  -c, --no-color        disable color output"
+  echo "  -h, --help            display this usage information"
+  echo "  -e, --examples        display some example commands and uses"
+  echo "  -v, --version         display the version number"
+  echo "  --verbose             display detailed, per-file info on optimizations"
   echo ""
   echo "*  http://pngmini.com"
   echo "** https://itunes.apple.com/us/app/jpegmini/id498944723"
@@ -236,7 +240,9 @@ function output_savings {
         fi
         local actual_quality=$(bc <<< "scale=2; $actual_quality+$quality_loss")
       fi
-      render_result "$source_file" $size_before $size_after $quality_loss
+      if [[ $IS_VERBOSE == "true" ]]; then
+        render_result "$source_file" $size_before $size_after $quality_loss
+      fi
     fi
   done
   render_result "TOTAL" $total_before $total_after $quality_loss
