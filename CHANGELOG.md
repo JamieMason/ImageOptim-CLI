@@ -1,5 +1,10 @@
 # Change Log
 
+**1.11.6** — Feb. 16, 2015 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.4...1.11.6)
+
++ Handle "standard" and "retail" JPEGmini variants, fixes #98.
++ --quit closes JPEGmini but not ImageOptim, fixes #105.
+
 **1.11.4** — Nov. 01, 2014 — [Diff](https://github.com/JamieMason/ImageOptim-CLI/compare/1.11.3...1.11.4)
 
 + Amend the application id for JPEGmini Pro, refs #79.
