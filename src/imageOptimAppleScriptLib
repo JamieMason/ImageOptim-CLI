@@ -111,14 +111,28 @@ on runJPEGmini()
   (* NAVIGATE TO OUR FOLDER OF IMAGES *)
   tell application "System Events"
     tell process JPEGMINI_APP_NAME
-      set value of text field 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
-      repeat
-        if (value of text field 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
-          delay 1
-        else
-          exit repeat
-        end if
-      end repeat
+      (* < SIERRA, FILE PATH SELECTOR IS TEXT INPUT *)
+      if text field 1 of sheet 1 of sheet 1 of window 1 exists then
+        set value of text field 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
+        repeat
+          if (value of text field 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
+            delay 1
+          else
+            exit repeat
+          end if
+        end repeat
+      end if
+      (* >= SIERRA, FILE PATH SELECTOR IS COMBO BOX *)
+      if combo box 1 of sheet 1 of sheet 1 of window 1 exists then
+        set value of combo box 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
+        repeat
+          if (value of combo box 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
+            delay 1
+          else
+            exit repeat
+          end if
+        end repeat
+      end if
       -- give Finder time to resolve the path
       delay 2
       keystroke return
