@@ -111,9 +111,9 @@ on runJPEGmini()
   (* NAVIGATE TO OUR FOLDER OF IMAGES *)
   tell application "System Events"
     tell process JPEGMINI_APP_NAME
-      set value of text field 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
+      set value of combo box 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
       repeat
-        if (value of text field 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
+        if (value of combo box 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
           delay 1
         else
           exit repeat
