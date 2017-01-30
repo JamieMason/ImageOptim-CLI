@@ -111,9 +111,9 @@ on runJPEGmini()
   (* NAVIGATE TO OUR FOLDER OF IMAGES *)
   tell application "System Events"
     tell process JPEGMINI_APP_NAME
-    (* DETERMINE THE FILE PATH SELECTOR OF JPEG MINI *)
-      set os_version to do shell script "sw_vers -productVersion | sed 's|\\.[0-9]\\{1,\\}$||g'"
-      if os_version is "10.12" then
+      (* DETERMINE THE FILE PATH SELECTOR OF JPEG MINI *)
+      set OS_VERSION to do shell script "sw_vers -productVersion | sed 's|\\.[0-9]\\{1,\\}$||g'"
+      if OS_VERSION is "10.12" then
         set value of combo box 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
         repeat
           if (value of combo box 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
