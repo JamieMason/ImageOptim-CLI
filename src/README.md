@@ -2,10 +2,7 @@
 
 [![Join the chat at https://gitter.im/JamieMason/ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![npm downloads](https://img.shields.io/npm/dm/ImageOptim-CLI.svg?style=flat-square)](https://www.npmjs.com/package/ImageOptim-CLI)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/JamieMason/ImageOptim-CLI.svg?style=social)](https://twitter.com/intent/tweet?text=Additional%20matchers%20for%20the%20Jasmine%20BDD%20JavaScript%20testing%20library%20%23JavaScript%20%23NodeJS%20&url=https%3A%2F%2Fgithub.com%2FJamieMason%2FImageOptim-CLI)
-[![Follow @fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social)](https://twitter.com/fold_left)
-[![GitHub stars](https://img.shields.io/github/stars/JamieMason/ImageOptim-CLI.svg?style=social&label=Star)](https://github.com/JamieMason/ImageOptim-CLI)
-[![GitHub followers](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
+[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/imageoptim-cli?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 
 > Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and
 > [JPEGmini for Mac](http://jpegmini.com/mac) to make batch optimisation of images part of your

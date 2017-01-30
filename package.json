@@ -50,15 +50,14 @@
     "smushit",
     "tinypng"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://raw.githubusercontent.com/JamieMason/LICENSES/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "./bin/imageOptim",
   "repository": {
     "type": "git",
     "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "watch": "grunt watch"
   }
 }
