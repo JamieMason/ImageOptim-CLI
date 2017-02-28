@@ -1,4 +1,4 @@
-Usage: imageoptim [options]
+Usage: imageOptim [options]
 
 Options:
 

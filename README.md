@@ -62,7 +62,7 @@ You can install manually by downloading the latest zip then adding ImageOptim-CL
 [$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
 
 ```shell
-curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.14.8
+curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/1.14.9
 unzip imageoptim-cli.zip
 export PATH=$PATH:imageoptim-cli/bin
 ```
@@ -89,7 +89,7 @@ these guides.
 
 
 ## Usage
-    Usage: imageoptim [options]
+    Usage: imageOptim [options]
     
     Options:
     
@@ -118,23 +118,23 @@ these guides.
 
 This command will optimise all image files in your Awesome project.
 
-    imageoptim --directory ~/Sites/Awesome # [options]
+    imageOptim --directory ~/Sites/Awesome # [options]
 
 ### Optimise a filtered set of images
 
 This command will optimise just the .jpg files in your Awesome project.
 
-    find ~/Sites/Awesome -name '*.jpg' | imageoptim # [options]
+    find ~/Sites/Awesome -name '*.jpg' | imageOptim # [options]
 
 ### Passing additional options
 
 The long format for enabling options is as follows;
 
-    imageoptim --jpeg-mini --image-alpha --quit --no-color --directory path/to/images
+    imageOptim --jpeg-mini --image-alpha --quit --no-color --directory path/to/images
 
 The equivalent of the above in short format is as follows;
 
-    imageoptim -j -a -q -d -c path/to/images
+    imageOptim -j -a -q -d -c path/to/images
 
 ### Adding to git pre-commit hook
 
@@ -143,7 +143,7 @@ each time you commit new and changed files into your project. Any files which
 aren't images will be ignored.
 
     images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- '*.png' '*.jpg')
-    $(exit $?) || (echo "$images" | imageoptim && git add $images)
+    $(exit $?) || (echo "$images" | imageOptim && git add $images)
 
 
 
