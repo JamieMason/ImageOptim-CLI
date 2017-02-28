@@ -89,7 +89,7 @@ these guides.
 
 
 ## Usage
-    Usage: imageoptim [options]
+    Usage: imageOptim [options]
     
     Options:
     
@@ -118,23 +118,23 @@ these guides.
 
 This command will optimise all image files in your Awesome project.
 
-    imageoptim --directory ~/Sites/Awesome # [options]
+    imageOptim --directory ~/Sites/Awesome # [options]
 
 ### Optimise a filtered set of images
 
 This command will optimise just the .jpg files in your Awesome project.
 
-    find ~/Sites/Awesome -name '*.jpg' | imageoptim # [options]
+    find ~/Sites/Awesome -name '*.jpg' | imageOptim # [options]
 
 ### Passing additional options
 
 The long format for enabling options is as follows;
 
-    imageoptim --jpeg-mini --image-alpha --quit --no-color --directory path/to/images
+    imageOptim --jpeg-mini --image-alpha --quit --no-color --directory path/to/images
 
 The equivalent of the above in short format is as follows;
 
-    imageoptim -j -a -q -d -c path/to/images
+    imageOptim -j -a -q -d -c path/to/images
 
 ### Adding to git pre-commit hook
 
@@ -143,7 +143,7 @@ each time you commit new and changed files into your project. Any files which
 aren't images will be ignored.
 
     images=$(git diff --exit-code --cached --name-only --diff-filter=ACM -- '*.png' '*.jpg')
-    $(exit $?) || (echo "$images" | imageoptim && git add $images)
+    $(exit $?) || (echo "$images" | imageOptim && git add $images)
 
 
 
@@ -199,7 +199,7 @@ You will need to install these applications separately.
 The CLI, ImageOptim and ImageAlpha are all free. JPEGmini is a paid-for product but you can use
 ImageOptim-CLI and choose not to run JPEGmini.
 
-#### Why are shorthand options supplied in the format `imageoptim -a -j -q` instead of the more common `imageoptim -ajq`?
+#### Why are shorthand options supplied in the format `imageOptim -a -j -q` instead of the more common `imageOptim -ajq`?
 
 This was an early mistake which now needs supporting for backwards compatibility.
 [Issue 21](https://github.com/JamieMason/ImageOptim-CLI/issues/21) is open to add support for
