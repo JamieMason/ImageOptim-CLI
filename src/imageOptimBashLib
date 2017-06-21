@@ -277,8 +277,17 @@ function add_directory_option_to_index {
 # Remove any duplicate files in our index, which may have occurred when importing directories whose
 # images have already been gathered by other means.
 function remove_duplicate_indexes {
-  sort -f "$INDEX_FILE" | uniq > "$INDEX_FILE.uniq.txt"
+  sort -uf "$INDEX_FILE"  > "$INDEX_FILE.uniq.txt"
   mv "$INDEX_FILE.uniq.txt" "$INDEX_FILE"
+}
+
+# Check we actually got some files
+# test -s means exists and size > zero
+# See: man bash | less '+/^\s*CONDITIONAL'
+function check_index_exists {
+  if [ ! -s "$INDEX_FILE" ]; then
+    fatal "No files found by the find command or in the provided directory"
+  fi
 }
 
 # Read our index file into an Array.
@@ -291,6 +300,7 @@ function parse_index {
 function gather_paths_to_images {
   add_stdin_to_index
   add_directory_option_to_index
+  check_index_exists
   remove_duplicate_indexes
   parse_index
 }
