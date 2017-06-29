@@ -199,7 +199,7 @@ You will need to install these applications separately.
 The CLI, ImageOptim and ImageAlpha are all free. JPEGmini is a paid-for product but you can use
 ImageOptim-CLI and choose not to run JPEGmini.
 
-#### Why are shorthand options supplied in the format `imageoptim -a -j -q` instead of the more common `imageoptim -ajq`?
+#### Why are shorthand options supplied in the format `imageOptim -a -j -q` instead of the more common `imageOptim -ajq`?
 
 This was an early mistake which now needs supporting for backwards compatibility.
 [Issue 21](https://github.com/JamieMason/ImageOptim-CLI/issues/21) is open to add support for
