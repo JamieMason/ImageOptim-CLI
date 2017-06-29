@@ -1,5 +1,20 @@
+<a name="1.15.1"></a>
+## [1.15.1](https://github.com/JamieMason/ImageOptim-CLI/compare/1.14.9...v1.15.1) (2017-06-29)
+
+
+### Bug Fixes
+
+* **file index:** handle cases where no files are found or passed in ([b9b4f7a](https://github.com/JamieMason/ImageOptim-CLI/commit/b9b4f7a))
+
+
+### Features
+
+* **pngquant:** binary update to 2.9.1 ([8182b51](https://github.com/JamieMason/ImageOptim-CLI/commit/8182b51))
+
+
+
 <a name="1.14.9"></a>
-## [1.14.9](https://github.com/JamieMason/ImageOptim-CLI/compare/1.14.8...v1.14.9) (2017-02-05)
+## [1.14.9](https://github.com/JamieMason/ImageOptim-CLI/compare/1.14.8...1.14.9) (2017-02-05)
 
 
 ### Bug Fixes
