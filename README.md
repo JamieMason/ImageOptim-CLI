@@ -144,7 +144,7 @@ The long format for enabling options is as follows;
 
 The equivalent of the above in short format is as follows;
 
-    imageOptim -j -a -q -d -c path/to/images
+    imageOptim -j -a -q -c -d path/to/images
 
 ### Adding to git pre-commit hook
 
