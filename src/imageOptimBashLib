@@ -277,7 +277,7 @@ function add_directory_option_to_index {
 # Remove any duplicate files in our index, which may have occurred when importing directories whose
 # images have already been gathered by other means.
 function remove_duplicate_indexes {
-  sort -uf "$INDEX_FILE"  > "$INDEX_FILE.uniq.txt"
+  LC_ALL=C sort -uf "$INDEX_FILE"  > "$INDEX_FILE.uniq.txt"
   mv "$INDEX_FILE.uniq.txt" "$INDEX_FILE"
 }
 
