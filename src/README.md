@@ -1,8 +1,14 @@
 # ImageOptim-CLI
 
-[![Join the chat at https://gitter.im/JamieMason/ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![npm downloads](https://img.shields.io/npm/dm/ImageOptim-CLI.svg?style=flat-square)](https://www.npmjs.com/package/ImageOptim-CLI)
-[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/imageoptim-cli?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
+[![NPM version](http://img.shields.io/npm/v/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
+[![NPM downloads](http://img.shields.io/npm/dm/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
+[![Dependency Status](http://img.shields.io/david/JamieMason/ImageOptim-CLI.svg?style=flat-square)](https://david-dm.org/JamieMason/ImageOptim-CLI)
+[![Gitter Chat for ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI)
+[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/foldleft)
+[![Donate via Gratipay](https://img.shields.io/gratipay/user/JamieMason.svg)](https://gratipay.com/~JamieMason/)
+[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/ImageOptim-CLI?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
+[![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
+[![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
 > Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and
 > [JPEGmini for Mac](http://jpegmini.com/mac) to make batch optimisation of images part of your
@@ -81,7 +87,7 @@ simulated by entering synthetic clicks and keyboard commands instead. This
 requires your permission and is easily set up in System Preferences as shown by
 these guides.
 
-+ [Enable access for assistive devices in OS X Yosemite](http://mizage.com/help/accessibility.html).
++ [Enable access for assistive devices in OS X](http://mizage.com/help/accessibility.html)
 + [OS X Mavericks: Enable access for assistive devices and applications](http://support.apple.com/en-us/HT6026)
 
 

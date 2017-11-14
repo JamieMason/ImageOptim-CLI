@@ -173,7 +173,7 @@ function examples {
   echo ""
   echo "The equivalent of the above in short format is as follows;"
   echo ""
-  echo "    imageOptim -j -a -q -d -c path/to/images"
+  echo "    imageOptim -j -a -q -c -d path/to/images"
   echo ""
   echo "### Adding to git pre-commit hook"
   echo ""

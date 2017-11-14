@@ -10,10 +10,6 @@
 [![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
 [![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
-<!-- [![Join the chat at https://gitter.im/JamieMason/ImageOptim-CLI](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![npm downloads](https://img.shields.io/npm/dm/ImageOptim-CLI.svg?style=flat-square)](https://www.npmjs.com/package/ImageOptim-CLI)
-[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/imageoptim-cli?flat&useReferer)](https://github.com/igrigorik/ga-beacon) -->
-
 > Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and
 > [JPEGmini for Mac](http://jpegmini.com/mac) to make batch optimisation of images part of your
 > automated build process.
@@ -100,9 +96,9 @@ these guides.
 
 ## Usage
     Usage: imageOptim [options]
-
+    
     Options:
-
+    
       -d, --directory       directory of images to process
       -a, --image-alpha     pre-process PNGs with ImageAlpha.app *
       -j, --jpeg-mini       pre-process JPGs with JPEGmini.app **
@@ -114,10 +110,10 @@ these guides.
       -e, --examples        display some example commands and uses
       -v, --version         display the version number
       --verbose             display detailed, per-file info on optimizations
-
+    
     *  http://pngmini.com
     ** https://itunes.apple.com/us/app/jpegmini/id498944723
-
+    
 
 
 
