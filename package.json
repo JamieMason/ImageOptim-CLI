@@ -2,7 +2,7 @@
   "name": "imageoptim-cli",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
   "version": "1.15.3",
-  "author": "Jamie Mason <siunmaru@gmail.com>",
+  "author": "Jamie Mason (https://github.com/JamieMason)",
   "bin": {
     "imageOptim": "bin/imageOptim",
     "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib",
@@ -12,16 +12,21 @@
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "contributors": [
     "Adam Kiss (https://github.com/adamkiss)",
-    "Fernando Barrosl (https://github.com/)",
+    "Azusa Tomita (https://github.com/azusa-tomita)",
+    "David Newton (https://github.com/nwtn)",
+    "Elaine Osbourn (https://github.com/kittysquee)",
+    "Fernando Barros (https://github.com/fbbarros)",
     "James Stout (https://github.com/jamesstout)",
     "Jamie Mason (https://github.com/JamieMason)",
-    "Jason Grantl (https://github.com/oo12)",
+    "Jason Grant (https://github.com/oo12)",
     "Martin Schürrer (https://github.com/MSch)",
     "Niklas Vosskötter (https://github.com/neikei)",
-    "Ramiro Araujol (https://github.com/ramiroaraujo)",
+    "Paleite (https://github.com/paleite)",
+    "Peter van Westen (https://github.com/regularlabs)",
+    "Ramiro Araujo (https://github.com/ramiroaraujo)",
     "Simen Brekken (https://github.com/sbrekken)",
     "Stefan Crain (https://github.com/stefancrain)",
-    "Tom Chenl (https://github.com/tomchentw)"
+    "Tom Chen (https://github.com/tomchentw)"
   ],
   "devDependencies": {
     "grunt": "1.0.1",
@@ -54,10 +59,7 @@
   ],
   "license": "MIT",
   "main": "./bin/imageOptim",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JamieMason/ImageOptim-CLI.git"
-  },
+  "repository": "JamieMason/ImageOptim-CLI",
   "scripts": {
     "build": "grunt build",
     "watch": "grunt watch"
