@@ -91,7 +91,7 @@ simulated by entering synthetic clicks and keyboard commands instead. This
 requires your permission and is easily set up in System Preferences as shown by
 these guides.
 
-+ [Enable access for assistive devices in OS X Yosemite](http://www.klabouch.com/?p=98).
++ [Enable access for assistive devices in OS X](http://mizage.com/help/accessibility.html)
 + [OS X Mavericks: Enable access for assistive devices and applications](http://support.apple.com/en-us/HT6026)
 
 
