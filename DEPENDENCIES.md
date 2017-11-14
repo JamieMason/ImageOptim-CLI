@@ -4,8 +4,6 @@ Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisatio
 
 ## Installation
 
-Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
-
 ```sh
 npm install imageoptim-cli --save
 ```
@@ -27,4 +25,3 @@ None
 ## License
 
 MIT
-

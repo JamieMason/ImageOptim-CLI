@@ -1,5 +1,16 @@
+<a name="1.15.3"></a>
+## [1.15.3](https://github.com/JamieMason/ImageOptim-CLI/compare/1.15.1...1.15.3) (2017-11-14)
+
+
+### Bug Fixes
+
+* **duplicates:** support multibyte characters ([43d6ce7](https://github.com/JamieMason/ImageOptim-CLI/commit/43d6ce7))
+* **osx:** add support for high sierra ([6208dc4](https://github.com/JamieMason/ImageOptim-CLI/commit/6208dc4)), closes [#152](https://github.com/JamieMason/ImageOptim-CLI/issues/152)
+
+
+
 <a name="1.15.1"></a>
-## [1.15.1](https://github.com/JamieMason/ImageOptim-CLI/compare/1.14.9...v1.15.1) (2017-06-29)
+## [1.15.1](https://github.com/JamieMason/ImageOptim-CLI/compare/1.14.9...1.15.1) (2017-06-29)
 
 
 ### Bug Fixes
