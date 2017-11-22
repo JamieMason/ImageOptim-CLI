@@ -122,11 +122,22 @@ on runJPEGmini()
           end if
         end repeat
       end if
-      (* >= SIERRA, FILE PATH SELECTOR IS COMBO BOX *)
+      (* = SIERRA, FILE PATH SELECTOR IS COMBO BOX *)
       if combo box 1 of sheet 1 of sheet 1 of window 1 exists then
         set value of combo box 1 of sheet 1 of sheet 1 of window 1 to DIRECTORY_JPG
         repeat
           if (value of combo box 1 of sheet 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
+            delay 1
+          else
+            exit repeat
+          end if
+        end repeat
+      end if
+      (* >= HIGH SIERRA *)
+      if combo box 1 of sheet 1 of window 1 exists then
+        set value of combo box 1 of sheet 1 of window 1 to DIRECTORY_JPG
+        repeat
+          if (value of combo box 1 of sheet 1 of window 1) is not equal to DIRECTORY_JPG then
             delay 1
           else
             exit repeat
