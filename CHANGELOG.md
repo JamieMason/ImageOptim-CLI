@@ -1,3 +1,13 @@
+<a name="1.15.4"></a>
+## [1.15.4](https://github.com/JamieMason/ImageOptim-CLI/compare/1.15.3...1.15.4) (2017-11-22)
+
+
+### Bug Fixes
+
+* **osx:** add support for high sierra ([e25bfce](https://github.com/JamieMason/ImageOptim-CLI/commit/e25bfce))
+
+
+
 <a name="1.15.3"></a>
 ## [1.15.3](https://github.com/JamieMason/ImageOptim-CLI/compare/1.15.1...1.15.3) (2017-11-14)
 
