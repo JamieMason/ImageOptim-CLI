@@ -1,2 +1,5 @@
-/node_modules/
-/src/node_modules/
+*.log
+*.log.*
+coverage
+dist
+node_modules

@@ -4,7 +4,8 @@
 
 ### Bug Fixes
 
-* **osx:** add support for high sierra ([e25bfce](https://github.com/JamieMason/ImageOptim-CLI/commit/e25bfce))
+* **osx:** add support for high sierra
+  ([e25bfce](https://github.com/JamieMason/ImageOptim-CLI/commit/e25bfce))
 
 <a name="1.15.3"></a>
 
@@ -12,8 +13,11 @@
 
 ### Bug Fixes
 
-* **duplicates:** support multibyte characters ([43d6ce7](https://github.com/JamieMason/ImageOptim-CLI/commit/43d6ce7))
-* **osx:** add support for high sierra ([6208dc4](https://github.com/JamieMason/ImageOptim-CLI/commit/6208dc4)), closes [#152](https://github.com/JamieMason/ImageOptim-CLI/issues/152)
+* **duplicates:** support multibyte characters
+  ([43d6ce7](https://github.com/JamieMason/ImageOptim-CLI/commit/43d6ce7))
+* **osx:** add support for high sierra
+  ([6208dc4](https://github.com/JamieMason/ImageOptim-CLI/commit/6208dc4)), closes
+  [#152](https://github.com/JamieMason/ImageOptim-CLI/issues/152)
 
 <a name="1.15.1"></a>
 
@@ -21,11 +25,13 @@
 
 ### Bug Fixes
 
-* **file index:** handle cases where no files are found or passed in ([b9b4f7a](https://github.com/JamieMason/ImageOptim-CLI/commit/b9b4f7a))
+* **file index:** handle cases where no files are found or passed in
+  ([b9b4f7a](https://github.com/JamieMason/ImageOptim-CLI/commit/b9b4f7a))
 
 ### Features
 
-* **pngquant:** binary update to 2.9.1 ([8182b51](https://github.com/JamieMason/ImageOptim-CLI/commit/8182b51))
+* **pngquant:** binary update to 2.9.1
+  ([8182b51](https://github.com/JamieMason/ImageOptim-CLI/commit/8182b51))
 
 <a name="1.14.9"></a>
 
@@ -33,7 +39,9 @@
 
 ### Bug Fixes
 
-* **jpegmini:** the text field in sierra has changed to a combo box ([2f711bb](https://github.com/JamieMason/ImageOptim-CLI/commit/2f711bb)), closes [#129](https://github.com/JamieMason/ImageOptim-CLI/issues/129)
+* **jpegmini:** the text field in sierra has changed to a combo box
+  ([2f711bb](https://github.com/JamieMason/ImageOptim-CLI/commit/2f711bb)), closes
+  [#129](https://github.com/JamieMason/ImageOptim-CLI/issues/129)
 
 <a name="1.14.8"></a>
 
@@ -41,14 +49,20 @@
 
 ### Bug Fixes
 
-* **examples:** remove shell syntax highlighting ([0344ae7](https://github.com/JamieMason/ImageOptim-CLI/commit/0344ae7))
-* **filesystem:** remove additional trailing slash after $TMPDIR ([6b60e32](https://github.com/JamieMason/ImageOptim-CLI/commit/6b60e32)), closes [#87](https://github.com/JamieMason/ImageOptim-CLI/issues/87)
+* **examples:** remove shell syntax highlighting
+  ([0344ae7](https://github.com/JamieMason/ImageOptim-CLI/commit/0344ae7))
+* **filesystem:** remove additional trailing slash after $TMPDIR
+  ([6b60e32](https://github.com/JamieMason/ImageOptim-CLI/commit/6b60e32)), closes
+  [#87](https://github.com/JamieMason/ImageOptim-CLI/issues/87)
 
 ### Features
 
-* **logging:** per-file reporting is now opt-in via a --verbose flag ([4c9a489](https://github.com/JamieMason/ImageOptim-CLI/commit/4c9a489))
-* **pngquant:** add --skip-if-larger option ([9904253](https://github.com/JamieMason/ImageOptim-CLI/commit/9904253))
-* **pngquant:** replace hard-coded value with -m/--min-quality param ([699d8c8](https://github.com/JamieMason/ImageOptim-CLI/commit/699d8c8))
+* **logging:** per-file reporting is now opt-in via a --verbose flag
+  ([4c9a489](https://github.com/JamieMason/ImageOptim-CLI/commit/4c9a489))
+* **pngquant:** add --skip-if-larger option
+  ([9904253](https://github.com/JamieMason/ImageOptim-CLI/commit/9904253))
+* **pngquant:** replace hard-coded value with -m/--min-quality param
+  ([699d8c8](https://github.com/JamieMason/ImageOptim-CLI/commit/699d8c8))
 
 <a name="1.11.4"></a>
 

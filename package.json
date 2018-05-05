@@ -2,12 +2,9 @@
   "name": "imageoptim-cli",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
   "version": "1.15.4",
-  "author": "Jamie Mason (https://github.com/JamieMason)",
+  "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bin": {
-    "imageOptim": "bin/imageOptim",
-    "imageOptimAppleScriptLib": "bin/imageOptimAppleScriptLib",
-    "imageOptimBashLib": "bin/imageOptimBashLib",
-    "pngquant": "bin/pngquant"
+    "imageoptim": "dist/imageoptim"
   },
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "contributors": [
@@ -28,12 +25,32 @@
     "Stefan Crain (https://github.com/stefancrain)",
     "Tom Chen (https://github.com/tomchentw)"
   ],
-  "devDependencies": {
-    "grunt": "1.0.1",
-    "grunt-cli": "1.2.0",
-    "grunt-contrib-concat": "1.0.1",
-    "grunt-contrib-watch": "1.0.0"
+  "dependencies": {
+    "@types/execa": "0.9.0",
+    "@types/fs-extra": "5.0.2",
+    "@types/globby": "6.1.0",
+    "@types/node": "10.0.8",
+    "chalk": "2.4.1",
+    "commander": "2.15.1",
+    "execa": "0.10.0",
+    "fs-extra": "6.0.1",
+    "globby": "8.0.1",
+    "pretty-bytes": "5.0.0"
   },
+  "devDependencies": {
+    "nexe": "2.0.0-rc.28",
+    "prettier": "1.12.1",
+    "rimraf": "2.6.2",
+    "tslint": "5.10.0",
+    "typescript": "2.8.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "dist",
+    "osascript"
+  ],
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "keywords": [
     "advpng",
@@ -58,10 +75,17 @@
     "tinypng"
   ],
   "license": "MIT",
-  "main": "./bin/imageOptim",
+  "main": "syncpack",
   "repository": "JamieMason/ImageOptim-CLI",
   "scripts": {
-    "build": "grunt build",
-    "watch": "grunt watch"
+    "build": "npm run build:ts && npm run build:bin",
+    "build:bin": "nexe --target 'mac-x64-10.0.0' --input dist/bin.js --output dist/imageoptim",
+    "build:ts": "tsc --project .",
+    "format": "prettier --write '**/*.md' './src/**/*.ts'",
+    "lint": "tslint --fix --project ./tsconfig.json",
+    "postbuild": "rimraf dist/*.js",
+    "prebuild": "rimraf dist ./test/dist",
+    "prelint": "npm run format",
+    "prepack": "npm run build"
   }
 }

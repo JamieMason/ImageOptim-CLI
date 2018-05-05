@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es6"],
+    "outDir": "./dist",
+    "strict": true,
+    "target": "es3"
+  },
+  "include": ["./package.json", "./src/**/*.ts"]
+}
