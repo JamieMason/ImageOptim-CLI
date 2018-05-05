@@ -24,34 +24,28 @@ see how it works.
 
 Jamie Mason / [@fold_left](https://twitter.com/fold_left).
 
-
-
-
 ## Contents
 
-+ [Installation](#installation)
-  + [Manual Installation](#manual-installation)
-  + [JPEGmini and support for assistive devices](#jpegmini-and-support-for-assistive-devices)
-+ [Usage](#usage)
-+ [Examples](#examples)
-  + [Optimise a directory of images](#optimise-a-directory-of-images)
-  + [Optimise a filtered set of images](#optimise-a-filtered-set-of-images)
-  + [Passing additional options](#passing-additional-options)
-  + [Adding to git pre-commit hook](#adding-to-git-pre-commit-hook)
-+ [Related projects](#related-projects)
-  + [Grunt plugin](#grunt-plugin)
-  + [Comparison of image optimization tools](#comparison-of-image-optimization-tools)
-  + [Article for Smashing Magazine](#article-for-smashing-magazine)
-  + [Alfred workflow](#alfred-workflow)
-+ [FAQs](#faqs)
-  + [General](#general)
-  + [ImageOptim](#imageoptim)
-  + [ImageAlpha](#imagealpha)
-  + [JPEGmini](#jpegmini)
-  + [Windows and Linux](#windows-and-linux)
-
-
-
+* [Installation](#installation)
+  * [Manual Installation](#manual-installation)
+  * [JPEGmini and support for assistive devices](#jpegmini-and-support-for-assistive-devices)
+* [Usage](#usage)
+* [Examples](#examples)
+  * [Optimise a directory of images](#optimise-a-directory-of-images)
+  * [Optimise a filtered set of images](#optimise-a-filtered-set-of-images)
+  * [Passing additional options](#passing-additional-options)
+  * [Adding to git pre-commit hook](#adding-to-git-pre-commit-hook)
+* [Related projects](#related-projects)
+  * [Grunt plugin](#grunt-plugin)
+  * [Comparison of image optimization tools](#comparison-of-image-optimization-tools)
+  * [Article for Smashing Magazine](#article-for-smashing-magazine)
+  * [Alfred workflow](#alfred-workflow)
+* [FAQs](#faqs)
+  * [General](#general)
+  * [ImageOptim](#imageoptim)
+  * [ImageAlpha](#imagealpha)
+  * [JPEGmini](#jpegmini)
+  * [Windows and Linux](#windows-and-linux)
 
 ## Installation
 
@@ -65,7 +59,7 @@ npm install -g imageoptim-cli
 ### Manual Installation
 
 You can install manually by downloading the latest zip then adding ImageOptim-CLI to your
-[$PATH](https://en.wikipedia.org/wiki/PATH_\(variable\)).
+[$PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>).
 
 ```shell
 curl --output imageoptim-cli.zip https://codeload.github.com/JamieMason/ImageOptim-CLI/zip/{{version}}
@@ -74,7 +68,7 @@ export PATH=$PATH:imageoptim-cli/bin
 ```
 
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
-essential. Saving to `/Applications` is **not** recommended, do not do this.
+> essential. Saving to `/Applications` is **not** recommended, do not do this.
 
 ### JPEGmini and support for assistive devices
 
@@ -87,37 +81,23 @@ simulated by entering synthetic clicks and keyboard commands instead. This
 requires your permission and is easily set up in System Preferences as shown by
 these guides.
 
-+ [Enable access for assistive devices in OS X](http://mizage.com/help/accessibility.html)
-+ [OS X Mavericks: Enable access for assistive devices and applications](http://support.apple.com/en-us/HT6026)
-
-
-
-
+* [Enable access for assistive devices in OS X](http://mizage.com/help/accessibility.html)
+* [OS X Mavericks: Enable access for assistive devices and applications](http://support.apple.com/en-us/HT6026)
 
 ## Usage
+
 {{usage}}
 
-
-
-
-
 ## Examples
+
 {{examples}}
 
-
-
-
-
-
-
 ## Related Projects
-
 
 ### Grunt Plugin
 
 The ImageOptim-CLI [Grunt](http://gruntjs.com) plugin
 is [grunt-imageoptim](https://github.com/JamieMason/grunt-imageoptim).
-
 
 ### Comparison of image optimization tools
 
@@ -125,26 +105,17 @@ ImageOptim-CLI features in this comparison of the [performance of image optimisa
 tools](http://jamiemason.github.io/ImageOptim-CLI/) alongside Kraken.io, CodeKit,
 grunt-contrib-imagemin, Smush.it, and TinyPNG.
 
-
 ### Article for Smashing Magazine
 
 [How Optimized Are Your Images? Meet ImageOptim-CLI, a Batch Compression
 Tool](http://www.smashingmagazine.com/2013/12/17/imageoptim-cli-batch-compression-tool/)
-
 
 ### Alfred Workflow
 
 The ImageOptim-CLI Workflow for Alfred app
 is [alfred-image-optim-workflow](https://github.com/ramiroaraujo/alfred-image-optim-workflow)
 
-
-
-
 ## FAQs
-
-
-
-
 
 ### General
 
@@ -173,11 +144,7 @@ to WebP is outside ImageOptim-CLI's chosen remit.
 JPEGmini does this today, but for ImageOptim and ImageAlpha I feel a feature like this belongs
 in those applications rather than this automator.
 
-
-
-
 ### ImageOptim
-
 
 #### ImageOptim makes the fans on my Mac run at full power.
 
@@ -186,10 +153,6 @@ would take forever) — ImageOptim optimises many images at the same time until 
 
 A side effect of this is that the fans come on at full power to keep your machine cool while it's
 maxed out.
-
-
-
-
 
 ### ImageAlpha
 
@@ -207,10 +170,6 @@ run ImageOptim-CLI on a very large number of PNGs that you have enough time to s
 ImageOptim-CLI is intended to be a simple, convenient, powerful, general-purpose image optimisation
 tool. If your needs have outgrown ImageOptim-CLI it's better to
 run [pngquant](http://pngquant.org) separately, passing whatever custom settings you need.
-
-
-
-
 
 ### JPEGmini
 
@@ -232,10 +191,6 @@ See this tutorial on [how to manage Accessibility preferences
 and GUI Scripting](http://www.macosautomation.com/mavericks/guiscripting/index.html). In the case
 of OS X Mavericks, you will want to add the Applications JPEGmini and Terminal (or equivalent such
 as iTerm).
-
-
-
-
 
 ### Windows and Linux
 
