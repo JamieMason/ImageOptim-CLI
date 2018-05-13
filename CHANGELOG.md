@@ -1,3 +1,22 @@
+<a name="2.0.0"></a>
+
+# [2.0.0](https://github.com/JamieMason/ImageOptim-CLI/compare/1.15.4...2.0.0) (2018-05-13)
+
+### Features
+
+* **core:** rewrite imageoptim-cli in node.js
+  ([3faa790](https://github.com/JamieMason/ImageOptim-CLI/commit/3faa790)), closes
+  [#137](https://github.com/JamieMason/ImageOptim-CLI/issues/137)
+  [#140](https://github.com/JamieMason/ImageOptim-CLI/issues/140)
+  [#141](https://github.com/JamieMason/ImageOptim-CLI/issues/141)
+  [#148](https://github.com/JamieMason/ImageOptim-CLI/issues/148)
+  [#159](https://github.com/JamieMason/ImageOptim-CLI/issues/159)
+
+### BREAKING CHANGES
+
+* **core:** \* Version 2.0.0 is a complete rewrite of ImageOptim-CLI with numerous changes, please
+  see the README or run `imageoptim --help` to browse the new API.
+
 <a name="1.15.4"></a>
 
 ## [1.15.4](https://github.com/JamieMason/ImageOptim-CLI/compare/1.15.3...1.15.4) (2017-11-22)
