@@ -64,13 +64,15 @@ program.on('--help', () => {
     ${chalk.dim('Run ImageAlpha.app and ImageOptim.app over every PNG in current directory')}
     imageoptim --imagealpha '**/*.png'
 
-    ${chalk.dim('Run ImageAlpha.app and JPEGmini.app over every JPG in current directory')}
+    ${chalk.dim('Run JPEGmini.app and ImageOptim.app over every JPG in current directory')}
     imageoptim --jpegmini '**/*.jpg' '**/*.jpeg'
+
+    ${chalk.dim('Run JPEGmini.app over every JPG in current directory')}
+    imageoptim --jpegmini --no-imageoptim '**/*.jpg' '**/*.jpeg'
 
     ${chalk.dim('Run ImageOptim.app over every image in a specific directory')}
     imageoptim '~/Desktop'
-
-  `.trimRight()
+    `.trimRight()
   );
 });
 
