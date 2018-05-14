@@ -1,3 +1,15 @@
+<a name="2.0.2"></a>
+
+## [2.0.2](https://github.com/JamieMason/ImageOptim-CLI/compare/2.0.0...2.0.2) (2018-05-14)
+
+### Bug Fixes
+
+* **cli:** rename bin to imageoptim in help output
+  ([534c87f](https://github.com/JamieMason/ImageOptim-CLI/commit/534c87f))
+* **nexe:** fix \_\_dirname not behaving as expected
+  ([05b9ca3](https://github.com/JamieMason/ImageOptim-CLI/commit/05b9ca3)), closes
+  [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
+
 <a name="2.0.0"></a>
 
 # [2.0.0](https://github.com/JamieMason/ImageOptim-CLI/compare/1.15.4...2.0.0) (2018-05-13)
