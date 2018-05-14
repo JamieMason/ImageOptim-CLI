@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { dirname, resolve } from 'path';
 import {
   IApp,
   JPEGMINI,
@@ -11,7 +11,8 @@ import {
 } from './constants';
 import { osascript } from './osascript';
 
-const getScriptPath = (name: string) => resolve(__dirname, `../osascript/${name}.applescript`);
+const getDirname = () => dirname(module.filename || process.execPath);
+const getScriptPath = (name: string) => resolve(getDirname(), `../osascript/${name}.applescript`);
 const toBoolean = (value: string) => value === 'true';
 
 export const isInstalled = (app: IApp): Promise<boolean> =>
