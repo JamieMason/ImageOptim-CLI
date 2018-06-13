@@ -41,7 +41,8 @@ executable at **./dist/imageoptim**. You can run your local executable from ther
 <!-- links -->
 
 [applescript.ts]: https://github.com/JamieMason/ImageOptim-CLI/tree/master/src/applescript.ts
-[applescript]: https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html
+[applescript]:
+  https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html
 [nexe]: https://github.com/nexe/nexe
 [osascript]: https://github.com/JamieMason/ImageOptim-CLI/tree/master/osascript
 [typescript]: https://www.typescriptlang.org/

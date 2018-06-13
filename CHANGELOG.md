@@ -1,12 +1,21 @@
+<a name="2.0.3"></a>
+
+## [2.0.3](https://github.com/JamieMason/ImageOptim-CLI/compare/2.0.2...2.0.3) (2018-06-13)
+
+### Bug Fixes
+
+- **npm:** update dependencies
+  ([8fe8355](https://github.com/JamieMason/ImageOptim-CLI/commit/8fe8355))
+
 <a name="2.0.2"></a>
 
 ## [2.0.2](https://github.com/JamieMason/ImageOptim-CLI/compare/2.0.0...2.0.2) (2018-05-14)
 
 ### Bug Fixes
 
-* **cli:** rename bin to imageoptim in help output
+- **cli:** rename bin to imageoptim in help output
   ([534c87f](https://github.com/JamieMason/ImageOptim-CLI/commit/534c87f))
-* **nexe:** fix \_\_dirname not behaving as expected
+- **nexe:** fix \_\_dirname not behaving as expected
   ([05b9ca3](https://github.com/JamieMason/ImageOptim-CLI/commit/05b9ca3)), closes
   [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
 
@@ -16,7 +25,7 @@
 
 ### Features
 
-* **core:** rewrite imageoptim-cli in node.js
+- **core:** rewrite imageoptim-cli in node.js
   ([3faa790](https://github.com/JamieMason/ImageOptim-CLI/commit/3faa790)), closes
   [#137](https://github.com/JamieMason/ImageOptim-CLI/issues/137)
   [#140](https://github.com/JamieMason/ImageOptim-CLI/issues/140)
@@ -26,7 +35,7 @@
 
 ### BREAKING CHANGES
 
-* **core:** \* Version 2.0.0 is a complete rewrite of ImageOptim-CLI with numerous changes, please
+- **core:** \* Version 2.0.0 is a complete rewrite of ImageOptim-CLI with numerous changes, please
   see the README or run `imageoptim --help` to browse the new API.
 
 <a name="1.15.4"></a>
@@ -35,7 +44,7 @@
 
 ### Bug Fixes
 
-* **osx:** add support for high sierra
+- **osx:** add support for high sierra
   ([e25bfce](https://github.com/JamieMason/ImageOptim-CLI/commit/e25bfce))
 
 <a name="1.15.3"></a>
@@ -44,9 +53,9 @@
 
 ### Bug Fixes
 
-* **duplicates:** support multibyte characters
+- **duplicates:** support multibyte characters
   ([43d6ce7](https://github.com/JamieMason/ImageOptim-CLI/commit/43d6ce7))
-* **osx:** add support for high sierra
+- **osx:** add support for high sierra
   ([6208dc4](https://github.com/JamieMason/ImageOptim-CLI/commit/6208dc4)), closes
   [#152](https://github.com/JamieMason/ImageOptim-CLI/issues/152)
 
@@ -56,12 +65,12 @@
 
 ### Bug Fixes
 
-* **file index:** handle cases where no files are found or passed in
+- **file index:** handle cases where no files are found or passed in
   ([b9b4f7a](https://github.com/JamieMason/ImageOptim-CLI/commit/b9b4f7a))
 
 ### Features
 
-* **pngquant:** binary update to 2.9.1
+- **pngquant:** binary update to 2.9.1
   ([8182b51](https://github.com/JamieMason/ImageOptim-CLI/commit/8182b51))
 
 <a name="1.14.9"></a>
@@ -70,7 +79,7 @@
 
 ### Bug Fixes
 
-* **jpegmini:** the text field in sierra has changed to a combo box
+- **jpegmini:** the text field in sierra has changed to a combo box
   ([2f711bb](https://github.com/JamieMason/ImageOptim-CLI/commit/2f711bb)), closes
   [#129](https://github.com/JamieMason/ImageOptim-CLI/issues/129)
 
@@ -80,19 +89,19 @@
 
 ### Bug Fixes
 
-* **examples:** remove shell syntax highlighting
+- **examples:** remove shell syntax highlighting
   ([0344ae7](https://github.com/JamieMason/ImageOptim-CLI/commit/0344ae7))
-* **filesystem:** remove additional trailing slash after $TMPDIR
+- **filesystem:** remove additional trailing slash after $TMPDIR
   ([6b60e32](https://github.com/JamieMason/ImageOptim-CLI/commit/6b60e32)), closes
   [#87](https://github.com/JamieMason/ImageOptim-CLI/issues/87)
 
 ### Features
 
-* **logging:** per-file reporting is now opt-in via a --verbose flag
+- **logging:** per-file reporting is now opt-in via a --verbose flag
   ([4c9a489](https://github.com/JamieMason/ImageOptim-CLI/commit/4c9a489))
-* **pngquant:** add --skip-if-larger option
+- **pngquant:** add --skip-if-larger option
   ([9904253](https://github.com/JamieMason/ImageOptim-CLI/commit/9904253))
-* **pngquant:** replace hard-coded value with -m/--min-quality param
+- **pngquant:** replace hard-coded value with -m/--min-quality param
   ([699d8c8](https://github.com/JamieMason/ImageOptim-CLI/commit/699d8c8))
 
 <a name="1.11.4"></a>

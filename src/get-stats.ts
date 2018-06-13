@@ -27,7 +27,7 @@ const getFileSize = async (filePath: string) => {
   return size;
 };
 
-const getPercentOf = (whole: number, part: number) => (part ? part / whole * 100 : 0);
+const getPercentOf = (whole: number, part: number) => (part ? (part / whole) * 100 : 0);
 
 const createStat = (label: string, sizeAfter: number, sizeBefore: number) => {
   const sizeSaving = sizeBefore - sizeAfter;
