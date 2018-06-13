@@ -28,20 +28,37 @@ see how it works.
 
 ## :cloud: Installation
 
-[npm](https://npmjs.org/) is the recommended way to install ImageOptim-CLI as it is the most
-convenient.
+### [npm](https://npmjs.org/)
 
 ```
 npm install -g imageoptim-cli
 ```
 
-Otherwise, you can install manually by downloading the latest zip then adding ImageOptim-CLI to your
-[$PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>).
+### [homebrew](https://brew.sh/)
 
 ```
-curl --output imageoptim-cli.zip https://registry.npmjs.org/imageoptim-cli/-/imageoptim-cli-2.0.0.tgz
-unzip imageoptim-cli.zip
-export PATH=$PATH:imageoptim-cli/bin
+brew update
+brew install imageoptim-cli
+```
+
+### Manual
+
+Otherwise, you can install manually by downloading the latest release then adding ImageOptim-CLI to 
+your [$PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>).
+
+```
+# go to home directory
+cd ~
+# download the tarball (change 2.0.3 to latest version if available)
+curl --output imageoptim-cli.tgz https://registry.npmjs.org/imageoptim-cli/-/imageoptim-cli-2.0.3.tgz
+# extract the tarball
+tar -xvzf ./imageoptim-cli.tgz
+# delete the tarball
+rm imageoptim-cli.tgz
+# rename the directory extracted from the tarball
+mv ./package ./imageoptim-cli
+# make imageoptim command available in your terminal
+export PATH=$PATH:imageoptim-cli/dist
 ```
 
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
@@ -84,7 +101,7 @@ $ imageoptim --help
     Run ImageAlpha.app and ImageOptim.app over every PNG in current directory
     imageoptim --imagealpha '**/*.png'
 
-    Run ImageAlpha.app and JPEGmini.app over every JPG in current directory
+    Run JPEGmini.app and ImageOptim.app over every JPG in current directory
     imageoptim --jpegmini '**/*.jpg' '**/*.jpeg'
 
     Run ImageOptim.app over every image in a specific directory
@@ -214,7 +231,7 @@ a wide range of options in great detail.
 There are few ways to get help:
 
 1.  For bug reports and feature requests, open issues :bug:
-1.  For direct and quick help, you can use Slack :rocket:
+1.  For direct and quick help, you can use Gitter :rocket:
 
 ## :yum: Give Help
 
