@@ -38,7 +38,7 @@
     "pretty-bytes": "5.0.0"
   },
   "devDependencies": {
-    "nexe": "2.0.0-rc.28",
+    "nexe": "2.0.0-rc.30",
     "prettier": "1.12.1",
     "rimraf": "2.6.2",
     "tslint": "5.10.0",
