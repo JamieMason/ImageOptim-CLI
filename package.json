@@ -27,22 +27,22 @@
   ],
   "dependencies": {
     "@types/execa": "0.9.0",
-    "@types/fs-extra": "5.0.3",
-    "@types/globby": "6.1.0",
-    "@types/node": "10.3.2",
+    "@types/fs-extra": "5.0.4",
+    "@types/globby": "8.0.0",
+    "@types/node": "10.12.2",
     "chalk": "2.4.1",
-    "commander": "2.15.1",
-    "execa": "0.10.0",
-    "fs-extra": "6.0.1",
+    "commander": "2.19.0",
+    "execa": "1.0.0",
+    "fs-extra": "7.0.0",
     "globby": "8.0.1",
     "pretty-bytes": "5.1.0"
   },
   "devDependencies": {
-    "nexe": "2.0.0-rc.30",
-    "prettier": "1.13.5",
+    "nexe": "2.0.0-rc.34",
+    "prettier": "1.15.1",
     "rimraf": "2.6.2",
-    "tslint": "5.10.0",
-    "typescript": "2.9.1"
+    "tslint": "5.11.0",
+    "typescript": "3.1.6"
   },
   "engines": {
     "node": ">=8.0.0"

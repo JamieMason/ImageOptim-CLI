@@ -31,13 +31,13 @@ export const getJpegMini = async (): Promise<IApp | null> =>
   (await isInstalled(JPEGMINI_PRO))
     ? JPEGMINI_PRO
     : (await isInstalled(JPEGMINI_PRO_RETAIL))
-      ? JPEGMINI_PRO_RETAIL
-      : (await isInstalled(JPEGMINI))
-        ? JPEGMINI
-        : (await isInstalled(JPEGMINI_RETAIL))
-          ? JPEGMINI_RETAIL
-          : (await isInstalled(JPEGMINI_LITE))
-            ? JPEGMINI_LITE
-            : (await isInstalled(JPEGMINI_LITE_RETAIL))
-              ? JPEGMINI_LITE_RETAIL
-              : null;
+    ? JPEGMINI_PRO_RETAIL
+    : (await isInstalled(JPEGMINI))
+    ? JPEGMINI
+    : (await isInstalled(JPEGMINI_RETAIL))
+    ? JPEGMINI_RETAIL
+    : (await isInstalled(JPEGMINI_LITE))
+    ? JPEGMINI_LITE
+    : (await isInstalled(JPEGMINI_LITE_RETAIL))
+    ? JPEGMINI_LITE_RETAIL
+    : null;

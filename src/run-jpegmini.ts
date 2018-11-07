@@ -12,10 +12,13 @@ export const runJpegMini: AppRunner = async (options) => {
   const jpegMiniUrl = 'https://itunes.apple.com/us/app/jpegmini/id498944723';
   const assistiveDevicesUrl = `${homepageUrl}/#jpegmini-and-support-for-assistive-devices`;
 
-  const [app, canAutomate] = await Promise.all([
-    verbose('Locating JPEGmini installation') || getJpegMini(),
-    verbose('Checking support for assistive devices') || supportsAssistiveDevices()
-  ]);
+  verbose('Locating JPEGmini installation');
+  const jpegMini = getJpegMini();
+
+  verbose('Checking support for assistive devices');
+  const assistiveDeviceSupport = supportsAssistiveDevices();
+
+  const [app, canAutomate] = await Promise.all([jpegMini, assistiveDeviceSupport]);
 
   if (!app) {
     return warning(`JPEGmini is not installed (${jpegMiniUrl})`);

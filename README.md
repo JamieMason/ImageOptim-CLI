@@ -43,8 +43,8 @@ brew install imageoptim-cli
 
 ### Manual
 
-Otherwise, you can install manually by downloading the latest release then adding ImageOptim-CLI to 
-your [$PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>).
+Otherwise, you can install manually by downloading the latest release then adding ImageOptim-CLI to
+your [\$PATH](<https://en.wikipedia.org/wiki/PATH_(variable)>).
 
 ```
 # go to home directory

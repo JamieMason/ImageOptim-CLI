@@ -91,7 +91,7 @@
 
 - **examples:** remove shell syntax highlighting
   ([0344ae7](https://github.com/JamieMason/ImageOptim-CLI/commit/0344ae7))
-- **filesystem:** remove additional trailing slash after $TMPDIR
+- **filesystem:** remove additional trailing slash after \$TMPDIR
   ([6b60e32](https://github.com/JamieMason/ImageOptim-CLI/commit/6b60e32)), closes
   [#87](https://github.com/JamieMason/ImageOptim-CLI/issues/87)
 

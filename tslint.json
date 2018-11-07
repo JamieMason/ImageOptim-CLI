@@ -2,7 +2,6 @@
   "extends": "tslint:recommended",
   "rules": {
     "no-console": [false],
-    "no-unused-variable": true,
     "no-var-requires": [false],
     "quotemark": [true, "single"],
     "trailing-comma": [false]
