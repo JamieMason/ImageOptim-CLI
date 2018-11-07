@@ -1,3 +1,12 @@
+<a name="2.0.4"></a>
+
+## [2.0.4](https://github.com/JamieMason/ImageOptim-CLI/compare/2.0.3...2.0.4) (2018-11-07)
+
+### Bug Fixes
+
+- **npm:** update dependencies
+  ([a5b3ec8](https://github.com/JamieMason/ImageOptim-CLI/commit/a5b3ec8))
+
 <a name="2.0.3"></a>
 
 ## [2.0.3](https://github.com/JamieMason/ImageOptim-CLI/compare/2.0.2...2.0.3) (2018-06-13)
@@ -5,7 +14,8 @@
 ### Bug Fixes
 
 - **npm:** update dependencies
-  ([8fe8355](https://github.com/JamieMason/ImageOptim-CLI/commit/8fe8355))
+  ([3e1259f](https://github.com/JamieMason/ImageOptim-CLI/commit/3e1259f)), closes
+  [#166](https://github.com/JamieMason/ImageOptim-CLI/issues/166)
 
 <a name="2.0.2"></a>
 
