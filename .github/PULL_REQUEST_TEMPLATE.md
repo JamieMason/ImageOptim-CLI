@@ -1,43 +1,27 @@
 <!--
-LABELS:
-Please add appropriate labels to your PR
+All fields in this template are required.
 -->
 
-## Types of Changes
-
-What types of changes does your code introduce? Put an `x` in all the boxes that apply:
-
-- [ ] **feat**: A new feature
-- [ ] **fix**: A bug fix
-- [ ] **docs**: Documentation only changes
-- [ ] **style**: Changes that do not affect the meaning of the code
-- [ ] **refactor**: A code change that neither fixes a bug or adds a feature
-- [ ] **perf**: A code change that improves performance
-- [ ] **test**: Adding missing tests
-- [ ] **chore**: Changes to the build process or auxiliary tools/libraries
-
-## Description
+## Description (What)
 
 <!--
-If appropriate, please include code or terminal output to complement your changes
+Add context so reviewers understand what it is they're looking at. Describe what
+this change does and what was required to deliver it. This section also helps
+those who might need to modify your code at a time when you're not available,
+and need help understanding it in order to get started.
 -->
 
-## Related Issue
-
-<!--
-Please link to relevant GitHub issues here
--->
-
-## Justification
+## Justification (Why)
 
 <!--
 Please describe why this change is required, what problem it solves, and what
-alternatives exist
+alternatives exist that you might have considered. This helps others
+understand the value of this change, or to highlight unnecessary changes which
+can be avoided.
 -->
 
 ## How Can This Be Tested?
 
 <!--
-REQUIRED:
-Please provide a list of steps on how to build and test your changes.
+Please bullet-list how reviewers can install, build, test, and run your changes.
 -->
