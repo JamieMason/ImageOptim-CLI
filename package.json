@@ -79,7 +79,7 @@
   "repository": "JamieMason/ImageOptim-CLI",
   "scripts": {
     "build": "npm run build:ts && npm run build:bin",
-    "build:bin": "nexe --target 'mac-x64-10.0.0' --input dist/imageoptim.js --output dist/imageoptim",
+    "build:bin": "nexe --target 'mac-x64-10.13.0' --input dist/imageoptim.js --output dist/imageoptim",
     "build:ts": "tsc --project .",
     "format": "prettier --write '**/*.md' './src/**/*.ts'",
     "lint": "tslint --fix --project ./tsconfig.json",

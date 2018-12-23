@@ -3,9 +3,10 @@
     "declaration": false,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es6"],
+    "module": "commonjs",
     "outDir": "./dist",
     "strict": true,
-    "target": "es3"
+    "target": "es2017"
   },
   "include": ["./package.json", "./src/**/*.ts"]
 }
