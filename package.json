@@ -26,23 +26,23 @@
     "Tom Chen (https://github.com/tomchentw)"
   ],
   "dependencies": {
-    "chalk": "2.4.1",
+    "chalk": "2.4.2",
     "commander": "2.19.0",
     "execa": "1.0.0",
     "fs-extra": "7.0.1",
-    "globby": "8.0.1",
+    "globby": "9.0.0",
     "pretty-bytes": "5.1.0"
   },
   "devDependencies": {
     "@types/execa": "0.9.0",
     "@types/fs-extra": "5.0.4",
     "@types/globby": "8.0.0",
-    "@types/node": "10.12.18",
+    "@types/node": "10.12.21",
     "nexe": "2.0.0-rc.34",
-    "prettier": "1.15.3",
-    "rimraf": "2.6.2",
-    "tslint": "5.12.0",
-    "typescript": "3.2.2"
+    "prettier": "1.16.3",
+    "rimraf": "2.6.3",
+    "tslint": "5.12.1",
+    "typescript": "3.3.1"
   },
   "engines": {
     "node": ">=8.0.0"
