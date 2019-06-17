@@ -28,7 +28,7 @@ npm install imageoptim-cli --save
 
 - [@types/execa](https://ghub.io/@types/execa): TypeScript definitions for execa
 - [@types/fs-extra](https://ghub.io/@types/fs-extra): TypeScript definitions for fs-extra
-- [@types/globby](https://ghub.io/@types/globby): TypeScript definitions for globby
+- [@types/globby](https://ghub.io/@types/globby): Stub TypeScript definitions entry for globby, which provides its own types definitions
 - [@types/node](https://ghub.io/@types/node): TypeScript definitions for Node.js
 - [nexe](https://ghub.io/nexe): Create a single executable out of your Node.js application
 - [prettier](https://ghub.io/prettier): Prettier is an opinionated code formatter
