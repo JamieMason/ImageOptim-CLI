@@ -1,3 +1,12 @@
+## [2.3.7](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.6...2.3.7) (2019-07-01)
+
+
+### Bug Fixes
+
+* **npm:** revert nexe update ([c3aa684](https://github.com/JamieMason/ImageOptim-CLI/commit/c3aa684)), closes [#176](https://github.com/JamieMason/ImageOptim-CLI/issues/176) [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
+
+
+
 ## [2.3.6](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.5...2.3.6) (2019-06-17)
 
 
