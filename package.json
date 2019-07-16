@@ -38,7 +38,7 @@
     "@types/fs-extra": "7.0.0",
     "@types/globby": "9.1.0",
     "@types/node": "12.0.8",
-    "nexe": "2.0.0-rc.34",
+    "nexe": "3.3.2",
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "tslint": "5.17.0",
