@@ -1,3 +1,12 @@
+## [2.3.9](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.8...2.3.9) (2019-07-16)
+
+
+### Bug Fixes
+
+* **npm:** potential security vulnerability ([cd48880](https://github.com/JamieMason/ImageOptim-CLI/commit/cd48880))
+
+
+
 ## [2.3.8](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.7...2.3.8) (2019-07-16)
 
 
