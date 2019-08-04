@@ -8,15 +8,10 @@
 [![NPM downloads](http://img.shields.io/npm/dm/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
 [![Build Status](http://img.shields.io/travis/JamieMason/ImageOptim-CLI/master.svg?style=flat-square)](https://travis-ci.org/JamieMason/ImageOptim-CLI)
 [![Code Climate](https://api.codeclimate.com/v1/badges/c7f41a90fa2c975cfd03/maintainability)](https://codeclimate.com/github/JamieMason/ImageOptim-CLI/maintainability)
-[![Gitter Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JamieMason/ImageOptim-CLI)
-[![Donate via PayPal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/foldleft)
-[![Backers](https://opencollective.com/fold_left/backers/badge.svg)](https://opencollective.com/fold_left#backer)
-[![Sponsors](https://opencollective.com/fold_left/sponsors/badge.svg)](https://opencollective.com/fold_left#sponsors)
-[![Analytics](https://ga-beacon.appspot.com/UA-45466560-5/ImageOptim-CLI?flat&useReferer)](https://github.com/igrigorik/ga-beacon)
 [![Follow JamieMason on GitHub](https://img.shields.io/github/followers/JamieMason.svg?style=social&label=Follow)](https://github.com/JamieMason)
 [![Follow fold_left on Twitter](https://img.shields.io/twitter/follow/fold_left.svg?style=social&label=Follow)](https://twitter.com/fold_left)
 
-## :clipboard: Summary
+## 📣 Summary
 
 While other image optimization tools are available from the command line, ImageOptim-CLI exists
 because the [current benchmarks](http://jamiemason.github.io/ImageOptim-CLI/) suggest that
@@ -29,7 +24,7 @@ executable binary, you don't need Node.js installed to use ImageOptim-CLI.
 Check out this short [video demo of ImageOptim-CLI](https://www.youtube.com/watch?v=HGBounRIzSs) to
 see how it works.
 
-## :cloud: Installation
+## 🌩 Installation
 
 ### [npm](https://npmjs.org/)
 
@@ -67,7 +62,7 @@ export PATH=$PATH:imageoptim-cli/dist
 > Saving somewhere in your home directory such as `~/imageoptim-cli` is recommended, but not
 > essential. Saving to `/Applications` is **not** recommended, do not do this.
 
-## :memo: Usage and Examples
+## 🕹 Usage
 
 ```
 $ imageoptim --help
@@ -111,7 +106,7 @@ $ imageoptim --help
     imageoptim '~/Desktop'
 ```
 
-## :warning: JPEGmini and support for assistive devices
+## ⚠️ JPEGmini and support for assistive devices
 
 You may be presented with the following message the first time you run ImageOptim-CLI with the
 `--jpegmini` flag.
@@ -126,7 +121,7 @@ in System Preferences as shown by these guides.
 - [Enable access for assistive devices in OS X](http://mizage.com/help/accessibility.html)
 - [OS X Mavericks: Enable access for assistive devices and applications](http://support.apple.com/en-us/HT6026)
 
-## :bulb: Related Projects
+## 💡 Related Projects
 
 ### Grunt Plugin
 
@@ -148,7 +143,7 @@ Kraken.io, CodeKit, grunt-contrib-imagemin, Smush.it, and TinyPNG.
 The ImageOptim-CLI Workflow for Alfred app is
 [alfred-image-optim-workflow](https://github.com/ramiroaraujo/alfred-image-optim-workflow)
 
-## :question: FAQs
+## ❓ FAQs
 
 ### General
 
@@ -229,14 +224,14 @@ It would first require ImageOptim, ImageAlpha, and JPEGmini to be available for 
 [tools for image optimization](http://addyosmani.com/blog/image-optimization-tools/) which discusses
 a wide range of options in great detail.
 
-## :raising_hand: Get Help
-
-There are few ways to get help:
-
-1.  For bug reports and feature requests, open issues :bug:
-1.  For direct and quick help, you can use Gitter :rocket:
-
-## :yum: Give Help
+## ⚙️ Contributing
 
 Have an idea? Found a bug? Please see the [Contributing Guide](/CONTRIBUTING.md) for information on
 how to install the project and start writing code.
+
+## 🙋🏾‍♀️ Getting Help
+
+- Get help with issues by creating a
+  [Bug Report](https://github.com/JamieMason/ImageOptim-CLI/issues/new?template=bug_report.md).
+- Discuss ideas by opening a
+  [Feature Request](https://github.com/JamieMason/ImageOptim-CLI/issues/new?template=feature_request.md).
