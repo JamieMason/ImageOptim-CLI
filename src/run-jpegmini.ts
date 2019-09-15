@@ -18,11 +18,11 @@ export const runJpegMini: AppRunner = async (options) => {
   const [app, canAutomate] = await Promise.all([jpegMini, assistiveDeviceSupport]);
 
   if (!app) {
-    return panic(`JPEGmini is not installed (${JPEG_MINI_URL})`);
+    return panic(`JPEGmini is not installed (${JPEG_MINI_URL})`, options);
   }
 
   if (!canAutomate) {
-    return panic(`Support for assistive devices needed, see ${ASSISTIVE_DEVICES_URL}`);
+    return panic(`Support for assistive devices needed, see ${ASSISTIVE_DEVICES_URL}`, options);
   }
 
   info(`Running ${app.name}...`);

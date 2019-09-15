@@ -11,7 +11,7 @@ export const runImageAlpha: AppRunner = async (options: IOptions) => {
     .map((file) => file.tmp)
     .filter(isSupported(IMAGEALPHA.supports));
   if (!(await pathExists(PNGQUANT_BIN_PATH))) {
-    return panic(`ImageAlpha.app is not installed (${IMAGEALPHA_URL})`);
+    return panic(`ImageAlpha.app is not installed (${IMAGEALPHA_URL})`, options);
   }
   await pngquant(pngFilePaths, options);
   verbose(`${IMAGEALPHA.name} has finished`);

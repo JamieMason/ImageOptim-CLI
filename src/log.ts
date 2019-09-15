@@ -1,4 +1,6 @@
 import chalk from 'chalk';
+import { IOptions } from '.';
+import { clean } from './tmpdir';
 
 let color = new chalk.constructor({ enabled: true });
 
@@ -16,8 +18,9 @@ export const bug = (err: Error): void => {
   process.exit(1);
 };
 
-export const panic = (value: string): void => {
+export const panic = async (value: string, options: IOptions): Promise<void> => {
   console.log(color.red('! %s'), value);
+  await clean(options);
   process.exit(1);
 };
 
