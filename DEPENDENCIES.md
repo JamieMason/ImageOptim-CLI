@@ -19,14 +19,14 @@ npm install imageoptim-cli --save
 
 - [chalk](https://ghub.io/chalk): Terminal string styling done right
 - [commander](https://ghub.io/commander): the complete solution for node.js command-line programs
-- [execa](https://ghub.io/execa): A better `child_process`
+- [execa](https://ghub.io/execa): Process execution for humans
 - [fs-extra](https://ghub.io/fs-extra): fs-extra contains methods that aren&#39;t included in the vanilla Node.js fs package. Such as mkdir -p, cp -r, and rm -rf.
 - [globby](https://ghub.io/globby): Extends `glob` with support for multiple patterns and exposes a Promise API
 - [pretty-bytes](https://ghub.io/pretty-bytes): Convert bytes to a human readable string: 1337 → 1.34 kB
 
 ## Dev Dependencies
 
-- [@types/execa](https://ghub.io/@types/execa): TypeScript definitions for execa
+- [@types/execa](https://ghub.io/@types/execa): Stub TypeScript definitions entry for execa, which provides its own types definitions
 - [@types/fs-extra](https://ghub.io/@types/fs-extra): TypeScript definitions for fs-extra
 - [@types/globby](https://ghub.io/@types/globby): Stub TypeScript definitions entry for globby, which provides its own types definitions
 - [@types/node](https://ghub.io/@types/node): TypeScript definitions for Node.js

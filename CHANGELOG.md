@@ -1,3 +1,29 @@
+# [3.0.0](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.9...3.0.0) (2019-09-15)
+
+
+### Bug Fixes
+
+* **cli:** exit with error status if an app is not installed ([6c3d799](https://github.com/JamieMason/ImageOptim-CLI/commit/6c3d799)), closes [#180](https://github.com/JamieMason/ImageOptim-CLI/issues/180)
+* **cli:** handle upper case file extensions ([e7c84ac](https://github.com/JamieMason/ImageOptim-CLI/commit/e7c84ac)), closes [#181](https://github.com/JamieMason/ImageOptim-CLI/issues/181)
+* **npm:** update npm dependencies ([b492ad2](https://github.com/JamieMason/ImageOptim-CLI/commit/b492ad2))
+
+
+### Performance Improvements
+
+* **cli:** reduce memory consumption ([3166245](https://github.com/JamieMason/ImageOptim-CLI/commit/3166245)), closes [#173](https://github.com/JamieMason/ImageOptim-CLI/issues/173)
+
+
+### BREAKING CHANGES
+
+* **cli:** The following scenarios will display an error and exit with a status
+code of 1, where previously they would display a warning:
+
++ Not using `--no-imageoptim` when ImageOptim.app is not installed.
++ Using `--imagealpha` when ImageAlpha.app is not installed.
++ Using `--jpegmini` when JPEGmini.app is not installed.
+
+
+
 ## [2.3.9](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.8...2.3.9) (2019-07-16)
 
 
