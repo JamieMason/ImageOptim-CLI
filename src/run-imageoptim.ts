@@ -1,4 +1,4 @@
-import { stdout } from 'execa';
+import * as execa from 'execa';
 import { pathExists } from 'fs-extra';
 import { AppRunner } from '.';
 import { IMAGEOPTIM, IMAGEOPTIM_BIN_PATH, IMAGEOPTIM_URL } from './constants';
@@ -9,6 +9,6 @@ export const runImageOptim: AppRunner = async (options) => {
   if (!(await pathExists(IMAGEOPTIM_BIN_PATH))) {
     return warning(`ImageOptim.app is not installed (${IMAGEOPTIM_URL})`);
   }
-  await stdout(IMAGEOPTIM_BIN_PATH, [options.tmpDir]);
+  await execa(IMAGEOPTIM_BIN_PATH, [options.tmpDir]);
   verbose(`${IMAGEOPTIM.name} has finished`);
 };

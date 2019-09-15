@@ -1,7 +1,7 @@
-import { stdout, sync } from 'execa';
+import * as execa from 'execa';
 
 export const osascript = (filePath: string, ...args: string[]): Promise<string> =>
-  stdout('osascript', [filePath, ...args]);
+  execa('osascript', [filePath, ...args]).then(({ stdout }) => stdout);
 
 export const osascriptSync = (filePath: string, ...args: string[]): string =>
-  sync('osascript', [filePath, ...args]).stdout;
+  execa.sync('osascript', [filePath, ...args]).stdout;
