@@ -9,9 +9,28 @@ export interface IApp {
 
 const manifest = require('../package.json');
 const supports = {
-  imageAlpha: ['.png'],
-  imageOptim: ['.bmp', '.gif', '.jpeg', '.jpg', '.pcx', '.png', '.pnm', '.tga', '.tiff'],
-  jpegmini: ['.jpg', '.jpeg']
+  imageAlpha: ['.PNG', '.png'],
+  imageOptim: [
+    '.BMP',
+    '.bmp',
+    '.GIF',
+    '.gif',
+    '.JPEG',
+    '.jpeg',
+    '.JPG',
+    '.jpg',
+    '.PCX',
+    '.pcx',
+    '.PNG',
+    '.png',
+    '.PNM',
+    '.pnm',
+    '.TGA',
+    '.tga',
+    '.TIFF',
+    '.tiff'
+  ],
+  jpegmini: ['.JPEG', '.jpeg', '.JPG', '.jpg']
 };
 
 export const SUPPORTED_FILE_TYPES = [
