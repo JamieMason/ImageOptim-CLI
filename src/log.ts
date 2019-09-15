@@ -16,6 +16,11 @@ export const bug = (err: Error): void => {
   process.exit(1);
 };
 
+export const panic = (value: string): void => {
+  console.log(color.red('! %s'), value);
+  process.exit(1);
+};
+
 export const result = (
   label: string = 'TOTAL',
   prettySizeBefore: string,

@@ -5,8 +5,8 @@ import {
   runJpegMini as startJpegMini,
   supportsAssistiveDevices
 } from './applescript';
-import { ASSISTIVE_DEVICES_URL, HOMEPAGE_URL, JPEG_MINI_URL } from './constants';
-import { info, verbose, warning } from './log';
+import { ASSISTIVE_DEVICES_URL, JPEG_MINI_URL } from './constants';
+import { info, panic, verbose } from './log';
 
 export const runJpegMini: AppRunner = async (options) => {
   verbose('Locating JPEGmini installation');
@@ -18,11 +18,11 @@ export const runJpegMini: AppRunner = async (options) => {
   const [app, canAutomate] = await Promise.all([jpegMini, assistiveDeviceSupport]);
 
   if (!app) {
-    return warning(`JPEGmini is not installed (${JPEG_MINI_URL})`);
+    return panic(`JPEGmini is not installed (${JPEG_MINI_URL})`);
   }
 
   if (!canAutomate) {
-    return warning(`Support for assistive devices needed, see ${ASSISTIVE_DEVICES_URL}`);
+    return panic(`Support for assistive devices needed, see ${ASSISTIVE_DEVICES_URL}`);
   }
 
   info(`Running ${app.name}...`);
