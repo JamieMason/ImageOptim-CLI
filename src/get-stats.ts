@@ -49,7 +49,7 @@ const createStat = (label: string, sizeAfter: number, sizeBefore: number) => {
 
 export const getStats = async (options: IOptions): Promise<IStats> => {
   const fileStats: IFileStats[] = await Promise.all(
-    options.files.supported.map(async ({ source, tmp }) => {
+    options.filePaths.map(async ({ source, tmp }) => {
       const sizeBefore = await getFileSize(source);
       const sizeAfter = await getFileSize(tmp);
       return createStat(source, sizeAfter, sizeBefore);

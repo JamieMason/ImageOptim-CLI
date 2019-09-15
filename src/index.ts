@@ -1,3 +1,4 @@
+import { join } from 'path';
 import { getStats } from './get-stats';
 import { bug, complete, enableColor, warning } from './log';
 import { runImageAlpha } from './run-imagealpha';
@@ -13,7 +14,8 @@ export interface IFile {
   tmp: string;
 }
 
-export interface IOptions {
+export interface ICliOptions {
+  batchSize: number;
   enabled: {
     color: boolean;
     imageAlpha: boolean;
@@ -22,10 +24,24 @@ export interface IOptions {
     quit: boolean;
     stats: boolean;
   };
-  files: {
-    all: string[];
-    supported: IFile[];
+  filePaths: string[];
+  numberOfColors: string;
+  quality: string;
+  speed: string;
+  tmpDir: string;
+}
+
+export interface IOptions {
+  batchSize: number;
+  enabled: {
+    color: boolean;
+    imageAlpha: boolean;
+    imageOptim: boolean;
+    jpegMini: boolean;
+    quit: boolean;
+    stats: boolean;
   };
+  filePaths: IFile[];
   numberOfColors: string;
   quality: string;
   speed: string;
@@ -39,22 +55,43 @@ const runnersByName = {
   stats: getStats
 };
 
-export const cli = async (options: IOptions) => {
-  try {
-    const runIfEnabled = (key: keyof typeof runnersByName) =>
-      options.enabled[key] ? runnersByName[key](options) : Promise.resolve();
+const cloneArray = (array: string[]) => [...array];
 
+const runIfEnabled = (key: keyof typeof runnersByName, options: IOptions) =>
+  options.enabled[key] ? runnersByName[key](options) : Promise.resolve();
+
+const processBatch = async (options: IOptions) => {
+  await setup(options);
+  await Promise.all([runIfEnabled('imageAlpha', options), runIfEnabled('jpegMini', options)]);
+  await runIfEnabled('imageOptim', options);
+  const stats = await runIfEnabled('stats', options);
+  await tearDown(options);
+  if (stats) {
+    await writeReport(stats);
+  }
+};
+
+export const cli = async (options: ICliOptions) => {
+  try {
+    const filesMutable = cloneArray(options.filePaths);
     enableColor(options.enabled.color);
-    if (options.files.supported.length === 0) {
+    if (filesMutable.length === 0) {
       return warning('No images matched the patterns provided');
     }
-    await setup(options);
-    await Promise.all([runIfEnabled('imageAlpha'), runIfEnabled('jpegMini')]);
-    await runIfEnabled('imageOptim');
-    const stats = await runIfEnabled('stats');
-    await tearDown(options);
-    if (stats) {
-      await writeReport(stats);
+    while (filesMutable.length > 0) {
+      const filePaths = filesMutable.splice(0, options.batchSize);
+      await processBatch({
+        batchSize: options.batchSize,
+        enabled: options.enabled,
+        filePaths: filePaths.map((filePath) => ({
+          source: filePath,
+          tmp: join(options.tmpDir, filePath)
+        })),
+        numberOfColors: options.numberOfColors,
+        quality: options.quality,
+        speed: options.speed,
+        tmpDir: options.tmpDir
+      });
     }
     complete('Finished');
   } catch (err) {

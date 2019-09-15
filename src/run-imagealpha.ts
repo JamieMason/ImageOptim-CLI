@@ -7,7 +7,7 @@ import { pngquant } from './pngquant';
 
 export const runImageAlpha: AppRunner = async (options: IOptions) => {
   info(`Running ${IMAGEALPHA.name}...`);
-  const pngFilePaths = options.files.supported
+  const pngFilePaths = options.filePaths
     .map((file) => file.tmp)
     .filter(isSupported(IMAGEALPHA.supports));
   if (!(await pathExists(PNGQUANT_BIN_PATH))) {

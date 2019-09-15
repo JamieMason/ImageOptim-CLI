@@ -82,13 +82,14 @@ if (process.platform !== 'darwin') {
   console.log('imageoptim-cli is macOS only');
 }
 
+const supportedTypesPattern = SUPPORTED_FILE_TYPES.map((fileType) => `*${fileType}`).join('|');
+
+patterns.push(`!**/!(${supportedTypesPattern})`);
+
 const filePaths = sync(patterns.map((pattern) => pattern.replace('~', homedir())));
-const supportedFilePaths = filePaths.filter(isSupported(SUPPORTED_FILE_TYPES)).map((filePath) => ({
-  source: filePath,
-  tmp: join(TMPDIR, filePath)
-}));
 
 cli({
+  batchSize: 300,
   enabled: {
     color: program.color === true,
     imageAlpha: program.imagealpha === true,
@@ -97,10 +98,7 @@ cli({
     quit: program.quit === true,
     stats: program.stats === true
   },
-  files: {
-    all: filePaths,
-    supported: supportedFilePaths
-  },
+  filePaths,
   numberOfColors: program.numberOfColors || PNGQUANT_NUMBER_OF_COLORS,
   quality: program.quality || PNGQUANT_QUALITY,
   speed: program.speed || PNGQUANT_SPEED,
