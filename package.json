@@ -84,7 +84,7 @@
     "build": "npm run build:ts && npm run build:bin",
     "build:bin": "nexe --target 'mac-x64-10.13.0' --input dist/imageoptim.js --output dist/imageoptim",
     "build:ts": "tsc --project .",
-    "format": "prettier --write '**/*.md' './src/**/*.ts'",
+    "format": "prettier --write './src/**/*.ts'",
     "lint": "tslint --fix --project ./tsconfig.json",
     "postbuild": "rimraf dist/*.js",
     "prebuild": "rimraf dist ./test/dist",
