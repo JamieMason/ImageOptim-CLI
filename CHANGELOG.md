@@ -1,3 +1,13 @@
+## [3.0.2](https://github.com/JamieMason/ImageOptim-CLI/compare/3.0.0...3.0.2) (2019-11-04)
+
+
+### Bug Fixes
+
+* **cli:** ensure temp files are always removed ([7413b22](https://github.com/JamieMason/ImageOptim-CLI/commit/7413b22))
+* **pngquant:** handle upstream errors ([9557b8f](https://github.com/JamieMason/ImageOptim-CLI/commit/9557b8f)), closes [#182](https://github.com/JamieMason/ImageOptim-CLI/issues/182)
+
+
+
 # [3.0.0](https://github.com/JamieMason/ImageOptim-CLI/compare/2.3.9...3.0.0) (2019-09-15)
 
 

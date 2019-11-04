@@ -1,7 +1,7 @@
 {
   "name": "imageoptim-cli",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
   "bin": {
     "imageoptim": "dist/imageoptim"
