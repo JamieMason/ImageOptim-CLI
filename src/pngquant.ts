@@ -15,8 +15,8 @@ export const pngquant = async (pngFilePaths: string[], options: IOptions): Promi
       ...pngFilePaths
     ]);
   } catch (err) {
-    if (err.code !== 99 && err.code !== 98) {
-      throw new Error(err.message);
+    if (err.exitCode !== 99 && err.exitCode !== 98) {
+      throw err;
     }
   }
 };
