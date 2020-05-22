@@ -48,7 +48,7 @@ export const PNGQUANT_BIN_PATH = '/Applications/ImageAlpha.app/Contents/MacOS/pn
 export const IMAGEOPTIM_BIN_PATH = '/Applications/ImageOptim.app/Contents/MacOS/ImageOptim';
 
 export const HOMEPAGE_URL = 'https://github.com/JamieMason/ImageOptim-CLI';
-export const ASSISTIVE_DEVICES_URL = `${HOMEPAGE_URL}/#jpegmini-and-support-for-assistive-devices`;
+export const ASSISTIVE_DEVICES_URL = `${HOMEPAGE_URL}/#%EF%B8%8F-jpegmini-and-support-for-assistive-devices`;
 export const IMAGEALPHA_URL = 'https://pngmini.com/';
 export const IMAGEOPTIM_URL = 'https://imageoptim.com/mac';
 export const JPEG_MINI_URL = 'https://itunes.apple.com/us/app/jpegmini/id498944723';
