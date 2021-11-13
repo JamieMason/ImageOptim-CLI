@@ -5,6 +5,7 @@ import {
   JPEGMINI_LITE,
   JPEGMINI_LITE_RETAIL,
   JPEGMINI_PRO,
+  JPEGMINI_PRO_BEAMR,
   JPEGMINI_PRO_RETAIL,
   JPEGMINI_RETAIL,
   TMPDIR,
@@ -40,4 +41,6 @@ export const getJpegMini = async (): Promise<IApp | null> =>
     ? JPEGMINI_LITE
     : (await isInstalled(JPEGMINI_LITE_RETAIL))
     ? JPEGMINI_LITE_RETAIL
+    : (await isInstalled(JPEGMINI_PRO_BEAMR))
+    ? JPEGMINI_PRO_BEAMR
     : null;

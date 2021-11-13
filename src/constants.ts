@@ -95,6 +95,12 @@ export const JPEGMINI_PRO: IApp = {
   supports: supports.jpegmini,
 };
 
+export const JPEGMINI_PRO_BEAMR: IApp = {
+  bundleId: 'com.beamr.jpegminipro.app',
+  name: 'JPEGmini Pro',
+  supports: supports.jpegmini,
+};
+
 export const JPEGMINI_PRO_RETAIL: IApp = {
   bundleId: 'com.icvt.JPEGmini-Pro-retail',
   name: 'JPEGmini Pro',
