@@ -82,7 +82,7 @@
   },
   "scripts": {
     "build": "npm run build:ts && npm run build:bin",
-    "build:bin": "nexe --target 'mac-x64-12.18.2' --input dist/imageoptim.js --output dist/imageoptim",
+    "build:bin": "(cd dist && nexe --target 'mac-x64-12.18.2' --input ./imageoptim.js --output ./imageoptim)",
     "build:ts": "tsc --project .",
     "format": "npm run format:imports && npm run format:prettier",
     "format:imports": "organize-imports-cli ./src/**/*.ts",
