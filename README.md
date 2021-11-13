@@ -3,9 +3,9 @@
 > Automates [ImageOptim](http://imageoptim.com), [ImageAlpha](http://pngmini.com), and [JPEGmini for Mac](http://jpegmini.com/mac) to make batch optimisation of images part of your automated build process.
 
 [![NPM version](http://img.shields.io/npm/v/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
-&nbsp;![NPM downloads](http://img.shields.io/npm/dm/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
-&nbsp;![Build Status](https://img.shields.io/github/workflow/status/JamieMason/imageoptim-cli/ci)](https://github.com/JamieMason/ImageOptim-CLI/actions)
-&nbsp;![Maintainability](https://api.codeclimate.com/v1/badges/c7f41a90fa2c975cfd03/maintainability)](https://codeclimate.com/github/JamieMason/ImageOptim-CLI/maintainability)
+[![NPM downloads](http://img.shields.io/npm/dm/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
+[![Build Status](https://img.shields.io/github/workflow/status/JamieMason/imageoptim-cli/ci)](https://github.com/JamieMason/ImageOptim-CLI/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c7f41a90fa2c975cfd03/maintainability)](https://codeclimate.com/github/JamieMason/ImageOptim-CLI/maintainability)
 
 ## Table of Contents
 
