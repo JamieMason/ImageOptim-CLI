@@ -36,14 +36,14 @@ const createStat = (label: string, sizeAfter: number, sizeBefore: number) => {
     pretty: {
       after: formatFilesize(sizeAfter),
       before: formatFilesize(sizeBefore),
-      saving: formatFilesize(sizeSaving)
+      saving: formatFilesize(sizeSaving),
     },
     raw: {
       after: sizeAfter,
       before: sizeBefore,
       percentSaving: getPercentOf(sizeBefore, sizeSaving),
-      saving: sizeSaving
-    }
+      saving: sizeSaving,
+    },
   };
 };
 
@@ -53,7 +53,7 @@ export const getStats = async (options: IOptions): Promise<IStats> => {
       const sizeBefore = await getFileSize(source);
       const sizeAfter = await getFileSize(tmp);
       return createStat(source, sizeAfter, sizeBefore);
-    })
+    }),
   );
 
   const totalStats = fileStats.reduce((total, file) => {
@@ -64,6 +64,6 @@ export const getStats = async (options: IOptions): Promise<IStats> => {
 
   return {
     files: fileStats,
-    total: totalStats
+    total: totalStats,
   };
 };

@@ -26,26 +26,29 @@
     "Tom Chen (@tomchentw)"
   ],
   "dependencies": {
-    "chalk": "2.4.2",
-    "commander": "3.0.1",
-    "execa": "2.0.4",
+    "chalk": "4.1.1",
+    "commander": "8.3.0",
+    "execa": "5.1.1",
+    "expect-more": "1.2.0",
     "fs-extra": "8.1.0",
-    "globby": "10.0.1",
-    "pretty-bytes": "5.3.0"
+    "globby": "11.0.4",
+    "pretty-bytes": "5.6.0"
   },
   "devDependencies": {
     "@types/execa": "2.0.0",
-    "@types/fs-extra": "8.0.0",
-    "@types/globby": "9.1.0",
-    "@types/node": "12.7.5",
-    "nexe": "2.0.0-rc.34",
-    "prettier": "1.18.2",
-    "rimraf": "3.0.0",
-    "tslint": "5.20.0",
-    "typescript": "3.6.3"
+    "@types/fs-extra": "9.0.13",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "5.3.1",
+    "@typescript-eslint/parser": "5.3.1",
+    "eslint": "8.2.0",
+    "nexe": "3.3.7",
+    "organize-imports-cli": "0.8.0",
+    "prettier": "2.4.1",
+    "rimraf": "3.0.2",
+    "typescript": "4.4.4"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.13.0"
   },
   "files": [
     "dist",
@@ -77,18 +80,19 @@
   "license": "MIT",
   "repository": "JamieMason/ImageOptim-CLI",
   "resolutions": {
-    "lodash": "4.17.13",
-    "ws": "3.3.1"
+    "globby": "<12"
   },
   "scripts": {
     "build": "npm run build:ts && npm run build:bin",
-    "build:bin": "nexe --target 'mac-x64-10.13.0' --input dist/imageoptim.js --output dist/imageoptim",
+    "build:bin": "nexe --target 'mac-x64-12.18.2' --input dist/imageoptim.js --output dist/imageoptim",
     "build:ts": "tsc --project .",
-    "format": "prettier --write './src/**/*.ts'",
-    "lint": "tslint --fix --project ./tsconfig.json",
+    "format": "npm run format:imports && npm run format:prettier",
+    "format:imports": "organize-imports-cli ./src/**/*.ts",
+    "format:prettier": "prettier --write './src/**/*.ts'",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "npm run format && npm run lint -- --fix",
     "postbuild": "rimraf dist/*.js",
     "prebuild": "rimraf dist ./test/dist",
-    "prelint": "npm run format",
     "prepack": "npm run build"
   }
 }

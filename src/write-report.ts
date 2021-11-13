@@ -8,7 +8,7 @@ export const writeReport = async (stats: IStats) => {
     warning('No size savings');
   } else {
     results.forEach(({ path, pretty, raw }) => {
-      result(path, pretty.before, pretty.after, pretty.saving, raw.percentSaving, 100);
+      result(path, pretty.before, pretty.after, pretty.saving, raw.percentSaving);
     });
   }
 };

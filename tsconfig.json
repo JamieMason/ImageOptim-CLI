@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
     "declaration": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["es6"],
+    "lib": ["ES2019"],
     "module": "commonjs",
     "outDir": "./dist",
     "strict": true,
-    "target": "es2017"
+    "target": "ES2019"
   },
   "include": ["./package.json", "./src/**/*.ts"]
 }

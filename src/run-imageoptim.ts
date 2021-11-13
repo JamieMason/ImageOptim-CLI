@@ -1,4 +1,4 @@
-import * as execa from 'execa';
+import execa from 'execa';
 import { pathExists } from 'fs-extra';
 import { AppRunner } from '.';
 import { IMAGEOPTIM, IMAGEOPTIM_BIN_PATH, IMAGEOPTIM_URL } from './constants';

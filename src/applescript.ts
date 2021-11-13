@@ -7,7 +7,7 @@ import {
   JPEGMINI_PRO,
   JPEGMINI_PRO_RETAIL,
   JPEGMINI_RETAIL,
-  TMPDIR
+  TMPDIR,
 } from './constants';
 import { osascript } from './osascript';
 

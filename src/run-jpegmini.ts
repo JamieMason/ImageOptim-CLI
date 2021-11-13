@@ -3,7 +3,7 @@ import {
   getJpegMini,
   quitApp,
   runJpegMini as startJpegMini,
-  supportsAssistiveDevices
+  supportsAssistiveDevices,
 } from './applescript';
 import { ASSISTIVE_DEVICES_URL, JPEG_MINI_URL } from './constants';
 import { info, panic, verbose } from './log';

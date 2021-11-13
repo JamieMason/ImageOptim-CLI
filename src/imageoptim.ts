@@ -1,8 +1,7 @@
 import chalk from 'chalk';
-import program = require('commander');
+import { program } from 'commander';
 import { sync } from 'globby';
 import { homedir } from 'os';
-import { join } from 'path';
 import { cli } from './';
 import {
   PNGQUANT_NUMBER_OF_COLORS,
@@ -10,9 +9,8 @@ import {
   PNGQUANT_SPEED,
   SUPPORTED_FILE_TYPES,
   TMPDIR,
-  VERSION
+  VERSION,
 } from './constants';
-import { isSupported } from './is-supported';
 
 const patterns: string[] = [];
 
@@ -30,15 +28,15 @@ program
   .option('-S, --no-stats', 'do not display file size savings and quality loss information')
   .option(
     '--number-of-colors <n>',
-    `ImageAlpha palette size, defaults to ${PNGQUANT_NUMBER_OF_COLORS}`
+    `ImageAlpha palette size, defaults to ${PNGQUANT_NUMBER_OF_COLORS}`,
   )
   .option(
     '--quality <min>-<max>',
-    `ImageAlpha quality range from 0-100, defaults to ${PNGQUANT_QUALITY}`
+    `ImageAlpha quality range from 0-100, defaults to ${PNGQUANT_QUALITY}`,
   )
   .option(
     '--speed <n>',
-    `ImageAlpha speed from 1 (brute-force) to 10 (fastest), defaults to ${PNGQUANT_SPEED}`
+    `ImageAlpha speed from 1 (brute-force) to 10 (fastest), defaults to ${PNGQUANT_SPEED}`,
   );
 
 program.on('--help', () => {
@@ -49,10 +47,10 @@ program.on('--help', () => {
     ImageAlpha: ${chalk.blue.underline('https://pngmini.com')}
     ImageOptim: ${chalk.blue.underline('https://imageoptim.com')}
     JPEGmini Lite: ${chalk.blue.underline(
-      'https://itunes.apple.com/us/app/jpegmini-lite/id525742250'
+      'https://itunes.apple.com/us/app/jpegmini-lite/id525742250',
     )}
     JPEGmini Pro: ${chalk.blue.underline(
-      'https://itunes.apple.com/us/app/jpegmini-pro/id887163276'
+      'https://itunes.apple.com/us/app/jpegmini-pro/id887163276',
     )}
     JPEGmini: ${chalk.blue.underline('https://itunes.apple.com/us/app/jpegmini/id498944723')}
 
@@ -72,7 +70,7 @@ program.on('--help', () => {
 
     ${chalk.dim('Run ImageOptim.app over every image in a specific directory')}
     imageoptim '~/Desktop'
-    `.trimRight()
+    `.trimRight(),
   );
 });
 
@@ -87,20 +85,21 @@ const supportedTypesPattern = SUPPORTED_FILE_TYPES.map((fileType) => `*${fileTyp
 patterns.push(`!**/!(${supportedTypesPattern})`);
 
 const filePaths = sync(patterns.map((pattern) => pattern.replace('~', homedir())));
+const options = program.opts();
 
 cli({
   batchSize: 300,
   enabled: {
-    color: program.color === true,
-    imageAlpha: program.imagealpha === true,
-    imageOptim: program.imageoptim === true,
-    jpegMini: program.jpegmini === true,
-    quit: program.quit === true,
-    stats: program.stats === true
+    color: options.color === true,
+    imageAlpha: options.imagealpha === true,
+    imageOptim: options.imageoptim === true,
+    jpegMini: options.jpegmini === true,
+    quit: options.quit === true,
+    stats: options.stats === true,
   },
   filePaths,
-  numberOfColors: program.numberOfColors || PNGQUANT_NUMBER_OF_COLORS,
-  quality: program.quality || PNGQUANT_QUALITY,
-  speed: program.speed || PNGQUANT_SPEED,
-  tmpDir: TMPDIR
+  numberOfColors: options.numberOfColors || PNGQUANT_NUMBER_OF_COLORS,
+  quality: options.quality || PNGQUANT_QUALITY,
+  speed: options.speed || PNGQUANT_SPEED,
+  tmpDir: TMPDIR,
 });

@@ -28,15 +28,15 @@ const supports = {
     '.TGA',
     '.tga',
     '.TIFF',
-    '.tiff'
+    '.tiff',
   ],
-  jpegmini: ['.JPEG', '.jpeg', '.JPG', '.jpg']
+  jpegmini: ['.JPEG', '.jpeg', '.JPG', '.jpg'],
 };
 
 export const SUPPORTED_FILE_TYPES = [
   ...supports.imageAlpha,
   ...supports.imageOptim,
-  ...supports.jpegmini
+  ...supports.jpegmini,
 ].filter((value, i, list) => list.indexOf(value) === i);
 
 export const TMPDIR = join(tmpdir(), 'imageoptim-cli');
@@ -56,49 +56,49 @@ export const JPEG_MINI_URL = 'https://itunes.apple.com/us/app/jpegmini/id4989447
 export const IMAGEALPHA: IApp = {
   bundleId: 'net.pornel.ImageAlpha',
   name: 'ImageAlpha',
-  supports: supports.imageAlpha
+  supports: supports.imageAlpha,
 };
 
 export const IMAGEOPTIM: IApp = {
   bundleId: 'net.pornel.ImageOptim',
   name: 'ImageOptim',
-  supports: supports.imageOptim
+  supports: supports.imageOptim,
 };
 
 export const JPEGMINI: IApp = {
   bundleId: 'com.icvt.JPEGmini',
   name: 'JPEGmini',
-  supports: supports.jpegmini
+  supports: supports.jpegmini,
 };
 
 export const JPEGMINI_RETAIL: IApp = {
   bundleId: 'com.icvt.JPEGmini-retail',
   name: 'JPEGmini',
-  supports: supports.jpegmini
+  supports: supports.jpegmini,
 };
 
 export const JPEGMINI_LITE: IApp = {
   bundleId: 'com.icvt.JPEGminiLite',
   name: 'JPEGmini Lite',
-  supports: supports.jpegmini
+  supports: supports.jpegmini,
 };
 
 export const JPEGMINI_LITE_RETAIL: IApp = {
   bundleId: 'com.icvt.JPEGminiLite-retail',
   name: 'JPEGmini Lite',
-  supports: supports.jpegmini
+  supports: supports.jpegmini,
 };
 
 export const JPEGMINI_PRO: IApp = {
   bundleId: 'com.icvt.JPEGmini-Pro',
   name: 'JPEGmini Pro',
-  supports: supports.jpegmini
+  supports: supports.jpegmini,
 };
 
 export const JPEGMINI_PRO_RETAIL: IApp = {
   bundleId: 'com.icvt.JPEGmini-Pro-retail',
   name: 'JPEGmini Pro',
-  supports: supports.jpegmini
+  supports: supports.jpegmini,
 };
 
 export const ERROR_JPEGMINI_NOT_INSTALLED = 'ERROR_JPEGMINI_NOT_INSTALLED';

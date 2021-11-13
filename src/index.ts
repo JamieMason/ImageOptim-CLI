@@ -52,7 +52,7 @@ const runnersByName = {
   imageAlpha: runImageAlpha,
   imageOptim: runImageOptim,
   jpegMini: runJpegMini,
-  stats: getStats
+  stats: getStats,
 };
 
 const cloneArray = (array: string[]) => [...array];
@@ -85,12 +85,12 @@ export const cli = async (options: ICliOptions) => {
         enabled: options.enabled,
         filePaths: filePaths.map((filePath) => ({
           source: filePath,
-          tmp: join(options.tmpDir, filePath)
+          tmp: join(options.tmpDir, filePath),
         })),
         numberOfColors: options.numberOfColors,
         quality: options.quality,
         speed: options.speed,
-        tmpDir: options.tmpDir
+        tmpDir: options.tmpDir,
       });
     }
     complete('Finished');

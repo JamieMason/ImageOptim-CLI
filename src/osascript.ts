@@ -1,4 +1,4 @@
-import * as execa from 'execa';
+import execa from 'execa';
 
 export const osascript = (filePath: string, ...args: string[]): Promise<string> =>
   execa('osascript', [filePath, ...args]).then(({ stdout }) => stdout);

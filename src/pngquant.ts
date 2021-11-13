@@ -1,5 +1,6 @@
-import execa = require('execa');
+import execa from 'execa';
 import { IOptions } from '.';
+import { isWalkable } from 'expect-more';
 import { PNGQUANT_BIN_PATH } from './constants';
 
 export const pngquant = async (pngFilePaths: string[], options: IOptions): Promise<void> => {
@@ -12,10 +13,10 @@ export const pngquant = async (pngFilePaths: string[], options: IOptions): Promi
       `--quality=${options.quality}`,
       options.numberOfColors,
       '--',
-      ...pngFilePaths
+      ...pngFilePaths,
     ]);
   } catch (err) {
-    if (err.exitCode !== 99 && err.exitCode !== 98) {
+    if (isWalkable(err) && err.exitCode !== 99 && err.exitCode !== 98) {
       throw err;
     }
   }
