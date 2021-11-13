@@ -39,11 +39,22 @@ on runJPEGmini(jpegDirectory, jpegMiniAppName)
           end if
         end repeat
       end if
-      (* >= HIGH SIERRA *)
+      (* HIGH SIERRA *)
       if combo box 1 of sheet 1 of window 1 exists then
         set value of combo box 1 of sheet 1 of window 1 to jpegDirectory
         repeat
           if (value of combo box 1 of sheet 1 of window 1) is not equal to jpegDirectory then
+            delay 1
+          else
+            exit repeat
+          end if
+        end repeat
+      end if
+      (* >= MONTEREY *)
+      if text field 1 of sheet 1 of window 1 exists then
+        set value of text field 1 of sheet 1 of window 1 to jpegDirectory
+        repeat
+          if (value of text field 1 of sheet 1 of window 1) is not equal to jpegDirectory then
             delay 1
           else
             exit repeat
