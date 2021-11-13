@@ -20,20 +20,21 @@ npm install imageoptim-cli --save
 - [chalk](https://ghub.io/chalk): Terminal string styling done right
 - [commander](https://ghub.io/commander): the complete solution for node.js command-line programs
 - [execa](https://ghub.io/execa): Process execution for humans
-- [fs-extra](https://ghub.io/fs-extra): fs-extra contains methods that aren&#39;t included in the vanilla Node.js fs package. Such as mkdir -p, cp -r, and rm -rf.
-- [globby](https://ghub.io/globby): Extends `glob` with support for multiple patterns and exposes a Promise API
+- [expect-more](https://ghub.io/expect-more): Curried JavaScript Type Testing Library with Zero Dependencies
+- [globby](https://ghub.io/globby): User-friendly glob matching
 - [pretty-bytes](https://ghub.io/pretty-bytes): Convert bytes to a human readable string: 1337 → 1.34 kB
 
 ## Dev Dependencies
 
 - [@types/execa](https://ghub.io/@types/execa): Stub TypeScript definitions entry for execa, which provides its own types definitions
-- [@types/fs-extra](https://ghub.io/@types/fs-extra): TypeScript definitions for fs-extra
-- [@types/globby](https://ghub.io/@types/globby): Stub TypeScript definitions entry for globby, which provides its own types definitions
 - [@types/node](https://ghub.io/@types/node): TypeScript definitions for Node.js
+- [@typescript-eslint/eslint-plugin](https://ghub.io/@typescript-eslint/eslint-plugin): TypeScript plugin for ESLint
+- [@typescript-eslint/parser](https://ghub.io/@typescript-eslint/parser): An ESLint custom parser which leverages TypeScript ESTree
+- [eslint](https://ghub.io/eslint): An AST-based pattern checker for JavaScript.
 - [nexe](https://ghub.io/nexe): Create a single executable out of your Node.js application
+- [organize-imports-cli](https://ghub.io/organize-imports-cli): VS Code&#39;s &#39;Organize imports&#39; executable from command line
 - [prettier](https://ghub.io/prettier): Prettier is an opinionated code formatter
 - [rimraf](https://ghub.io/rimraf): A deep deletion module for node (like `rm -rf`)
-- [tslint](https://ghub.io/tslint): An extensible static analysis linter for the TypeScript language
 - [typescript](https://ghub.io/typescript): TypeScript is a language for application scale JavaScript development
 
 ## License

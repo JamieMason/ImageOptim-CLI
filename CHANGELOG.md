@@ -1,10 +1,23 @@
+## [3.0.7](https://github.com/JamieMason/ImageOptim-CLI/compare/3.0.2...3.0.7) (2021-11-13)
+
+
+### Bug Fixes
+
+* **cli:** use unique temp dir per invocation ([7291ded](https://github.com/JamieMason/ImageOptim-CLI/commit/7291ded8369db602d325b64ccef5237ab2b65ea8)), closes [#183](https://github.com/JamieMason/ImageOptim-CLI/issues/183)
+* **jpegmini:** add com.beamr.jpegminipro.app ([ed5e112](https://github.com/JamieMason/ImageOptim-CLI/commit/ed5e112a0034c00971134483fe6d581f29f0d242)), closes [#187](https://github.com/JamieMason/ImageOptim-CLI/issues/187)
+* **jpegmini:** add support for macOS Monterey ([e7bcd50](https://github.com/JamieMason/ImageOptim-CLI/commit/e7bcd502e6fcd47ff2bd99574f684190b7d9c330))
+* **nexe:** fix __dirname issues in v3.3.7 ([dae85f9](https://github.com/JamieMason/ImageOptim-CLI/commit/dae85f95da2093cddced0274a43bb3cfc5ada80b))
+* **npm:** update dependencies ([585f08e](https://github.com/JamieMason/ImageOptim-CLI/commit/585f08e8ca716e1f3db63fd45d90e9c866f59b89)), closes [#191](https://github.com/JamieMason/ImageOptim-CLI/issues/191)
+
+
+
 ## [3.0.2](https://github.com/JamieMason/ImageOptim-CLI/compare/3.0.0...3.0.2) (2019-11-04)
 
 
 ### Bug Fixes
 
-* **cli:** ensure temp files are always removed ([7413b22](https://github.com/JamieMason/ImageOptim-CLI/commit/7413b22))
-* **pngquant:** handle upstream errors ([9557b8f](https://github.com/JamieMason/ImageOptim-CLI/commit/9557b8f)), closes [#182](https://github.com/JamieMason/ImageOptim-CLI/issues/182)
+* **cli:** ensure temp files are always removed ([7413b22](https://github.com/JamieMason/ImageOptim-CLI/commit/7413b227d681b851018ab479ecfbc195d3f76da6))
+* **pngquant:** handle upstream errors ([9557b8f](https://github.com/JamieMason/ImageOptim-CLI/commit/9557b8fce4b8c0a5368ddab9092790988cf4aba6)), closes [#182](https://github.com/JamieMason/ImageOptim-CLI/issues/182)
 
 
 
@@ -13,14 +26,14 @@
 
 ### Bug Fixes
 
-* **cli:** exit with error status if an app is not installed ([6c3d799](https://github.com/JamieMason/ImageOptim-CLI/commit/6c3d799)), closes [#180](https://github.com/JamieMason/ImageOptim-CLI/issues/180)
-* **cli:** handle upper case file extensions ([e7c84ac](https://github.com/JamieMason/ImageOptim-CLI/commit/e7c84ac)), closes [#181](https://github.com/JamieMason/ImageOptim-CLI/issues/181)
-* **npm:** update npm dependencies ([b492ad2](https://github.com/JamieMason/ImageOptim-CLI/commit/b492ad2))
+* **cli:** exit with error status if an app is not installed ([6c3d799](https://github.com/JamieMason/ImageOptim-CLI/commit/6c3d799c7e94037522d6f19d0e6ef3f0ca08c833)), closes [#180](https://github.com/JamieMason/ImageOptim-CLI/issues/180)
+* **cli:** handle upper case file extensions ([e7c84ac](https://github.com/JamieMason/ImageOptim-CLI/commit/e7c84ac0eb0f34cf34f3a69ea8771257f9e51f37)), closes [#181](https://github.com/JamieMason/ImageOptim-CLI/issues/181)
+* **npm:** update npm dependencies ([b492ad2](https://github.com/JamieMason/ImageOptim-CLI/commit/b492ad2ad29a16ed46cc0559a6b3f66a34dda5f0))
 
 
 ### Performance Improvements
 
-* **cli:** reduce memory consumption ([3166245](https://github.com/JamieMason/ImageOptim-CLI/commit/3166245)), closes [#173](https://github.com/JamieMason/ImageOptim-CLI/issues/173)
+* **cli:** reduce memory consumption ([3166245](https://github.com/JamieMason/ImageOptim-CLI/commit/316624513ddf18ce7948cc58eb0f4d768affeca3)), closes [#173](https://github.com/JamieMason/ImageOptim-CLI/issues/173)
 
 
 ### BREAKING CHANGES
@@ -39,7 +52,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** potential security vulnerability ([cd48880](https://github.com/JamieMason/ImageOptim-CLI/commit/cd48880))
+* **npm:** potential security vulnerability ([cd48880](https://github.com/JamieMason/ImageOptim-CLI/commit/cd4888044f012d363ebbeb52bfe6ff1861bcf36f))
 
 
 
@@ -48,7 +61,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** potential security vulnerability ([1560041](https://github.com/JamieMason/ImageOptim-CLI/commit/1560041)), closes [#178](https://github.com/JamieMason/ImageOptim-CLI/issues/178)
+* **npm:** potential security vulnerability ([1560041](https://github.com/JamieMason/ImageOptim-CLI/commit/1560041c5344c3eb17254220654c1d0e2db38597)), closes [#178](https://github.com/JamieMason/ImageOptim-CLI/issues/178)
 
 
 
@@ -57,7 +70,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** revert nexe update ([c3aa684](https://github.com/JamieMason/ImageOptim-CLI/commit/c3aa684)), closes [#176](https://github.com/JamieMason/ImageOptim-CLI/issues/176) [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
+* **npm:** revert nexe update ([c3aa684](https://github.com/JamieMason/ImageOptim-CLI/commit/c3aa68425366d672852af495e6e650aa6c7f8934)), closes [#176](https://github.com/JamieMason/ImageOptim-CLI/issues/176) [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
 
 
 
@@ -66,7 +79,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** update dependencies ([a154af0](https://github.com/JamieMason/ImageOptim-CLI/commit/a154af0))
+* **npm:** update dependencies ([a154af0](https://github.com/JamieMason/ImageOptim-CLI/commit/a154af09214d97d03a7b1d657cf7ff98230b709e))
 
 
 
@@ -75,7 +88,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** update npm dependencies ([16897a0](https://github.com/JamieMason/ImageOptim-CLI/commit/16897a0)), closes [#172](https://github.com/JamieMason/ImageOptim-CLI/issues/172)
+* **npm:** update npm dependencies ([16897a0](https://github.com/JamieMason/ImageOptim-CLI/commit/16897a09755cc9a94b88d82f2cf46521f5f62dc9)), closes [#172](https://github.com/JamieMason/ImageOptim-CLI/issues/172)
 
 
 
@@ -84,9 +97,9 @@ code of 1, where previously they would display a warning:
 
 ### Features
 
-* **cli:** only output summary when savings are made ([b44c078](https://github.com/JamieMason/ImageOptim-CLI/commit/b44c078))
-* **cli:** show warning when ImageOptim.app is not installed ([44f3055](https://github.com/JamieMason/ImageOptim-CLI/commit/44f3055))
-* **nexe:** upgrade to node.js 10.13.0 and es2017 ([dddd9ff](https://github.com/JamieMason/ImageOptim-CLI/commit/dddd9ff))
+* **cli:** only output summary when savings are made ([b44c078](https://github.com/JamieMason/ImageOptim-CLI/commit/b44c07862d8b4267c5f2ef5ed896b707b70c2f4d))
+* **cli:** show warning when ImageOptim.app is not installed ([44f3055](https://github.com/JamieMason/ImageOptim-CLI/commit/44f30551dfb5fc886614eca0ea85e665c87eb7f6))
+* **nexe:** upgrade to node.js 10.13.0 and es2017 ([dddd9ff](https://github.com/JamieMason/ImageOptim-CLI/commit/dddd9ffecc791b654add496f4d402b0df4c01be0))
 
 
 
@@ -95,7 +108,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** update dependencies ([a5b3ec8](https://github.com/JamieMason/ImageOptim-CLI/commit/a5b3ec8))
+* **npm:** update dependencies ([a5b3ec8](https://github.com/JamieMason/ImageOptim-CLI/commit/a5b3ec820b2b6dff4ba20f3823b98ddee1ed6b5b))
 
 
 
@@ -104,7 +117,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **npm:** update dependencies ([3e1259f](https://github.com/JamieMason/ImageOptim-CLI/commit/3e1259f)), closes [#166](https://github.com/JamieMason/ImageOptim-CLI/issues/166)
+* **npm:** update dependencies ([3e1259f](https://github.com/JamieMason/ImageOptim-CLI/commit/3e1259ff0bfe192739468cc92b0e321377f1e78f)), closes [#166](https://github.com/JamieMason/ImageOptim-CLI/issues/166)
 
 
 
@@ -113,8 +126,8 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **cli:** rename bin to imageoptim in help output ([534c87f](https://github.com/JamieMason/ImageOptim-CLI/commit/534c87f))
-* **nexe:** fix __dirname not behaving as expected ([05b9ca3](https://github.com/JamieMason/ImageOptim-CLI/commit/05b9ca3)), closes [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
+* **cli:** rename bin to imageoptim in help output ([534c87f](https://github.com/JamieMason/ImageOptim-CLI/commit/534c87f66c71cc2173d3456e4e9a017a0bde1954))
+* **nexe:** fix __dirname not behaving as expected ([05b9ca3](https://github.com/JamieMason/ImageOptim-CLI/commit/05b9ca39b17cf96016aecce4c0068463923f7b38)), closes [#163](https://github.com/JamieMason/ImageOptim-CLI/issues/163)
 
 
 
@@ -123,7 +136,7 @@ code of 1, where previously they would display a warning:
 
 ### Features
 
-* **core:** rewrite imageoptim-cli in node.js ([3faa790](https://github.com/JamieMason/ImageOptim-CLI/commit/3faa790)), closes [#137](https://github.com/JamieMason/ImageOptim-CLI/issues/137) [#140](https://github.com/JamieMason/ImageOptim-CLI/issues/140) [#141](https://github.com/JamieMason/ImageOptim-CLI/issues/141) [#148](https://github.com/JamieMason/ImageOptim-CLI/issues/148) [#159](https://github.com/JamieMason/ImageOptim-CLI/issues/159)
+* **core:** rewrite imageoptim-cli in node.js ([3faa790](https://github.com/JamieMason/ImageOptim-CLI/commit/3faa790f9088e5988eccb897a67111dd54d4f57d)), closes [#137](https://github.com/JamieMason/ImageOptim-CLI/issues/137) [#140](https://github.com/JamieMason/ImageOptim-CLI/issues/140) [#141](https://github.com/JamieMason/ImageOptim-CLI/issues/141) [#148](https://github.com/JamieMason/ImageOptim-CLI/issues/148) [#159](https://github.com/JamieMason/ImageOptim-CLI/issues/159)
 
 
 
@@ -132,7 +145,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **osx:** add support for high sierra ([e25bfce](https://github.com/JamieMason/ImageOptim-CLI/commit/e25bfce))
+* **osx:** add support for high sierra ([e25bfce](https://github.com/JamieMason/ImageOptim-CLI/commit/e25bfcefe3d4ae6bd8b3a823f6583228691362f0))
 
 
 
@@ -141,8 +154,8 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **duplicates:** support multibyte characters ([43d6ce7](https://github.com/JamieMason/ImageOptim-CLI/commit/43d6ce7))
-* **osx:** add support for high sierra ([6208dc4](https://github.com/JamieMason/ImageOptim-CLI/commit/6208dc4)), closes [#152](https://github.com/JamieMason/ImageOptim-CLI/issues/152)
+* **duplicates:** support multibyte characters ([43d6ce7](https://github.com/JamieMason/ImageOptim-CLI/commit/43d6ce71dfae591fafdf2ace825aad9eedbfa862))
+* **osx:** add support for high sierra ([6208dc4](https://github.com/JamieMason/ImageOptim-CLI/commit/6208dc44721cd82c71f3e16e9795b3ca503c481e)), closes [#152](https://github.com/JamieMason/ImageOptim-CLI/issues/152)
 
 
 
@@ -151,12 +164,12 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **file index:** handle cases where no files are found or passed in ([b9b4f7a](https://github.com/JamieMason/ImageOptim-CLI/commit/b9b4f7a))
+* **file index:** handle cases where no files are found or passed in ([b9b4f7a](https://github.com/JamieMason/ImageOptim-CLI/commit/b9b4f7ae3c3c6960e87fdf62d18e388c3f5bd255))
 
 
 ### Features
 
-* **pngquant:** binary update to 2.9.1 ([8182b51](https://github.com/JamieMason/ImageOptim-CLI/commit/8182b51))
+* **pngquant:** binary update to 2.9.1 ([8182b51](https://github.com/JamieMason/ImageOptim-CLI/commit/8182b5103cae1d0fa7eb81d35a610d0302328be6))
 
 
 
@@ -165,7 +178,7 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **jpegmini:** the text field in sierra has changed to a combo box ([2f711bb](https://github.com/JamieMason/ImageOptim-CLI/commit/2f711bb)), closes [#129](https://github.com/JamieMason/ImageOptim-CLI/issues/129)
+* **jpegmini:** the text field in sierra has changed to a combo box ([2f711bb](https://github.com/JamieMason/ImageOptim-CLI/commit/2f711bbd5dcd9eae69368cdf161f656e1eb85c4a)), closes [#129](https://github.com/JamieMason/ImageOptim-CLI/issues/129)
 
 
 
@@ -174,15 +187,15 @@ code of 1, where previously they would display a warning:
 
 ### Bug Fixes
 
-* **examples:** remove shell syntax highlighting ([0344ae7](https://github.com/JamieMason/ImageOptim-CLI/commit/0344ae7))
-* **filesystem:** remove additional trailing slash after $TMPDIR ([6b60e32](https://github.com/JamieMason/ImageOptim-CLI/commit/6b60e32)), closes [#87](https://github.com/JamieMason/ImageOptim-CLI/issues/87)
+* **examples:** remove shell syntax highlighting ([0344ae7](https://github.com/JamieMason/ImageOptim-CLI/commit/0344ae77be322d6c59a137d306db084f45af0e18))
+* **filesystem:** remove additional trailing slash after $TMPDIR ([6b60e32](https://github.com/JamieMason/ImageOptim-CLI/commit/6b60e32f6bec1f0a20d6347652eee4c446a4f08c)), closes [#87](https://github.com/JamieMason/ImageOptim-CLI/issues/87)
 
 
 ### Features
 
-* **logging:** per-file reporting is now opt-in via a --verbose flag ([4c9a489](https://github.com/JamieMason/ImageOptim-CLI/commit/4c9a489))
-* **pngquant:** add --skip-if-larger option ([9904253](https://github.com/JamieMason/ImageOptim-CLI/commit/9904253))
-* **pngquant:** replace hard-coded value with -m/--min-quality param ([699d8c8](https://github.com/JamieMason/ImageOptim-CLI/commit/699d8c8))
+* **logging:** per-file reporting is now opt-in via a --verbose flag ([4c9a489](https://github.com/JamieMason/ImageOptim-CLI/commit/4c9a489dd351dc8065ce118e04b930dedd4ceefe))
+* **pngquant:** add --skip-if-larger option ([9904253](https://github.com/JamieMason/ImageOptim-CLI/commit/9904253f7e16a5ebc70f6dcc3a4798183630d316))
+* **pngquant:** replace hard-coded value with -m/--min-quality param ([699d8c8](https://github.com/JamieMason/ImageOptim-CLI/commit/699d8c80ea6d767b275806c20bf7a7c27c6f5de4))
 
 
 
