@@ -45,8 +45,8 @@ Otherwise, you can install manually by downloading the latest release then addin
 
     # go to home directory
     cd ~
-    # download the tarball (change 2.0.3 to latest version if available)
-    curl --output imageoptim-cli.tgz https://registry.npmjs.org/imageoptim-cli/-/imageoptim-cli-2.0.3.tgz
+    # download the tarball (change 3.0.7 to latest version if available)
+    curl --output imageoptim-cli.tgz https://registry.npmjs.org/imageoptim-cli/-/imageoptim-cli-3.0.7.tgz
     # extract the tarball
     tar -xvzf ./imageoptim-cli.tgz
     # delete the tarball
