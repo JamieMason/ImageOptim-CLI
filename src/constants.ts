@@ -1,5 +1,6 @@
 import { tmpdir } from 'os';
 import { join } from 'path';
+import { uuid } from './uuid';
 
 export interface IApp {
   readonly bundleId: string;
@@ -39,7 +40,7 @@ export const SUPPORTED_FILE_TYPES = [
   ...supports.jpegmini,
 ].filter((value, i, list) => list.indexOf(value) === i);
 
-export const TMPDIR = join(tmpdir(), 'imageoptim-cli');
+export const TMPDIR = join(tmpdir(), 'imageoptim-cli', uuid());
 export const VERSION = manifest.version;
 export const PNGQUANT_NUMBER_OF_COLORS = '256';
 export const PNGQUANT_QUALITY = '65-80';
