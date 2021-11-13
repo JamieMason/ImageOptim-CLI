@@ -1,4 +1,4 @@
-import { stat } from 'fs-extra';
+import { stat } from './fs';
 import { IOptions } from '.';
 import { formatFilesize } from './filesize';
 

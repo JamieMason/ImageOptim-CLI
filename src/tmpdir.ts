@@ -1,17 +1,20 @@
-import { copy, remove } from 'fs-extra';
 import { IFile, IOptions } from '.';
+import { copy, remove } from './fs';
 import { verbose } from './log';
 
-const sourceToTmp = ({ source, tmp }: IFile) => copy(source, tmp);
-const tmpToSource = ({ source, tmp }: IFile) => copy(tmp, source);
+function sourceToTmp({ source, tmp }: IFile): Promise<void> {
+  return copy(source, tmp);
+}
+
+function tmpToSource({ source, tmp }: IFile): Promise<void> {
+  return copy(tmp, source);
+}
 
 export const clean = (options: { tmpDir: string }) => {
-  verbose(`Deleting temp directory ${options.tmpDir}`);
   return remove(options.tmpDir);
 };
 
 export const setup = async (options: IOptions) => {
-  verbose(`Creating temp directory ${options.tmpDir}`);
   await clean(options);
   verbose(`Copying ${options.filePaths.length} files to temp directory`);
   await Promise.all(options.filePaths.map(sourceToTmp));

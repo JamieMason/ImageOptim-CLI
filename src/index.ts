@@ -95,7 +95,7 @@ export const cli = async (options: ICliOptions) => {
     }
     complete('Finished');
   } catch (err) {
-    await clean(options);
     bug(err);
+    await clean(options);
   }
 };

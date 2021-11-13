@@ -1,4 +1,4 @@
-import { pathExists } from 'fs-extra';
+import { pathExists } from './fs';
 import { AppRunner, IOptions } from '.';
 import { IMAGEALPHA, IMAGEALPHA_URL, PNGQUANT_BIN_PATH } from './constants';
 import { isSupported } from './is-supported';

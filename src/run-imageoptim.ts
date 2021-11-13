@@ -1,5 +1,5 @@
 import execa from 'execa';
-import { pathExists } from 'fs-extra';
+import { pathExists } from './fs';
 import { AppRunner } from '.';
 import { IMAGEOPTIM, IMAGEOPTIM_BIN_PATH, IMAGEOPTIM_URL } from './constants';
 import { info, panic, verbose } from './log';
