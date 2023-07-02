@@ -82,11 +82,11 @@
     "build": "npm run build:ts && npm run build:bin",
     "build:bin": "(cd dist && pkg --targets 'node18-macos-x64' --output ./imageoptim ./imageoptim.js)",
     "build:ts": "tsc --project .",
-    "format": "npm run format:imports && npm run format:prettier",
+    "format": "npm run format:imports && npm run format:prettier && npm run format:eslint",
+    "format:eslint": "npm run lint -- --fix",
     "format:imports": "organize-imports-cli ./src/**/*.ts",
     "format:prettier": "prettier --write './src/**/*.ts'",
     "lint": "eslint --ext .ts .",
-    "lint:fix": "npm run format && npm run lint -- --fix",
     "postbuild": "rm -rf dist/*.js",
     "prebuild": "rm -rf dist ./test/dist",
     "prepack": "npm run build"
