@@ -39,11 +39,11 @@
     "@typescript-eslint/eslint-plugin": "5.3.1",
     "@typescript-eslint/parser": "5.3.1",
     "eslint": "8.2.0",
-    "nexe": "3.3.7",
     "organize-imports-cli": "0.8.0",
+    "pkg": "5.8.1",
     "prettier": "2.4.1",
     "rimraf": "3.0.2",
-    "typescript": "4.4.4"
+    "typescript": "5.1.6"
   },
   "engines": {
     "node": ">=12.18.2"
@@ -82,7 +82,7 @@
   },
   "scripts": {
     "build": "npm run build:ts && npm run build:bin",
-    "build:bin": "(cd dist && nexe --target 'mac-x64-12.18.2' --input ./imageoptim.js --output ./imageoptim)",
+    "build:bin": "(cd dist && pkg --targets 'node18-macos-x64' --output ./imageoptim ./imageoptim.js)",
     "build:ts": "tsc --project .",
     "format": "npm run format:imports && npm run format:prettier",
     "format:imports": "organize-imports-cli ./src/**/*.ts",

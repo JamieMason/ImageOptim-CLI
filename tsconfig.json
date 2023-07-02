@@ -1,13 +1,15 @@
 {
+  "include": ["./package.json", "./src/**/*.ts"],
   "compilerOptions": {
     "declaration": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["ES2019"],
-    "module": "commonjs",
+    "lib": ["es2023"],
+    "module": "Node16",
+    "moduleResolution": "node16",
     "outDir": "./dist",
+    "skipLibCheck": true,
     "strict": true,
-    "target": "ES2019"
-  },
-  "include": ["./package.json", "./src/**/*.ts"]
+    "target": "es2022"
+  }
 }
