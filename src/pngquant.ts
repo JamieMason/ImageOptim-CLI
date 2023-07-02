@@ -1,11 +1,11 @@
-import execa from 'execa';
-import { IOptions } from '.';
 import { isWalkable } from 'expect-more';
+import { IOptions } from '.';
 import { PNGQUANT_BIN_PATH } from './constants';
+import { exec } from './exec';
 
 export const pngquant = async (pngFilePaths: string[], options: IOptions): Promise<void> => {
   try {
-    await execa(PNGQUANT_BIN_PATH, [
+    await exec(PNGQUANT_BIN_PATH, [
       '--ext=.png',
       '--force',
       '--skip-if-larger',
