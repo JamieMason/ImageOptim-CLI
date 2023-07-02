@@ -88,7 +88,7 @@
     "format:prettier": "prettier --write './src/**/*.ts'",
     "lint": "eslint --ext .ts .",
     "postbuild": "rm -rf dist/*.js",
-    "prebuild": "rm -rf dist ./test/dist",
+    "prebuild": "rm -rf dist",
     "prepack": "npm run build"
   }
 }
