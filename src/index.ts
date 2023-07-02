@@ -7,7 +7,7 @@ import { runJpegMini } from './run-jpegmini';
 import { clean, setup, tearDown } from './tmpdir';
 import { writeReport } from './write-report';
 
-export type AppRunner = (options: Options) => Promise<any>;
+export type AppRunner = (options: Options) => Promise<void>;
 
 export interface File {
   source: string;
