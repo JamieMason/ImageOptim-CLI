@@ -31,8 +31,8 @@ npm install imageoptim-cli --save
 - [@typescript-eslint/eslint-plugin](https://ghub.io/@typescript-eslint/eslint-plugin): TypeScript plugin for ESLint
 - [@typescript-eslint/parser](https://ghub.io/@typescript-eslint/parser): An ESLint custom parser which leverages TypeScript ESTree
 - [eslint](https://ghub.io/eslint): An AST-based pattern checker for JavaScript.
-- [nexe](https://ghub.io/nexe): Create a single executable out of your Node.js application
 - [organize-imports-cli](https://ghub.io/organize-imports-cli): VS Code&#39;s &#39;Organize imports&#39; executable from command line
+- [pkg](https://ghub.io/pkg): Package your Node.js project into an executable
 - [prettier](https://ghub.io/prettier): Prettier is an opinionated code formatter
 - [rimraf](https://ghub.io/rimraf): A deep deletion module for node (like `rm -rf`)
 - [typescript](https://ghub.io/typescript): TypeScript is a language for application scale JavaScript development

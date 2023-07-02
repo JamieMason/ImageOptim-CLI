@@ -1,13 +1,22 @@
+## [3.1.7](https://github.com/JamieMason/ImageOptim-CLI/compare/3.0.7...3.1.7) (2023-07-02)
+
+
+### Features
+
+* **node:** upgrade to node v18 ([40dfb41](https://github.com/JamieMason/ImageOptim-CLI/commit/40dfb41c533626bbc32c5baec3f492679bc1013d))
+
+
+
 ## [3.0.7](https://github.com/JamieMason/ImageOptim-CLI/compare/3.0.2...3.0.7) (2021-11-13)
 
 
 ### Bug Fixes
 
-* **cli:** use unique temp dir per invocation ([7291ded](https://github.com/JamieMason/ImageOptim-CLI/commit/7291ded8369db602d325b64ccef5237ab2b65ea8)), closes [#183](https://github.com/JamieMason/ImageOptim-CLI/issues/183)
-* **jpegmini:** add com.beamr.jpegminipro.app ([ed5e112](https://github.com/JamieMason/ImageOptim-CLI/commit/ed5e112a0034c00971134483fe6d581f29f0d242)), closes [#187](https://github.com/JamieMason/ImageOptim-CLI/issues/187)
-* **jpegmini:** add support for macOS Monterey ([e7bcd50](https://github.com/JamieMason/ImageOptim-CLI/commit/e7bcd502e6fcd47ff2bd99574f684190b7d9c330))
-* **nexe:** fix __dirname issues in v3.3.7 ([dae85f9](https://github.com/JamieMason/ImageOptim-CLI/commit/dae85f95da2093cddced0274a43bb3cfc5ada80b))
-* **npm:** update dependencies ([585f08e](https://github.com/JamieMason/ImageOptim-CLI/commit/585f08e8ca716e1f3db63fd45d90e9c866f59b89)), closes [#191](https://github.com/JamieMason/ImageOptim-CLI/issues/191)
+* **cli:** use unique temp dir per invocation ([5fac801](https://github.com/JamieMason/ImageOptim-CLI/commit/5fac801a817cee90c51adb1dbde1753b4909a9af)), closes [#183](https://github.com/JamieMason/ImageOptim-CLI/issues/183)
+* **jpegmini:** add com.beamr.jpegminipro.app ([d865434](https://github.com/JamieMason/ImageOptim-CLI/commit/d865434095a630d5a831ce4c70092c767cf8eb29)), closes [#187](https://github.com/JamieMason/ImageOptim-CLI/issues/187)
+* **jpegmini:** add support for macOS Monterey ([7060d05](https://github.com/JamieMason/ImageOptim-CLI/commit/7060d05ee5d8d0cdcaf31f11c10582ac2308d515))
+* **nexe:** fix __dirname issues in v3.3.7 ([aac53ac](https://github.com/JamieMason/ImageOptim-CLI/commit/aac53acd6edb5e568a7798518558b5476b82caf5))
+* **npm:** update dependencies ([59cdebc](https://github.com/JamieMason/ImageOptim-CLI/commit/59cdebce5ba4f1627b8d9b4dee4973377202ae26)), closes [#191](https://github.com/JamieMason/ImageOptim-CLI/issues/191)
 
 
 
