@@ -75,9 +75,6 @@
   ],
   "license": "MIT",
   "repository": "JamieMason/ImageOptim-CLI",
-  "resolutions": {
-    "globby": "11.1.0"
-  },
   "scripts": {
     "build": "npm run build:ts && npm run build:bin",
     "build:bin": "(cd dist && pkg --targets 'node18-macos-x64' --output ./imageoptim ./imageoptim.js)",
