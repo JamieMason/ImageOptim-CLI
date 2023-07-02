@@ -1,7 +1,7 @@
-import { IStats } from './get-stats';
+import { Stats } from './get-stats';
 import { result, warning } from './log';
 
-export const writeReport = async (stats: IStats) => {
+export const writeReport = async (stats: Stats) => {
   const { total } = stats;
   const results = stats.files.concat(total);
   if (total.pretty.saving === '0B') {

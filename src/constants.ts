@@ -2,7 +2,7 @@ import { tmpdir } from 'os';
 import { join } from 'path';
 import { uuid } from './uuid';
 
-export interface IApp {
+export interface App {
   readonly bundleId: string;
   readonly name: string;
   readonly supports: string[];
@@ -54,55 +54,55 @@ export const IMAGEALPHA_URL = 'https://pngmini.com/';
 export const IMAGEOPTIM_URL = 'https://imageoptim.com/mac';
 export const JPEG_MINI_URL = 'https://itunes.apple.com/us/app/jpegmini/id498944723';
 
-export const IMAGEALPHA: IApp = {
+export const IMAGEALPHA: App = {
   bundleId: 'net.pornel.ImageAlpha',
   name: 'ImageAlpha',
   supports: supports.imageAlpha,
 };
 
-export const IMAGEOPTIM: IApp = {
+export const IMAGEOPTIM: App = {
   bundleId: 'net.pornel.ImageOptim',
   name: 'ImageOptim',
   supports: supports.imageOptim,
 };
 
-export const JPEGMINI: IApp = {
+export const JPEGMINI: App = {
   bundleId: 'com.icvt.JPEGmini',
   name: 'JPEGmini',
   supports: supports.jpegmini,
 };
 
-export const JPEGMINI_RETAIL: IApp = {
+export const JPEGMINI_RETAIL: App = {
   bundleId: 'com.icvt.JPEGmini-retail',
   name: 'JPEGmini',
   supports: supports.jpegmini,
 };
 
-export const JPEGMINI_LITE: IApp = {
+export const JPEGMINI_LITE: App = {
   bundleId: 'com.icvt.JPEGminiLite',
   name: 'JPEGmini Lite',
   supports: supports.jpegmini,
 };
 
-export const JPEGMINI_LITE_RETAIL: IApp = {
+export const JPEGMINI_LITE_RETAIL: App = {
   bundleId: 'com.icvt.JPEGminiLite-retail',
   name: 'JPEGmini Lite',
   supports: supports.jpegmini,
 };
 
-export const JPEGMINI_PRO: IApp = {
+export const JPEGMINI_PRO: App = {
   bundleId: 'com.icvt.JPEGmini-Pro',
   name: 'JPEGmini Pro',
   supports: supports.jpegmini,
 };
 
-export const JPEGMINI_PRO_BEAMR: IApp = {
+export const JPEGMINI_PRO_BEAMR: App = {
   bundleId: 'com.beamr.jpegminipro.app',
   name: 'JPEGmini Pro',
   supports: supports.jpegmini,
 };
 
-export const JPEGMINI_PRO_RETAIL: IApp = {
+export const JPEGMINI_PRO_RETAIL: App = {
   bundleId: 'com.icvt.JPEGmini-Pro-retail',
   name: 'JPEGmini Pro',
   supports: supports.jpegmini,

@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { types } from 'util';
-import { IOptions } from '.';
+import { Options } from '.';
 import { clean } from './tmpdir';
 
 let color = new chalk.Instance({ level: 3 });
@@ -27,7 +27,7 @@ export const bug = (err: Error | unknown): void => {
   process.exit(1);
 };
 
-export const panic = async (value: string, options: IOptions): Promise<void> => {
+export const panic = async (value: string, options: Options): Promise<void> => {
   console.log(color.red('! %s'), value);
   await clean(options);
   process.exit(1);

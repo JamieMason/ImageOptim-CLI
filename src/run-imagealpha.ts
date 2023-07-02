@@ -1,11 +1,11 @@
 import { pathExists } from './fs';
-import { AppRunner, IOptions } from '.';
+import { AppRunner, Options } from '.';
 import { IMAGEALPHA, IMAGEALPHA_URL, PNGQUANT_BIN_PATH } from './constants';
 import { isSupported } from './is-supported';
 import { info, panic, verbose } from './log';
 import { pngquant } from './pngquant';
 
-export const runImageAlpha: AppRunner = async (options: IOptions) => {
+export const runImageAlpha: AppRunner = async (options: Options) => {
   info(`Running ${IMAGEALPHA.name}...`);
   const pngFilePaths = options.filePaths
     .map((file) => file.tmp)

@@ -1,8 +1,8 @@
 import { stat } from './fs';
-import { IOptions } from '.';
+import { Options } from '.';
 import { formatFilesize } from './filesize';
 
-export interface IFileStats {
+export interface FileStats {
   path: string;
   pretty: {
     after: string;
@@ -17,9 +17,9 @@ export interface IFileStats {
   };
 }
 
-export interface IStats {
-  files: IFileStats[];
-  total: IFileStats;
+export interface Stats {
+  files: FileStats[];
+  total: FileStats;
 }
 
 const getFileSize = async (filePath: string) => {
@@ -47,8 +47,8 @@ const createStat = (label: string, sizeAfter: number, sizeBefore: number) => {
   };
 };
 
-export const getStats = async (options: IOptions): Promise<IStats> => {
-  const fileStats: IFileStats[] = await Promise.all(
+export const getStats = async (options: Options): Promise<Stats> => {
+  const fileStats: FileStats[] = await Promise.all(
     options.filePaths.map(async ({ source, tmp }) => {
       const sizeBefore = await getFileSize(source);
       const sizeAfter = await getFileSize(tmp);

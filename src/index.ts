@@ -7,14 +7,14 @@ import { runJpegMini } from './run-jpegmini';
 import { clean, setup, tearDown } from './tmpdir';
 import { writeReport } from './write-report';
 
-export type AppRunner = (options: IOptions) => Promise<any>;
+export type AppRunner = (options: Options) => Promise<any>;
 
-export interface IFile {
+export interface File {
   source: string;
   tmp: string;
 }
 
-export interface ICliOptions {
+export interface CliOptions {
   batchSize: number;
   enabled: {
     color: boolean;
@@ -31,7 +31,7 @@ export interface ICliOptions {
   tmpDir: string;
 }
 
-export interface IOptions {
+export interface Options {
   batchSize: number;
   enabled: {
     color: boolean;
@@ -41,7 +41,7 @@ export interface IOptions {
     quit: boolean;
     stats: boolean;
   };
-  filePaths: IFile[];
+  filePaths: File[];
   numberOfColors: string;
   quality: string;
   speed: string;
@@ -57,10 +57,10 @@ const runnersByName = {
 
 const cloneArray = (array: string[]) => [...array];
 
-const runIfEnabled = (key: keyof typeof runnersByName, options: IOptions) =>
+const runIfEnabled = (key: keyof typeof runnersByName, options: Options) =>
   options.enabled[key] ? runnersByName[key](options) : Promise.resolve();
 
-const processBatch = async (options: IOptions) => {
+const processBatch = async (options: Options) => {
   await setup(options);
   await Promise.all([runIfEnabled('imageAlpha', options), runIfEnabled('jpegMini', options)]);
   await runIfEnabled('imageOptim', options);
@@ -71,7 +71,7 @@ const processBatch = async (options: IOptions) => {
   }
 };
 
-export const cli = async (options: ICliOptions) => {
+export const cli = async (options: CliOptions) => {
   try {
     const filesMutable = cloneArray(options.filePaths);
     enableColor(options.enabled.color);
