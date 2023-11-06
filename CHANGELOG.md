@@ -1,3 +1,13 @@
+## [3.1.9](https://github.com/JamieMason/ImageOptim-CLI/compare/3.1.7...3.1.9) (2023-11-06)
+
+
+### Bug Fixes
+
+* **engines:** support node >= 18 ([5c18d6c](https://github.com/JamieMason/ImageOptim-CLI/commit/5c18d6cab4a0dbcd2d0ecc26e1a5df114710af13))
+* **npm:** update dependencies ([201e63f](https://github.com/JamieMason/ImageOptim-CLI/commit/201e63f8d06281bd3499283f3b74f20ac5d9dfa9))
+
+
+
 ## [3.1.7](https://github.com/JamieMason/ImageOptim-CLI/compare/3.0.7...3.1.7) (2023-07-02)
 
 
