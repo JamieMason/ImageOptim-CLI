@@ -4,6 +4,7 @@ import { sync } from 'globby';
 import { homedir } from 'os';
 import { cli } from './';
 import {
+  BATCH_SIZE,
   PNGQUANT_NUMBER_OF_COLORS,
   PNGQUANT_QUALITY,
   PNGQUANT_SPEED,
@@ -37,6 +38,10 @@ program
   .option(
     '--speed <n>',
     `ImageAlpha speed from 1 (brute-force) to 10 (fastest), defaults to ${PNGQUANT_SPEED}`,
+  )
+  .option(
+    '--batch-size <n>',
+    `batch size (lower this number for older machines), defaults to ${BATCH_SIZE}`,
   );
 
 program.on('--help', () => {
@@ -88,7 +93,7 @@ const filePaths = sync(patterns.map((pattern) => pattern.replace('~', homedir())
 const options = program.opts();
 
 cli({
-  batchSize: 300,
+  batchSize: options.batchSize || BATCH_SIZE,
   enabled: {
     color: options.color === true,
     imageAlpha: options.imagealpha === true,

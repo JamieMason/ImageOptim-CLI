@@ -76,6 +76,7 @@ Otherwise, you can install manually by downloading the latest release then addin
         --number-of-colors <n>  ImageAlpha palette size, defaults to 256
         --quality <min>-<max>   ImageAlpha quality range from 0-100, defaults to 65-80
         --speed <n>             ImageAlpha speed from 1 (brute-force) to 10 (fastest), defaults to 1
+        --batch-size <n>        set batch size for processing images, defaults to 300
         -h, --help              output usage information
 
       Supported Apps:
