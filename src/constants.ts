@@ -46,7 +46,7 @@ export const PNGQUANT_NUMBER_OF_COLORS = '256';
 export const PNGQUANT_QUALITY = '65-80';
 export const PNGQUANT_SPEED = '1';
 export const PNGQUANT_BIN_PATH = '/Applications/ImageAlpha.app/Contents/MacOS/pngquant';
-export const IMAGEOPTIM_BIN_PATH = '/Applications/ImageOptim.app/Contents/MacOS/ImageOptim';
+export const IMAGEOPTIM_BIN_PATH = process.env.imageoptim_app || '/Applications/ImageOptim.app/Contents/MacOS/ImageOptim';
 
 export const HOMEPAGE_URL = 'https://github.com/JamieMason/ImageOptim-CLI';
 export const ASSISTIVE_DEVICES_URL = `${HOMEPAGE_URL}/#%EF%B8%8F-jpegmini-and-support-for-assistive-devices`;
