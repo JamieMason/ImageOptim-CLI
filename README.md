@@ -4,7 +4,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
 [![NPM downloads](http://img.shields.io/npm/dm/imageoptim-cli.svg?style=flat-square)](https://www.npmjs.com/package/imageoptim-cli)
-[![Build Status](https://img.shields.io/github/workflow/status/JamieMason/imageoptim-cli/ci)](https://github.com/JamieMason/ImageOptim-CLI/actions)
+[![Build Status](https://github.com/JamieMason/ImageOptim-CLI/actions/workflows/ci.yaml/badge.svg)](https://github.com/JamieMason/ImageOptim-CLI/actions/workflows/ci.yaml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c7f41a90fa2c975cfd03/maintainability)](https://codeclimate.com/github/JamieMason/ImageOptim-CLI/maintainability)
 
 ## Table of Contents
