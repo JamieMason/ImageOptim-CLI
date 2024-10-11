@@ -77,7 +77,7 @@
   "repository": "JamieMason/ImageOptim-CLI",
   "scripts": {
     "build": "npm run build:ts && npm run build:bin",
-    "build:bin": "(cd dist && pkg --targets 'node18-macos-x64' --output ./imageoptim ./imageoptim.js)",
+    "build:bin": "(cd dist && pkg --targets 'node18-macos-x64,node18-macos-arm64' --output ./imageoptim ./imageoptim.js)",
     "build:ts": "tsc --project .",
     "format": "npm run format:imports && npm run format:prettier && npm run format:eslint",
     "format:eslint": "npm run lint -- --fix",
