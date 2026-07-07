@@ -1,5 +1,7 @@
 # Changelog
 
+## [4.0.0-alpha.2](https://github.com/JamieMason/ImageOptim-CLI/compare/4.0.0-alpha.1...4.0.0-alpha.2) (2026-07-07)
+
 ## [4.0.0-alpha.1](https://github.com/JamieMason/ImageOptim-CLI/compare/3.1.9...4.0.0-alpha.1) (2026-07-07)
 
 ### Features
