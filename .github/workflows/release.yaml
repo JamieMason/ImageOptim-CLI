@@ -45,7 +45,7 @@ jobs:
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_PUBLISH_FLAGS: --provenance
+          NPM_PUBLISH_FLAGS: --provenance --tag alpha
         run: |
           just --dotenv-filename .env.${{ matrix.build.NAME }} build-binary-package
           just --dotenv-filename .env.${{ matrix.build.NAME }} publish-npm-binary-package
@@ -75,7 +75,7 @@ jobs:
         shell: bash
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_PUBLISH_FLAGS: --provenance
+          NPM_PUBLISH_FLAGS: --provenance --tag alpha
         run: |
           just --dotenv-filename .env.darwin-arm64 create-npm-root-package
           just --dotenv-filename .env.darwin-arm64 publish-npm-root-package
