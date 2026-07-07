@@ -1,0 +1,8 @@
+comment_width = 140
+group_imports = "One"
+imports_granularity = "One"
+max_width = 140
+reorder_impl_items = true
+reorder_imports = true
+tab_spaces = 2
+wrap_comments = true

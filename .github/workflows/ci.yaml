@@ -1,32 +1,50 @@
-name: verify
+name: CI
 
 on:
-  pull_request:
   push:
+    branches: [main, dev]
+  pull_request:
 
 jobs:
-  all:
-    runs-on: ubuntu-latest
+  build-matrix:
+    uses: ./.github/workflows/_build-matrix.yaml
 
+  lint-and-test:
+    name: Lint and test (${{ matrix.build.NAME }})
+    needs: build-matrix
+    runs-on: ${{ matrix.build.OS }}
+    strategy:
+      fail-fast: true
+      matrix:
+        build: ${{ fromJson(needs.build-matrix.outputs.build_matrix) }}
     steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Install just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
         with:
-          cache: yarn
-          node-version: 20.x
-
-      - name: Install
-        run: yarn install --frozen-lockfile
-
-      - name: Build
-        run: yarn build
-        env:
-          FORCE_COLOR: 3
-          TERM: xterm-256color
-
+          just-version: 1.35.0
+      - name: Set up Rust
+        shell: bash
+        run: |
+          rustup show
+          rustup toolchain install nightly --profile minimal --component rustfmt
+      - name: Cache Rust builds
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
       - name: Lint
-        run: yarn lint
-        env:
-          FORCE_COLOR: 3
-          TERM: xterm-256color
+        run: just lint
+      - name: Test
+        run: just test
+
+  audit:
+    name: Audit dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Install cargo-audit
+        uses: taiki-e/install-action@3771e22aa892e03fd35585fae288baad1755695c # v2.78.2
+        with:
+          tool: cargo-audit
+      - name: Audit
+        run: cargo audit

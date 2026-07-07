@@ -1,11 +1,8 @@
 {
   "name": "imageoptim-cli",
   "description": "Automates ImageOptim, ImageAlpha, and JPEGmini for Mac to make batch optimisation of images part of your automated build process.",
-  "version": "3.1.9",
+  "version": "4.0.0-alpha.0",
   "author": "Jamie Mason <jamie@foldleft.io> (https://github.com/JamieMason)",
-  "bin": {
-    "imageoptim": "dist/imageoptim"
-  },
   "bugs": "https://github.com/JamieMason/ImageOptim-CLI/issues",
   "contributors": [
     "Azusa Tomita (@azusa-tomita)",
@@ -25,67 +22,33 @@
     "The Gitter Badger (@gitter-badger)",
     "Tom Chen (@tomchentw)"
   ],
-  "dependencies": {
-    "chalk": "4.1.2",
-    "commander": "11.0.0",
-    "expect-more": "1.3.0",
-    "globby": "11.1.0",
-    "pretty-bytes": "5.6.0"
-  },
   "devDependencies": {
-    "@types/node": "18.16.19",
-    "@typescript-eslint/eslint-plugin": "5.60.1",
-    "@typescript-eslint/parser": "5.60.1",
-    "eslint": "8.44.0",
-    "organize-imports-cli": "0.10.0",
-    "pkg": "5.8.1",
-    "prettier": "2.8.8",
-    "syncpack": "10.6.1",
-    "typescript": "5.1.6"
+    "@release-it/conventional-changelog": "^11.0.0",
+    "release-it": "^20.0.1",
+    "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=18"
   },
-  "files": [
-    "dist",
-    "osascript"
-  ],
+  "funding": "https://github.com/sponsors/JamieMason",
   "homepage": "https://github.com/JamieMason/ImageOptim-CLI",
   "keywords": [
-    "advpng",
-    "compress",
     "compress images",
-    "gifsicle",
     "image compression",
     "image optimisation",
     "imagealpha",
-    "imagemin",
     "imageoptim",
-    "images",
     "jpegmini",
-    "jpegoptim",
-    "jpegtran",
-    "optimise images",
-    "optipng",
-    "pngcrush",
-    "pngout",
-    "pngquant",
-    "smushit",
-    "tinypng"
+    "macos",
+    "pngquant"
   ],
   "license": "MIT",
-  "repository": "JamieMason/ImageOptim-CLI",
-  "scripts": {
-    "build": "npm run build:ts && npm run build:bin",
-    "build:bin": "(cd dist && pkg --targets 'node18-macos-x64' --output ./imageoptim ./imageoptim.js)",
-    "build:ts": "tsc --project .",
-    "format": "npm run format:imports && npm run format:prettier && npm run format:eslint",
-    "format:eslint": "npm run lint -- --fix",
-    "format:imports": "organize-imports-cli ./src/**/*.ts",
-    "format:prettier": "prettier --write './src/**/*.ts'",
-    "lint": "eslint --ext .ts .",
-    "postbuild": "rm -rf dist/*.js",
-    "prebuild": "rm -rf dist",
-    "prepack": "npm run build"
+  "os": [
+    "darwin"
+  ],
+  "packageManager": "pnpm@10.33.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamieMason/ImageOptim-CLI.git"
   }
 }

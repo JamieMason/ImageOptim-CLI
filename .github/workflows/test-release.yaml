@@ -1,0 +1,64 @@
+name: Test Release Pipeline
+
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  build-matrix:
+    uses: ./.github/workflows/_build-matrix.yaml
+
+  publish-npm-binaries:
+    name: (Test) Publish npm binaries
+    needs: build-matrix
+    runs-on: ${{ matrix.build.OS }}
+    strategy:
+      fail-fast: false
+      matrix:
+        build: ${{ fromJson(needs.build-matrix.outputs.build_matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Set up Node
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: Install just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
+        with:
+          just-version: 1.35.0
+      - name: Set up Rust
+        shell: bash
+        run: |
+          rustup show
+          rustup target add ${{ matrix.build.TARGET }}
+      - name: Cache Rust builds
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4 # v2.9.1
+        with:
+          key: ${{ matrix.build.TARGET }}
+      - name: (Test) Build rust binary package for npm
+        shell: bash
+        run: |
+          just --dotenv-filename .env.${{ matrix.build.NAME }} build-binary-package
+
+  publish-npm-base:
+    name: (Test) Publish npm package
+    needs: publish-npm-binaries
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Set up Node
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: Install just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
+        with:
+          just-version: 1.35.0
+      - name: (Test) Create the parent npm package
+        shell: bash
+        run: |
+          just --dotenv-filename .env.darwin-arm64 create-npm-root-package
