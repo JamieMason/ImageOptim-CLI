@@ -1,0 +1,12 @@
+[
+  {
+    "NAME": "darwin-x64",
+    "OS": "macos-15-intel",
+    "TARGET": "x86_64-apple-darwin"
+  },
+  {
+    "NAME": "darwin-arm64",
+    "OS": "macos-latest",
+    "TARGET": "aarch64-apple-darwin"
+  }
+]

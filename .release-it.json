@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/release-it/schema/release-it.json",
+  "git": {
+    "commitMessage": "chore(release): ${version}",
+    "push": false,
+    "requireBranch": "main",
+    "tag": true
+  },
+  "github": {
+    "release": true,
+    "releaseName": "${version}"
+  },
+  "hooks": {
+    "after:bump": "cargo set-version '${version}' && git add Cargo.toml Cargo.lock CHANGELOG.md"
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits"
+      },
+      "infile": "CHANGELOG.md",
+      "strictSemver": true
+    }
+  }
+}

@@ -1,8 +1,0 @@
-languages:
-  TypeScript: true
-exclude_paths:
-  - 'dist/*'
-plugins:
-  tslint:
-    enabled: true
-    config: tslint.json

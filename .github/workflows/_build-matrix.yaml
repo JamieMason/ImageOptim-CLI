@@ -1,0 +1,26 @@
+name: Build matrix
+
+on:
+  workflow_call:
+    outputs:
+      build_matrix:
+        description: JSON array of build configurations from matrix.json
+        value: ${{ jobs.build-matrix.outputs.build_matrix }}
+
+jobs:
+  build-matrix:
+    name: Build matrix
+    runs-on: ubuntu-latest
+    outputs:
+      build_matrix: ${{ steps.set-matrix.outputs.build_matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          sparse-checkout: |
+            .github/workflows/matrix.json
+          sparse-checkout-cone-mode: false
+      - id: set-matrix
+        shell: bash
+        run: |
+          echo "build_matrix=$( cat .github/workflows/matrix.json | jq --monochrome-output --compact-output )" >> $GITHUB_OUTPUT
