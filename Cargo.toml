@@ -1,6 +1,6 @@
 [package]
 name = "imageoptim-cli"
-version = "4.0.0-alpha.0"
+version = "4.0.0-alpha.1"
 authors = ["Jamie Mason <jamie@foldleft.io>"]
 edition = "2024"
 homepage = "https://github.com/JamieMason/ImageOptim-CLI"

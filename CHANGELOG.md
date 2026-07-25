@@ -1,3 +1,11 @@
+# Changelog
+
+## [4.0.0-alpha.1](https://github.com/JamieMason/ImageOptim-CLI/compare/3.1.9...4.0.0-alpha.1) (2026-07-25)
+
+### Features
+
+* **core:** migrate to rust ([0a2e6a4](https://github.com/JamieMason/ImageOptim-CLI/commit/0a2e6a452566d85028f6561438a122f0ac1aac8a))
+
 ## [3.1.9](https://github.com/JamieMason/ImageOptim-CLI/compare/3.1.7...3.1.9) (2023-11-06)
 
 
@@ -343,6 +351,3 @@ code of 1, where previously they would display a warning:
 
 
 ## 0.0.6 (2013-03-03)
-
-
-
