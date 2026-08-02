@@ -34,7 +34,7 @@ pub fn run(cli: &Cli, files: &[PathBuf], fs: &dyn FileSystem, runners: &Runners,
 }
 
 fn process_batch(cli: &Cli, batch: &[PathBuf], fs: &dyn FileSystem, runners: &Runners, reporter: &Reporter) -> Result<(), ImageOptimError> {
-  let (batch, sizes_before): (Vec<PathBuf>, Vec<u64>) = existing_files(batch, fs)?.into_iter().unzip();
+  let (batch, sizes_before): (Vec<PathBuf>, Vec<u64>) = existing_files(batch, fs, reporter)?.into_iter().unzip();
   let batch = batch.as_slice();
   if batch.is_empty() {
     return Ok(());
@@ -45,7 +45,7 @@ fn process_batch(cli: &Cli, batch: &[PathBuf], fs: &dyn FileSystem, runners: &Ru
     let imagealpha = scope.spawn(|| match &runners.imagealpha {
       Some(imagealpha) if !pngs.is_empty() => {
         reporter.on_app_start("ImageAlpha");
-        imagealpha.run(&pngs, &cli.quality, cli.speed, cli.number_of_colors)
+        imagealpha.run(&pngs, &cli.quality, cli.speed, cli.number_of_colors, reporter)
       }
       _ => Ok(()),
     });
@@ -67,7 +67,7 @@ fn process_batch(cli: &Cli, batch: &[PathBuf], fs: &dyn FileSystem, runners: &Ru
     .filter_map(|(path, size_before)| match fs.file_size(path) {
       Ok(size_after) => Some(Ok(FileStat::new(path.display().to_string(), *size_before, size_after))),
       Err(err) if err.kind() == std::io::ErrorKind::NotFound => {
-        warn_vanished(path);
+        warn_vanished(path, reporter);
         None
       }
       Err(err) => Some(Err(ImageOptimError::from(err))),
@@ -81,13 +81,13 @@ fn process_batch(cli: &Cli, batch: &[PathBuf], fs: &dyn FileSystem, runners: &Ru
 
 /// Files can be deleted by other programs between discovery and processing:
 /// warn and carry on rather than aborting the whole run
-fn existing_files(batch: &[PathBuf], fs: &dyn FileSystem) -> Result<Vec<(PathBuf, u64)>, ImageOptimError> {
+fn existing_files(batch: &[PathBuf], fs: &dyn FileSystem, reporter: &Reporter) -> Result<Vec<(PathBuf, u64)>, ImageOptimError> {
   batch
     .iter()
     .filter_map(|path| match fs.file_size(path) {
       Ok(size) => Some(Ok((path.clone(), size))),
       Err(err) if err.kind() == std::io::ErrorKind::NotFound => {
-        warn_vanished(path);
+        warn_vanished(path, reporter);
         None
       }
       Err(err) => Some(Err(err.into())),
@@ -95,8 +95,8 @@ fn existing_files(batch: &[PathBuf], fs: &dyn FileSystem) -> Result<Vec<(PathBuf
     .collect()
 }
 
-fn warn_vanished(path: &std::path::Path) {
-  eprintln!("{}", logger::warning(&format!("Skipped {}, it no longer exists", path.display())));
+fn warn_vanished(path: &std::path::Path, reporter: &Reporter) {
+  reporter.on_skipped(&format!("Skipped {}, it no longer exists", path.display()));
 }
 
 fn only_supported(batch: &[PathBuf], extensions: &[&str]) -> Vec<PathBuf> {

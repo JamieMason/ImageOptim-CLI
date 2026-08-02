@@ -131,11 +131,61 @@ fn tolerates_pngquant_exit_codes_98_and_99() {
   }
 }
 
+/// pngquant exits 2 when it cannot decode an input file, having skipped it and
+/// processed the rest of its list. Malformed images are the user's data, not a
+/// bug in this CLI: report them and carry on
+#[test]
+fn reports_unreadable_pngs_instead_of_failing() {
+  let dir = TempDir::new().unwrap();
+  write(&dir, "pixel.png");
+  let pngquant = fake_bin(
+    &dir,
+    "pngquant",
+    "echo \"error:  'pixel.png' is not a PNG file (invalid PNG header)\" >&2\nexit 2",
+  );
+  let assert = imageoptim(&dir)
+    .env("IMAGEOPTIM_CLI_PNGQUANT_PATH", &pngquant)
+    .args(["--imagealpha", "--no-imageoptim"])
+    .assert()
+    .success()
+    .stdout(predicate::str::contains("Finished"));
+  let stderr = String::from_utf8(assert.get_output().stderr.clone()).unwrap();
+  assert!(
+    stderr.contains("pixel.png") && stderr.contains("not a PNG file"),
+    "pngquant's reason for skipping the file was not reported:\n{stderr}"
+  );
+  assert!(
+    !stderr.contains("Please raise an issue"),
+    "malformed user data must not be reported as a bug in this CLI:\n{stderr}"
+  );
+}
+
+/// A single malformed PNG must not cost the rest of the batch its optimisation
+#[test]
+fn still_runs_imageoptim_when_a_png_is_unreadable() {
+  let dir = TempDir::new().unwrap();
+  write(&dir, "broken.png");
+  write(&dir, "good.png");
+  let pngquant = fake_bin(&dir, "pngquant", "echo \"error:  'broken.png' is not a PNG file\" >&2\nexit 2");
+  let imageoptim_bin = fake_bin(&dir, "ImageOptim", r#"for f in "$@"; do printf 'tiny' > "$f"; done"#);
+  imageoptim(&dir)
+    .env("IMAGEOPTIM_CLI_PNGQUANT_PATH", &pngquant)
+    .env("IMAGEOPTIM_CLI_IMAGEOPTIM_PATH", &imageoptim_bin)
+    .arg("--imagealpha")
+    .assert()
+    .success();
+  assert_eq!(
+    fs::read_to_string(dir.path().join("good.png")).unwrap(),
+    "tiny",
+    "ImageOptim never ran over the readable files"
+  );
+}
+
 #[test]
 fn fails_on_any_other_pngquant_exit_code() {
   let dir = TempDir::new().unwrap();
   write(&dir, "pixel.png");
-  let pngquant = fake_bin(&dir, "pngquant", "echo 'error: broken' >&2\nexit 2");
+  let pngquant = fake_bin(&dir, "pngquant", "echo 'error: broken' >&2\nexit 17");
   imageoptim(&dir)
     .env("IMAGEOPTIM_CLI_PNGQUANT_PATH", &pngquant)
     .args(["--imagealpha", "--no-imageoptim"])

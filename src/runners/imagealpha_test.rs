@@ -25,6 +25,22 @@ fn recording_runner(exit_status: i32, calls: &Calls) -> ImageAlpha {
   }
 }
 
+/// A pngquant which fails the way it does on a file it cannot decode: the
+/// offending file is named on stderr and the run exits READ_ERROR
+fn unreadable_file_runner(stderr: &'static str) -> ImageAlpha {
+  ImageAlpha {
+    binary_exists: Box::new(|| true),
+    run_pngquant: Box::new(move |_| {
+      Ok(ExecOutcome {
+        status: Some(READ_ERROR),
+        stdout: String::new(),
+        stderr: stderr.to_string(),
+      })
+    }),
+    max_shards: 1,
+  }
+}
+
 /// Split one shard's recorded args into its flags and its file paths
 fn flags_and_files(args: &[String]) -> (Vec<String>, Vec<String>) {
   let separator = args.iter().position(|arg| arg == "--").unwrap();
@@ -36,7 +52,13 @@ fn passes_settings_and_png_paths_to_pngquant() {
   let calls: Calls = Arc::default();
   let runner = recording_runner(0, &calls);
   runner
-    .run(&[PathBuf::from("a.png"), PathBuf::from("b.png")], &quality(65, 80), 1, 256)
+    .run(
+      &[PathBuf::from("a.png"), PathBuf::from("b.png")],
+      &quality(65, 80),
+      1,
+      256,
+      &Reporter::Human,
+    )
     .unwrap();
   assert_eq!(
     calls.lock().unwrap().as_slice(),
@@ -62,7 +84,7 @@ fn shards_pngs_across_parallel_pngquant_invocations() {
     ..recording_runner(0, &calls)
   };
   let files: Vec<PathBuf> = ["a.png", "b.png", "c.png", "d.png"].iter().map(PathBuf::from).collect();
-  runner.run(&files, &quality(65, 80), 1, 256).unwrap();
+  runner.run(&files, &quality(65, 80), 1, 256, &Reporter::Human).unwrap();
   let calls = calls.lock().unwrap();
   assert_eq!(calls.len(), 2, "expected one pngquant invocation per shard: {calls:?}");
   let mut seen_files: Vec<String> = vec![];
@@ -86,7 +108,9 @@ fn never_runs_more_shards_than_files() {
     max_shards: 8,
     ..recording_runner(0, &calls)
   };
-  runner.run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256).unwrap();
+  runner
+    .run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256, &Reporter::Human)
+    .unwrap();
   assert_eq!(calls.lock().unwrap().len(), 1);
 }
 
@@ -108,7 +132,7 @@ fn tolerates_skipped_files_in_one_shard_while_others_succeed() {
     }),
   };
   let files: Vec<PathBuf> = ["a.png", "b.png", "c.png", "d.png"].iter().map(PathBuf::from).collect();
-  assert!(runner.run(&files, &quality(65, 80), 1, 256).is_ok());
+  assert!(runner.run(&files, &quality(65, 80), 1, 256, &Reporter::Human).is_ok());
   assert_eq!(calls.lock().unwrap().len(), 2);
 }
 
@@ -117,14 +141,14 @@ fn fails_when_any_shard_exits_with_a_hard_error() {
   let calls: Calls = Arc::default();
   let runner = ImageAlpha {
     max_shards: 2,
-    ..recording_runner(2, &calls)
+    ..recording_runner(17, &calls)
   };
   let files: Vec<PathBuf> = ["a.png", "b.png", "c.png", "d.png"].iter().map(PathBuf::from).collect();
   assert!(matches!(
-    runner.run(&files, &quality(65, 80), 1, 256),
+    runner.run(&files, &quality(65, 80), 1, 256, &Reporter::Human),
     Err(ImageOptimError::AppFailed {
       app: "pngquant",
-      status: 2,
+      status: 17,
       ..
     })
   ));
@@ -134,7 +158,7 @@ fn fails_when_any_shard_exits_with_a_hard_error() {
 fn does_not_run_pngquant_when_there_are_no_pngs() {
   let calls: Calls = Arc::default();
   let runner = recording_runner(0, &calls);
-  runner.run(&[], &quality(65, 80), 1, 256).unwrap();
+  runner.run(&[], &quality(65, 80), 1, 256, &Reporter::Human).unwrap();
   assert!(calls.lock().unwrap().is_empty());
 }
 
@@ -146,7 +170,7 @@ fn errors_when_imagealpha_is_not_installed() {
     ..recording_runner(0, &calls)
   };
   assert!(matches!(
-    runner.run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256),
+    runner.run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256, &Reporter::Human),
     Err(ImageOptimError::ImageAlphaNotInstalled)
   ));
 }
@@ -156,20 +180,61 @@ fn tolerates_pngquant_skipping_files() {
   for status in [98, 99] {
     let calls: Calls = Arc::default();
     let runner = recording_runner(status, &calls);
-    assert!(runner.run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256).is_ok());
+    assert!(
+      runner
+        .run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256, &Reporter::Human)
+        .is_ok()
+    );
   }
 }
 
 #[test]
 fn fails_on_any_other_pngquant_exit_status() {
   let calls: Calls = Arc::default();
-  let runner = recording_runner(2, &calls);
+  let runner = recording_runner(17, &calls);
   assert!(matches!(
-    runner.run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256),
+    runner.run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256, &Reporter::Human),
     Err(ImageOptimError::AppFailed {
       app: "pngquant",
-      status: 2,
+      status: 17,
       ..
     })
   ));
+}
+
+/// Malformed images are the user's data to fix, so pngquant's READ_ERROR is
+/// reported and skipped rather than failing the run, as issue #185 asked
+#[test]
+fn tolerates_pngs_which_pngquant_cannot_decode() {
+  let runner = unreadable_file_runner("error:  'a.png' is not a PNG file (invalid PNG header)");
+  assert!(
+    runner
+      .run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256, &Reporter::Human)
+      .is_ok()
+  );
+}
+
+#[test]
+fn reports_every_file_pngquant_named_on_stderr() {
+  assert_eq!(
+    unreadable_reports("error:  'a.png' is not a PNG file\n\n  error:  cannot open b.png for reading\n"),
+    ["error:  'a.png' is not a PNG file", "error:  cannot open b.png for reading"],
+    "blank lines must not become skip reports"
+  );
+}
+
+/// Some pngquant builds exit READ_ERROR without explaining themselves: the
+/// user must still be told their files were left alone
+#[test]
+fn reports_a_fallback_when_pngquant_explains_nothing() {
+  assert_eq!(
+    unreadable_reports("   \n\n"),
+    ["pngquant could not read one or more PNGs, they were left unchanged"]
+  );
+  let runner = unreadable_file_runner("");
+  assert!(
+    runner
+      .run(&[PathBuf::from("a.png")], &quality(65, 80), 1, 256, &Reporter::Human)
+      .is_ok()
+  );
 }

@@ -79,6 +79,15 @@ impl Reporter {
     }
   }
 
+  /// A file was left exactly as it was found, with the reason why. Skipping is
+  /// a normal outcome rather than a failure: the run carries on
+  pub fn on_skipped(&self, message: &str) {
+    match self {
+      Self::Human => eprintln!("{}", logger::warning(message)),
+      Self::Json => println!("{}", json!({ "type": "skipped", "message": message })),
+    }
+  }
+
   /// Everything completed successfully
   pub fn on_finished(&self) {
     match self {

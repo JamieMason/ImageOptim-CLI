@@ -84,6 +84,33 @@ fn json_errors_are_events_on_stdout() {
   );
 }
 
+/// Machine consumers must be able to see which files were skipped, not just
+/// infer it from a missing row
+#[test]
+fn json_streams_skipped_events_for_unreadable_files() {
+  let dir = TempDir::new().unwrap();
+  write(&dir, "pixel.png");
+  let pngquant = fake_bin(
+    &dir,
+    "pngquant",
+    "echo \"error:  'pixel.png' is not a PNG file (invalid PNG header)\" >&2\nexit 2",
+  );
+  let assert = imageoptim(&dir)
+    .env("IMAGEOPTIM_CLI_PNGQUANT_PATH", &pngquant)
+    .args(["--json", "--imagealpha", "--no-imageoptim"])
+    .assert()
+    .success();
+  let lines = ndjson_lines(&assert.get_output().stdout);
+  let skipped: Vec<&Value> = lines.iter().filter(|line| line["type"] == "skipped").collect();
+  assert_eq!(skipped.len(), 1, "expected one skipped event: {lines:?}");
+  assert!(
+    skipped[0]["message"].as_str().unwrap().contains("not a PNG file"),
+    "skipped event must carry the reason: {}",
+    skipped[0]
+  );
+  assert_eq!(lines.last().unwrap()["type"], "done");
+}
+
 #[test]
 fn json_mode_keeps_human_output_off_stdout() {
   let dir = TempDir::new().unwrap();
